@@ -1,5 +1,8 @@
 import java.util.*;
 
+/**
+*   https://www.codingame.com/ide/puzzle/onboarding
+*/
 class Player {
 
     public static void main(String args[]) {
