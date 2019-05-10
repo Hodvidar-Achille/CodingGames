@@ -18,32 +18,36 @@ class Solution {
 			System.err.println("add : "+EXT+" "+MT);
             in.nextLine();
             /**
-			extensions[i] = EXT != null ? EXT : "";
-			mimes[i] = MT != null ? MT : "";
-			**/
-			mimes.put(EXT.toLowerCase(), MT);
+		extensions[i] = EXT != null ? EXT : "";
+		mimes[i] = MT != null ? MT : "";
+		**/
+		mimes.put(EXT.toLowerCase(), MT);
         }
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < Q; i++) {
-            String FNAME = in.nextLine(); // One file name per line.
+        for (int i = 0; i < Q; i++) 
+	{
+            	String FNAME = in.nextLine(); // One file name per line.
 			
-			int l = FNAME.length();
-			int p = FNAME.lastIndexOf('.');
+		int l = FNAME.length();
+		int p = FNAME.lastIndexOf('.');
 			
 			
-			System.err.println("file to test : "+FNAME);
+		System.err.println("file to test : "+FNAME);
 
-			if(l > 256 || p < 0 || (l - (p+1) > 10)) {
-			    builder.append("UNKNOWN\n");
+		if(l > 256 || p < 0 || (l - (p+1) > 10)) 
+		{
+		    builder.append("UNKNOWN\n");
+		} 
+		else 
+		{
+			String x = FNAME.substring(p+1, l).toLowerCase();
+			System.err.println("    extension detected : "+x);
+			if(mimes.containsKey(x)){
+				builder.append(mimes.get(x)+"\n");
 			} else {
-				String x = FNAME.substring(p+1, l).toLowerCase();
-				System.err.println("    extension detected : "+x);
-				if(mimes.containsKey(x)){
-					builder.append(mimes.get(x)+"\n");
-				} else {
-					builder.append("UNKNOWN\n");
-				}
+				builder.append("UNKNOWN\n");
 			}
+		}
 
         }
         System.out.println(builder.toString());
