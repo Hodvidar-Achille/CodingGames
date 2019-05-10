@@ -5,7 +5,7 @@ import java.math.*;
 /**
  * For puzzle : https://www.codingame.com/ide/puzzle/mars-lander-episode-1
  **/
-class MarsLanderEpisode1 {
+class Player {
 
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
