@@ -1,5 +1,7 @@
 import java.util.*;
-
+/**
+*   https://www.codingame.com/training/easy/horse-racing-duals
+*/
 class Solution {
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
