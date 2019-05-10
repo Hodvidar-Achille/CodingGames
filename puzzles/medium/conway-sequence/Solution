@@ -1,0 +1,76 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+/**
+ *    https://www.codingame.com/ide/puzzle/conway-sequence
+ **/
+class Solution {
+
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int R = in.nextInt();
+        int L = in.nextInt();
+
+        // Write an action using System.out.println()
+        // To debug: System.err.println("Debug messages...");
+        List<Integer> previousLine = new ArrayList<>();
+        previousLine.add(R);
+        System.err.println("R: "+R+" L: "+L+" Start with: "+listToString(previousLine));
+        // GO !
+        for(int l = 1; l < L; l++)
+        {
+            // l == 2 at start
+            List<Integer> nextLine = new ArrayList<>();
+            int n = 1;
+            int p = previousLine.get(0);
+            for(int i = 1; /* no break condition */; i++)
+            {
+                //System.err.println("loop2 i:"+i+" nextLine: "+listToString(nextLine));
+                if(i == previousLine.size())
+                {
+                    nextLine.add(n);
+                    nextLine.add(p);
+                    break;
+                }
+                
+                if(previousLine.get(i) == p)
+                {    
+                    n++;
+                }
+                else
+                {
+                    nextLine.add(n);
+                    nextLine.add(p);
+                    n = 1;
+                    p = previousLine.get(i);
+                    
+                }
+                if(i == previousLine.size() -1)
+                {
+                    nextLine.add(n);
+                    nextLine.add(p);
+                    break;
+                }
+            }
+            previousLine = new ArrayList<>(nextLine);
+            nextLine = new ArrayList<>();
+            System.err.println("loop n°"+l+": "+listToString(previousLine));
+        }
+        String answer = listToString(previousLine);
+
+        System.out.println(answer);
+    }
+    
+    private static String listToString(List<Integer> aList)
+    {
+        String s = "";
+        for(Integer i : aList)
+        {
+            if(!s.equals(""))
+                s += " ";
+            s += i;
+        }
+        return s;
+    }
+}
