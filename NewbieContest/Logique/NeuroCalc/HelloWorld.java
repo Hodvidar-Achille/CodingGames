@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
  *   https://www.newbiecontest.org/index.php?page=epreuve&no=243
+ * by Hodvidar
  *
  *   (See details at end of class).
  */
