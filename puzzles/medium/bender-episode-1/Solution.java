@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/bender-episode-1
+ * by Hodvidar
  **/
 class Solution
 {
