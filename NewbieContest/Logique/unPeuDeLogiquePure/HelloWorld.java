@@ -1,6 +1,9 @@
 import java.util.*;
 
 /**
+* by Hodvidar
+* -----
+*
 Description :
 Il était une fois un petit cercle d'amis composé de 5 passionnés de sécurité informatique.
  Ils avaient pour nom Lebenfrau, CottCott, qq_, S0C13V3R et EiGhT.
