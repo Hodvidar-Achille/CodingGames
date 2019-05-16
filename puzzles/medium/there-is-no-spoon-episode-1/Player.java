@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/there-is-no-spoon-episode-1
+ * by Hodvidar
  * 
  * Don't let the machines win. You are humanity's last hope...
  **/
