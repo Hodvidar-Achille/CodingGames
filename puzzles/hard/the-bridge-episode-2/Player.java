@@ -3,6 +3,7 @@ import java.util.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/the-bridge-episode-2
+ * by Hodvidar
  *
  * Genetic algorith : the results are not always perfect.
  **/
