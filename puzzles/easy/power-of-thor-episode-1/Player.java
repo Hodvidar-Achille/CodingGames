@@ -6,6 +6,7 @@ import java.math.*;
  *    https://www.codingame.com/ide/puzzle/power-of-thor-episode-1
  * ---
  * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
+ * by Hodvidar
  **/
 class Player {
 
