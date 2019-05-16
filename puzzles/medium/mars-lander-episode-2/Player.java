@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
 *   https://www.codingame.com/ide/puzzle/mars-lander-episode-2
+* by Hodvidar
 */
 class Player
 {
