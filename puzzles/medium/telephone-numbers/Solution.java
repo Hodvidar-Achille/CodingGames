@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/telephone-numbers
+ * by Hodvidar
  **/
 class Solution {
 
