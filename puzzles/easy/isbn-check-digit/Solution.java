@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/isbn-check-digit
+ * by Hodvidar
  **/
 class Solution {
 
