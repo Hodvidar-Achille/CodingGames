@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
 *   https://www.codingame.com/ide/puzzle/onboarding
+* by Hodvidar
 */
 class Player {
 
