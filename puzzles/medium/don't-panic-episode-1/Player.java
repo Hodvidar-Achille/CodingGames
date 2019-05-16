@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  * https://www.codingame.com/ide/puzzle/don't-panic-episode-1
+ * by Hodvidar
  **/
 class Player {
 
