@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/lumen
+ * by Hodvidar
  **/
 class Solution {
 
