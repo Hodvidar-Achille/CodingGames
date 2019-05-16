@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *      https://www.codingame.com/ide/puzzle/the-frog-jump-1
+ * by Hodvidar
  **/
 class Solution {
 
