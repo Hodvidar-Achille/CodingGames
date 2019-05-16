@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/the-river-i-
+ * by Hodvidar
  **/
 class Solution {
 
