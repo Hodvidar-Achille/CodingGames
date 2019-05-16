@@ -1,6 +1,7 @@
 import java.util.*;
 /**
 *   https://www.codingame.com/training/easy/horse-racing-duals
+* by Hodvidar
 */
 class Solution {
     public static void main(String args[]) {
