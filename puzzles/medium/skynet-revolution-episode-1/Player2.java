@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  * 100%
+ * by Hodvidar
  **/
 class Player2 {
 
