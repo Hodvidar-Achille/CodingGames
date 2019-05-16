@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *      https://www.codingame.com/ide/puzzle/teads-sponsored-contest
+ * by Hodvidar
  **/
 class Solution {
 
