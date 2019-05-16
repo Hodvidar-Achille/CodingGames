@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/bank-robbers
+ * by Hodvidar
  **/
 class Solution {
 
