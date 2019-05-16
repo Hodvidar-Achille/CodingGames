@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/ghost-legs
+ * by Hodvidar
  **/
 class Solution 
 {
