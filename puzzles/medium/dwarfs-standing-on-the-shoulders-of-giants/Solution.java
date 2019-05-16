@@ -4,6 +4,7 @@ import java.math.*;
 
 /**
  *    https://www.codingame.com/ide/puzzle/dwarfs-standing-on-the-shoulders-of-giants
+ * by Hodvidar
  **/
 class Solution {
 
