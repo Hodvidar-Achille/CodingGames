@@ -3,8 +3,8 @@ import java.io.*;
 import java.math.*;
 
 /**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
+ *          https://www.codingame.com/ide/puzzle/order-of-succession
+ * by Hodvidar (TODO)
  **/
 class Solution {
 
