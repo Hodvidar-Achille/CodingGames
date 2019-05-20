@@ -15,6 +15,7 @@ class Solution {
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
+        // Could use 'n' to optimize familyTree lists. 
         
         FamilyTree familyTree = new FamilyTree();
         
@@ -34,11 +35,13 @@ class Solution {
             
             familyTree.addPerson(p);
         }
+        
+        Collection<Person> succesors = familyTree.getSuccessors();
 
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
-
-        System.out.println("orDeroFsucceSsion");
+        for(Person p : succesors)
+            System.out.println(p.getName());
     }
 }
 
@@ -48,7 +51,8 @@ class Solution {
 class FamilyTree
 {
     private final Map<String, Person> personsFast = new HashMap<>();
-    private final Collection<Person> persons = new ArrayList<>();
+    private final List<Person> persons = new ArrayList<>();
+    private final Collection<Person> firstAncestors = new ArrayList<>();
     
     public FamilyTree()
     {
@@ -59,11 +63,62 @@ class FamilyTree
     {
         this.personsFast.put(p.getName(), p);
         this.persons.add(p);
+        if(p.getParent() == null)
+            this.firstAncestors.add(p);
     }
     
     public Person getPerson(String name)
     {
         return personsFast.get(name);
+    }
+    
+    private void assignScores()
+    {
+        // 1) order children of each parent
+        for(Person p : this.firstAncestors)
+        {
+            p.sortDescendant();
+        }
+        
+        // 2) Recursively assign score
+        ScoreHolder sh = new ScoreHolder();
+        for(Person p : this.firstAncestors)
+        {
+            p.assignScore(sh);
+        }
+    }
+    
+    private void removeDeadAndCatholic()
+    {
+        Iterator<Person> ite = persons.iterator();
+        while(ite.hasNext())
+        {
+            Person p = ite.next();
+            if(p.isDead() || p.isCatholic())
+                ite.remove();
+        }
+    }
+    
+    public Collection<Person> getSuccessors()
+    {
+        this.assignScores();
+        this.removeDeadAndCatholic();
+        Collections.sort(this.persons, new SucessionComparator());
+        return this.persons;
+    }
+}
+
+class ScoreHolder 
+{
+    private int score = Integer.MIN_VALUE;
+    
+    /**
+     * -1 each time
+     */
+    public int getScore()
+    {
+        this.score++;
+        return score;
     }
 }
 
@@ -76,7 +131,6 @@ class Person implements Comparable<Person>
     private final boolean catholic;
     private final boolean male;
     
-    private List<Person> siblings = new ArrayList<>();
     private List<Person> children = new ArrayList<>();
     
     private final int generation;
@@ -119,6 +173,27 @@ class Person implements Comparable<Person>
         // --- Age ---
         // negative value if this is older : 1900 - 1950 = -50
         return this.birth - o.getBirth();
+    }
+    
+    /**
+     * Recursively orders children and their children.
+     */
+    public void sortDescendant()
+    {
+        Collections.sort(this.children);
+        for(Person p : this.children)
+        {
+            p.sortDescendant();
+        }
+    }
+    
+    public void assignScore(ScoreHolder sh)
+    {
+        this.score = sh.getScore();
+        for(Person p :this.children)
+        {
+            p.assignScore(sh);
+        }
     }
     
     private int computeGenerationNumber()
@@ -176,6 +251,11 @@ class Person implements Comparable<Person>
         return this.generation;
     }
     
+    public int getScore()
+    {
+        return this.score;
+    }
+    
 }
 
 class SucessionComparator implements Comparator<Person> 
@@ -183,7 +263,7 @@ class SucessionComparator implements Comparator<Person>
   @Override
   public int compare(Person x, Person y) 
   {
-    // TODO
+    return x.getScore() - y.getScore();
   }
 
 }
