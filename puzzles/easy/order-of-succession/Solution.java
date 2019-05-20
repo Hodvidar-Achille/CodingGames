@@ -4,7 +4,7 @@ import java.math.*;
 
 /**
  *          https://www.codingame.com/ide/puzzle/order-of-succession
- * by Hodvidar (TODO)
+ * by Hodvidar
  **/
 class Solution {
 
