@@ -51,13 +51,13 @@ public class GeometryServices {
 
         //special Cases
         // a, b, e colinear, e on segment [ab]
-        if(o1 == 0 && onSegment(a, b, e)) return false;
+        if(o1 == 0 && onSegment(a, b, e)) return true;
         // a, b, f colinear, f on segment [ab]
-        if(o2 == 0 && onSegment(a, b, f)) return false;
+        if(o2 == 0 && onSegment(a, b, f)) return true;
         // e, f, a colinear, a on segment [ef]
-        if(o3 == 0 && onSegment(e, f, a)) return false;
+        if(o3 == 0 && onSegment(e, f, a)) return true;
         // e, f, b colinear, b on segment [ef]
-        if(o4 == 0 && onSegment(e, f, b)) return false;
+        if(o4 == 0 && onSegment(e, f, b)) return true;
 
         return false; // Doesn't fall in any of the above cases
     }
