@@ -1,8 +1,11 @@
-
-class GeometryServices
+/**
+* Improved Geometry service for point inside polygon.
+* by Hodvidar
+*/
+class GeometryService2
 {
     private final int max_X;
-    public GeometryServices(int max_X)
+    public GeometryService2(int max_X)
     {
         this.max_X = max_X + 1;
     }
@@ -117,7 +120,7 @@ class GeometryServices
                     return onSegment(polygon[i], polygon[next], p);
                 }
                 
-                // TODO : handle case where 'e' is exactly at same X or Y 
+                // Handle case where 'e' is exactly at same X or Y 
                 // than a polygon point. 
                 // --> It will Intersect 2 times the polygon limit.
                 if (orientation(p, extreme, polygon[i]) == 0) 
