@@ -3,8 +3,8 @@ import java.io.*;
 import java.math.*;
 
 /**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
+ *      https://www.codingame.com/ide/puzzle/dead-mens-shot
+ *  by Hodvidar
  **/
 class Solution 
 {
@@ -18,16 +18,20 @@ class Solution
         int N = in.nextInt();
         Point[] polygon = new Point[N];
         System.err.println("Polygon of N points : "+N);
+        int max_X = Integer.MIN_VALUE;
         for (int i = 0; i < N; i++) {
             int x = in.nextInt();
             int y = in.nextInt();
             System.err.println((i+1)+": x="+x+"  -  y="+y);
             polygon[i] = new Point(x, y);
+            if(x > max_X)
+                max_X = x;
         }
         int M = in.nextInt();
         
         String[] results = new String[M];
-        GeometryServices gs = new GeometryServices();
+        System.err.println("max_X="+max_X);
+        GeometryServices gs = new GeometryServices(max_X);
         
         System.err.println("Number of shoots : "+M);
         for (int i = 0; i < M; i++) {
@@ -49,8 +53,13 @@ class Solution
     }
 }
 
-class GeometryServices {
-
+class GeometryServices
+{
+    private final int max_X;
+    public GeometryServices(int max_X)
+    {
+        this.max_X = max_X + 1;
+    }
     /**
      * When ALREADY KNOWING that E is on the line (AB)
      * @param a
@@ -59,26 +68,45 @@ class GeometryServices {
      * @return true if e on segment [ab]
      */
     public boolean onSegment(Point a, Point b, Point e) {
-        return (e.getX() <= Math.max(a.getX(), b.getX()) && e.getX() >= Math.min(a.getX(), b.getX()) &&
-                e.getY() <= Math.max(a.getY(), b.getY()) && e.getY() >= Math.min(a.getY(), b.getY())) ? true : false;
+        System.err.println("\t\tonSegment()");
+        
+        boolean colinear = true;
+        boolean betweenX = e.x <= Math.max(a.x, b.x) && e.x >= Math.min(a.x, b.x);
+        boolean betweenY = e.y <= Math.max(a.y, b.y) && e.y >= Math.min(a.y, b.y);
+        System.err.println("\t\tbetweenX="+betweenX+"   betweenY="+betweenY);
+        return colinear && betweenX && betweenY;
     }
 
-    /**
-     * Given the points A, B, E, check if A-->E-->B-->A is clockwise, counter clockwise, or aligned
-     * @param a
-     * @param b
-     * @param e
-     * @return 0 if aligned, 1 if clockwise, -1 if counterclockwise
-     */
-    public int orientation(Point a, Point b, Point e)
-    {
-        System.err.println("\t\t\torientation(a("+a.getX()+","+a.getY()+"),"
-            +"b("+b.getX()+","+b.getY()+"),"
-            +"e("+e.getX()+","+e.getY()+")");
-        int val = (b.getY() - a.getY()) * (e.getX() - b.getX()) - (b.getX() - a.getX()) * (e.getY() - b.getY());
-        System.err.println("\t\t\tval:"+val);
-        return (val == 0) ? 0 : (val > 0) ? 1 : -1;
-    }
+    // To find orientation of ordered triplet  
+    // (p1, p2, p3). The function returns  
+    // following values  
+    // 0 --> p, q and r are colinear 
+    // 1 --> Clockwise 
+    // -1 --> Counterclockwise 
+    public int orientation(Point p1, Point p2, Point p3) 
+    { 
+        // System.err.println("\t\torientation(p1("+p1.x+","+p1.y+"), p2("+p2.x+","+p2.y+"), p3("+p3.x+","+p3.y+"))");
+        // Slope of line segment (p1, p2): σ = (y2 - y1)/(x2 - x1)
+        // Slope of line segment (p2, p3): τ = (y3 - y2)/(x3 - x2)
+        // If  σ > τ, the orientation is clockwise (right turn)
+        
+        // Using above values of σ and τ, we can conclude that, 
+        // the orientation depends on sign of  below expression: 
+        // (y2 - y1)*(x3 - x2) - (y3 - y2)*(x2 - x1)
+        
+        // Can work but risk of dividing by 0 !
+        // int slopeP1toP2 = (p2.y - p1.y) / (p2.x - p1.x);
+        // int slopeP2toP3 = (p3.y - p2.y) / (p3.x - p2.x);
+        // int val = slopeP1toP2 - slopeP2toP3;
+        
+        int val = ((p2.y - p1.y) * (p3.x - p2.x)) - 
+                 ((p2.x - p1.x) * (p3.y - p2.y)); 
+        // System.err.println("\t\tval="+val);
+        if (val == 0) return 0;  // colinear 
+       
+        // clock or counterclock wise 
+        return (val > 0)? 1: -1;  
+    } 
 
     /**
      * Segment AB is intersecting with segment EF ?
@@ -90,11 +118,7 @@ class GeometryServices {
      */
     public boolean doIntersect(Point a, Point b, Point e, Point f)
     {
-        System.err.println("\t\tdoIntersect(a("+a.getX()+","+a.getY()+"),"
-            +"b("+b.getX()+","+b.getY()+"),"
-            +"e("+e.getX()+","+e.getY()+"),"
-            +"f("+f.getX()+","+f.getY()+"),");
-            
+        System.err.println("\tdoIntersect(a("+a.x+","+a.y+"), b("+b.x+","+b.y+"), e("+e.x+","+e.y+"), f("+f.x+","+f.y+"))");
         // if o1 != o2 (ef) intersect (ab) (lines)
         int o1 = orientation(a, b, e);
         int o2 = orientation(a, b, f);
@@ -120,16 +144,17 @@ class GeometryServices {
 
     public boolean isInside(Point polygon[], int n, Point p)
     {
-        System.err.println("isInside(polygon, "+n+" point("+p.getX()+","+p.getY()+"))");
+        System.err.println("isInside(polygon, "+n+" point("+p.x+","+p.y+"))");
         
         // There must be at least 3 vertices in polygon[]
         if (n < 3)  return false;
 
         // Create a point for line segment from p to infinite
-        Point extreme = new Point(Integer.MAX_VALUE, p.getY());
+        Point extreme = new Point(this.max_X, p.y);
 
         // Count intersections of the above line with sides of polygon
         int count = 0, i = 0;
+        boolean trueIfOdd = true;
         do {
             int next = (i+1)%n;
 
@@ -145,35 +170,38 @@ class GeometryServices {
                 {
                     return onSegment(polygon[i], polygon[next], p);
                 }
+                
+                // TODO : handle case where 'e' is exactly at same X or Y 
+                // than a polygon point. 
+                // --> It will Intersect 2 times the polygon limit.
+                if (orientation(p, extreme, polygon[i]) == 0) 
+                {
+                    trueIfOdd = !trueIfOdd; 
+                }
+                
                 count++;
             }
-             System.err.println("\tdoIntersect --> false");
+            System.err.println("\tdoIntersect --> false");
             i = next;
         } while (i != 0);
 
         // Return true if count is odd, false otherwise
-        return count%2 == 1;  // Same as (count%2 == 1)
+        boolean countIsOdd = count%2 == 1;
+        System.err.println("\t countIsOdd="+countIsOdd+"  trueIfOdd="+trueIfOdd);
+        return countIsOdd == trueIfOdd;
     }
 }
 
 class Point 
 {
 
-    private final int x;
+    public final int x;
 
-    private final int y;
+    public final int y;
 
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
     }
 
 }
