@@ -16,24 +16,25 @@ class Solution
 		System.err.println("N: " + N);
 		Map<String, Player> playersFast = new HashMap<>();
 		List<Player> players = new ArrayList<>();
+		if (in.hasNextLine())
+		{
+			String nothing = in.nextLine();
+			System.err.println("nothing: " + nothing);
+		}
 		for (int i = 0; i < N; i++)
 		{
-			if (in.hasNextLine())
-			{
-				in.nextLine();
-			}
 			String name = in.nextLine();
 			System.err.println("name: " + name);
-			Player p = new Player(name);
+			Player p = new Player(name, i);
 			playersFast.put(name, p);
 			players.add(p);
 		}
 
 		Point center = new Point(0, 0);
 		Target target = new Target(center, SIZE);
-		printSquareInfos(target.square);
-		printCircleInfos(target.circle);
-		printSquareInfos(target.diamond);
+		// printSquareInfos(target.square);
+		// printCircleInfos(target.circle);
+		// printSquareInfos(target.diamond);
 
 		int T = in.nextInt();
 		System.err.println("T: " + T);
@@ -77,12 +78,14 @@ class Solution
 
 class Player implements Comparable<Player>
 {
+	public final int order;
 	public final String name;
 	private int score = 0;
 
-	public Player(String name)
+	public Player(String name, int order)
 	{
 		this.name = name;
+		this.order = order;
 	}
 
 	public void addScore(int points)
@@ -99,11 +102,16 @@ class Player implements Comparable<Player>
 	public int compareTo(Player o)
 	{
 		if (this.score < o.score)
-			return -1;
+			return 1;
 		if (this.score > o.score)
+			return -1;
+
+		if (this.order < o.order)
+			return -1;
+		if (this.order > o.order)
 			return 1;
 
-		return this.name.compareTo(o.name);
+		return 0;
 	}
 }
 
@@ -131,7 +139,7 @@ class Target
 
 	public int getScore(Point dart)
 	{
-		System.err.println("Target.getScore...");
+		// System.err.println("Target.getScore...");
 		if (this.diamond.isInside(dart))
 			return 15;
 		if (this.circle.isInside(dart))
@@ -186,7 +194,7 @@ class Circle implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Circle.isInside...");
+		// System.err.println("Circle.isInside...");
 		double r = this.radius * this.radius;
 		double x = Math.pow((p.x - this.center.x), 2);
 		double y = Math.pow((p.y - this.center.y), 2);
@@ -225,7 +233,7 @@ class Polygon implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Polygon.isInside...");
+		// System.err.println("Polygon.isInside...");
 		GeometryServices sh = new GeometryServices(this.max_X);
 		return sh.isInside(this.points, this.numberOfPoints, p);
 	}
@@ -313,7 +321,7 @@ class Square extends Polygon
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Square.isInside...");
+		// System.err.println("Square.isInside...");
 		if (this.angle % 90 == 0)
 		{
 			double minY = Double.MAX_VALUE;
@@ -479,7 +487,7 @@ class GeometryServices
 
 	public boolean isInside(Point polygon[], int n, Point p)
 	{
-		System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
+		// System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
 		// There must be at least 3 vertices in polygon[]
 		if (n < 3)
@@ -533,7 +541,7 @@ class GeometryServices
 
 		// Return true if count is odd, false otherwise
 		boolean countIsOdd = (count % 2 == 1);
-		System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
+		// System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
 		return countIsOdd;
 	}
 
