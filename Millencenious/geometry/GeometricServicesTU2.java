@@ -70,15 +70,115 @@ class GeometricServicesTU2
 		angle = 45;
 		square1 = new Square(center, side, angle);
 		printSquareInfos(square1);
+
+		center = new Point(0, 0);
+		side = 20;
+		square1 = new Square(center, side, 0);
+		printSquareInfos(square1);
+		circle1 = new Circle(center, side / 2);
+		side = 14.142135623730951;
+		Square diamond = new Square(center, side, -45);
+		printSquareInfos(square1);
+		printCircleInfos(circle1);
+		printSquareInfos(diamond);
+		Point p1 = new Point(-10, 10);
+		Point p2 = new Point(-5, -7);
+
+		boolean p1InSquare = square1.isInside(p1);
+		boolean p1InCircle = circle1.isInside(p1);
+		boolean p1InDiamond = diamond.isInside(p1);
+		boolean p2InSquare = square1.isInside(p2);
+		boolean p2InCircle = circle1.isInside(p2);
+		boolean p2InDiamond = diamond.isInside(p2);
+		System.err.println("p1InSquare=" + p1InSquare);
+		System.err.println("p1InCircle=" + p1InCircle);
+		System.err.println("p1InDiamond=" + p1InDiamond);
+		System.err.println("p2InSquare=" + p2InSquare);
+		System.err.println("p2InCircle=" + p2InCircle);
+		System.err.println("p2InDiamond=" + p2InDiamond);
 	}
 
 	private static void printSquareInfos(Square sq)
 	{
+		System.err.println("printSquareInfos...");
 		System.err.println("Center(" + sq.center.x + ", " + sq.center.y + ") side=" + sq.side
 			+ " angle=" + sq.angle);
 		System.err.println("Points :(" + sq.points[0].x + ", " + sq.points[0].y + ")," + "("
 			+ sq.points[1].x + ", " + sq.points[1].y + ")," + "(" + sq.points[2].x + ", "
 			+ sq.points[2].y + ")," + "(" + sq.points[3].x + ", " + sq.points[3].y + ")");
+	}
+
+	private static void printCircleInfos(Circle c)
+	{
+		System.err.println("printCircleInfos...");
+		System.err.println("Center(" + c.center.x + ", " + c.center.y + ") radius=" + c.radius);
+	}
+}
+
+class Player implements Comparable<Player>
+{
+	public final String name;
+	private int score = 0;
+
+	public Player(String name)
+	{
+		this.name = name;
+	}
+
+	public void addScore(int points)
+	{
+		this.score += points;
+	}
+
+	public int getScore()
+	{
+		return this.score;
+	}
+
+	@Override
+	public int compareTo(Player o)
+	{
+		if (this.score < o.score)
+			return -1;
+		if (this.score > o.score)
+			return 1;
+
+		return this.name.compareTo(o.name);
+	}
+}
+
+class Target
+{
+	public final Point center;
+	public final double side;
+
+	public final Square square;
+	public final Circle circle;
+	public final Square diamond;
+
+	public Target(Point p, double side)
+	{
+		this.center = p;
+		this.side = side;
+
+		this.square = new Square(this.center, this.side, 0d);
+		double circleRadius = this.side / 2;
+		this.circle = new Circle(this.center, circleRadius);
+		double diamondSide = Math.sqrt((circleRadius * circleRadius)
+			+ (circleRadius * circleRadius));
+		this.diamond = new Square(this.center, diamondSide, 45);
+	}
+
+	public int getScore(Point dart)
+	{
+		System.err.println("Target.getScore...");
+		if (this.diamond.isInside(dart))
+			return 15;
+		if (this.circle.isInside(dart))
+			return 10;
+		if (this.square.isInside(dart))
+			return 5;
+		return 0;
 	}
 }
 
@@ -126,6 +226,7 @@ class Circle implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Circle.isInside...");
 		double r = this.radius * this.radius;
 		double x = Math.pow((p.x - this.center.x), 2);
 		double y = Math.pow((p.y - this.center.y), 2);
@@ -164,6 +265,7 @@ class Polygon implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Polygon.isInside...");
 		GeometryServices sh = new GeometryServices(this.max_X);
 		return sh.isInside(this.points, this.numberOfPoints, p);
 	}
@@ -245,13 +347,13 @@ class Square extends Polygon
 	 */
 	private double getInclination()
 	{
-		// TODO : can be improved...
 		return GeometryServices.getAngleWithXLine(this.points[0], this.points[1]);
 	}
 
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Square.isInside...");
 		if (this.angle % 90 == 0)
 		{
 			double minY = Double.MAX_VALUE;
@@ -288,6 +390,24 @@ class Point
 		this.x = x;
 		this.y = y;
 	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Point))
+			return false;
+
+		Point p = (Point) obj;
+		return this.x == p.x && this.y == p.y;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return (int) (31 * this.x + 89 * this.y);
+	}
 }
 
 /**
@@ -296,10 +416,18 @@ class Point
 */
 class GeometryServices
 {
-	private final double max_X;
-	public GeometryServices(double max_X)
+	private final double infinite;
+	private final double stepToSwitchInfiniteY;
+
+	public GeometryServices(double maximumCoordinate)
 	{
-		this.max_X = max_X + 1;
+		double tooMuchToBeSafe = Math.round(Math.sqrt(Math.sqrt(Double.MAX_VALUE)));
+		if (maximumCoordinate > tooMuchToBeSafe)
+			throw new IllegalArgumentException(
+				"Max X coordinate is too high, risk of double overflow during calculations.");
+
+		this.infinite = maximumCoordinate * 10;
+		this.stepToSwitchInfiniteY = this.infinite / 5;
 	}
 	/**
 	 * When ALREADY KNOWING that E is on the line (AB)
@@ -359,8 +487,8 @@ class GeometryServices
 	 */
 	public static boolean doIntersect(Point a, Point b, Point e, Point f)
 	{
-		System.err.println("\tdoIntersect(a(" + a.x + "," + a.y + "), b(" + b.x + "," + b.y
-			+ "), e(" + e.x + "," + e.y + "), f(" + f.x + "," + f.y + "))");
+		//		System.err.println("\tdoIntersect(a(" + a.x + "," + a.y + "), b(" + b.x + "," + b.y
+		//			+ "), e(" + e.x + "," + e.y + "), f(" + f.x + "," + f.y + "))");
 		// if o1 != o2 (ef) intersect (ab) (lines)
 		int o1 = orientation(a, b, e);
 		int o2 = orientation(a, b, f);
@@ -391,25 +519,28 @@ class GeometryServices
 
 	public boolean isInside(Point polygon[], int n, Point p)
 	{
-		System.err.println("isInside(polygon, " + n + " point(" + p.x + "," + p.y + "))");
+		System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
 		// There must be at least 3 vertices in polygon[]
 		if (n < 3)
 			return false;
 
-		// Create a point for line segment from p to infinite
-		Point extreme = new Point(this.max_X, p.y);
+		// Create a point for line segment from p to infinite (Infinite in the NE direction).
+		Point pointToInfinite = new Point(this.infinite, this.infinite - this.stepToSwitchInfiniteY);
 
-		// Count intersections of the above line with sides of polygon
+		return this.isInside_core(polygon, n, p, pointToInfinite);
+	}
+
+	private boolean isInside_core(Point[] polygon, int n, Point p, Point pointToInfinite)
+	{
 		int count = 0, i = 0;
-		boolean trueIfOdd = true;
 		do
 		{
 			int next = (i + 1) % n;
 
 			// Check if the line segment from 'p' to 'extreme' intersects
 			// with the line segment from 'polygon[i]' to 'polygon[next]'
-			if (doIntersect(polygon[i], polygon[next], p, extreme))
+			if (doIntersect(polygon[i], polygon[next], p, pointToInfinite))
 			{
 				// System.err.println("\tdoIntersect --> true");
 				// If the point 'p' is colinear with line segment 'i-next',
@@ -420,12 +551,17 @@ class GeometryServices
 					return onSegment(polygon[i], polygon[next], p);
 				}
 
-				// Handle case where 'e' is exactly at same X or Y
-				// than a polygon point.
-				// --> It will Intersect 2 times the polygon limit.
-				if (orientation(p, extreme, polygon[i]) == 0)
+				// Handle when (p extreme) intersecting with polygon
+				// exactly on one of its point.
+				if (orientation(p, pointToInfinite, polygon[i]) == 0)
 				{
-					trueIfOdd = !trueIfOdd;
+					// Intersecting exactly a point of the polygon
+					// can make the loop count useless to assert if the point p
+					// is inside the polygon, we try again with a new infinite point.
+					double newY = pointToInfinite.y - this.stepToSwitchInfiniteY;
+					Point newPointToInfinite = new Point(this.infinite, newY);
+					// Note could be done not recursively (with a higher level loop).
+					return this.isInside_core(polygon, n, p, newPointToInfinite);
 				}
 
 				count++;
@@ -436,9 +572,9 @@ class GeometryServices
 		while (i != 0);
 
 		// Return true if count is odd, false otherwise
-		boolean countIsOdd = count % 2 == 1;
-		// System.err.println("\t countIsOdd="+countIsOdd+"  trueIfOdd="+trueIfOdd);
-		return countIsOdd == trueIfOdd;
+		boolean countIsOdd = (count % 2 == 1);
+		System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
+		return countIsOdd;
 	}
 
 	/**
