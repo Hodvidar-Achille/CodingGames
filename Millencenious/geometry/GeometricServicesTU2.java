@@ -115,73 +115,6 @@ class GeometricServicesTU2
 	}
 }
 
-class Player implements Comparable<Player>
-{
-	public final String name;
-	private int score = 0;
-
-	public Player(String name)
-	{
-		this.name = name;
-	}
-
-	public void addScore(int points)
-	{
-		this.score += points;
-	}
-
-	public int getScore()
-	{
-		return this.score;
-	}
-
-	@Override
-	public int compareTo(Player o)
-	{
-		if (this.score < o.score)
-			return -1;
-		if (this.score > o.score)
-			return 1;
-
-		return this.name.compareTo(o.name);
-	}
-}
-
-class Target
-{
-	public final Point center;
-	public final double side;
-
-	public final Square square;
-	public final Circle circle;
-	public final Square diamond;
-
-	public Target(Point p, double side)
-	{
-		this.center = p;
-		this.side = side;
-
-		this.square = new Square(this.center, this.side, 0d);
-		double circleRadius = this.side / 2;
-		this.circle = new Circle(this.center, circleRadius);
-		double diamondSide = Math.sqrt((circleRadius * circleRadius)
-			+ (circleRadius * circleRadius));
-		this.diamond = new Square(this.center, diamondSide, 45);
-	}
-
-	public int getScore(Point dart)
-	{
-		System.err.println("Target.getScore...");
-		if (this.diamond.isInside(dart))
-			return 15;
-		if (this.circle.isInside(dart))
-			return 10;
-		if (this.square.isInside(dart))
-			return 5;
-		return 0;
-	}
-}
-
 interface GeometricForm
 {
 	boolean isInside(Point p);
@@ -226,7 +159,7 @@ class Circle implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Circle.isInside...");
+		// System.err.println("Circle.isInside...");
 		double r = this.radius * this.radius;
 		double x = Math.pow((p.x - this.center.x), 2);
 		double y = Math.pow((p.y - this.center.y), 2);
@@ -265,7 +198,7 @@ class Polygon implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Polygon.isInside...");
+		// System.err.println("Polygon.isInside...");
 		GeometryServices sh = new GeometryServices(this.max_X);
 		return sh.isInside(this.points, this.numberOfPoints, p);
 	}
@@ -353,7 +286,7 @@ class Square extends Polygon
 	@Override
 	public boolean isInside(Point p)
 	{
-		System.err.println("Square.isInside...");
+		// System.err.println("Square.isInside...");
 		if (this.angle % 90 == 0)
 		{
 			double minY = Double.MAX_VALUE;
@@ -519,7 +452,7 @@ class GeometryServices
 
 	public boolean isInside(Point polygon[], int n, Point p)
 	{
-		System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
+		// System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
 		// There must be at least 3 vertices in polygon[]
 		if (n < 3)
@@ -573,7 +506,7 @@ class GeometryServices
 
 		// Return true if count is odd, false otherwise
 		boolean countIsOdd = (count % 2 == 1);
-		System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
+		// System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
 		return countIsOdd;
 	}
 
@@ -663,7 +596,6 @@ class GeometryServices
 		// Should never meet the 'divided by 0' error.
 		double m1 = (y2 - y1) / (x2 - x1);
 		double m2 = (y3 - y2) / (x3 - x2);
-
 		double center_x = (((m1 * m2) * (y1 - y3)) + (m2 * (x1 + x2)) - (m1 * (x2 + x3)))
 			/ (2 * (m2 - m1));
 		double center_y = ((1 / m1) * (center_x - ((x1 + x2) / 2))) + ((y1 + y2) / 2);
@@ -775,3 +707,4 @@ class GeometryServices
 		return angle;
 	}
 }
+
