@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
@@ -7,12 +9,13 @@ class Solution
 
 	public static void main(String args[])
 	{
-		/*
 		Scanner in = new Scanner(System.in);
 		int SIZE = in.nextInt();
 		System.err.println("SIZE: " + SIZE);
 		int N = in.nextInt();
 		System.err.println("N: " + N);
+		Map<String, Player> playersFast = new HashMap<>();
+		List<Player> players = new ArrayList<>();
 		for (int i = 0; i < N; i++)
 		{
 			if (in.hasNextLine())
@@ -21,9 +24,16 @@ class Solution
 			}
 			String name = in.nextLine();
 			System.err.println("name: " + name);
+			Player p = new Player(name);
+			playersFast.put(name, p);
+			players.add(p);
 		}
 
 		Point center = new Point(0, 0);
+		Target target = new Target(center, SIZE);
+		printSquareInfos(target.square);
+		printCircleInfos(target.circle);
+		printSquareInfos(target.diamond);
 
 		int T = in.nextInt();
 		System.err.println("T: " + T);
@@ -34,59 +44,101 @@ class Solution
 			int throwY = in.nextInt();
 			System.err.println("throwName: " + throwName + " - throwX: " + throwX + " - throwY:"
 				+ throwY);
+			int points = target.getScore(new Point(throwX, throwY));
+			playersFast.get(throwName).addScore(points);
 		}
 
 		// Write an action using System.out.println()
 		// To debug: System.err.println("Debug messages...");
+		// Player list will be sorted because Player impl Comparable.
+		Collections.sort(players);
+		for (Player p : players)
+			System.out.println(p.name + " " + p.getScore());
 
-		System.out.println("answer");
-		*/
+		in.close();
+	}
 
-		// TEST
-		System.out.println("TESTING");
-		// Square in positive number, with side of, middle at (3,3);
-		Point[] square1Points = new Point[4];
-		/*
-		 * | A    B
-		 * |
-		 * |   x
-		 * |
-		 * |_D____C_____
-		 */
-		square1Points[0] = new Point(1, 5);
-		square1Points[1] = new Point(5, 5);
-		square1Points[2] = new Point(5, 1);
-		square1Points[3] = new Point(1, 1);
-		System.out.println("Build square1 from points :");
-		Square square1 = new Square(square1Points);
-		System.out.println("Center( :" + square1.center.x + ", " + square1.center.y + ") side="
-			+ square1.side + " angle=" + square1.angle);
+	private static void printSquareInfos(Square sq)
+	{
+		System.err.println("printSquareInfos...");
+		System.err.println("Center(" + sq.center.x + ", " + sq.center.y + ") side=" + sq.side
+			+ " angle=" + sq.angle);
+		System.err.println("Points :(" + sq.points[0].x + ", " + sq.points[0].y + ")," + "("
+			+ sq.points[1].x + ", " + sq.points[1].y + ")," + "(" + sq.points[2].x + ", "
+			+ sq.points[2].y + ")," + "(" + sq.points[3].x + ", " + sq.points[3].y + ")");
+	}
 
-		System.out.println("Build circle1 from points:");
-		Circle circle1 = new Circle(square1Points[0], square1Points[1], square1Points[2]);
-		System.out.println("Center( :" + circle1.center.x + ", " + circle1.center.y + ") radius="
-			+ circle1.radius);
+	private static void printCircleInfos(Circle c)
+	{
+		System.err.println("printCircleInfos...");
+		System.err.println("Center(" + c.center.x + ", " + c.center.y + ") radius=" + c.radius);
+	}
+}
 
-		// +90°
-		square1Points[3] = new Point(1, 5);
-		square1Points[0] = new Point(5, 5);
-		square1Points[1] = new Point(5, 1);
-		square1Points[2] = new Point(1, 1);
-		System.out.println("Build square2 from points :");
-		square1 = new Square(square1Points);
-		System.out.println("Center( :" + square1.center.x + ", " + square1.center.y + ") side="
-			+ square1.side + " angle=" + square1.angle);
+class Player implements Comparable<Player>
+{
+	public final String name;
+	private int score = 0;
 
-		// Diamond
-		square1Points[0] = new Point(8, 11);
-		square1Points[1] = new Point(11, 8);
-		square1Points[2] = new Point(8, 5);
-		square1Points[3] = new Point(5, 8);
-		System.out.println("Build square3 from points :");
-		square1 = new Square(square1Points);
-		System.out.println("Center( :" + square1.center.x + ", " + square1.center.y + ") side="
-			+ square1.side + " angle=" + square1.angle);
+	public Player(String name)
+	{
+		this.name = name;
+	}
 
+	public void addScore(int points)
+	{
+		this.score += points;
+	}
+
+	public int getScore()
+	{
+		return this.score;
+	}
+
+	@Override
+	public int compareTo(Player o)
+	{
+		if (this.score < o.score)
+			return -1;
+		if (this.score > o.score)
+			return 1;
+
+		return this.name.compareTo(o.name);
+	}
+}
+
+class Target
+{
+	public final Point center;
+	public final double side;
+
+	public final Square square;
+	public final Circle circle;
+	public final Square diamond;
+
+	public Target(Point p, double side)
+	{
+		this.center = p;
+		this.side = side;
+
+		this.square = new Square(this.center, this.side, 0d);
+		double circleRadius = this.side / 2;
+		this.circle = new Circle(this.center, circleRadius);
+		double diamondSide = Math.sqrt((circleRadius * circleRadius)
+			+ (circleRadius * circleRadius));
+		this.diamond = new Square(this.center, diamondSide, 45);
+	}
+
+	public int getScore(Point dart)
+	{
+		System.err.println("Target.getScore...");
+		if (this.diamond.isInside(dart))
+			return 15;
+		if (this.circle.isInside(dart))
+			return 10;
+		if (this.square.isInside(dart))
+			return 5;
+		return 0;
 	}
 }
 
@@ -95,9 +147,6 @@ interface GeometricForm
 	boolean isInside(Point p);
 }
 
-/**
-*   By Hodvidar.
-*/
 class Circle implements GeometricForm
 {
 	/**
@@ -137,6 +186,7 @@ class Circle implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Circle.isInside...");
 		double r = this.radius * this.radius;
 		double x = Math.pow((p.x - this.center.x), 2);
 		double y = Math.pow((p.y - this.center.y), 2);
@@ -175,6 +225,7 @@ class Polygon implements GeometricForm
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Polygon.isInside...");
 		GeometryServices sh = new GeometryServices(this.max_X);
 		return sh.isInside(this.points, this.numberOfPoints, p);
 	}
@@ -189,8 +240,8 @@ class Square extends Polygon
 	public final double side;
 
 	/**
-	 * In degrees°, angle form by the square top point (North, p.y max).
-	 * Should be between 0° (include) and 90° (exclude), but can be different.
+	 * In degrees°, inclination of the square given by the first 2 points
+	 * and the X axe. (Clockwise).
 	 */
 	public final double angle;
 
@@ -222,7 +273,6 @@ class Square extends Polygon
 
 	private boolean checkPoints(Point[] points)
 	{
-		System.out.println("checkPoints...");
 		double segmentLength = 0;
 		int i = 0;
 		boolean first = true;
@@ -234,7 +284,6 @@ class Square extends Polygon
 			if (first)
 			{
 				segmentLength = GeometryServices.getDistance(points[i], points[next]);
-				System.out.println("segmentLength=" + segmentLength);
 			}
 			else
 			{
@@ -254,16 +303,17 @@ class Square extends Polygon
 	}
 
 	/**
-	 * Given by the first point of points and the center;
+	 * Given by the first 2 points.
 	 */
 	private double getInclination()
 	{
-		return GeometryServices.getAngleWithXLine(this.center, this.points[0]);
+		return GeometryServices.getAngleWithXLine(this.points[0], this.points[1]);
 	}
 
 	@Override
 	public boolean isInside(Point p)
 	{
+		System.err.println("Square.isInside...");
 		if (this.angle % 90 == 0)
 		{
 			double minY = Double.MAX_VALUE;
@@ -300,6 +350,24 @@ class Point
 		this.x = x;
 		this.y = y;
 	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Point))
+			return false;
+
+		Point p = (Point) obj;
+		return this.x == p.x && this.y == p.y;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return (int) (31 * this.x + 89 * this.y);
+	}
 }
 
 /**
@@ -308,10 +376,18 @@ class Point
 */
 class GeometryServices
 {
-	private final double max_X;
-	public GeometryServices(double max_X)
+	private final double infinite;
+	private final double stepToSwitchInfiniteY;
+
+	public GeometryServices(double maximumCoordinate)
 	{
-		this.max_X = max_X + 1;
+		double tooMuchToBeSafe = Math.round(Math.sqrt(Math.sqrt(Double.MAX_VALUE)));
+		if (maximumCoordinate > tooMuchToBeSafe)
+			throw new IllegalArgumentException(
+				"Max X coordinate is too high, risk of double overflow during calculations.");
+
+		this.infinite = maximumCoordinate * 10;
+		this.stepToSwitchInfiniteY = this.infinite / 5;
 	}
 	/**
 	 * When ALREADY KNOWING that E is on the line (AB)
@@ -371,8 +447,8 @@ class GeometryServices
 	 */
 	public static boolean doIntersect(Point a, Point b, Point e, Point f)
 	{
-		System.err.println("\tdoIntersect(a(" + a.x + "," + a.y + "), b(" + b.x + "," + b.y
-			+ "), e(" + e.x + "," + e.y + "), f(" + f.x + "," + f.y + "))");
+		//		System.err.println("\tdoIntersect(a(" + a.x + "," + a.y + "), b(" + b.x + "," + b.y
+		//			+ "), e(" + e.x + "," + e.y + "), f(" + f.x + "," + f.y + "))");
 		// if o1 != o2 (ef) intersect (ab) (lines)
 		int o1 = orientation(a, b, e);
 		int o2 = orientation(a, b, f);
@@ -403,25 +479,28 @@ class GeometryServices
 
 	public boolean isInside(Point polygon[], int n, Point p)
 	{
-		System.err.println("isInside(polygon, " + n + " point(" + p.x + "," + p.y + "))");
+		System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
 		// There must be at least 3 vertices in polygon[]
 		if (n < 3)
 			return false;
 
-		// Create a point for line segment from p to infinite
-		Point extreme = new Point(this.max_X, p.y);
+		// Create a point for line segment from p to infinite (Infinite in the NE direction).
+		Point pointToInfinite = new Point(this.infinite, this.infinite - this.stepToSwitchInfiniteY);
 
-		// Count intersections of the above line with sides of polygon
+		return this.isInside_core(polygon, n, p, pointToInfinite);
+	}
+
+	private boolean isInside_core(Point[] polygon, int n, Point p, Point pointToInfinite)
+	{
 		int count = 0, i = 0;
-		boolean trueIfOdd = true;
 		do
 		{
 			int next = (i + 1) % n;
 
 			// Check if the line segment from 'p' to 'extreme' intersects
 			// with the line segment from 'polygon[i]' to 'polygon[next]'
-			if (doIntersect(polygon[i], polygon[next], p, extreme))
+			if (doIntersect(polygon[i], polygon[next], p, pointToInfinite))
 			{
 				// System.err.println("\tdoIntersect --> true");
 				// If the point 'p' is colinear with line segment 'i-next',
@@ -432,12 +511,17 @@ class GeometryServices
 					return onSegment(polygon[i], polygon[next], p);
 				}
 
-				// Handle case where 'e' is exactly at same X or Y
-				// than a polygon point.
-				// --> It will Intersect 2 times the polygon limit.
-				if (orientation(p, extreme, polygon[i]) == 0)
+				// Handle when (p extreme) intersecting with polygon
+				// exactly on one of its point.
+				if (orientation(p, pointToInfinite, polygon[i]) == 0)
 				{
-					trueIfOdd = !trueIfOdd;
+					// Intersecting exactly a point of the polygon
+					// can make the loop count useless to assert if the point p
+					// is inside the polygon, we try again with a new infinite point.
+					double newY = pointToInfinite.y - this.stepToSwitchInfiniteY;
+					Point newPointToInfinite = new Point(this.infinite, newY);
+					// Note could be done not recursively (with a higher level loop).
+					return this.isInside_core(polygon, n, p, newPointToInfinite);
 				}
 
 				count++;
@@ -448,9 +532,9 @@ class GeometryServices
 		while (i != 0);
 
 		// Return true if count is odd, false otherwise
-		boolean countIsOdd = count % 2 == 1;
-		// System.err.println("\t countIsOdd="+countIsOdd+"  trueIfOdd="+trueIfOdd);
-		return countIsOdd == trueIfOdd;
+		boolean countIsOdd = (count % 2 == 1);
+		System.err.println("\t count=" + count + " - countIsOdd=" + countIsOdd);
+		return countIsOdd;
 	}
 
 	/**
@@ -461,9 +545,13 @@ class GeometryServices
 	{
 		double angleRad = Math.toRadians(angle);
 
-		double x = start.x + Math.cos(angleRad);
-		double y = start.y + Math.sin(angleRad);
+		double cos = Math.cos(angleRad);
+		double x = start.x + cos * distance;
+		double sin = Math.sin(angleRad);
+		double y = start.y + sin * distance;
 
+		x = Math.round(x);
+		y = Math.round(y);
 		return new Point(x, y);
 	}
 
@@ -530,16 +618,61 @@ class GeometryServices
 			y3 = p2.y;
 		}
 
+		/*
 		// 3) Find the center point from the intersection of the 2 perpendicular bisectors.
 		// Should never meet the 'divided by 0' error.
 		double m1 = (y2 - y1) / (x2 - x1);
 		double m2 = (y3 - y2) / (x3 - x2);
-
 		double center_x = (((m1 * m2) * (y1 - y3)) + (m2 * (x1 + x2)) - (m1 * (x2 + x3)))
 			/ (2 * (m2 - m1));
 		double center_y = ((1 / m1) * (center_x - ((x1 + x2) / 2))) + ((y1 + y2) / 2);
 		if (isNaN(center_y))
 			center_y = ((1 / m2) * (center_x - ((x2 + x3) / 2))) + ((y2 + y3) / 2);
+		// XXX Fails sometimes...
+		*/
+
+		// ----------- TRY another method ------------------
+		// https://www.geeksforgeeks.org/equation-of-circle-when-three-points-on-the-circle-are-given/
+		double x12 = x1 - x2;
+		double x13 = x1 - x3;
+
+		double y12 = y1 - y2;
+		double y13 = y1 - y3;
+
+		double y31 = y3 - y1;
+		double y21 = y2 - y1;
+
+		double x31 = x3 - x1;
+		double x21 = x2 - x1;
+
+		// x1^2 - x3^2
+		double sx13 = Math.pow(x1, 2) - Math.pow(x3, 2);
+
+		// y1^2 - y3^2
+		double sy13 = Math.pow(y1, 2) - Math.pow(y3, 2);
+
+		double sx21 = Math.pow(x2, 2) - Math.pow(x1, 2);
+
+		double sy21 = Math.pow(y2, 2) - Math.pow(y1, 2);
+
+		double f = ((sx13) * (x12) + (sy13) * (x12) + (sx21) * (x13) + (sy21) * (x13))
+			/ (2 * ((y31) * (x12) - (y21) * (x13)));
+		double g = ((sx13) * (y12) + (sy13) * (y12) + (sx21) * (y13) + (sy21) * (y13))
+			/ (2 * ((x31) * (y12) - (x21) * (y13)));
+
+		double center_x = -g;
+		double center_y = -f;
+
+		//		double c = -Math.pow(x1, 2) - Math.pow(y1, 2) - 2 * g * x1 - 2 * f * y1;
+		//		//		 eqn of circle be x^2 + y^2 + 2*g*x + 2*f*y + c = 0
+		//		//		 where centre is (h = -g, k = -f) and radius r
+		//		//		 as r^2 = h^2 + k^2 - c
+		//		double sqr_of_r = center_x * center_x + center_y * center_y - c;
+		//
+		//		// r is the radius
+		//		double r = Math.sqrt(sqr_of_r);
+		//
+		// ----------------------------------------------------
 
 		return new Point(center_x, center_y);
 	}
@@ -559,10 +692,10 @@ class GeometryServices
 		double halfSideSq = halfSide * halfSide;
 		double radius = Math.sqrt(halfSideSq + halfSideSq);
 		Point[] points = new Point[4];
-		points[0] = GeometryServices.createPoint(center, radius, angle - 45);
+		points[0] = GeometryServices.createPoint(center, radius, angle + 135);
 		points[1] = GeometryServices.createPoint(center, radius, angle + 45);
-		points[2] = GeometryServices.createPoint(center, radius, angle + 135);
-		points[3] = GeometryServices.createPoint(center, radius, angle + 225);
+		points[2] = GeometryServices.createPoint(center, radius, angle - 45);
+		points[3] = GeometryServices.createPoint(center, radius, angle - 135);
 		return points;
 	}
 
@@ -571,7 +704,7 @@ class GeometryServices
 	 */
 	public static double getAngleWithXLine(Point p1, Point p2)
 	{
-		Point pX = new Point(p1.x * 2, p1.y);
+		Point pX = new Point(p1.x + 100, p1.y);
 		return getAngle(p1, p2, pX);
 	}
 
@@ -579,22 +712,25 @@ class GeometryServices
 	 * Angle formed by (p1 p2) and (p1 p3)
 	 *
 	 * Théorème du cosinus :
-	 * 		p1_p3^2 = p1_p2^2 + p2_p3^2 - 2*p1_p2*p2_p3*cos(angle);
+	 * 		oppose^2 = adjacent1^2 + adjacent2^2 - 2*adjacent1*p2_p3*adjacent2(angle);
 	 * <-->
-	 * 		cos(angle) = ( (p1_p2^2 + p2_p3^2) - (p1_p3^2) ) / ( 2*p1_p2*p2_p3 );
+	 * 		cos(angle) = ( (adjacent1^2 + adjacent2^2) - (oppose^2) ) / ( 2*adjacent1*adjacent2 );
 	 * <-->
-	 * 		angle = arccors( ( (p1_p2^2 + p2_p3^2) - (p1_p3^2) ) / ( 2*p1_p2*p2_p3 ) );
+	 * 		angle = arccors( ( (adjacent1^2 + adjacent2^2) - (oppose^2) ) / ( 2*adjacent1*adjacent2 ) );
 	 */
 	public static double getAngle(Point p1, Point p2, Point p3)
 	{
-		double p1_p2 = getDistance(p1, p2);
-		double p2_p3 = getDistance(p2, p3);
-		double p1_p3 = getDistance(p1, p3);
-		double p1_p2Sq = Math.round(p1_p2 * p1_p2);
-		double p2_p3Sq = Math.round(p2_p3 * p2_p3);
-		double p1_p3Sq = Math.round(p1_p3 * p1_p3);
-		double cos = Math.round((p1_p2Sq + p2_p3Sq - p1_p3Sq) / (2 * p2_p3 * p1_p3));
+		double adjacent1 = getDistance(p1, p2);
+		double adjacent2 = getDistance(p1, p3);
+		double oppose = getDistance(p2, p3);
+		double adjacent1Sq = Math.round(adjacent1 * adjacent1);
+		double adjacent2Sq = Math.round(adjacent2 * adjacent2);
+		double opposeSq = Math.round(oppose * oppose);
+		double nominator = (adjacent1Sq + adjacent2Sq - opposeSq);
+		double denominator = (2 * adjacent1 * adjacent2);
+		double cos = nominator / denominator;
 		double angle = Math.toDegrees(Math.acos(cos));
+		angle = Math.round(angle);
 		return angle;
 	}
 }
