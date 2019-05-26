@@ -86,8 +86,6 @@ class Tag
 
 class TagHolder extends Tag
 {
-    private final Set<Character> letters = new HashSet<>();
-    
     public TagHolder()
     {
         super('_', null);
