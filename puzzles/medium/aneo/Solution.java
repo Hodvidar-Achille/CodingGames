@@ -27,7 +27,7 @@ import java.math.*;
 
 /**
  *      https://www.codingame.com/ide/puzzle/aneo
- * by Hodvidar. (TODO : finish, not all cases work...)
+ * by Hodvidar. (TODO : finish)
  **/
 class Solution
 {
@@ -309,7 +309,7 @@ class SpeedCalculator
 
 	public SpeedCalculator(int maximumSpeed)
 	{
-		System.err.println("NEW SpeedCalculator with max speed: " + maximumSpeed);
+		System.err.println("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
 		this.max = getSpeedInMeterPerSecond(maximumSpeed);
 		Interval firstInterval = new Interval(this.min, this.max);
 		this.possibleSpeeds.add(firstInterval);
