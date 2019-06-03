@@ -27,32 +27,16 @@ import java.math.*;
 
 /**
  *      https://www.codingame.com/ide/puzzle/aneo
- * by Hodvidar. (TODO : finish)
+ * by Hodvidar. (TODO : finish, not all cases work...)
  **/
 class Solution
 {
-	// Autoroute Allemenande :
-	//	private static final int maxSpeed = 200;
-	//	private static final int lightCount = 6;
-	//
-	//	private static final int[] distances = new int[] { 1000, 3000, 4000, 5000, 6000, 7000 };
-	//	private static final int[] durations = new int[] { 15, 10, 30, 30, 5, 10 };
-
-	// Route de campagne tranquille
-	private static final int maxSpeed = 90;
-	private static final int lightCount = 3;
-
-	private static final int[] distances = new int[] { 300, 1500, 3000 };
-	private static final int[] durations = new int[] { 30, 30, 30 };
 
 	public static void main(String args[])
 	{
 		Scanner in = new Scanner(System.in);
-		// int speed = in.nextInt();
-		// int lightCount = in.nextInt();
-
-		int speed = Solution.maxSpeed;
-		int lightCount = Solution.lightCount;
+		int speed = in.nextInt();
+		int lightCount = in.nextInt();
 
 		System.err.println("speed=" + speed);
 		System.err.println("lightCount=" + lightCount);
@@ -61,10 +45,8 @@ class Solution
 		int previousDistance = 0;
 		for (int i = 0; i < lightCount; i++)
 		{
-			// int distance = in.nextInt();
-			// int duration = in.nextInt();
-			int distance = distances[i];
-			int duration = durations[i];
+			int distance = in.nextInt();
+			int duration = in.nextInt();
 			System.err.println("distance=" + distance);
 			System.err.println("duration= " + duration);
 			int diffDistance = distance - previousDistance;
@@ -403,7 +385,7 @@ class SpeedCalculator
 
 			Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass);
 			System.err.println("Possible speed km/h : " + speedInterval.toString() + " to travel "
-				+ distance + " meters in between "
+				+ distance + " meters between "
 				+ this.roundTo2Decimals((minDuration - durationIncrement)) + " and "
 				+ this.roundTo2Decimals((duration - LIMIT - durationIncrement)) + " seconds.");
 			// Check if empty ?
