@@ -357,8 +357,12 @@ class SpeedCalculator
 		double minDuration = 0d;
 		while (true)
 		{
-			minSpeedToPass = distance / (duration - LIMIT);
+			minSpeedToPass = distance / (duration - LIMIT); // Try without the LIMIT ?
 			maxSpeedToPass = distance / minDuration;
+			
+			double cappedMinSpeedToPass = Math.max(minSpeedToPass, this.min);
+			double cappedMaxSpeedToPass = Math.min(maxSpeedToPass, this.max);
+			
 			if (maxSpeedToPass < this.min)
 				break;
 
@@ -412,5 +416,10 @@ class SpeedCalculator
 	{
 		return Math.round(number * 100.0) / 100.0;
 	}
-
+	
+	// Should we use this ?
+	private double roundTo10Decimals(double number)
+	{
+		return Math.round(number * 10000000000.0) / 10000000000.0;
+	}
 }
