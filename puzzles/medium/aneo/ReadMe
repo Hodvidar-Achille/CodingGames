@@ -2,4 +2,4 @@ My solution in JAVA pass 9 tests on 10, but maximum 5/10 in the coding game subm
 
 The rounding inaccuracy in Java may be a reason of the failures.
 
-I will be a good idea to try the same algorithm with Python.
+I will be a good idea to try the same algorithm with Python or in Java but with BigDecimal instead of Double.
