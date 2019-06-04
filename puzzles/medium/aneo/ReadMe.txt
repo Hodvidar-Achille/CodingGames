@@ -1,0 +1,5 @@
+My solution in JAVA pass 9 tests on 10, but maximum 5 on ten in the coding game submittion's solution.
+
+The rounding inaccuracy in Java may be a reason of the failures.
+
+I will be a good idea to try the same algorithm with Python.
