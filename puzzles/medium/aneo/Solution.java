@@ -85,23 +85,25 @@ enum JeuxDeTest {
  **/
 class Solution
 {
+	// ---- 9/10 tests OK for : 5 to 10 / 0.001 / 0.001 ----
+	
 	/**
 	 * /!\ Can't be more than 15 /!\ <br/>
 	 * Note : there is double floating point inaccuracy.
 	 */
-	public static final int DECIMAL_ACCURACY = 3;
+	public static final int DECIMAL_ACCURACY = 10;
 
 	/**
 	 * Minimum interval between minimum speed and maximum speed that will be considered. <br/>
 	 * (m/s).
 	 */
-	public static final double MINIMUM_INTERVAL = -1;
+	public static final double MINIMUM_INTERVAL = 0.001;
 
 	/**
 	 * Minimum time the car is allow to pass the green light before the red. <br/>
 	 * (second).
 	 */
-	public static final double MINIMUM_TIME = 0.0;
+	public static final double MINIMUM_TIME = 0.001;
 
 	private static final boolean TESTING = true;
 	private static final boolean VERBOSE = false;
