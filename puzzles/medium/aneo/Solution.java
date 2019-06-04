@@ -81,10 +81,31 @@ enum JeuxDeTest {
 
 /**
  *      https://www.codingame.com/ide/puzzle/aneo
- * by Hodvidar. (TODO : finish, only 50% of tests pass, because of rounding error...)
+ * by Hodvidar. (To finish, only 50% of tests pass, because of rounding error...)
  **/
 class Solution
 {
+	/**
+	 * /!\ Can't be more than 15 /!\ <br/>
+	 * Note : there is double floating point inaccuracy.
+	 */
+	public static final int DECIMAL_ACCURACY = 3;
+
+	/**
+	 * Minimum interval between minimum speed and maximum speed that will be considered. <br/>
+	 * (m/s).
+	 */
+	public static final double MINIMUM_INTERVAL = -1;
+
+	/**
+	 * Minimum time the car is allow to pass the green light before the red. <br/>
+	 * (second).
+	 */
+	public static final double MINIMUM_TIME = 0.0;
+
+	private static final boolean TESTING = true;
+	private static final boolean VERBOSE = false;
+
 	private static final JeuxDeTest[] tests = new JeuxDeTest[] { JeuxDeTest.FeuDuVillage,
 			JeuxDeTest.FeuDuVillage2, JeuxDeTest.RouteDeCampagneTranquille,
 			JeuxDeTest.RouteDeCampagneMoinsTranquille,
@@ -92,11 +113,11 @@ class Solution
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	private static final boolean TESTING = true;
-	private static final boolean VERBOSE = false;
-
 	public static void main(String args[])
 	{
+		System.err.println("Solution for: \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
+			+ " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL + "\n -MINIMUM_TIME=" + MINIMUM_TIME);
+
 		if (!TESTING)
 			doSolution();
 		else
@@ -105,13 +126,12 @@ class Solution
 				doSolution(test);
 		}
 	}
-
 	private static void doSolution(JeuxDeTest jeuDeTest)
 	{
 		int speed = jeuDeTest.speed;
 		int lightCount = jeuDeTest.lightCount;
 
-		System.err.println("----------- Test '" + jeuDeTest + "' -----------");
+		Solution.printIfVerbose("----------- Test '" + jeuDeTest + "' -----------");
 
 		printIfVerbose("speed=" + speed);
 		printIfVerbose("lightCount=" + lightCount);
@@ -131,16 +151,17 @@ class Solution
 		int expected = jeuDeTest.result;
 		int actual = calculator.getMaxSpeed();
 
-		System.err.println("Final result expected : " + expected);
-		System.err.println("Final result actual : " + actual);
+		Solution.printIfVerbose("Final result expected : " + expected);
+		Solution.printIfVerbose("Final result actual : " + actual);
 
 		if (actual != expected)
-			System.err.println("\n\t\t JeuxDeTest '" + jeuDeTest + "' --> FAILURE \n");
+			System.err.println("JeuxDeTest '" + jeuDeTest + " expected=" + expected + " actual="
+				+ actual + " --> FAILURE");
 		else
-			System.err.println("\n\t\t JeuxDeTest '" + jeuDeTest + "' --> SUCCESS \n");
+			Solution.printIfVerbose("JeuxDeTest '" + jeuDeTest + "' expected=" + expected
+				+ " actual=" + actual + " -->  SUCCESS");
 	}
-	
-	private static void printIfVerbose(String s)
+	public static void printIfVerbose(String s)
 	{
 		if (VERBOSE)
 			System.err.println(s);
@@ -341,7 +362,7 @@ class IntervalHandler
 		List<Interval> intervals_1,
 		List<Interval> intervals_2)
 	{
-		//		System.err.println("getIntervalIntersections...");
+		Solution.printIfVerbose("getIntervalIntersections...");
 		if (intervals_1.isEmpty() || intervals_2.isEmpty())
 			return Collections.EMPTY_LIST;
 
@@ -363,9 +384,9 @@ class IntervalHandler
 				if (i2.max < i1.min)
 					continue;
 				Interval intersection = getIntervalIntersection(i1, i2);
-				// if (!intersection.isEmpty())
-				//				System.err.println("i1" + i1.toString() + " \u2229 i2" + i2.toString() + " --> "
-				//					+ intersection.toString());
+				if (!intersection.isEmpty())
+					Solution.printIfVerbose("i1" + i1.toString() + " \u2229 i2" + i2.toString()
+						+ " --> " + intersection.toString());
 				intersectionCollector.add(intersection);
 			}
 		}
@@ -373,14 +394,14 @@ class IntervalHandler
 		Collections.sort(intersectionCollector);
 		return intersectionCollector;
 	}
+
 	/**
-	 * TODO : to implement;
+	 * to implement;
 	 */
 	public static List<Interval> getIntervalUnions(
 		List<Interval> intervals_1,
 		List<Interval> intervals_2)
 	{
-		// TODO
 		return Collections.EMPTY_LIST;
 	}
 
@@ -424,13 +445,11 @@ class SpeedCalculator
 	 */
 	public final double max;
 
-	private static final double LIMIT = 1;
-
 	private List<Interval> possibleSpeeds = new ArrayList<>();
 
 	public SpeedCalculator(int maximumSpeed)
 	{
-		//		System.err.println("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
+		Solution.printIfVerbose("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
 		this.max = getSpeedInMeterPerSecond(maximumSpeed);
 		Interval firstInterval = new Interval(this.min, this.max);
 		this.possibleSpeeds.add(firstInterval);
@@ -453,8 +472,8 @@ class SpeedCalculator
 	 */
 	public void addRoadSegment(RoadSegment aRoadSegment)
 	{
-		//		System.err.println("addRoadSegment(" + aRoadSegment.distance + ", " + aRoadSegment.duration
-		//			+ ")");
+		Solution.printIfVerbose("addRoadSegment(" + aRoadSegment.distance + ", "
+			+ aRoadSegment.duration + ")");
 		// This could probably be optimized.
 		// 1) finds intervals possibles for this segment
 		List<Interval> newPossibleSpeeds = this.getIntervalsForRoadSegment(aRoadSegment);
@@ -463,10 +482,9 @@ class SpeedCalculator
 			this.possibleSpeeds,
 			newPossibleSpeeds);
 	}
-
 	private List<Interval> getIntervalsForRoadSegment(RoadSegment aRoadSegment)
 	{
-		//		System.err.println("getIntervalsForRoadSegment...");
+		Solution.printIfVerbose("getIntervalsForRoadSegment...");
 		// Start to look for possible speeds from the max speed to the minimum speed;
 		double distance = aRoadSegment.distance;
 		double duration = aRoadSegment.duration;
@@ -476,9 +494,10 @@ class SpeedCalculator
 		double minSpeedToPass = 0d;
 		double maxSpeedToPass = 0d;
 		double minDuration = 0d;
+		Interval previousInterval = null;
 		while (true)
 		{
-			minSpeedToPass = distance / (duration);
+			minSpeedToPass = distance / (duration - Solution.MINIMUM_TIME);
 			maxSpeedToPass = distance / minDuration;
 
 			minSpeedToPass = roundForAneonTest(minSpeedToPass);
@@ -496,24 +515,36 @@ class SpeedCalculator
 			// Ignore case where minimum speed is already too high.
 			if (cappedMinSpeedToPass > cappedMaxSpeedToPass)
 			{
-				//				Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
-				//				System.err.println("Discard illegal speed km/h : " + speedInterval.toString()
-				//					+ " to travel " + distance + " meters in less than "
-				//					+ this.roundTo2Decimals((duration - LIMIT - durationIncrement)) + " seconds.");
+				Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
+				Solution.printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
+					+ " to travel " + distance + " meters in less than "
+					+ this.roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
+					+ " seconds.");
 				continue;
 			}
 
 			// Check if interval is too narrow to be achieved.
+			double interval = cappedMaxSpeedToPass - cappedMinSpeedToPass;
+			if (interval < Solution.MINIMUM_INTERVAL)
+				break;
+			// In case we do not have interval check, stop at 0.
 			if (cappedMinSpeedToPass == 0 && cappedMaxSpeedToPass == 0)
 				break;
 
 			Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass);
-			//			System.err.println("Possible speed km/h : " + speedInterval.toString() + " to travel "
-			//				+ distance + " meters between "
-			//				+ this.roundTo2Decimals((minDuration - durationIncrement)) + " and "
-			//				+ this.roundTo2Decimals((duration - LIMIT - durationIncrement)) + " seconds.");
+
+			// Ignore identical results (but should this happen ?).
+			if (speedInterval.equals(previousInterval))
+				continue;
+
+			Solution.printIfVerbose("Possible speed km/h : " + speedInterval.toString()
+				+ " to travel " + distance + " meters between "
+				+ this.roundTo2Decimals((minDuration - durationIncrement)) + " and "
+				+ this.roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
+				+ " seconds.");
 			// Check if empty ?
 			speedIntervalCollector.add(speedInterval);
+			previousInterval = speedInterval;
 		}
 
 		Collections.sort(speedIntervalCollector);
@@ -523,16 +554,30 @@ class SpeedCalculator
 	// ---- Converting methods ----
 	public static double getSpeedInMeterPerSecond(int speedInKmPerHour)
 	{
+		// * (5/18)
 		return roundForAneonTest(((speedInKmPerHour) / 3.6d));
 	}
 
 	public static int getSpeedInKmPerHour(double speedInMeterPersecond)
 	{
-		return (int) Math.round(((speedInMeterPersecond) * 3.6d));
+		// * (18 / 5)
+		return (int) roundForAneonTest((speedInMeterPersecond) * 3.6d);
+	}
+
+	public static double getSpeedInMeterPerHour(int speedInKmPerHour)
+	{
+		// * 10000
+		return speedInKmPerHour * 1000.0;
+	}
+
+	public static double getSpeedInKmPerHour(int speedInMeterPerHour)
+	{
+		// / by 3600 seconds
+		return roundForAneonTest(speedInMeterPerHour / 3600.0);
 	}
 
 	// ---- Rounding methods ----
-	private static double roundTo2Decimals(double number)
+	public static double roundTo2Decimals(double number)
 	{
 		return roundToXDecimals(number, 2);
 	}
@@ -551,7 +596,6 @@ class SpeedCalculator
 
 	public static double roundForAneonTest(double x)
 	{
-		return roundToXDecimals(x, 2);
+		return roundToXDecimals(x, Solution.DECIMAL_ACCURACY);
 	}
-
 }
