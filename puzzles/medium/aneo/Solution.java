@@ -86,7 +86,7 @@ enum JeuxDeTest {
 class Solution
 {
 	// ---- 9/10 tests OK for : 5 to 10 / 0.001 / 0.001 ----
-	
+
 	/**
 	 * /!\ Can't be more than 15 /!\ <br/>
 	 * Note : there is double floating point inaccuracy.
@@ -366,7 +366,7 @@ class IntervalHandler
 	{
 		Solution.printIfVerbose("getIntervalIntersections...");
 		if (intervals_1.isEmpty() || intervals_2.isEmpty())
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 
 		List<Interval> intersectionCollector = new ArrayList<>();
 
@@ -404,7 +404,7 @@ class IntervalHandler
 		List<Interval> intervals_1,
 		List<Interval> intervals_2)
 	{
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -465,7 +465,7 @@ class SpeedCalculator
 			return 0;
 		Interval higherInterval = this.possibleSpeeds.get(this.possibleSpeeds.size() - 1);
 		double maxSpeedInMeterPerSecond = higherInterval.max;
-		int maxSpeedInKmPerHour = this.getSpeedInKmPerHour(maxSpeedInMeterPerSecond);
+		int maxSpeedInKmPerHour = getSpeedInKmPerHour(maxSpeedInMeterPerSecond);
 		return maxSpeedInKmPerHour;
 	}
 
@@ -520,7 +520,7 @@ class SpeedCalculator
 				Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
 				Solution.printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
 					+ " to travel " + distance + " meters in less than "
-					+ this.roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
+					+ roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
 					+ " seconds.");
 				continue;
 			}
@@ -541,8 +541,8 @@ class SpeedCalculator
 
 			Solution.printIfVerbose("Possible speed km/h : " + speedInterval.toString()
 				+ " to travel " + distance + " meters between "
-				+ this.roundTo2Decimals((minDuration - durationIncrement)) + " and "
-				+ this.roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
+				+ roundTo2Decimals((minDuration - durationIncrement)) + " and "
+				+ roundTo2Decimals((duration - Solution.MINIMUM_TIME - durationIncrement))
 				+ " seconds.");
 			// Check if empty ?
 			speedIntervalCollector.add(speedInterval);
