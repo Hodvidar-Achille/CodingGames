@@ -1,4 +1,3 @@
-
 /*
 Vous entrez sur une portion de route et vous comptez vous reposer entièrement sur votre régulateur de vitesse pour traverser la zone sans devoir vous arrêter ni ralentir.
 
@@ -93,7 +92,8 @@ class Solution
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	private static final boolean TESTING = false;
+	private static final boolean TESTING = true;
+	private static final boolean VERBOSE = false;
 
 	public static void main(String args[])
 	{
@@ -113,19 +113,19 @@ class Solution
 
 		System.err.println("----------- Test '" + jeuDeTest + "' -----------");
 
-		System.err.println("speed=" + speed);
-		System.err.println("lightCount=" + lightCount);
+		printIfVerbose("speed=" + speed);
+		printIfVerbose("lightCount=" + lightCount);
 
 		SpeedCalculator calculator = new SpeedCalculator(speed);
 		for (int i = 0; i < lightCount; i++)
 		{
 			int distance = jeuDeTest.distances[i];
 			int duration = jeuDeTest.durations[i];
-			System.err.println("distance=" + distance);
-			System.err.println("duration= " + duration);
+			printIfVerbose("distance=" + distance);
+			printIfVerbose("duration= " + duration);
 			RoadSegment segment = new RoadSegment(distance, duration);
 			calculator.addRoadSegment(segment);
-			System.err.println("Possible max speed = " + calculator.getMaxSpeed());
+			printIfVerbose("Possible max speed = " + calculator.getMaxSpeed());
 		}
 
 		int expected = jeuDeTest.result;
@@ -135,9 +135,15 @@ class Solution
 		System.err.println("Final result actual : " + actual);
 
 		if (actual != expected)
-			System.err.println("\n\n\t\t JeuxDeTest '" + jeuDeTest + "' --> FAILURE \n\n");
+			System.err.println("\n\t\t JeuxDeTest '" + jeuDeTest + "' --> FAILURE \n");
 		else
-			System.err.println("\n\n\t\t JeuxDeTest '" + jeuDeTest + "' --> SUCCESS \n\n");
+			System.err.println("\n\t\t JeuxDeTest '" + jeuDeTest + "' --> SUCCESS \n");
+	}
+	
+	private static void printIfVerbose(String s)
+	{
+		if (VERBOSE)
+			System.err.println(s);
 	}
 
 	private static void doSolution()
