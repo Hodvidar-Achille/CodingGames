@@ -1,0 +1,1 @@
+Like the BigDecimal solution but always converting the speed using : "floor(d/(v*5/18))".
