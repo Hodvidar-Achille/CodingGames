@@ -106,7 +106,7 @@ class Solution
 	/**
 	 * Number a maximum decimal we will consider. (We use BigDecimal).
 	 */
-	public static final int DECIMAL_ACCURACY = 100;
+	public static final int DECIMAL_ACCURACY = 30;
 	
 	public static final RoundingMode ROUNDING_MODE = RoundingMode.CEILING;
 
@@ -114,13 +114,13 @@ class Solution
 	 * Minimum interval between minimum speed and maximum speed that will be considered. <br/>
 	 * (m/s).
 	 */
-	public static final BigDecimal MINIMUM_INTERVAL = new BigDecimal("0.000000000000000000000000000001");
+	public static final BigDecimal MINIMUM_INTERVAL = new BigDecimal("0.00000000000000000001");
 
 	/**
 	 * Minimum time the car is allow to pass the green light before the red. <br/>
 	 * (second).
 	 */
-	public static final BigDecimal MINIMUM_TIME = new BigDecimal("0.000000000000000000000000000001");;
+	public static final BigDecimal MINIMUM_TIME = new BigDecimal("0.00000000000000000001");
 
 	private static final boolean TESTING = true;
 	private static final boolean VERBOSE = false;
