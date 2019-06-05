@@ -83,22 +83,44 @@ enum JeuxDeTest {
 
 /**
  *      https://www.codingame.com/ide/puzzle/aneo
- * by Hodvidar. (To finish, only 50% of tests pass, because of rounding error...)
+ * by Hodvidar. (To finish, only 70% of tests pass, at best, because of rounding error...)
  **/
 class Solution
 {
-	// ---- 9/10 tests OK for : 5 to 10 / 0.001 / 0.001 ----
+	/* 
+	 * 9/10 tests OK for :  
+	 * 5 -> 100
+	 * CEILLING or HALF_DOWN or HALF_UP or UP
+	 * 0.001 -> 10^-30
+	 * 0.001 -> 10^-30
+	 * 
+	 * 6/10 tests OK for :  
+	 * 5 to >
+	 * DOWN or FLOOR
+	 * 0.001
+	 * 0.001
+	 * 
+	 * RoundingMode.UNNECESSARY --> ArithmeticException
+	 */
+	
+	/**
+	 * Number a maximum decimal we will consider. (We use BigDecimal).
+	 */
+	public static final int DECIMAL_ACCURACY = 100;
+	
+	public static final RoundingMode ROUNDING_MODE = RoundingMode.CEILING;
+
 	/**
 	 * Minimum interval between minimum speed and maximum speed that will be considered. <br/>
 	 * (m/s).
 	 */
-	public static final double MINIMUM_INTERVAL = 0.001;
+	public static final BigDecimal MINIMUM_INTERVAL = new BigDecimal("0.000000000000000000000000000001");
 
 	/**
 	 * Minimum time the car is allow to pass the green light before the red. <br/>
 	 * (second).
 	 */
-	public static final double MINIMUM_TIME = 0.001;
+	public static final BigDecimal MINIMUM_TIME = new BigDecimal("0.000000000000000000000000000001");;
 
 	private static final boolean TESTING = true;
 	private static final boolean VERBOSE = false;
@@ -113,7 +135,10 @@ class Solution
 	public static void main(String args[])
 	{
 		System.err.println("Solution for: "
-			+ " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL + "\n -MINIMUM_TIME=" + MINIMUM_TIME);
+				+ " \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
+				+ " \n -ROUNDING_MODE=" + ROUNDING_MODE 
+				+ " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL 
+				+ " \n -MINIMUM_TIME=" + MINIMUM_TIME);
 
 		if (!TESTING)
 			doSolution();
@@ -501,15 +526,15 @@ class SpeedCalculator
 
 		BigDecimal minDuration = new BigDecimal("0");
 		Interval previousInterval = null;
-		BigDecimal minimumTime = new BigDecimal(Double.toString(Solution.MINIMUM_TIME));
-		BigDecimal minimumInterval= new BigDecimal(Double.toString(Solution.MINIMUM_INTERVAL));
+		BigDecimal minimumTime = Solution.MINIMUM_TIME;
+		BigDecimal minimumInterval= Solution.MINIMUM_INTERVAL;
 		while (true)
 		{
 			BigDecimal durationLimit = duration.subtract(minimumTime);
-			BigDecimal minSpeedToPass = distance.divide(durationLimit, 15, RoundingMode.CEILING);
+			BigDecimal minSpeedToPass = distance.divide(durationLimit, Solution.DECIMAL_ACCURACY, Solution.ROUNDING_MODE);
 			BigDecimal maxSpeedToPass;
 			if(minDuration.doubleValue() != 0d)
-				maxSpeedToPass = distance.divide(minDuration, 15, RoundingMode.CEILING);
+				maxSpeedToPass = distance.divide(minDuration, Solution.DECIMAL_ACCURACY, Solution.ROUNDING_MODE);
 			else // 
 				maxSpeedToPass = this.MaxValue;
 
@@ -530,7 +555,7 @@ class SpeedCalculator
 				Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
 				Solution.printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
 					+ " to travel " + distance.intValue() + " meters in less than "
-					+ roundTo2Decimals((duration.doubleValue() - Solution.MINIMUM_TIME - durationIncrement.doubleValue()))
+					+ roundTo2Decimals((duration.doubleValue() - Solution.MINIMUM_TIME.doubleValue() - durationIncrement.doubleValue()))
 					+ " seconds.");
 				continue;
 			}
@@ -552,7 +577,7 @@ class SpeedCalculator
 			Solution.printIfVerbose("Possible speed km/h : " + speedInterval.toString()
 				+ " to travel " + distance + " meters between "
 				+ roundTo2Decimals((minDuration.intValue() - durationIncrement.intValue())) + " and "
-				+ roundTo2Decimals((duration.doubleValue() - Solution.MINIMUM_TIME - durationIncrement.doubleValue()))
+				+ roundTo2Decimals((duration.doubleValue() - Solution.MINIMUM_TIME.doubleValue() - durationIncrement.doubleValue()))
 				+ " seconds.");
 			// Check if empty ?
 			speedIntervalCollector.add(speedInterval);
@@ -569,7 +594,7 @@ class SpeedCalculator
 	{
 		// * (5/18)
 		BigDecimal speedToConvert = new BigDecimal(speedInKmPerHour);
-		BigDecimal speedConverted = speedToConvert.divide(coefSpeed, 15, RoundingMode.CEILING);
+		BigDecimal speedConverted = speedToConvert.divide(coefSpeed, Solution.DECIMAL_ACCURACY, Solution.ROUNDING_MODE);
 		return speedConverted;
 	}
 
