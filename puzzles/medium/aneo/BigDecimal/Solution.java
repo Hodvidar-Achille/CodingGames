@@ -88,13 +88,6 @@ enum JeuxDeTest {
 class Solution
 {
 	// ---- 9/10 tests OK for : 5 to 10 / 0.001 / 0.001 ----
-
-	/**
-	 * /!\ Can't be more than 15 /!\ <br/>
-	 * Note : there is double floating point inaccuracy.
-	 */
-	public static final int DECIMAL_ACCURACY = 10;
-
 	/**
 	 * Minimum interval between minimum speed and maximum speed that will be considered. <br/>
 	 * (m/s).
@@ -119,7 +112,7 @@ class Solution
 
 	public static void main(String args[])
 	{
-		System.err.println("Solution for: \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
+		System.err.println("Solution for: "
 			+ " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL + "\n -MINIMUM_TIME=" + MINIMUM_TIME);
 
 		if (!TESTING)
@@ -604,14 +597,4 @@ class SpeedCalculator
 		return Math.round(number * x) / x;
 	}
 
-	public static double roundByConvertingIntoInteger(double number)
-	{
-		int n = (int) number;
-		return n;
-	}
-
-	public static double roundForAneonTest(double x)
-	{
-		return roundToXDecimals(x, Solution.DECIMAL_ACCURACY);
-	}
 }
