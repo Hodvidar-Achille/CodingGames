@@ -2,7 +2,7 @@
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
  **/
-class GeometricServicesTU2
+public final class GeometricServicesTU2
 {
 
 	public static void main(String args[])
@@ -182,6 +182,9 @@ class Polygon implements GeometricForm
 		if (l < 3)
 			throw new IllegalArgumentException("Polygon must have at least 3 points");
 
+		if(!checkPoints(points))
+			throw new IllegalArgumentException("Every points must be different in a Polygon");
+		
 		this.points = points;
 		this.numberOfPoints = l;
 
@@ -194,6 +197,22 @@ class Polygon implements GeometricForm
 		}
 		this.max_X = x;
 	}
+	
+	private boolean checkPoints(Point...points)
+	{
+		// Every point must be different.
+		for(int i = 0; i < points.length; i++)
+		{
+			for(int j = 0; j < points.length; j++)
+			{
+				if(i == j)
+					continue;
+				if(points[i].equals(points[j]))
+					return false;
+			}
+		}
+		return true;
+	}
 
 	@Override
 	public boolean isInside(Point p)
@@ -204,7 +223,112 @@ class Polygon implements GeometricForm
 	}
 }
 
-class Square extends Polygon
+class Quadrilateral extends Polygon
+{
+	public Quadrilateral(Point... points)
+	{
+		super(points);
+		
+		// Must have 4 points.
+		if (points.length != 4)
+			throw new IllegalArgumentException("Quadrilateral must have 4 points");
+	}
+}
+
+class Parallelogram extends Quadrilateral
+{
+	public Parallelogram(Point... points)
+	{
+		super(points);
+
+		if (!this.checkPoints(points))
+			throw new IllegalArgumentException("Points do not form a parallelogram.");
+		
+	}
+	
+	/**
+	 * line a is point 0 to point 1. <br/>
+	 * line b is point 1 to point 2. <br/>
+	 * line c is point 3 to point 2 (to be in the same direction than line a). <br/>
+	 * line d is point 0 to point 3 (to be in the same direction than line b).
+	 * @param points
+	 * @return {@code true} if a // c and b // d.
+	 */
+	private boolean checkPoints(Point[] points)
+	{
+		Line a = new Line(points[0], points[1]);
+		Line b = new Line(points[1], points[2]);
+		Line c = new Line(points[3], points[2]);
+		Line d = new Line(points[0], points[3]);
+		
+		return a.isParallel(c) && b.isParallel(d);
+	}
+}
+
+class Rhombus extends Parallelogram
+{
+	public Rhombus(Point... points)
+	{
+		super(points);
+
+		if (!this.checkPoints(points))
+			throw new IllegalArgumentException("Points do not form a rhombus.");
+	}
+	
+	private boolean checkPoints(Point[] points)
+	{
+		double segmentLength = 0;
+		int i = 0;
+		boolean first = true;
+		do
+		{
+			int next = (i + 1) % 4;
+			if (first)
+			{
+				segmentLength = GeometryServices.getDistance(points[i], points[next]);
+			}
+			else
+			{
+				if (segmentLength != GeometryServices.getDistance(points[i], points[next]))
+					return false;
+			}
+			i = next;
+			first = false;
+		} while (i != 0);
+		return true;
+	}
+}
+
+class Rectangle extends Parallelogram
+{
+	public Rectangle(Point...points)
+	{
+		super(points);
+		
+		if(!checkPoints(points))
+			throw new IllegalArgumentException("Points do not form a rectangle.");
+	}
+	
+	private boolean checkPoints(Point[] points)
+	{
+		int i = 0;
+		do
+		{
+			int next = (i + 1) % 4;
+			int next2 = (next + 1) % 4;
+
+			if (!GeometryServices.isRightAngleCorner(points[i], points[next], points[next2]))
+				return false;
+
+			i = next;
+		} while (i != 0);
+		return true;
+	}
+	
+	// TODO : give it the overriden Square isInside method.
+}
+
+class Square extends Rectangle
 {
 	public final Point center;
 	/**
@@ -221,15 +345,9 @@ class Square extends Polygon
 	public Square(Point... points)
 	{
 		super(points);
-		int l = points.length;
-		// Must have 4 points.
-		if (l != 4)
-			throw new IllegalArgumentException("Square must have 4 points");
-
-		// All 4 angles must be 90°.
-		// All sides must be of ame length.
+		
 		if (!this.checkPoints(points))
-			throw new IllegalArgumentException("Points do not form a square");
+			throw new IllegalArgumentException("Points do not form a square.");
 
 		this.side = GeometryServices.getDistance(points[0], points[1]);
 		this.center = GeometryServices.getCenter(points[0], points[1], points[2]);
@@ -252,7 +370,6 @@ class Square extends Polygon
 		do
 		{
 			int next = (i + 1) % 4;
-			int next2 = (next + 1) % 4;
 			// For each segment check that they have the same length
 			if (first)
 			{
@@ -263,15 +380,9 @@ class Square extends Polygon
 				if (segmentLength != GeometryServices.getDistance(points[i], points[next]))
 					return false;
 			}
-
-			// for each corner, check that the angle is 90° (PI/4);
-			if (!GeometryServices.isRightAngleCorner(points[i], points[next], points[next2]))
-				return false;
-
 			i = next;
 			first = false;
-		}
-		while (i != 0);
+		} while (i != 0);
 		return true;
 	}
 
@@ -340,6 +451,43 @@ class Point
 	public int hashCode()
 	{
 		return (int) (31 * this.x + 89 * this.y);
+	}
+}
+
+class Line
+{
+	public final Point p1;
+	public final Point p2;
+	
+	public final double slope;
+	
+	public Line(Point p1, Point p2)
+	{
+		if(p1.equals(p2))
+			throw new IllegalArgumentException("A line must be form by two differents points");
+		
+		this.p1 = p1;
+		this.p2 = p2;
+		this.slope = getSlope(p1, p2);
+		
+	}
+	
+	public static double getSlope(Point p1, Point p2)
+	{
+		double deltaY = p2.y - p1.y;
+		double deltaX = p2.x - p1.x;
+		
+		return deltaY / deltaX;
+	}
+	
+	/**
+	 * Does not check if the lines are the same line.
+	 * @param o
+	 * @return
+	 */
+	public boolean isParallel(Line o)
+	{
+		return this.slope == o.slope;
 	}
 }
 
@@ -706,5 +854,6 @@ class GeometryServices
 		angle = Math.round(angle);
 		return angle;
 	}
+	
 }
 
