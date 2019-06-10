@@ -118,6 +118,16 @@ public final class GeometricServicesTU2
 interface GeometricForm
 {
 	boolean isInside(Point p);
+	
+	/**
+	 * 
+	 * @param points
+	 * @return {@code true} if the points are OK for the object type.
+	 */
+	static boolean checkPoints(Point...points)
+	{
+		return true;
+	}
 }
 
 class Circle implements GeometricForm
@@ -165,6 +175,13 @@ class Circle implements GeometricForm
 		double y = Math.pow((p.y - this.center.y), 2);
 		return x + y <= r;
 	}
+	
+	public static boolean checkPoints(Point...points)
+	{
+		// Check that the points are no all align.
+		return GeometryServices.orientation(points[0], points[1], points[2]) != 0;
+
+	}
 }
 
 class Polygon implements GeometricForm
@@ -179,11 +196,10 @@ class Polygon implements GeometricForm
 	public Polygon(Point... points)
 	{
 		int l = points.length;
-		if (l < 3)
-			throw new IllegalArgumentException("Polygon must have at least 3 points");
 
 		if(!checkPoints(points))
-			throw new IllegalArgumentException("Every points must be different in a Polygon");
+			throw new IllegalArgumentException("Every points must be different in a Polygon"
+					+ " and there must be at least 3 of them.");
 		
 		this.points = points;
 		this.numberOfPoints = l;
@@ -198,8 +214,11 @@ class Polygon implements GeometricForm
 		this.max_X = x;
 	}
 	
-	private boolean checkPoints(Point...points)
+	public static boolean checkPoints(Point...points)
 	{
+		if(points.length < 3)
+			return false;
+		
 		// Every point must be different.
 		for(int i = 0; i < points.length; i++)
 		{
@@ -230,8 +249,13 @@ class Quadrilateral extends Polygon
 		super(points);
 		
 		// Must have 4 points.
-		if (points.length != 4)
+		if (!checkPoints(points))
 			throw new IllegalArgumentException("Quadrilateral must have 4 points");
+	}
+	
+	public static boolean checkPoints(Point...points)
+	{
+		return points.length == 4;
 	}
 }
 
@@ -241,7 +265,7 @@ class Parallelogram extends Quadrilateral
 	{
 		super(points);
 
-		if (!this.checkPoints(points))
+		if (!checkPoints(points))
 			throw new IllegalArgumentException("Points do not form a parallelogram.");
 		
 	}
@@ -254,7 +278,7 @@ class Parallelogram extends Quadrilateral
 	 * @param points
 	 * @return {@code true} if a // c and b // d.
 	 */
-	private boolean checkPoints(Point[] points)
+	public static boolean checkPoints(Point...points)
 	{
 		Line a = new Line(points[0], points[1]);
 		Line b = new Line(points[1], points[2]);
@@ -271,11 +295,11 @@ class Rhombus extends Parallelogram
 	{
 		super(points);
 
-		if (!this.checkPoints(points))
+		if (!checkPoints(points))
 			throw new IllegalArgumentException("Points do not form a rhombus.");
 	}
 	
-	private boolean checkPoints(Point[] points)
+	public static boolean checkPoints(Point...points)
 	{
 		double segmentLength = 0;
 		int i = 0;
@@ -301,6 +325,7 @@ class Rhombus extends Parallelogram
 
 class Rectangle extends Parallelogram
 {
+	// Make Rectangle get the Square methods ?
 	public Rectangle(Point...points)
 	{
 		super(points);
@@ -309,7 +334,7 @@ class Rectangle extends Parallelogram
 			throw new IllegalArgumentException("Points do not form a rectangle.");
 	}
 	
-	private boolean checkPoints(Point[] points)
+	public static boolean checkPoints(Point...points)
 	{
 		int i = 0;
 		do
@@ -324,8 +349,6 @@ class Rectangle extends Parallelogram
 		} while (i != 0);
 		return true;
 	}
-	
-	// TODO : give it the overriden Square isInside method.
 }
 
 class Square extends Rectangle
@@ -360,30 +383,6 @@ class Square extends Rectangle
 		this.center = center;
 		this.side = side;
 		this.angle = angle;
-	}
-
-	private boolean checkPoints(Point[] points)
-	{
-		double segmentLength = 0;
-		int i = 0;
-		boolean first = true;
-		do
-		{
-			int next = (i + 1) % 4;
-			// For each segment check that they have the same length
-			if (first)
-			{
-				segmentLength = GeometryServices.getDistance(points[i], points[next]);
-			}
-			else
-			{
-				if (segmentLength != GeometryServices.getDistance(points[i], points[next]))
-					return false;
-			}
-			i = next;
-			first = false;
-		} while (i != 0);
-		return true;
 	}
 
 	/**
@@ -421,6 +420,30 @@ class Square extends Rectangle
 		}
 
 		return super.isInside(p);
+	}
+	
+	public static boolean checkPoints(Point[] points)
+	{
+		double segmentLength = 0;
+		int i = 0;
+		boolean first = true;
+		do
+		{
+			int next = (i + 1) % 4;
+			// For each segment check that they have the same length
+			if (first)
+			{
+				segmentLength = GeometryServices.getDistance(points[i], points[next]);
+			}
+			else
+			{
+				if (segmentLength != GeometryServices.getDistance(points[i], points[next]))
+					return false;
+			}
+			i = next;
+			first = false;
+		} while (i != 0);
+		return true;
 	}
 }
 
@@ -705,7 +728,7 @@ class GeometryServices
 	public static Point getCenter(Point p1, Point p2, Point p3)
 	{
 		// 1) Check that the points are no all align.
-		if (orientation(p1, p2, p3) == 0)
+		if (!Circle.checkPoints(p1, p2, p3))
 			throw new IllegalArgumentException("Points can't be aligned");
 
 		// 2) Arrange points to have 2 lines that are never perfectly vertical.
@@ -853,6 +876,38 @@ class GeometryServices
 		double angle = Math.toDegrees(Math.acos(cos));
 		angle = Math.round(angle);
 		return angle;
+	}
+	
+	public static String getQuadrilateralType(Point...points)
+	{
+		String result = "Not a Quadrilateral";
+		
+		boolean isQuadrilateral = Quadrilateral.checkPoints(points);
+		if(!isQuadrilateral)
+			return result;
+		result = Quadrilateral.class.getSimpleName();
+		
+		boolean isParralelogram = Parallelogram.checkPoints(points);
+		if(!isParralelogram)
+			return result;
+		result = Parallelogram.class.getSimpleName();
+		
+		boolean isRhombus = Rhombus.checkPoints(points);
+		boolean isRectangle = Rectangle.checkPoints(points);
+		if(!isRhombus && !isRectangle)
+			return result;
+		
+		if(isRectangle)
+			result = Rectangle.class.getSimpleName();
+		else
+			return Rhombus.class.getSimpleName();
+		
+		
+		if(!Square.checkPoints(points))
+			return result;
+		
+		result = Square.class.getSimpleName();
+		return result;
 	}
 	
 }
