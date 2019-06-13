@@ -82,6 +82,17 @@ enum JeuxDeTest {
 /**
  *      https://www.codingame.com/ide/puzzle/aneo
  * by Hodvidar
+ * SpeedCalculator#getDuration(...)
+ * Using : / (18d/5d)
+ * - (int) Math.round(distance/ ( speedInkmPerHour/ (18d/5d) ) ); --> 100% Given tests / 80% Validator tests
+ * - (int) Math.floor(distance/ ( speedInkmPerHour/ (18d/5d) ) ); --> 80% Given tests / 90% Validator tests
+ * - (int) Math.ceil(distance/ ( speedInkmPerHour/ (18d/5d) ) ); --> 80% Given tests / 80% Validator tests
+ * - (int) (distance/ ( speedInkmPerHour/ (18d/5d) ) ); --> 80% Given tests / 90% Validator tests
+ * or * (5d/18d)
+ * - (int) Math.round(distance/ ( speedInkmPerHour * (5d/18d) ) ); 100% Given tests / 80% Validator tests
+ * - (int) Math.floor(distance/ ( speedInkmPerHour * (5d/18d) ) ); 80% Given tests / 90% Validator tests
+ * - (int) Math.ceil(distance/ ( speedInkmPerHour * (5d/18d) ) ); 80% Given tests / 80% Validator tests
+ * - (int) (distance/ ( speedInkmPerHour * (5d/18d) ) ); 80% Given tests / 90% Validator tests
  **/
 class Solution
 {
