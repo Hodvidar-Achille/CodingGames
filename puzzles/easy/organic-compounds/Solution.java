@@ -62,10 +62,8 @@ class Solution {
             {
                 if(compounds[i][j] != 'H')
                     continue;
-                    
-            	int sum = 0;
-            	int h = Integer.valueOf(""+compounds[i][j+1]);
-            	sum += h;
+                
+            	sum = Integer.valueOf(""+compounds[i][j+1]);
             	
             	// check right
             	if(j+3 < max && compounds[i][j+3] != space)
