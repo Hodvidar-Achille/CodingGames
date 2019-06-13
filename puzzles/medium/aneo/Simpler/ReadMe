@@ -1,0 +1,5 @@
+Way more simple solution, using a Set of validated speed 
+that are check on by one to see if they allow to pass the ligth when it is green, 
+if not we remove it from the Set, so we have fewer and fewer speeds to check.
+
+Uses (int) Math.round(distanceInMeter/ (speedInKmPerHour/ (18d/5d)))
