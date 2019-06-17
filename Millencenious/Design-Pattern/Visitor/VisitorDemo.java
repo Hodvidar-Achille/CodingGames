@@ -4,10 +4,13 @@ public class VisitorDemo
 {
 	public static void main (String[] args)
 	{
+		System.out.println("Start VisitorDemo main...");
 		final Car car = new Car();
 
 		car.accept(new CarElementPrintVisitor());
 		car.accept(new CarElementDoVisitor());
+		
+		System.out.println("End of VisitorDemo main.");
 	}
 }
 
@@ -154,6 +157,3 @@ class CarElementPrintVisitor implements CarElementVisitor
 		System.out.println("Visiting " + wheel.getName() + " wheel");
 	}
 }
-
-
-
