@@ -1,14 +1,14 @@
 /**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
+ * 	Demo class with below utils classes and used object's classes.
+ * by Hodvidar
  **/
-public final class GeometricServicesTU2
+public class GeometricServicesDemo
 {
 
 	public static void main(String args[])
 	{
 		// TEST
-		System.err.println("TESTING");
+		System.err.println("Start GeometricServicesDemo main...");
 		// Square in positive number, with side of, middle at (3,3);
 		Point[] square1Points = new Point[4];
 		/*
@@ -96,6 +96,8 @@ public final class GeometricServicesTU2
 		System.err.println("p2InSquare=" + p2InSquare);
 		System.err.println("p2InCircle=" + p2InCircle);
 		System.err.println("p2InDiamond=" + p2InDiamond);
+		
+		System.err.println("End of GeometricServicesDemo main.");
 	}
 
 	private static void printSquareInfos(Square sq)
