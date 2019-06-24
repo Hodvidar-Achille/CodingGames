@@ -97,6 +97,16 @@ public class GeometricServicesDemo
 		System.err.println("p2InCircle=" + p2InCircle);
 		System.err.println("p2InDiamond=" + p2InDiamond);
 		
+		System.err.println("--- Test for Sphere services ---");
+		double radius = 10;
+		double area = GeometryServices.getSphereArea(radius);
+		double volume = GeometryServices.getSphereVolume(radius);	
+		System.err.println("radius ="+radius);
+		System.err.println("area ="+area);
+		System.err.println("volume ="+volume);
+		double radiusBis = GeometryServices.getSphereRadius(volume);
+		System.err.println("radiusBis ="+radiusBis);
+		
 		System.err.println("End of GeometricServicesDemo main.");
 	}
 
@@ -138,17 +148,20 @@ class Circle implements GeometricForm
 	* Coordinate X,Y of the circle's center.
 	*/
 	public final Point center;
-
+	/**
+	 * unit : u.
+	 */
 	public final double radius;
+	
+	public Circle(double radius)
+	{
+		this.center = new Point(0, 0);
+		this.radius = radius;
+	}
 
 	public Circle(Point center, double radius)
 	{
 		this.center = center;
-		this.radius = radius;
-	}
-	public Circle(double x, double y, double radius)
-	{
-		this.center = new Point(x, y);
 		this.radius = radius;
 	}
 
@@ -184,6 +197,34 @@ class Circle implements GeometricForm
 		return GeometryServices.orientation(points[0], points[1], points[2]) != 0;
 
 	}
+}
+
+class Sphere extends Circle
+{
+	/**
+	 * = 4 * Math.PI * Math.pow(radius, 2) (u^2).
+	 */
+	public final double area;
+	/**
+	 * = = ( 4.0 / 3.0 ) * Math.PI * Math.pow( sphereRadius, 3 ) (u^3).
+	 */
+	public final double volume;
+	
+	public Sphere(double radius)
+	{
+		super(radius);
+		this.area = GeometryServices.getSphereArea(this.radius);
+		this.volume = GeometryServices.getSphereVolume(this.radius);
+	}
+	
+	public Sphere(Point center, double radius)
+	{
+		super(center, radius);
+		this.area = GeometryServices.getSphereArea(this.radius);
+		this.volume = GeometryServices.getSphereVolume(this.radius);
+	}
+	
+	// No Override of 'isInside' for now (point are only in 2D here).
 }
 
 class Polygon implements GeometricForm
@@ -371,7 +412,7 @@ class Square extends Rectangle
 	{
 		super(points);
 		
-		if (!this.checkPoints(points))
+		if (!checkPoints(points))
 			throw new IllegalArgumentException("Points do not form a square.");
 
 		this.side = GeometryServices.getDistance(points[0], points[1]);
@@ -912,5 +953,23 @@ class GeometryServices
 		return result;
 	}
 	
+	public static double getSphereVolume(double sphereRadius)
+	{
+		double sphereVolume = ( 4.0 / 3.0 ) * Math.PI * Math.pow(sphereRadius, 3 );
+		return sphereVolume;
+	}
+	
+	public static double getSphereArea(double sphereRadius)
+	{
+		double sphereArea = 4 * Math.PI * Math.pow(sphereRadius, 2);
+		return sphereArea;
+	}
+	
+	public static double getSphereRadius(double sphereVolume)
+	{
+		double intermediateResult = sphereVolume / (( 4.0 / 3.0 ) * Math.PI);
+		double radius = Math.cbrt(intermediateResult);
+		return radius;
+	}
+	
 }
-
