@@ -2,12 +2,21 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 
+
+
 /**
- *    https://www.codingame.com/ide/puzzle/hooch-clash
- * By Hodvidar (TODO : finish, might need to use BigDecimal)
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
  **/
 class Solution {
-
+	
+	// 1 1000 9 10 --> 1 12
+	// 1000 3000 1356 2644 --> 1200 2680
+	// 1000 3000 2511 2962 --> 2719 2790
+	// 1 3000 417 2962 --> 1290 2881
+	// 1 15 9 15 --> VALID
+	// 2 14 9 10 --> VALID
+	
     public static void main(String args[]) {
         // Scanner in = new Scanner(System.in);
         int minSize = 1000; //in.nextInt();
