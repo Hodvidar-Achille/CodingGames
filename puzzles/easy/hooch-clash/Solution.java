@@ -2,29 +2,38 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 
-
-
 /**
  * 	https://www.codingame.com/ide/puzzle/hooch-clash
  * by Hodvidar.
- * --> 80%/100%
  **/
 class Solution {
-	
-	// 1 1000 9 10 --> 1 12
+    
+    // -- TESTS :
+    // 1 1000 9 10 --> 1 12
 	// 1000 3000 1356 2644 --> 1200 2680
 	// 1000 3000 2511 2962 --> 2719 2790
 	// 1 3000 417 2962 --> 1290 2881
 	// 1 15 9 15 --> VALID
-	// 2 14 9 10 --> VALID
-	
+    // 2 14 9 10 --> VALID
+    // --
+    
+    /**
+     * Values -- % Result OK (Finalt Tests)
+     * 0 -- 100% (but not all tests in try tests)
+     * 1 -- 90%
+     * 2 -- 90%
+     * 3 -- 90%
+     * 4 -- 90%
+     */
+    private static final int ROUNDING_DECIMAL = 0;
+
     public static void main(String args[]) {
-        // Scanner in = new Scanner(System.in);
-        int minSize = 1000; //in.nextInt();
-        int maxSize = 3000; //in.nextInt();
-        int kingSize1 = 1356; //in.nextInt();
-        int kingSize2 = 2644; //in.nextInt();
-        // want : 1200 2680
+        Scanner in = new Scanner(System.in);
+        int minSize = in.nextInt();
+        int maxSize = in.nextInt();
+        int kingSize1 = in.nextInt();
+        int kingSize2 = in.nextInt();
+
         System.err.println("minSize="+minSize);
         System.err.println("maxSize="+maxSize);
         System.err.println("kingSize1="+kingSize1);
@@ -120,7 +129,9 @@ class Solution {
     
     private static double rounding(double n)
     {
-    	// return Math.round(n * 15) / 15;
-    	return n;
+    	if(ROUNDING_DECIMAL == 0)
+    	   return n;
+    	else
+    	   return Math.round(n * ROUNDING_DECIMAL) / ROUNDING_DECIMAL;
     }
 }
