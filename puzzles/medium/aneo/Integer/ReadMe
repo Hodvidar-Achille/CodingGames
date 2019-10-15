@@ -1,5 +1,0 @@
-Solution using only integer and always only using speed in km/h with Math.floor() to round the convertion from m/s to km/h.
-
-return (int) Math.floor(distanceInMeter / (timeInSecond * 5d/18d)); // return speed in km/h
-
---> 50% of tests pass...
