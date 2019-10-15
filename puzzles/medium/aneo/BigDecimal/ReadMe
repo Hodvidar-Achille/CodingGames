@@ -1,8 +1,0 @@
-Same solution but BigDecimal replace all double.
-
-Still only 9/10 tests OK.
-
-Next solution would be to use Interval that can know if left or right part is open or close.
-
-Or we just need to use always km/h speed for calculations 
-and therefore we will see when the interval is under the 1 km/h threshold (to ignore too narrow intervals) ?
