@@ -8,7 +8,7 @@ public class GeometryServices
 {
 	private final double infinite;
 	private final double stepToSwitchInfiniteY;
-	
+
 	public GeometryServices()
 	{
 		this(9000000000000000000d);
@@ -17,37 +17,60 @@ public class GeometryServices
 	public GeometryServices(double maximumCoordinate)
 	{
 		double tooMuchToBeSafe = Math.round(Math.sqrt(Math.sqrt(Double.MAX_VALUE)));
-		if (maximumCoordinate > tooMuchToBeSafe)
+		if(maximumCoordinate > tooMuchToBeSafe)
 			throw new IllegalArgumentException(
-				"Max X coordinate is too high, risk of double overflow during calculations.");
+					"Max X coordinate is too high, risk of double overflow during calculations.");
 
 		this.infinite = maximumCoordinate * 10;
 		this.stepToSwitchInfiniteY = this.infinite / 5;
 	}
+
 	/**
-	 * When ALREADY KNOWING that E is on the line (AB)
+	 * 
+	 * @param e the point E
+	 * @param s the segment [AB]
+	 * @return true if E is on [AB]
+	 */
+	public static boolean isOnSegment(Point e, Segment s)
+	{
+		boolean onSameLine = areColinear(e, s.p1, s.p2);
+		boolean betweenPoint = isInsideCoordinate(e, s.p1, s.p2);
+		return onSameLine && betweenPoint;
+	}
+
+	/**
+	 * check if point E is inside a square form by : <br/>
+	 * P1(minX, minY) <br/>
+	 * P2(maxX, minY) <br/>
+	 * P3(maxX, maxY) <br/>
+	 * P4(minX, maxY) <br/>
+	 * With minX, minY, maxX, maxY taken from points A and B.
+	 * @param e
 	 * @param a
 	 * @param b
-	 * @param e
 	 * @return true if e on segment [ab]
 	 */
-	public static boolean onSegment(Point a, Point b, Point e)
+	public static boolean isInsideCoordinate(Point e, Point a, Point b)
 	{
 		// System.err.println("\t\tonSegment()");
-
-		boolean colinear = true;
 		boolean betweenX = e.x <= Math.max(a.x, b.x) && e.x >= Math.min(a.x, b.x);
 		boolean betweenY = e.y <= Math.max(a.y, b.y) && e.y >= Math.min(a.y, b.y);
 		// System.err.println("\t\tbetweenX="+betweenX+"   betweenY="+betweenY);
-		return colinear && betweenX && betweenY;
+		return betweenX && betweenY;
 	}
 
-	// To find orientation of ordered triplet
-	// (p1, p2, p3). The function returns
-	// following values
-	// 0 --> p, q and r are colinear
-	// 1 --> Clockwise
-	// -1 --> Counterclockwise
+	public static boolean areColinear(Point p1, Point p2, Point p3)
+	{
+		return orientation(p1, p2, p3) == 0;
+	}
+
+	/** To find orientation of ordered triplet
+	 * (p1, p2, p3). The function returns
+	 * the following values : <br/>
+	 * 0 --> p, q and r are colinear <br/>
+	 * 1 --> Clockwise <br/>
+	 * -1 --> Counterclockwise <br/>
+	 **/
 	public static int orientation(Point p1, Point p2, Point p3)
 	{
 		// System.err.println("\t\torientation(p1("+p1.x+","+p1.y+"), p2("+p2.x+","+p2.y+"), p3("+p3.x+","+p3.y+"))");
@@ -66,7 +89,7 @@ public class GeometryServices
 
 		double val = ((p2.y - p1.y) * (p3.x - p2.x)) - ((p2.x - p1.x) * (p3.y - p2.y));
 		// System.err.println("\t\tval="+val);
-		if (val == 0d)
+		if(val == 0d)
 			return 0; // colinear
 		// clock or counterclock wise
 		return (val > 0) ? 1 : -1;
@@ -92,24 +115,99 @@ public class GeometryServices
 		int o4 = orientation(e, f, b);
 
 		//simple segment intersection
-		if (o1 != o2 && o3 != o4)
+		if(o1 != o2 && o3 != o4)
 			return true;
 
 		//special Cases
 		// a, b, e colinear, e on segment [ab]
-		if (o1 == 0 && onSegment(a, b, e))
+		if(o1 == 0 && isInsideCoordinate(e, a, b))
 			return true;
 		// a, b, f colinear, f on segment [ab]
-		if (o2 == 0 && onSegment(a, b, f))
+		if(o2 == 0 && isInsideCoordinate(f, a, b))
 			return true;
 		// e, f, a colinear, a on segment [ef]
-		if (o3 == 0 && onSegment(e, f, a))
+		if(o3 == 0 && isInsideCoordinate(a, e, f))
 			return true;
 		// e, f, b colinear, b on segment [ef]
-		if (o4 == 0 && onSegment(e, f, b))
+		if(o4 == 0 && isInsideCoordinate(b, e, f))
 			return true;
 
 		return false; // Doesn't fall in any of the above cases
+	}
+
+	/**
+	 * Returns the point of intersection between segment [AB] and [EF], 
+	 * can be <code>null</code> if the segments do not intersect.
+	 * <p>
+	 * <b>Only vertical and horizontal segment for now</b>
+	 * <p>
+	 * @param a First Point of segment [AB]
+	 * @param b Second Point of segment [AB]
+	 * @param e First Point of segment [EF]
+	 * @param f Second Point of segment [EF]
+	 * @return a <code>Point</code> or <code>null</code>.
+	 */
+	public static Point getIntersect(final Point a, final Point b, final Point e, final Point f)
+	{
+		//		if(a.toString().equals("(-1753.0; -115.0)") && e.toString().equals("(-1728.0; -271.0)"))
+		//			System.out.println("test");
+
+		// (1) On point touch another (same point).
+		if(a.equals(e))
+			return a;
+		if(a.equals(f))
+			return a;
+		if(b.equals(e))
+			return b;
+		if(b.equals(f))
+			return b;
+
+		// Code similar to 'doIntersect' method
+		int o1 = orientation(a, b, e);
+		int o2 = orientation(a, b, f);
+		// if also o3 != o4 [ef] intersect [ab] [segments]
+		int o3 = orientation(e, f, a);
+		int o4 = orientation(e, f, b);
+
+		// (2) One point inside the other segment/
+		// a, b, e colinear, e on segment [ab]
+		if(o1 == 0 && isInsideCoordinate(e, a, b))
+			return e;
+		// a, b, f colinear, f on segment [ab]
+		if(o2 == 0 && isInsideCoordinate(f, a, b))
+			return f;
+		// e, f, a colinear, a on segment [ef]
+		if(o3 == 0 && isInsideCoordinate(a, e, f))
+			return a;
+		// e, f, b colinear, b on segment [ef]
+		if(o4 == 0 && isInsideCoordinate(b, e, f))
+			return b;
+
+		// No colinear
+
+		// Look for simple segment intersection
+		if(!(o1 != o2 && o3 != o4))
+			return null;
+
+		// (3) Segment intersect (BASIQUE)
+		// We know one is Vertical, one is Horizontal
+		boolean abIsVertical = a.x == b.x;
+		if(abIsVertical)
+		{
+			// Verification to block wrong uses
+			if(e.y != f.y)
+				throw new IllegalStateException("Case not supported");
+			// AB | EF --
+			return new Point(a.x, e.y);
+		}
+		else
+		{
+			// Verification to block wrong uses
+			if(e.y == f.y)
+				throw new IllegalStateException("Case not supported");
+			// AB -- EF |
+			return new Point(e.x, a.y);
+		}
 	}
 
 	public boolean isInside(Point polygon[], int n, Point p)
@@ -117,7 +215,7 @@ public class GeometryServices
 		// System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
 		// There must be at least 3 vertices in polygon[]
-		if (n < 3)
+		if(n < 3)
 			return false;
 
 		// Create a point for line segment from p to infinite (Infinite in the NE direction).
@@ -135,20 +233,20 @@ public class GeometryServices
 
 			// Check if the line segment from 'p' to 'extreme' intersects
 			// with the line segment from 'polygon[i]' to 'polygon[next]'
-			if (doIntersect(polygon[i], polygon[next], p, pointToInfinite))
+			if(doIntersect(polygon[i], polygon[next], p, pointToInfinite))
 			{
 				// System.err.println("\tdoIntersect --> true");
 				// If the point 'p' is colinear with line segment 'i-next',
 				// then check if it lies on segment. If it lies, return true,
 				// otherwise continue
-				if (orientation(polygon[i], polygon[next], p) == 0)
+				if(orientation(polygon[i], polygon[next], p) == 0)
 				{
-					return onSegment(polygon[i], polygon[next], p);
+					return isInsideCoordinate(p, polygon[i], polygon[next]);
 				}
 
 				// Handle when (p extreme) intersecting with polygon
 				// exactly on one of its point.
-				if (orientation(p, pointToInfinite, polygon[i]) == 0)
+				if(orientation(p, pointToInfinite, polygon[i]) == 0)
 				{
 					// Intersecting exactly a point of the polygon
 					// can make the loop count useless to assert if the point p
@@ -163,8 +261,7 @@ public class GeometryServices
 			}
 			// System.err.println("\tdoIntersect --> false");
 			i = next;
-		}
-		while (i != 0);
+		} while (i != 0);
 
 		// Return true if count is odd, false otherwise
 		boolean countIsOdd = (count % 2 == 1);
@@ -188,6 +285,14 @@ public class GeometryServices
 		x = Math.round(x);
 		y = Math.round(y);
 		return new Point(x, y);
+	}
+
+	public static double getManhattanDistance(Point p1, Point p2)
+	{
+		double x = Math.abs(p1.x - p2.x);
+		double y = Math.abs(p1.y - p2.y);
+
+		return x + y;
 	}
 
 	public static double getDistance(Point p1, Point p2)
@@ -219,12 +324,12 @@ public class GeometryServices
 	public static Point getCenter(Point p1, Point p2, Point p3)
 	{
 		// 1) Check that the points are no all align.
-		if (!Circle.checkPoints(p1, p2, p3))
+		if(!Circle.checkPoints(p1, p2, p3))
 			throw new IllegalArgumentException("Points can't be aligned");
 
 		// 2) Arrange points to have 2 lines that are never perfectly vertical.
 		double x1 = 0, x2 = 0, x3 = 0, y1 = 0, y2 = 0, y3 = 0;
-		if (p1.x != p2.x && p2.x != p3.x)
+		if(p1.x != p2.x && p2.x != p3.x)
 		{
 			x1 = p1.x;
 			x2 = p2.x;
@@ -233,7 +338,7 @@ public class GeometryServices
 			y2 = p2.y;
 			y3 = p3.y;
 		}
-		else if (p2.x != p3.x && p3.x != p1.x)
+		else if(p2.x != p3.x && p3.x != p1.x)
 		{
 			x1 = p2.x;
 			x2 = p3.x;
@@ -291,9 +396,9 @@ public class GeometryServices
 		double sy21 = Math.pow(y2, 2) - Math.pow(y1, 2);
 
 		double f = ((sx13) * (x12) + (sy13) * (x12) + (sx21) * (x13) + (sy21) * (x13))
-			/ (2 * ((y31) * (x12) - (y21) * (x13)));
+				/ (2 * ((y31) * (x12) - (y21) * (x13)));
 		double g = ((sx13) * (y12) + (sy13) * (y12) + (sx21) * (y13) + (sy21) * (y13))
-			/ (2 * ((x31) * (y12) - (x21) * (y13)));
+				/ (2 * ((x31) * (y12) - (x21) * (y13)));
 
 		double center_x = -g;
 		double center_y = -f;
@@ -358,56 +463,55 @@ public class GeometryServices
 		angle = Math.round(angle);
 		return angle;
 	}
-	
-	public static String getQuadrilateralType(Point...points)
+
+	public static String getQuadrilateralType(Point... points)
 	{
 		String result = "Not a Quadrilateral";
-		
+
 		boolean isQuadrilateral = Quadrilateral.checkPoints(points);
 		if(!isQuadrilateral)
 			return result;
 		result = Quadrilateral.class.getSimpleName();
-		
+
 		boolean isParralelogram = Parallelogram.checkPoints(points);
 		if(!isParralelogram)
 			return result;
 		result = Parallelogram.class.getSimpleName();
-		
+
 		boolean isRhombus = Rhombus.checkPoints(points);
 		boolean isRectangle = Rectangle.checkPoints(points);
 		if(!isRhombus && !isRectangle)
 			return result;
-		
+
 		if(isRectangle)
 			result = Rectangle.class.getSimpleName();
 		else
 			return Rhombus.class.getSimpleName();
-		
-		
+
 		if(!Square.checkPoints(points))
 			return result;
-		
+
 		result = Square.class.getSimpleName();
 		return result;
 	}
-	
+
 	public static double getSphereVolume(double sphereRadius)
 	{
-		double sphereVolume = ( 4.0 / 3.0 ) * Math.PI * Math.pow(sphereRadius, 3 );
+		double sphereVolume = (4.0 / 3.0) * Math.PI * Math.pow(sphereRadius, 3);
 		return sphereVolume;
 	}
-	
+
 	public static double getSphereArea(double sphereRadius)
 	{
 		double sphereArea = 4 * Math.PI * Math.pow(sphereRadius, 2);
 		return sphereArea;
 	}
-	
+
 	public static double getSphereRadius(double sphereVolume)
 	{
-		double intermediateResult = sphereVolume / (( 4.0 / 3.0 ) * Math.PI);
+		double intermediateResult = sphereVolume / ((4.0 / 3.0) * Math.PI);
 		double radius = Math.cbrt(intermediateResult);
 		return radius;
 	}
-	
+
 }
