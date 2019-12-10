@@ -16,7 +16,7 @@ import com.sun.xml.internal.txw2.IllegalSignatureException;
 public final class Day5
 {
 	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = true;
+	private static final boolean VERBOSE = false;
 
 	private static final int NUMBER_OF_TEST = 5;
 	private static final String INPUT_DIRECTORY = "aventofcode_2019"; // input1
@@ -34,7 +34,7 @@ public final class Day5
 		Integer[] arr = new Integer[outputs.size()];
 		arr = outputs.toArray(arr);
 		result = arrayToString(arr);
-		System.err.println("result='" + result + "'");
+		System.err.println("Expected '9219874' - result='" + result + "'");
 	}
 
 	private static final int POSITION_MODE = 0;

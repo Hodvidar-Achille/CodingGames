@@ -14,9 +14,9 @@ public final class Point
 	@Override
 	public boolean equals(Object obj)
 	{
-		if (obj == null)
+		if(obj == null)
 			return false;
-		if (!(obj instanceof Point))
+		if(!(obj instanceof Point))
 			return false;
 
 		Point p = (Point) obj;
@@ -28,10 +28,10 @@ public final class Point
 	{
 		return (int) (31 * this.x + 89 * this.y);
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return "("+this.x + "; " + this.y+")";
+		return "(" + this.x + "; " + this.y + ")";
 	}
 }

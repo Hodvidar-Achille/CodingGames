@@ -460,7 +460,7 @@ public class GeometryServices
 		double denominator = (2 * adjacent1 * adjacent2);
 		double cos = nominator / denominator;
 		double angle = Math.toDegrees(Math.acos(cos));
-		angle = Math.round(angle);
+		// angle = Math.round(angle);
 		return angle;
 	}
 
