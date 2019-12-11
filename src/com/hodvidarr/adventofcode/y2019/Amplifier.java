@@ -7,9 +7,10 @@ public final class Amplifier
 	private final Double phase;
 	private boolean shutDown;
 
-	public Amplifier(double[] opCode, Double phase)
+	/** phase can be null **/
+	public Amplifier(double[] memory, Double phase)
 	{
-		this.codeReader = new OpCodeReader(opCode);
+		this.codeReader = new OpCodeReader(memory);
 		this.phase = phase;
 		this.codeReader.setPhaseInput(this.phase);
 		this.positionInProgram = 0;

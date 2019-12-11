@@ -1,6 +1,6 @@
 package com.hodvidarr.utils.geometry;
 
-public final class Point
+public class Point
 {
 	public final double x;
 	public final double y;

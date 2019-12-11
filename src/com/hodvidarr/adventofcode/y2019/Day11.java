@@ -1,15 +1,22 @@
 package com.hodvidarr.adventofcode.y2019;
 
 import java.io.File;
-import java.text.NumberFormat;
 import java.util.Scanner;
 
-public final class Day11 // TODO change code
+/**
+ * '13' not good
+ * 
+ * 2021 GOOD 
+ * 
+ * @author Hodvidar
+ *
+ */
+public final class Day11
 {
 	/** If 'false' only response and Failure are written **/
 	private static final boolean VERBOSE = true;
 
-	private static final int NUMBER_OF_TEST = 9;
+	private static final int NUMBER_OF_TEST = 11;
 	private static final String INPUT_DIRECTORY = "aventofcode_2019"; // input1
 
 	public static void printIfVerbose(String s)
@@ -21,7 +28,7 @@ public final class Day11 // TODO change code
 	public static void main(String[] args) throws Exception
 	{
 		String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
-		System.err.println("Expected '3429136788' - result='" + result + "'");
+		System.err.println("Expected '2021' - result='" + result + "'");
 	}
 
 	private static String test(String inputFile) throws Exception
@@ -32,11 +39,7 @@ public final class Day11 // TODO change code
 		Scanner sc = new Scanner(file);
 		printIfVerbose("DEBUGGING");
 
-		// TEST :
-		// line = "109,1,204,-1,1001,100,1,100,1008,100,16,101,1006,101,0,99"; // OK
-		// line = "1102,34915192,34915192,7,4,7,99,0"; // OK
-		// line = "104,1125899906842624,99"; // OK
-		line = sc.nextLine(); // KO : 203 and 0
+		line = sc.nextLine();
 		String[] opCodeStr = line.split(",");
 		sc.close();
 		double[] opCode = new double[opCodeStr.length];
@@ -47,22 +50,11 @@ public final class Day11 // TODO change code
 			opCode[i] = j;
 		}
 
-		Amplifier amp = new Amplifier(opCode, null);
-		amp.setInput(1);
-		double output = 0;
-		while (!amp.isShutDown())
-		{
-			amp.runProgram();
-			output = amp.getOutput();
-			printIfVerbose("Day9 while run : " + output);
-		}
-
-		NumberFormat nf = NumberFormat.getNumberInstance();
-		nf.setMaximumFractionDigits(0);
-		nf.setGroupingUsed(false);
-		String rounded = nf.format(output);
+		RobotPainter robot = new RobotPainter(opCode);
+		robot.paint();
+		int result = robot.getNumberOfPanelPainted();
 
 		// Stuff
-		return rounded;
+		return "" + result;
 	}
 }
