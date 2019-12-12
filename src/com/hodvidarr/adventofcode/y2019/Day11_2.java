@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Hodvidar
  *
  */
-public final class Day11_2 // TODO change code
+public final class Day11_2
 {
 	/** If 'false' only response and Failure are written **/
 	private static final boolean VERBOSE = true;

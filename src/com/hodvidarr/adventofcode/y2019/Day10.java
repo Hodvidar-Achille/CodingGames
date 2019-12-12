@@ -9,10 +9,10 @@ import com.hodvidarr.utils.geometry.GeometryServices;
 import com.hodvidarr.utils.geometry.Point;
 import com.hodvidarr.utils.geometry.Segment;
 
-public final class Day10 // TODO change code
+public final class Day10
 {
 	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = true;
+	private static final boolean VERBOSE = false;
 
 	private static final int NUMBER_OF_TEST = 10;
 	private static final String INPUT_DIRECTORY = "aventofcode_2019"; // input1
@@ -25,10 +25,10 @@ public final class Day10 // TODO change code
 
 	public static void main(String[] args) throws Exception
 	{
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test1.txt");
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test2.txt");
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test3.txt");
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test4.txt");
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test1.txt");
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test2.txt");
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test3.txt");
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test4.txt");
 		String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
 		System.err.println("Expected '260' - result='" + result + "'");
 	}

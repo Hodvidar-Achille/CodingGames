@@ -12,7 +12,7 @@ import com.hodvidarr.utils.geometry.Point;
  *	'608' PASSED (means Point '(6.0, 8.0)')
  * @author Hodvidar
  */
-public final class Day10_2 // TODO change code
+public final class Day10_2
 {
 	/** If 'false' only response and Failure are written **/
 	private static final boolean VERBOSE = false;
@@ -28,10 +28,10 @@ public final class Day10_2 // TODO change code
 
 	public static void main(String[] args) throws Exception
 	{
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test5.txt", 99);
-		subTest("resources\\" + INPUT_DIRECTORY + "\\input10-test4.txt", 199);
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test5.txt", 99);
+		subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test4.txt", 199);
 		String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
-		System.err.println("Expected '???' - result='" + result + "'");
+		System.err.println("Expected '(6.0; 8.0)' - result='" + result + "'");
 	}
 
 	private static final char ASTEROID = '#';

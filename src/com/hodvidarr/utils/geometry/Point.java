@@ -1,5 +1,10 @@
 package com.hodvidarr.utils.geometry;
 
+/**
+ * 2D Point
+ * @author Hodvidar
+ *
+ */
 public class Point
 {
 	public final double x;

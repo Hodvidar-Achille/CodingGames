@@ -1,7 +1,7 @@
 package com.hodvidarr.utils.number;
 import java.util.*;
 
-public class largeNumber{
+public class LargeNumber{
 
      public static void main(String []args){
         System.out.println("Hello World - create scanner : \n");
