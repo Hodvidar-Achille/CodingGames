@@ -5,7 +5,6 @@ public final class Layer
 	public final int[] pixels;
 	public final int length;
 	private final int wide;
-	private final int height;
 
 	private int numberOfZero;
 	private int numberOfOne;
@@ -16,7 +15,6 @@ public final class Layer
 		this.pixels = new int[wide * height];
 		this.length = wide * height;
 		this.wide = wide;
-		this.height = height;
 	}
 
 	public void addPixel(int pixel, int i)

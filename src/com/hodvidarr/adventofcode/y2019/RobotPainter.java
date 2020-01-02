@@ -1,5 +1,10 @@
 package com.hodvidarr.adventofcode.y2019;
 
+/**
+ *  To pain ShipPanels in Day11
+ * @author Hodvidar
+ *
+ */
 public final class RobotPainter
 {
 	private static final boolean VERBOSE = false;
@@ -7,7 +12,7 @@ public final class RobotPainter
 	private void printPanelsIfVerbose()
 	{
 		if(VERBOSE)
-			this.ship.printPanels();
+			this.ship.printInConsole();
 	}
 
 	private void printStateIfVerbose()
@@ -73,14 +78,14 @@ public final class RobotPainter
 	{
 		this.colorOfFirstPanel = Panel.DARK;
 		this.ship = new ShipPanels(this.colorOfFirstPanel);
-		this.brain = new Amplifier(memory, null);
+		this.brain = new Amplifier(memory);
 	}
 
 	public RobotPainter(double[] memory, int colorOfFirstPanel)
 	{
 		this.colorOfFirstPanel = colorOfFirstPanel;
 		this.ship = new ShipPanels(this.colorOfFirstPanel);
-		this.brain = new Amplifier(memory, null);
+		this.brain = new Amplifier(memory);
 	}
 
 	public void paint()
@@ -88,7 +93,7 @@ public final class RobotPainter
 		while (true)
 		{
 			// 1) Take current color
-			int currentColor = this.ship.getPanelColor(x, y);
+			int currentColor = this.ship.getPaintedPointValue(x, y);
 			this.brain.setInput(currentColor);
 			// 2) Run the program
 			this.brain.runProgram();
@@ -100,7 +105,7 @@ public final class RobotPainter
 			int output = (int) this.brain.getOutput();
 			if(isPainting)
 			{
-				this.ship.paintPanel(x, y, output);
+				this.ship.paintPoint(x, y, output);
 				isPainting = false;
 				this.printPanelsIfVerbose();
 			}
@@ -120,8 +125,10 @@ public final class RobotPainter
 	{
 		if(order != TURN_LEFT && order != TURN_RIGHT)
 			throw new IllegalStateException("order not reconize:" + order);
-		if(this.facing != this.UP && this.facing != this.DOWN && this.facing != this.LEFT && this.facing != this.RIGHT)
-			throw new IllegalStateException("Illegal facing value:" + this.facing);
+		if(this.facing != this.UP && this.facing != this.DOWN
+				&& this.facing != this.LEFT && this.facing != this.RIGHT)
+			throw new IllegalStateException(
+					"Illegal facing value:" + this.facing);
 
 		if(this.facing == this.UP)
 		{
@@ -189,6 +196,6 @@ public final class RobotPainter
 
 	public void printPanels()
 	{
-		this.ship.printPanels();
+		this.ship.printInConsole();
 	}
 }

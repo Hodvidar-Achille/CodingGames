@@ -15,11 +15,22 @@ public final class CodeGenerator
 		this.max = max;
 	}
 
+	/**
+	 * Example: <br/> 
+	 * If length = 3 and this.min = 1 and this.max = 4 --> <br/>
+	 * [123, 124, 	132, 134, 	142, 143, <br/>
+	 * 213, 214, 	231, 234, 	241, 243, <br/>
+	 * 312, 314, 	321, 324, 	341, 342, <br/>
+	 * 412, 413, 	421, 423, 	431, 432] <br/>
+	 * @param length - of each code.
+	 * @return List of codes where each digits is only used once.
+	 */
 	public Collection<String> generateUniqueDigitCode(int length)
 	{
 		if(length - 1 > max - min)
-			throw new IllegalStateException("Length of unique digit code " + "cannot be more than the given interval."
-					+ " length=" + length + " and interval: min=" + min + " max=" + max);
+			throw new IllegalStateException("Length of unique digit code "
+					+ "cannot be more than the given interval." + " length="
+					+ length + " and interval: min=" + min + " max=" + max);
 
 		List<String> codes = new ArrayList<>();
 		generate(length, new ArrayList<>(), codes);

@@ -13,6 +13,7 @@ import java.util.*;
  l = [random.randint(0, 1) for i in xrange(n)]
  return not any( all( l[ ( (k-1)*i +j) % n ] for j in xrange(k)) for i in xrange(n/(k-1)))
  */
+@SuppressWarnings("unused")
 public class Problémathiques 
 {
 

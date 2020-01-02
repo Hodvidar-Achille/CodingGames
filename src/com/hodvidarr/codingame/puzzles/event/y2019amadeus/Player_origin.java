@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public final class Player_origin {
 
-    public static void main(String args[]) 
+    @SuppressWarnings({ "resource", "unused" })
+	public static void main(String args[]) 
     {
         Scanner in = new Scanner(System.in);
         int width = in.nextInt();

@@ -80,7 +80,6 @@ public final class Pilotes
 			System.err.println(s);
 	}
 
-	@SuppressWarnings("unused")
 	private String test(String inputFile) throws Exception
 	{
 		String line = "";

@@ -122,7 +122,6 @@ public class SalleDeSport
 			{
 				if(i%div == 0)
 				{
-					String result = "";
 					System.out.println(""+i);
 					sc.close();
 					return ""+i;

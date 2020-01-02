@@ -13,6 +13,7 @@ import java.util.Scanner;
  *  	
  * @author Hodvidar
  */
+@SuppressWarnings("unused")
 public final class IsoConstest2
 {
 	// Name of class to put back : IsoContest

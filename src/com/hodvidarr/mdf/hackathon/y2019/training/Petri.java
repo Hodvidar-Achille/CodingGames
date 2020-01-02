@@ -62,7 +62,7 @@ public final class Petri {
 		}
 	}
 	
-	public static void printIfVerbose(String s)
+	private static void printIfVerbose(String s)
 	{
 		if (VERBOSE)
 			System.err.println(s);
@@ -243,16 +243,7 @@ public final class Petri {
 		return false;
 	}
 	
-	public static boolean isNumeric(String strNum) {
-	    try {
-	        double d = Double.parseDouble(strNum);
-	    } catch (NumberFormatException | NullPointerException nfe) {
-	        return false;
-	    }
-	    return true;
-	}
-	
-	public static void printTab(String[][] tab, int size)
+	private static void printTab(String[][] tab, int size)
 	{
 		if(!VERBOSE)
 			return;

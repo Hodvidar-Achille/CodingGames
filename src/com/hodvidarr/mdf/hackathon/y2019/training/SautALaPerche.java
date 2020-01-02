@@ -67,7 +67,6 @@ public final class SautALaPerche {
 		Scanner sc = new Scanner(file);
 		printIfVerbose("DEBUGGING");
 		int i = 0;
-		int nbTries = 0;
 		Map<String, Perf> athletes = new HashMap<>();
 		while(sc.hasNextLine()) {
 			i++;
@@ -75,7 +74,6 @@ public final class SautALaPerche {
 			printIfVerbose("i="+i+" line:"+line);
 			if(i == 1)
 			{
-				nbTries = Integer.parseInt(line);
 				continue;
 			}
 			

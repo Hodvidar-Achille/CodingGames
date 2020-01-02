@@ -2,6 +2,15 @@ package com.hodvidarr.utils.number;
 
 public final class ArithmeticServices
 {
+	public static final boolean isNumeric(String strNum) {
+	    try {
+	        Double.parseDouble(strNum);
+	    } catch (NumberFormatException | NullPointerException nfe) {
+	        return false;
+	    }
+	    return true;
+	}
+	
 	/**
 	 * Greatest Common Divisor
 	 * @param a - one number

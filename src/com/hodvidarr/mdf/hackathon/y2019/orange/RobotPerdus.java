@@ -6,6 +6,9 @@ import java.util.*;
 
 /**
  * 		https://www.isograd.com/FR/solutionconcours.php?contest_id=50
+ * 
+ * NOT FINISHED 
+ * 
  * by Hodvidar
  */
 public final class RobotPerdus
@@ -201,40 +204,6 @@ public final class RobotPerdus
 		return false;
 	}
 	
-	/** Checks if every integer in both arrays are the same 
-	 * 
-	 * BUT : not needed because only "possible" stations are enought here...
-	 * **/
-	private boolean areAllEquals(Integer[] algoStations, Integer[] polystation)
-	{
-		int a = algoStations[0];
-		for(int i : algoStations)
-		{
-			if(i != a)
-				return false;
-		}
-		for(int i : polystation)
-		{
-			if(i != a)
-				return false;
-		}
-		return true;
-	}
-	
-	/**
-	 * 
-	 * @param possiblePaths
-	 * @return true if one Path make the 2 robots to be together.
-	 */
-	private Path checkPaths(List<Path> possiblePaths)
-	{
-		for(Path p : possiblePaths)
-		{
-			if(p.checkPath())
-				return p;
-		}
-		return null;
-	}
 	
 	class Path
 	{

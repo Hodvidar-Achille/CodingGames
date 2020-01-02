@@ -134,7 +134,6 @@ public final class SpaceOrbitalSystem
 	// -------------------------------------------------------------------
 	public double getNumberOfStepForLoop_optimized()
 	{
-		// X
 		double nbX = 0;
 		double nbY = 0;
 		double nbZ = 0;
@@ -164,11 +163,11 @@ public final class SpaceOrbitalSystem
 		}
 
 		// Find LCD
-		double lcd = getLCD(nbX, nbY, nbZ);
+		double lcd = getLCM(nbX, nbY, nbZ);
 		return lcd;
 	}
 
-	private double getLCD(double a, double b, double c)
+	private double getLCM(double a, double b, double c)
 	{
 		return ArithmeticServices.lcm(a, b, c);
 	}

@@ -69,7 +69,6 @@ public final class InteretDebiteurs {
 		Scanner sc = new Scanner(file);
 		printIfVerbose("DEBUGGING");
 		int i = 0;
-		int nbDays = 0;
 		double sold = 0;
 		double var = 0;
 		int daysNegatif = 0;
@@ -82,7 +81,6 @@ public final class InteretDebiteurs {
 			/* Lisez les données et effectuez votre traitement */
 			if(i == 1)
 			{
-				nbDays = Integer.parseInt(line);
 				continue;
 			}
 			if(i == 2)

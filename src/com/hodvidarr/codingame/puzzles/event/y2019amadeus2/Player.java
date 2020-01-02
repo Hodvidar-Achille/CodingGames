@@ -3,8 +3,6 @@ package com.hodvidarr.codingame.puzzles.event.y2019amadeus2;
 
 import static java.lang.Math.*;
 
-import java.io.*;
-import java.nio.*;
 import java.util.*;
 
 class Player 

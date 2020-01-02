@@ -4,7 +4,6 @@ public final class OpCodeReader
 {
 	private final boolean VERBOSE = false;
 
-	@SuppressWarnings("unused")
 	private void printIfVerbose(String s)
 	{
 		if(VERBOSE)
@@ -41,12 +40,25 @@ public final class OpCodeReader
 	public final int HALT_CODE = 99;
 	private final int MAX_CODE = 22210;
 
-	private final int[] SUPPORTED_OPCODES = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	private final int[] SUPPORTED_MODES = new int[] { POSITION_MODE, IMMEDIATE_MODE, RELATIVE_MODE };
+	private final int[] SUPPORTED_OPCODES = new int[] { 1, 2, 3, 4, 5, 6, 7, 8,
+			9 };
+	private final int[] SUPPORTED_MODES = new int[] { POSITION_MODE,
+			IMMEDIATE_MODE, RELATIVE_MODE };
 
 	public OpCodeReader(double[] memory)
 	{
 		this.memory = memory;
+	}
+
+	public OpCodeReader(double[] memory, OpCodeReaderInputCallBack aCaller)
+	{
+		this.memory = memory;
+		this.caller = aCaller;
+	}
+
+	public void changeMemoryAdressValue(int addr, double value)
+	{
+		this.memory[addr] = value;
 	}
 
 	private double output;
@@ -56,6 +68,8 @@ public final class OpCodeReader
 	private boolean phaseInputUsed = false;
 
 	private double input;
+	/** Inform the owner of the caller **/
+	private OpCodeReaderInputCallBack caller;
 
 	private double relative_base = 0;
 
@@ -70,8 +84,12 @@ public final class OpCodeReader
 			phaseInputUsed = true;
 			return this.phaseInput.doubleValue();
 		}
-		return input;
+		printIfVerbose(
+				"OpCde3 call input, returning input value=" + this.input);
 
+		if(this.caller != null)
+			caller.informValueUsed(input);
+		return input;
 	}
 
 	/**
@@ -117,7 +135,7 @@ public final class OpCodeReader
 			{
 				return new double[] { code, i };
 			}
-			if(code == 4 || (code % 100) == 4) // TODO method for that
+			if((code % 100) == 4)
 			{
 				i = readCode(code, i);
 				return new double[] { code, i };
@@ -125,7 +143,8 @@ public final class OpCodeReader
 			i = readCode(code, i);
 		}
 
-		throw new IllegalStateException("Program should not be outside of loop.");
+		throw new IllegalStateException(
+				"Program should not be outside of loop.");
 	}
 
 	/**
@@ -141,8 +160,9 @@ public final class OpCodeReader
 
 	private int readCode(int code, int i, int param1, int param2, int param3)
 	{
-		printIfVerbose("code: '" + code + "'  position: '" + i + "' relative_base=" + this.relative_base + " p1:"
-				+ param1 + " p2:" + param2 + " p3:" + param3);
+		//		printIfVerbose("code: '" + code + "'  position: '" + i
+		//				+ "' relative_base=" + this.relative_base + " p1:" + param1
+		//				+ " p2:" + param2 + " p3:" + param3);
 		// printIfVerbose("" + arrayToString(this.memory));
 		switch (code)
 		{
@@ -167,7 +187,9 @@ public final class OpCodeReader
 		default:
 			if(code <= HALT_CODE || code > MAX_CODE)
 			{
-				throw new IllegalStateException("Should not be here (1) encounter opCode:'" + code + "'");
+				throw new IllegalStateException(
+						"Should not be here (1) encounter opCode:'" + code
+								+ "'");
 			}
 			return opCodeWithParam(code, i);
 		}
@@ -385,7 +407,8 @@ public final class OpCodeReader
 	{
 		int subCode = code % 100;
 		if(!isSupporterOpCode(subCode))
-			throw new IllegalStateException("This case should happen ? code=" + code);
+			throw new IllegalStateException(
+					"This case should happen ? code=" + code);
 
 		int modeFor3 = code / 10000;
 		int modeFor2 = (code / 1000) % 10;
@@ -437,7 +460,8 @@ public final class OpCodeReader
 	private double getValue(int pos, int paramMode)
 	{
 		if(!isSupporterMode(paramMode))
-			throw new IllegalStateException("This case should not happen paramMode=" + paramMode);
+			throw new IllegalStateException(
+					"This case should not happen paramMode=" + paramMode);
 
 		if(paramMode == IMMEDIATE_MODE) // '1'
 		{
@@ -455,7 +479,9 @@ public final class OpCodeReader
 			return getMemoryValue((int) (param + this.relative_base));
 		}
 
-		throw new IllegalStateException("Method 'isSupporterMode' Failed to exclude this paramMode=" + paramMode);
+		throw new IllegalStateException(
+				"Method 'isSupporterMode' Failed to exclude this paramMode="
+						+ paramMode);
 	}
 
 	/**

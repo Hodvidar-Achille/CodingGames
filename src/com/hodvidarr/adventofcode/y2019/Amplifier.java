@@ -7,12 +7,28 @@ public final class Amplifier
 	private final Double phase;
 	private boolean shutDown;
 
-	/** phase can be null **/
-	public Amplifier(double[] memory, Double phase)
+	public Amplifier(double[] memory)
 	{
-		this.codeReader = new OpCodeReader(memory);
+		this(memory, null, null);
+	}
+
+	public Amplifier(double[] memory, Double phase,
+			OpCodeReaderInputCallBack aCaller)
+	{
+		this.codeReader = new OpCodeReader(memory, aCaller);
 		this.phase = phase;
 		this.codeReader.setPhaseInput(this.phase);
+		this.positionInProgram = 0;
+		this.shutDown = false;
+	}
+
+	public void changeMemoryAdressValue(int addr, double value)
+	{
+		this.codeReader.changeMemoryAdressValue(addr, value);
+	}
+
+	public void resetPositionInProgram()
+	{
 		this.positionInProgram = 0;
 		this.shutDown = false;
 	}
