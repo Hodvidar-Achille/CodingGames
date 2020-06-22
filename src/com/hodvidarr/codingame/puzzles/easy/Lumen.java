@@ -16,7 +16,7 @@ class Lumen
 			System.err.println(s);
 	}
 	
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
@@ -115,7 +115,7 @@ class Lumen
             {
                 System.err.print(room[i][j]);
             }
-            System.err.println("");
+            System.err.println();
         }        
     }
     

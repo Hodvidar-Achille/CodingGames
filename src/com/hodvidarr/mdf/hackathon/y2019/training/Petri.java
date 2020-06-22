@@ -238,10 +238,8 @@ public final class Petri {
 			return true;
 		if(s.equals("."))
 			return true;
-		if(s.startsWith("o"))
-			return true;
-		return false;
-	}
+        return s.startsWith("o");
+    }
 	
 	private static void printTab(String[][] tab, int size)
 	{

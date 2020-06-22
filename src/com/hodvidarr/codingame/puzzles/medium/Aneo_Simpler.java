@@ -51,7 +51,7 @@ class Aneo_Simpler
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		System.err.println("Solution using a Set of validated speeds and convertion : (int) Math.round(d/v)");
 
@@ -154,7 +154,7 @@ class Aneo_Simpler
 		 */
 		private int max;
 		
-		private Set<Integer> validatedSpeed = new HashSet<>();
+		private final Set<Integer> validatedSpeed = new HashSet<>();
 
 		public SpeedCalculator(int maximumSpeed)
 		{
@@ -295,7 +295,7 @@ class Aneo_Simpler
 		public final int[] durations;
 		public final int result;
 
-		private JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
+		JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
 		{
 			this.speed = speed;
 			this.lightCount = lightCount;

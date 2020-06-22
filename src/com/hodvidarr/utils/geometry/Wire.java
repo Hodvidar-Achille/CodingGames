@@ -11,8 +11,8 @@ import java.util.List;
 public final class Wire
 {
 	private Point origin;
-	private List<Point> points = new ArrayList<>();
-	private List<Segment> segments = new ArrayList<>();
+	private final List<Point> points = new ArrayList<>();
+	private final List<Segment> segments = new ArrayList<>();
 	private double length = 0;
 
 	public Wire()

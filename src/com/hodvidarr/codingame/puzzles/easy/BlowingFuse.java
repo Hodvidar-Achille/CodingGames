@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class BlowingFuse {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int numberOfAppliances = in.nextInt();
         int numberOfClicks = in.nextInt();

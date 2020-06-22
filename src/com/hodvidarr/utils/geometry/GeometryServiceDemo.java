@@ -7,7 +7,7 @@ package com.hodvidarr.utils.geometry;
 public final class GeometryServiceDemo
 {
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		// TEST
 		System.err.println("Start GeometricServicesDemo main...");

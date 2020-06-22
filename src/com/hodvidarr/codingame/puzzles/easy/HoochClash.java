@@ -26,7 +26,7 @@ class HoochClash {
      */
     private static final int ROUNDING_DECIMAL = 0;
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int minSize = in.nextInt();
         int maxSize = in.nextInt();

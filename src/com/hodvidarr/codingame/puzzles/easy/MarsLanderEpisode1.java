@@ -8,7 +8,7 @@ import java.util.*;
 class MarsLanderEpisode1 {
 
     @SuppressWarnings("unused")
-	public static void main(String args[]) {
+	public static void main(String[] args) {
         @SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
         int surfaceN = in.nextInt(); // the number of points used to draw the surface of Mars.
@@ -63,9 +63,9 @@ class MarsLanderEpisode1 {
             currentPosition = currentPosition + halfStepVelocity ;
             System.err.println("currentAccelleration: "+currentAccelleration+" currentVelocity: "+currentVelocity+" halfStepVelocity: "+halfStepVelocity+" currentPosition: "+currentPosition);
             System.err.println("Vertical calculation...");
-            double distanceFromGround = (double) (currentPosition - Yflat);
+            double distanceFromGround = currentPosition - Yflat;
             double wantedSpeedV = -35.5d; // simple for now
-            double actualSpeedV = (double) vSpeed;
+            double actualSpeedV = vSpeed;
             int delayV = 4-power; // simple for now, adapt with angle
             double maxSpeedIncrV = GRAVITY + 4; // simple for now, consider only rotate max at 45°
             int desiredVerticalSpeed = adaptSpeed(distanceFromGround, wantedSpeedV, actualSpeedV, currentAccelleration, delayV, maxSpeedIncrV);

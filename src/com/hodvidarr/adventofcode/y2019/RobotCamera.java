@@ -30,7 +30,7 @@ public final class RobotCamera
 	private final String RIGHT = "E";
 	private final String LEFT = "W";
 
-	private String facing = UP;
+	private final String facing = UP;
 
 	private final int COMMA = 44;
 	private final int A = 65;
@@ -114,10 +114,8 @@ public final class RobotCamera
 			return false;
 		if(this.ship.getPaintedPointValue(p.x, p.y + 1) == ScaffoldPanel.EMPTY)
 			return false;
-		if(this.ship.getPaintedPointValue(p.x, p.y - 1) == ScaffoldPanel.EMPTY)
-			return false;
-		return true;
-	}
+        return this.ship.getPaintedPointValue(p.x, p.y - 1) != ScaffoldPanel.EMPTY;
+    }
 
 	private int calculateScore(PaintedPoint p)
 	{

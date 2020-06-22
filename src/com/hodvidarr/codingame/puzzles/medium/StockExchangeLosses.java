@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class StockExchangeLosses {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         List<Integer> values = new ArrayList<>();

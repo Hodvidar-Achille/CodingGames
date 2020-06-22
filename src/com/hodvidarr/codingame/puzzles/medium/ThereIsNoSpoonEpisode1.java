@@ -9,7 +9,7 @@ import java.util.*;
  **/
 class ThereIsNoSpoonEpisode1 {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int width = in.nextInt(); // the number of cells on the X axis
         int height = in.nextInt(); // the number of cells on the Y axis

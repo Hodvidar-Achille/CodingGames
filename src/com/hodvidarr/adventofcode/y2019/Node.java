@@ -10,7 +10,7 @@ public class Node
 	private final String name;
 	private Integer level;
 	private Node parent;
-	private Set<Node> children;
+	private final Set<Node> children;
 
 	public Node(String name)
 	{

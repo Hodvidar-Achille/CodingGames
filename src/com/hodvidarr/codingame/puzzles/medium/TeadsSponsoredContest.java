@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class TeadsSponsoredContest {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
     	TeadsSponsoredContest s = new TeadsSponsoredContest();
     	s.test();
     }
@@ -69,9 +69,9 @@ class TeadsSponsoredContest {
     // ---------------------- INTERNAL CLASSES --------------------------
     
     class Node {
-        private int value;
-        private List<Node> voisins;
-        private Map<Integer, Integer> levels;
+        private final int value;
+        private final List<Node> voisins;
+        private final Map<Integer, Integer> levels;
         
         public Node(int x)
         {

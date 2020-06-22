@@ -9,7 +9,7 @@ import java.util.*;
 class SkynetRevolutionEpisode1
 {
 
-	public static void main(String args[]) 
+	public static void main(String[] args)
     {
 		SkynetRevolutionEpisode1 s = new SkynetRevolutionEpisode1();
     	s.test();
@@ -217,9 +217,9 @@ class SkynetRevolutionEpisode1
 	// ---------------------- INTERNAL CLASSES --------------------------------
 	class Node
 	{
-		private int value;
+		private final int value;
 		private int valueVar;
-		private Map<Node, Integer> edges;
+		private final Map<Node, Integer> edges;
 
 		public Node(int val)
 		{
@@ -349,8 +349,8 @@ class SkynetRevolutionEpisode1
 
 	class Edge
 	{
-		private int source;
-		private int destination;
+		private final int source;
+		private final int destination;
 
 		public Edge(int aSource, int aDestination)
 		{

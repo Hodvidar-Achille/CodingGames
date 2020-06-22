@@ -17,8 +17,8 @@ import java.util.*;
 public class Problémathiques 
 {
 
-	private static int oneBillion = 1000000000;
-	private static double tenBillion = 10000000000L;
+	private static final int oneBillion = 1000000000;
+	private static final double tenBillion = 10000000000L;
 	
 	// public static void main(String[] args)
 	// {

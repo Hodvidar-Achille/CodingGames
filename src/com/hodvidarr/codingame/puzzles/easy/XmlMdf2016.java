@@ -9,7 +9,7 @@ class XmlMdf2016 {
 
     private static final char END_TAG = '-';
     
-    public static void main(String args[]) {
+    public static void main(String[] args) {
     	XmlMdf2016 m = new XmlMdf2016();
     	m.test();
     }

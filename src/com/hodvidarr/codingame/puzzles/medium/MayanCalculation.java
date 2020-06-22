@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class MayanCalculation {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int L = in.nextInt();
@@ -55,7 +55,7 @@ class MayanCalculation {
 
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
-        double result = doOperation((double) number1, (double) number2, operation);
+        double result = doOperation(number1, number2, operation);
         System.err.println("result: "+result);
         printMayaNumber(result, numbers, L, H);
         //System.out.println(result);

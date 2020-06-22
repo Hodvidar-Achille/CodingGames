@@ -13,7 +13,7 @@ public class DeadMenshots
     private static final String HIT = "hit";
     private static final String MISS = "miss";
     
-    public static void main(String args[])
+    public static void main(String[] args)
 	{
     	DeadMenshots d = new DeadMenshots();
 		d.test();

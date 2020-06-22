@@ -13,7 +13,7 @@ class TheBridgeEpisode2
 
     private final static int MAX_NUMBER_TURN = 50;
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
     	TheBridgeEpisode2 t = new TheBridgeEpisode2();
     	t.test();
@@ -63,7 +63,7 @@ class TheBridgeEpisode2
             {
                 System.err.print(grid[y][x]);
             }
-            System.err.println("");
+            System.err.println();
         }
         // -----
 
@@ -111,7 +111,7 @@ class TheBridgeEpisode2
                 {
                     System.err.print(s + ", ");
                 }
-                System.err.println("");
+                System.err.println();
             }
 
             // Write an action using System.out.println()
@@ -765,8 +765,8 @@ class TheBridgeEpisode2
 	
 	class Population
 	{
-	    private Individual[] individuals;
-	    private int popOrderSize = 0;
+	    private final Individual[] individuals;
+	    private final int popOrderSize = 0;
 	
 	    /*
 	     * Constructors

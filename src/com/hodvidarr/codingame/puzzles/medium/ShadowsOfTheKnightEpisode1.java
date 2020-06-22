@@ -8,7 +8,7 @@ import java.util.*;
 class ShadowsOfTheKnightEpisode1 {
 
     @SuppressWarnings("unused")
-	public static void main(String args[]) {
+	public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int W = in.nextInt(); // width of the building.
         int H = in.nextInt(); // height of the building.

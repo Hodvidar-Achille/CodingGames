@@ -8,7 +8,7 @@ import java.util.*;
 public class AsciiArt 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int L = in.nextInt();
@@ -46,7 +46,7 @@ public class AsciiArt
              System.err.print("_"+alphabet[i]);
         }
         */
-        System.err.println("");
+        System.err.println();
         int i2 = 0, j2 = 0;
         boolean boo = false;
         for(int i = 0; i < longueurResultat; i++)

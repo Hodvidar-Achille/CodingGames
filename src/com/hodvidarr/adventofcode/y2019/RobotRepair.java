@@ -29,9 +29,9 @@ public final class RobotRepair
 	private final List<MazePoint> path;
 
 	/** X coordinate to start **/
-	private int start_x = 0;
+	private final int start_x = 0;
 	/** Y coordinate to start **/
-	private int start_y = 0;
+	private final int start_y = 0;
 
 	private final String UP = "N";
 	private final String DOWN = "S";

@@ -48,7 +48,7 @@ public class LogiqueTresCombinatoire{
                 j++;
             }
             boolean p1 = (a && b); // AND
-            boolean p2 = !(c ^ d); //N XOR
+            boolean p2 = c == d; //N XOR
             boolean p3 = e; // OR ?
             boolean p4 = !(p2 || p3); // N OR
             boolean p5 = (p1 ^ p4); // XOR

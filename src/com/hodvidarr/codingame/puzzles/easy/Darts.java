@@ -17,7 +17,7 @@ public class Darts
 			System.err.println(s);
 	}
 	
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		Darts d = new Darts();
 		d.test();

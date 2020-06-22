@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class IsbnCheckDigit {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
         if (in.hasNextLine()) {
@@ -46,7 +46,7 @@ class IsbnCheckDigit {
                 return false;
             if(!aISBN.substring(0, 9).matches("[0-9]+"))
                 return false;
-            if(!aISBN.substring(9, 10).equals("X"))
+            if(!aISBN.startsWith("X", 9))
                 return false;
         }
 

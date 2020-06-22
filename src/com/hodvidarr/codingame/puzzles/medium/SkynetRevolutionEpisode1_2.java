@@ -8,7 +8,7 @@ import java.util.*;
 class SkynetRevolutionEpisode1_2 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	SkynetRevolutionEpisode1_2 s = new SkynetRevolutionEpisode1_2();
     	s.test();
@@ -109,8 +109,8 @@ class SkynetRevolutionEpisode1_2
     // --------------------------- INTERNAL CLASSES ----------------------
     class Edge
     {
-        private int source;
-        private int destination;
+        private final int source;
+        private final int destination;
         
         public Edge(int aSource, int aDestination)
         {

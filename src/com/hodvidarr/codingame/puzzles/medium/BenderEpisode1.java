@@ -8,7 +8,7 @@ import java.util.*;
 class BenderEpisode1
 {
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		BenderEpisode1 b = new BenderEpisode1();
 		b.test();
@@ -71,13 +71,13 @@ class BenderEpisode1
 	
 	class Bender
 	{
-		private char[][] theGrid;
-		private int lines;
-		private int colums;
+		private final char[][] theGrid;
+		private final int lines;
+		private final int colums;
 		private boolean bersekerMode;
 		private boolean isInversed;
-		private ArrayList<Movement> pastActions;
-		private ArrayList<String> movements;
+		private final ArrayList<Movement> pastActions;
+		private final ArrayList<String> movements;
 		private final char SUD = 'S';
 		private final char EST = 'E';
 		private final char NORD = 'N';
@@ -186,8 +186,7 @@ class BenderEpisode1
 				return d;
 			if (d == this.NORD && n)
 				return d;
-			;
-			if (d == this.OUEST && w)
+            if (d == this.OUEST && w)
 				return d;
 
 			if (i)
@@ -302,11 +301,11 @@ class BenderEpisode1
 
 	class Movement
 	{
-		private int x;
-		private int y;
-		private boolean stateInverse;
-		private boolean stateBersek;
-		private char direction;
+		private final int x;
+		private final int y;
+		private final boolean stateInverse;
+		private final boolean stateBersek;
+		private final char direction;
 
 		public Movement(int y, int x, boolean inverse, boolean bersek, char direction)
 		{

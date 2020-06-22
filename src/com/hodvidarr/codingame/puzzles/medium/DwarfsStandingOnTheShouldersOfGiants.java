@@ -8,7 +8,7 @@ import java.util.*;
 class DwarfsStandingOnTheShouldersOfGiants 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	DwarfsStandingOnTheShouldersOfGiants d = new DwarfsStandingOnTheShouldersOfGiants();
     	d.test();
@@ -67,9 +67,9 @@ class DwarfsStandingOnTheShouldersOfGiants
     
     // ---------------------- INTERNAL CLASSES -------------------------------
     class Node {
-        private int value;
-        private List<Node> children;
-        private List<Node> parents;
+        private final int value;
+        private final List<Node> children;
+        private final List<Node> parents;
         private int level;
         
         public Node(int x)

@@ -129,11 +129,8 @@ public class GeometryServices
 		if(o3 == 0 && isInsideCoordinate(a, e, f))
 			return true;
 		// e, f, b colinear, b on segment [ef]
-		if(o4 == 0 && isInsideCoordinate(b, e, f))
-			return true;
-
-		return false; // Doesn't fall in any of the above cases
-	}
+        return o4 == 0 && isInsideCoordinate(b, e, f);// Doesn't fall in any of the above cases
+    }
 
 	/**
 	 * Returns the point of intersection between segment [AB] and [EF], 
@@ -210,7 +207,7 @@ public class GeometryServices
 		}
 	}
 
-	public boolean isInside(Point polygon[], int n, Point p)
+	public boolean isInside(Point[] polygon, int n, Point p)
 	{
 		// System.err.println("isInside(polygon, " + n + ", p(" + p.x + "," + p.y + "))");
 
@@ -473,8 +470,8 @@ public class GeometryServices
 			return result;
 		result = Quadrilateral.class.getSimpleName();
 
-		boolean isParralelogram = Parallelogram.checkPoints(points);
-		if(!isParralelogram)
+		boolean isParallelogram = Parallelogram.checkPoints(points);
+		if(!isParallelogram)
 			return result;
 		result = Parallelogram.class.getSimpleName();
 

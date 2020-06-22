@@ -42,7 +42,7 @@ public class VisitorDemo
 	 */
 	class Car implements CarElement
 	{
-		private CarElement[] elements;
+		private final CarElement[] elements;
 	
 		public Car()
 		{
@@ -85,7 +85,7 @@ public class VisitorDemo
 	 */
 	class Wheel implements CarElement
 	{
-		private String name;
+		private final String name;
 	
 		public Wheel(final String name)
 		{

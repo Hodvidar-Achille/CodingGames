@@ -8,7 +8,7 @@ import java.util.*;
 class Temperatures 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt(); // the number of temperatures to analyse

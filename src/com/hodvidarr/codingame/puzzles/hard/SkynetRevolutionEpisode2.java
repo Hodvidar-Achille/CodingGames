@@ -8,7 +8,7 @@ import java.util.*;
 class SkynetRevolutionEpisode2
 {
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
     	SkynetRevolutionEpisode2 s = new SkynetRevolutionEpisode2();
     	s.test();
@@ -131,10 +131,10 @@ class SkynetRevolutionEpisode2
     
     class Node
     {
-        private int value;
+        private final int value;
         private int dist = Integer.MAX_VALUE;
         private int level = 0;
-        private List<Node> voisins;
+        private final List<Node> voisins;
         private boolean isExist = false;
 
         public Node(int val)

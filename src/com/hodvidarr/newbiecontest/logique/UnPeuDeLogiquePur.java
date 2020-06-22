@@ -157,7 +157,7 @@ public final class UnPeuDeLogiquePur
 
 	private interface Rule
 	{
-		public boolean accept(Person p);
+		boolean accept(Person p);
 	}
 
 	private class Person
@@ -228,10 +228,8 @@ public final class UnPeuDeLogiquePur
 				return true;
 			if (hasC1)
 				return false;
-			if (hasC2)
-				return false;
-			return true;
-		}
+            return !hasC2;
+        }
 	}
 
 	private class PositionRule extends CharactLink
@@ -252,7 +250,7 @@ public final class UnPeuDeLogiquePur
 
 	private interface PositionDiff
 	{
-		public boolean accept(Position p1, Position p2);
+		boolean accept(Position p1, Position p2);
 	}
 
 	public void print(Person[] persons)
@@ -275,24 +273,24 @@ public final class UnPeuDeLogiquePur
 	}
 
 	private enum Name implements Characteristic {
-		Lebenfrau, CottCott, qq_, S0C13V3R, EiGhT;
-	}
+		Lebenfrau, CottCott, qq_, S0C13V3R, EiGhT
+    }
 
 	private enum Language implements Characteristic {
-		Perl, Java, Delphi, C, PHP;
-	}
+		Perl, Java, Delphi, C, PHP
+    }
 
 	private enum Domaine implements Characteristic {
-		crackmes, programmation, steganographie, cryptographie, hacking;
-	}
+		crackmes, programmation, steganographie, cryptographie, hacking
+    }
 
 	private enum Os implements Characteristic {
-		Mandriva, Windows95, Ubuntu, OpenBSD, WindowsXP;
-	}
+		Mandriva, Windows95, Ubuntu, OpenBSD, WindowsXP
+    }
 
 	private enum Defaut implements Characteristic {
-		borne, feignant, ivrogne, susceptible, vicieux;
-	}
+		borne, feignant, ivrogne, susceptible, vicieux
+    }
 
 	private enum Position implements Characteristic {
 		premier(1), deuxieme(2), troisieme(3), quatrieme(4), dernier(5);
@@ -408,7 +406,7 @@ public final class UnPeuDeLogiquePur
 	 */
 	public static boolean hasDuplicates(int n)
 	{
-		String t = "0000000" + String.valueOf(n);
+		String t = "0000000" + n;
 		if (t.length() > 5)
 			t = t.substring(t.length() - 5);
 		for (int i = 0; i < t.length() - 1; i++)

@@ -11,9 +11,9 @@ public final class ChemicalSystem
 	private double costInOreOfReaction = 0;
 	private final boolean isQuantityOfOreDefined;
 
-	private Map<String, ChemicalReaction> reactions;
+	private final Map<String, ChemicalReaction> reactions;
 
-	private Map<String, Double> available;
+	private final Map<String, Double> available;
 
 	public ChemicalSystem()
 	{

@@ -61,7 +61,7 @@ class Aneo
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		System.err.println("Solution for: \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
 			+ " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL + "\n -MINIMUM_TIME=" + MINIMUM_TIME);
@@ -186,11 +186,8 @@ class Aneo
 
 			if (o.min > this.max)
 				return false;
-			if (o.max < this.min)
-				return false;
-
-			return true;
-		}
+            return !(o.max < this.min);
+        }
 
 		@Override
 		public int compareTo(Interval o)
@@ -601,7 +598,7 @@ class Aneo
 		public final int[] durations;
 		public final int result;
 
-		private JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
+		JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
 		{
 			this.speed = speed;
 			this.lightCount = lightCount;

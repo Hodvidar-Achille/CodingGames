@@ -11,7 +11,7 @@ public class BalancedTernaryComputerEncore
 	private static final char One = '1';
 	private static final char Zero = '0';
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
 		int N = in.nextInt();

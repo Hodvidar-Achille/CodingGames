@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class RugbyScore {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	System.err.println("START");
     	

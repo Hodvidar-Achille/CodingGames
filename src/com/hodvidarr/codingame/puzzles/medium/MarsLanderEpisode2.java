@@ -16,7 +16,7 @@ class MarsLanderEpisode2
 	private static final int SECURITY_DISTANCE_FROM_FLAT_GROUND = 50;
 
 	@SuppressWarnings("unused")
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
@@ -157,13 +157,8 @@ class MarsLanderEpisode2
 			return true;
 		}
 
-		if (marsLanderX > flatGroundRightX && marsLanderHorizontalSpeed > 0)
-		{
-			return true;
-		}
-
-		return false;
-	}
+        return marsLanderX > flatGroundRightX && marsLanderHorizontalSpeed > 0;
+    }
 
 	private static boolean isMarsLanderFlyingTooFastTowardsFlatGround(int marsLanderHorizontalSpeed)
 	{

@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class Defibrillators {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         double lonA = Math.toRadians(Double.parseDouble(in.next().replace(",",".")));
         double latA = Math.toRadians(Double.parseDouble(in.next().replace(",",".")));

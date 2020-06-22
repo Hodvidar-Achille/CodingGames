@@ -8,7 +8,7 @@ import java.util.*;
 class PiratesTreasure 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	System.err.println("START");
     	

@@ -8,7 +8,7 @@ import java.util.*;
 class TelephoneNumbers 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	TelephoneNumbers s = new TelephoneNumbers();
     	s.test();
@@ -43,9 +43,9 @@ class TelephoneNumbers
     // ----------------------------- INTERNAL CLASSES ----------------------------------
     class Node {
         
-        private int value;
+        private final int value;
         
-        private List<Node> children;
+        private final List<Node> children;
         
         public Node(int v)
         {

@@ -76,8 +76,7 @@ public final class _Day04_2
 		}
 		if(i5 == i6)
 		{
-			if(i5 != i4)
-				return true;
+            return i5 != i4;
 		}
 		return false;
 	}

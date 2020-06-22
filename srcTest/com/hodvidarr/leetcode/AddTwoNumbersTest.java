@@ -1,7 +1,6 @@
 package com.hodvidarr.leetcode;
 
 import com.hodvidarr.leetcode.utils.ListNode;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 

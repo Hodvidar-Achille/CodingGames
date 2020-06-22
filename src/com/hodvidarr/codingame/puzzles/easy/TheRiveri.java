@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class TheRiveri {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         long r1 = in.nextLong();
         long r2 = in.nextLong();

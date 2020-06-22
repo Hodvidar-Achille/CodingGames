@@ -11,7 +11,7 @@ public class OrderOfSuccession {
     private static final String RELIGION_CATHOLIC = "Catholic";
     private static final String ALIVE = "-";
     
-    public static void main(String args[]) {
+    public static void main(String[] args) {
     	OrderOfSuccession o = new OrderOfSuccession();
     	o.test();
     }
@@ -135,7 +135,7 @@ public class OrderOfSuccession {
        private final boolean catholic;
        private final boolean male;
        
-       private List<Person> children = new ArrayList<>();
+       private final List<Person> children = new ArrayList<>();
        
        private final int generation;
        

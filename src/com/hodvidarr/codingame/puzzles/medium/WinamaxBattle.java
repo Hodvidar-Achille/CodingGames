@@ -8,7 +8,7 @@ import java.util.*;
 class WinamaxBattle 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
     	WinamaxBattle s = new WinamaxBattle();
     	s.test();
@@ -33,7 +33,7 @@ class WinamaxBattle
             System.err.print(cardp2+", ");
             p2cards.add(new Card(cardp2, getCardValue(cardp2)));
         }
-        System.err.println("");
+        System.err.println();
 
         LinkedList<Card> p1cardsSide = new LinkedList<>();
         LinkedList<Card> p2cardsSide = new LinkedList<>();
@@ -187,8 +187,8 @@ class WinamaxBattle
     // ------------------ INTERNAL CLASSES -----------------------
     class Card
     {
-        private String name;
-        private Integer value;
+        private final String name;
+        private final Integer value;
         
         public Card(String name, Integer value)
         {

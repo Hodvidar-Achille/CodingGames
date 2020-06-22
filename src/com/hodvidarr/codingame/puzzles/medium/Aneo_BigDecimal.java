@@ -77,7 +77,7 @@ class Aneo_BigDecimal
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		System.err.println("Solution for: "
 				+ " \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
@@ -217,11 +217,8 @@ class Aneo_BigDecimal
 	
 			if(o.min.compareTo(this.max) == 1)
 				return false;
-			if(o.max.compareTo(this.min) == -1)
-				return false;
-	
-			return true;
-		}
+            return o.max.compareTo(this.min) != -1;
+        }
 	
 		@Override
 		public int compareTo(Interval o)
@@ -627,7 +624,7 @@ class Aneo_BigDecimal
 		public final int[] durations;
 		public final int result;
 
-		private JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
+		JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
 		{
 			this.speed = speed;
 			this.lightCount = lightCount;

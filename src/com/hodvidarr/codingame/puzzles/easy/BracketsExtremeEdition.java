@@ -14,7 +14,7 @@ class BracketsExtremeEdition {
     private static final char CROC_CLOSE = ']';
     private static final char ACCO_CLOSE = '}';
     
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String expression = in.next();
         

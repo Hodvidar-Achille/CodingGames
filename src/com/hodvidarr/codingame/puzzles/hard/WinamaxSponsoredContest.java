@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class WinamaxSponsoredContest {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int width = in.nextInt();
         int height = in.nextInt();

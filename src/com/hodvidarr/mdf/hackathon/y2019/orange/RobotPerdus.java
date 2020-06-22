@@ -355,7 +355,7 @@ public final class RobotPerdus
 	/** Holds all the Node and Link **/
 	class Network
 	{
-		private Map<Integer, Node> nodes;
+		private final Map<Integer, Node> nodes;
 		
 		public Network(Map<Integer, Node> stations)
 		{

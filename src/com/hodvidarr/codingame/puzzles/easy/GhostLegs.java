@@ -8,7 +8,7 @@ import java.util.*;
 class GhostLegs 
 {
 
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int W = in.nextInt();
@@ -52,7 +52,7 @@ class GhostLegs
         {
             char letter = letters[i];
             char number = numbers[start_end_Int.get(Integer.valueOf(i))];
-            System.out.println(String.valueOf(letter)+""+String.valueOf(number));
+            System.out.println(letter +""+ number);
         }
         // System.out.println("answer");
         in.close();

@@ -8,7 +8,7 @@ import java.util.*;
 class TheLastCrusadeEpisode1 {
 
     @SuppressWarnings("unused")
-	public static void main(String args[]) {
+	public static void main(String[] args) {
         @SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
         int W = in.nextInt(); // number of columns.

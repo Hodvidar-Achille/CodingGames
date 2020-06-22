@@ -63,7 +63,7 @@ class Aneo_Integer
 			JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
 			JeuxDeTest.FeuxRapides };
 
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		System.err.println("Solution for (only using integer and  speed in km/h) "
 				+ " and using 'Math.ceil' for minimum speed and 'Math.floor' for maximum speed "
@@ -189,11 +189,8 @@ class Aneo_Integer
 
 			if (o.min > this.max)
 				return false;
-			if (o.max < this.min)
-				return false;
-
-			return true;
-		}
+            return o.max >= this.min;
+        }
 
 		@Override
 		public int compareTo(Interval o)
@@ -587,7 +584,7 @@ class Aneo_Integer
 		public final int[] durations;
 		public final int result;
 
-		private JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
+		JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result)
 		{
 			this.speed = speed;
 			this.lightCount = lightCount;

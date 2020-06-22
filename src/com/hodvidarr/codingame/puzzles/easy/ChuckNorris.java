@@ -7,7 +7,7 @@ import java.util.*;
  **/
 class ChuckNorris {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String MESSAGE = in.nextLine();
 
@@ -24,7 +24,7 @@ class ChuckNorris {
         String tempBinaireString;
         char[] tempBinaireChar;
         for(byte b : byteLettresMessage){
-            i = (int) b;
+            i = b;
             tempBinaireString = Integer.toString(i, 2);
             tempBinaireChar = tempBinaireString.toCharArray();
             // verifie que chaque charactère ait 7 digits
