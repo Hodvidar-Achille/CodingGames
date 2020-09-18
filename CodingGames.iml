@@ -47,5 +47,6 @@
     </orderEntry>
     <orderEntry type="library" name="org.junit.jupiter:junit-jupiter:5.5.2" level="project" />
     <orderEntry type="library" name="org.mockito:junit-jupiter:2.20.0" level="project" />
+    <orderEntry type="library" name="org.assertj:assertj-core:3.17.2" level="project" />
   </component>
 </module>
