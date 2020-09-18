@@ -27,9 +27,12 @@ public class RPNCalculator {
 			int max = 0;
 			for(int i = 0; i < elements.length; i++) {
 				if(MAX.equals(elements[i])) {
-					// var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
-					// return calculate(String.valueOf(max));
-					return max;
+					if(i == elements.length-1)  {
+						return max;
+					}
+					var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
+					return calculate(max + " " + remainningExpression);
+					// return max;
 				}
 				var num = Integer.parseInt(elements[i]);
 				if(num > max) {

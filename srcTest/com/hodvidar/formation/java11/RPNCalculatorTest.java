@@ -129,4 +129,17 @@ public class RPNCalculatorTest {
 	void should_find_Max_in_constants(int result, String expression){
 		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"15 = 15 MAX MAX",
+			"16 = 10 15 MAX 11 16 MAX",
+			"0 = 15 4 42 115 MAX 115 - ",
+			"100 = 1 10 100 1000 999 MAX 10 /",
+			"10 = 1 10 100 1000 999 MAX 10 / SQRT",
+			"46 = 10 10 15 MAX 22 16 31 MAX +"
+	})
+	void should_handle_max_and_other_operator(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
 }
