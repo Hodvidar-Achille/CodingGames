@@ -1,5 +1,10 @@
 package com.hodvidar.formation.java11;
 
+import static java.util.stream.Collectors.joining;
+
+import java.util.Arrays;
+
+
 // https://codingdojo.org/kata/RPN/
 public class RPNCalculator {
 
@@ -17,16 +22,20 @@ public class RPNCalculator {
 
 		var i = Integer.parseInt(elements[0]);
 		var ii = Integer.parseInt(elements[1]);
-		var iii = elements[2];
+		var operator = elements[2];
+		var result = 0;
 
-		switch (iii) {
-			case PLUS : return i + ii;
-			case MINUS : return i - ii;
-			case MULTIPLE : return i * ii;
-			case DIVIDE : return i / ii;
-			default: break;
+		switch (operator) {
+			case PLUS : result = i + ii; break;
+			case MINUS : result = i - ii; break;
+			case MULTIPLE : result = i * ii; break;
+			case DIVIDE : result = i / ii; break;
+			default: throw new UnsupportedOperationException(operator);
 		}
-		throw new UnsupportedOperationException("");
-
+		if(elements.length > 3)  {
+			var remainningExpression = Arrays.stream(elements).skip(3).collect(joining(" "));
+			return calculate(result + " " + remainningExpression);
+		}
+		return result;
 	}
 }

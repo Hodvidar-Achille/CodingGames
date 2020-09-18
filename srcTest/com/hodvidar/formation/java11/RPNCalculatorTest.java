@@ -17,7 +17,6 @@ public class RPNCalculatorTest {
 		rpnCalculator = new RPNCalculator();
 	}
 
-	// Can replace 3 previous tests
 	@ParameterizedTest
 	@CsvSource(value = {
 			"1", "2", "3", "42"
@@ -26,7 +25,6 @@ public class RPNCalculatorTest {
 		assertThat(rpnCalculator.calculate(constant)).isEqualTo(Integer.valueOf(constant));
 	}
 
-	// Can replace 3 previous tests
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
 			"2 = 1 1 +",
@@ -74,6 +72,26 @@ public class RPNCalculatorTest {
 	@Test
 	void should_throws_exception_for_unknown_operator() {
 		assertThatThrownBy(() -> rpnCalculator.calculate("42 42 .")).isInstanceOf(UnsupportedOperationException.class);
-
 	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"6 = 2 2 + 2 +",
+			"6 = 1 2 + 3 +",
+			"10 = 2 2 + 2 + 2 + 2 +"
+	})
+	void should_add_more_than_2_constants(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"10 = 20 2 * 20 - 10 -",
+			"100 = 100 2 / 50 +",
+			"10 = 1000 2 / 2 / 50 + 290 -"
+	})
+	void should_handle_more_than_2_constants_with_different_operator(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
+
 }
