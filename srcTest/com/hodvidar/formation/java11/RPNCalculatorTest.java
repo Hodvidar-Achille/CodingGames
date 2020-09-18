@@ -41,4 +41,22 @@ public class RPNCalculatorTest {
 		RPNCalculator r = new RPNCalculator();
 		Assert.assertEquals(84, r.rpnCalculator("42 42 +"));
 	}
+
+	@Test
+	void _42_20_minus_return_22() {
+		RPNCalculator r = new RPNCalculator();
+		Assert.assertEquals(22, r.rpnCalculator("42 20 -"));
+	}
+
+	@Test
+	void _42_3_multiple_return_126() {
+		RPNCalculator r = new RPNCalculator();
+		Assert.assertEquals(126, r.rpnCalculator("42 3 *"));
+	}
+
+	@Test
+	void _42_2_multiple_return_21() {
+		RPNCalculator r = new RPNCalculator();
+		Assert.assertEquals(21, r.rpnCalculator("42 2 /"));
+	}
 }
