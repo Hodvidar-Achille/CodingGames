@@ -112,10 +112,21 @@ public class RPNCalculatorTest {
 			"-6 = 16 SQRT 10 -",
 			"50= 100 SQRT 5 * ",
 			"3 = 110 SQRT 3 /",
-			"3 = 100 SQRT SQRT"
+			"3 = 100 SQRT SQRT",
+			"9 = 12 6 * 9 + SQRT",
+			"10 = 12 6 * 9 + SQRT 3 / 7 +"
 	})
 	void should_handle_squareRoot_and_operator(int result, String expression){
 		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"15 = 15 MAX",
+			"115 = 15 4 42 115 MAX",
+			"1000 = 1 10 100 1000 999 MAX"
+	})
+	void should_find_Max_in_constants(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
 }

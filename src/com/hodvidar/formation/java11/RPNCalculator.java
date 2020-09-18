@@ -13,6 +13,7 @@ public class RPNCalculator {
 	private static final String MULTIPLE = "*";
 	private static final String DIVIDE = "/";
 	private static final String SQRT = "SQRT";
+	private static final String MAX = "MAX";
 
 	public int calculate(String s) {
 		if(!s.contains(" ")) {
@@ -21,6 +22,21 @@ public class RPNCalculator {
 
 		var result = 0;
 		var elements = s.split(" ");
+
+		if(s.contains(MAX)) {
+			int max = 0;
+			for(int i = 0; i < elements.length; i++) {
+				if(MAX.equals(elements[i])) {
+					// var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
+					// return calculate(String.valueOf(max));
+					return max;
+				}
+				var num = Integer.parseInt(elements[i]);
+				if(num > max) {
+					max = num;
+				}
+			}
+		}
 
 		if(s.contains(SQRT) && elements[1].equals(SQRT)) {
 			var i = Integer.parseInt(elements[0]);
