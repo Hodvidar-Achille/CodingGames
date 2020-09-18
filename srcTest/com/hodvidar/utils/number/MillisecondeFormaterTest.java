@@ -3,6 +3,7 @@ package com.hodvidar.utils.number;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+
 public class MillisecondeFormaterTest
 {
 	@Test
