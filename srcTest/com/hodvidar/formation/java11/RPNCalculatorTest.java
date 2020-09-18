@@ -10,28 +10,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class RPNCalculatorTest {
 
-	private RPNCalculator r;
+	private RPNCalculator rpnCalculator;
 
 	@BeforeEach
 	void setup() {
-		r = new RPNCalculator();
-	}
-
-	@Test
-	void _1_return_1_() {
-		RPNCalculator r = new RPNCalculator();
-		assertThat(r.rpnCalculator("1")).isEqualTo(1);
-	}
-
-	@Test
-	void _2_return_2_() {
-		RPNCalculator r = new RPNCalculator();
-		assertThat(r.rpnCalculator("2")).isEqualTo(2);
-	}
-
-	@Test
-	void _42_return_42_() {
-		assertThat(r.rpnCalculator("42")).isEqualTo(42);
+		rpnCalculator = new RPNCalculator();
 	}
 
 	// Can replace 3 previous tests
@@ -40,7 +23,7 @@ public class RPNCalculatorTest {
 			"1", "2", "3", "42"
 	})
 	void should_evaluate_a_constant(String constant){
-		assertThat(r.rpnCalculator(constant)).isEqualTo(Integer.valueOf(constant));
+		assertThat(rpnCalculator.calculate(constant)).isEqualTo(Integer.valueOf(constant));
 	}
 
 	// Can replace 3 previous tests
@@ -51,7 +34,7 @@ public class RPNCalculatorTest {
 			"84 = 42 42 +"
 	})
 	void should_add_two_constants(int result, String expression){
-		assertThat(r.rpnCalculator(expression)).isEqualTo(result);
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 
 	@ParameterizedTest
@@ -62,7 +45,7 @@ public class RPNCalculatorTest {
 			"-10 = 100 110 -"
 	})
 	void should_subtract_two_constants(int result, String expression){
-		assertThat(r.rpnCalculator(expression)).isEqualTo(result);
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 
 	@ParameterizedTest
@@ -73,7 +56,7 @@ public class RPNCalculatorTest {
 			"1500 = 100 15 *"
 	})
 	void should_multiple_two_constants(int result, String expression){
-		assertThat(r.rpnCalculator(expression)).isEqualTo(result);
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 
 	@ParameterizedTest
@@ -85,12 +68,12 @@ public class RPNCalculatorTest {
 			"5 = 52 10 /"
 	})
 	void should_divide_two_constants(int result, String expression){
-		assertThat(r.rpnCalculator(expression)).isEqualTo(result);
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 
 	@Test
 	void should_throws_exception_for_unknown_operator() {
-		assertThatThrownBy(() -> r.rpnCalculator("42 42 .")).isInstanceOf(UnsupportedOperationException.class);
+		assertThatThrownBy(() -> rpnCalculator.calculate("42 42 .")).isInstanceOf(UnsupportedOperationException.class);
 
 	}
 }

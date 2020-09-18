@@ -8,7 +8,7 @@ public class RPNCalculator {
 	private static final String MULTIPLE = "*";
 	private static final String DIVIDE = "/";
 
-	public int rpnCalculator(String s) {
+	public int calculate(String s) {
 		if(!s.contains(" ")) {
 			return Integer.parseInt(s);
 		}
@@ -26,7 +26,7 @@ public class RPNCalculator {
 			case DIVIDE : return i / ii;
 			default: break;
 		}
-		throw new UnsupportedOperationException("Case not yet implemented");
+		throw new UnsupportedOperationException("");
 
 	}
 }
