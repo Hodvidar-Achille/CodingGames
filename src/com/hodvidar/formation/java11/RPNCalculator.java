@@ -20,14 +20,11 @@ public class RPNCalculator {
 			return Integer.parseInt(s);
 		}
 
-		var result = 0;
-		var elements = s.split(" ");
-
 		if(s.contains(MAX)) {
-			Integer max = handleMax(elements);
-			if (max != null)
-				return max;
+			return handleMax(s);
 		}
+
+		var elements = s.split(" ");
 
 		if(s.contains(SQRT) && elements[1].equals(SQRT)) {
 			return handleSqrt(elements);
@@ -36,15 +33,24 @@ public class RPNCalculator {
 		return handleOperators(elements);
 	}
 
-	private Integer handleMax(String[] elements) {
+	private Integer handleMax(String s) {
+		return handleMax("", s);
+	}
+
+	private Integer handleMax(String previousMax, String s) {
 		int max = 0;
+		var elements = s.split(" ");
 		for(int i = 0; i < elements.length; i++) {
 			if(MAX.equals(elements[i])) {
 				if(i == elements.length-1)  {
 					return max;
 				}
-				var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
-				return calculate(max + " " + remainningExpression);
+				if(isThereAnotherMaxFollowedByAnOperator(elements, i)) {
+					var remainingExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
+					return handleMax(String.valueOf(max)+" ", remainingExpression);
+				}
+				var remainingExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
+				return calculate(previousMax + max + " " + remainingExpression);
 				// return max;
 			}
 			var num = Integer.parseInt(elements[i]);
@@ -52,7 +58,19 @@ public class RPNCalculator {
 				max = num;
 			}
 		}
-		return null;
+		throw new IllegalStateException("Should not happen");
+	}
+
+	boolean isThereAnotherMaxFollowedByAnOperator(String[] elements, int currentIndex) {
+		for(int i = currentIndex+1; i < elements.length-1; i++) {
+			if(isOperationOperator(elements[i])) {
+				return false;
+			}
+			if(MAX.equals(elements[i]) && isOperationOperator(elements[i+1])) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private int handleSqrt(String[] elements) {
@@ -62,8 +80,8 @@ public class RPNCalculator {
 		if(elements.length <= 2) {
 			return result;
 		}
-		var remainningExpression = Arrays.stream(elements).skip(2).collect(joining(" "));
-		return calculate(result + " " + remainningExpression);
+		var remainingExpression = Arrays.stream(elements).skip(2).collect(joining(" "));
+		return calculate(result + " " + remainingExpression);
 	}
 
 	private int handleOperators(String[] elements) {
@@ -80,9 +98,20 @@ public class RPNCalculator {
 			default: throw new UnsupportedOperationException(operator);
 		}
 		if(elements.length > 3)  {
-			var remainningExpression = Arrays.stream(elements).skip(3).collect(joining(" "));
-			return calculate(result + " " + remainningExpression);
+			var remainingExpression = Arrays.stream(elements).skip(3).collect(joining(" "));
+			return calculate(result + " " + remainingExpression);
 		}
 		return result;
+	}
+
+	private boolean isOperationOperator(String operator) {
+		switch (operator) {
+			case PLUS :
+			case MINUS :
+			case DIVIDE :
+			case MULTIPLE :
+				return true;
+			default: return false;
+		}
 	}
 }
