@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-
+// Kata : https://codingdojo.org/kata/RPN/
 public class RPNCalculatorTest {
 
 	private RPNCalculator rpnCalculator;
@@ -91,6 +91,30 @@ public class RPNCalculatorTest {
 			"10 = 1000 2 / 2 / 50 + 290 -"
 	})
 	void should_handle_more_than_2_constants_with_different_operator(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"3 = 9 SQRT",
+			"4 = 16 SQRT",
+			"10 = 100 SQRT",
+			"10 = 110 SQRT",
+			"3 = 10 SQRT"
+	})
+	void should_squareRoot_a_constant(int result, String expression){
+		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"12 = 9 SQRT 9 +",
+			"-6 = 16 SQRT 10 -",
+			"50= 100 SQRT 5 * ",
+			"3 = 110 SQRT 3 /",
+			"3 = 100 SQRT SQRT"
+	})
+	void should_handle_squareRoot_and_operator(int result, String expression){
 		assertThat(rpnCalculator.calculate(expression)).isEqualTo(result);
 	}
 

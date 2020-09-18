@@ -12,18 +12,29 @@ public class RPNCalculator {
 	private static final String MINUS = "-";
 	private static final String MULTIPLE = "*";
 	private static final String DIVIDE = "/";
+	private static final String SQRT = "SQRT";
 
 	public int calculate(String s) {
 		if(!s.contains(" ")) {
 			return Integer.parseInt(s);
 		}
 
+		var result = 0;
 		var elements = s.split(" ");
+
+		if(s.contains(SQRT) && elements[1].equals(SQRT)) {
+			var i = Integer.parseInt(elements[0]);
+			result = (int) Math.sqrt(i);
+			if(elements.length <= 2) {
+				return result;
+			}
+			var remainningExpression = Arrays.stream(elements).skip(2).collect(joining(" "));
+			return calculate(result + " " + remainningExpression);
+		}
 
 		var i = Integer.parseInt(elements[0]);
 		var ii = Integer.parseInt(elements[1]);
 		var operator = elements[2];
-		var result = 0;
 
 		switch (operator) {
 			case PLUS : result = i + ii; break;
