@@ -24,33 +24,50 @@ public class RPNCalculator {
 		var elements = s.split(" ");
 
 		if(s.contains(MAX)) {
-			int max = 0;
-			for(int i = 0; i < elements.length; i++) {
-				if(MAX.equals(elements[i])) {
-					if(i == elements.length-1)  {
-						return max;
-					}
-					var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
-					return calculate(max + " " + remainningExpression);
-					// return max;
-				}
-				var num = Integer.parseInt(elements[i]);
-				if(num > max) {
-					max = num;
-				}
-			}
+			Integer max = handleMax(elements);
+			if (max != null)
+				return max;
 		}
 
 		if(s.contains(SQRT) && elements[1].equals(SQRT)) {
-			var i = Integer.parseInt(elements[0]);
-			result = (int) Math.sqrt(i);
-			if(elements.length <= 2) {
-				return result;
-			}
-			var remainningExpression = Arrays.stream(elements).skip(2).collect(joining(" "));
-			return calculate(result + " " + remainningExpression);
+			return handleSqrt(elements);
 		}
 
+		return handleOperators(elements);
+	}
+
+	private Integer handleMax(String[] elements) {
+		int max = 0;
+		for(int i = 0; i < elements.length; i++) {
+			if(MAX.equals(elements[i])) {
+				if(i == elements.length-1)  {
+					return max;
+				}
+				var remainningExpression = Arrays.stream(elements).skip(i+1).collect(joining(" "));
+				return calculate(max + " " + remainningExpression);
+				// return max;
+			}
+			var num = Integer.parseInt(elements[i]);
+			if(num > max) {
+				max = num;
+			}
+		}
+		return null;
+	}
+
+	private int handleSqrt(String[] elements) {
+		int result;
+		var i = Integer.parseInt(elements[0]);
+		result = (int) Math.sqrt(i);
+		if(elements.length <= 2) {
+			return result;
+		}
+		var remainningExpression = Arrays.stream(elements).skip(2).collect(joining(" "));
+		return calculate(result + " " + remainningExpression);
+	}
+
+	private int handleOperators(String[] elements) {
+		int result;
 		var i = Integer.parseInt(elements[0]);
 		var ii = Integer.parseInt(elements[1]);
 		var operator = elements[2];
