@@ -126,7 +126,8 @@ public class RPNCalculatorTest {
 			"0 = 15 4 42 115 MAX 115 - ",
 			"100 = 1 10 100 1000 999 MAX 10 /",
 			"10 = 1 10 100 1000 999 MAX 10 / SQRT",
-			"46 = 10 10 15 MAX 22 16 31 MAX +"
+			"46 = 10 10 15 MAX 22 16 31 MAX +",
+			"15 = 5 7 9 10 MAX +"
 	})
 	void should_handle_max_and_other_operator(int result, String expression){
 		assertThat(calculate(expression)).isEqualTo(result);
