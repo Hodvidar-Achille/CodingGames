@@ -156,6 +156,20 @@ public class MinesweeperTest {
 	}
 
 	@Test
+	void should_compute_a_3_on_3_grid_with_8_landmines() {
+		checkHintMap("""
+				3 3
+				***
+				*.*
+				***
+				""", """
+				***
+				*8*
+				***
+				""");
+	}
+
+	@Test
 	void should_compute_a_5_on_5_grid_with_1_landmine() {
 		checkHintMap("""
 				5 5
