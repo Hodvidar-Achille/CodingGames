@@ -112,12 +112,62 @@ public class MinesweeperTest {
 	}
 
 	@Test
-	void should_compute_a_1_on_2_grid_with_1_landmine1() {
+	void should_compute_a_1_on_2_grid_with_1_landmine() {
 		checkHintMap("""
 				1 2
 				*.
 				""", """
 				*1
+				""");
+	}
+
+	@Test
+	void should_compute_a_1_on_3_grid_with_1_landmine() {
+		checkHintMap("""
+				1 3
+				*..
+				""", """
+				*10
+				""");
+	}
+
+	@Test
+	void should_compute_a_1_on_3_grid_with_2_landmines() {
+		checkHintMap("""
+				1 3
+				*1*
+				""", """
+				*2*
+				""");
+	}
+
+	@Test
+	void should_compute_a_3_on_3_grid_with_1_landmine() {
+		checkHintMap("""
+				3 3
+				...
+				.*.
+				...
+				""", """
+				010
+				1*1
+				010
+				""");
+	}
+
+	@Test
+	void should_compute_a_4_on_5_grid_with_5_landmines() {
+		checkHintMap("""
+				4 5
+				.....
+				.*.*.
+				.*.*.
+				..*..
+				""", """
+				01010
+				2*4*2
+				2*5*2
+				02*20
 				""");
 	}
 
