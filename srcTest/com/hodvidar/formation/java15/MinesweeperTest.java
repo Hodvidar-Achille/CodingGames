@@ -149,9 +149,27 @@ public class MinesweeperTest {
 				.*.
 				...
 				""", """
-				010
+				111
 				1*1
-				010
+				111
+				""");
+	}
+
+	@Test
+	void should_compute_a_5_on_5_grid_with_1_landmine() {
+		checkHintMap("""
+				5 5
+				.....
+				.....
+				..*..
+				.....
+				.....
+				""", """
+    00000
+				01110
+				01*10
+				01110
+				00000
 				""");
 	}
 
@@ -164,10 +182,10 @@ public class MinesweeperTest {
 				.*.*.
 				..*..
 				""", """
-				01010
+				11211
 				2*4*2
 				2*5*2
-				02*20
+				12*21
 				""");
 	}
 

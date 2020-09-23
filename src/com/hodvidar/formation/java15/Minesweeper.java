@@ -6,6 +6,8 @@ import static java.lang.Integer.parseInt;
 // Minesweeper
 public class Minesweeper {
 
+	private static final char LANDMINE = '*';
+
 	public static String computeHintMap(String grid) {
 		// extract grid info
 		var gridIterator = grid.lines().iterator();
@@ -34,11 +36,82 @@ public class Minesweeper {
 	}
 
 	private static char getHintValue(char[][] gridTab, int rowIndex, int columnIndex) {
-		if(gridTab[rowIndex][columnIndex] == '*') {
-			return '*';
+		if(gridTab[rowIndex][columnIndex] == LANDMINE) {
+			return LANDMINE;
 		}
-		int maxRows = gridTab.length;
-		int maxColumns = gridTab[0].length;
-		return '0';
+		int numberOfLandMineAround = checkNumberOfCharAround(gridTab, rowIndex, columnIndex, LANDMINE);
+		return intToChar(numberOfLandMineAround);
+	}
+
+	private static char intToChar(int numberBelowTen) {
+		return (char)(numberBelowTen+'0');
+	}
+
+	/**
+	 * Checks number of occurrence of the given character in the given grid around (8 cells) a given coordinate,
+	 * with safely avoiding ArrayIndexOutOfBoundsException for
+	 * @return
+	 */
+	private static int checkNumberOfCharAround(char[][] gridTab, int rowIndex, int columnIndex, char searchedValue) {
+		var maxRows = gridTab.length;
+		var maxColumns = gridTab[0].length;
+
+		var counter = 0;
+
+		var checkNorthPossible = rowIndex > 0;
+		var checkSouthPossible = rowIndex < maxRows-1;
+		var checkWestPossible = columnIndex > 0;
+		var checkEastPossible = columnIndex < maxColumns-1;
+		// N
+		if(checkNorthPossible) {
+			if (gridTab[rowIndex - 1][columnIndex] == LANDMINE) {
+				counter += 1;
+			}
+			// NE
+			if (checkEastPossible) {
+				if (gridTab[rowIndex - 1][columnIndex+1] == LANDMINE) {
+					counter += 1;
+				}
+			}
+			// NW
+			if(checkWestPossible) {
+				if(gridTab[rowIndex-1][columnIndex-1] == LANDMINE) {
+					counter += 1;
+				}
+			}
+		}
+		// E
+		if(checkEastPossible) {
+			if(gridTab[rowIndex][columnIndex+1] == LANDMINE) {
+				counter += 1;
+			}
+		}
+		// S
+		if(checkSouthPossible) {
+			if(gridTab[rowIndex+1][columnIndex] == LANDMINE) {
+				counter += 1;
+			}
+			// SE
+			if(checkEastPossible) {
+				if(gridTab[rowIndex+1][columnIndex+1] == LANDMINE) {
+					counter += 1;
+				}
+			}
+			// SW
+			if(checkWestPossible) {
+				if(gridTab[rowIndex+1][columnIndex-1] == LANDMINE) {
+					counter += 1;
+				}
+			}
+		}
+
+		// W
+		if(checkWestPossible) {
+			if(gridTab[rowIndex][columnIndex-1] == LANDMINE) {
+				counter += 1;
+			}
+		}
+
+		return counter;
 	}
 }
