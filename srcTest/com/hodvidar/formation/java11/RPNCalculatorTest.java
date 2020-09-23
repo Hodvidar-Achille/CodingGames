@@ -63,11 +63,6 @@ public class RPNCalculatorTest {
 		assertThat(calculate(expression)).isEqualTo(result);
 	}
 
-	@Test
-	void should_throws_exception_for_unknown_operator() {
-		assertThatThrownBy(() -> calculate("42 42 .")).isInstanceOf(UnsupportedOperationException.class);
-	}
-
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
 			"6 = 2 2 + 2 +",
@@ -131,7 +126,8 @@ public class RPNCalculatorTest {
 			"0 = 15 4 42 115 MAX 115 - ",
 			"100 = 1 10 100 1000 999 MAX 10 /",
 			"10 = 1 10 100 1000 999 MAX 10 / SQRT",
-			"46 = 10 10 15 MAX 22 16 31 MAX +"
+			"46 = 10 10 15 MAX 22 16 31 MAX +",
+			"15 = 5 7 9 10 MAX +"
 	})
 	void should_handle_max_and_other_operator(int result, String expression){
 		assertThat(calculate(expression)).isEqualTo(result);
@@ -146,5 +142,21 @@ public class RPNCalculatorTest {
 	})
 	void should_handle_several_max_and_other_operator(int result, String expression){
 		assertThat(calculate(expression)).isEqualTo(result);
+	}
+
+	@Test
+	void should_throws_exception_for_unknown_operator() {
+		assertThatThrownBy(() -> calculate("42 42 .")).isInstanceOf(UnsupportedOperationException.class).hasMessageEndingWith(".");
+	}
+
+	@ParameterizedTest
+	@CsvSource(value = {
+			"10 15 + +",
+			"10 MAX +",
+			"SQRT 10 10 +",
+			"10 10 10 -"
+	})
+	void should_throw_error_on_ill_formed_instruction(String expression){
+		assertThatThrownBy(() -> calculate(expression));
 	}
 }
