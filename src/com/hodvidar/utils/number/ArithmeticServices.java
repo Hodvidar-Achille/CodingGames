@@ -80,4 +80,38 @@ public final class ArithmeticServices
 			return lcm(lcm_final(a, b[0]), b2);
 		}
 	}
+
+	public static int max(int... numbers) {
+		int max = Integer.MIN_VALUE;
+		for(int n : numbers) {
+			max = Math.max(max, n);
+		}
+		return max;
+	}
+
+	public static int getFactorial(int aNumber) {
+		double factorial = 1;
+		for(int i = 1; i <= aNumber; i++) {
+			factorial *= i;
+		}
+
+		if(factorial > Integer.MAX_VALUE) {
+			throw new ArithmeticException("Factorial > Integer.MAX_VALUE");
+		}
+		return (int) factorial;
+	}
+
+	/**
+	 * 105! / (100! * 2!) --> calculate this knowing that
+	 * 100! cannot be computed (for integers).
+	 *
+	 * Should become : (105*104*103*102*101 / 2)
+	 * @param numerator
+	 * @param denominatorsMultiplied
+	 * @return
+	 */
+	// TODO
+	public static int getFactorialDivision(int numerator, int... denominatorsMultiplied) {
+		throw new UnsupportedOperationException("Not yet impl");
+	}
 }
