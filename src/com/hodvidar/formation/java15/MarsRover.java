@@ -8,6 +8,9 @@ import java.util.Objects;
 // https://kata-log.rocks/mars-rover-kata
 public final class MarsRover {
 
+	private final int maxX = 9;
+	private final int maxY = 9;
+
 	private int x;
 	private int y;
 	private char orientation;
@@ -89,6 +92,30 @@ public final class MarsRover {
 			case 'W' : break;
 			default: return;
 		}
+	}
+
+	private void goNorth() {
+		if(y == 9) {
+			y = 0;
+		} else {
+			y += 1;
+		}
+	}
+
+	private void goEast() {
+
+	}
+
+	private void goSouth() {
+		if(y == 0) {
+			y = 9;
+		} else {
+			y -= 1;
+		}
+	}
+
+	private void goWest() {
+
 	}
 
 	private String getState() {
