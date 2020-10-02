@@ -13,13 +13,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class MarsRoverTest {
 
 	@Test
-	void should_startd_at_00N() {
+	void should_start_at_00N() {
 		MarsRover r = new MarsRover();
 		assertThat(r.execute("")).isEqualTo("0 0 N");
 	}
 
 	@Test
-	void should_startd_at_00N_and_support_null_input() {
+	void should_start_at_00N_and_support_null_input() {
 		MarsRover r = new MarsRover();
 		assertThat(r.execute(null)).isEqualTo("0 0 N");
 	}
@@ -64,7 +64,13 @@ public class MarsRoverTest {
 
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
-			"F = 0 1 N"
+			"F = 0 1 N",
+			"FF = 0 2 N",
+			"FFF = 0 3 N",
+			"FFFF = 0 4 N",
+			"FFFFFFFFF = 0 9 N", // 9x
+			"FFFFFFFFFF = 0 0 N", // 10x
+			"FFFFFFFFFFFFF = 0 3 N", // 13x
 	})
 	void should_moveForward(String testedCommands, String expectedState) {
 		MarsRover r = new MarsRover();
@@ -73,9 +79,58 @@ public class MarsRoverTest {
 
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
-			" = 0 0 N",
+			"B = 0 9 N",
+			"BB = 0 8 N",
+			"BBB = 0 7 N",
+			"BBBB = 0 6 N",
+			"BBBBBBBBB = 0 1 N", // 9x
+			"BBBBBBBBBB = 0 0 N", // 10x
+			"BBBBBBBBBBBBB = 0 7 N", // 13x
 	})
-	void should_return_position_after_using_commandes(String testedCommands, String expectedState) {
+	void should_moveBackward(String testedCommands, String expectedState) {
+		MarsRover r = new MarsRover();
+		assertThat(r.execute(testedCommands)).isEqualTo(expectedState);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"RF = 1 0 E",
+			"RFF = 2 0 E",
+			"RFFF = 3 0 E",
+			"RFFFF = 4 0 E",
+			"RFFFFFFFFF = 9 0 E", // 9x
+			"RFFFFFFFFFF = 0 0 E", // 10x
+			"RFFFFFFFFFFFFF = 3 0 E", // 13x
+	})
+	void should_moveForward_when_FacingEast(String testedCommands, String expectedState) {
+		MarsRover r = new MarsRover();
+		assertThat(r.execute(testedCommands)).isEqualTo(expectedState);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"RB = 9 0 E",
+			"RBB = 8 0 E",
+			"RBBB = 7 0 E",
+			"RBBBB = 6 0 E",
+			"RBBBBBBBBB = 1 0 E", // 9x
+			"RBBBBBBBBBB = 0 0 E", // 10x
+			"RBBBBBBBBBBBBB = 7 0 E", // 13x
+	})
+	void should_moveBackward_FacingEast(String testedCommands, String expectedState) {
+		MarsRover r = new MarsRover();
+		assertThat(r.execute(testedCommands)).isEqualTo(expectedState);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"LF = 9 0 W",
+			"LFR = 9 0 N",
+			"LFRFF = 9 2 N",
+			"LFRFFLFF = 7 2 W",
+			"LFRFFLFFLBBB = 7 5 S",
+	})
+	void should_return_position_after_using_commands(String testedCommands, String expectedState) {
 		MarsRover r = new MarsRover();
 		assertThat(r.execute(testedCommands)).isEqualTo(expectedState);
 	}

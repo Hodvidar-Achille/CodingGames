@@ -2,9 +2,6 @@ package com.hodvidar.formation.java15;
 
 import static java.util.Objects.isNull;
 
-import java.util.Objects;
-
-
 // https://kata-log.rocks/mars-rover-kata
 public final class MarsRover {
 
@@ -76,26 +73,34 @@ public final class MarsRover {
 
 	private void goForward() {
 		switch (orientation) {
-			case 'N' : break;
-			case 'E' : break;
-			case 'S' : break;
-			case 'W' : break;
+			case 'N' : goNorth();
+				break;
+			case 'E' : goEast();
+				break;
+			case 'S' : goSouth();
+				break;
+			case 'W' : goWest();
+				break;
 			default: return;
 		}
 	}
 
 	private void goBackward() {
 		switch (orientation) {
-			case 'N' : break;
-			case 'E' : break;
-			case 'S' : break;
-			case 'W' : break;
+			case 'N' : goSouth();
+				break;
+			case 'E' : goWest();
+				break;
+			case 'S' : goNorth();
+				break;
+			case 'W' : goEast();
+				break;
 			default: return;
 		}
 	}
 
 	private void goNorth() {
-		if(y == 9) {
+		if(y == maxY) {
 			y = 0;
 		} else {
 			y += 1;
@@ -103,7 +108,11 @@ public final class MarsRover {
 	}
 
 	private void goEast() {
-
+		if(x == maxX) {
+			x = 0;
+		} else {
+			x += 1;
+		}
 	}
 
 	private void goSouth() {
@@ -115,7 +124,11 @@ public final class MarsRover {
 	}
 
 	private void goWest() {
-
+		if(x == 0) {
+			x = 9;
+		} else {
+			x -= 1;
+		}
 	}
 
 	private String getState() {
