@@ -21,14 +21,19 @@ public class MarsRoverTest {
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
 			" = 0 0 N",
-			"L = 0 0 E",
+			"L = 0 0 W",
 			"LL = 0 0 S",
-			"LLL = 0 0 W",
+			"LLL = 0 0 E",
 			"LLLL = 0 0 N",
-			"R = 0 0 W",
+			"R = 0 0 E",
 			"RR = 0 0 S",
-			"RRR = 0 0 E",
+			"RRR = 0 0 W",
 			"RRRR = 0 0 N",
+			"LRLRLR = 0 0 N",
+			"RRRLLL= 0 0 N",
+			"RRRRLLL = 0 0 E",
+			"LLLLRRR = 0 0 W",
+			"F = 0 1 N"
 	})
 	void should_return_position_after_using_commandes(String testedCommands, String expectedState) {
 		MarsRover r = new MarsRover();
