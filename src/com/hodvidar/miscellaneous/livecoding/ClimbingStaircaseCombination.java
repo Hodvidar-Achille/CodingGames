@@ -9,10 +9,11 @@ import static com.hodvidar.utils.number.ArithmeticServices.*;
 public class ClimbingStaircaseCombination {
 
 	/**
-	 * Optimized
+	 * Optimized - <i>we already know the results of this problem
+	 * follows the Fibonacci suite logic</i>
 	 *
-	 * @param maxStepInOneTime - can be do 1 by 1, 2 by 2, 3 by 3 ?
-	 * @param numberOfStep     - maximum number of step in the staircase
+	 * @param maxStepInOneTime can be do 1 by 1, 2 by 2, 3 by 3 ? If 3 so 1, 2, 3 are possible
+	 * @param numberOfStep     maximum number of step in the staircase
 	 * @return
 	 */
 	public static int getNumberOfWaysToClimb_optimized(int maxStepInOneTime, int numberOfStep) {
@@ -28,7 +29,6 @@ public class ClimbingStaircaseCombination {
 			counter += getNumberOfWaysToClimb_optimized(maxStepInOneTime, numberOfStep - i);
 		}
 		return counter;
-
 	}
 
 	/**
@@ -87,7 +87,16 @@ public class ClimbingStaircaseCombination {
 		// 2 1 2 1 1 1
 	}
 
-	public static int getPossibleSubsitutionsFor_optimized(int... numberOfNextElement) {
+	/**
+	 * Optimized - <i>we already know the results of this problem
+	 * follows this equation :
+	 * (totalOfElements! / (numberofFirstElement! * numberOfSecondElement! * ...))</i>
+	 * <br/>
+	 * Example : receiving 3 and 2 --> result equals 5! / (3! * 2!) = 10
+	 * @param numberOfNextElement
+	 * @return
+	 */
+	public static int getPossibleSubstitutionsFor_optimized(int... numberOfNextElement) {
 		if (numberOfNextElement.length == 1) {
 			return 1;
 		}
@@ -95,6 +104,7 @@ public class ClimbingStaircaseCombination {
 		if (numberOfNextElement.length != 2) {
 			throw new UnsupportedOperationException("Not yet impl");
 		}
+
 		int numberOfOnes = numberOfNextElement[0];
 		int numberOfTwos = numberOfNextElement[1];
 
@@ -114,7 +124,12 @@ public class ClimbingStaircaseCombination {
 
 	}
 
-	public static int getPossibleSubsitutionsFor(int... numberOfNextElement) {
+	/**
+	 * 
+	 * @param numberOfNextElement
+	 * @return
+	 */
+	public static int getPossibleSubstitutionsFor(int... numberOfNextElement) {
 		if (numberOfNextElement.length == 1) {
 			return 1;
 		}
@@ -137,7 +152,7 @@ public class ClimbingStaircaseCombination {
 		//if(numberOfTwos == 2) {
 		int counter = 0;
 		for (int i = 0; i <= numberOfOnes; i++) {
-			counter += getPossibleSubsitutionsFor(numberOfOnes - i, numberOfTwos - 1);
+			counter += getPossibleSubstitutionsFor(numberOfOnes - i, numberOfTwos - 1);
 		}
 		return counter;
 		//}
