@@ -31,71 +31,48 @@ public final class MarsRover {
 
 	private void move(char aCommand) {
 		switch (aCommand) {
-			case 'L' : turnLeft();
-				break;
-			case 'R' : turnRight();
-				break;
-			case 'F' : goForward();
-				break;
-			case 'B' : goBackward();
-				break;
-			default: return;
+			case 'L' -> turnLeft();
+			case 'R' -> turnRight();
+			case 'F' -> goForward();
+			case 'B' -> goBackward();
 		}
 	}
 
 	private void turnLeft() {
-		switch (orientation) {
-			case 'N' : orientation = 'W';
-				break;
-			case 'E' : orientation = 'N';
-				break;
-			case 'S' : orientation = 'E';
-				break;
-			case 'W' : orientation = 'S';
-				break;
-			default: return;
-		}
+		orientation = switch (orientation) {
+			case 'N' -> 'W';
+			case 'E' -> 'N';
+			case 'S' -> 'E';
+			case 'W' -> 'S';
+			default -> throw new IllegalStateException("Unexpected value: " + orientation);
+		};
 	}
 
 	private void turnRight() {
-		switch (orientation) {
-			case 'N' : orientation = 'E';
-				break;
-			case 'E' : orientation = 'S';
-				break;
-			case 'S' : orientation = 'W';
-				break;
-			case 'W' : orientation = 'N';
-				break;
-			default: return;
-		}
+		orientation = switch (orientation) {
+			case 'N' -> 'E';
+			case 'E' -> 'S';
+			case 'S' -> 'W';
+			case 'W' -> 'N';
+			default -> throw new IllegalStateException("Unexpected value: " + orientation);
+		};
 	}
 
 	private void goForward() {
 		switch (orientation) {
-			case 'N' : goNorth();
-				break;
-			case 'E' : goEast();
-				break;
-			case 'S' : goSouth();
-				break;
-			case 'W' : goWest();
-				break;
-			default: return;
+			case 'N' -> goNorth();
+			case 'E' -> goEast();
+			case 'S' -> goSouth();
+			case 'W' -> goWest();
 		}
 	}
 
 	private void goBackward() {
 		switch (orientation) {
-			case 'N' : goSouth();
-				break;
-			case 'E' : goWest();
-				break;
-			case 'S' : goNorth();
-				break;
-			case 'W' : goEast();
-				break;
-			default: return;
+			case 'N' -> goSouth();
+			case 'E' -> goWest();
+			case 'S' -> goNorth();
+			case 'W' -> goEast();
 		}
 	}
 
