@@ -9,20 +9,28 @@ import static com.hodvidar.utils.number.ArithmeticServices.*;
 public class ClimbingStaircaseCombination {
 
 	/**
-	 * Optimized - <i>we already know the results of this problem
+	 * Optimized - <i>Algorithm when we already know the results of this problem
 	 * follows the Fibonacci suite logic</i>
 	 *
 	 * @param maxStepInOneTime can be do 1 by 1, 2 by 2, 3 by 3 ? If 3 so 1, 2, 3 are possible
-	 * @param numberOfStep     maximum number of step in the staircase
+	 * @param numberOfStep     number of steps in the staircase
 	 * @return
 	 */
 	public static int getNumberOfWaysToClimb_optimized(int maxStepInOneTime, int numberOfStep) {
 		if (maxStepInOneTime == 1) {
 			return 1;
 		}
-
-		if (numberOfStep <= maxStepInOneTime) {
-			return numberOfStep;
+		if (numberOfStep == 1) {
+			return 1;
+		}
+		if (numberOfStep == 2) {
+			return 2;
+		}
+		if (numberOfStep < maxStepInOneTime) {
+			return getNumberOfWaysToClimb_optimized(maxStepInOneTime-1, numberOfStep);
+		}
+		if (numberOfStep == maxStepInOneTime) {
+			return getNumberOfWaysToClimb_optimized(maxStepInOneTime-1, numberOfStep) + 1;
 		}
 		int counter = 0;
 		for (int i = 1; i <= maxStepInOneTime; i++) {
@@ -32,12 +40,12 @@ public class ClimbingStaircaseCombination {
 	}
 
 	/**
-	 * Returns
+	 * Uses method getPossibleSubstitutionsFor_optimized for each possible
 	 *
 	 * @param numberOfStep
 	 * @return
 	 */
-	public static int getNumberOfWaysToClimb(int maxStepInOneTime, int numberOfStep) {
+	public static int getNumberOfWaysToClimb_subOptimized(int maxStepInOneTime, int numberOfStep) {
 		if (maxStepInOneTime == 1) {
 			return 1;
 		}
@@ -47,44 +55,6 @@ public class ClimbingStaircaseCombination {
 		}
 
 		return 1;
-		// 5 --> (1 + 4 + 3) = 8
-		// 5x1 0x2 --> +1
-		// 1 1 1 1 1
-
-		// 3x1 1x2 --> +4
-		// 1 1 1 2
-		// 1 1 2 1
-		// 1 2 1 1
-		// 2 1 1 1
-
-		// 1x1 2x2 --> +3
-		// 2 2 1
-		// 1 2 1
-		// 1 2 2
-
-		// 6 --> (1 + 5 + 3 + 1) = 13
-		// 6x1  0x2 --> +1
-		// 1 1 1 1 1 1
-
-		// 4x1 1x2 --> +5
-		// 2 1 1 1 1
-		// 1 2 1 1 1
-		// 1 1 2 1 1
-		// 1 1 1 2 1
-		// 1 1 1 1 2
-
-		// 2x1 2x2 --> +3
-		// 2 2 1
-		// 2 1 2
-		// 1 2 2
-
-		// 0x1 3x2 --> +1
-		// 2 2 2
-
-		// 8
-		// 4x 1 et 2x 2
-		// 2 2 1 1 1 1
-		// 2 1 2 1 1 1
 	}
 
 	/**

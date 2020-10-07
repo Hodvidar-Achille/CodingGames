@@ -17,6 +17,8 @@ public class ClimbingStaircaseCombinationTest {
 			"5 = 1", // 1 1 1 1 1
 			"6 = 1", // 1 1 1 ...
 			"7 = 1", // 1 1 1 ...
+			"8 = 1", // 1 1 1 ...
+			"9 = 1", // 1 1 1 ...
 			"10 = 1", // 1 1 1 ...
 			"20 = 1", // 1 1 1 ...
 			"30 = 1", // 1 1 1 ...
@@ -24,7 +26,7 @@ public class ClimbingStaircaseCombinationTest {
 	})
 	void should_always_return_1_if_number_of_possible_ways_to_climb_is_1(int testedValue, int expectedResult) {
 		assertThat(getNumberOfWaysToClimb_optimized(1, testedValue)).isEqualTo(expectedResult);
-		assertThat(getNumberOfWaysToClimb(1, testedValue)).isEqualTo(expectedResult);
+		assertThat(getNumberOfWaysToClimb_subOptimized(1, testedValue)).isEqualTo(expectedResult);
 	}
 
 	@ParameterizedTest
@@ -38,6 +40,8 @@ public class ClimbingStaircaseCombinationTest {
 			// | 2 2 1 | 2 1 2 | 1 2 2
 			"6 = 13",
 			"7 = 21",
+			"8 = 34",
+			"9 = 55",
 			"10 = 89",
 			"20 = 10946",
 			"30 = 1346269"
@@ -52,12 +56,18 @@ public class ClimbingStaircaseCombinationTest {
 			"2 = 2", // 1 1 | 2
 			"3 = 4", // 1 1 1 | 2 1 | 1 2 | 3
 			"4 = 7", // 1 1 1 1 | 2 1 1 | 1 2 1 | 1 1 2 | 2 2 | 3 1 | 1 3
-			"5 = 11",
-			"6 = 20",
-			"7 = 37",
-			"10 = 230",
-			"20 = 101902",
-			"30 = 45152016"
+			"5 = 13",// 1 1 1 1 1
+			// 2 1 1 1 | 1 2 1 1 | 1 1 2 1 | 1 1 1 2
+			// 2 2 1 | 2 1 2 | 2 2 1
+			// 3 1 1 | 1 3 1 | 1 1 3
+			// 3 2 | 2 3
+			"6 = 24",
+			"7 = 44",
+			"8 = 81",
+			"9 = 149",
+			"10 = 274",
+			"20 = 121415",
+			"30 = 53798080"
 	})
 	void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_3(int testedValue, int expectedResult) {
 		assertThat(getNumberOfWaysToClimb_optimized(3, testedValue)).isEqualTo(expectedResult);
@@ -65,19 +75,71 @@ public class ClimbingStaircaseCombinationTest {
 
 	@ParameterizedTest
 	@CsvSource(delimiter = '=', value = {
-			"1 = 1",
-			"2 = 2",
-			"3 = 3",
-			"4 = 4",
-			"5 = 10",
-			"6 = 19",
-			"7 = 36",
-			"10 = 258",
-			"20 = 182598",
-			"30 = 129294346"
+			"1 = 1", // 1
+			"2 = 2", // 1 1 | 2
+			"3 = 4", // 1 1 1 | 2 1 | 1 2 | 3
+			"4 = 8", // 1 1 1 1 | 2 1 1 | 1 2 1 | 1 1 2 | 2 2 | 3 1 | 1 3 | 4
+			"5 = 15",// 1 1 1 1 1
+			// 2 1 1 1 | 1 2 1 1 | 1 1 2 1 | 1 1 1 2
+			// 2 2 1 | 2 1 2 | 2 2 1
+			// 3 1 1 | 1 3 1 | 1 1 3
+			// 3 2 | 2 3
+			// 4 1 | 1 4
+			"6 = 29",
+			"7 = 56",
+			"8 = 108",
+			"9 = 208",
+			"10 = 401",
+			"20 = 283953",
+			"30 = 201061985"
 	})
 	void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_4(int testedValue, int expectedResult) {
 		assertThat(getNumberOfWaysToClimb_optimized(4, testedValue)).isEqualTo(expectedResult);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"1 = 1", // 1
+			"2 = 2", // 1 1 | 2
+			"3 = 4", // 1 1 1 | 2 1 | 1 2 | 3
+			"4 = 8", // 1 1 1 1 | 2 1 1 | 1 2 1 | 1 1 2 | 2 2 | 3 1 | 1 3 | 4
+			"5 = 16",// 1 1 1 1 1
+			// 2 1 1 1 | 1 2 1 1 | 1 1 2 1 | 1 1 1 2
+			// 2 2 1 | 2 1 2 | 2 2 1
+			// 3 1 1 | 1 3 1 | 1 1 3
+			// 3 2 | 2 3
+			// 4 1 | 1 4
+			// 5
+			"6 = 31",
+			"7 = 61",
+			"8 = 120",
+			"9 = 236",
+			"10 = 464",
+			"20 = 400096",
+			"30 = 345052351"
+	})
+	void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_5(int testedValue, int expectedResult) {
+		assertThat(getNumberOfWaysToClimb_optimized(5, testedValue)).isEqualTo(expectedResult);
+		// assertThat(getNumberOfWaysToClimb(3, testedValue)).isEqualTo(expectedResult);
+	}
+
+	@ParameterizedTest
+	@CsvSource(delimiter = '=', value = {
+			"1 = 1",
+			"2 = 2",
+			"3 = 4",
+			"4 = 8",
+			"5 = 16",
+			"6 = 32",
+			"7 = 64",
+			"8 = 128",
+			"9 = 256",
+			"10 = 512",
+			"20 = 521472",
+			"30 = 531372800"
+	})
+	void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_10(int testedValue, int expectedResult) {
+		assertThat(getNumberOfWaysToClimb_optimized(10, testedValue)).isEqualTo(expectedResult);
 		// assertThat(getNumberOfWaysToClimb(3, testedValue)).isEqualTo(expectedResult);
 	}
 

@@ -1,7 +1,5 @@
 package com.hodvidar.formation.java15;
 
-import static com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombination.getNumberOfWaysToClimb;
-import static com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombination.getNumberOfWaysToClimb_optimized;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
