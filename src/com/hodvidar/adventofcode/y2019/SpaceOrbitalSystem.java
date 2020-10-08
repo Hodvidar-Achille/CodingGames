@@ -169,7 +169,7 @@ public final class SpaceOrbitalSystem
 
 	private double getLCM(double a, double b, double c)
 	{
-		return ArithmeticServices.lcm(a, b, c);
+		return ArithmeticServices.lowerCommonMultiplier(a, b, c);
 	}
 
 	private boolean isBackToInitStateForX()
