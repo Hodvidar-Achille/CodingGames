@@ -69,4 +69,43 @@ public class MailGeneratorTest {
 				.isEqualTo("Monique Bond-Delacroix <m_bonddela@mi6.com>");
 	}
 
+	@Test
+	void return_mail_for_duplicated_name() {
+		MailGenerator s = new MailGenerator();
+		assertThat(s.generateMails("Monique Bond-Delacroix, "
+				+ "Monique Bond-Delacroix", "MI6"))
+				.isEqualTo("Monique Bond-Delacroix <m_bonddela@mi6.com>, "
+						+ "Monique Bond-Delacroix <m_bonddela2@mi6.com>");
+	}
+
+	@Test
+	void return_mail_for_duplicated_name_three_times() {
+		MailGenerator s = new MailGenerator();
+		assertThat(s.generateMails("Monique Bond-Delacroix, "
+				+ "Monique Bond-Delacroix, "
+				+ "Monique Bond-Delacroix", "MI6"))
+				.isEqualTo("Monique Bond-Delacroix <m_bonddela@mi6.com>, "
+						+ "Monique Bond-Delacroix <m_bonddela2@mi6.com>, "
+						+ "Monique Bond-Delacroix <m_bonddela3@mi6.com>");
+	}
+
+	@Test
+	void check_for_full_example() {
+		MailGenerator s = new MailGenerator();
+		assertThat(s.generateMails("John Doe, "
+				+ "Peter Parker, "
+				+ "Mary Jane Watson-Parker, "
+				+ "James Doe, "
+				+ "John Elvis Doe, "
+				+ "Jane Doe, "
+				+ "Penny Parker", "example"))
+				.isEqualTo("John Doe <j_doe@example.com>, "
+						+ "Peter Parker <p_parker@example.com>, "
+						+ "Mary Jane Watson-Parker <m_j_watsonpa@example.com>, "
+						+ "James Doe <j_doe2@example.com>, "
+						+ "John Elvis Doe <j_e_doe@example.com>, "
+						+ "Jane Doe <j_doe3@example.com>, "
+						+ "Penny Parker <p_parker2@example.com>");
+	}
+
 }
