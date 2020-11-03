@@ -1,6 +1,7 @@
 package com.hodvidar.miscellaneous.livecoding;
 
 import java.util.Arrays;
+import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -18,11 +19,7 @@ public class MailGenerator {
 		String[] splitFullName = fullName.toLowerCase().split(" ");
 		String initialAndSurname =
 				IntStream.range(0, splitFullName.length)
-						.mapToObj(i
-								->
-								i < (splitFullName.length -1) ?
-										String.valueOf(splitFullName[i].charAt(0))
-										: splitFullName[i]
+						.mapToObj(getStringIntFunction(splitFullName)
 								)
 						.collect(Collectors.joining("_"));
 		String email =
@@ -33,6 +30,37 @@ public class MailGenerator {
 				+".com"
 				+ ">";
 		return fullName + " " + email;
+	}
+
+	private static IntFunction<String> getStringIntFunction(String[] splitFullName) {
+		return i
+				->
+				isSurname(splitFullName.length, i) ?
+						transformSurname(splitFullName[i]) :
+						transformFirstName(splitFullName[i]);
+	}
+
+	private static boolean isSurname(int arraySize, int i) {
+		return i == (arraySize - 1);
+	}
+
+	private static String transformFirstName(String s) {
+		return String.valueOf(s.charAt(0));
+	}
+
+	/**
+	 * Result surname must be max 8 characters long and not contain
+	 * special characters.
+	 * (Only special character Dash "-" checked here).
+	 */
+	private static String transformSurname(String surname) {
+		return surname
+				.replace("-", "")
+				.substring(
+						0,
+						Math.min(surname.length(),
+								8)
+				);
 	}
 
 }
