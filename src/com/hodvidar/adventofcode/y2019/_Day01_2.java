@@ -13,7 +13,7 @@ public final class _Day01_2
 	/** If 'false' only response and Failure are written **/
 	private static final boolean VERBOSE = true;
 
-	private static final String INPUT_DIRECTORY = "aventofcode_2019"; // input2
+	private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input2
 
 	private static final int NUMBER_OF_TEST = 2;
 

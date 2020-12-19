@@ -1,6 +1,8 @@
 package com.hodvidar.adventofcode.y2020;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,61 +12,35 @@ import java.util.Scanner;
  * @author Hodvidar
  *
  */
-public final class _Day01
+public final class _Day01 extends AbstractAdventOfCode
 {
-	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = false;
-
-	private static final int NUMBER_OF_TEST = 1;
-	private static final String INPUT_DIRECTORY = "aventofcode_2020"; // input1
-
-	public static void printIfVerbose(String s)
-	{
-		if(VERBOSE)
-			System.err.println(s);
+	@Override
+	protected int getDay() {
+		return 1;
 	}
 
-	public static void main(String[] args) throws Exception
-	{
-		int result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
-		System.err.println("result='" + result + "'");
+	public static void main(String[] args) throws Exception {
+		AbstractAdventOfCode me = new _Day01();
+		int result = getResult(me.getScanner());
+		System.err.println("Expected '388075' - result='" + result + "'");
 	}
 
-	private static int test(String inputFile) throws Exception
-	{
+	public static int getResult(Scanner sc) {
 		String line;
-		File file = new File(inputFile);
-		// Scanner sc = new Scanner(System.in);
-		Scanner sc = new Scanner(file);
-		printIfVerbose("DEBUGGING");
-
-		// for(int i = 0; i< input.length; i++)
-		int totalFuel = 0;
-		while (sc.hasNextLine())
-		{
-			// line = input[i];
+		List<Integer> numbers = new ArrayList<>();
+		while(sc.hasNextLine()) {
 			line = sc.nextLine();
-			int mass = Integer.parseInt(line);
-			int fuel = calculateFuel(mass);
-			totalFuel += fuel;
+			int number = Integer.parseInt(line);
+			if(number >= 2020) {
+				continue;
+			}
+			for(int n : numbers) {
+				if( (n + number) == 2020) {
+					return n * number;
+				}
+			}
+			numbers.add(number);
 		}
-
-		sc.close();
-
-		return totalFuel;
-	}
-
-	/**
-	 * Calculates Fuel needed for the given mass. <br/>
-	 * divide by 3, round down, substract 2
-	 * @param mass
-	 * @return
-	 */
-	private static int calculateFuel(int mass)
-	{
-		double r = mass / 3d;
-		int r2 = (int) Math.floor(r);
-		r2 = r2 - 2;
-		return r2;
+		return -1;
 	}
 }

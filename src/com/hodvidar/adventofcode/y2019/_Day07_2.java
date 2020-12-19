@@ -21,7 +21,7 @@ public final class _Day07_2
 	private static final boolean VERBOSE = false;
 
 	private static final int NUMBER_OF_TEST = 7;
-	private static final String INPUT_DIRECTORY = "aventofcode_2019"; // input1
+	private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
 	public static void printIfVerbose(String s)
 	{
