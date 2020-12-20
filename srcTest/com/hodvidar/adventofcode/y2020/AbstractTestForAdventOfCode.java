@@ -26,7 +26,6 @@ public abstract class AbstractTestForAdventOfCode {
     protected Scanner getScanner(int testNumber) throws FileNotFoundException {
         String inputFile = getInputFilePath(testNumber);
         File file = new File(inputFile);
-        // Scanner sc = new Scanner(System.in);
         Scanner sc = new Scanner(file);
         return sc;
     }
