@@ -2,12 +2,10 @@ package com.hodvidar.adventofcode.y2019;
 
 /**
  * https://adventofcode.com/2019/day/23
- * 
- * @author Hodvidar
  *
+ * @author Hodvidar
  */
-public final class _Day23
-{
+public final class _Day23 {
 
 }
 

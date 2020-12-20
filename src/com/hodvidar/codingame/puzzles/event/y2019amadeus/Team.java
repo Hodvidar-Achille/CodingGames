@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
-class Team 
-{
-	int score;
-	Collection<Entity> robots;
+class Team {
+    int score;
+    Collection<Entity> robots;
 
-	void readScore(Scanner in) {
-		score = in.nextInt();
-		robots = new ArrayList<>();
-	}
+    void readScore(Scanner in) {
+        score = in.nextInt();
+        robots = new ArrayList<>();
+    }
 }

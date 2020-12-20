@@ -1,30 +1,27 @@
 package com.hodvidar.codingame.puzzles.hard;
+
 import java.util.*;
 
 /**
- *    https://www.codingame.com/ide/puzzle/skynet-revolution-episode-2
+ * https://www.codingame.com/ide/puzzle/skynet-revolution-episode-2
  * by Hodvidar
  **/
-class SkynetRevolutionEpisode2
-{
+class SkynetRevolutionEpisode2 {
 
-    public static void main(String[] args)
-    {
-    	SkynetRevolutionEpisode2 s = new SkynetRevolutionEpisode2();
-    	s.test();
+    public static void main(String[] args) {
+        SkynetRevolutionEpisode2 s = new SkynetRevolutionEpisode2();
+        s.test();
     }
-    
-    private void test()
-    {
+
+    private void test() {
         @SuppressWarnings("resource")
-		Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         int N = in.nextInt(); // the total number of nodes in the level, including the gateways
         int L = in.nextInt(); // the number of links
         int E = in.nextInt(); // the number of exit gateways
         Map<Integer, Node> nodesMap = new HashMap<>();
         System.err.println("    nb nodes = " + N + " nb links = " + L + " nb exits = " + E);
-        for (int i = 0; i < L; i++)
-        {
+        for (int i = 0; i < L; i++) {
             int N1 = in.nextInt(); // N1 and N2 defines a link between these nodes
             int N2 = in.nextInt();
             if (!nodesMap.containsKey(N1))
@@ -35,8 +32,7 @@ class SkynetRevolutionEpisode2
             //System.err.println(N1 + " <-> " + N2);
         }
         List<Integer> exists = new ArrayList<>();
-        for (int i = 0; i < E; i++)
-        {
+        for (int i = 0; i < E; i++) {
             int EI = in.nextInt(); // the index of a gateway node
             exists.add(EI);
             nodesMap.get(EI).becomeExist();
@@ -44,34 +40,29 @@ class SkynetRevolutionEpisode2
         }
 
         Map<Integer, Node> dangerousNode = new HashMap<>();
-        for(Node n : nodesMap.values())
-        {
-            if(n.isNearExist())
+        for (Node n : nodesMap.values()) {
+            if (n.isNearExist())
                 dangerousNode.put(n.getValue(), n);
         }
         // game loop
-        outer: while (true)
-        {
-            for(Node n : new ArrayList<>(dangerousNode.values()))
-            {
-                if(n.getLevel() < 1)
+        outer:
+        while (true) {
+            for (Node n : new ArrayList<>(dangerousNode.values())) {
+                if (n.getLevel() < 1)
                     dangerousNode.remove(n.getValue());
             }
             int SI = in.nextInt(); // The index of the node on which the Skynet agent is positioned this turn
             System.err.println("XoX in " + SI);
             Node nSI = nodesMap.get(SI);
 
-            if(dangerousNode.containsKey(SI))
-            {
+            if (dangerousNode.containsKey(SI)) {
                 System.err.println("### EmergencyCut ###");
                 nSI.cutExist();
                 continue outer;
             }
 
-            for(Node n : nSI.getVoisins())
-            {
-                if(n.getLevel() > 1)
-                {
+            for (Node n : nSI.getVoisins()) {
+                if (n.getLevel() > 1) {
                     System.err.println("### Pre-EmergencyCut ###");
                     n.cutExist();
                     continue outer;
@@ -84,14 +75,13 @@ class SkynetRevolutionEpisode2
             // because of the emergency cut
             nSI.setAllDistance(0);
             int minDist = Integer.MAX_VALUE;
-            for(Node n : dangerousNode.values()){
+            for (Node n : dangerousNode.values()) {
                 int d = n.getDist();
-                if(d != 0 && d < minDist)
+                if (d != 0 && d < minDist)
                     minDist = d;
             }
-            for(Node n : dangerousNode.values()){
-                if(n.getDist() == minDist && n.getLevel() > 1)
-                {
+            for (Node n : dangerousNode.values()) {
+                if (n.getDist() == minDist && n.getLevel() > 1) {
                     System.err.println("### Optimize cut of dangerous link ###");
                     n.cutExist();
                     continue outer;
@@ -102,20 +92,16 @@ class SkynetRevolutionEpisode2
 
             System.err.println("### Random cut of dangerous link ###");
             int max = 0;
-            for(Node n : dangerousNode.values())
-            {
-                if(n.getLevel() > max)
+            for (Node n : dangerousNode.values()) {
+                if (n.getLevel() > max)
                     max = n.getLevel();
             }
-            for(Node n : dangerousNode.values())
-            {
-                if(n.getLevel() == max)
-                {
+            for (Node n : dangerousNode.values()) {
+                if (n.getLevel() == max) {
                     n.cutExist();
                     continue outer;
                 }
             }
-
 
 
             // Write an action using System.out.println()
@@ -126,144 +112,121 @@ class SkynetRevolutionEpisode2
             // System.out.println(n1 + " " + n2); // in doCut
         }
     }
-    
+
     // ----------------- INTERNAL CLASSES ---------------------------
-    
-    class Node
-    {
+
+    class Node {
         private final int value;
+        private final List<Node> voisins;
         private int dist = Integer.MAX_VALUE;
         private int level = 0;
-        private final List<Node> voisins;
         private boolean isExist = false;
 
-        public Node(int val)
-        {
+        public Node(int val) {
             this.value = val;
             this.voisins = new ArrayList<>();
         }
 
 
-        public void setAllDistance(int d)
-        {
-           this.dist = d;
-           for(Node child : this.voisins)
-           {
+        public void setAllDistance(int d) {
+            this.dist = d;
+            for (Node child : this.voisins) {
                 //if(child.getDist() != Integer.MAX_VALUE)
                 //    continue;
                 int dd;
-                if(this.getLevel() > 0)
+                if (this.getLevel() > 0)
                     dd = d;
                 else
-                    dd = d+1;
-                    
-                if(child.getDist() <= dd)
+                    dd = d + 1;
+
+                if (child.getDist() <= dd)
                     continue;
                 child.setAllDistance(dd);
-                    
+
             }
         }
 
-        public void resetAllDistance()
-        {
+        public void resetAllDistance() {
             this.dist = Integer.MAX_VALUE;
-            for(Node child : this.voisins)
-            {
-                if(child.getDist() == Integer.MAX_VALUE)
+            for (Node child : this.voisins) {
+                if (child.getDist() == Integer.MAX_VALUE)
                     continue;
                 child.resetAllDistance();
             }
         }
 
-        public int getDist()
-        {
+        public int getDist() {
             return this.dist;
         }
 
-        public void setDist(int d)
-        {
+        public void setDist(int d) {
             this.dist = d;
         }
 
-        public void connectDouble(Node aNode)
-        {
+        public void connectDouble(Node aNode) {
             this.voisins.add(aNode);
             aNode.connect(this);
         }
 
-        public void connect(Node aNode)
-        {
+        public void connect(Node aNode) {
             this.voisins.add(aNode);
         }
 
-        public void cutDouble(Node aNode)
-        {
+        public void cutDouble(Node aNode) {
             aNode.cut(this);
             this.voisins.remove(aNode);
         }
 
-        public void cut(Node aNode)
-        {
+        public void cut(Node aNode) {
             this.voisins.remove(aNode);
         }
 
-        public void cutExist()
-        {
-            for(Node n : this.voisins)
-            {
-                if(n.isExist())
-                {
+        public void cutExist() {
+            for (Node n : this.voisins) {
+                if (n.isExist()) {
                     this.cutDouble(n);
                     this.removeLevel();
-                    System.err.println("---Cutting "+this.getValue()+" <-> "+n.getValue()+" ---");
+                    System.err.println("---Cutting " + this.getValue() + " <-> " + n.getValue() + " ---");
                     System.out.println(this.getValue() + " " + n.getValue());
                     return;
                 }
             }
         }
 
-        public int getLevel()
-        {
+        public int getLevel() {
             return this.level;
         }
 
-        public void addLevel()
-        {
-            this.level+=1;
+        public void addLevel() {
+            this.level += 1;
         }
 
-        public void removeLevel()
-        {
-            this.level-=1;
+        public void removeLevel() {
+            this.level -= 1;
         }
 
-        public int getValue()
-        {
+        public int getValue() {
             return this.value;
         }
 
-        public List<Node> getVoisins()
-        {
+        public List<Node> getVoisins() {
             return this.voisins;
         }
 
-        public boolean isExist()
-        {
+        public boolean isExist() {
             return this.isExist;
         }
 
-        public boolean isNearExist()
-        {
-            for(Node n : this.voisins)
-                if(n.isExist())
+        public boolean isNearExist() {
+            for (Node n : this.voisins)
+                if (n.isExist())
                     return true;
             return false;
         }
 
-        public void becomeExist()
-        {
+        public void becomeExist() {
             this.isExist = true;
-            for(Node n : this.voisins)
+            for (Node n : this.voisins)
                 n.addLevel();
         }
     }

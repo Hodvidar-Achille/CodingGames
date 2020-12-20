@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *    https://www.codingame.com/ide/puzzle/stock-exchange-losses
+ * https://www.codingame.com/ide/puzzle/stock-exchange-losses
  * by Hodvidar
  **/
 class StockExchangeLosses {
@@ -20,21 +20,18 @@ class StockExchangeLosses {
         for (int i = 0; i < n; i++) {
             int v = in.nextInt();
             values.add(v);
-            if(v > max)
-            {
-                if(min-max < maxLoss && min != Integer.MAX_VALUE)
+            if (v > max) {
+                if (min - max < maxLoss && min != Integer.MAX_VALUE)
                     maxLoss = min - max;
                 max = v;
                 min = v;
-            }
-            else if(v < min)
-            {
+            } else if (v < min) {
                 min = v;
-                if(min-max < maxLoss)
+                if (min - max < maxLoss)
                     maxLoss = min - max;
             }
         }
-        
+
 
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");

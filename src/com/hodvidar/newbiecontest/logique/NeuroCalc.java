@@ -4,201 +4,174 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *   https://www.newbiecontest.org/index.php?page=epreuve&no=243
+ * https://www.newbiecontest.org/index.php?page=epreuve&no=243
  * by Hodvidar
- *
- *   (See details at end of class).
+ * <p>
+ * (See details at end of class).
  */
-public class NeuroCalc 
-{
+public class NeuroCalc {
 
-	public static void main(String[] args)
-	{
-		System.out.println("Hello World");
-		String result = "";
-		// nothing before 5 billions
-		for (double x = 5000000000d; x < Double.MAX_VALUE; x++)
-		{
-			String y = "" + x;
-			result = neuroCalc_x2y(x);
+    private static List<Integer> modification;
 
-			if (result.equals(y + y) && !contains8or9(result))
-			{
-				System.out.println("y -> yy : " + y + " renvoie " + y + y);
-				continue;
-			}
-			if (result.equals(y) && !contains8or9(result))
-			{
-				System.out.println("y -> y : " + y + " renvoie " + y);
-				continue;
-			}
-			String tluser = new StringBuilder(y).reverse().toString();
-			if (result.equals(tluser) && !contains8or9(result))
-			{
-				System.out.println("y -> y inversé : " + y + " renvoie " + tluser);
-				continue;
-			}
-			if (x % 1000000000 == 0)
-				System.out.println("Still running... " + (x / 1000000000));
-		}
-	}
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        String result = "";
+        // nothing before 5 billions
+        for (double x = 5000000000d; x < Double.MAX_VALUE; x++) {
+            String y = "" + x;
+            result = neuroCalc_x2y(x);
 
-	private static boolean contains8or9(String s)
-	{
-		return s.contains("8") || s.contains("9");
-	}
+            if (result.equals(y + y) && !contains8or9(result)) {
+                System.out.println("y -> yy : " + y + " renvoie " + y + y);
+                continue;
+            }
+            if (result.equals(y) && !contains8or9(result)) {
+                System.out.println("y -> y : " + y + " renvoie " + y);
+                continue;
+            }
+            String tluser = new StringBuilder(y).reverse().toString();
+            if (result.equals(tluser) && !contains8or9(result)) {
+                System.out.println("y -> y inversé : " + y + " renvoie " + tluser);
+                continue;
+            }
+            if (x % 1000000000 == 0)
+                System.out.println("Still running... " + (x / 1000000000));
+        }
+    }
 
-	private static String neuroCalc_x2y(double x)
-	{
-		modification = new ArrayList<>();
-		double y = neuroCalc_Analyse(x);
-		return applyModification("" + y);
-	}
+    private static boolean contains8or9(String s) {
+        return s.contains("8") || s.contains("9");
+    }
 
-	private static List<Integer> modification;
+    private static String neuroCalc_x2y(double x) {
+        modification = new ArrayList<>();
+        double y = neuroCalc_Analyse(x);
+        return applyModification("" + y);
+    }
 
-	public static String applyModification(String y)
-	{
-		for (Integer i : modification)
-		{
-			switch (i)
-			{
-			case 3:
-				y = modifcation3(y);
-				break;
-			case 4:
-				y = modifcation4(y);
-				break;
-			case 5:
-				y = modifcation5(y);
-				break;
-			case 6:
-				y = modifcation6(y);
-				break;
-			case 7:
-				y = modifcation7(y);
-				break;
-			default:
-				break;
-			}
-		}
-		return y;
-	}
+    public static String applyModification(String y) {
+        for (Integer i : modification) {
+            switch (i) {
+                case 3:
+                    y = modifcation3(y);
+                    break;
+                case 4:
+                    y = modifcation4(y);
+                    break;
+                case 5:
+                    y = modifcation5(y);
+                    break;
+                case 6:
+                    y = modifcation6(y);
+                    break;
+                case 7:
+                    y = modifcation7(y);
+                    break;
+                default:
+                    break;
+            }
+        }
+        return y;
+    }
 
-	public static String modifcation3(String y)
-	{
-		return y + y;
-	}
+    public static String modifcation3(String y) {
+        return y + y;
+    }
 
-	public static String modifcation4(String y)
-	{
-		return new StringBuilder(y).reverse().toString();
-	}
+    public static String modifcation4(String y) {
+        return new StringBuilder(y).reverse().toString();
+    }
 
-	public static String modifcation5(String y)
-	{
-		if (y.length() > 1)
-			return y.substring(1);
-		return y;
-	}
+    public static String modifcation5(String y) {
+        if (y.length() > 1)
+            return y.substring(1);
+        return y;
+    }
 
-	public static String modifcation6(String y)
-	{
-		return "1" + y;
-	}
+    public static String modifcation6(String y) {
+        return "1" + y;
+    }
 
-	public static String modifcation7(String y)
-	{
-		return "2" + y;
-	}
+    public static String modifcation7(String y) {
+        return "2" + y;
+    }
 
-	public static double neuroCalc_Analyse(double x)
-	{
-		String s = "" + x;
-		if (x > 100 && s.startsWith("1") && s.endsWith("2"))
-		{
-			x = neuroCalc_12(x);
-			return neuroCalc_Analyse(x);
-		}
-		else if (s.startsWith("3"))
-		{
-			x = neuroCalc_3(x);
-			return neuroCalc_Analyse(x);
-		}
-		else if (s.startsWith("4"))
-		{
-			x = neuroCalc_4(x);
-			return neuroCalc_Analyse(x);
-		}
-		else if (s.startsWith("5"))
-		{
-			x = neuroCalc_5(x);
-			return neuroCalc_Analyse(x);
-		}
-		else if (s.startsWith("6"))
-		{
-			x = neuroCalc_6(x);
-			return neuroCalc_Analyse(x);
-		}
-		else if (s.startsWith("7"))
-		{
-			x = neuroCalc_7(x);
-			return neuroCalc_Analyse(x);
-		}
-		return x;
-	}
-	public static double neuroCalc_12(double x) // 1x2 -> x
-	{
-		String s = "" + x;
-		s = s.substring(1, s.length() - 1); // remove 1st and last
-		x = Double.valueOf(s);
-		return x;
-	}
+    public static double neuroCalc_Analyse(double x) {
+        String s = "" + x;
+        if (x > 100 && s.startsWith("1") && s.endsWith("2")) {
+            x = neuroCalc_12(x);
+            return neuroCalc_Analyse(x);
+        } else if (s.startsWith("3")) {
+            x = neuroCalc_3(x);
+            return neuroCalc_Analyse(x);
+        } else if (s.startsWith("4")) {
+            x = neuroCalc_4(x);
+            return neuroCalc_Analyse(x);
+        } else if (s.startsWith("5")) {
+            x = neuroCalc_5(x);
+            return neuroCalc_Analyse(x);
+        } else if (s.startsWith("6")) {
+            x = neuroCalc_6(x);
+            return neuroCalc_Analyse(x);
+        } else if (s.startsWith("7")) {
+            x = neuroCalc_7(x);
+            return neuroCalc_Analyse(x);
+        }
+        return x;
+    }
 
-	public static double neuroCalc_3(double x) // 3x -> x (and y -> yy)
-	{
-		String s = "" + x;
-		s = s.substring(1); // remove first
-		x = Double.valueOf(s);
-		modification.add(3);
-		return x;
-	}
+    public static double neuroCalc_12(double x) // 1x2 -> x
+    {
+        String s = "" + x;
+        s = s.substring(1, s.length() - 1); // remove 1st and last
+        x = Double.valueOf(s);
+        return x;
+    }
 
-	public static double neuroCalc_4(double x) // 4x -> x (and y -> y inverse)
-	{
-		String s = "" + x;
-		s = s.substring(1); // remove first
-		x = Double.valueOf(s);
-		modification.add(4);
-		return x;
-	}
+    public static double neuroCalc_3(double x) // 3x -> x (and y -> yy)
+    {
+        String s = "" + x;
+        s = s.substring(1); // remove first
+        x = Double.valueOf(s);
+        modification.add(3);
+        return x;
+    }
 
-	public static double neuroCalc_5(double x) // 5x -> x (and y -> y sans 1er chiffre)
-	{
-		String s = "" + x;
-		s = s.substring(1); // remove first
-		x = Double.valueOf(s);
-		modification.add(5);
-		return x;
-	}
+    public static double neuroCalc_4(double x) // 4x -> x (and y -> y inverse)
+    {
+        String s = "" + x;
+        s = s.substring(1); // remove first
+        x = Double.valueOf(s);
+        modification.add(4);
+        return x;
+    }
 
-	public static double neuroCalc_6(double x) // 6x -> x (and y -> 1y)
-	{
-		String s = "" + x;
-		s = s.substring(1); // remove first
-		x = Double.valueOf(s);
-		modification.add(6);
-		return x;
-	}
+    public static double neuroCalc_5(double x) // 5x -> x (and y -> y sans 1er chiffre)
+    {
+        String s = "" + x;
+        s = s.substring(1); // remove first
+        x = Double.valueOf(s);
+        modification.add(5);
+        return x;
+    }
 
-	public static double neuroCalc_7(double x) // 7x -> x (and y -> 2y)
-	{
-		String s = "" + x;
-		s = s.substring(1); // remove first
-		x = Double.valueOf(s);
-		modification.add(7);
-		return x;
-	}
+    public static double neuroCalc_6(double x) // 6x -> x (and y -> 1y)
+    {
+        String s = "" + x;
+        s = s.substring(1); // remove first
+        x = Double.valueOf(s);
+        modification.add(6);
+        return x;
+    }
+
+    public static double neuroCalc_7(double x) // 7x -> x (and y -> 2y)
+    {
+        String s = "" + x;
+        s = s.substring(1); // remove first
+        x = Double.valueOf(s);
+        modification.add(7);
+        return x;
+    }
 }
 
 /*

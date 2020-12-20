@@ -15,7 +15,7 @@ class WinamaxSponsoredContest {
         for (int i = 0; i < height; i++) {
             String row = in.next();
         }
-        
+
         // 1) 
         in.close();
     }

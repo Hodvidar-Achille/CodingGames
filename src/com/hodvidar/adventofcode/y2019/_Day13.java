@@ -5,61 +5,57 @@ import java.util.Scanner;
 
 /**
  * https://adventofcode.com/2019/day/13
- * 
+ * <p>
  * '398' GOOD
- * 
- * @author Hodvidar
  *
+ * @author Hodvidar
  */
-public final class _Day13
-{
-	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = true;
+public final class _Day13 {
+    /**
+     * If 'false' only response and Failure are written
+     **/
+    private static final boolean VERBOSE = true;
 
-	private static final int NUMBER_OF_TEST = 13;
-	private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
+    private static final int NUMBER_OF_TEST = 13;
+    private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-	public static void printIfVerbose(String s)
-	{
-		if(VERBOSE)
-			System.err.println(s);
-	}
+    public static void printIfVerbose(String s) {
+        if (VERBOSE)
+            System.err.println(s);
+    }
 
-	public static void main(String[] args) throws Exception
-	{
-		String result = test("resources\\" + INPUT_DIRECTORY + "\\input"
-				+ NUMBER_OF_TEST + ".txt");
-		System.err.println("Expected '398' - result='" + result + "'");
-	}
+    public static void main(String[] args) throws Exception {
+        String result = test("resources\\" + INPUT_DIRECTORY + "\\input"
+                + NUMBER_OF_TEST + ".txt");
+        System.err.println("Expected '398' - result='" + result + "'");
+    }
 
-	private static String test(String inputFile) throws Exception
-	{
-		String line;
-		File file = new File(inputFile);
-		// Scanner sc = new Scanner(System.in);
-		Scanner sc = new Scanner(file);
-		printIfVerbose("DEBUGGING");
+    private static String test(String inputFile) throws Exception {
+        String line;
+        File file = new File(inputFile);
+        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(file);
+        printIfVerbose("DEBUGGING");
 
-		line = sc.nextLine();
-		String[] opCodeStr = line.split(",");
-		sc.close();
-		double[] opCode = new double[opCodeStr.length];
-		for (int i = 0; i < opCodeStr.length; i++)
-		{
-			String s = opCodeStr[i];
-			double j = Double.parseDouble(s);
-			opCode[i] = j;
-		}
+        line = sc.nextLine();
+        String[] opCodeStr = line.split(",");
+        sc.close();
+        double[] opCode = new double[opCodeStr.length];
+        for (int i = 0; i < opCodeStr.length; i++) {
+            String s = opCodeStr[i];
+            double j = Double.parseDouble(s);
+            opCode[i] = j;
+        }
 
-		ArcaneCabinet game = new ArcaneCabinet(opCode);
-		game.paint();
-		if(VERBOSE)
-			game.printScreen();
-		int result = game.countBlock();
+        ArcaneCabinet game = new ArcaneCabinet(opCode);
+        game.paint();
+        if (VERBOSE)
+            game.printScreen();
+        int result = game.countBlock();
 
-		// Stuff
-		return "" + result;
-	}
+        // Stuff
+        return "" + result;
+    }
 }
 
 /*

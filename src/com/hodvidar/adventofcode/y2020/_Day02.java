@@ -4,23 +4,23 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class _Day02 extends AbstractAdventOfCode {
-    @Override
-    protected int getDay() {
-        return 2;
-    }
-
     public static void main(String[] args) throws Exception {
         _Day02 me = new _Day02();
         int result = me.numberOfCorrect(me.getScanner());
         System.err.println("Expected '469' - result='" + result + "'");
     }
 
+    @Override
+    protected int getDay() {
+        return 2;
+    }
+
     public int numberOfCorrect(Scanner sc) {
         String line;
         int counter = 0;
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             line = sc.nextLine();
-            if(isValid(line)) {
+            if (isValid(line)) {
                 counter++;
             }
         }
@@ -29,10 +29,10 @@ public class _Day02 extends AbstractAdventOfCode {
 
     public boolean isValid(int min, int max, char letter, String password) {
         int letterCounter = 0;
-        for(char c : password.toCharArray()) {
-            if(Objects.equals(letter, c)) {
+        for (char c : password.toCharArray()) {
+            if (Objects.equals(letter, c)) {
                 letterCounter++;
-                if(letterCounter > max) {
+                if (letterCounter > max) {
                     return false;
                 }
             }

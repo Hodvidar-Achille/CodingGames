@@ -3,19 +3,17 @@ package com.hodvidar.codingame.puzzles.easy;
 import java.util.Scanner;
 
 /**
- *    https://www.codingame.com/ide/puzzle/power-of-thor-episode-1
+ * https://www.codingame.com/ide/puzzle/power-of-thor-episode-1
  * ---
  * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
  * by Hodvidar
  **/
-class PowerOfThorEpisode1 
-{
+class PowerOfThorEpisode1 {
 
     @SuppressWarnings("unused")
-	public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         @SuppressWarnings("resource")
-		Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         int lightX = in.nextInt(); // the X position of the light of power
         int lightY = in.nextInt(); // the Y position of the light of power
         int initialTX = in.nextInt(); // Thor's starting X position
@@ -29,38 +27,38 @@ class PowerOfThorEpisode1
 
             // Write an action using System.out.println()
             // To debug: System.err.println("Debug messages...");
-            if(newX < lightX && newY == lightY){
+            if (newX < lightX && newY == lightY) {
                 System.out.println("E");
                 newX++;
             }
-            if(newX < lightX && newY < lightY){
+            if (newX < lightX && newY < lightY) {
                 System.out.println("SE");
                 newX++;
                 newY++;
             }
-            if(newX == lightX && newY < lightY){
+            if (newX == lightX && newY < lightY) {
                 System.out.println("S");
                 newY++;
             }
-            if(newX > lightX && newY < lightY){
+            if (newX > lightX && newY < lightY) {
                 System.out.println("SW");
                 newY++;
                 newX--;
             }
-            if(newX > lightX && newY == lightY){
+            if (newX > lightX && newY == lightY) {
                 System.out.println("W");
                 newX--;
             }
-            if(newX > lightX && newY > lightY){
+            if (newX > lightX && newY > lightY) {
                 System.out.println("NW");
                 newY--;
                 newX--;
             }
-            if(newX == lightX && newY > lightY){
+            if (newX == lightX && newY > lightY) {
                 System.out.println("N");
                 newY--;
             }
-            if(newX < lightX && newY > lightY){
+            if (newX < lightX && newY > lightY) {
                 System.out.println("NE");
                 newY--;
                 newX++;

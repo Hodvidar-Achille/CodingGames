@@ -8,12 +8,10 @@ import java.util.Scanner;
  * https://www.codingame.com/ide/puzzle/don't-panic-episode-1
  * by Hodvidar
  **/
-class DontPanicEpisode1 
-{
+class DontPanicEpisode1 {
 
-    @SuppressWarnings({ "resource", "unused" })
-	public static void main(String[] args)
-    {
+    @SuppressWarnings({"resource", "unused"})
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int nbFloors = in.nextInt(); // number of floors
         int width = in.nextInt(); // width of the area
@@ -31,42 +29,37 @@ class DontPanicEpisode1
         }
 
         // game loop
-        while (true) 
-        {
+        while (true) {
             int cloneFloor = in.nextInt(); // floor of the leading clone
             int clonePos = in.nextInt(); // position of the leading clone on its floor
             String direction = in.next(); // direction of the leading clone: LEFT or RIGHT
             boolean isGoingRight = "RIGHT".equals(direction);
-            
+
             // Write an action using System.out.println()
             // To debug: System.err.println("Debug messages...");
-            System.err.println("f : "+cloneFloor+" p : "+clonePos+" d : "+direction);
-            System.err.println("ef : "+exitFloor+" ep : "+exitPos);
-            if(cloneFloor == -1)
-            {
+            System.err.println("f : " + cloneFloor + " p : " + clonePos + " d : " + direction);
+            System.err.println("ef : " + exitFloor + " ep : " + exitPos);
+            if (cloneFloor == -1) {
                 System.err.println("wait and go next turn");
                 System.out.println("WAIT");
                 continue;
             }
-            
+
             // GO !
             // exist floor is same as cloneFloor ?
-            if(exitFloor == cloneFloor)
-            {
+            if (exitFloor == cloneFloor) {
                 boolean isExitToTheRight = exitPos >= clonePos;
-                System.err.println("same floor isExitToTheRight : "+isExitToTheRight);
-                if(isGoingRight == isExitToTheRight)
+                System.err.println("same floor isExitToTheRight : " + isExitToTheRight);
+                if (isGoingRight == isExitToTheRight)
                     System.out.println("WAIT");
                 else
                     System.out.println("BLOCK");
-            }
-            else
-            {
+            } else {
                 int elevatorPos = elevators.get(cloneFloor);
                 boolean isOnElevator = elevatorPos == clonePos;
                 boolean isElevatorToTheRight = elevatorPos > clonePos;
-                System.err.println("diff floor isElevatorToTheRight : "+isElevatorToTheRight);
-                if(isGoingRight == isElevatorToTheRight || isOnElevator)
+                System.err.println("diff floor isElevatorToTheRight : " + isElevatorToTheRight);
+                if (isGoingRight == isElevatorToTheRight || isOnElevator)
                     System.out.println("WAIT");
                 else
                     System.out.println("BLOCK");

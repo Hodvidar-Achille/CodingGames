@@ -1,22 +1,22 @@
 package com.hodvidar.codingame.puzzles.easy;
+
 import com.hodvidar.utils.geometry.GeometryServices;
 import com.hodvidar.utils.geometry.Point;
 
 import java.util.Scanner;
+
 /**
- *    https://www.codingame.com/ide/puzzle/nature-of-quadrilaterals
+ * https://www.codingame.com/ide/puzzle/nature-of-quadrilaterals
  * by Hodvidar.
  **/
 class NatureOfQuadrilaterals {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         NatureOfQuadrilaterals d = new NatureOfQuadrilaterals();
         d.test();
     }
 
-    public void test()
-    {
+    public void test() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the name of the first point: ");
         String A = in.next();
@@ -50,7 +50,7 @@ class NatureOfQuadrilaterals {
         Point b = new Point(xB, yB);
         Point c = new Point(xC, yC);
         Point d = new Point(xD, yD);
-        String result = A+B+C+D +" is a " + GeometryServices.getQuadrilateralType(a, b, c, d).toLowerCase()+".";
+        String result = A + B + C + D + " is a " + GeometryServices.getQuadrilateralType(a, b, c, d).toLowerCase() + ".";
         System.out.println(result);
         in.close();
     }

@@ -4,13 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class _Day01_2 extends AbstractAdventOfCode
-{
-    @Override
-    protected int getDay() {
-        return 1;
-    }
-
+public class _Day01_2 extends AbstractAdventOfCode {
     public static void main(String[] args) throws Exception {
         AbstractAdventOfCode me = new _Day01_2();
         int result = getResult(me.getScanner());
@@ -20,23 +14,23 @@ public class _Day01_2 extends AbstractAdventOfCode
     public static int getResult(Scanner sc) {
         String line;
         List<Integer> numbers = new ArrayList<>();
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             line = sc.nextLine();
             int number = Integer.parseInt(line);
-            if(number >= 2020) {
+            if (number >= 2020) {
                 continue;
             }
             for (int i = 0; i < numbers.size(); i++) {
                 int n1 = numbers.get(i);
-                for(int j = 0; j < numbers.size(); j++) {
+                for (int j = 0; j < numbers.size(); j++) {
                     int n2 = numbers.get(j);
-                    if(j == i) {
+                    if (j == i) {
                         continue;
                     }
-                    if(n1 + n2 >= 2020) {
+                    if (n1 + n2 >= 2020) {
                         continue;
                     }
-                    if( (n1 + n2 + number) == 2020) {
+                    if ((n1 + n2 + number) == 2020) {
                         return n1 * n2 * number;
                     }
                 }
@@ -44,5 +38,10 @@ public class _Day01_2 extends AbstractAdventOfCode
             numbers.add(number);
         }
         return -1;
+    }
+
+    @Override
+    protected int getDay() {
+        return 1;
     }
 }

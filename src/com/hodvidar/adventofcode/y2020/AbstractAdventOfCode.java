@@ -6,28 +6,30 @@ import java.util.Scanner;
 
 public abstract class AbstractAdventOfCode {
 
-        /** If 'false' only response and Failure are written **/
-        private static final boolean VERBOSE = false;
+    /**
+     * If 'false' only response and Failure are written
+     **/
+    private static final boolean VERBOSE = false;
 
-        private static final String INPUT_DIRECTORY = "adventofcode_2020"; // input1
+    private static final String INPUT_DIRECTORY = "adventofcode_2020"; // input1
 
-        protected static void printIfVerbose(String s) {
-            if(VERBOSE) {
-                System.err.println(s);
-            }
+    protected static void printIfVerbose(String s) {
+        if (VERBOSE) {
+            System.err.println(s);
         }
+    }
 
-        private String getInputFilePath() {
-            return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + ".txt";
-        }
+    private String getInputFilePath() {
+        return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + ".txt";
+    }
 
-        protected Scanner getScanner() throws FileNotFoundException {
-            String inputFile = getInputFilePath();
-            File file = new File(inputFile);
-            // Scanner sc = new Scanner(System.in);
-            Scanner sc = new Scanner(file);
-            return sc;
-        }
+    protected Scanner getScanner() throws FileNotFoundException {
+        String inputFile = getInputFilePath();
+        File file = new File(inputFile);
+        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(file);
+        return sc;
+    }
 
-        protected abstract int getDay();
+    protected abstract int getDay();
 }

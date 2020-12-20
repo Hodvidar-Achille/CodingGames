@@ -5,20 +5,17 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *    https://www.codingame.com/ide/puzzle/telephone-numbers
+ * https://www.codingame.com/ide/puzzle/telephone-numbers
  * by Hodvidar
  **/
-class TelephoneNumbers 
-{
+class TelephoneNumbers {
 
-    public static void main(String[] args)
-    {
-    	TelephoneNumbers s = new TelephoneNumbers();
-    	s.test();
+    public static void main(String[] args) {
+        TelephoneNumbers s = new TelephoneNumbers();
+        s.test();
     }
-    
-    private void test()
-    {
+
+    private void test() {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
         Node rootNode = new Node(-1);
@@ -26,9 +23,8 @@ class TelephoneNumbers
             String telephone = in.next();
             char[] numberChar = telephone.toCharArray();
             int[] number = new int[numberChar.length];
-            for(int j = 0; j < numberChar.length; j++)
-            {
-                number[j] = Integer.parseInt(""+numberChar[j]);
+            for (int j = 0; j < numberChar.length; j++) {
+                number[j] = Integer.parseInt("" + numberChar[j]);
             }
             rootNode.addChildren(number, 0, number.length);
         }
@@ -42,62 +38,54 @@ class TelephoneNumbers
         System.out.println(answer);
         in.close();
     }
-    
+
     // ----------------------------- INTERNAL CLASSES ----------------------------------
     class Node {
-        
+
         private final int value;
-        
+
         private final List<Node> children;
-        
-        public Node(int v)
-        {
+
+        public Node(int v) {
             this.value = v;
             children = new ArrayList<>();
         }
-        
-        public int getV()
-        {
+
+        public int getV() {
             return this.value;
         }
-        
-        public List<Node> getChildren()
-        {
+
+        public List<Node> getChildren() {
             return children;
         }
-        
-        public void addChild(Node child)
-        {
+
+        public void addChild(Node child) {
             this.children.add(child);
         }
-        
-        public void addChildren(int[] values, int start, int length)
-        {
-            if(start == length)
+
+        public void addChildren(int[] values, int start, int length) {
+            if (start == length)
                 return;
-                
+
             int v = values[start];
             Node child = this.getChildWithValue(v);
-            if(child == null)
-            {
+            if (child == null) {
                 child = new Node(v);
                 this.addChild(child);
             }
-            child.addChildren(values, start+1, length);
+            child.addChildren(values, start + 1, length);
         }
-        
-        public Node getChildWithValue(int value)
-        {
-            for(Node c : this.children)
-                if(c.getV() == value)
+
+        public Node getChildWithValue(int value) {
+            for (Node c : this.children)
+                if (c.getV() == value)
                     return c;
             return null;
         }
-        
-        public int numberOfChild()
-        {
+
+        public int numberOfChild() {
             int i = this.children.size();
-            for(Node n : this.children)
+            for (Node n : this.children)
                 i += n.numberOfChild();
             return i;
         }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *    https://www.codingame.com/ide/puzzle/network-cabling
+ * https://www.codingame.com/ide/puzzle/network-cabling
  * by Hodvidar
  **/
 class NetworkCabling {
@@ -19,19 +19,18 @@ class NetworkCabling {
         List<Double> positions = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             int X = in.nextInt();
-            if(X > maxX)
+            if (X > maxX)
                 maxX = X;
-            if(X < minX)
+            if (X < minX)
                 minX = X;
             int Y = in.nextInt();
             positions.add((double) Y);
         }
         in.close();
-        
+
         double mediane = getMediane(positions.toArray(new Double[0]));
         double cableLength = maxX - minX;
-        for(double y : positions)
-        {
+        for (double y : positions) {
             cableLength += Math.abs(y - mediane);
         }
 
@@ -40,16 +39,15 @@ class NetworkCabling {
         String cableLengthStr = String.format("%d", (long) cableLength);
         System.out.println(cableLengthStr);
     }
-    
-    private static double getMediane(Double[] numArray)
-    {
+
+    private static double getMediane(Double[] numArray) {
         Arrays.sort(numArray);
         double median;
         if (numArray.length % 2 == 0)
-            median = (numArray[numArray.length/2] + numArray[numArray.length/2 - 1])/2;
+            median = (numArray[numArray.length / 2] + numArray[numArray.length / 2 - 1]) / 2;
         else
-            median = numArray[numArray.length/2];
-            
+            median = numArray[numArray.length / 2];
+
         return median;
     }
 }

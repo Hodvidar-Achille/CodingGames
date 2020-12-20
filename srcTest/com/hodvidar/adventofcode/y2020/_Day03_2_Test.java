@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class _Day03_2_Test  extends AbstractTestForAdventOfCode {
+public class _Day03_2_Test extends AbstractTestForAdventOfCode {
     @Override
     protected int getDay() {
         return 3;

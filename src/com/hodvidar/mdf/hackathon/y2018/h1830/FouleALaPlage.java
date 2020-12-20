@@ -3,131 +3,117 @@ package com.hodvidar.mdf.hackathon.y2018.h1830;
 import java.io.File;
 import java.util.Scanner;
 
-public final class FouleALaPlage 
-{
-	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = false;
-	
-	private static final int NUMBER_OF_TEST = 6;
-	private static final String INPUT_DIRECTORY = "foule-a-la-plage_input";
-	
-	public static void printIfVerbose(String s)
-	{
-		if (VERBOSE)
-			System.err.println(s);
-	}
-	
-	public static void main(String[] args) throws Exception 
-	{
-		for(int i = 1; i <= NUMBER_OF_TEST; i++)
-		{
-			printIfVerbose("\n\nTEST n°"+i);
-			String result = test("resources\\"+INPUT_DIRECTORY+"\\input"+i+".txt");
-			// --- CHECKING ---
-			File file2 = new File("resources\\"+INPUT_DIRECTORY+"\\output"+i+".txt");
-			// Scanner sc = new Scanner(System.in);
-			Scanner sc2 = new Scanner(file2);
-			String line2 = sc2.nextLine();
-			printIfVerbose("Solution is: \n"+line2);
-			if(result.equals(line2))
-				printIfVerbose("SUCCESS!");
-			else
-				System.err.println("FAILURE!");
-			sc2.close();
-		}
-	}
-	
-	private static final String ENTRY = "E";
-	// private static final String EXIT = "S";
+public final class FouleALaPlage {
+    /**
+     * If 'false' only response and Failure are written
+     **/
+    private static final boolean VERBOSE = false;
 
-	private static String test(String inputFile) throws Exception 
-	{
-		String  line;
-		File file = new File(inputFile);
-		// Scanner sc = new Scanner(System.in);
-		Scanner sc = new Scanner(file);
-		printIfVerbose("DEBUGGING");
-		
-		int numberOfPassage = 0;
-		int numberOfMaster = 0;
-		int alarmOnInMinute = 0;
-		int previousTimeInMinute = 0;
-		int currentTimeInMinute = 0;
-		int actualNumberOfPerson = 0;
-		int counter = 0;
-		while(sc.hasNextLine())
-		{
-			line = sc.nextLine();
-			counter++;
-			if(counter == 1)
-			{
-				numberOfPassage = Integer.parseInt(line);
-				printIfVerbose("numberOfPassage="+numberOfPassage);
-				continue;
-			}
-			if(counter == 2)
-			{
-				numberOfMaster = Integer.parseInt(line);
-				printIfVerbose("numberOfMaster="+numberOfMaster);
-				continue;
-			}
-			String[] line2 = line.split("\\s+");
-			String time = line2[0];
-			String passage = line2[1];
-			
-			String[] time2 = time.split(":");
-			String hourStr = time2[0];
-			String minuteStr = time2[1];
-			int hour = Integer.parseInt(hourStr);
-			int minute = Integer.parseInt(minuteStr);
-			// remove leading "0"
-			previousTimeInMinute = currentTimeInMinute;
-			currentTimeInMinute = (hour * 60) + minute;
-			if(counter == 3)
-			{
-				// first passage, set actualTimeInMinute
-				previousTimeInMinute = currentTimeInMinute;
-			}
-			
-			int minuteSinceLastEntry = currentTimeInMinute - previousTimeInMinute;
-			
-			if(tooMuchPerson(numberOfMaster, actualNumberOfPerson))
-			{
-				alarmOnInMinute+=minuteSinceLastEntry;
-			}
-			
-			if(ENTRY.equals(passage))
-			{
-				actualNumberOfPerson++;
-			}
-			else
-			{
-				actualNumberOfPerson--;
-			}
-			
-			printIfVerbose("Passage n°"+(counter-2)+": "+line+" p="+actualNumberOfPerson+" alarm="+alarmOnInMinute);
-		}
-		
-		// Add time until 23:00
-		previousTimeInMinute = currentTimeInMinute;
-		currentTimeInMinute = 23 * 60;
-		int minuteSinceLastEntry = currentTimeInMinute - previousTimeInMinute;
-		if(tooMuchPerson(numberOfMaster, actualNumberOfPerson))
-		{
-			alarmOnInMinute+=minuteSinceLastEntry;
-		}
-		
-		printIfVerbose("23:00 : p="+actualNumberOfPerson+" alarm="+alarmOnInMinute);
-		
-		sc.close();
-		System.out.println(alarmOnInMinute);
-		return ""+alarmOnInMinute;
-	}
-	
-	private static boolean tooMuchPerson(int master, int person)
-	{
-		return (master * 10) < person;
-	}
+    private static final int NUMBER_OF_TEST = 6;
+    private static final String INPUT_DIRECTORY = "foule-a-la-plage_input";
+    private static final String ENTRY = "E";
+
+    public static void printIfVerbose(String s) {
+        if (VERBOSE)
+            System.err.println(s);
+    }
+
+    public static void main(String[] args) throws Exception {
+        for (int i = 1; i <= NUMBER_OF_TEST; i++) {
+            printIfVerbose("\n\nTEST n°" + i);
+            String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + i + ".txt");
+            // --- CHECKING ---
+            File file2 = new File("resources\\" + INPUT_DIRECTORY + "\\output" + i + ".txt");
+            // Scanner sc = new Scanner(System.in);
+            Scanner sc2 = new Scanner(file2);
+            String line2 = sc2.nextLine();
+            printIfVerbose("Solution is: \n" + line2);
+            if (result.equals(line2))
+                printIfVerbose("SUCCESS!");
+            else
+                System.err.println("FAILURE!");
+            sc2.close();
+        }
+    }
+    // private static final String EXIT = "S";
+
+    private static String test(String inputFile) throws Exception {
+        String line;
+        File file = new File(inputFile);
+        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(file);
+        printIfVerbose("DEBUGGING");
+
+        int numberOfPassage = 0;
+        int numberOfMaster = 0;
+        int alarmOnInMinute = 0;
+        int previousTimeInMinute = 0;
+        int currentTimeInMinute = 0;
+        int actualNumberOfPerson = 0;
+        int counter = 0;
+        while (sc.hasNextLine()) {
+            line = sc.nextLine();
+            counter++;
+            if (counter == 1) {
+                numberOfPassage = Integer.parseInt(line);
+                printIfVerbose("numberOfPassage=" + numberOfPassage);
+                continue;
+            }
+            if (counter == 2) {
+                numberOfMaster = Integer.parseInt(line);
+                printIfVerbose("numberOfMaster=" + numberOfMaster);
+                continue;
+            }
+            String[] line2 = line.split("\\s+");
+            String time = line2[0];
+            String passage = line2[1];
+
+            String[] time2 = time.split(":");
+            String hourStr = time2[0];
+            String minuteStr = time2[1];
+            int hour = Integer.parseInt(hourStr);
+            int minute = Integer.parseInt(minuteStr);
+            // remove leading "0"
+            previousTimeInMinute = currentTimeInMinute;
+            currentTimeInMinute = (hour * 60) + minute;
+            if (counter == 3) {
+                // first passage, set actualTimeInMinute
+                previousTimeInMinute = currentTimeInMinute;
+            }
+
+            int minuteSinceLastEntry = currentTimeInMinute - previousTimeInMinute;
+
+            if (tooMuchPerson(numberOfMaster, actualNumberOfPerson)) {
+                alarmOnInMinute += minuteSinceLastEntry;
+            }
+
+            if (ENTRY.equals(passage)) {
+                actualNumberOfPerson++;
+            } else {
+                actualNumberOfPerson--;
+            }
+
+            printIfVerbose("Passage n°" + (counter - 2) + ": " + line + " p=" + actualNumberOfPerson + " alarm=" + alarmOnInMinute);
+        }
+
+        // Add time until 23:00
+        previousTimeInMinute = currentTimeInMinute;
+        currentTimeInMinute = 23 * 60;
+        int minuteSinceLastEntry = currentTimeInMinute - previousTimeInMinute;
+        if (tooMuchPerson(numberOfMaster, actualNumberOfPerson)) {
+            alarmOnInMinute += minuteSinceLastEntry;
+        }
+
+        printIfVerbose("23:00 : p=" + actualNumberOfPerson + " alarm=" + alarmOnInMinute);
+
+        sc.close();
+        System.out.println(alarmOnInMinute);
+        return "" + alarmOnInMinute;
+    }
+
+    private static boolean tooMuchPerson(int master, int person) {
+        return (master * 10) < person;
+    }
 }
 
 /*

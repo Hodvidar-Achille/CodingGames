@@ -6,145 +6,131 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * 		https://www.isograd.com/FR/solutionconcours.php?contest_id=36
+ * https://www.isograd.com/FR/solutionconcours.php?contest_id=36
  * Done in 36min55sec...
  * By Hodvidar
  */
 public final class SautALaPerche {
-	
-	private static final boolean ONE_TEST = true;
-	private static final int ONE_TEST_NUMBER = 2;
-	private static final int NUMBER_OF_TESTS = 8;
-	private static final String INPUT_DIRECTORY = "saut_a_la_perche_input";
 
-	public static void main(String[] args) throws Exception 
-	{
-		SautALaPerche r = new SautALaPerche();
-		int i;
-		int max;
-		if(ONE_TEST)
-		{
-			i = ONE_TEST_NUMBER;
-			max = ONE_TEST_NUMBER;
-		}
-		else
-		{
-			i = 1;
-			max = NUMBER_OF_TESTS;
-		}
-		for(; i <= max; i++)
-		{
-			System.err.println("\n--- TEST n°"+i+" --");
-			String result = r.test("resources\\"+INPUT_DIRECTORY+"\\input"+i+".txt");
-			// --- CHECKING ---
-			File file2 = new File("resources\\"+INPUT_DIRECTORY+"\\output"+i+".txt");
-			// Scanner sc = new Scanner(System.in);
-			Scanner sc2 = new Scanner(file2);
-			String line2 = sc2.nextLine();
-			System.err.println("Solution is: \n"+line2);
-			if(result.equals(line2))
-				System.err.println("SUCCESS!");
-			else
-				System.err.println("FAILURE! found: "+result);
-			sc2.close();
-		}
-	}
-	
-	/** If 'false' only response and Failure are written **/
-	private static final boolean VERBOSE = false;
-	
-	public static void printIfVerbose(String s)
-	{
-		if (VERBOSE)
-			System.err.println(s);
-	}
+    private static final boolean ONE_TEST = true;
+    private static final int ONE_TEST_NUMBER = 2;
+    private static final int NUMBER_OF_TESTS = 8;
+    private static final String INPUT_DIRECTORY = "saut_a_la_perche_input";
+    /**
+     * If 'false' only response and Failure are written
+     **/
+    private static final boolean VERBOSE = false;
 
-	private String test(String inputFile) throws Exception 
-	{
-		File file = new File(inputFile);
-		// --- INPUT ---
-		
-		String  line = "";
-		// Scanner sc = new Scanner(System.in);
-		Scanner sc = new Scanner(file);
-		printIfVerbose("DEBUGGING");
-		int i = 0;
-		Map<String, Perf> athletes = new HashMap<>();
-		while(sc.hasNextLine()) {
-			i++;
-			line = sc.nextLine();
-			printIfVerbose("i="+i+" line:"+line);
-			if(i == 1)
-			{
-				continue;
-			}
-			
-			if(line == null || line.isEmpty())
-				continue;
-			
-			String[] line2 = line.split("\\s+");
-			String athleteName = line2[0];
-			Double jumpH = Double.parseDouble(line2[1]);
-			boolean success = line2[2].equals("S");
-			
-			Perf p = athletes.get(athleteName);
-			if(p == null)
-				p = new Perf();
-			p.addTry(jumpH, success);
-			athletes.put(athleteName, p);
-		}
-		
-		double maxPerf = 0;
-		int maxTries = 0;
-		String maxA = "";
-		for(String a : athletes.keySet())
-		{
-			Perf p = athletes.get(a);
-			if(p.maxPerf > maxPerf)
-			{
-				maxPerf = p.maxPerf;
-				maxTries = p.tries.get(maxPerf);
-				maxA = a;
-				continue;
-			}
-			
-			if(p.maxPerf == maxPerf)
-			{
-				if(p.tries.get(maxPerf) < maxTries)
-				{
-					maxTries = p.tries.get(maxPerf);
-					maxA = a;
-				}
-				else if (p.tries.get(maxPerf) == maxTries)
-				{
-					maxA = "KO";
-				}
-			}
-		}
-		
-		System.out.println(maxA);
-		sc.close();
-		return maxA;
-	}
-	
-	class Perf{
-		public double maxPerf = 0;
-		public Map<Double, Integer> tries = new HashMap<>();
-		
-		public void addTry(Double jumpH, boolean success)
-		{
-			Integer nbTry = tries.get(jumpH);
-			if(nbTry == null)
-				nbTry = 1;
-			else
-				nbTry++;
-			
-			if(success)
-				maxPerf = jumpH;
-			
-			tries.put(jumpH, nbTry);
-		}
-	}
+    public static void main(String[] args) throws Exception {
+        SautALaPerche r = new SautALaPerche();
+        int i;
+        int max;
+        if (ONE_TEST) {
+            i = ONE_TEST_NUMBER;
+            max = ONE_TEST_NUMBER;
+        } else {
+            i = 1;
+            max = NUMBER_OF_TESTS;
+        }
+        for (; i <= max; i++) {
+            System.err.println("\n--- TEST n°" + i + " --");
+            String result = r.test("resources\\" + INPUT_DIRECTORY + "\\input" + i + ".txt");
+            // --- CHECKING ---
+            File file2 = new File("resources\\" + INPUT_DIRECTORY + "\\output" + i + ".txt");
+            // Scanner sc = new Scanner(System.in);
+            Scanner sc2 = new Scanner(file2);
+            String line2 = sc2.nextLine();
+            System.err.println("Solution is: \n" + line2);
+            if (result.equals(line2))
+                System.err.println("SUCCESS!");
+            else
+                System.err.println("FAILURE! found: " + result);
+            sc2.close();
+        }
+    }
+
+    public static void printIfVerbose(String s) {
+        if (VERBOSE)
+            System.err.println(s);
+    }
+
+    private String test(String inputFile) throws Exception {
+        File file = new File(inputFile);
+        // --- INPUT ---
+
+        String line = "";
+        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(file);
+        printIfVerbose("DEBUGGING");
+        int i = 0;
+        Map<String, Perf> athletes = new HashMap<>();
+        while (sc.hasNextLine()) {
+            i++;
+            line = sc.nextLine();
+            printIfVerbose("i=" + i + " line:" + line);
+            if (i == 1) {
+                continue;
+            }
+
+            if (line == null || line.isEmpty())
+                continue;
+
+            String[] line2 = line.split("\\s+");
+            String athleteName = line2[0];
+            Double jumpH = Double.parseDouble(line2[1]);
+            boolean success = line2[2].equals("S");
+
+            Perf p = athletes.get(athleteName);
+            if (p == null)
+                p = new Perf();
+            p.addTry(jumpH, success);
+            athletes.put(athleteName, p);
+        }
+
+        double maxPerf = 0;
+        int maxTries = 0;
+        String maxA = "";
+        for (String a : athletes.keySet()) {
+            Perf p = athletes.get(a);
+            if (p.maxPerf > maxPerf) {
+                maxPerf = p.maxPerf;
+                maxTries = p.tries.get(maxPerf);
+                maxA = a;
+                continue;
+            }
+
+            if (p.maxPerf == maxPerf) {
+                if (p.tries.get(maxPerf) < maxTries) {
+                    maxTries = p.tries.get(maxPerf);
+                    maxA = a;
+                } else if (p.tries.get(maxPerf) == maxTries) {
+                    maxA = "KO";
+                }
+            }
+        }
+
+        System.out.println(maxA);
+        sc.close();
+        return maxA;
+    }
+
+    class Perf {
+        public double maxPerf = 0;
+        public Map<Double, Integer> tries = new HashMap<>();
+
+        public void addTry(Double jumpH, boolean success) {
+            Integer nbTry = tries.get(jumpH);
+            if (nbTry == null)
+                nbTry = 1;
+            else
+                nbTry++;
+
+            if (success)
+                maxPerf = jumpH;
+
+            tries.put(jumpH, nbTry);
+        }
+    }
 }
 
 /*

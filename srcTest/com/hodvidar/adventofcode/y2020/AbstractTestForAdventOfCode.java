@@ -6,19 +6,21 @@ import java.util.Scanner;
 
 public abstract class AbstractTestForAdventOfCode {
 
-    /** If 'false' only response and Failure are written **/
+    /**
+     * If 'false' only response and Failure are written
+     **/
     private static final boolean VERBOSE = false;
 
     private static final String INPUT_DIRECTORY = "adventofcode_2020"; // input1
 
     protected static void printIfVerbose(String s) {
-        if(VERBOSE) {
+        if (VERBOSE) {
             System.err.println(s);
         }
     }
 
     private String getInputFilePath(int testNumber) {
-        return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + "-test"+ testNumber + ".txt";
+        return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + "-test" + testNumber + ".txt";
     }
 
     protected Scanner getScanner(int testNumber) throws FileNotFoundException {
@@ -30,7 +32,6 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
     protected abstract int getDay();
-
 
 
 }

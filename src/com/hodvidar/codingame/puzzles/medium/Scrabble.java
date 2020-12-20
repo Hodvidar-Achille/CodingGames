@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *    https://www.codingame.com/ide/puzzle/scrabble
+ * https://www.codingame.com/ide/puzzle/scrabble
  * by Hodvidar
  **/
 class Scrabble {
@@ -20,23 +20,20 @@ class Scrabble {
         for (int i = 0; i < N; i++) {
             String W = in.nextLine();
             //System.err.println(W);
-            if(W.length() <= 7)
+            if (W.length() <= 7)
                 dictionnary.add(W);
         }
         String LETTERS = in.nextLine();
         int maxScore = 0;
         String maxWord = "";
-        for(String s : dictionnary)
-        {
-            if(canDoWord(LETTERS, s))
-            {
+        for (String s : dictionnary) {
+            if (canDoWord(LETTERS, s)) {
                 int a = calculScore(s);
-                if(a > maxScore)
-                {
+                if (a > maxScore) {
                     maxScore = a;
                     maxWord = s;
                 }
-                    
+
             }
         }
 
@@ -46,53 +43,42 @@ class Scrabble {
         System.out.println(maxWord);
         in.close();
     }
-    
-    private static boolean canDoWord(String letters, String word)
-    {
-        for(char c : word.toCharArray())
-        {
+
+    private static boolean canDoWord(String letters, String word) {
+        for (char c : word.toCharArray()) {
             int index = letters.indexOf(c);
-            if(index == -1)
+            if (index == -1)
                 return false;
 
-            letters = letters.substring(0, index)+letters.substring(index+1);
+            letters = letters.substring(0, index) + letters.substring(index + 1);
         }
         return true;
     }
-    
-    private static int calculScore(String aWord)
-    {
+
+    private static int calculScore(String aWord) {
         int score = 0;
-        for(char c : aWord.toCharArray())
-        {
-            if(c == 'e' || c == 'a' || c == 'i' || c == 'o' || c == 'n'
-            || c == 'r' || c == 't' || c == 'l' || c == 's' || c == 'u')
-            {
-                score+=1;
+        for (char c : aWord.toCharArray()) {
+            if (c == 'e' || c == 'a' || c == 'i' || c == 'o' || c == 'n'
+                    || c == 'r' || c == 't' || c == 'l' || c == 's' || c == 'u') {
+                score += 1;
             }
-            if(c == 'd' || c == 'g')
-            {
-                score+=2;
+            if (c == 'd' || c == 'g') {
+                score += 2;
             }
-            if(c == 'b' || c == 'c' || c == 'm' || c == 'p')
-            {
-                score+=3;
+            if (c == 'b' || c == 'c' || c == 'm' || c == 'p') {
+                score += 3;
             }
-            if(c == 'f' || c == 'h' || c == 'v' || c == 'w' || c == 'y')
-            {
-                score+=4;
+            if (c == 'f' || c == 'h' || c == 'v' || c == 'w' || c == 'y') {
+                score += 4;
             }
-            if(c == 'k')
-            {
-                score+=5;
+            if (c == 'k') {
+                score += 5;
             }
-            if(c == 'j' || c == 'x')
-            {
-                score+=8;
+            if (c == 'j' || c == 'x') {
+                score += 8;
             }
-            if(c == 'q' || c == 'z')
-            {
-                score+=10;
+            if (c == 'q' || c == 'z') {
+                score += 10;
             }
         }
         return score;

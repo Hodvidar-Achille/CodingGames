@@ -1,12 +1,13 @@
 package com.hodvidar.newbiecontest.logique;
-/**
-* by Hodvidar
-*/
-public class LogiqueTresCombinatoire{
 
-     public static void main(String []args){
+/**
+ * by Hodvidar
+ */
+public class LogiqueTresCombinatoire {
+
+    public static void main(String[] args) {
         System.out.println("Hello World");
-        for(int i = 0; i < 32; i++){
+        for (int i = 0; i < 32; i++) {
             boolean a = false;
             boolean b = false;
             boolean c = false;
@@ -14,36 +15,35 @@ public class LogiqueTresCombinatoire{
             boolean e = false;
             String str = Integer.toBinaryString(i);
             int j = 0;
-            for(char ch : str.toCharArray()){
-                switch (j)
-                {
-                case 0:
-                    if(ch == '1'){
-                        a = true;
-                    }
-                    break;
-                case 1:
-                    if(ch == '1'){
-                        b = true;
-                    }
-                    break;
-                case 2:
-                    if(ch == '1'){
-                        c = true;
-                    }
-                    break;
-                case 3:
-                    if(ch == '1'){
-                        d = true;
-                    }
-                    break;
-                case 4:
-                    if(ch == '1'){
-                        e = true;
-                    }
-                    break;
-                default:
-                    break;
+            for (char ch : str.toCharArray()) {
+                switch (j) {
+                    case 0:
+                        if (ch == '1') {
+                            a = true;
+                        }
+                        break;
+                    case 1:
+                        if (ch == '1') {
+                            b = true;
+                        }
+                        break;
+                    case 2:
+                        if (ch == '1') {
+                            c = true;
+                        }
+                        break;
+                    case 3:
+                        if (ch == '1') {
+                            d = true;
+                        }
+                        break;
+                    case 4:
+                        if (ch == '1') {
+                            e = true;
+                        }
+                        break;
+                    default:
+                        break;
                 }
                 j++;
             }
@@ -58,10 +58,10 @@ public class LogiqueTresCombinatoire{
             boolean p9 = !p8; // NOT
             boolean p10 = !(p6 && p8); // N AND
             boolean p11 = (p10 ^ p9); // XOR
-            if(p11){
-                System.out.println("true for : "+str);
+            if (p11) {
+                System.out.println("true for : " + str);
             }
         }
-        
-     }
+
+    }
 }

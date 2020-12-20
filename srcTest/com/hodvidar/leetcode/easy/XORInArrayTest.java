@@ -8,8 +8,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class XORInArrayTest {
 
-	@Test
-	void should_return_0_for_list_of_1_element_0() {
-		assertThat(getBitwiseOfElements(0, 1)).isEqualTo(0);
-	}
+    @Test
+    void should_return_0_for_list_of_1_element_0() {
+        assertThat(getBitwiseOfElements(0, 1)).isEqualTo(0);
+    }
 }
