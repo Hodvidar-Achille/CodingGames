@@ -9,14 +9,14 @@ public class _Day04 extends AbstractAdventOfCode {
         return 4;
     }
 
-    private static final String BIRTH_YEAR  = "byr:";
-    private static final String ISSUE_YEAR  = "iyr:";
-    private static final String EXPIRATION_YEAR  = "eyr:";
-    private static final String HEIGHT = "hgt:";
-    private static final String HAIR_COLOR = "hcl:";
-    private static final String EYE_COLOR  = "ecl:";
-    private static final String PASSPORT_ID  = "pid:";
-    private static final String COUNTRY_ID  = "cid:";
+    protected static final String BIRTH_YEAR  = "byr:";
+    protected static final String ISSUE_YEAR  = "iyr:";
+    protected static final String EXPIRATION_YEAR  = "eyr:";
+    protected static final String HEIGHT = "hgt:";
+    protected static final String HAIR_COLOR = "hcl:";
+    protected static final String EYE_COLOR  = "ecl:";
+    protected static final String PASSPORT_ID  = "pid:";
+    protected static final String COUNTRY_ID  = "cid:";
 
     // not 122, not 227 and not 230
     public static void main(String[] args) throws Exception {
@@ -44,7 +44,7 @@ public class _Day04 extends AbstractAdventOfCode {
         return validPassportCounter;
     }
 
-    public static boolean isValid(String passportData) {
+    public boolean isValid(String passportData) {
         return passportData.contains(BIRTH_YEAR)
                 && passportData.contains(ISSUE_YEAR)
                 && passportData.contains(EXPIRATION_YEAR)

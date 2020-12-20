@@ -30,8 +30,8 @@ public class _Day04_Test extends AbstractTestForAdventOfCode {
             "pid:blablabla ecl:blablabla hcl:blablabla hgt:blablabla eyr:blablabla iyr:blablabla byr:blablabla = true",
             "cid:blablabla = false",
     })
-    void shouldFindResultInSmallNumberPool(String passportData, boolean isValid) throws FileNotFoundException {
-        boolean result = _Day04.isValid(passportData);
+    void checkPassportData(String passportData, boolean isValid) throws FileNotFoundException {
+        boolean result = new _Day04().isValid(passportData);
         assertThat(result).isEqualTo(isValid);
     }
 
