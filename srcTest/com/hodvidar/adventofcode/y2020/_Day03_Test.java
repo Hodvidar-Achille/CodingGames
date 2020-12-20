@@ -8,22 +8,21 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class _Day01_Test extends AbstractTestForAdventOfCode {
-
+public class _Day03_Test extends AbstractTestForAdventOfCode {
     @Override
     protected int getDay() {
-        return 1;
+        return 3;
     }
 
     @ParameterizedTest
     @CsvSource(delimiter = '=', value = {
-            "1 = 514579",
-            "2 = 1020100"
+            "1 = 7",
+            "2 = 1",
+            "3 = 3"
     })
     void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
         Scanner sc = getScanner(numberOfTheTest);
-        int result = _Day01.getResult(sc);
+        int result = new _Day03().countTrees(sc, 1, 3);
         assertThat(result).isEqualTo(expectedResult);
     }
-
 }

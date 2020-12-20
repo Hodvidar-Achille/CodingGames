@@ -1,7 +1,9 @@
 package com.hodvidar.mdf.hackathon.y2019.training;
 
 import java.io.File;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 		https://www.isograd.com/FR/solutionconcours.php?contest_id=36

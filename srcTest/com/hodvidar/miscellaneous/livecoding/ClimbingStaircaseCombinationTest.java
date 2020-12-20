@@ -1,10 +1,10 @@
 package com.hodvidar.miscellaneous.livecoding;
 
-import static com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombination.*;
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombination.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClimbingStaircaseCombinationTest {
 

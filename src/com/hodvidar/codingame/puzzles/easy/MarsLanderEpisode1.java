@@ -1,5 +1,6 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  * For puzzle : https://www.codingame.com/ide/puzzle/mars-lander-episode-1

@@ -1,6 +1,7 @@
 package com.hodvidar.newbiecontest.logique;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *   https://www.newbiecontest.org/index.php?page=epreuve&no=243

@@ -22,7 +22,10 @@ Output
 Ligne 1 : La vitesse entière (km/h) la plus élevée possible qui permet de franchir tous les feux au vert sans commettre d'excès de vitesse.
 */
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 
 /**
  *      https://www.codingame.com/ide/puzzle/aneo

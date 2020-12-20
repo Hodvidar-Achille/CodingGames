@@ -1,5 +1,6 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  *    https://www.codingame.com/ide/puzzle/power-of-thor-episode-1

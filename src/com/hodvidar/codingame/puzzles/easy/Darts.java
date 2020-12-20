@@ -1,7 +1,10 @@
 package com.hodvidar.codingame.puzzles.easy;
 
+import com.hodvidar.utils.geometry.Circle;
+import com.hodvidar.utils.geometry.Point;
+import com.hodvidar.utils.geometry.Square;
+
 import java.util.*;
-import com.hodvidar.utils.geometry.*;
 
 /**
  * Auto-generated code below aims at helping you parse

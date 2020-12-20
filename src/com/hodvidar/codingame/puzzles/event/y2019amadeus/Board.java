@@ -1,10 +1,6 @@
 package com.hodvidar.codingame.puzzles.event.y2019amadeus;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 class Board 
 {

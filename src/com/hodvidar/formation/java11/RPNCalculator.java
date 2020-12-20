@@ -1,10 +1,8 @@
 package com.hodvidar.formation.java11;
 
-import static java.util.stream.Collectors.joining;
-
 import java.util.Arrays;
 
-import org.junit.platform.commons.util.StringUtils;
+import static java.util.stream.Collectors.joining;
 
 
 // https://codingdojo.org/kata/RPN/

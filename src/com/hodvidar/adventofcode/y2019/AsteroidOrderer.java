@@ -1,14 +1,10 @@
 package com.hodvidar.adventofcode.y2019;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-
 import com.hodvidar.utils.geometry.GeometryServices;
 import com.hodvidar.utils.geometry.Point;
 import com.hodvidar.utils.geometry.Segment;
+
+import java.util.*;
 
 public final class AsteroidOrderer implements Comparator<Point>
 {

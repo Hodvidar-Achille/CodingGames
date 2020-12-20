@@ -1,7 +1,6 @@
 package com.hodvidar.adventofcode.y2020;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class _Day02_2 extends  _Day02{
     @Override

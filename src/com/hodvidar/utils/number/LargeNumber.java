@@ -1,5 +1,6 @@
 package com.hodvidar.utils.number;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class LargeNumber{
 

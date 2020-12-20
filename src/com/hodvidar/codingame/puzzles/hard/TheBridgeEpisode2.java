@@ -1,6 +1,8 @@
 package com.hodvidar.codingame.puzzles.hard;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *    https://www.codingame.com/ide/puzzle/the-bridge-episode-2

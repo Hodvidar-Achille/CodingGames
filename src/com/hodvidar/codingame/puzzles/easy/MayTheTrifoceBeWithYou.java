@@ -1,5 +1,6 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  * Auto-generated code below aims at helping you parse

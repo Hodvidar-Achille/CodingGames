@@ -1,5 +1,8 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *    https://www.codingame.com/ide/puzzle/isbn-check-digit

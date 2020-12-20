@@ -1,9 +1,9 @@
 package com.hodvidar.codingame.puzzles.event.y2019amadeus2;
 
 
-import static java.lang.Math.*;
-
 import java.util.*;
+
+import static java.lang.Math.abs;
 
 class Player 
 {

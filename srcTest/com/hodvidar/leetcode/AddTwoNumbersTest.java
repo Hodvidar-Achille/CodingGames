@@ -1,9 +1,8 @@
 package com.hodvidar.leetcode;
 
+import com.hodvidar.leetcode.utils.ListNode;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import com.hodvidar.leetcode.utils.ListNode;
 
 
 public class AddTwoNumbersTest {

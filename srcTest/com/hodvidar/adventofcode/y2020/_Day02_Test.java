@@ -3,9 +3,6 @@ package com.hodvidar.adventofcode.y2020;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day02_Test extends AbstractTestForAdventOfCode {

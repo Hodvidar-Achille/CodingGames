@@ -1,11 +1,12 @@
 package com.hodvidar.formation.java11;
 
-import static com.hodvidar.formation.java11.RPNCalculator.calculate;
-import static org.assertj.core.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static com.hodvidar.formation.java11.RPNCalculator.calculate;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 // Kata : https://codingdojo.org/kata/RPN/
 public class RPNCalculatorTest {

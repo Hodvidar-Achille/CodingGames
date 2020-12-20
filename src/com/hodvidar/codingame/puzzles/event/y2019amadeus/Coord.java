@@ -1,8 +1,8 @@
 package com.hodvidar.codingame.puzzles.event.y2019amadeus;
 
-import static java.lang.Math.abs;
-
 import java.util.Scanner;
+
+import static java.lang.Math.abs;
 
 public class Coord 
 {

@@ -1,7 +1,7 @@
 package com.hodvidar.mdf.hackathon.y2019.creditagricole;
 
 import java.io.File;
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * 		https://www.isograd.com/FR/solutionconcours.php

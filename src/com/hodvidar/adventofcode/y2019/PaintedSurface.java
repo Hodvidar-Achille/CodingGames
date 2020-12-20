@@ -1,9 +1,9 @@
 package com.hodvidar.adventofcode.y2019;
 
+import com.hodvidar.utils.geometry.Point;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import com.hodvidar.utils.geometry.Point;
 
 public abstract class PaintedSurface
 {

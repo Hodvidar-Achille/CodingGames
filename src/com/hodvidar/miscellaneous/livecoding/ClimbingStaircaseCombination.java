@@ -1,6 +1,6 @@
 package com.hodvidar.miscellaneous.livecoding;
 
-import static com.hodvidar.utils.number.ArithmeticServices.*;
+import static com.hodvidar.utils.number.ArithmeticServices.getFactorial;
 
 /**
  * Starcase

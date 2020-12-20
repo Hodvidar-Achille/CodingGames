@@ -1,7 +1,7 @@
 package com.hodvidar.mdf.hackathon.y2019.orange;
 
 import java.io.File;
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * 		https://www.isograd.com/FR/solutionconcours.php?contest_id=50

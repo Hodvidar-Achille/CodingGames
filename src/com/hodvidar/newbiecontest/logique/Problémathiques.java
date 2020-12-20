@@ -1,8 +1,9 @@
 package com.hodvidar.newbiecontest.logique;
 
-import java.math.*;
-import java.text.*;
-import java.util.*;
+import java.math.BigInteger;
+import java.text.NumberFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 		https://www.newbiecontest.org/index.php?page=epreuve&no=322

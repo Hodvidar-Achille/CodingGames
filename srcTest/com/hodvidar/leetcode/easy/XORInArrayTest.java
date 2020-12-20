@@ -1,9 +1,9 @@
 package com.hodvidar.leetcode.easy;
 
-import static com.hodvidar.leetcode.easy.XORInArray.*;
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
+
+import static com.hodvidar.leetcode.easy.XORInArray.getBitwiseOfElements;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class XORInArrayTest {

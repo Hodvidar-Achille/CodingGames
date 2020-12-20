@@ -1,5 +1,9 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Scanner;
 /**
 *   https://www.codingame.com/training/easy/horse-racing-duals
 * by Hodvidar

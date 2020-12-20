@@ -1,5 +1,8 @@
 package com.hodvidar.codingame.puzzles.easy;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * https://www.codingame.com/ide/puzzle/mime-type

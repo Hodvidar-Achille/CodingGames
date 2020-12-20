@@ -1,13 +1,13 @@
 package com.hodvidar.adventofcode.y2019;
 
-import java.io.File;
-import java.util.List;
-import java.util.Scanner;
-
 import com.hodvidar.utils.geometry.GeometryServices;
 import com.hodvidar.utils.geometry.Point;
 import com.hodvidar.utils.geometry.Wire;
 import com.hodvidar.utils.geometry.WireBuilder;
+
+import java.io.File;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Passed 1285

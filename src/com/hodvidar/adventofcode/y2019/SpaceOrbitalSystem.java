@@ -1,10 +1,10 @@
 package com.hodvidar.adventofcode.y2019;
 
+import com.hodvidar.utils.number.ArithmeticServices;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.hodvidar.utils.number.ArithmeticServices;
 
 /**
  * Space orbital sytem that is composed of a number of objects (Moon)

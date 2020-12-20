@@ -1,13 +1,13 @@
 package com.hodvidar.adventofcode.y2019;
 
+import com.hodvidar.utils.geometry.GeometryServices;
+import com.hodvidar.utils.geometry.Point;
+import com.hodvidar.utils.geometry.Segment;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import com.hodvidar.utils.geometry.GeometryServices;
-import com.hodvidar.utils.geometry.Point;
-import com.hodvidar.utils.geometry.Segment;
 
 public final class _Day10
 {

@@ -1,5 +1,6 @@
 package com.hodvidar.codingame.puzzles.medium;
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  *    https://www.codingame.com/ide/puzzle/there-is-no-spoon-episode-1

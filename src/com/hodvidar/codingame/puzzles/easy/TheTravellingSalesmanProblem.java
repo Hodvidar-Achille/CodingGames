@@ -1,7 +1,8 @@
 package com.hodvidar.codingame.puzzles.easy;
 
-import java.util.*;
 import com.hodvidar.utils.geometry.Point;
+
+import java.util.Scanner;
 
 /*
  * Note  : "Greedy algorithm"

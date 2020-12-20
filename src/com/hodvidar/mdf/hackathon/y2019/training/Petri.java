@@ -3,7 +3,10 @@ package com.hodvidar.mdf.hackathon.y2019.training;
 // DO not copy upper than this
 
 import java.io.File;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 		https://www.isograd.com/FR/solutionconcours.php?contest_id=36

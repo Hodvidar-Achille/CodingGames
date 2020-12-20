@@ -1,7 +1,9 @@
 package com.hodvidar.codingame.puzzles.easy;
 
+import com.hodvidar.utils.geometry.GeometryServices;
+import com.hodvidar.utils.geometry.Point;
+
 import java.util.Scanner;
-import com.hodvidar.utils.geometry.*;
 
 /**
  *      https://www.codingame.com/ide/puzzle/dead-mens-shot

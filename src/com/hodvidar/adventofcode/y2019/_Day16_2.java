@@ -1,11 +1,11 @@
 package com.hodvidar.adventofcode.y2019;
 
+import com.hodvidar.utils.number.MillisecondeFormater;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import com.hodvidar.utils.number.MillisecondeFormater;
 
 /**
  * 80757514 X

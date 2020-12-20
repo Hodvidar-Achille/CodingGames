@@ -1,5 +1,8 @@
 package com.hodvidar.codingame.puzzles.medium;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * 100%

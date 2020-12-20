@@ -1,5 +1,8 @@
 package com.hodvidar.codingame.puzzles.medium;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 /**
 * For puzzle : https://www.codingame.com/ide/puzzle/robbery-optimisation
 * by Hodvidar
