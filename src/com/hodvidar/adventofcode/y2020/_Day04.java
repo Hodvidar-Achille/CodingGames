@@ -22,7 +22,7 @@ public class _Day04 extends AbstractAdventOfCode {
     public static void main(String[] args) throws Exception {
         _Day04 me = new _Day04();
         int result = me.numberOfValidPassport(me.getScanner());
-        System.err.println("Expected '???' - result='" + result + "'");
+        System.err.println("Expected '228' - result='" + result + "'");
     }
 
     public int numberOfValidPassport(Scanner sc) {
