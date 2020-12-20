@@ -45,6 +45,7 @@ public final class OpCodeReader {
      **/
     private OpCodeReaderInputCallBack caller;
     private double relative_base = 0;
+
     public OpCodeReader(double[] memory) {
         this.memory = memory;
     }

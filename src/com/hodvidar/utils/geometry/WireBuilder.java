@@ -12,6 +12,7 @@ public final class WireBuilder {
     private final Character LEFT = 'L';
     private final Character DOWN = 'D';
     private Point previous;
+
     public WireBuilder(Point origin) {
         this.previous = origin;
         this.wire = new Wire();

@@ -30,6 +30,7 @@ public final class RobotCamera {
      * Y coordinate to start
      **/
     private int y = 0;
+
     public RobotCamera(double[] memory, boolean verbose) {
         this.ship = new ScaffoldSurface();
         this.brain = new Amplifier(memory);

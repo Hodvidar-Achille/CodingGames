@@ -33,6 +33,7 @@ public final class RobotPainter {
      **/
     private int y = 0;
     private String facing = UP;
+
     public RobotPainter(double[] memory) {
         this.colorOfFirstPanel = Panel.DARK;
         this.ship = new ShipPanels(this.colorOfFirstPanel);

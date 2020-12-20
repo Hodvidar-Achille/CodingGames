@@ -4,25 +4,25 @@ import java.util.Scanner;
 
 public class _Day04 extends AbstractAdventOfCode {
 
-    @Override
-    protected int getDay() {
-        return 4;
-    }
-
-    protected static final String BIRTH_YEAR  = "byr:";
-    protected static final String ISSUE_YEAR  = "iyr:";
-    protected static final String EXPIRATION_YEAR  = "eyr:";
+    protected static final String BIRTH_YEAR = "byr:";
+    protected static final String ISSUE_YEAR = "iyr:";
+    protected static final String EXPIRATION_YEAR = "eyr:";
     protected static final String HEIGHT = "hgt:";
     protected static final String HAIR_COLOR = "hcl:";
-    protected static final String EYE_COLOR  = "ecl:";
-    protected static final String PASSPORT_ID  = "pid:";
-    protected static final String COUNTRY_ID  = "cid:";
+    protected static final String EYE_COLOR = "ecl:";
+    protected static final String PASSPORT_ID = "pid:";
+    protected static final String COUNTRY_ID = "cid:";
 
     // not 122, not 227 and not 230
     public static void main(String[] args) throws Exception {
         _Day04 me = new _Day04();
         int result = me.numberOfValidPassport(me.getScanner());
         System.err.println("Expected '228' - result='" + result + "'");
+    }
+
+    @Override
+    protected int getDay() {
+        return 4;
     }
 
     public int numberOfValidPassport(Scanner sc) {
@@ -32,10 +32,10 @@ public class _Day04 extends AbstractAdventOfCode {
         while (sc.hasNextLine()) {
             line = sc.nextLine();
             line = line.trim();
-            if(!line.isEmpty()) {
+            if (!line.isEmpty()) {
                 passportData += line + " ";
             } else {
-                if(isValid(passportData)) {
+                if (isValid(passportData)) {
                     validPassportCounter += 1;
                 }
                 passportData = "";

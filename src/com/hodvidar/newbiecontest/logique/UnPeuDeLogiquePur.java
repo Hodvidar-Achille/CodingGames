@@ -367,15 +367,19 @@ public final class UnPeuDeLogiquePur {
     private enum Language implements Characteristic {
         Perl, Java, Delphi, C, PHP
     }
+
     private enum Domaine implements Characteristic {
         crackmes, programmation, steganographie, cryptographie, hacking
     }
+
     private enum Os implements Characteristic {
         Mandriva, Windows95, Ubuntu, OpenBSD, WindowsXP
     }
+
     private enum Defaut implements Characteristic {
         borne, feignant, ivrogne, susceptible, vicieux
     }
+
     private enum Position implements Characteristic {
         premier(1), deuxieme(2), troisieme(3), quatrieme(4), dernier(5);
 
@@ -385,6 +389,7 @@ public final class UnPeuDeLogiquePur {
             this.value = value;
         }
     }
+
     private interface Rule {
         boolean accept(Person p);
     }
