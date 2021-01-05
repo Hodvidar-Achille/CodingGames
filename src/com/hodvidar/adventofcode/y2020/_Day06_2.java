@@ -8,7 +8,8 @@ public class _Day06_2 extends AbstractAdventOfCode {
         return 6;
     }
 
-    // not 19 (too low), not 3243 or 3239 (too high)
+    // not 19 (too low)
+    // not 3243 or 3239 (too high)
     public static void main(String[] args) throws Exception {
         _Day06_2 me = new _Day06_2();
         int result = me.countUniqueLetterByGroup(me.getScanner());
@@ -34,6 +35,7 @@ public class _Day06_2 extends AbstractAdventOfCode {
     }
 
     public int countCommonLettersInGroup(String groupAnswers) {
+        int alphabetLength = 26;
         if(groupAnswers.charAt(0) == '#') {
             groupAnswers = groupAnswers.substring(1);
         }
@@ -42,38 +44,37 @@ public class _Day06_2 extends AbstractAdventOfCode {
         }
         groupAnswers = groupAnswers.toLowerCase();
         String[] personsAnswers = groupAnswers.split("#");
-        boolean[] isItDuplicated = new boolean[26];
-        boolean[] isItThere = new boolean[26];
-        int i = 0;
+        boolean[][] isItDuplicated = new boolean[personsAnswers.length][alphabetLength];
+        int personAnswerCounter = 0;
         for (String  personAnswer : personsAnswers) {
             for(char letter : personAnswer.toCharArray()) {
                 int value = letter;
                 value -= 97; // a become 0, z becomes 25
-                if (value < 0 || value > 25) {
+                if (value < 0 || value >= alphabetLength) {
                     continue;
                 }
-                if(i == 0) {
-                    isItThere[value] = true;
-                } else if (i == 1) {
-                    isItDuplicated[value] = isItThere[value] && true;
-                } else {
-                    isItDuplicated[value] = isItDuplicated[value] && true;
+                isItDuplicated[personAnswerCounter][value] = true;
+            }
+            personAnswerCounter++;
+        }
+
+
+        int duplicatedLetterInAllPersonAnswerCounter = 0;
+        for(int i = 0; i < alphabetLength; i++) {
+            boolean isAlwaysDuplicated = true;
+            for (personAnswerCounter = 0; personAnswerCounter < personsAnswers.length; personAnswerCounter++) {
+                if(!isItDuplicated[personAnswerCounter][i]) {
+                    isAlwaysDuplicated = false;
+                    break;
                 }
             }
-            i++;
-        }
-        if(personsAnswers.length == 1){
-            isItDuplicated = isItThere;
-        }
-
-        int count = 0;
-        for (i = 0; i < isItThere.length; i++) {
-            if (isItDuplicated[i] == true) {
-                count++;
+            if(isAlwaysDuplicated) {
+                duplicatedLetterInAllPersonAnswerCounter += 1;
             }
+
         }
 
-        return count;
+        return duplicatedLetterInAllPersonAnswerCounter;
     }
 
 }
