@@ -13,7 +13,7 @@ public class _Day06_2 extends AbstractAdventOfCode {
     public static void main(String[] args) throws Exception {
         _Day06_2 me = new _Day06_2();
         int result = me.countUniqueLetterByGroup(me.getScanner());
-        System.err.println("Expected '??' - result='" + result + "'");
+        System.err.println("Expected '3158' - result='" + result + "'");
     }
 
     public int countUniqueLetterByGroup(Scanner sc) {
