@@ -3,17 +3,17 @@ package com.hodvidar.adventofcode.y2020;
 import java.util.Scanner;
 
 public class _Day06_2 extends AbstractAdventOfCode {
-    @Override
-    protected int getDay() {
-        return 6;
-    }
-
     // not 19 (too low)
     // not 3243 or 3239 (too high)
     public static void main(String[] args) throws Exception {
         _Day06_2 me = new _Day06_2();
         int result = me.countUniqueLetterByGroup(me.getScanner());
         System.err.println("Expected '3158' - result='" + result + "'");
+    }
+
+    @Override
+    protected int getDay() {
+        return 6;
     }
 
     public int countUniqueLetterByGroup(Scanner sc) {
@@ -23,7 +23,7 @@ public class _Day06_2 extends AbstractAdventOfCode {
         while (sc.hasNextLine()) {
             line = sc.nextLine();
             line = line.trim();
-            currentGroupLetters += "#" +line;
+            currentGroupLetters += "#" + line;
             if (line.isBlank()) {
                 int uniqueForGroup = countCommonLettersInGroup(currentGroupLetters);
                 counter += uniqueForGroup;
@@ -36,18 +36,18 @@ public class _Day06_2 extends AbstractAdventOfCode {
 
     public int countCommonLettersInGroup(String groupAnswers) {
         int alphabetLength = 26;
-        if(groupAnswers.charAt(0) == '#') {
+        if (groupAnswers.charAt(0) == '#') {
             groupAnswers = groupAnswers.substring(1);
         }
-        if(groupAnswers.charAt(groupAnswers.length()-1) == '#') {
-            groupAnswers = groupAnswers.substring(0, groupAnswers.length()-1);
+        if (groupAnswers.charAt(groupAnswers.length() - 1) == '#') {
+            groupAnswers = groupAnswers.substring(0, groupAnswers.length() - 1);
         }
         groupAnswers = groupAnswers.toLowerCase();
         String[] personsAnswers = groupAnswers.split("#");
         boolean[][] isItDuplicated = new boolean[personsAnswers.length][alphabetLength];
         int personAnswerCounter = 0;
-        for (String  personAnswer : personsAnswers) {
-            for(char letter : personAnswer.toCharArray()) {
+        for (String personAnswer : personsAnswers) {
+            for (char letter : personAnswer.toCharArray()) {
                 int value = letter;
                 value -= 97; // a become 0, z becomes 25
                 if (value < 0 || value >= alphabetLength) {
@@ -60,15 +60,15 @@ public class _Day06_2 extends AbstractAdventOfCode {
 
 
         int duplicatedLetterInAllPersonAnswerCounter = 0;
-        for(int i = 0; i < alphabetLength; i++) {
+        for (int i = 0; i < alphabetLength; i++) {
             boolean isAlwaysDuplicated = true;
             for (personAnswerCounter = 0; personAnswerCounter < personsAnswers.length; personAnswerCounter++) {
-                if(!isItDuplicated[personAnswerCounter][i]) {
+                if (!isItDuplicated[personAnswerCounter][i]) {
                     isAlwaysDuplicated = false;
                     break;
                 }
             }
-            if(isAlwaysDuplicated) {
+            if (isAlwaysDuplicated) {
                 duplicatedLetterInAllPersonAnswerCounter += 1;
             }
 

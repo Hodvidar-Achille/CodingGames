@@ -15,12 +15,18 @@ public class _Day07_2_Test extends AbstractTestForAdventOfCode {
         return 7;
     }
 
+    /* 5 =
+    shiny gold bags contain 2 dark red bags. // 2 * 1 (2) | 2
+    dark red bags contain 2 dark orange bags, 2 light orange bags. // + 2*2 + 2*2 (8) |10
+    dark orange bags contain 2 dark yellow bags. //
+    light orange bags contain 3 yellow bags.
+     */
     @ParameterizedTest
     @CsvSource(delimiter = '=', value = {
             "4 = 2",
-            "5 = 20",
+            "5 = 30",
             "3 = 126",
-            "6 = 20"
+            "6 = 42"
     })
     void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
         Scanner sc = getScanner(numberOfTheTest);
@@ -38,14 +44,54 @@ public class _Day07_2_Test extends AbstractTestForAdventOfCode {
         Bag c3 = new Bag("c3");
         Bag d1 = new Bag("d1");
 
-        c3.addChildWithNumber(d1, 10);
-        b2.addChildWithNumber(c3, 5); // 50
-        b2.addChildWithNumber(c2, 100); // 150
-        b1.addChildWithNumber(c1, 3); // 3
-        a1.addChildWithNumber(b1, 2); // 6
+        // a1   ( 2 + 6 + 10 + 1000 + 50 + 5000 = 6068)
+        // 2 b1      (--> 2 b1)
+        //   3 c1    (--> 6 c1)
+        // 10 b2     (--> 10 b2)
+        //    100 c2 (--> 1000 c2)
+        //    5 c3   (--> 50 c3)
+        //      100 d1 (--> 5000 d1)
+
+        c3.addChildWithNumber(d1, 100); // 100 + 100*0 = 100
+        b2.addChildWithNumber(c3, 5); // 5 + 100*5 = 505
+        b2.addChildWithNumber(c2, 100); // (505) + 100 = 605
+        b1.addChildWithNumber(c1, 3); // 3 + 3*0 = 3
+        a1.addChildWithNumber(b1, 2); //
         a1.addChildWithNumber(b2, 10); // 1506
 
-        assertThat(1506).isEqualTo(a1.countAllChildrenBag());
+        assertThat(6068).isEqualTo(a1.countAllChildrenBag());
+    }
+
+    @Test
+    void shouldCountBagWithOneChild() {
+        Bag a1 = new Bag("a1");
+        Bag b1 = new Bag("b1");
+        Bag c1 = new Bag("c1");
+        Bag d1 = new Bag("d1");
+
+        c1.addChild(d1); // 1
+        b1.addChild(c1); // 1 + 1 = 2
+        a1.addChild(b1); // 2 +1 = 3
+
+        assertThat(3).isEqualTo(a1.countAllChildrenBag());
+    }
+
+    @Test
+    void shouldCountBagWithOneOrTwoChildren() {
+        Bag a1 = new Bag("a1");
+        Bag b1 = new Bag("b1");
+        Bag c1 = new Bag("c1");
+        Bag d1 = new Bag("d1");
+        Bag c2 = new Bag("c2");
+        Bag d2 = new Bag("d2");
+
+        c1.addChild(d1); // 1
+        b1.addChild(c1); // 1 + 1 = 2
+        a1.addChild(b1); // 2 + 1 = 3
+        b1.addChildWithNumber(c2, 2); // +2 = 5
+        c2.addChild(d2); // +1 * 2 = 7
+
+        assertThat(7).isEqualTo(a1.countAllChildrenBag());
     }
 
 }

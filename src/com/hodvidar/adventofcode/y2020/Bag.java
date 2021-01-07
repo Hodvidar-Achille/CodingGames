@@ -22,11 +22,11 @@ public class Bag {
     }
 
     public boolean containsBag(String bagName) {
-        for(Bag b : this.children.keySet()) {
-            if(b.name.equals(bagName)) {
+        for (Bag b : this.children.keySet()) {
+            if (b.name.equals(bagName)) {
                 return true;
             }
-            if(b.containsBag(bagName)) {
+            if (b.containsBag(bagName)) {
                 return true;
             }
         }
@@ -35,15 +35,11 @@ public class Bag {
 
     public int countAllChildrenBag() {
         int counter = 0;
-        for(Map.Entry<Bag, Integer> bagAndNumber : this.children.entrySet()) {
+        for (Map.Entry<Bag, Integer> bagAndNumber : this.children.entrySet()) {
             Bag b = bagAndNumber.getKey();
             Integer n = bagAndNumber.getValue();
             int numberOfChildrenInChild = b.countAllChildrenBag();
-            if(numberOfChildrenInChild == 0) {
-                counter += n;
-            } else {
-                counter += n * numberOfChildrenInChild;
-            }
+            counter += n + (n * numberOfChildrenInChild);
         }
         return counter;
     }
