@@ -8,26 +8,25 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class _Day01_Test extends AbstractTestForAdventOfCode {
+public class _Day08_Test extends AbstractTestForAdventOfCode {
 
-    public _Day01_Test() {
-        super(new _Day01());
+    public _Day08_Test() {
+        super(new _Day08());
     }
 
     @Override
     protected int getExpectedResult() {
-        return 388075;
+        return 1528;
     }
 
     @ParameterizedTest
     @CsvSource(delimiter = '=', value = {
-            "1 = 514579",
-            "2 = 1020100"
+            "1 = 5",
+            "2 = 0"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
+    void checkGetAccumulatorValue(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
         Scanner sc = getScanner(numberOfTheTest);
-        int result = testedClass.getResult(sc);
+        int result = new _Day08().getAccumulatorValue(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
-
 }

@@ -10,10 +10,16 @@ import java.util.Scanner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day07_2_Test extends AbstractTestForAdventOfCode {
-    @Override
-    protected int getDay() {
-        return 7;
+
+    public _Day07_2_Test() {
+        super(new _Day07_2());
     }
+
+    @Override
+    protected int getExpectedResult() {
+        return 12128;
+    }
+
 
     /* 5 =
     shiny gold bags contain 2 dark red bags. // 2 * 1 (2) | 2

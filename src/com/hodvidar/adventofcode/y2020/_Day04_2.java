@@ -6,7 +6,7 @@ public class _Day04_2 extends _Day04 {
 
     public static void main(String[] args) throws Exception {
         _Day04_2 me = new _Day04_2();
-        int result = me.numberOfValidPassport(me.getScanner());
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '175' - result='" + result + "'");
     }
 

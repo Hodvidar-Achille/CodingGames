@@ -10,9 +10,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day01_2_Test extends AbstractTestForAdventOfCode {
 
+    protected _Day01_2_Test() {
+        super(new _Day01_2());
+    }
+
     @Override
-    protected int getDay() {
-        return 1;
+    protected int getExpectedResult() {
+        return 293450526;
     }
 
     @ParameterizedTest
@@ -23,7 +27,7 @@ public class _Day01_2_Test extends AbstractTestForAdventOfCode {
     })
     void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
         Scanner sc = getScanner(numberOfTheTest);
-        int result = _Day01_2.getResult(sc);
+        int result = testedClass.getResult(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 

@@ -9,10 +9,16 @@ import java.util.Scanner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day03_Test extends AbstractTestForAdventOfCode {
-    @Override
-    protected int getDay() {
-        return 3;
+
+    public _Day03_Test() {
+        super(new _Day03());
     }
+
+    @Override
+    protected int getExpectedResult() {
+        return 257;
+    }
+
 
     @ParameterizedTest
     @CsvSource(delimiter = '=', value = {

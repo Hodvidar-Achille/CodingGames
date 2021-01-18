@@ -1,24 +1,40 @@
 package com.hodvidar.adventofcode.y2020;
 
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class _Day07 extends AbstractAdventOfCode {
+    protected static final String EMPTY = "no other bags";
+    protected static final String GOLDEN = "shiny gold bag";
     private static final String CONTAIN = " contain ";
-    private static final String EMPTY = "no other bags";
-    private static final String GOLDEN = "shiny gold bag";
 
     public static void main(String[] args) throws Exception {
         _Day07 me = new _Day07();
-        int result = me.countBagInsideGoldenBag(me.getScanner());
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '192' - result='" + result + "'");
+    }
+
+    public static int countBagsContainingBagName(Collection<Bag> bags, String bagName) {
+        int counter = 0;
+        for (Bag b : bags) {
+            if (b.containsBag(bagName)) {
+                counter += 1;
+            }
+        }
+        return counter;
     }
 
     @Override
     protected int getDay() {
         return 7;
+    }
+
+    @Override
+    protected int getResult(Scanner sc) throws FileNotFoundException {
+        return countBagInsideGoldenBag(sc);
     }
 
     public int countBagInsideGoldenBag(Scanner sc) {
@@ -89,16 +105,6 @@ public class _Day07 extends AbstractAdventOfCode {
             b = bags.get(bagName);
         }
         return b;
-    }
-
-    public int countBagsContainingBagName(Collection<Bag> bags, String bagName) {
-        int counter = 0;
-        for (Bag b : bags) {
-            if (b.containsBag(bagName)) {
-                counter += 1;
-            }
-        }
-        return counter;
     }
 
 }

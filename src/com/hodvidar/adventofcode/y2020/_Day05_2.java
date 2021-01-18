@@ -1,5 +1,6 @@
 package com.hodvidar.adventofcode.y2020;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +10,7 @@ public class _Day05_2 extends _Day05 {
 
     public static void main(String[] args) throws Exception {
         _Day05_2 me = new _Day05_2();
-        int result = getMissingCode(me.getScanner());
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '747' - result='" + result + "'");
     }
 
@@ -30,5 +31,10 @@ public class _Day05_2 extends _Day05 {
             }
         }
         return -1;
+    }
+
+    @Override
+    protected int getResult(Scanner sc) throws FileNotFoundException {
+        return getMissingCode(sc);
     }
 }

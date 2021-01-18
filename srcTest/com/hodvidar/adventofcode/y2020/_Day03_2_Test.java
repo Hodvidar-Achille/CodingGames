@@ -9,9 +9,14 @@ import java.util.Scanner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day03_2_Test extends AbstractTestForAdventOfCode {
+
+    public _Day03_2_Test() {
+        super(new _Day03_2());
+    }
+
     @Override
-    protected int getDay() {
-        return 3;
+    protected int getExpectedResult() {
+        return 0;
     }
 
     @ParameterizedTest

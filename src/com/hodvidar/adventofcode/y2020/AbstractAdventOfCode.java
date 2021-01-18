@@ -31,5 +31,8 @@ public abstract class AbstractAdventOfCode {
         return sc;
     }
 
+    protected abstract int getResult(Scanner sc) throws FileNotFoundException;
+
     protected abstract int getDay();
+
 }

@@ -8,10 +8,16 @@ import java.io.FileNotFoundException;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day06_Test extends AbstractTestForAdventOfCode {
-    @Override
-    protected int getDay() {
-        return 6;
+
+    public _Day06_Test() {
+        super(new _Day06());
     }
+
+    @Override
+    protected int getExpectedResult() {
+        return 6297;
+    }
+
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {

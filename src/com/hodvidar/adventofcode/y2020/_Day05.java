@@ -1,5 +1,6 @@
 package com.hodvidar.adventofcode.y2020;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class _Day05 extends AbstractAdventOfCode {
@@ -16,7 +17,7 @@ public class _Day05 extends AbstractAdventOfCode {
 
     public static void main(String[] args) throws Exception {
         _Day05 me = new _Day05();
-        int result = me.getMaxPositionCode(me.getScanner());
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '922' - result='" + result + "'");
     }
 
@@ -65,12 +66,7 @@ public class _Day05 extends AbstractAdventOfCode {
         return (int) ((roundCeil) ? Math.ceil(middle) : Math.floor(middle));
     }
 
-    @Override
-    protected int getDay() {
-        return 5;
-    }
-
-    public int getMaxPositionCode(Scanner sc) {
+    public static int getMaxPositionCode(Scanner sc) {
         int maxFinalPositionCode = 0;
         String line;
         while (sc.hasNextLine()) {
@@ -84,5 +80,15 @@ public class _Day05 extends AbstractAdventOfCode {
             }
         }
         return maxFinalPositionCode;
+    }
+
+    @Override
+    protected int getDay() {
+        return 5;
+    }
+
+    @Override
+    protected int getResult(Scanner sc) throws FileNotFoundException {
+        return getMaxPositionCode(sc);
     }
 }

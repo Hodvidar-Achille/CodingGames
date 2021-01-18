@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class _Day01_2 extends AbstractAdventOfCode {
+public class _Day01_2 extends _Day01 {
+
     public static void main(String[] args) throws Exception {
-        AbstractAdventOfCode me = new _Day01_2();
-        int result = getResult(me.getScanner());
+        AbstractAdventOfCode me = new _Day01();
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '293450526' - result='" + result + "'");
     }
 
-    public static int getResult(Scanner sc) {
+    @Override
+    protected int getResult(Scanner sc) {
         String line;
         List<Integer> numbers = new ArrayList<>();
         while (sc.hasNextLine()) {
@@ -40,8 +42,4 @@ public class _Day01_2 extends AbstractAdventOfCode {
         return -1;
     }
 
-    @Override
-    protected int getDay() {
-        return 1;
-    }
 }

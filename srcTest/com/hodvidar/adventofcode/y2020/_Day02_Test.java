@@ -6,9 +6,14 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class _Day02_Test extends AbstractTestForAdventOfCode {
+
+    public _Day02_Test() {
+        super(new _Day02());
+    }
+
     @Override
-    protected int getDay() {
-        return 2;
+    protected int getExpectedResult() {
+        return 469;
     }
 
     @ParameterizedTest

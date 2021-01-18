@@ -9,14 +9,21 @@ import java.util.Scanner;
  *
  * @author Hodvidar
  */
-public final class _Day01 extends AbstractAdventOfCode {
+public class _Day01 extends AbstractAdventOfCode {
+
     public static void main(String[] args) throws Exception {
         AbstractAdventOfCode me = new _Day01();
-        int result = getResult(me.getScanner());
+        int result = me.getResult(me.getScanner());
         System.err.println("Expected '388075' - result='" + result + "'");
     }
 
-    public static int getResult(Scanner sc) {
+    @Override
+    protected int getDay() {
+        return 1;
+    }
+
+    @Override
+    protected int getResult(Scanner sc) {
         String line;
         List<Integer> numbers = new ArrayList<>();
         while (sc.hasNextLine()) {
@@ -35,8 +42,4 @@ public final class _Day01 extends AbstractAdventOfCode {
         return -1;
     }
 
-    @Override
-    protected int getDay() {
-        return 1;
-    }
 }
