@@ -25,11 +25,11 @@ public final class _Day10 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test1.txt");
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test2.txt");
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test3.txt");
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test4.txt");
-        String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test1.txt");
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test2.txt");
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test3.txt");
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test4.txt");
+        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '260' - result='" + result + "'");
     }
 

@@ -29,9 +29,9 @@ public final class _Day10_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test5.txt", 99);
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + "-test4.txt", 199);
-        String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test5.txt", 99);
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test4.txt", 199);
+        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '(6.0; 8.0)' - result='" + result + "'");
     }
 

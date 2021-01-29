@@ -113,9 +113,9 @@ public final class Pilotes {
         d(" --- TEST class" + this.getClass().getSimpleName() + " ---");
         for (; i <= max; i++) {
             System.err.println("\n--- TEST n°" + i + " --");
-            String result = test("resources\\" + INPUT_DIRECTORY + "\\input" + i + ".txt");
+            String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + i + ".txt");
             // --- CHECKING ---
-            File file2 = new File("resources\\" + INPUT_DIRECTORY + "\\output" + i + ".txt");
+            File file2 = new File("resources" + File.separator + INPUT_DIRECTORY + "\\output" + i + ".txt");
             // Scanner sc = new Scanner(System.in);
             Scanner sc2 = new Scanner(file2);
             String line2 = sc2.nextLine();

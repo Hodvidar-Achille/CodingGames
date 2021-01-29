@@ -28,7 +28,7 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
     private String getInputFilePath(int testNumber) {
-        return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + "-test" + testNumber + ".txt";
+        return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + "-test" + testNumber + ".txt";
     }
 
     protected Scanner getScanner(int testNumber) throws FileNotFoundException {
@@ -39,7 +39,7 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
     protected Scanner getScannerForRealInputFile() throws FileNotFoundException {
-        String inputFile = "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + ".txt";
+        String inputFile = "resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + getDay() + ".txt";
         File file = new File(inputFile);
         Scanner sc = new Scanner(file);
         return sc;

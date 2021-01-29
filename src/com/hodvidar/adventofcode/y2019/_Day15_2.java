@@ -25,7 +25,7 @@ public final class _Day15_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources\\" + INPUT_DIRECTORY + "\\input"
+        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '384' - result='" + result + "'");
     }

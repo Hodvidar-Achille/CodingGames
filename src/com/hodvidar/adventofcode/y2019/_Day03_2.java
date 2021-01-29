@@ -28,7 +28,7 @@ public final class _Day03_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        int result = test("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST + ".txt");
+        int result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 

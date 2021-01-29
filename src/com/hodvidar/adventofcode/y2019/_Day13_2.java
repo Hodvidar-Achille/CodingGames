@@ -1,5 +1,7 @@
 package com.hodvidar.adventofcode.y2019;
 
+import java.io.File;
+
 /**
  * '19446' too low
  * '19447' PASSED (cheated).
@@ -21,7 +23,7 @@ public final class _Day13_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources\\" + INPUT_DIRECTORY + "\\input"
+        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '398' - result='" + result + "'");
     }

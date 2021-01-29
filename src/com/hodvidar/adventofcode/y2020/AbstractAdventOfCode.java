@@ -20,7 +20,7 @@ public abstract class AbstractAdventOfCode {
     }
 
     private String getInputFilePath() {
-        return "resources\\" + INPUT_DIRECTORY + "\\input" + getDay() + ".txt";
+        return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + ".txt";
     }
 
     protected Scanner getScanner() throws FileNotFoundException {

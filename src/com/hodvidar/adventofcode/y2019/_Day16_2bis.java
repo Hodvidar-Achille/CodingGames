@@ -24,14 +24,14 @@ public final class _Day16_2bis {
 
     public static void main(String[] args) throws Exception {
         // 61706040 // 61706040
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
                 + "-test5.txt");
-        subTest("resources\\" + INPUT_DIRECTORY + "\\input" + NUMBER_OF_TEST
+        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
                 + "-test6.txt");
         //49623910 false
-        String result = test("resources\\" + INPUT_DIRECTORY + "\\input"
+        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '???' - result='" + result + "'");
     }
