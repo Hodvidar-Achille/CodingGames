@@ -13,42 +13,33 @@ public abstract class AbstractTestForAdventOfCode {
     /**
      * If 'false' only response and Failure are written
      **/
-    private static final boolean VERBOSE = false;
     private static final String INPUT_DIRECTORY = "adventofcode_2020"; // input1
     protected final AbstractAdventOfCode testedClass;
 
-    protected AbstractTestForAdventOfCode(AbstractAdventOfCode testedClass) {
+    protected AbstractTestForAdventOfCode(final AbstractAdventOfCode testedClass) {
         this.testedClass = testedClass;
     }
 
-    protected static void printIfVerbose(String s) {
-        if (VERBOSE) {
-            System.err.println(s);
-        }
-    }
-
-    private String getInputFilePath(int testNumber) {
+    private String getInputFilePath(final int testNumber) {
         return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + "-test" + testNumber + ".txt";
     }
 
-    protected Scanner getScanner(int testNumber) throws FileNotFoundException {
-        String inputFile = getInputFilePath(testNumber);
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
-        return sc;
+    protected Scanner getScanner(final int testNumber) throws FileNotFoundException {
+        final String inputFile = getInputFilePath(testNumber);
+        final File file = new File(inputFile);
+        return new Scanner(file);
     }
 
     protected Scanner getScannerForRealInputFile() throws FileNotFoundException {
-        String inputFile = "resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + getDay() + ".txt";
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
-        return sc;
+        final String inputFile = "resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + getDay() + ".txt";
+        final File file = new File(inputFile);
+        return new Scanner(file);
     }
 
     @Test
     protected void checkGetResult() throws FileNotFoundException {
-        Scanner sc = getScannerForRealInputFile();
-        int result = testedClass.getResult(sc);
+        final Scanner sc = getScannerForRealInputFile();
+        final int result = testedClass.getResult(sc);
         assertThat(result).isEqualTo(getExpectedResult());
     }
 

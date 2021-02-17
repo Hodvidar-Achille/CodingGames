@@ -10,7 +10,7 @@ public class BowlingGame {
     boolean previousWasSpare = false;
     int frame = 0;
 
-    public void roll(int pinksKnockedDown) {
+    public void roll(final int pinksKnockedDown) {
         if (pinksKnockedDown < 0 || pinksKnockedDown > 10) {
             throw new UnsupportedOperationException(
                     "Wrong number of knocked down pins, "

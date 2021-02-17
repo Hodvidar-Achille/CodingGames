@@ -13,7 +13,7 @@ public abstract class AbstractAdventOfCode {
 
     private static final String INPUT_DIRECTORY = "adventofcode_2020"; // input1
 
-    protected static void printIfVerbose(String s) {
+    protected static void printIfVerbose(final String s) {
         if (VERBOSE) {
             System.err.println(s);
         }
@@ -24,11 +24,7 @@ public abstract class AbstractAdventOfCode {
     }
 
     protected Scanner getScanner() throws FileNotFoundException {
-        String inputFile = getInputFilePath();
-        File file = new File(inputFile);
-        // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
-        return sc;
+        return new Scanner(new File(getInputFilePath()));
     }
 
     protected abstract int getResult(Scanner sc) throws FileNotFoundException;

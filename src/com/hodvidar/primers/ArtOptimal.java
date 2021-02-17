@@ -43,13 +43,10 @@ public class ArtOptimal {
 	}
 
 	public static Scanner getScanner(final int inputNumber) throws FileNotFoundException {
-		final String inputFile = getInputFilePath(inputNumber);
-		final File file = new File(inputFile);
-		final Scanner sc = new Scanner(file);
-		return sc;
+		return new Scanner(new File(getInputFilePath(inputNumber)));
 	}
 
-	public static boolean[][] pixelMap(final Scanner sc) {
+	public static boolean[][] getPixelMap(final Scanner sc) {
 		String line;
 		line = sc.nextLine();
 		final String[] numbers = line.split(",");
@@ -77,8 +74,10 @@ public class ArtOptimal {
 		return instructions;
 	}
 
-	public static void printInstruction(final int inputNumber) {
-
+	public static void printInstruction(final int inputNumber) throws FileNotFoundException {
+		for(final String i : getInstructions(getPixelMap(getScanner(inputNumber)))) {
+			System.out.println(i);
+		}
 	}
 
 }
