@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * https://primers.xyz/0 ----------------------- NTRÉE
+ * https://primers.xyz/0 -----------------------
+ *
+ * ENTREE
  *
  * Un fichier texte représentant une image à peindre. La première ligne contient la largeur et la
  * hauteur de l'image. Les lignes suivantes représentent les pixels de l'image. Le symbole '*'
@@ -35,8 +37,10 @@ public class ArtOptimal {
 
 	private static final String INPUT_DIRECTORY = "primers_art-optimal";
 
+	private static final char PAINT = '#';
 	private static final String FILL = "FILL";
 	private static final String ERASE = "ERASE";
+	private static final String COMMA = ",";
 
 	public static String getInputFilePath(final int inputNumber) {
 		return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + inputNumber + ".txt";
@@ -58,7 +62,7 @@ public class ArtOptimal {
 			line = sc.nextLine();
 			int j = 0;
 			for (final char c : line.toCharArray()) {
-				if (c == '#') {
+				if (PAINT == c) {
 					pixelMap[i][j] = true;
 				}
 				j++;
@@ -71,11 +75,31 @@ public class ArtOptimal {
 	public static List<String> getInstructions(final boolean[][] pixelMap) {
 		final List<String> instructions = new ArrayList<>();
 		// TODO
+		final int wide = pixelMap[0].length;
+		final int height = pixelMap.length;
+
+		final boolean[][] visitedMap = new boolean[height][wide];
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < wide; j++) {
+				// 1) Look for painted pixel
+				if (pixelMap[i][j]) {
+					// 2) evaluate size of square
+					addFillInstruction(instructions, i, j, 1);
+				}
+			}
+		}
 		return instructions;
 	}
 
+	private static void addFillInstruction(final List<String> instructions,
+									final int i,
+									final int j,
+									final int size) {
+		instructions.add(FILL+COMMA+i+COMMA+j+COMMA+size);
+	}
+
 	public static void printInstruction(final int inputNumber) throws FileNotFoundException {
-		for(final String i : getInstructions(getPixelMap(getScanner(inputNumber)))) {
+		for (final String i : getInstructions(getPixelMap(getScanner(inputNumber)))) {
 			System.out.println(i);
 		}
 	}
