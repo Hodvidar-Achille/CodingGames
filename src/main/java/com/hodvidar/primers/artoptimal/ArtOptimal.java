@@ -2,12 +2,16 @@ package com.hodvidar.primers.artoptimal;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * https://primers.xyz/0 -----------------------
+/*
+ * https://primers.xyz/0
+ * -----------------------
  *
  * ENTREE
  *
@@ -15,7 +19,12 @@ import java.util.Scanner;
  * hauteur de l'image. Les lignes suivantes représentent les pixels de l'image. Le symbole '*'
  * indique un pixel vierge et le symbole '#' indique un pixel peint. Exemple d'entrée :
  *
- * 6,5 ###**# ###*** ###*** ***#** ***##*
+ * 6,5 
+ * ###**# 
+ * ###*** 
+ * ###*** 
+ * ***#** 
+ * ***##*
  *
  * PROBLÈME
  *
@@ -31,7 +40,10 @@ import java.util.Scanner;
  * La liste des opérations nécessaires pour peindre l'image, séparées par des sauts de ligne.
  * Exemple de sortie :
  *
- * FILL,0,0,3 FILL,5,0,1 FILL,3,3,2 ERASE,4,3
+ * FILL,0,0,3 
+ * FILL,5,0,1 
+ * FILL,3,3,2 
+ * ERASE,4,3
  */
 public class ArtOptimal {
 
@@ -78,7 +90,9 @@ public class ArtOptimal {
 		final int wide = pixelMap[0].length;
 		final int height = pixelMap.length;
 
-		boolean[][] visitedMap = new boolean[height][wide];
+		// i == y | i+ is y- | height
+		// j == x | j+ is x+ | wide
+		final boolean[][] visitedMap = new boolean[height][wide];
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < wide; j++) {
 				// 0) ignore already painted pixels
@@ -87,14 +101,31 @@ public class ArtOptimal {
 				}
 				// 1) Look for painted pixel
 				if (pixelMap[i][j]) {
-					// 2) evaluate size of square
+					// 2) evaluate max size of square that should be painted
 					final int maxSize = getMaxSize(pixelMap, visitedMap, i, j);
-					visitedMap = addFillInstruction(instructions, i, j, maxSize, pixelMap);
-					// TODO use maxSize to erase paintedPixel in current square if needed.
-				}
+					addFillInstruction(instructions, i, j, maxSize, visitedMap);
+					// 3) Erase if needed
+					erasePixelThatShouldNotStayPainted(instructions, pixelMap, i, j, maxSize);
+				} /*
+				   * else { visitedMap[i][j] = true; }
+				   */
 			}
 		}
 		return instructions;
+	}
+
+	private static void erasePixelThatShouldNotStayPainted(final List<String> instructions,
+	                                                       final boolean[][] pixelMap,
+	                                                       final int i0,
+	                                                       final int j0,
+	                                                       final int paintedSquareSize) {
+		for (int i = i0; i < i0 + paintedSquareSize; i++) {
+			for (int j = j0; j < j0 + paintedSquareSize; j++) {
+				if (!pixelMap[i][j]) {
+					instructions.add(ERASE + COMMA + j + COMMA + i);
+				}
+			}
+		}
 	}
 
 	private static int getMaxSize(final boolean[][] pixelMap,
@@ -103,58 +134,58 @@ public class ArtOptimal {
 	                              final int j) {
 		final int wide = pixelMap[0].length;
 		final int height = pixelMap.length;
-		final int maxPossibleSize =  Math.min(wide-j, height-i);
-		if(maxPossibleSize == 1) {
-			return 1;
-		}
+		final int maxPossibleSize = Math.min(wide - j, height - i);
 		return getMaxSizeRecursive(pixelMap, visitedMap, i, j, maxPossibleSize);
 	}
 
 	private static int getMaxSizeRecursive(final boolean[][] pixelMap,
-										   final boolean[][] visitedMap,
-										   final int i,
-										   final int j,
-										   final int maxPossibleSize) {
+	                                       final boolean[][] visitedMap,
+	                                       final int i,
+	                                       final int j,
+	                                       final int maxPossibleSize) {
+		if (maxPossibleSize == 1) {
+			return 1;
+		}
 		final double ratio = getRatio(pixelMap, visitedMap, i, j, maxPossibleSize);
-		if(ratio > 0.8d) {
+		if (ratio > 0.7d) {
 			return maxPossibleSize;
 		}
-		return getMaxSizeRecursive(pixelMap, visitedMap, i, j, maxPossibleSize-1);
+		return getMaxSizeRecursive(pixelMap, visitedMap, i, j, maxPossibleSize - 1);
 	}
 
 	private static double getRatio(final boolean[][] pixelMap,
-								   final boolean[][] visitedMap,
-								   final int i,
-								   final int j,
-								   final int maxPossibleSize) {
-		countPixelToPaint(pixelMap, visitedMap, i, j, maxPossibleSize);
-		return 0d;
+	                               final boolean[][] visitedMap,
+	                               final int i,
+	                               final int j,
+	                               final int maxPossibleSize) {
+		final double maxValue = maxPossibleSize * maxPossibleSize;
+		final int numberOfPixelToPaintInSquare = countPixelToPaint(pixelMap, visitedMap, i, j, maxPossibleSize);
+		return numberOfPixelToPaintInSquare / maxValue;
 	}
 
 	private static int countPixelToPaint(final boolean[][] pixelMap,
-										 final boolean[][] visitedMap,
-										 final int i,
-										 final int j,
-										 final int maxPossibleSize) {
-		return 0;
-	}
-
-	private static boolean[][] addFillInstruction(final List<String> instructions,
-	                                              final int i,
-	                                              final int j,
-	                                              final int size,
-	                                              final boolean[][] visitedMap) {
-		instructions.add(FILL + COMMA + i + COMMA + j + COMMA + size);
-		visitedMap[i][j] = true;
-		if (size == 1) {
-			return visitedMap;
-		}
-		for (int i2 = i; i2 < size; i2++) {
-			for (int j2 = j; j2 < size; j2++) {
-				visitedMap[i + i2][j + j2] = true;
+	                                     final boolean[][] visitedMap,
+	                                     final int i0,
+	                                     final int j0,
+	                                     final int maxPossibleSize) {
+		int counter = 0;
+		for (int i = i0; i < i0 + maxPossibleSize; i++) {
+			for (int j = j0; j < j0 + maxPossibleSize; j++) {
+				if (pixelMap[i][j]) {
+					counter += 1;
+				}
 			}
 		}
-		return visitedMap;
+		return counter;
+	}
+
+	private static void addFillInstruction(final List<String> instructions,
+	                                       final int i0,
+	                                       final int j0,
+	                                       final int size,
+	                                       final boolean[][] visitedMap) {
+		instructions.add(FILL + COMMA + j0 + COMMA + i0 + COMMA + size);
+		fillMap(visitedMap, i0, j0, i0 + size, j0 + size);
 	}
 
 	public static void printInstruction(final int inputNumber) throws FileNotFoundException {
@@ -169,25 +200,35 @@ public class ArtOptimal {
 	 * @param aMap
 	 * @return
 	 */
-	public static boolean[][] fillMap(final boolean[][] aMap) {
-		return fillMap(aMap,
-		               0,
-		               0,
-		               aMap.length,
-		               aMap[0].length);
+	public static void fillMap(final boolean[][] aMap) {
+		fillMap(aMap,
+		        0,
+		        0,
+		        aMap.length,
+		        aMap[0].length);
 	}
 
-	public static boolean[][] fillMap(final boolean[][] aMap,
-	                                  final int i0,
-	                                  final int j0,
-	                                  final int iMax,
-	                                  final int jMax) {
+	public static void fillMap(final boolean[][] aMap,
+	                           final int i0,
+	                           final int j0,
+	                           final int iMax,
+	                           final int jMax) {
 		for (int i = i0; i < iMax; i++) {
 			for (int j = j0; j < jMax; j++) {
 				aMap[i][j] = true;
 			}
 		}
-		return aMap;
+	}
+
+	public static void writeInstructions(final Collection<String> instructions) throws IOException {
+		final long time = System.currentTimeMillis();
+		final String filePath = "resources" + File.separator + INPUT_DIRECTORY + File.separator + time + "_ouput.txt";
+		final FileWriter writer = new FileWriter(filePath);
+		writer.write("Solution size=" + instructions.size() + System.lineSeparator());
+		for (final String i : instructions) {
+			writer.write(i + System.lineSeparator());
+		}
+		writer.close();
 	}
 
 }
