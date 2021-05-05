@@ -1,9 +1,10 @@
 package com.hodvidar.leetcode;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import com.hodvidar.leetcode.utils.ListNode;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AddTwoNumbersTest {
 
@@ -29,8 +30,8 @@ public class AddTwoNumbersTest {
 		final AddTwoNumbers s = new AddTwoNumbers();
 		final ListNode result = s.addTwoNumbers(l1, l2);
 
-		Assert.assertEquals(7, result.val);
-		Assert.assertEquals(0, result.next.val);
-		Assert.assertEquals(8, result.next.next.val);
+		assertThat(result.val).isEqualTo(7);
+		assertThat(result.next.val).isEqualTo(0);
+		assertThat(result.next.next.val).isEqualTo(8);
 	}
 }

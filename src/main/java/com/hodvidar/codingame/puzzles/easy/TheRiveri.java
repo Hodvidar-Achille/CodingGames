@@ -7,74 +7,74 @@ import java.util.Scanner;
  **/
 class TheRiveri {
 
-	public static void main(final String[] args) {
-		final Scanner in = new Scanner(System.in);
-		final long r1 = in.nextLong();
-		final long r2 = in.nextLong();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final long r1 = in.nextLong();
+        final long r2 = in.nextLong();
 
-		// Write an action using System.out.println()
-		// To debug: System.err.println("Debug messages...");
+        // Write an action using System.out.println()
+        // To debug: System.err.println("Debug messages...");
 
-		// 1) check if r1 and r2 are equals
-		// 2) if not, find next number of the lower 'r'
-		// 3) repeat
-		/*
-		 * if(r1 <= r2) search(r1, r2); else search(r2, r1);
-		 */
-		long lower = (r1 > r2) ? r2 : r1;
-		long higher = (r1 > r2) ? r1 : r2;
-		while (true) {
-			// 1)
-			if (lower == higher) {
-				System.out.println(lower);
-				in.close();
-				return;
-			}
+        // 1) check if r1 and r2 are equals
+        // 2) if not, find next number of the lower 'r'
+        // 3) repeat
+        /*
+         * if(r1 <= r2) search(r1, r2); else search(r2, r1);
+         */
+        long lower = (r1 > r2) ? r2 : r1;
+        long higher = (r1 > r2) ? r1 : r2;
+        while (true) {
+            // 1)
+            if (lower == higher) {
+                System.out.println(lower);
+                in.close();
+                return;
+            }
 
-			final long temp = nextNumber(lower);
-			if (temp <= higher) {
-				lower = temp;
-			} else {
-				lower = higher;
-				higher = temp;
-			}
-		}
-	}
+            final long temp = nextNumber(lower);
+            if (temp <= higher) {
+                lower = temp;
+            } else {
+                lower = higher;
+                higher = temp;
+            }
+        }
+    }
 
-	/**
-	 * Find the meeting point using recursion (risk of stack overflow error).
-	 */
-	@SuppressWarnings("unused")
-	private static void search(final long lower, final long higher) {
-		// System.err.println("search("+lower+","+higher+")");
+    /**
+     * Find the meeting point using recursion (risk of stack overflow error).
+     */
+    @SuppressWarnings("unused")
+    private static void search(final long lower, final long higher) {
+        // System.err.println("search("+lower+","+higher+")");
 
-		// 1)
-		if (lower == higher) {
-			System.out.println(lower);
-			return;
-		}
+        // 1)
+        if (lower == higher) {
+            System.out.println(lower);
+            return;
+        }
 
-		// 2) & 3)
-		final long temp = nextNumber(lower);
-		if (temp <= higher) {
-			search(temp, higher);
-		} else {
-			search(higher, temp);
-		}
-	}
+        // 2) & 3)
+        final long temp = nextNumber(lower);
+        if (temp <= higher) {
+            search(temp, higher);
+        } else {
+            search(higher, temp);
+        }
+    }
 
-	/**
-	 * Returns n + the sum of its digits.
-	 */
-	public static long nextNumber(final long n) {
-		return n + sumDigits(n);
-	}
+    /**
+     * Returns n + the sum of its digits.
+     */
+    public static long nextNumber(final long n) {
+        return n + sumDigits(n);
+    }
 
-	/**
-	 * Returns the sum of the digits of n. (Recursive)
-	 */
-	public static long sumDigits(final long n) {
-		return (n == 0L) ? 0L : (n % 10L) + sumDigits(n / 10L);
-	}
+    /**
+     * Returns the sum of the digits of n. (Recursive)
+     */
+    public static long sumDigits(final long n) {
+        return (n == 0L) ? 0L : (n % 10L) + sumDigits(n / 10L);
+    }
 
 }

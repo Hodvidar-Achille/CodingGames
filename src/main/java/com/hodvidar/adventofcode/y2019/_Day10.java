@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 public final class _Day10 {
     /**
      * If 'false' only response and Failure are written
@@ -25,11 +27,11 @@ public final class _Day10 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test1.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test2.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test3.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test4.txt");
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test1.txt");
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test2.txt");
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test3.txt");
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test4.txt");
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '260' - result='" + result + "'");
     }
 

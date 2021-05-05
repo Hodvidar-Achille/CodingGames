@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * '709' too high
  * '608' PASSED (means Point '(6.0, 8.0)')
@@ -29,9 +31,9 @@ public final class _Day10_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test5.txt", 99);
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + "-test4.txt", 199);
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test5.txt", 99);
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + "-test4.txt", 199);
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '(6.0; 8.0)' - result='" + result + "'");
     }
 

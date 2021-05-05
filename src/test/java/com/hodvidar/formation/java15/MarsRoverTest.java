@@ -1,10 +1,10 @@
 package com.hodvidar.formation.java15;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 // https://kata-log.rocks/mars-rover-kata
 public class MarsRoverTest {

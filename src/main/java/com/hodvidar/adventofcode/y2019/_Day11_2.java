@@ -3,6 +3,8 @@ package com.hodvidar.adventofcode.y2019;
 import java.io.File;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * ANSWER PRINT IN THE CONSOLE
  * 'LBJHEKLH'
@@ -24,7 +26,7 @@ public final class _Day11_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '??' - result='" + result + "'");
     }
 

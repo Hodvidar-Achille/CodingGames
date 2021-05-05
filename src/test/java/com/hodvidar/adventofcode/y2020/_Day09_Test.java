@@ -35,7 +35,7 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
 
     @ParameterizedTest
     @MethodSource("generateData")
-    void checkCreateSubSumList(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+    void checkCreateSubSumList(final int numberOfTheTest, final int[] expectedResult) throws FileNotFoundException {
         assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
     }
 
@@ -43,7 +43,6 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
         return Stream.of(
                 Arguments.of(
                         Arrays.asList(1, 2, 3, 4, 5),
-                        5,
                         Arrays.asList(
                                 Arrays.asList(3, 4, 5, 6),
                                 Arrays.asList(3, 4, 5, 6),

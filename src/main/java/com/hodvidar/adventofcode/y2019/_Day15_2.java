@@ -3,6 +3,8 @@ package com.hodvidar.adventofcode.y2019;
 import java.io.File;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * 306 too low (of course)
  * <p>
@@ -25,7 +27,7 @@ public final class _Day15_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '384' - result='" + result + "'");
     }

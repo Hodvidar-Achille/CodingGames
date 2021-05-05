@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * Passed : 9219874
  *
@@ -29,7 +31,7 @@ public final class _Day05 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
         Integer[] arr = new Integer[outputs.size()];
         arr = outputs.toArray(arr);

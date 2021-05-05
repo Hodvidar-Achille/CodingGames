@@ -3,6 +3,8 @@ package com.hodvidar.adventofcode.y2019;
 import java.io.File;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * 379 or 378 too high
  * 366 good
@@ -24,7 +26,7 @@ public final class _Day15 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '366' - result='" + result + "'");
     }

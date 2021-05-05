@@ -9,6 +9,8 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * Passed 1285
  *
@@ -29,7 +31,7 @@ public final class _Day03 {
     }
 
     public static void main(String[] args) throws Exception {
-        int result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 

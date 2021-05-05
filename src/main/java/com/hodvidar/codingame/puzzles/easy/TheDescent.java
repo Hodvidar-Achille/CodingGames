@@ -10,27 +10,27 @@ import java.util.Scanner;
  **/
 class TheDescent {
 
-	public static void main(final String[] args) {
-		final Scanner in = new Scanner(System.in);
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
 
-		// game loop
-		while (true) {
-			int position = -1;
-			int max = -1;
+        // game loop
+        while (true) {
+            int position = -1;
+            int max = -1;
 
-			for (int i = 0; i < 8; i++) {
-				final int mountainH = in.nextInt(); // represents the height of one mountain.
-				if (mountainH > max) {
-					position = i;
-					max = mountainH;
-				}
-			}
+            for (int i = 0; i < 8; i++) {
+                final int mountainH = in.nextInt(); // represents the height of one mountain.
+                if (mountainH > max) {
+                    position = i;
+                    max = mountainH;
+                }
+            }
 
-			// Write an action using System.out.println()
-			// To debug: System.err.println("Debug messages...");
+            // Write an action using System.out.println()
+            // To debug: System.err.println("Debug messages...");
 
-			System.out.println(position); // The index of the mountain to fire on.
-			in.close();
-		}
-	}
+            System.out.println(position); // The index of the mountain to fire on.
+            in.close();
+        }
+    }
 }

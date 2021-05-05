@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 public abstract class AbstractAdventOfCode {
 
     /**
@@ -20,7 +22,7 @@ public abstract class AbstractAdventOfCode {
     }
 
     private String getInputFilePath() {
-        return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + ".txt";
+        return RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + ".txt";
     }
 
     protected Scanner getScanner() throws FileNotFoundException {

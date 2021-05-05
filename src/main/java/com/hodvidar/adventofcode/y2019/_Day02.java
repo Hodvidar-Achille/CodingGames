@@ -3,6 +3,8 @@ package com.hodvidar.adventofcode.y2019;
 import java.io.File;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * Passed (first value was 9581917)
  * <p>
@@ -26,7 +28,7 @@ public final class _Day02 {
     }
 
     public static void main(String[] args) throws Exception {
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST + ".txt");
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 

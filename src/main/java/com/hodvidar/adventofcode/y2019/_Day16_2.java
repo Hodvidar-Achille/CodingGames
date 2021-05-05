@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * 80757514 X
  * 34841690 good
@@ -29,13 +31,13 @@ public final class _Day16_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test5.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test6.txt");
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '???' - result='" + result + "'");
     }

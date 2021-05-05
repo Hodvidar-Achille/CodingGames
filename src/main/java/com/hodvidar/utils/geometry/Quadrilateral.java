@@ -1,15 +1,15 @@
 package com.hodvidar.utils.geometry;
 
 public class Quadrilateral extends Polygon {
-	public Quadrilateral(final Point... points) {
-		super(points);
+    public Quadrilateral(final Point... points) {
+        super(points);
 
-		// Must have 4 points.
-		if (!checkPoints(points))
-			throw new IllegalArgumentException("Quadrilateral must have 4 points");
-	}
+        // Must have 4 points.
+        if (!checkPoints(points))
+            throw new IllegalArgumentException("Quadrilateral must have 4 points");
+    }
 
-	public static boolean checkPoints(final Point... points) {
-		return points.length == 4;
-	}
+    public static boolean checkPoints(final Point... points) {
+        return points.length == 4;
+    }
 }

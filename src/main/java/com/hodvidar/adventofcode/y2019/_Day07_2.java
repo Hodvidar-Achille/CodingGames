@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * 546 too low
  * 1145324612 too high
@@ -29,7 +31,7 @@ public final class _Day07_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        int result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '8754464' - result='" + result + "'");
     }

@@ -31,7 +31,7 @@ package com.hodvidar.leetcode.easy;
  */
 public class XORInArray {
 
-	public static int getBitwiseOfElements(final int numberOfElement, final int valueOfFirstElement) {
-		return 0;
-	}
+    public static int getBitwiseOfElements(final int numberOfElement, final int valueOfFirstElement) {
+        return 0;
+    }
 }

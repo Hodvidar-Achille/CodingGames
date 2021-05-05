@@ -6,13 +6,13 @@ public class LimitedSizeQueue<K> extends ArrayList<K> {
 
     private final int maxSize;
 
-    public LimitedSizeQueue(final int size){
+    public LimitedSizeQueue(final int size) {
         this.maxSize = size;
     }
 
-    public boolean add(final K k){
+    public boolean add(final K k) {
         final boolean r = super.add(k);
-        if (size() > maxSize){
+        if (size() > maxSize) {
             removeRange(0, size() - maxSize);
         }
         return r;

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * '142915'
  *
@@ -26,7 +28,7 @@ public final class _Day06 {
     }
 
     public static void main(String[] args) throws Exception {
-        int result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }

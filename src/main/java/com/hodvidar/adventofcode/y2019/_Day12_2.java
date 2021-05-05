@@ -7,6 +7,8 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * @author Hodvidar
  */
@@ -25,11 +27,11 @@ public final class _Day12_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test1.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test2.txt");
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println(
                 "Expected '374307970285176' - result='" + result + "'");

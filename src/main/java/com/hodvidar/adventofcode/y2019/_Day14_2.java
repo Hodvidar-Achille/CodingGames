@@ -6,6 +6,8 @@ import com.hodvidar.utils.number.MillisecondeFormater;
 import java.io.File;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
+
 /**
  * 2690795
  *
@@ -28,13 +30,13 @@ public final class _Day14_2 {
     }
 
     public static void main(String[] args) throws Exception {
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test3.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
-        subTest("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + NUMBER_OF_TEST
+        subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test5.txt");
-        String result = test("resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input"
+        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '2690795' - result='" + result + "'");
     }

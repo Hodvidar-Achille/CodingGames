@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractTestForAdventOfCode {
@@ -21,7 +22,7 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
     private String getInputFilePath(final int testNumber) {
-        return "resources" + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + "-test" + testNumber + ".txt";
+        return RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + "-test" + testNumber + ".txt";
     }
 
     protected Scanner getScanner(final int testNumber) throws FileNotFoundException {
@@ -31,7 +32,7 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
     protected Scanner getScannerForRealInputFile() throws FileNotFoundException {
-        final String inputFile = "resources" + File.separator + INPUT_DIRECTORY +  File.separator + "input" + getDay() + ".txt";
+        final String inputFile = RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + getDay() + ".txt";
         final File file = new File(inputFile);
         return new Scanner(file);
     }
