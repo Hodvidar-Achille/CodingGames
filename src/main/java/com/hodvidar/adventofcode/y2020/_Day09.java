@@ -14,33 +14,39 @@ public class _Day09 extends AbstractAdventOfCode {
     }
 
     static int readValuesAndLookForInvalid(final Scanner sc, final int numberOfNumberToUseForSums) {
-        final List<Double> numbers = new ArrayList<>();
-        final List<List<Integer>> sums = new ArrayList<>();
-        int index = 0;
+        final LimitedSizeQueue<Double> numbers = new LimitedSizeQueue<>(numberOfNumberToUseForSums);
+        List<Double> sums = new ArrayList<>();
+        int index = -1;
         while (sc.hasNextLine()) {
+            index++;
             final double newValue = Double.parseDouble(sc.nextLine());
-            numbers.add(newValue);
-            final List<Integer> newSum = new ArrayList<>();
             if (index < numberOfNumberToUseForSums) {
+                numbers.add(newValue);
                 continue;
             }
             if (index == numberOfNumberToUseForSums) {
-
+                numbers.add(newValue);
+                sums = createSubSumList(numbers);
+                continue;
             }
-
-            index++;
+            if(!sums.contains(newValue)) {
+                return (int) newValue;
+            }
+            numbers.add(newValue);
+            sums = createSubSumList(numbers);
         }
         return -1;
     }
 
-    static List<Integer> createSubSumList(final List<Integer> numbers, final int numberOfNumberToUseForSums, final int index) {
-        final List<Integer> sums = new ArrayList<>();
-        for (int i = 0; i < numberOfNumberToUseForSums; i++) {
-            for (int j = 0; j < numberOfNumberToUseForSums; j++) {
+    // TODO optimize this
+    static List<Double> createSubSumList(final List<Double> numbers) {
+        final List<Double> sums = new ArrayList<>();
+        for (int i = 0; i < numbers.size(); i++) {
+            for (int j = 0; j < numbers.size(); j++) {
                 if (i == j) {
                     continue;
                 }
-                final int sum = numbers.get(i) + numbers.get(j);
+                final double sum = numbers.get(i) + numbers.get(j);
                 sums.add(sum);
             }
         }

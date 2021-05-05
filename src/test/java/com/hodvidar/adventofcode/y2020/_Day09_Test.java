@@ -22,7 +22,7 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
 
     @Override
     protected int getExpectedResult() {
-        return -1;
+        return 85848519;
     }
 
     @ParameterizedTest
@@ -34,24 +34,26 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
     }
 
     @ParameterizedTest
+    @CsvSource(delimiter = '|', value = {
+            "1 | 5 | 127",
+            "2 | 5 | 25",
+            "3 | 5 | 225",
+            "4 | 5 | 320",
+    })
+    void checkInvalidValueForFiVeNumberForSum(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
+        assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), numberOfNumberToUseForSums)).isEqualTo(expectedResult);
+    }
+
+    @ParameterizedTest
     @MethodSource("generateData")
-    void checkCreateSubSumList(final int numberOfTheTest, final int[] expectedResult) throws FileNotFoundException {
+    void checkCreateSubSumList(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
         assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
     }
 
     static Stream<Arguments> generateData() {
         return Stream.of(
-                Arguments.of(
-                        Arrays.asList(1, 2, 3, 4, 5),
-                        Arrays.asList(
-                                Arrays.asList(3, 4, 5, 6),
-                                Arrays.asList(3, 4, 5, 6),
-                                Arrays.asList(3, 4, 5, 6),
-                                Arrays.asList(3, 4, 5, 6),
-                                Arrays.asList(3, 4, 5, 6),
-                                Arguments.of(2, "bar", Arrays.asList("x", "y", "z"))
-                        )));
-
+                Arguments.of(2, 5, 25)
+        );
     }
 
 }
