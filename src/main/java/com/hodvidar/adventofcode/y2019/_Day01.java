@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import static com.hodvidar.utils.file.Constance.RESOURCES;
 
+// TODO replace all main method by a test
+
 /**
  * Passed
  *

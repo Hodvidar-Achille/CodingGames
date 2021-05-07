@@ -1,5 +1,7 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.utils.list.LimitedSizeQueue;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ public class _Day09 extends AbstractAdventOfCode {
     public static void main(final String[] args) throws Exception {
         final _Day09 me = new _Day09();
         final int result = new _Day09().getResult(me.getScanner());
-        System.err.println("Expected '??' - result='" + result + "'");
+        System.err.println("Expected '85848519' - result='" + result + "'");
     }
 
     static int readValuesAndLookForInvalid(final Scanner sc, final int numberOfNumberToUseForSums) {
@@ -29,7 +31,7 @@ public class _Day09 extends AbstractAdventOfCode {
                 sums = createSubSumList(numbers);
                 continue;
             }
-            if(!sums.contains(newValue)) {
+            if (!sums.contains(newValue)) {
                 return (int) newValue;
             }
             numbers.add(newValue);

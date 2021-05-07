@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static com.hodvidar.utils.file.Constance.RESOURCES;
 import static com.hodvidar.utils.file.Constance.RESOURCES_TEST;
 import static org.assertj.core.api.Assertions.assertThat;
 

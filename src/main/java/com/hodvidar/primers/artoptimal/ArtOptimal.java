@@ -9,6 +9,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.hodvidar.utils.file.Constance.RESOURCES_TEST;
+
 /*
  * https://primers.xyz/0
  * -----------------------
@@ -47,7 +49,7 @@ import java.util.Scanner;
  */
 public class ArtOptimal {
 
-    private static final String RESOURCES = "src" + File.separator + "main" + File.separator + "resources";
+    private static final boolean SAVE_OUTPUT = false;
     private static final String INPUT_DIRECTORY = "primers_art-optimal";
 
     private static final char PAINT = '#';
@@ -56,7 +58,7 @@ public class ArtOptimal {
     private static final String COMMA = ",";
 
     public static String getInputFilePath(final int inputNumber) {
-        return RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + inputNumber + ".txt";
+        return RESOURCES_TEST + File.separator + INPUT_DIRECTORY + File.separator + "input" + inputNumber + ".txt";
     }
 
     public static Scanner getScanner(final int inputNumber) throws FileNotFoundException {
@@ -222,8 +224,11 @@ public class ArtOptimal {
     }
 
     public static void writeInstructions(final Collection<String> instructions) throws IOException {
+        if (!SAVE_OUTPUT) {
+            return;
+        }
         final long time = System.currentTimeMillis();
-        final String filePath = RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + time + "_ouput.txt";
+        final String filePath = RESOURCES_TEST + File.separator + INPUT_DIRECTORY + File.separator + time + "_ouput.txt";
         final FileWriter writer = new FileWriter(filePath);
         writer.write("Solution size=" + instructions.size() + System.lineSeparator());
         for (final String i : instructions) {

@@ -18,7 +18,19 @@
 
     <!-- APP -->
     <dependencies>
-        <!-- JSON Libraries-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.1.16.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.collections/eclipse-collections -->
+        <dependency>
+            <groupId>org.eclipse.collections</groupId>
+            <artifactId>eclipse-collections</artifactId>
+            <version>10.4.0</version>
+        </dependency>
+
+
         <!-- TEST -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

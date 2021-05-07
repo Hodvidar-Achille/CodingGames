@@ -20,7 +20,6 @@ com\hodvidar\formation\java11\RPNCalculatorTest.class
 com\hodvidar\utils\number\ArithmeticServicesTests.class
 com\hodvidar\leetcode\AddTwoNumbersTest.class
 com\hodvidar\miscellaneous\livecoding\ClimbingStaircaseCombinationTest.class
-com\hodvidar\utils\file\Constances.class
 com\hodvidar\adventofcode\y2020\_Day01_Test.class
 com\hodvidar\adventofcode\y2020\_Day02_Test.class
 com\hodvidar\leetcode\easy\XORInArrayTest.class

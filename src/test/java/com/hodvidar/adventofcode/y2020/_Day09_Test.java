@@ -6,7 +6,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -18,6 +17,15 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
 
     protected _Day09_Test() {
         super(new _Day09());
+    }
+
+    static Stream<Arguments> generateData() {
+        return Stream.of(
+                Arguments.of(1, 5, 127),
+                Arguments.of(2, 5, 25),
+                Arguments.of(3, 5, 225),
+                Arguments.of(4, 5, 320)
+        );
     }
 
     @Override
@@ -46,14 +54,8 @@ public class _Day09_Test extends AbstractTestForAdventOfCode {
 
     @ParameterizedTest
     @MethodSource("generateData")
-    void checkCreateSubSumList(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
+    void checkInvalidValueForFiVeNumberForSum_method_source(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
         assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
-    }
-
-    static Stream<Arguments> generateData() {
-        return Stream.of(
-                Arguments.of(2, 5, 25)
-        );
     }
 
 }

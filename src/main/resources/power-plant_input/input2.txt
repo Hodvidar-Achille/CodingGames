@@ -1,6 +1,0 @@
-5 12
-X.XXX..XXX.X
-XX...XXXX...
-...X.X.XXXX.
-.XXXXX...X..
-.X...XX..XX.
