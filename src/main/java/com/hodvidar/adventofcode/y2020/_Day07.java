@@ -11,15 +11,15 @@ public class _Day07 extends AbstractAdventOfCode {
     protected static final String GOLDEN = "shiny gold bag";
     private static final String CONTAIN = " contain ";
 
-    public static void main(String[] args) throws Exception {
-        _Day07 me = new _Day07();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day07 me = new _Day07();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '192' - result='" + result + "'");
     }
 
-    public static int countBagsContainingBagName(Collection<Bag> bags, String bagName) {
+    public static int countBagsContainingBagName(final Collection<Bag> bags, final String bagName) {
         int counter = 0;
-        for (Bag b : bags) {
+        for (final Bag b : bags) {
             if (b.containsBag(bagName)) {
                 counter += 1;
             }
@@ -33,37 +33,37 @@ public class _Day07 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return countBagInsideGoldenBag(sc);
     }
 
-    public int countBagInsideGoldenBag(Scanner sc) {
-        Map<String, Bag> bags = BuildBagMap(sc);
+    public int countBagInsideGoldenBag(final Scanner sc) {
+        final Map<String, Bag> bags = BuildBagMap(sc);
         return countBagsContainingBagName(bags.values(), GOLDEN);
     }
 
-    protected Map<String, Bag> BuildBagMap(Scanner sc) {
+    protected Map<String, Bag> BuildBagMap(final Scanner sc) {
         String line;
-        Map<String, Bag> bags = new HashMap<>();
+        final Map<String, Bag> bags = new HashMap<>();
         while (sc.hasNextLine()) {
             line = sc.nextLine();
             line = line.trim();
             // "dark orange bags contain 3 bright white bags, 4 muted yellow bags."
-            String[] BagCharacteristics = line.split(CONTAIN);
+            final String[] BagCharacteristics = line.split(CONTAIN);
             // dark orange bags
             String bagName = BagCharacteristics[0].trim();
             // remove the 's'
             // dark orange bag
             bagName = bagName.substring(0, bagName.length() - 1);
-            Bag bag = getBag(bags, bagName);
-            String[] incorporatedBags = BagCharacteristics[1].split(",");
+            final Bag bag = getBag(bags, bagName);
+            final String[] incorporatedBags = BagCharacteristics[1].split(",");
             // 3 bright white bags, 4 muted yellow bags.
             incorporateBags(bags, bag, incorporatedBags);
         }
         return bags;
     }
 
-    protected void incorporateBags(Map<String, Bag> bags, Bag currentBag, String[] incorporatedBags) {
+    protected void incorporateBags(final Map<String, Bag> bags, final Bag currentBag, final String[] incorporatedBags) {
         if (incorporatedBags[0].contains(EMPTY)) {
             return;
         }
@@ -71,7 +71,7 @@ public class _Day07 extends AbstractAdventOfCode {
         for (String incorporatedBagName : incorporatedBags) {
             // 3 bright white bags -> bright white bag
             incorporatedBagName = extractBagName(incorporatedBagName);
-            Bag incorporatedBag = getBag(bags, incorporatedBagName);
+            final Bag incorporatedBag = getBag(bags, incorporatedBagName);
             currentBag.addChild(incorporatedBag);
         }
     }
@@ -96,8 +96,8 @@ public class _Day07 extends AbstractAdventOfCode {
         return crudeBagName;
     }
 
-    protected Bag getBag(Map<String, Bag> bags, String bagName) {
-        Bag b;
+    protected Bag getBag(final Map<String, Bag> bags, final String bagName) {
+        final Bag b;
         if (!bags.containsKey(bagName)) {
             b = new Bag(bagName);
             bags.put(bagName, b);

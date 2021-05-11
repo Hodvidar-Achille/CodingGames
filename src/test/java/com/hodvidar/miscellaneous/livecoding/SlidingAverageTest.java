@@ -1,6 +1,5 @@
 package com.hodvidar.miscellaneous.livecoding;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -11,22 +10,6 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SlidingAverageTest {
-
-    @ParameterizedTest
-    @MethodSource("generateData_Array")
-    public void getResultTest_several(int[] array,
-                                      int windowSize,
-                                      double[] expected) {
-        assertThat(SlidingAverage.getSlidingAverage(array, windowSize)).containsExactly(expected);
-    }
-
-    @Test
-    public void getResultTest() {
-        int[] array = new int[]{5, 3, 7, 2, 10};
-        int size = 3;
-        double[] expected = new double[]{5, 4, (19 / 3d), 6, 10};
-        assertThat(SlidingAverage.getSlidingAverage(array, size)).containsExactly(expected);
-    }
 
     private static Stream<Arguments> generateData_Array() {
         return Stream.of(
@@ -71,5 +54,21 @@ public class SlidingAverageTest {
                         new double[]{5, 4, (19 / 3d), (112 / 3d), 370, 550, 1000}
                 )
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource("generateData_Array")
+    public void getResultTest_several(final int[] array,
+                                      final int windowSize,
+                                      final double[] expected) {
+        assertThat(SlidingAverage.getSlidingAverage(array, windowSize)).containsExactly(expected);
+    }
+
+    @Test
+    public void getResultTest() {
+        final int[] array = new int[]{5, 3, 7, 2, 10};
+        final int size = 3;
+        final double[] expected = new double[]{5, 4, (19 / 3d), 6, 10};
+        assertThat(SlidingAverage.getSlidingAverage(array, size)).containsExactly(expected);
     }
 }

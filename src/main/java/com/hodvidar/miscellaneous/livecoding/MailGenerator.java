@@ -10,10 +10,10 @@ import java.util.stream.IntStream;
 
 public class MailGenerator {
 
-    private static String getMailForOnePerson(String fullName,
-                                              String company,
-                                              Map<String, Integer> nameForMailOccurrences) {
-        String[] splitFullName = fullName.toLowerCase().split(" ");
+    private static String getMailForOnePerson(final String fullName,
+                                              final String company,
+                                              final Map<String, Integer> nameForMailOccurrences) {
+        final String[] splitFullName = fullName.toLowerCase().split(" ");
 
         String initialAndSurname =
                 IntStream.range(0, splitFullName.length)
@@ -21,7 +21,7 @@ public class MailGenerator {
                         .collect(Collectors.joining("_"));
 
         initialAndSurname = handlesDuplication(nameForMailOccurrences, initialAndSurname);
-        String email =
+        final String email =
                 "<"
                         + initialAndSurname
                         + "@"
@@ -31,7 +31,7 @@ public class MailGenerator {
         return fullName + " " + email;
     }
 
-    private static IntFunction<String> transformFullName(String[] splitFullName) {
+    private static IntFunction<String> transformFullName(final String[] splitFullName) {
         return i
                 ->
                 isSurname(splitFullName.length, i) ?
@@ -39,11 +39,11 @@ public class MailGenerator {
                         transformFirstName(splitFullName[i]);
     }
 
-    private static boolean isSurname(int arraySize, int i) {
+    private static boolean isSurname(final int arraySize, final int i) {
         return i == (arraySize - 1);
     }
 
-    private static String transformFirstName(String s) {
+    private static String transformFirstName(final String s) {
         return String.valueOf(s.charAt(0));
     }
 
@@ -52,7 +52,7 @@ public class MailGenerator {
      * special characters.
      * (Only special character Dash "-" checked here).
      */
-    private static String transformSurname(String surname) {
+    private static String transformSurname(final String surname) {
         return surname
                 .replace("-", "")
                 .substring(
@@ -62,7 +62,7 @@ public class MailGenerator {
                 );
     }
 
-    private static String handlesDuplication(Map<String, Integer> nameForMailOccurrences,
+    private static String handlesDuplication(final Map<String, Integer> nameForMailOccurrences,
                                              String nameForMail) {
         if (!nameForMailOccurrences.containsKey(nameForMail)) {
             nameForMailOccurrences.put(nameForMail, 1);
@@ -73,8 +73,8 @@ public class MailGenerator {
         return nameForMail;
     }
 
-    public String generateMails(String names, String company) {
-        Map<String, Integer> nameForMailOccurrences = new HashMap<>();
+    public String generateMails(final String names, final String company) {
+        final Map<String, Integer> nameForMailOccurrences = new HashMap<>();
         return Arrays.stream(names.split(", "))
                 .map(name -> getMailForOnePerson(name, company, nameForMailOccurrences))
                 .collect(Collectors.joining(", "));

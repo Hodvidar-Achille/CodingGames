@@ -11,9 +11,9 @@ public class _Day08 extends AbstractAdventOfCode {
     protected static final String JUMP = "jmp";
     protected static final String NO_OPERATION = "nop";
 
-    public static void main(String[] args) throws Exception {
-        _Day08 me = new _Day08();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day08 me = new _Day08();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '1528' - result='" + result + "'");
     }
 
@@ -23,25 +23,25 @@ public class _Day08 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return getAccumulatorValue(sc);
     }
 
-    public int getAccumulatorValue(Scanner sc) {
-        List<String> instructions = getInstructions(sc);
+    public int getAccumulatorValue(final Scanner sc) {
+        final List<String> instructions = getInstructions(sc);
         return runInstructions(instructions);
     }
 
-    public int runInstructions(List<String> instructions) {
+    public int runInstructions(final List<String> instructions) {
         int accumulatorValue = 0;
-        List<Integer> visitedValues = new ArrayList<>();
+        final List<Integer> visitedValues = new ArrayList<>();
         for (int i = 0; i < instructions.size(); /* empty */) {
             if (visitedValues.contains(i)) {
                 break;
             }
             visitedValues.add(i);
-            String[] instruction = instructions.get(i).split(" ");
-            int value = Integer.parseInt(instruction[1]);
+            final String[] instruction = instructions.get(i).split(" ");
+            final int value = Integer.parseInt(instruction[1]);
 
             if (JUMP.equals(instruction[0])) {
                 i += value;
@@ -57,9 +57,9 @@ public class _Day08 extends AbstractAdventOfCode {
         return accumulatorValue;
     }
 
-    protected List<String> getInstructions(Scanner sc) {
+    protected List<String> getInstructions(final Scanner sc) {
         String line;
-        List<String> instructions = new ArrayList<>();
+        final List<String> instructions = new ArrayList<>();
         while (sc.hasNextLine()) {
             line = sc.nextLine();
             instructions.add(line);

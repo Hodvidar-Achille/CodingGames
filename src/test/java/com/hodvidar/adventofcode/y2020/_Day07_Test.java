@@ -27,8 +27,8 @@ public class _Day07_Test extends AbstractTestForAdventOfCode {
             "6 dotted black bags | dotted black bag",
             "111 green bags. | green bag"
     })
-    void checkCountUniqueCharacters(String crudeBagName, String expectedResult) throws FileNotFoundException {
-        String result = new _Day07().extractBagName(crudeBagName);
+    void checkCountUniqueCharacters(final String crudeBagName, final String expectedResult) throws FileNotFoundException {
+        final String result = new _Day07().extractBagName(crudeBagName);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -37,9 +37,9 @@ public class _Day07_Test extends AbstractTestForAdventOfCode {
             "1 = 4",
             "2 = 1"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = new _Day07().countBagInsideGoldenBag(sc);
+    void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = new _Day07().countBagInsideGoldenBag(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 

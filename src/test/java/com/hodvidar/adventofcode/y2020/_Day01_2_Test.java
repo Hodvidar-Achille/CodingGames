@@ -25,9 +25,9 @@ public class _Day01_2_Test extends AbstractTestForAdventOfCode {
             "4 = 241861950",
             "5 = 2036160"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = testedClass.getResult(sc);
+    void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = testedClass.getResult(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 

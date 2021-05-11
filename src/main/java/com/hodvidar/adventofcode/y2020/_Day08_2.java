@@ -7,19 +7,19 @@ import java.util.Scanner;
 
 public class _Day08_2 extends _Day08 {
 
-    public static void main(String[] args) throws Exception {
-        _Day08_2 me = new _Day08_2();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day08_2 me = new _Day08_2();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '640' - result='" + result + "'");
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
-        int result = getAccumulatorValueAfterFix(sc);
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
+        final int result = getAccumulatorValueAfterFix(sc);
         return result;
     }
 
-    public int getAccumulatorValueAfterFix(Scanner sc) {
+    public int getAccumulatorValueAfterFix(final Scanner sc) {
         List<String> instructions = getInstructions(sc);
         instructions = fixInstructions(instructions);
         return runInstructions(instructions);
@@ -28,11 +28,11 @@ public class _Day08_2 extends _Day08 {
     /**
      * Not most efficient way of doing it
      **/
-    public List<String> fixInstructions(List<String> instructions) {
+    public List<String> fixInstructions(final List<String> instructions) {
         String[] instruction;
         for (int i = 0; i < instructions.size(); i++) {
             instruction = instructions.get(i).split(" ");
-            int value = Integer.parseInt(instruction[1]);
+            final int value = Integer.parseInt(instruction[1]);
             if (NO_OPERATION.equals(instruction[0])) {
                 instructions.set(i, JUMP + " " + value);
                 if (!isLoop(instructions)) {
@@ -50,8 +50,8 @@ public class _Day08_2 extends _Day08 {
         return instructions;
     }
 
-    public boolean isLoop(List<String> instructions) {
-        List<Integer> visitedValues = new ArrayList<>();
+    public boolean isLoop(final List<String> instructions) {
+        final List<Integer> visitedValues = new ArrayList<>();
         String[] instruction;
         for (int i = 0; i < instructions.size(); /* empty */) {
             if (visitedValues.contains(i)) {
@@ -59,7 +59,7 @@ public class _Day08_2 extends _Day08 {
             }
             visitedValues.add(i);
             instruction = instructions.get(i).split(" ");
-            int value = Integer.parseInt(instruction[1]);
+            final int value = Integer.parseInt(instruction[1]);
 
             if (JUMP.equals(instruction[0])) {
                 i += value;

@@ -15,38 +15,38 @@ public class _Day05 extends AbstractAdventOfCode {
     protected static final int ROW_CODE_FACTOR = 8;
     protected static final int MAX_CODE = calculateCode(MAX_ROW, MAX_COLUMN);
 
-    public static void main(String[] args) throws Exception {
-        _Day05 me = new _Day05();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day05 me = new _Day05();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '922' - result='" + result + "'");
     }
 
-    public static int getFinalPositionCode(String spacePartitioning) {
-        String rowSpacePartitioning = spacePartitioning.substring(0, 7);
-        String columnSpacePartitioning = spacePartitioning.substring(7);
+    public static int getFinalPositionCode(final String spacePartitioning) {
+        final String rowSpacePartitioning = spacePartitioning.substring(0, 7);
+        final String columnSpacePartitioning = spacePartitioning.substring(7);
 
-        int row = getFinalPosition(rowSpacePartitioning, MIN, MAX_ROW);
-        int column = getFinalPosition(columnSpacePartitioning, MIN, MAX_COLUMN);
+        final int row = getFinalPosition(rowSpacePartitioning, MIN, MAX_ROW);
+        final int column = getFinalPosition(columnSpacePartitioning, MIN, MAX_COLUMN);
 
         return calculateCode(row, column);
     }
 
-    private static int calculateCode(int row, int column) {
+    private static int calculateCode(final int row, final int column) {
         return (row * ROW_CODE_FACTOR) + column;
     }
 
-    public static int getFinalPosition(String spacePartitioning, int min, int max) {
+    public static int getFinalPosition(final String spacePartitioning, final int min, final int max) {
         int[] range = new int[]{min, max};
-        for (char partition : spacePartitioning.toCharArray()) {
+        for (final char partition : spacePartitioning.toCharArray()) {
             range = getNewRange(partition, range);
         }
         return range[0];
     }
 
-    public static int[] getNewRange(char partition, int[] range) {
-        int min = range[0];
-        int max = range[1];
-        int middle;
+    public static int[] getNewRange(final char partition, final int[] range) {
+        final int min = range[0];
+        final int max = range[1];
+        final int middle;
         switch (partition) {
             case BACK:
             case RIGHT:
@@ -61,17 +61,17 @@ public class _Day05 extends AbstractAdventOfCode {
         }
     }
 
-    public static int getMiddle(int min, int max, boolean roundCeil) {
-        double middle = (min + max) / 2.0;
+    public static int getMiddle(final int min, final int max, final boolean roundCeil) {
+        final double middle = (min + max) / 2.0;
         return (int) ((roundCeil) ? Math.ceil(middle) : Math.floor(middle));
     }
 
-    public static int getMaxPositionCode(Scanner sc) {
+    public static int getMaxPositionCode(final Scanner sc) {
         int maxFinalPositionCode = 0;
         String line;
         while (sc.hasNextLine()) {
             line = sc.nextLine();
-            int code = getFinalPositionCode(line);
+            final int code = getFinalPositionCode(line);
             if (code == MAX_CODE) {
                 return MAX_CODE;
             }
@@ -88,7 +88,7 @@ public class _Day05 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return getMaxPositionCode(sc);
     }
 }

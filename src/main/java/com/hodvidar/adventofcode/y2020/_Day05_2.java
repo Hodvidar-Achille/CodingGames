@@ -8,24 +8,24 @@ import java.util.Scanner;
 
 public class _Day05_2 extends _Day05 {
 
-    public static void main(String[] args) throws Exception {
-        _Day05_2 me = new _Day05_2();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day05_2 me = new _Day05_2();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '747' - result='" + result + "'");
     }
 
-    public static int getMissingCode(Scanner sc) {
-        List<Integer> codes = new ArrayList<>();
+    public static int getMissingCode(final Scanner sc) {
+        final List<Integer> codes = new ArrayList<>();
         String line;
         while (sc.hasNextLine()) {
             line = sc.nextLine();
-            int code = getFinalPositionCode(line);
+            final int code = getFinalPositionCode(line);
             codes.add(code);
         }
         Collections.sort(codes);
         for (int i = 0; i < codes.size() - 1; i++) {
-            int code1 = codes.get(i);
-            int code2 = codes.get(i + 1);
+            final int code1 = codes.get(i);
+            final int code2 = codes.get(i + 1);
             if (code2 - code1 > 1) {
                 return code1 + 1;
             }
@@ -34,7 +34,7 @@ public class _Day05_2 extends _Day05 {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return getMissingCode(sc);
     }
 }

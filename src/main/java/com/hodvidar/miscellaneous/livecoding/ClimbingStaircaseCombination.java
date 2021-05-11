@@ -16,7 +16,7 @@ public class ClimbingStaircaseCombination {
      * @param numberOfStep     number of steps in the staircase
      * @return
      */
-    public static int getNumberOfWaysToClimb_optimized(int maxStepInOneTime, int numberOfStep) {
+    public static int getNumberOfWaysToClimb_optimized(final int maxStepInOneTime, final int numberOfStep) {
         if (maxStepInOneTime == 1) {
             return 1;
         }
@@ -45,7 +45,7 @@ public class ClimbingStaircaseCombination {
      * @param numberOfStep
      * @return
      */
-    public static int getNumberOfWaysToClimb_subOptimized(int maxStepInOneTime, int numberOfStep) {
+    public static int getNumberOfWaysToClimb_subOptimized(final int maxStepInOneTime, final int numberOfStep) {
         if (maxStepInOneTime == 1) {
             return 1;
         }
@@ -67,7 +67,7 @@ public class ClimbingStaircaseCombination {
      * @param numberOfNextElement
      * @return
      */
-    public static int getPossibleSubstitutionsFor_optimized(int... numberOfNextElement) {
+    public static int getPossibleSubstitutionsFor_optimized(final int... numberOfNextElement) {
         if (numberOfNextElement.length == 1) {
             return 1;
         }
@@ -76,14 +76,14 @@ public class ClimbingStaircaseCombination {
             throw new UnsupportedOperationException("Not yet impl");
         }
 
-        int numberOfOnes = numberOfNextElement[0];
-        int numberOfTwos = numberOfNextElement[1];
+        final int numberOfOnes = numberOfNextElement[0];
+        final int numberOfTwos = numberOfNextElement[1];
 
         if (numberOfOnes == 0 || numberOfTwos == 0) {
             return 1;
         }
 
-        int totalNumberOfElements = numberOfOnes + numberOfTwos;
+        final int totalNumberOfElements = numberOfOnes + numberOfTwos;
 
         return (
                 getFactorial(totalNumberOfElements)
@@ -99,7 +99,7 @@ public class ClimbingStaircaseCombination {
      * @param numberOfNextElement
      * @return
      */
-    public static int getPossibleSubstitutionsFor(int... numberOfNextElement) {
+    public static int getPossibleSubstitutionsFor(final int... numberOfNextElement) {
         if (numberOfNextElement.length == 1) {
             return 1;
         }
@@ -108,14 +108,14 @@ public class ClimbingStaircaseCombination {
             throw new UnsupportedOperationException("Not yet impl");
         }
 
-        int numberOfOnes = numberOfNextElement[0];
-        int numberOfTwos = numberOfNextElement[1];
+        final int numberOfOnes = numberOfNextElement[0];
+        final int numberOfTwos = numberOfNextElement[1];
 
         if (numberOfOnes == 0 || numberOfTwos == 0) {
             return 1;
         }
 
-        int totalNumberOfElements = numberOfTwos + numberOfOnes;
+        final int totalNumberOfElements = numberOfTwos + numberOfOnes;
 		/*if(numberOfTwos == 1) {
 			return totalNumberOfElements;
 		}*/

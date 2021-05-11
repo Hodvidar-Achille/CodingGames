@@ -24,46 +24,6 @@ public class DataStructureTreesTest {
             -12, -56, -6, -17, -37, 57, 134, 13, 90, 22, -64, 141, -86, -33, -32, 11, 17, 58, 23, -100, -62, -74, 82,
             25, -117, 165, 78, 73, 128, -62, -37, -131, -28, -46, -120, -102, 63, 61, -103, -18};
 
-    @Test
-    public void contains() {
-        final BinaryTree binaryTree = new BinaryTree();
-        init(binaryTree);
-        assertThat(binaryTree.contains(25)).isTrue();
-    }
-
-    @Test
-    public void maxDepth() {
-        final BinaryTree binaryTree = new BinaryTree();
-        init(binaryTree);
-        assertThat(binaryTree.getMaxDepth()).isEqualTo(13);
-    }
-
-    @Test
-    public void string_representation_simple() {
-        final BinaryTree binaryTree = new BinaryTree();
-        final int[] randomNumbers = new int[]{0, -10, 10, -20, -5, 5, 20, 100, -9, 99};
-        for (final int i : randomNumbers) {
-            binaryTree.insert(i);
-        }
-        assertThat(binaryTree.toString()).isEqualTo("                                                      {0}                                                       \n" +
-                "                         {-10}                                                    {10}                          \n" +
-                "           {-20}                        {-5}                        {5}                         {20}            \n" +
-                "     {-}           {-}           {-9}          {-}           {-}           {-}           {-}          {100}     \n" +
-                "  {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}   {99}    {-}  \n");
-    }
-
-
-    @Test
-    @Disabled // TODO make it pass
-    public void string_representation() {
-        final BinaryTree binaryTree = new BinaryTree();
-        init(binaryTree);
-        final String fileName = Constance.RESOURCES_TEST
-                + File.separator + "formation" + File.separator
-                + "datastructure" + File.separator + "binaryTreeToString.txt";
-        assertThat(binaryTree.toString()).isEqualTo(fileToStringContent(fileName));
-    }
-
     private static String fileToStringContent(final String fileName) {
         try {
             final InputStream inputStream = new FileInputStream(fileName);
@@ -77,20 +37,10 @@ public class DataStructureTreesTest {
             return sb.toString();
         } catch (final FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch (final IOException e) {
             e.printStackTrace();
         }
         return "";
-    }
-
-    @ParameterizedTest
-    @MethodSource("generateData_treeValue")
-    public void check_reverse_array(final int[] treeValues, final int expectedDepth) throws FileNotFoundException {
-        final BinaryTree binaryTree = new BinaryTree();
-        for (final int i : treeValues) {
-            binaryTree.insert(i);
-        }
-        assertThat(binaryTree.getMaxDepth()).isEqualTo(expectedDepth);
     }
 
     private static void init(final BinaryTree binaryTree) {
@@ -130,5 +80,54 @@ public class DataStructureTreesTest {
                         6
                 )
         );
+    }
+
+    @Test
+    public void contains() {
+        final BinaryTree binaryTree = new BinaryTree();
+        init(binaryTree);
+        assertThat(binaryTree.contains(25)).isTrue();
+    }
+
+    @Test
+    public void maxDepth() {
+        final BinaryTree binaryTree = new BinaryTree();
+        init(binaryTree);
+        assertThat(binaryTree.getMaxDepth()).isEqualTo(13);
+    }
+
+    @Test
+    public void string_representation_simple() {
+        final BinaryTree binaryTree = new BinaryTree();
+        final int[] randomNumbers = new int[]{0, -10, 10, -20, -5, 5, 20, 100, -9, 99};
+        for (final int i : randomNumbers) {
+            binaryTree.insert(i);
+        }
+        assertThat(binaryTree.toString()).isEqualTo("                                                      {0}                                                       \n" +
+                "                         {-10}                                                    {10}                          \n" +
+                "           {-20}                        {-5}                        {5}                         {20}            \n" +
+                "     {-}           {-}           {-9}          {-}           {-}           {-}           {-}          {100}     \n" +
+                "  {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}   {99}    {-}  \n");
+    }
+
+    @Test
+    @Disabled // TODO make it pass
+    public void string_representation() {
+        final BinaryTree binaryTree = new BinaryTree();
+        init(binaryTree);
+        final String fileName = Constance.RESOURCES_TEST
+                + File.separator + "formation" + File.separator
+                + "datastructure" + File.separator + "binaryTreeToString.txt";
+        assertThat(binaryTree.toString()).isEqualTo(fileToStringContent(fileName));
+    }
+
+    @ParameterizedTest
+    @MethodSource("generateData_treeValue")
+    public void check_reverse_array(final int[] treeValues, final int expectedDepth) throws FileNotFoundException {
+        final BinaryTree binaryTree = new BinaryTree();
+        for (final int i : treeValues) {
+            binaryTree.insert(i);
+        }
+        assertThat(binaryTree.getMaxDepth()).isEqualTo(expectedDepth);
     }
 }

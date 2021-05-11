@@ -6,26 +6,26 @@ import java.util.Scanner;
 
 public class _Day01_2 extends _Day01 {
 
-    public static void main(String[] args) throws Exception {
-        AbstractAdventOfCode me = new _Day01();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final AbstractAdventOfCode me = new _Day01();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '293450526' - result='" + result + "'");
     }
 
     @Override
-    protected int getResult(Scanner sc) {
+    protected int getResult(final Scanner sc) {
         String line;
-        List<Integer> numbers = new ArrayList<>();
+        final List<Integer> numbers = new ArrayList<>();
         while (sc.hasNextLine()) {
             line = sc.nextLine();
-            int number = Integer.parseInt(line);
+            final int number = Integer.parseInt(line);
             if (number >= 2020) {
                 continue;
             }
             for (int i = 0; i < numbers.size(); i++) {
-                int n1 = numbers.get(i);
+                final int n1 = numbers.get(i);
                 for (int j = 0; j < numbers.size(); j++) {
-                    int n2 = numbers.get(j);
+                    final int n2 = numbers.get(j);
                     if (j == i) {
                         continue;
                     }

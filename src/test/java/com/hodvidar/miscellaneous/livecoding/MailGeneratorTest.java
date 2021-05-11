@@ -34,14 +34,14 @@ public class MailGeneratorTest {
 
     @Test
     void return_mail_for_one_name() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("James Bond", "MI6"))
                 .isEqualTo("James Bond <j_bond@mi6.com>");
     }
 
     @Test
     void return_mail_for_two_names() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("James Bond, MoneyPenny Dam", "MI6"))
                 .isEqualTo("James Bond <j_bond@mi6.com>, "
                         + "MoneyPenny Dam <m_dam@mi6.com>");
@@ -49,28 +49,28 @@ public class MailGeneratorTest {
 
     @Test
     void return_mail_for_one_name_with_middle_name() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("James Moriaty Bond", "MI6"))
                 .isEqualTo("James Moriaty Bond <j_m_bond@mi6.com>");
     }
 
     @Test
     void return_mail_for_one_name_with_surname_more_than_eight_characters_long() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("Monique Delacroix", "MI6"))
                 .isEqualTo("Monique Delacroix <m_delacroi@mi6.com>");
     }
 
     @Test
     void return_mail_for_one_name_with_surname_with_dash() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("Monique Bond-Delacroix", "MI6"))
                 .isEqualTo("Monique Bond-Delacroix <m_bonddela@mi6.com>");
     }
 
     @Test
     void return_mail_for_duplicated_name() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("Monique Bond-Delacroix, "
                 + "Monique Bond-Delacroix", "MI6"))
                 .isEqualTo("Monique Bond-Delacroix <m_bonddela@mi6.com>, "
@@ -79,7 +79,7 @@ public class MailGeneratorTest {
 
     @Test
     void return_mail_for_duplicated_name_three_times() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("Monique Bond-Delacroix, "
                 + "Monique Bond-Delacroix, "
                 + "Monique Bond-Delacroix", "MI6"))
@@ -90,7 +90,7 @@ public class MailGeneratorTest {
 
     @Test
     void check_for_full_example() {
-        MailGenerator s = new MailGenerator();
+        final MailGenerator s = new MailGenerator();
         assertThat(s.generateMails("John Doe, "
                 + "Peter Parker, "
                 + "Mary Jane Watson-Parker, "

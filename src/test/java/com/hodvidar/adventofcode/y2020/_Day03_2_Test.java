@@ -27,9 +27,9 @@ public class _Day03_2_Test extends AbstractTestForAdventOfCode {
             "1 | 1 | 7 | 4",
             "1 | 2 | 1 | 2"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int ordinateIncrement, int abscissaIncrement, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = new _Day03_2().countTrees(sc, ordinateIncrement, abscissaIncrement);
+    void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int ordinateIncrement, final int abscissaIncrement, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = new _Day03_2().countTrees(sc, ordinateIncrement, abscissaIncrement);
         assertThat(result).isEqualTo(expectedResult);
     }
 }

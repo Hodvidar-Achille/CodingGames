@@ -5,7 +5,7 @@ package com.hodvidar.newbiecontest.logique;
  */
 public class LogiqueTresCombinatoire {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("Hello World");
         for (int i = 0; i < 32; i++) {
             boolean a = false;
@@ -13,9 +13,9 @@ public class LogiqueTresCombinatoire {
             boolean c = false;
             boolean d = false;
             boolean e = false;
-            String str = Integer.toBinaryString(i);
+            final String str = Integer.toBinaryString(i);
             int j = 0;
-            for (char ch : str.toCharArray()) {
+            for (final char ch : str.toCharArray()) {
                 switch (j) {
                     case 0:
                         if (ch == '1') {
@@ -47,17 +47,17 @@ public class LogiqueTresCombinatoire {
                 }
                 j++;
             }
-            boolean p1 = (a && b); // AND
-            boolean p2 = c == d; //N XOR
-            boolean p3 = e; // OR ?
-            boolean p4 = !(p2 || p3); // N OR
-            boolean p5 = (p1 ^ p4); // XOR
-            boolean p6 = !p5; // NOT
-            boolean p7 = !(e && p5); // N AND
-            boolean p8 = !(!(!p7)); // NOT x3
-            boolean p9 = !p8; // NOT
-            boolean p10 = !(p6 && p8); // N AND
-            boolean p11 = (p10 ^ p9); // XOR
+            final boolean p1 = (a && b); // AND
+            final boolean p2 = c == d; //N XOR
+            final boolean p3 = e; // OR ?
+            final boolean p4 = !(p2 || p3); // N OR
+            final boolean p5 = (p1 ^ p4); // XOR
+            final boolean p6 = !p5; // NOT
+            final boolean p7 = !(e && p5); // N AND
+            final boolean p8 = !(!(!p7)); // NOT x3
+            final boolean p9 = !p8; // NOT
+            final boolean p10 = !(p6 && p8); // N AND
+            final boolean p11 = (p10 ^ p9); // XOR
             if (p11) {
                 System.out.println("true for : " + str);
             }

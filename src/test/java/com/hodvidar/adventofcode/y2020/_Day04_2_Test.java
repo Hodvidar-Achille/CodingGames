@@ -22,8 +22,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
 
     @Test
     void checkFile() throws FileNotFoundException {
-        Scanner sc = getScanner(2);
-        int result = new _Day04_2().numberOfValidPassport(sc);
+        final Scanner sc = getScanner(2);
+        final int result = new _Day04_2().numberOfValidPassport(sc);
         assertThat(result).isEqualTo(2);
     }
 
@@ -39,8 +39,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "hcl:#888785 hgt:164cm byr:2001 iyr:2015 cid:88 pid:545766238 ecl:hzl eyr:2022 = true",
             "iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719 = true"
     })
-    void checkPassportData(String passportData, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().isValid(passportData);
+    void checkPassportData(final String passportData, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().isValid(passportData);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -52,8 +52,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "100 = false",
             "XXXX = false"
     })
-    void checkBirthYear(String birthYear, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkBirthYear(birthYear);
+    void checkBirthYear(final String birthYear, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkBirthYear(birthYear);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -65,8 +65,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "100 = false",
             "XXXXXXX = false"
     })
-    void checkIssueYear(String issueYear, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkIssueYear(issueYear);
+    void checkIssueYear(final String issueYear, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkIssueYear(issueYear);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -78,8 +78,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "100 = false",
             "XXXXXXX = false"
     })
-    void checkExpirationYear(String expirationYear, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkExpirationYear(expirationYear);
+    void checkExpirationYear(final String expirationYear, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkExpirationYear(expirationYear);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -95,8 +95,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "XXXXX = false",
             "XXXcm = false"
     })
-    void checkHeight(String height, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkHeight(height);
+    void checkHeight(final String height, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkHeight(height);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -138,8 +138,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "xxx = false",
             " = false"
     })
-    void checkEyeColor(String birthYear, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkEyeColor(birthYear);
+    void checkEyeColor(final String birthYear, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkEyeColor(birthYear);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -156,8 +156,8 @@ public class _Day04_2_Test extends AbstractTestForAdventOfCode {
             "xxx = false",
             " = false"
     })
-    void checkPassportID(String birthYear, boolean isValid) throws FileNotFoundException {
-        boolean result = new _Day04_2().checkPassportID(birthYear);
+    void checkPassportID(final String birthYear, final boolean isValid) throws FileNotFoundException {
+        final boolean result = new _Day04_2().checkPassportID(birthYear);
         assertThat(result).isEqualTo(isValid);
     }
 

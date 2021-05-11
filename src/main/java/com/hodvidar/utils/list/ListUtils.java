@@ -51,7 +51,7 @@ public class ListUtils {
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public static double[] listOfDoubleToArray(List<Double> list) {
+    public static double[] listOfDoubleToArray(final List<Double> list) {
         if (null == list) {
             return null;
         }

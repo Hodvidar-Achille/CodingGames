@@ -13,12 +13,12 @@ public class NeuroCalc {
 
     private static List<Integer> modification;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("Hello World");
         String result = "";
         // nothing before 5 billions
         for (double x = 5000000000d; x < Double.MAX_VALUE; x++) {
-            String y = "" + x;
+            final String y = "" + x;
             result = neuroCalc_x2y(x);
 
             if (result.equals(y + y) && !contains8or9(result)) {
@@ -29,7 +29,7 @@ public class NeuroCalc {
                 System.out.println("y -> y : " + y + " renvoie " + y);
                 continue;
             }
-            String tluser = new StringBuilder(y).reverse().toString();
+            final String tluser = new StringBuilder(y).reverse().toString();
             if (result.equals(tluser) && !contains8or9(result)) {
                 System.out.println("y -> y inversé : " + y + " renvoie " + tluser);
                 continue;
@@ -39,18 +39,18 @@ public class NeuroCalc {
         }
     }
 
-    private static boolean contains8or9(String s) {
+    private static boolean contains8or9(final String s) {
         return s.contains("8") || s.contains("9");
     }
 
-    private static String neuroCalc_x2y(double x) {
+    private static String neuroCalc_x2y(final double x) {
         modification = new ArrayList<>();
-        double y = neuroCalc_Analyse(x);
+        final double y = neuroCalc_Analyse(x);
         return applyModification("" + y);
     }
 
     public static String applyModification(String y) {
-        for (Integer i : modification) {
+        for (final Integer i : modification) {
             switch (i) {
                 case 3:
                     y = modifcation3(y);
@@ -74,30 +74,30 @@ public class NeuroCalc {
         return y;
     }
 
-    public static String modifcation3(String y) {
+    public static String modifcation3(final String y) {
         return y + y;
     }
 
-    public static String modifcation4(String y) {
+    public static String modifcation4(final String y) {
         return new StringBuilder(y).reverse().toString();
     }
 
-    public static String modifcation5(String y) {
+    public static String modifcation5(final String y) {
         if (y.length() > 1)
             return y.substring(1);
         return y;
     }
 
-    public static String modifcation6(String y) {
+    public static String modifcation6(final String y) {
         return "1" + y;
     }
 
-    public static String modifcation7(String y) {
+    public static String modifcation7(final String y) {
         return "2" + y;
     }
 
     public static double neuroCalc_Analyse(double x) {
-        String s = "" + x;
+        final String s = "" + x;
         if (x > 100 && s.startsWith("1") && s.endsWith("2")) {
             x = neuroCalc_12(x);
             return neuroCalc_Analyse(x);

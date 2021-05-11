@@ -34,21 +34,21 @@ public class _Day07_2_Test extends AbstractTestForAdventOfCode {
             "3 = 126",
             "6 = 42"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = new _Day07_2().countBagInsideGoldenBag(sc);
+    void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = new _Day07_2().countBagInsideGoldenBag(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 
     @Test
     void shouldFindResultInSmallNumberPool() {
-        Bag a1 = new Bag("a1");
-        Bag b1 = new Bag("b1");
-        Bag b2 = new Bag("b2");
-        Bag c1 = new Bag("c1");
-        Bag c2 = new Bag("c2");
-        Bag c3 = new Bag("c3");
-        Bag d1 = new Bag("d1");
+        final Bag a1 = new Bag("a1");
+        final Bag b1 = new Bag("b1");
+        final Bag b2 = new Bag("b2");
+        final Bag c1 = new Bag("c1");
+        final Bag c2 = new Bag("c2");
+        final Bag c3 = new Bag("c3");
+        final Bag d1 = new Bag("d1");
 
         // a1   ( 2 + 6 + 10 + 1000 + 50 + 5000 = 6068)
         // 2 b1      (--> 2 b1)
@@ -70,10 +70,10 @@ public class _Day07_2_Test extends AbstractTestForAdventOfCode {
 
     @Test
     void shouldCountBagWithOneChild() {
-        Bag a1 = new Bag("a1");
-        Bag b1 = new Bag("b1");
-        Bag c1 = new Bag("c1");
-        Bag d1 = new Bag("d1");
+        final Bag a1 = new Bag("a1");
+        final Bag b1 = new Bag("b1");
+        final Bag c1 = new Bag("c1");
+        final Bag d1 = new Bag("d1");
 
         c1.addChild(d1); // 1
         b1.addChild(c1); // 1 + 1 = 2
@@ -84,12 +84,12 @@ public class _Day07_2_Test extends AbstractTestForAdventOfCode {
 
     @Test
     void shouldCountBagWithOneOrTwoChildren() {
-        Bag a1 = new Bag("a1");
-        Bag b1 = new Bag("b1");
-        Bag c1 = new Bag("c1");
-        Bag d1 = new Bag("d1");
-        Bag c2 = new Bag("c2");
-        Bag d2 = new Bag("d2");
+        final Bag a1 = new Bag("a1");
+        final Bag b1 = new Bag("b1");
+        final Bag c1 = new Bag("c1");
+        final Bag d1 = new Bag("d1");
+        final Bag c2 = new Bag("c2");
+        final Bag d2 = new Bag("d2");
 
         c1.addChild(d1); // 1
         b1.addChild(c1); // 1 + 1 = 2

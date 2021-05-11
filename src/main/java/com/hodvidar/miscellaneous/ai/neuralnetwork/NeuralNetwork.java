@@ -13,7 +13,7 @@ class Node {
         this.y = 0;
     }
 
-    public Node(int x, int y) {
+    public Node(final int x, final int y) {
         this.x = x;
         this.y = y;
     }

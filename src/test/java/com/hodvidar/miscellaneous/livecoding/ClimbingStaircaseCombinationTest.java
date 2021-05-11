@@ -24,7 +24,7 @@ public class ClimbingStaircaseCombinationTest {
             "30 = 1", // 1 1 1 ...
             "100 = 1" // 1 1 1 ...
     })
-    void should_always_return_1_if_number_of_possible_ways_to_climb_is_1(int testedValue, int expectedResult) {
+    void should_always_return_1_if_number_of_possible_ways_to_climb_is_1(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(1, testedValue)).isEqualTo(expectedResult);
         assertThat(getNumberOfWaysToClimb_subOptimized(1, testedValue)).isEqualTo(expectedResult);
     }
@@ -46,7 +46,7 @@ public class ClimbingStaircaseCombinationTest {
             "20 = 10946",
             "30 = 1346269"
     })
-    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_2(int testedValue, int expectedResult) {
+    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_2(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(2, testedValue)).isEqualTo(expectedResult);
     }
 
@@ -69,7 +69,7 @@ public class ClimbingStaircaseCombinationTest {
             "20 = 121415",
             "30 = 53798080"
     })
-    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_3(int testedValue, int expectedResult) {
+    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_3(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(3, testedValue)).isEqualTo(expectedResult);
     }
 
@@ -93,7 +93,7 @@ public class ClimbingStaircaseCombinationTest {
             "20 = 283953",
             "30 = 201061985"
     })
-    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_4(int testedValue, int expectedResult) {
+    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_4(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(4, testedValue)).isEqualTo(expectedResult);
     }
 
@@ -118,7 +118,7 @@ public class ClimbingStaircaseCombinationTest {
             "20 = 400096",
             "30 = 345052351"
     })
-    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_5(int testedValue, int expectedResult) {
+    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_5(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(5, testedValue)).isEqualTo(expectedResult);
         // assertThat(getNumberOfWaysToClimb(3, testedValue)).isEqualTo(expectedResult);
     }
@@ -138,7 +138,7 @@ public class ClimbingStaircaseCombinationTest {
             "20 = 521472",
             "30 = 531372800"
     })
-    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_10(int testedValue, int expectedResult) {
+    void should_return_fibonaci_suite_if_number_of_possible_ways_to_climb_is_10(final int testedValue, final int expectedResult) {
         assertThat(getNumberOfWaysToClimb_optimized(10, testedValue)).isEqualTo(expectedResult);
         // assertThat(getNumberOfWaysToClimb(3, testedValue)).isEqualTo(expectedResult);
     }
@@ -165,7 +165,7 @@ public class ClimbingStaircaseCombinationTest {
             "6 = 5 = 462",
             //"100 = 5 = 96560646"
     })
-    void should_return_number_of_possible_substitutons_optimized(int numberOfOnes, int numberOfTwos, int expectedResult) {
+    void should_return_number_of_possible_substitutons_optimized(final int numberOfOnes, final int numberOfTwos, final int expectedResult) {
         assertThat(getPossibleSubstitutionsFor_optimized(numberOfOnes, numberOfTwos)).isEqualTo(expectedResult);
     }
 
@@ -191,7 +191,7 @@ public class ClimbingStaircaseCombinationTest {
             "6 = 5 = 462",
             "100 = 5 = 96560646"
     })
-    void should_return_number_of_possible_substitutons(int numberOfOnes, int numberOfTwos, int expectedResult) {
+    void should_return_number_of_possible_substitutons(final int numberOfOnes, final int numberOfTwos, final int expectedResult) {
         assertThat(getPossibleSubstitutionsFor(numberOfOnes, numberOfTwos)).isEqualTo(expectedResult);
     }
 }

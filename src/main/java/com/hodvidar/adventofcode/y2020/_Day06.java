@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class _Day06 extends AbstractAdventOfCode {
     // not 12038 (too high), not 6288 (too low)
-    public static void main(String[] args) throws Exception {
-        _Day06 me = new _Day06();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day06 me = new _Day06();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '6297' - result='" + result + "'");
     }
 
-    public static int countUniqueLetterByGroup(Scanner sc) {
+    public static int countUniqueLetterByGroup(final Scanner sc) {
         int counter = 0;
         String line;
         String currentGroupLetters = "";
@@ -20,7 +20,7 @@ public class _Day06 extends AbstractAdventOfCode {
             line = line.trim();
             currentGroupLetters += line;
             if (line.isBlank()) {
-                int uniqueForGroup = countUniqueCharacters(currentGroupLetters);
+                final int uniqueForGroup = countUniqueCharacters(currentGroupLetters);
                 counter += uniqueForGroup;
                 currentGroupLetters = "";
             }
@@ -31,9 +31,9 @@ public class _Day06 extends AbstractAdventOfCode {
 
     public static int countUniqueCharacters(String input) {
         input = input.toLowerCase();
-        boolean[] isItThere = new boolean[26];
+        final boolean[] isItThere = new boolean[26];
         for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
+            final char c = input.charAt(i);
             int value = c;
             value -= 97; // a become 0, z becomes 25
             if (value < 0 || value > 25) {
@@ -58,7 +58,7 @@ public class _Day06 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return countUniqueLetterByGroup(sc);
     }
 

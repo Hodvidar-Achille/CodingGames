@@ -4,8 +4,8 @@ package com.hodvidar.miscellaneous.designpattern;
  *
  */
 public class VisitorDemo {
-    public static void main(String[] args) {
-        VisitorDemo demo = new VisitorDemo();
+    public static void main(final String[] args) {
+        final VisitorDemo demo = new VisitorDemo();
         demo.demo();
     }
 
@@ -52,7 +52,7 @@ public class VisitorDemo {
         }
 
         public void accept(final CarElementVisitor visitor) {
-            for (CarElement elem : this.elements) {
+            for (final CarElement elem : this.elements) {
                 elem.accept(visitor);
             }
             visitor.visit(this);

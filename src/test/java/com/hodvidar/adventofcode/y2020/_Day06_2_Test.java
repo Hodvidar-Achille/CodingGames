@@ -32,8 +32,8 @@ public class _Day06_2_Test extends AbstractTestForAdventOfCode {
             "ab#ab#ab#a | 1",
             "abcde#abcd#abc#ab | 2"
     })
-    void checkCountCommonLettersInGroup(String code, int expectedResult) throws FileNotFoundException {
-        int result = new _Day06_2().countCommonLettersInGroup(code);
+    void checkCountCommonLettersInGroup(final String code, final int expectedResult) throws FileNotFoundException {
+        final int result = new _Day06_2().countCommonLettersInGroup(code);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -41,9 +41,9 @@ public class _Day06_2_Test extends AbstractTestForAdventOfCode {
     @CsvSource(delimiter = '=', value = {
             "1 = 6"
     })
-    void shouldFindResultInSmallNumberPool(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = new _Day06_2().countUniqueLetterByGroup(sc);
+    void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = new _Day06_2().countUniqueLetterByGroup(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 

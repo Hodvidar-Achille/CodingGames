@@ -63,16 +63,16 @@ public final class UnPeuDeLogiquePur {
     Characteristic[] positions = new Characteristic[]{Position.premier, Position.deuxieme,
             Position.troisieme, Position.quatrieme, Position.dernier};
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("Hello World");
-        UnPeuDeLogiquePur h = new UnPeuDeLogiquePur();
+        final UnPeuDeLogiquePur h = new UnPeuDeLogiquePur();
         h.start();
     }
 
-    public static int getRandomWithExclusion(List<Integer> excludes) {
-        Random rdm = new Random();
+    public static int getRandomWithExclusion(final List<Integer> excludes) {
+        final Random rdm = new Random();
         int random = rdm.nextInt((4) + (1 - excludes.size()));
-        for (int ex : excludes) {
+        for (final int ex : excludes) {
             if (random < ex) {
                 break;
             }
@@ -84,7 +84,7 @@ public final class UnPeuDeLogiquePur {
     /**
      * Has duplicates digits in the 5 first (starting from right) digits.
      */
-    public static boolean hasDuplicates(int n) {
+    public static boolean hasDuplicates(final int n) {
         String t = "0000000" + n;
         if (t.length() > 5)
             t = t.substring(t.length() - 5);
@@ -98,21 +98,21 @@ public final class UnPeuDeLogiquePur {
         return false;
     }
 
-    private static int[] getValues(int i1) {
-        int[] values = new int[5];
-        int u = i1 % 10;
+    private static int[] getValues(final int i1) {
+        final int[] values = new int[5];
+        final int u = i1 % 10;
         if (u > 4)
             return null;
-        int d = i1 / 10 % 10;
+        final int d = i1 / 10 % 10;
         if (d > 4)
             return null;
-        int c = i1 / 100 % 10;
+        final int c = i1 / 100 % 10;
         if (c > 4)
             return null;
-        int m1 = i1 / 1000 % 10;
+        final int m1 = i1 / 1000 % 10;
         if (m1 > 4)
             return null;
-        int m2 = i1 / 10000 % 10;
+        final int m2 = i1 / 10000 % 10;
         if (m2 > 4)
             return null;
         values[0] = u;
@@ -125,8 +125,8 @@ public final class UnPeuDeLogiquePur {
     }
 
     public void start() {
-        List<Rule> rules = new ArrayList<>();
-        List<PositionRule> positionRules = new ArrayList<>();
+        final List<Rule> rules = new ArrayList<>();
+        final List<PositionRule> positionRules = new ArrayList<>();
 
         // 1) qq_ est amateur de crackmes.
         rules.add(new CharactLink(Name.qq_, Domaine.crackmes));
@@ -183,22 +183,22 @@ public final class UnPeuDeLogiquePur {
         this.randomTries2(rules, positionRules);
     }
 
-    private int accept(List<Rule> rules, List<PositionRule> rules2, Person[] persons) {
+    private int accept(final List<Rule> rules, final List<PositionRule> rules2, final Person[] persons) {
         int count = 0;
-        for (Rule r : rules) {
+        for (final Rule r : rules) {
             count++;
-            for (Person p : persons) {
+            for (final Person p : persons) {
                 if (!r.accept(p)) {
                     return count;
                 }
             }
         }
 
-        for (PositionRule r : rules2) {
+        for (final PositionRule r : rules2) {
             count++;
-            for (Person p1 : persons) {
+            for (final Person p1 : persons) {
                 if (p1.hasCharacteristic(r.c1)) {
-                    for (Person p2 : persons) {
+                    for (final Person p2 : persons) {
                         if (p2.hasCharacteristic(r.c2)) {
                             if (p1 == p2) // not possible
                                 return count;
@@ -215,9 +215,9 @@ public final class UnPeuDeLogiquePur {
         return -1;
     }
 
-    public void print(Person[] persons) {
+    public void print(final Person[] persons) {
         System.out.println("\nShow the 5 persons :");
-        for (Person p : persons) {
+        for (final Person p : persons) {
             System.out.println("--" + p.name + "-- :");
             System.out.println("\t " + p.domaine + "");
             System.out.println("\t " + p.language + "");
@@ -228,18 +228,18 @@ public final class UnPeuDeLogiquePur {
         }
     }
 
-    private void randomTries2(List<Rule> rules, List<PositionRule> rules2) {
+    private void randomTries2(final List<Rule> rules, final List<PositionRule> rules2) {
         final Person[] persons = new Person[]{new Person(Name.Lebenfrau),
                 new Person(Name.CottCott), new Person(Name.qq_), new Person(Name.S0C13V3R),
                 new Person(Name.EiGhT),};
 
         int count = 0;
         int bestScore = 0;
-        List<Integer> used1 = new ArrayList<>();
-        List<Integer> used2 = new ArrayList<>();
-        List<Integer> used3 = new ArrayList<>();
-        List<Integer> used4 = new ArrayList<>();
-        List<Integer> used5 = new ArrayList<>();
+        final List<Integer> used1 = new ArrayList<>();
+        final List<Integer> used2 = new ArrayList<>();
+        final List<Integer> used3 = new ArrayList<>();
+        final List<Integer> used4 = new ArrayList<>();
+        final List<Integer> used5 = new ArrayList<>();
         while (true) {
             count++;
             used1.clear();
@@ -248,19 +248,19 @@ public final class UnPeuDeLogiquePur {
             used4.clear();
             used5.clear();
             for (int i = 0; i < 5; i++) {
-                int i1 = getRandomWithExclusion(used1);
+                final int i1 = getRandomWithExclusion(used1);
                 used1.add(i1);
                 Collections.sort(used1);
-                int i2 = getRandomWithExclusion(used2);
+                final int i2 = getRandomWithExclusion(used2);
                 used2.add(i2);
                 Collections.sort(used2);
-                int i3 = getRandomWithExclusion(used3);
+                final int i3 = getRandomWithExclusion(used3);
                 used3.add(i3);
                 Collections.sort(used3);
-                int i4 = getRandomWithExclusion(used4);
+                final int i4 = getRandomWithExclusion(used4);
                 used4.add(i4);
                 Collections.sort(used4);
-                int i5 = getRandomWithExclusion(used5);
+                final int i5 = getRandomWithExclusion(used5);
                 used5.add(i5);
                 Collections.sort(used5);
                 persons[i].setCharacteristic(this.languages[i1]);
@@ -269,7 +269,7 @@ public final class UnPeuDeLogiquePur {
                 persons[i].setCharacteristic(this.defauts[i4]);
                 persons[i].setCharacteristic(this.positions[i5]);
             }
-            int score = this.accept(rules, rules2, persons);
+            final int score = this.accept(rules, rules2, persons);
             if (score == -1) {
                 System.out.println("\n\nSolution found :");
                 this.print(persons);
@@ -291,7 +291,7 @@ public final class UnPeuDeLogiquePur {
     }
 
     @SuppressWarnings("unused")
-    private void randomTries3(List<Rule> rules, List<PositionRule> rules2) {
+    private void randomTries3(final List<Rule> rules, final List<PositionRule> rules2) {
         final Person[] persons = new Person[]{new Person(Name.Lebenfrau),
                 new Person(Name.CottCott), new Person(Name.qq_), new Person(Name.S0C13V3R),
                 new Person(Name.EiGhT),};
@@ -301,31 +301,31 @@ public final class UnPeuDeLogiquePur {
         for (int i1 = 1234; i1 < 150000; i1++) {
             if (hasDuplicates(i1))
                 continue;
-            int[] v1 = getValues(i1);
+            final int[] v1 = getValues(i1);
             if (v1 == null)
                 continue;
             for (int i2 = 1234; i2 < 150000; i2++) {
                 if (hasDuplicates(i2))
                     continue;
-                int[] v2 = getValues(i2);
+                final int[] v2 = getValues(i2);
                 if (v2 == null)
                     continue;
                 for (int i3 = 1234; i3 < 150000; i3++) {
                     if (hasDuplicates(i3))
                         continue;
-                    int[] v3 = getValues(i3);
+                    final int[] v3 = getValues(i3);
                     if (v3 == null)
                         continue;
                     for (int i4 = 1234; i4 < 150000; i4++) {
                         if (hasDuplicates(i4))
                             continue;
-                        int[] v4 = getValues(i4);
+                        final int[] v4 = getValues(i4);
                         if (v4 == null)
                             continue;
                         for (int i5 = 1234; i5 < 150000; i5++) {
                             if (hasDuplicates(i5))
                                 continue;
-                            int[] v5 = getValues(i5);
+                            final int[] v5 = getValues(i5);
                             if (v5 == null)
                                 continue;
 
@@ -338,7 +338,7 @@ public final class UnPeuDeLogiquePur {
                                 persons[i].setCharacteristic(this.defauts[v4[i]]);
                                 persons[i].setCharacteristic(this.positions[v5[i]]);
                             }
-                            int score = this.accept(rules, rules2, persons);
+                            final int score = this.accept(rules, rules2, persons);
                             if (score == -1) {
                                 System.out.println("\n\nSolution found :");
                                 this.print(persons);
@@ -385,7 +385,7 @@ public final class UnPeuDeLogiquePur {
 
         public final int value;
 
-        Position(int value) {
+        Position(final int value) {
             this.value = value;
         }
     }
@@ -409,11 +409,11 @@ public final class UnPeuDeLogiquePur {
         public Defaut defaut;
         public Position position;
 
-        public Person(Name name) {
+        public Person(final Name name) {
             this.name = name;
         }
 
-        public boolean hasCharacteristic(Characteristic aCharact) {
+        public boolean hasCharacteristic(final Characteristic aCharact) {
             if (aCharact instanceof Name)
                 return aCharact == this.name;
             if (aCharact instanceof Domaine)
@@ -429,7 +429,7 @@ public final class UnPeuDeLogiquePur {
             return false;
         }
 
-        public void setCharacteristic(Characteristic aCharact) {
+        public void setCharacteristic(final Characteristic aCharact) {
             if (aCharact instanceof Name)
                 this.name = (Name) aCharact;
             if (aCharact instanceof Domaine)
@@ -449,15 +449,15 @@ public final class UnPeuDeLogiquePur {
         public final Characteristic c1;
         public final Characteristic c2;
 
-        public CharactLink(Characteristic c1, Characteristic c2) {
+        public CharactLink(final Characteristic c1, final Characteristic c2) {
             this.c1 = c1;
             this.c2 = c2;
         }
 
         @Override
-        public boolean accept(Person p) {
-            boolean hasC1 = p.hasCharacteristic(this.c1);
-            boolean hasC2 = p.hasCharacteristic(this.c2);
+        public boolean accept(final Person p) {
+            final boolean hasC1 = p.hasCharacteristic(this.c1);
+            final boolean hasC2 = p.hasCharacteristic(this.c2);
             if (hasC1 && hasC2)
                 return true;
             if (hasC1)
@@ -469,12 +469,12 @@ public final class UnPeuDeLogiquePur {
     private class PositionRule extends CharactLink {
         private final PositionDiff diff;
 
-        public PositionRule(Characteristic c1, Characteristic c2, PositionDiff diff) {
+        public PositionRule(final Characteristic c1, final Characteristic c2, final PositionDiff diff) {
             super(c1, c2);
             this.diff = diff;
         }
 
-        public boolean acceptPositions(Person p1, Person p2) {
+        public boolean acceptPositions(final Person p1, final Person p2) {
             return this.diff.accept(p1.position, p2.position);
         }
     }

@@ -29,8 +29,8 @@ public class _Day02_2_Test extends AbstractTestForAdventOfCode {
             "10 | 20 | a | 123456789a1234567890 | true",
             "10 | 20 | a | 1234567890123456789a | true",
     })
-    void shouldFindResultInSmallNumberPool(int min, int max, char letter, String password, boolean isValid) {
-        boolean result = new _Day02_2().isValid(min, max, letter, password);
+    void shouldFindResultInSmallNumberPool(final int min, final int max, final char letter, final String password, final boolean isValid) {
+        final boolean result = new _Day02_2().isValid(min, max, letter, password);
         assertThat(result).isEqualTo(isValid);
     }
 
@@ -47,8 +47,8 @@ public class _Day02_2_Test extends AbstractTestForAdventOfCode {
             "10-20 a: 1234567890123456789a = true",
             "10-20 a: 123456789a1234567890 = true"
     })
-    void shouldFindResultInSmallNumberPool(String policy, boolean isValid) {
-        boolean result = new _Day02_2().isValid(policy);
+    void shouldFindResultInSmallNumberPool(final String policy, final boolean isValid) {
+        final boolean result = new _Day02_2().isValid(policy);
         assertThat(result).isEqualTo(isValid);
     }
 }

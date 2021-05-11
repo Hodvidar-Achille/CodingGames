@@ -5,8 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.hodvidar.utils.regex.StringAligner.alignLeft;
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static com.hodvidar.utils.regex.StringAligner.center;
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class StringAlignerTest {
 

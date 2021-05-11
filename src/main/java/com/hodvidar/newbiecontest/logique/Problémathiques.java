@@ -109,7 +109,7 @@ public class Problémathiques {
     private static final int numerateurOKsiKO = 31;
     private static final int denominateurOKIfKO = 2016;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("---TestPy---");
         fmt.setGroupingUsed(false);
         fmt.setMaximumIntegerDigits(999);
@@ -136,11 +136,11 @@ public class Problémathiques {
         writeProbNeverA(BigInteger.valueOf(62543), BigInteger.valueOf(63504), 2);
     }
 
-    private static void writeProbNeverA(BigInteger numerator1, BigInteger denomitator1, int step) {
+    private static void writeProbNeverA(final BigInteger numerator1, final BigInteger denomitator1, int step) {
         if (step > 20)
             return;
-        BigInteger numerator2;
-        BigInteger denomitator2;
+        final BigInteger numerator2;
+        final BigInteger denomitator2;
 
         numerator2 = BigInteger.valueOf(62543);
         denomitator2 = BigInteger.valueOf(63504);
@@ -149,7 +149,7 @@ public class Problémathiques {
         BigInteger denomitator = denomitator1.multiply(denomitator2);
         //  System.out.print("\n\tP(!A" + step + " | !A1->n-1) = " + fmt.format(numerator) + "/"
         //   + fmt.format(denomitator));
-        BigInteger[] simplefiedFraction = asFraction(numerator, denomitator);
+        final BigInteger[] simplefiedFraction = asFraction(numerator, denomitator);
         numerator = simplefiedFraction[0];
         denomitator = simplefiedFraction[1];
         System.out.print("\n\t[simplified] P(!A" + step + " | !A1->n-1) = " + numerator.toString()
@@ -164,7 +164,7 @@ public class Problémathiques {
     }
 
     // Look for probability Always have !An
-    private static void writeProbaNeverA(double numerateurKO, double denominateurKO, int i) {
+    private static void writeProbaNeverA(final double numerateurKO, final double denominateurKO, int i) {
         i++;
         System.out.print("\n\tCalculing...");
         // P(An | !An-1) = 31/63 * 1/32 = 31/2016
@@ -234,12 +234,12 @@ public class Problémathiques {
     /**
      * @return the greatest common denominator
      */
-    public static BigInteger gcm(BigInteger a, BigInteger b) {
+    public static BigInteger gcm(final BigInteger a, final BigInteger b) {
         return b.intValue() == 0 ? a : gcm(b, a.mod(b)); // Not bad for one line of code :)
     }
 
-    public static BigInteger[] asFraction(BigInteger a, BigInteger b) {
-        BigInteger gcm = gcm(a, b);
+    public static BigInteger[] asFraction(final BigInteger a, final BigInteger b) {
+        final BigInteger gcm = gcm(a, b);
         return new BigInteger[]{(a.divide(gcm)), (b.divide(gcm))};
     }
 
@@ -253,8 +253,8 @@ public class Problémathiques {
      * for j in xrange(k))
      * for i in xrange(n/(k-1)))
      */
-    private static boolean test(int n, int k) {
-        int[] values = new int[n];
+    private static boolean test(final int n, final int k) {
+        final int[] values = new int[n];
         for (int a = 0; a < n; a++)
             values[a] = (Math.random() < 0.5) ? 0 : 1;
 
@@ -262,7 +262,7 @@ public class Problémathiques {
         for (int i = 0; i < (n / (k - 1)); i++) {
             boolean subResult = true;
             for (int j = 0; j < k; j++) {
-                int index = (((k - 1) * i + j) % n);
+                final int index = (((k - 1) * i + j) % n);
                 // (1/2)^6 --> 1/64
                 if (values[index] == 0) {
                     subResult = false;
@@ -281,21 +281,21 @@ public class Problémathiques {
         return !result;
     }
 
-    private static boolean test2(int n, int k) {
-        Map<Integer, Integer> map = new HashMap<>();
+    private static boolean test2(final int n, final int k) {
+        final Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i <= 100; i++)
             map.put(Integer.valueOf(i), Integer.valueOf(0));
-        int[] values = new int[n];
+        final int[] values = new int[n];
         for (int a = 0; a < n; a++)
             values[a] = (Math.random() < 0.5) ? 0 : 1;
 
         boolean result = false;
         for (int i = 0; i < (n / (k - 1)); i++) {
             System.out.println(i);
-            boolean subResult = true;
+            final boolean subResult = true;
             for (int j = 0; j < k; j++) {
                 System.out.print("\t" + j);
-                int index = (((k - 1) * i + j) % n);
+                final int index = (((k - 1) * i + j) % n);
                 System.out.print(" = " + index);
                 int v = map.get(Integer.valueOf(index));
                 v++;
