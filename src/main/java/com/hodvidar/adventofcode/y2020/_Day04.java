@@ -15,9 +15,9 @@ public class _Day04 extends AbstractAdventOfCode {
     protected static final String COUNTRY_ID = "cid:";
 
     // not 122, not 227 and not 230
-    public static void main(String[] args) throws Exception {
-        _Day04 me = new _Day04();
-        int result = me.getResult(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day04 me = new _Day04();
+        final int result = me.getResult(me.getScanner());
         System.err.println("Expected '228' - result='" + result + "'");
     }
 
@@ -27,11 +27,11 @@ public class _Day04 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return numberOfValidPassport(sc);
     }
 
-    public int numberOfValidPassport(Scanner sc) {
+    public int numberOfValidPassport(final Scanner sc) {
         int validPassportCounter = 0;
         String passportData = "";
         String line;
@@ -50,7 +50,7 @@ public class _Day04 extends AbstractAdventOfCode {
         return validPassportCounter;
     }
 
-    public boolean isValid(String passportData) {
+    public boolean isValid(final String passportData) {
         return passportData.contains(BIRTH_YEAR)
                 && passportData.contains(ISSUE_YEAR)
                 && passportData.contains(EXPIRATION_YEAR)

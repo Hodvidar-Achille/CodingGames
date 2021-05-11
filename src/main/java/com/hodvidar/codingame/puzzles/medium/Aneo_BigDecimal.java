@@ -75,51 +75,51 @@ class Aneo_BigDecimal {
             JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
             JeuxDeTest.FeuxRapides};
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.err.println("Solution for: "
                 + " \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
                 + " \n -ROUNDING_MODE=" + ROUNDING_MODE
                 + " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL
                 + " \n -MINIMUM_TIME=" + MINIMUM_TIME);
 
-        Aneo_BigDecimal a = new Aneo_BigDecimal();
+        final Aneo_BigDecimal a = new Aneo_BigDecimal();
 
 
         if (!TESTING)
             a.doSolution();
         else {
-            for (JeuxDeTest test : tests)
+            for (final JeuxDeTest test : tests)
                 a.doSolution(test);
         }
     }
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    private void doSolution(JeuxDeTest jeuDeTest) {
-        int speed = jeuDeTest.speed;
-        int lightCount = jeuDeTest.lightCount;
+    private void doSolution(final JeuxDeTest jeuDeTest) {
+        final int speed = jeuDeTest.speed;
+        final int lightCount = jeuDeTest.lightCount;
 
         printIfVerbose("----------- Test '" + jeuDeTest + "' -----------");
 
         printIfVerbose("speed=" + speed);
         printIfVerbose("lightCount=" + lightCount);
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = jeuDeTest.distances[i];
-            int duration = jeuDeTest.durations[i];
+            final int distance = jeuDeTest.distances[i];
+            final int duration = jeuDeTest.durations[i];
             printIfVerbose("distance=" + distance);
             printIfVerbose("duration= " + duration);
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
             printIfVerbose("Possible max speed = " + calculator.getMaxSpeed());
         }
 
-        int expected = jeuDeTest.result;
-        int actual = calculator.getMaxSpeed();
+        final int expected = jeuDeTest.result;
+        final int actual = calculator.getMaxSpeed();
 
         printIfVerbose("Final result expected : " + expected);
         printIfVerbose("Final result actual : " + actual);
@@ -135,19 +135,19 @@ class Aneo_BigDecimal {
     // ------------------------ INTERNAL CLASSES -------------------------------------
 
     private void doSolution() {
-        Scanner in = new Scanner(System.in);
-        int speed = in.nextInt();
-        int lightCount = in.nextInt();
+        final Scanner in = new Scanner(System.in);
+        final int speed = in.nextInt();
+        final int lightCount = in.nextInt();
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = in.nextInt();
-            int duration = in.nextInt();
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final int distance = in.nextInt();
+            final int duration = in.nextInt();
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
         }
 
-        int actual = calculator.getMaxSpeed();
+        final int actual = calculator.getMaxSpeed();
         System.out.println(actual);
         in.close();
     }
@@ -198,7 +198,7 @@ class Aneo_BigDecimal {
         public final int[] durations;
         public final int result;
 
-        JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result) {
+        JeuxDeTest(final int speed, final int lightCount, final int[] distances, final int[] durations, final int result) {
             this.speed = speed;
             this.lightCount = lightCount;
             this.distances = distances;
@@ -211,7 +211,7 @@ class Aneo_BigDecimal {
         public final int distance;
         public final int duration;
 
-        public RoadSegment(int distance, int duration) {
+        public RoadSegment(final int distance, final int duration) {
             this.distance = distance;
             this.duration = duration;
         }
@@ -235,7 +235,7 @@ class Aneo_BigDecimal {
         protected final BigDecimal zero;
         private final SpeedCalculator speedCalculator;
 
-        public Interval(BigDecimal min, BigDecimal max, SpeedCalculator speedCalculator) {
+        public Interval(final BigDecimal min, final BigDecimal max, final SpeedCalculator speedCalculator) {
             this.min = min;
             this.max = max;
             if (this.min == null || this.max == null)
@@ -248,12 +248,12 @@ class Aneo_BigDecimal {
         }
 
         public boolean isEmpty() {
-            boolean isZero = this.min.intValue() == 0;
-            boolean minEqualsMax = this.min.compareTo(this.max) == 0;
+            final boolean isZero = this.min.intValue() == 0;
+            final boolean minEqualsMax = this.min.compareTo(this.max) == 0;
             return isZero && minEqualsMax;
         }
 
-        public boolean isOverlapping(Interval o) {
+        public boolean isOverlapping(final Interval o) {
             if (this.isEmpty() || o.isEmpty())
                 return false;
 
@@ -263,8 +263,8 @@ class Aneo_BigDecimal {
         }
 
         @Override
-        public int compareTo(Interval o) {
-            int min = this.min.compareTo(o.min);
+        public int compareTo(final Interval o) {
+            final int min = this.min.compareTo(o.min);
 
             if (min != 0)
                 return min;
@@ -279,15 +279,15 @@ class Aneo_BigDecimal {
         }
 
         @Override
-        public boolean equals(Object obj) {
+        public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
             if (!(obj instanceof Interval))
                 return false;
 
-            Interval o = (Interval) obj;
-            boolean sameMin = this.min.compareTo(o.min) == 0;
-            boolean sameMax = this.max.compareTo(o.max) == 0;
+            final Interval o = (Interval) obj;
+            final boolean sameMin = this.min.compareTo(o.min) == 0;
+            final boolean sameMax = this.max.compareTo(o.max) == 0;
             return sameMin && sameMax;
         }
 
@@ -298,7 +298,7 @@ class Aneo_BigDecimal {
     }
 
     final class EmptyInterval extends Interval {
-        public EmptyInterval(SpeedCalculator speedCalculator) {
+        public EmptyInterval(final SpeedCalculator speedCalculator) {
             super(static_zero, static_zero, speedCalculator);
         }
     }
@@ -307,7 +307,7 @@ class Aneo_BigDecimal {
         private final SpeedCalculator speedCalculator;
         private final EmptyInterval EMPTY;
 
-        private IntervalHandler(SpeedCalculator speedCalculator) {
+        private IntervalHandler(final SpeedCalculator speedCalculator) {
             this.speedCalculator = speedCalculator;
             EMPTY = new EmptyInterval(this.speedCalculator);
         }
@@ -318,14 +318,14 @@ class Aneo_BigDecimal {
          * [-20, 20] & [-5, 5] --> [-5, 5]. <br/>
          * [10, 10] & [-100, 100] --> [0, 0].(EMPTY) <br/>
          */
-        public Interval getIntervalIntersection(Interval i1, Interval i2) {
+        public Interval getIntervalIntersection(final Interval i1, final Interval i2) {
             if (i1.isEmpty() || i2.isEmpty())
                 return EMPTY;
             if (!i1.isOverlapping(i2))
                 return EMPTY;
 
-            BigDecimal min = i1.min.max(i2.min);
-            BigDecimal max = i1.max.min(i2.max);
+            final BigDecimal min = i1.min.max(i2.min);
+            final BigDecimal max = i1.max.min(i2.max);
 
             // For now Interval is open, so not empty if min == max != 0.
             //		if (min.compareTo(max) == 0)
@@ -340,7 +340,7 @@ class Aneo_BigDecimal {
          * [-20, 20] & [-5, 5] --> [-20, 20]. <br/>
          * [10, 10] & [-100, 100] --> [-100, 100]. <br/>
          */
-        public List<Interval> getIntervalUnion(Interval i1, Interval i2) {
+        public List<Interval> getIntervalUnion(final Interval i1, final Interval i2) {
             if (i1.isEmpty())
                 return toList(i2);
             if (i2.isEmpty())
@@ -348,15 +348,15 @@ class Aneo_BigDecimal {
             if (!i1.isOverlapping(i2))
                 return toList(i1, i2);
 
-            BigDecimal min = i1.min.min(i2.min);
-            BigDecimal max = i1.max.max(i2.max);
+            final BigDecimal min = i1.min.min(i2.min);
+            final BigDecimal max = i1.max.max(i2.max);
 
             return toList(new Interval(min, max, speedCalculator));
         }
 
-        private List<Interval> toList(Interval... intervals) {
-            List<Interval> newIntervals = new ArrayList<>();
-            for (Interval i : intervals)
+        private List<Interval> toList(final Interval... intervals) {
+            final List<Interval> newIntervals = new ArrayList<>();
+            for (final Interval i : intervals)
                 newIntervals.add(i);
             Collections.sort(newIntervals);
             return newIntervals;
@@ -367,20 +367,20 @@ class Aneo_BigDecimal {
          * Note : both list must be sorted.
          */
         public List<Interval> getIntervalIntersections(
-                List<Interval> intervals_1,
-                List<Interval> intervals_2) {
+                final List<Interval> intervals_1,
+                final List<Interval> intervals_2) {
             printIfVerbose("getIntervalIntersections...");
             if (intervals_1.isEmpty() || intervals_2.isEmpty())
                 return Collections.emptyList();
 
-            List<Interval> intersectionCollector = new ArrayList<>();
+            final List<Interval> intersectionCollector = new ArrayList<>();
 
             // Collections.sort(intervals_1);
             // Collections.sort(intervals_2);
 
             // Could this be optimized ?
-            for (Interval i1 : intervals_1) {
-                for (Interval i2 : intervals_2) {
+            for (final Interval i1 : intervals_1) {
+                for (final Interval i2 : intervals_2) {
                     // Because the list are sorted, if first element is
                     // already too high, directly go to next i1.
                     if (i1.max.compareTo(i2.min) == -1)
@@ -388,7 +388,7 @@ class Aneo_BigDecimal {
                     // If i2 too little, skip.
                     if (i2.max.compareTo(i1.min) == -1)
                         continue;
-                    Interval intersection = getIntervalIntersection(i1, i2);
+                    final Interval intersection = getIntervalIntersection(i1, i2);
                     if (!intersection.isEmpty())
                         printIfVerbose("i1" + i1.toString() + " \u2229 i2" + i2.toString()
                                 + " --> " + intersection.toString());
@@ -404,16 +404,16 @@ class Aneo_BigDecimal {
          * to implement;
          */
         public List<Interval> getIntervalUnions(
-                List<Interval> intervals_1,
-                List<Interval> intervals_2) {
+                final List<Interval> intervals_1,
+                final List<Interval> intervals_2) {
             return Collections.emptyList();
         }
 
         /**
          * Returns true if any interval, in the list, overlap with another.
          */
-        public boolean isOverlapping(List<Interval> intervals) {
-            int size = intervals.size();
+        public boolean isOverlapping(final List<Interval> intervals) {
+            final int size = intervals.size();
             if (size == 0)
                 return false;
 
@@ -422,8 +422,8 @@ class Aneo_BigDecimal {
                 for (int j = 0; j < size; j++) {
                     if (j == i)
                         continue;
-                    Interval i1 = intervals.get(i);
-                    Interval i2 = intervals.get(j);
+                    final Interval i1 = intervals.get(i);
+                    final Interval i2 = intervals.get(j);
                     if (i1.isOverlapping(i2))
                         return true;
                 }
@@ -452,58 +452,58 @@ class Aneo_BigDecimal {
         private final BigDecimal coefSpeed = new BigDecimal("3.6");
         private List<Interval> possibleSpeeds = new ArrayList<>();
 
-        public SpeedCalculator(int maximumSpeed) {
+        public SpeedCalculator(final int maximumSpeed) {
             printIfVerbose("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
             this.maxValue = new BigDecimal("99999999");
             this.min = getSpeedInMeterPerSecond(1);
             this.max = getSpeedInMeterPerSecond(maximumSpeed);
-            Interval firstInterval = new Interval(this.min, this.max, this);
+            final Interval firstInterval = new Interval(this.min, this.max, this);
             this.possibleSpeeds.add(firstInterval);
             this.intervalHandler = new IntervalHandler(this);
         }
 
         public int getMaxSpeed() {
             Collections.sort(this.possibleSpeeds);
-            int size = this.possibleSpeeds.size();
+            final int size = this.possibleSpeeds.size();
             if (size == 0)
                 return 0;
-            Interval higherInterval = this.possibleSpeeds.get(this.possibleSpeeds.size() - 1);
-            BigDecimal maxSpeedInMeterPerSecond = higherInterval.max;
-            int maxSpeedInKmPerHour = getSpeedInKmPerHour(maxSpeedInMeterPerSecond);
+            final Interval higherInterval = this.possibleSpeeds.get(this.possibleSpeeds.size() - 1);
+            final BigDecimal maxSpeedInMeterPerSecond = higherInterval.max;
+            final int maxSpeedInKmPerHour = getSpeedInKmPerHour(maxSpeedInMeterPerSecond);
             return maxSpeedInKmPerHour;
         }
 
         /**
          * Adapt the possibleSpeed intervals to handle this new segment.
          */
-        public void addRoadSegment(RoadSegment aRoadSegment) {
+        public void addRoadSegment(final RoadSegment aRoadSegment) {
             printIfVerbose("addRoadSegment(" + aRoadSegment.distance + ", "
                     + aRoadSegment.duration + ")");
             // This could probably be optimized.
             // 1) finds intervals possibles for this segment
-            List<Interval> newPossibleSpeeds = this.getIntervalsForRoadSegment(aRoadSegment);
+            final List<Interval> newPossibleSpeeds = this.getIntervalsForRoadSegment(aRoadSegment);
             // 2) find the intersections of these intervals with previous intervals
             this.possibleSpeeds = intervalHandler.getIntervalIntersections(
                     this.possibleSpeeds,
                     newPossibleSpeeds);
         }
 
-        private List<Interval> getIntervalsForRoadSegment(RoadSegment aRoadSegment) {
+        private List<Interval> getIntervalsForRoadSegment(final RoadSegment aRoadSegment) {
             printIfVerbose("getIntervalsForRoadSegment...");
             // Start to look for possible speeds from the max speed to the minimum speed;
-            BigDecimal distance = new BigDecimal(Double.toString(aRoadSegment.distance));
+            final BigDecimal distance = new BigDecimal(Double.toString(aRoadSegment.distance));
             BigDecimal duration = new BigDecimal(Double.toString(aRoadSegment.duration));
-            BigDecimal durationIncrement = duration.add(duration);
-            List<Interval> speedIntervalCollector = new ArrayList<>();
+            final BigDecimal durationIncrement = duration.add(duration);
+            final List<Interval> speedIntervalCollector = new ArrayList<>();
 
             BigDecimal minDuration = new BigDecimal("0");
             Interval previousInterval = null;
-            BigDecimal minimumTime = MINIMUM_TIME;
-            BigDecimal minimumInterval = MINIMUM_INTERVAL;
+            final BigDecimal minimumTime = MINIMUM_TIME;
+            final BigDecimal minimumInterval = MINIMUM_INTERVAL;
             while (true) {
-                BigDecimal durationLimit = duration.subtract(minimumTime);
-                BigDecimal minSpeedToPass = distance.divide(durationLimit, DECIMAL_ACCURACY, ROUNDING_MODE);
-                BigDecimal maxSpeedToPass;
+                final BigDecimal durationLimit = duration.subtract(minimumTime);
+                final BigDecimal minSpeedToPass = distance.divide(durationLimit, DECIMAL_ACCURACY, ROUNDING_MODE);
+                final BigDecimal maxSpeedToPass;
                 if (minDuration.doubleValue() != 0d)
                     maxSpeedToPass = distance.divide(minDuration, DECIMAL_ACCURACY, ROUNDING_MODE);
                 else //
@@ -513,8 +513,8 @@ class Aneo_BigDecimal {
                 if (maxSpeedToPass.compareTo(this.min) == -1)
                     break;
 
-                BigDecimal cappedMinSpeedToPass = minSpeedToPass.max(this.min);
-                BigDecimal cappedMaxSpeedToPass = maxSpeedToPass.min(this.max);
+                final BigDecimal cappedMinSpeedToPass = minSpeedToPass.max(this.min);
+                final BigDecimal cappedMaxSpeedToPass = maxSpeedToPass.min(this.max);
 
                 // Set parameters for next loop.
                 duration = duration.add(durationIncrement);
@@ -522,7 +522,7 @@ class Aneo_BigDecimal {
 
                 // Ignore case where minimum speed is already too high.
                 if (cappedMinSpeedToPass.compareTo(cappedMaxSpeedToPass) == 1) {
-                    Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass, this);
+                    final Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass, this);
                     printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
                             + " to travel " + distance.intValue() + " meters in less than "
                             + roundTo2Decimals((duration.doubleValue() - MINIMUM_TIME.doubleValue() - durationIncrement.doubleValue()))
@@ -531,14 +531,14 @@ class Aneo_BigDecimal {
                 }
 
                 // Check if interval is too narrow to be achieved.
-                BigDecimal interval = cappedMaxSpeedToPass.subtract(cappedMinSpeedToPass);
+                final BigDecimal interval = cappedMaxSpeedToPass.subtract(cappedMinSpeedToPass);
                 if (interval.compareTo(minimumInterval) == -1)
                     break;
                 // In case we do not have interval check, stop at 0.
                 if (cappedMinSpeedToPass.intValue() == 0 && cappedMaxSpeedToPass.intValue() == 0)
                     break;
 
-                Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass, this);
+                final Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass, this);
 
                 // Ignore identical results (but should this happen ?).
                 if (speedInterval.equals(previousInterval))
@@ -558,10 +558,10 @@ class Aneo_BigDecimal {
             return speedIntervalCollector;
         }
 
-        public BigDecimal getSpeedInMeterPerSecond(int speedInKmPerHour) {
+        public BigDecimal getSpeedInMeterPerSecond(final int speedInKmPerHour) {
             // * (5/18)
-            BigDecimal speedToConvert = new BigDecimal(speedInKmPerHour);
-            BigDecimal speedConverted = speedToConvert.divide(coefSpeed, DECIMAL_ACCURACY, ROUNDING_MODE);
+            final BigDecimal speedToConvert = new BigDecimal(speedInKmPerHour);
+            final BigDecimal speedConverted = speedToConvert.divide(coefSpeed, DECIMAL_ACCURACY, ROUNDING_MODE);
             return speedConverted;
         }
 
@@ -569,19 +569,19 @@ class Aneo_BigDecimal {
          * @param speedInMeterPersecond
          * @return speedInKmPerHour as an integer (possible lost of accuracy).
          */
-        public int getSpeedInKmPerHour(BigDecimal speedInMeterPersecond) {
+        public int getSpeedInKmPerHour(final BigDecimal speedInMeterPersecond) {
             // * (18 / 5)
-            BigDecimal speedConverted = speedInMeterPersecond.multiply(coefSpeed);
+            final BigDecimal speedConverted = speedInMeterPersecond.multiply(coefSpeed);
             return speedConverted.intValue();
         }
 
         // ---- Rounding methods ----
-        public double roundTo2Decimals(double number) {
+        public double roundTo2Decimals(final double number) {
             return roundToXDecimals(number, 2);
         }
 
-        public double roundToXDecimals(double number, int decimal) {
-            double x = Math.pow(10.0, decimal);
+        public double roundToXDecimals(final double number, final int decimal) {
+            final double x = Math.pow(10.0, decimal);
             return Math.round(number * x) / x;
         }
 

@@ -24,52 +24,52 @@ public final class _Day03_2 {
     private static final int NUMBER_OF_TEST = 4;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
-        File file = new File(inputFile);
+    private static int test(final String inputFile) throws Exception {
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // 2 Lines
-        String line1 = sc.nextLine();
-        String line2 = sc.nextLine();
+        final String line1 = sc.nextLine();
+        final String line2 = sc.nextLine();
         sc.close();
 
-        String[] directions1 = line1.split(",");
-        String[] directions2 = line2.split(",");
+        final String[] directions1 = line1.split(",");
+        final String[] directions2 = line2.split(",");
 
-        Point origin = new Point(0, 0);
+        final Point origin = new Point(0, 0);
 
-        WireBuilder wb1 = new WireBuilder(origin);
-        WireBuilder wb2 = new WireBuilder(origin);
+        final WireBuilder wb1 = new WireBuilder(origin);
+        final WireBuilder wb2 = new WireBuilder(origin);
 
-        for (String d : directions1)
+        for (final String d : directions1)
             wb1.addInstruction(d);
-        for (String d : directions2)
+        for (final String d : directions2)
             wb2.addInstruction(d);
 
-        Wire w1 = wb1.getWire();
-        Wire w2 = wb2.getWire();
+        final Wire w1 = wb1.getWire();
+        final Wire w2 = wb2.getWire();
 
-        List<Point> intersections = w1.getIntersections(w2);
+        final List<Point> intersections = w1.getIntersections(w2);
 
         double minDistance = Double.MAX_VALUE;
-        for (Point p : intersections) {
+        for (final Point p : intersections) {
             if (p.equals(origin))
                 continue;
-            double d1 = w1.intersectDistance(p);
-            double d2 = w2.intersectDistance(p);
-            double dT = d1 + d2;
+            final double d1 = w1.intersectDistance(p);
+            final double d2 = w2.intersectDistance(p);
+            final double dT = d1 + d2;
             printIfVerbose("Point: " + p + " d1=" + d1 + "  d2=" + d2 + "  \tdT=" + dT);
             // ---- There is a bug... (containing it) ----
             if (d1 < 0 || d2 < 0)

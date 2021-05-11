@@ -30,7 +30,7 @@ public final class RobotRepair {
     private final String LEFT = "W";
     private final String[] DIRECTIONS = new String[]{UP, RIGHT, DOWN, LEFT};
 
-    public RobotRepair(double[] memory, boolean verbose) {
+    public RobotRepair(final double[] memory, final boolean verbose) {
         this.maze = new MazeSurface();
         this.brain = new Amplifier(memory);
         this.path = new ArrayList<>();
@@ -43,7 +43,7 @@ public final class RobotRepair {
             this.maze.printInConsole();
     }
 
-    private double getDirectionNumberFromString(String s) {
+    private double getDirectionNumberFromString(final String s) {
         switch (s) {
             case UP:
                 return 1;
@@ -74,7 +74,7 @@ public final class RobotRepair {
         // Explore map
         exploreAll();
         PaintedPoint oxygen = null;
-        for (PaintedPoint p : this.maze.paintedPoints) {
+        for (final PaintedPoint p : this.maze.paintedPoints) {
             if (p.value == MazePoint.OXYGEN) {
                 oxygen = p;
                 continue;
@@ -101,11 +101,11 @@ public final class RobotRepair {
         startExploration(start_x, start_y, false);
     }
 
-    private void startExploration(int x, int y, boolean stopIfGoalFound) {
-        MazePoint start = this.maze.getMazePoint(x, y);
-        for (String newDirection : DIRECTIONS) {
-            int newX = getXForDirection(x, newDirection);
-            int newY = getYForDirection(y, newDirection);
+    private void startExploration(final int x, final int y, final boolean stopIfGoalFound) {
+        final MazePoint start = this.maze.getMazePoint(x, y);
+        for (final String newDirection : DIRECTIONS) {
+            final int newX = getXForDirection(x, newDirection);
+            final int newY = getYForDirection(y, newDirection);
             if (explore(newX, newY, x, y, start, path, stopIfGoalFound)) {
                 if (stopIfGoalFound)
                     return; // Stop exploration when Goal is found.
@@ -115,9 +115,9 @@ public final class RobotRepair {
             System.out.println("path.size==" + path.size());
     }
 
-    private boolean explore(int x, int y, int previousX, int previousY,
-                            MazePoint previousPoint, List<MazePoint> path,
-                            boolean stopIfFoalFound) {
+    private boolean explore(final int x, final int y, final int previousX, final int previousY,
+                            final MazePoint previousPoint, final List<MazePoint> path,
+                            final boolean stopIfFoalFound) {
         if (isAlreadyKnown(x, y)) {
             return false;
         }
@@ -126,10 +126,10 @@ public final class RobotRepair {
             this.maze.printInConsole();
 
         // Actually make the robot try to move to (x, y)
-        String d = getDirectionToGoTo(previousX, previousY, x, y);
+        final String d = getDirectionToGoTo(previousX, previousY, x, y);
         this.brain.setInput(getDirectionNumberFromString(d));
         this.brain.runProgram();
-        double result = this.brain.getOutput();
+        final double result = this.brain.getOutput();
         if (result == 0) {
             this.maze.paintPointWithScore(x, y, 0, -1);
             return false;
@@ -147,11 +147,11 @@ public final class RobotRepair {
                     previousPoint.getCountFromStart() + 1);
         }
 
-        MazePoint current = this.maze.getMazePoint(x, y);
+        final MazePoint current = this.maze.getMazePoint(x, y);
 
-        for (String newDirection : DIRECTIONS) {
-            int newX = getXForDirection(x, newDirection);
-            int newY = getYForDirection(y, newDirection);
+        for (final String newDirection : DIRECTIONS) {
+            final int newX = getXForDirection(x, newDirection);
+            final int newY = getYForDirection(y, newDirection);
             if (explore(newX, newY, x, y, current, path, stopIfFoalFound)) {
                 path.add(current);
                 if (stopIfFoalFound)
@@ -160,52 +160,52 @@ public final class RobotRepair {
         }
 
         // Go back to previous point
-        String goBackDirection = getDirectionToGoTo(x, y, previousX, previousY);
+        final String goBackDirection = getDirectionToGoTo(x, y, previousX, previousY);
         this.brain.setInput(getDirectionNumberFromString(goBackDirection));
         this.brain.runProgram();
         // No need to check answer
         return false;
     }
 
-    private void start2ndExploration(int x, int y) {
-        MazePoint start = this.maze.getMazePoint(x, y);
-        for (String newDirection : DIRECTIONS) {
-            int newX = getXForDirection(x, newDirection);
-            int newY = getYForDirection(y, newDirection);
+    private void start2ndExploration(final int x, final int y) {
+        final MazePoint start = this.maze.getMazePoint(x, y);
+        for (final String newDirection : DIRECTIONS) {
+            final int newX = getXForDirection(x, newDirection);
+            final int newY = getYForDirection(y, newDirection);
             explore2nd(newX, newY, x, y, start);
         }
     }
 
     // Recursively explore all
-    private void explore2nd(int x, int y, int previousX, int previousY,
-                            MazePoint previousPoint) {
+    private void explore2nd(final int x, final int y, final int previousX, final int previousY,
+                            final MazePoint previousPoint) {
         if (isAlreadyKnown(x, y)) {
             return;
         }
 
-        MazePoint current = this.maze.getMazePoint(x, y);
+        final MazePoint current = this.maze.getMazePoint(x, y);
         // p.value is UNKNOWN
         current.value = MazePoint.EMPTY;
         current.setCountFromStart(previousPoint.getCountFromStart() + 1);
 
-        for (String newDirection : DIRECTIONS) {
-            int newX = getXForDirection(x, newDirection);
-            int newY = getYForDirection(y, newDirection);
+        for (final String newDirection : DIRECTIONS) {
+            final int newX = getXForDirection(x, newDirection);
+            final int newY = getYForDirection(y, newDirection);
             explore2nd(newX, newY, x, y, current);
         }
 
         // end of exploration for this Point.
     }
 
-    private boolean isAlreadyKnown(int x, int y) {
-        MazePoint m = this.maze.getMazePoint(x, y);
+    private boolean isAlreadyKnown(final int x, final int y) {
+        final MazePoint m = this.maze.getMazePoint(x, y);
         if (m == null)
             return false;
         return m.value != MazePoint.UNKOWN;
     }
 
-    private String getDirectionToGoTo(int currentX, int currentY, int goalX,
-                                      int goalY) {
+    private String getDirectionToGoTo(final int currentX, final int currentY, final int goalX,
+                                      final int goalY) {
         if (currentX == goalX && currentY == goalY)
             throw new IllegalStateException(
                     "PreviousX&Y == currentX&Y, should not happen.");
@@ -226,7 +226,7 @@ public final class RobotRepair {
         }
     }
 
-    private int getXForDirection(int currentX, String direction) {
+    private int getXForDirection(final int currentX, final String direction) {
         if (RIGHT.equals(direction))
             return currentX + 1;
         if (LEFT.equals(direction))
@@ -234,7 +234,7 @@ public final class RobotRepair {
         return currentX;
     }
 
-    private int getYForDirection(int currentY, String direction) {
+    private int getYForDirection(final int currentY, final String direction) {
         if (UP.equals(direction))
             return currentY + 1;
         if (DOWN.equals(direction))

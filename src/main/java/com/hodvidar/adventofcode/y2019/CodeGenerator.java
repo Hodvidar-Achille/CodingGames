@@ -8,7 +8,7 @@ public final class CodeGenerator {
     private final int min;
     private final int max;
 
-    public CodeGenerator(int min, int max) {
+    public CodeGenerator(final int min, final int max) {
         this.min = min;
         this.max = max;
     }
@@ -24,42 +24,42 @@ public final class CodeGenerator {
      * @param length - of each code.
      * @return List of codes where each digits is only used once.
      */
-    public Collection<String> generateUniqueDigitCode(int length) {
+    public Collection<String> generateUniqueDigitCode(final int length) {
         if (length - 1 > max - min)
             throw new IllegalStateException("Length of unique digit code "
                     + "cannot be more than the given interval." + " length="
                     + length + " and interval: min=" + min + " max=" + max);
 
-        List<String> codes = new ArrayList<>();
+        final List<String> codes = new ArrayList<>();
         generate(length, new ArrayList<>(), codes);
         return codes;
     }
 
-    private void generate(int length, List<Integer> values, List<String> codes) {
+    private void generate(final int length, final List<Integer> values, final List<String> codes) {
         for (int i = min; i <= max; i++) {
             if (alredyExists(i, values))
                 continue;
             if (length == 1) {
                 codes.add(intToString(i, values));
             } else {
-                List<Integer> valuesBis = new ArrayList<>(values);
+                final List<Integer> valuesBis = new ArrayList<>(values);
                 valuesBis.add(i);
                 generate(length - 1, valuesBis, codes);
             }
         }
     }
 
-    private boolean alredyExists(int i, List<Integer> values) {
-        for (int v : values) {
+    private boolean alredyExists(final int i, final List<Integer> values) {
+        for (final int v : values) {
             if (i == v)
                 return true;
         }
         return false;
     }
 
-    private String intToString(int i, List<Integer> values) {
+    private String intToString(final int i, final List<Integer> values) {
         String s = i + "";
-        for (int v : values) {
+        for (final int v : values) {
             s += v;
         }
         return s;

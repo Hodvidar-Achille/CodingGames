@@ -25,36 +25,36 @@ public final class _Day16_2 {
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
     private static final int dixMille = 10000;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test5.txt");
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test6.txt");
-        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+        final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '???' - result='" + result + "'");
     }
 
-    private static String subTest(String inputFile) throws Exception {
+    private static String subTest(final String inputFile) throws Exception {
         System.err.println("Computing on file:" + inputFile);
         String line = "";
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
+        final File file = new File(inputFile);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // Create the elements
-        long before = System.currentTimeMillis();
+        final long before = System.currentTimeMillis();
         String expectedResult = "";
         line = sc.nextLine();
-        List<Integer> numbers = new ArrayList<>();
-        for (char c : line.toCharArray()) {
+        final List<Integer> numbers = new ArrayList<>();
+        for (final char c : line.toCharArray()) {
             numbers.add(Integer.parseInt("" + c));
         }
         expectedResult = sc.nextLine(); // Solution Day16_2
@@ -62,15 +62,15 @@ public final class _Day16_2 {
 
         // The first seven digits of your initial input signal
         // also represent the message offset.
-        Integer offSet = Integer.parseInt(toString(numbers).substring(0, 7));
+        final Integer offSet = Integer.parseInt(toString(numbers).substring(0, 7));
         // x1000
-        List<Integer> numbers2 = new ArrayList<>(numbers.size() * 1000);
+        final List<Integer> numbers2 = new ArrayList<>(numbers.size() * 1000);
         int counter = 1;
         while (counter <= dixMille) {
             numbers2.addAll(numbers);
             counter++;
         }
-        List<Integer> basePattern = new ArrayList<>();
+        final List<Integer> basePattern = new ArrayList<>();
         basePattern.add(0);
         basePattern.add(1);
         basePattern.add(0);
@@ -79,27 +79,27 @@ public final class _Day16_2 {
         String result = FFT_start(numbers2, basePattern, 100);
         printIfVerbose("Work ended.");
         result = result.substring(offSet, offSet + 8);
-        long after = System.currentTimeMillis();
-        long diff = after - before;
-        String diffStr = MillisecondeFormater.asTime(diff);
+        final long after = System.currentTimeMillis();
+        final long diff = after - before;
+        final String diffStr = MillisecondeFormater.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "' took:" + diffStr);
         return "" + result;
     }
 
-    private static String test(String inputFile) throws Exception {
+    private static String test(final String inputFile) throws Exception {
         return subTest(inputFile);
     }
 
-    private static String FFT_start(List<Integer> numbers,
-                                    List<Integer> pattern, int phase) {
-        List<Integer> integers = FFT_sub(numbers, pattern, phase);
+    private static String FFT_start(final List<Integer> numbers,
+                                    final List<Integer> pattern, final int phase) {
+        final List<Integer> integers = FFT_sub(numbers, pattern, phase);
         return toString(integers);
     }
 
-    private static String toString(List<Integer> numbers) {
+    private static String toString(final List<Integer> numbers) {
         String s = "";
-        for (Integer i : numbers) {
+        for (final Integer i : numbers) {
             s += i;
         }
         return s;
@@ -116,9 +116,9 @@ public final class _Day16_2 {
      * @param phase
      * @return
      */
-    private static List<Integer> FFT_sub(List<Integer> numbers,
-                                         List<Integer> pattern, int phase) {
-        List<Integer> newNumbers = FFT_work(numbers, pattern);
+    private static List<Integer> FFT_sub(final List<Integer> numbers,
+                                         final List<Integer> pattern, int phase) {
+        final List<Integer> newNumbers = FFT_work(numbers, pattern);
 
         if (VERBOSE && (phase % 20) == 0) {
             System.out.println("Phase:" + phase + " liste:\n"
@@ -143,10 +143,10 @@ public final class _Day16_2 {
      * @param pattern
      * @return
      */
-    private static List<Integer> FFT_work(List<Integer> numbers,
-                                          List<Integer> pattern) {
-        List<Integer> newNumbers = new ArrayList<>(numbers.size());
-        int maxI = numbers.size();
+    private static List<Integer> FFT_work(final List<Integer> numbers,
+                                          final List<Integer> pattern) {
+        final List<Integer> newNumbers = new ArrayList<>(numbers.size());
+        final int maxI = numbers.size();
         for (int i = 0; i < maxI; i++) {
             newNumbers.add(
                     getNewElement(numbers, computePattern(pattern, i + 1), i));
@@ -154,11 +154,11 @@ public final class _Day16_2 {
         return newNumbers;
     }
 
-    private static List<Integer> computePattern(List<Integer> pattern,
-                                                int index) {
-        List<Integer> newPattern = new ArrayList<>(pattern.size() * index);
+    private static List<Integer> computePattern(final List<Integer> pattern,
+                                                final int index) {
+        final List<Integer> newPattern = new ArrayList<>(pattern.size() * index);
         for (int i = 0; i < pattern.size(); i++) {
-            Integer p = pattern.get(i);
+            final Integer p = pattern.get(i);
             for (int j = 0; j < index; j++) {
                 newPattern.add(p);
             }
@@ -175,12 +175,12 @@ public final class _Day16_2 {
      * @param pattern
      * @return
      */
-    private static int getNewElement(List<Integer> numbers,
-                                     List<Integer> pattern, int index) {
+    private static int getNewElement(final List<Integer> numbers,
+                                     final List<Integer> pattern, final int index) {
         double result = 0;
         int j = 0;
-        int maxI = numbers.size();
-        int maxJ = pattern.size();
+        final int maxI = numbers.size();
+        final int maxJ = pattern.size();
         if (index > (maxI / 2)) // optimized
         {
             for (int i = index; i < maxI; i++) {
@@ -196,7 +196,7 @@ public final class _Day16_2 {
         return getLastDigit(result);
     }
 
-    private static int truncateValue(int value, int maxAuthorized) {
+    private static int truncateValue(int value, final int maxAuthorized) {
         while (value >= maxAuthorized) {
             value -= maxAuthorized;
         }
@@ -209,7 +209,7 @@ public final class _Day16_2 {
      * @param i
      * @return
      */
-    private static int getLastDigit(double i) {
+    private static int getLastDigit(final double i) {
         return (int) (Math.abs(i) % 10);
     }
 }

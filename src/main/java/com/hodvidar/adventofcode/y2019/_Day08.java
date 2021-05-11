@@ -19,31 +19,31 @@ public final class _Day08 {
     private static final int HIGH = 6;
     private static final int TOTAL = WIDE * HIGH;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static int test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         line = sc.nextLine();
         sc.close();
-        Map<Integer, Layer> layers = new HashMap<>();
+        final Map<Integer, Layer> layers = new HashMap<>();
         int i = 0;
-        for (char c : line.toCharArray()) {
-            int digit = Integer.parseInt("" + c);
-            Integer layerNumber = (i / TOTAL) + 1;
+        for (final char c : line.toCharArray()) {
+            final int digit = Integer.parseInt("" + c);
+            final Integer layerNumber = (i / TOTAL) + 1;
             Layer layer = layers.get(layerNumber);
             if (layer == null) {
                 layer = new Layer(WIDE, HIGH);
@@ -56,15 +56,15 @@ public final class _Day08 {
         int minZero = Integer.MAX_VALUE;
         Integer numberOfLayer = 0;
         for (int n = 1; n <= layers.size(); n++) {
-            Layer l = layers.get(n);
-            int nbZero = l.getNumberOfZero();
+            final Layer l = layers.get(n);
+            final int nbZero = l.getNumberOfZero();
             if (nbZero < minZero) {
                 minZero = nbZero;
                 numberOfLayer = n;
             }
         }
 
-        Layer finalLayer = layers.get(numberOfLayer);
+        final Layer finalLayer = layers.get(numberOfLayer);
 
         return finalLayer.getNumberOfOne() * finalLayer.getNumberOfTwo();
     }

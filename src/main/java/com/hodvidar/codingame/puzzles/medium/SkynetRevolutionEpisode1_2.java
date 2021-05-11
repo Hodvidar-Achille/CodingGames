@@ -10,48 +10,47 @@ import java.util.Scanner;
  **/
 class SkynetRevolutionEpisode1_2 {
 
-    public static void main(String[] args) {
-        SkynetRevolutionEpisode1_2 s = new SkynetRevolutionEpisode1_2();
+    public static void main(final String[] args) {
+        final SkynetRevolutionEpisode1_2 s = new SkynetRevolutionEpisode1_2();
         s.test();
     }
 
     private void test() {
-        @SuppressWarnings("resource")
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt(); // the total number of nodes in the level, including the gateways
-        int L = in.nextInt(); // the number of links
-        int E = in.nextInt(); // the number of exit gateways
-        List<Integer> nodes = new ArrayList<>();
-        List<Edge> edges = new ArrayList<>();
+        @SuppressWarnings("resource") final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt(); // the total number of nodes in the level, including the gateways
+        final int L = in.nextInt(); // the number of links
+        final int E = in.nextInt(); // the number of exit gateways
+        final List<Integer> nodes = new ArrayList<>();
+        final List<Edge> edges = new ArrayList<>();
         System.err.println("    nb nodes = " + N + " nb links = " + L + " nb exits = " + E);
         for (int i = 0; i < L; i++) {
-            int N1 = in.nextInt(); // N1 and N2 defines a link between these nodes
-            int N2 = in.nextInt();
+            final int N1 = in.nextInt(); // N1 and N2 defines a link between these nodes
+            final int N2 = in.nextInt();
             if (!nodes.contains(N1))
                 nodes.add(N1);
             if (!nodes.contains(N2))
                 nodes.add(N2);
-            Edge edge = new Edge(N1, N2);
+            final Edge edge = new Edge(N1, N2);
             edges.add(edge);
             System.err.println(N1 + " <-> " + N2);
         }
-        List<Integer> exists = new ArrayList<>();
+        final List<Integer> exists = new ArrayList<>();
         for (int i = 0; i < E; i++) {
-            int EI = in.nextInt(); // the index of a gateway node
+            final int EI = in.nextInt(); // the index of a gateway node
             exists.add(EI);
             System.err.println(EI + " --> ");
         }
 
-        List<Edge> edges2 = new ArrayList<>(edges);
+        final List<Edge> edges2 = new ArrayList<>(edges);
         // build List of exists Edges
-        List<Edge> existEdges = new ArrayList<>();
+        final List<Edge> existEdges = new ArrayList<>();
 
-        for (Edge ed : edges2) {
-            for (Integer ex : exists) {
+        for (final Edge ed : edges2) {
+            for (final Integer ex : exists) {
                 if (ed.getDestination() == ex || ed.getSource() == ex) {
                     existEdges.add(ed);
-                    int n1 = ed.getSource();
-                    int n2 = ed.getDestination();
+                    final int n1 = ed.getSource();
+                    final int n2 = ed.getDestination();
                     System.err.println("existEdge : " + n1 + " - " + n2);
                 }
             }
@@ -59,7 +58,7 @@ class SkynetRevolutionEpisode1_2 {
 
         // game loop
         while (true) {
-            int SI = in.nextInt(); // The index of the node on which the Skynet agent is positioned this turn
+            final int SI = in.nextInt(); // The index of the node on which the Skynet agent is positioned this turn
             System.err.println("XoX in " + SI);
             // Write an action using System.out.println()
             // To debug: System.err.println("Debug messages...");
@@ -70,7 +69,7 @@ class SkynetRevolutionEpisode1_2 {
             int n1 = -1;
             int n2 = -1;
             Edge edgeToRemove = null;
-            for (Edge ed : existEdges) {
+            for (final Edge ed : existEdges) {
                 if (ed.getSource() == SI || ed.getDestination() == SI) {
                     n1 = ed.getSource();
                     n2 = ed.getDestination();
@@ -84,7 +83,7 @@ class SkynetRevolutionEpisode1_2 {
             if (doCut) {
                 existEdges.remove(edgeToRemove);
             } else {
-                for (Edge ed : existEdges) {
+                for (final Edge ed : existEdges) {
                     n1 = ed.getSource();
                     n2 = ed.getDestination();
                     existEdges.remove(ed);
@@ -102,7 +101,7 @@ class SkynetRevolutionEpisode1_2 {
         private final int source;
         private final int destination;
 
-        public Edge(int aSource, int aDestination) {
+        public Edge(final int aSource, final int aDestination) {
             this.source = aSource;
             this.destination = aDestination;
         }

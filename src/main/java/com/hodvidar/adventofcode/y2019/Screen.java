@@ -6,7 +6,7 @@ public final class Screen {
     private final Map<Integer, Layer> layers;
     private final Layer finalLayer;
 
-    public Screen(Map<Integer, Layer> layers, int wide, int height) {
+    public Screen(final Map<Integer, Layer> layers, final int wide, final int height) {
         this.layers = layers;
         this.finalLayer = new Layer(wide, height);
         this.buildFinalLayer();
@@ -18,10 +18,10 @@ public final class Screen {
         }
     }
 
-    private int getTopNonTransparentPixel(int p) {
+    private int getTopNonTransparentPixel(final int p) {
         for (int i = 1; i <= this.layers.size(); i++) {
-            Layer l = this.layers.get(i);
-            int pixel = l.pixels[p];
+            final Layer l = this.layers.get(i);
+            final int pixel = l.pixels[p];
             if (pixel == 0 || pixel == 1)
                 return pixel;
             // if '2' continue;

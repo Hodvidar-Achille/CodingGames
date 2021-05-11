@@ -46,21 +46,21 @@ public final class OpCodeReader {
     private OpCodeReaderInputCallBack caller;
     private double relative_base = 0;
 
-    public OpCodeReader(double[] memory) {
+    public OpCodeReader(final double[] memory) {
         this.memory = memory;
     }
 
-    public OpCodeReader(double[] memory, OpCodeReaderInputCallBack aCaller) {
+    public OpCodeReader(final double[] memory, final OpCodeReaderInputCallBack aCaller) {
         this.memory = memory;
         this.caller = aCaller;
     }
 
-    private void printIfVerbose(String s) {
+    private void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public void changeMemoryAdressValue(int addr, double value) {
+    public void changeMemoryAdressValue(final int addr, final double value) {
         this.memory[addr] = value;
     }
 
@@ -87,7 +87,7 @@ public final class OpCodeReader {
      *
      * @param i - an input, cannot be <code>null</code>.
      */
-    public void setInput(double i) {
+    public void setInput(final double i) {
         this.input = i;
     }
 
@@ -96,7 +96,7 @@ public final class OpCodeReader {
      *
      * @param p - the Phase value, can be <code>null</code>.
      */
-    public void setPhaseInput(Double p) {
+    public void setPhaseInput(final Double p) {
         this.phaseInput = p;
     }
 
@@ -117,9 +117,9 @@ public final class OpCodeReader {
      * @param start  - the given position.
      * @return an array of length 2 with array[0] the endCode, array[1] the current position;
      */
-    public double[] run(int start) {
+    public double[] run(final int start) {
         for (int i = start; i < this.memory.length; /* empty increment, do it yourself */) {
-            int code = (int) this.memory[i];
+            final int code = (int) this.memory[i];
             if (code == 99) {
                 return new double[]{code, i};
             }
@@ -141,11 +141,11 @@ public final class OpCodeReader {
      * @param i    - the position in the array
      * @return i modified
      */
-    private int readCode(int code, int i) {
+    private int readCode(final int code, final int i) {
         return readCode(code, i, POSITION_MODE, POSITION_MODE, POSITION_MODE);
     }
 
-    private int readCode(int code, int i, int param1, int param2, int param3) {
+    private int readCode(final int code, final int i, final int param1, final int param2, final int param3) {
         //		printIfVerbose("code: '" + code + "'  position: '" + i
         //				+ "' relative_base=" + this.relative_base + " p1:" + param1
         //				+ " p2:" + param2 + " p3:" + param3);
@@ -194,10 +194,10 @@ public final class OpCodeReader {
      * @return i modified (+4).
      * @since Day2
      */
-    private int opCode1(int i, int param1, int param2, int param3) {
-        double v1 = getValue(i + 1, param1);
-        double v2 = getValue(i + 2, param2);
-        int p3 = getPosition(i + 3, param3);
+    private int opCode1(int i, final int param1, final int param2, final int param3) {
+        final double v1 = getValue(i + 1, param1);
+        final double v2 = getValue(i + 2, param2);
+        final int p3 = getPosition(i + 3, param3);
         this.setMemoryValue(v1 + v2, p3);
         i = i + 4;
         return i;
@@ -216,10 +216,10 @@ public final class OpCodeReader {
      * @return i modified (+4).
      * @since Day2
      */
-    private int opCode2(int i, int param1, int param2, int param3) {
-        double v1 = getValue(i + 1, param1);
-        double v2 = getValue(i + 2, param2);
-        int p3 = getPosition(i + 3, param3);
+    private int opCode2(int i, final int param1, final int param2, final int param3) {
+        final double v1 = getValue(i + 1, param1);
+        final double v2 = getValue(i + 2, param2);
+        final int p3 = getPosition(i + 3, param3);
         this.setMemoryValue(v1 * v2, p3);
         i = i + 4;
         return i;
@@ -235,9 +235,9 @@ public final class OpCodeReader {
      * @return i modified (+2)
      * @since Day5
      */
-    private int opCode3(int i, int param1) {
+    private int opCode3(int i, final int param1) {
         // int p1 = getPosition(i + 1, param1);
-        int p1 = (int) (getMemoryValue(i + 1) + this.relative_base);
+        final int p1 = (int) (getMemoryValue(i + 1) + this.relative_base);
         this.setMemoryValue(getInput(), p1);
         i = i + 2;
         return i;
@@ -253,8 +253,8 @@ public final class OpCodeReader {
      * @return i modified (+2)
      * @since Day5
      */
-    private int opCode4(int i, int param1) {
-        double v1 = getValue(i + 1, param1);
+    private int opCode4(int i, final int param1) {
+        final double v1 = getValue(i + 1, param1);
         output = v1;
         i = i + 2;
         return i;
@@ -271,10 +271,10 @@ public final class OpCodeReader {
      * @return i modified (? or +3)
      * @since Day5
      */
-    private int opCode5(int i, int param1, int param2) {
-        double v1 = getValue(i + 1, param1);
+    private int opCode5(int i, final int param1, final int param2) {
+        final double v1 = getValue(i + 1, param1);
         if (v1 != 0) {
-            double v2 = getValue(i + 2, param2);
+            final double v2 = getValue(i + 2, param2);
             i = (int) v2;
             return i;
         }
@@ -293,10 +293,10 @@ public final class OpCodeReader {
      * @return i modified (? or +3)
      * @since Day5
      */
-    private int opCode6(int i, int param1, int param2) {
-        double v1 = getValue(i + 1, param1);
+    private int opCode6(int i, final int param1, final int param2) {
+        final double v1 = getValue(i + 1, param1);
         if (v1 == 0) {
-            double v2 = getValue(i + 2, param2);
+            final double v2 = getValue(i + 2, param2);
             i = (int) v2;
             return i;
         }
@@ -315,10 +315,10 @@ public final class OpCodeReader {
      * @return i modified (+4)
      * @since Day5
      */
-    private int opCode7(int i, int param1, int param2, int param3) {
-        double v1 = getValue(i + 1, param1);
-        double v2 = getValue(i + 2, param2);
-        int p3 = getPosition(i + 3, param3);
+    private int opCode7(int i, final int param1, final int param2, final int param3) {
+        final double v1 = getValue(i + 1, param1);
+        final double v2 = getValue(i + 2, param2);
+        final int p3 = getPosition(i + 3, param3);
         if (v1 < v2) {
             this.setMemoryValue(1, p3);
         } else {
@@ -339,10 +339,10 @@ public final class OpCodeReader {
      * @return i modified (+4)
      * @since Day5
      */
-    private int opCode8(int i, int param1, int param2, int param3) {
-        double v1 = getValue(i + 1, param1);
-        double v2 = getValue(i + 2, param2);
-        int p3 = getPosition(i + 3, param3);
+    private int opCode8(int i, final int param1, final int param2, final int param3) {
+        final double v1 = getValue(i + 1, param1);
+        final double v2 = getValue(i + 2, param2);
+        final int p3 = getPosition(i + 3, param3);
         if (v1 == v2) {
             this.setMemoryValue(1, p3);
         } else {
@@ -362,8 +362,8 @@ public final class OpCodeReader {
      * @return i modified (+2)
      * @since Day9
      */
-    private int opCode9(int i, int param1) {
-        double v1 = getValue(i + 1, param1);
+    private int opCode9(int i, final int param1) {
+        final double v1 = getValue(i + 1, param1);
         this.relative_base += v1;
         i = i + 2;
         return i;
@@ -380,15 +380,15 @@ public final class OpCodeReader {
      * @param i
      * @return i modified (?)
      */
-    private int opCodeWithParam(int code, int i) {
-        int subCode = code % 100;
+    private int opCodeWithParam(final int code, final int i) {
+        final int subCode = code % 100;
         if (!isSupporterOpCode(subCode))
             throw new IllegalStateException(
                     "This case should happen ? code=" + code);
 
-        int modeFor3 = code / 10000;
-        int modeFor2 = (code / 1000) % 10;
-        int modeFor1 = (code / 100) % 10;
+        final int modeFor3 = code / 10000;
+        final int modeFor2 = (code / 1000) % 10;
+        final int modeFor1 = (code / 100) % 10;
 
         return readCode(subCode, i, modeFor1, modeFor2, modeFor3);
     }
@@ -401,7 +401,7 @@ public final class OpCodeReader {
      * @param paramMode
      * @return
      */
-    private int getPosition(int pos, int paramMode) {
+    private int getPosition(int pos, final int paramMode) {
         if (paramMode == RELATIVE_MODE) {
             // 1)
             // --
@@ -432,24 +432,24 @@ public final class OpCodeReader {
      * @param paramMode - the mode see {@link #SUPPORTED_MODES}
      * @return
      */
-    private double getValue(int pos, int paramMode) {
+    private double getValue(final int pos, final int paramMode) {
         if (!isSupporterMode(paramMode))
             throw new IllegalStateException(
                     "This case should not happen paramMode=" + paramMode);
 
         if (paramMode == IMMEDIATE_MODE) // '1'
         {
-            double param = getMemoryValue(pos);
+            final double param = getMemoryValue(pos);
             return param;
         }
         if (paramMode == POSITION_MODE) // '0'
         {
-            double param = getMemoryValue(pos);
+            final double param = getMemoryValue(pos);
             return getMemoryValue((int) param);
         }
         if (paramMode == RELATIVE_MODE) // '2'
         {
-            double param = getMemoryValue(pos);
+            final double param = getMemoryValue(pos);
             return getMemoryValue((int) (param + this.relative_base));
         }
 
@@ -465,7 +465,7 @@ public final class OpCodeReader {
      * @param value
      * @param position
      */
-    private void setMemoryValue(double value, int position) {
+    private void setMemoryValue(final double value, final int position) {
         checkPositionInMemory(position);
         this.memory[position] = value;
     }
@@ -477,7 +477,7 @@ public final class OpCodeReader {
      * @param value
      * @param position
      */
-    private double getMemoryValue(int position) {
+    private double getMemoryValue(final int position) {
         checkPositionInMemory(position);
         return this.memory[position];
     }
@@ -487,11 +487,11 @@ public final class OpCodeReader {
      *
      * @param position
      */
-    private void checkPositionInMemory(int position) {
+    private void checkPositionInMemory(final int position) {
         if (position < this.memory.length)
             return;
 
-        double[] longerMemory = new double[position + 100];
+        final double[] longerMemory = new double[position + 100];
         for (int i = 0; i < this.memory.length; i++) {
             longerMemory[i] = this.memory[i];
         }
@@ -499,16 +499,16 @@ public final class OpCodeReader {
 
     }
 
-    private boolean isSupporterMode(int mode) {
-        for (int c : SUPPORTED_MODES) {
+    private boolean isSupporterMode(final int mode) {
+        for (final int c : SUPPORTED_MODES) {
             if (mode == c)
                 return true;
         }
         return false;
     }
 
-    private boolean isSupporterOpCode(int subCode) {
-        for (int c : SUPPORTED_OPCODES) {
+    private boolean isSupporterOpCode(final int subCode) {
+        for (final int c : SUPPORTED_OPCODES) {
             if (subCode == c)
                 return true;
         }
@@ -516,9 +516,9 @@ public final class OpCodeReader {
     }
 
     @SuppressWarnings("unused")
-    private String arrayToString(double[] opCode) {
-        StringBuilder sb = new StringBuilder();
-        int f = opCode.length - 1;
+    private String arrayToString(final double[] opCode) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = opCode.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(opCode[i]).append(",");

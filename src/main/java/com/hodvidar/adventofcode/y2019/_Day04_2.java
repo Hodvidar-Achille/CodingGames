@@ -8,13 +8,13 @@ public final class _Day04_2 {
     private static final int MIN = 272091;
     private static final int MAX = 815432;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        double result = test();
+    public static void main(final String[] args) throws Exception {
+        final double result = test();
         System.err.println("result='" + result + "'");
     }
 
@@ -38,11 +38,11 @@ public final class _Day04_2 {
         return counter;
     }
 
-    private static boolean isOK(int i1, int i2, int i3, int i4, int i5, int i6) {
+    private static boolean isOK(final int i1, final int i2, final int i3, final int i4, final int i5, final int i6) {
         return atleastOneDoubleThatIsAlone(i1, i2, i3, i4, i5, i6) && isInRange(i1, i2, i3, i4, i5, i6);
     }
 
-    private static boolean atleastOneDoubleThatIsAlone(int i1, int i2, int i3, int i4, int i5, int i6) {
+    private static boolean atleastOneDoubleThatIsAlone(final int i1, final int i2, final int i3, final int i4, final int i5, final int i6) {
         if (i1 == i2) {
             if (i2 != i3)
                 return true;
@@ -65,9 +65,9 @@ public final class _Day04_2 {
         return false;
     }
 
-    private static boolean isInRange(int i1, int i2, int i3, int i4, int i5, int i6) {
-        String s = "" + i1 + "" + i2 + "" + i3 + "" + i4 + "" + i5 + "" + i6;
-        int i = Integer.parseInt(s);
+    private static boolean isInRange(final int i1, final int i2, final int i3, final int i4, final int i5, final int i6) {
+        final String s = "" + i1 + "" + i2 + "" + i3 + "" + i4 + "" + i5 + "" + i6;
+        final int i = Integer.parseInt(s);
         return i > MIN && i < MAX;
     }
 

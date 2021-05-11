@@ -10,11 +10,11 @@ public abstract class PaintedSurface {
 
     public abstract PaintedPoint getPaintedPointImpl(double x, double y);
 
-    public void paintPoint(double x, double y, int value) {
+    public void paintPoint(final double x, final double y, final int value) {
         PaintedPoint p = this.getPaintedPointImpl(x, y);
         if (paintedPoints.contains(p)) {
             // retrieve the Panel that already exist
-            for (PaintedPoint p2 : this.paintedPoints) {
+            for (final PaintedPoint p2 : this.paintedPoints) {
                 if (p2.equals(p)) {
                     p = p2;
                     break;
@@ -28,10 +28,10 @@ public abstract class PaintedSurface {
         p.paint(value);
     }
 
-    public PaintedPoint getPaintedPoint(double x, double y) {
-        PaintedPoint p = this.getPaintedPointImpl(x, y);
+    public PaintedPoint getPaintedPoint(final double x, final double y) {
+        final PaintedPoint p = this.getPaintedPointImpl(x, y);
         if (paintedPoints.contains(p)) {
-            for (PaintedPoint p2 : this.paintedPoints) {
+            for (final PaintedPoint p2 : this.paintedPoints) {
                 if (p2.equals(p)) {
                     return p2;
                 }
@@ -46,12 +46,12 @@ public abstract class PaintedSurface {
         return this.paintedPoints.size();
     }
 
-    public int getPaintedPointValue(double x, double y) {
-        Point p = new Point(x, y);
+    public int getPaintedPointValue(final double x, final double y) {
+        final Point p = new Point(x, y);
         if (!paintedPoints.contains(p))
             return PaintedPoint.DEFAULT;
 
-        for (PaintedPoint p2 : this.paintedPoints) {
+        for (final PaintedPoint p2 : this.paintedPoints) {
             if (p2.equals(p)) {
                 return p2.getValue();
             }
@@ -61,9 +61,9 @@ public abstract class PaintedSurface {
                 "getPanelColor should not reach this point.");
     }
 
-    public int countPointWithValue(int value) {
+    public int countPointWithValue(final int value) {
         int c = 0;
-        for (PaintedPoint p : this.paintedPoints) {
+        for (final PaintedPoint p : this.paintedPoints) {
             if (p.getValue() == value)
                 c++;
         }
@@ -80,9 +80,9 @@ public abstract class PaintedSurface {
         if (this.paintedPoints.size() == 0)
             return;
 
-        for (Point p : this.paintedPoints) {
-            int x = (int) p.x;
-            int y = (int) p.y;
+        for (final Point p : this.paintedPoints) {
+            final int x = (int) p.x;
+            final int y = (int) p.y;
             if (x < minX)
                 minX = x;
             if (x > maxX)
@@ -94,11 +94,11 @@ public abstract class PaintedSurface {
         }
 
         // Range found
-        int wide = (maxX - minX) + 1;
-        int height = (maxY - minY) + 1;
+        final int wide = (maxX - minX) + 1;
+        final int height = (maxY - minY) + 1;
 
         // default value is 0 (for dark, perfect)
-        PaintedPoint[][] surface = new PaintedPoint[height][wide];
+        final PaintedPoint[][] surface = new PaintedPoint[height][wide];
         // Fill with default values
         // ---
         for (int y = height - 1; y >= 0; y--) {
@@ -109,7 +109,7 @@ public abstract class PaintedSurface {
         // ---
 
         // 2) Apply color on the surface for the painted panel
-        for (PaintedPoint p : this.paintedPoints) {
+        for (final PaintedPoint p : this.paintedPoints) {
             int x = (int) p.x;
             int y = (int) p.y;
 

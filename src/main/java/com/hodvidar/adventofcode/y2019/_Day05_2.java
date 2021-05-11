@@ -23,12 +23,12 @@ public final class _Day05_2 {
     private static final List<Integer> outputs = new ArrayList<>();
     private static final int input = 5;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
@@ -38,33 +38,33 @@ public final class _Day05_2 {
         System.err.println("Expected '5893654' - result='" + result + "'");
     }
 
-    private static String test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static String test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         line = sc.nextLine();
-        String[] opCodeStr = line.split(",");
+        final String[] opCodeStr = line.split(",");
         sc.close();
-        double[] opCode = new double[opCodeStr.length];
+        final double[] opCode = new double[opCodeStr.length];
         for (int i = 0; i < opCodeStr.length; i++) {
-            String s = opCodeStr[i];
-            int j = Integer.parseInt(s);
+            final String s = opCodeStr[i];
+            final int j = Integer.parseInt(s);
             opCode[i] = j;
         }
 
-        OpCodeReader cr = new OpCodeReader(opCode);
+        final OpCodeReader cr = new OpCodeReader(opCode);
         cr.setInput(input);
         outputs.add((int) cr.getOutput());
 
         return arrayToString(opCode);
     }
 
-    private static String arrayToString(double[] array) {
-        StringBuilder sb = new StringBuilder();
-        int f = array.length - 1;
+    private static String arrayToString(final double[] array) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = array.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(array[i]).append(",");
@@ -74,9 +74,9 @@ public final class _Day05_2 {
         return sb.toString();
     }
 
-    private static String arrayToString(Integer[] array) {
-        StringBuilder sb = new StringBuilder();
-        int f = array.length - 1;
+    private static String arrayToString(final Integer[] array) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = array.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(array[i]).append(",");

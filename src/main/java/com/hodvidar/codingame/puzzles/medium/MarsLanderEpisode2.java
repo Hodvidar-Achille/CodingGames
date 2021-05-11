@@ -16,10 +16,9 @@ class MarsLanderEpisode2 {
     private static final int SECURITY_DISTANCE_FROM_FLAT_GROUND = 50;
 
     @SuppressWarnings("unused")
-    public static void main(String[] args) {
-        @SuppressWarnings("resource")
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt(); // the number of points used to draw the surface of Mars.
+    public static void main(final String[] args) {
+        @SuppressWarnings("resource") final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt(); // the number of points used to draw the surface of Mars.
 
         int flatGroundLeftX = -1;
         int flatGroundRightX = -1;
@@ -28,8 +27,8 @@ class MarsLanderEpisode2 {
         int previousPointX = -1;
         int previousPointY = -1;
         for (int i = 0; i < N; i++) {
-            int LAND_X = in.nextInt(); // X coordinate of a surface point. (0 to 6999)
-            int LAND_Y = in.nextInt(); // Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
+            final int LAND_X = in.nextInt(); // X coordinate of a surface point. (0 to 6999)
+            final int LAND_Y = in.nextInt(); // Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
             if (previousPointY == LAND_Y) {
                 flatGroundLeftX = previousPointX;
                 flatGroundRightX = LAND_X;
@@ -43,11 +42,11 @@ class MarsLanderEpisode2 {
         // game loop
         while (true) {
 
-            int X = in.nextInt();
-            int Y = in.nextInt();
-            int HS = in.nextInt(); // the horizontal speed (in m/s), can be negative.
-            int VS = in.nextInt(); // the vertical speed (in m/s), can be negative.
-            int F = in.nextInt(); // the quantity of remaining fuel in liters.
+            final int X = in.nextInt();
+            final int Y = in.nextInt();
+            final int HS = in.nextInt(); // the horizontal speed (in m/s), can be negative.
+            final int VS = in.nextInt(); // the vertical speed (in m/s), can be negative.
+            final int F = in.nextInt(); // the quantity of remaining fuel in liters.
             int R = in.nextInt(); // the rotation angle in degrees (-90 to 90).
             int P = in.nextInt(); // the thrust power (0 to 4).
 
@@ -95,38 +94,38 @@ class MarsLanderEpisode2 {
     }
 
     private static boolean isMarsLanderFlyingOverFlatGround(
-            int marsLanderX,
-            int flatGroundLeftX,
-            int flatGroundRightX) {
+            final int marsLanderX,
+            final int flatGroundLeftX,
+            final int flatGroundRightX) {
         return marsLanderX >= flatGroundLeftX && marsLanderX <= flatGroundRightX;
     }
 
-    private static boolean isMarsLanderAboutToLand(int marsLanderY, int flatGroundY) {
+    private static boolean isMarsLanderAboutToLand(final int marsLanderY, final int flatGroundY) {
         return marsLanderY < flatGroundY + SECURITY_DISTANCE_FROM_FLAT_GROUND;
     }
 
     private static boolean areMarsLanderSpeedLimitsSatisfied(
-            int marsLanderHorizontalSpeed,
-            int marsLanderVerticalSpeed) {
+            final int marsLanderHorizontalSpeed,
+            final int marsLanderVerticalSpeed) {
         return Math.abs(marsLanderHorizontalSpeed) <= (MAX_HORIZONTAL_SPEED - EPSILON)
                 && Math.abs(marsLanderVerticalSpeed) <= (MAX_VERTICAL_SPEED - EPSILON);
     }
 
-    private static int calculateRotationToSlowDownMarsLander(int hs, int vs) {
+    private static int calculateRotationToSlowDownMarsLander(final int hs, final int vs) {
         System.err.println("--- calculateRotationToSlowDownMarsLander ---");
-        double s = Math.sqrt(Math.pow(hs, 2) + Math.pow(vs, 2));
-        double r = Math.asin(hs / s);
-        double d = Math.toDegrees(r);
+        final double s = Math.sqrt(Math.pow(hs, 2) + Math.pow(vs, 2));
+        final double r = Math.asin(hs / s);
+        final double d = Math.toDegrees(r);
         System.err.println("HS: " + hs + " VS: " + vs + " r: " + r + " d:" + d);
         System.err.println("--- --- ---");
         return (int) d;
     }
 
     private static boolean isMarsLanderFlyingInTheWrongDirection(
-            int marsLanderX,
-            int marsLanderHorizontalSpeed,
-            int flatGroundLeftX,
-            int flatGroundRightX) {
+            final int marsLanderX,
+            final int marsLanderHorizontalSpeed,
+            final int flatGroundLeftX,
+            final int flatGroundRightX) {
 
         if (marsLanderX < flatGroundLeftX && marsLanderHorizontalSpeed < 0) {
             return true;
@@ -135,18 +134,18 @@ class MarsLanderEpisode2 {
         return marsLanderX > flatGroundRightX && marsLanderHorizontalSpeed > 0;
     }
 
-    private static boolean isMarsLanderFlyingTooFastTowardsFlatGround(int marsLanderHorizontalSpeed) {
+    private static boolean isMarsLanderFlyingTooFastTowardsFlatGround(final int marsLanderHorizontalSpeed) {
         return Math.abs(marsLanderHorizontalSpeed) > (MAX_HORIZONTAL_SPEED * 4);
     }
 
-    private static boolean isMarsLanderFlyingTooSlowTowardsFlatGround(int marsLanderHorizontalSpeed) {
+    private static boolean isMarsLanderFlyingTooSlowTowardsFlatGround(final int marsLanderHorizontalSpeed) {
         return Math.abs(marsLanderHorizontalSpeed) < (MAX_HORIZONTAL_SPEED * 2);
     }
 
     private static int calculateRotationToSpeedUpMarsLanderTowardsFlatGround(
-            int marsLanderX,
-            int flatGroundLeftX,
-            int flatGroundRightX) {
+            final int marsLanderX,
+            final int flatGroundLeftX,
+            final int flatGroundRightX) {
 
         if (marsLanderX < flatGroundLeftX) {
             return -(int) Math.toDegrees(Math.acos(GRAVITY / 4.0));
@@ -159,7 +158,7 @@ class MarsLanderEpisode2 {
         return 0;
     }
 
-    private static int calculateThrustPowerToFlyTowardsFlatGround(int marsLanderVerticalSpeed) {
+    private static int calculateThrustPowerToFlyTowardsFlatGround(final int marsLanderVerticalSpeed) {
         System.err.println("calculateThrustPowerToFlyTowardsFlatGround...");
         return (marsLanderVerticalSpeed >= 0) ? 3 : 4;
     }

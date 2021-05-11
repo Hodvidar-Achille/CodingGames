@@ -9,20 +9,20 @@ public class Bag {
 
     public final Map<Bag, Integer> children = new HashMap<>();
 
-    public Bag(String name) {
+    public Bag(final String name) {
         this.name = name;
     }
 
-    public void addChild(Bag aBag) {
+    public void addChild(final Bag aBag) {
         this.children.put(aBag, 1);
     }
 
-    public void addChildWithNumber(Bag aBag, int numberOfChildrenBag) {
+    public void addChildWithNumber(final Bag aBag, final int numberOfChildrenBag) {
         this.children.put(aBag, numberOfChildrenBag);
     }
 
-    public boolean containsBag(String bagName) {
-        for (Bag b : this.children.keySet()) {
+    public boolean containsBag(final String bagName) {
+        for (final Bag b : this.children.keySet()) {
             if (b.name.equals(bagName)) {
                 return true;
             }
@@ -35,10 +35,10 @@ public class Bag {
 
     public int countAllChildrenBag() {
         int counter = 0;
-        for (Map.Entry<Bag, Integer> bagAndNumber : this.children.entrySet()) {
-            Bag b = bagAndNumber.getKey();
-            Integer n = bagAndNumber.getValue();
-            int numberOfChildrenInChild = b.countAllChildrenBag();
+        for (final Map.Entry<Bag, Integer> bagAndNumber : this.children.entrySet()) {
+            final Bag b = bagAndNumber.getKey();
+            final Integer n = bagAndNumber.getValue();
+            final int numberOfChildrenInChild = b.countAllChildrenBag();
             counter += n + (n * numberOfChildrenInChild);
         }
         return counter;

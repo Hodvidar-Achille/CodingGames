@@ -7,27 +7,27 @@ public final class MazeSurface extends PaintedSurface {
     }
 
     @Override
-    public PaintedPoint getPaintedPointImpl(double x, double y) {
+    public PaintedPoint getPaintedPointImpl(final double x, final double y) {
         return new MazePoint(x, y, 3);
     }
 
     public int getHigherPathValue() {
         int max = 0;
-        for (PaintedPoint p : this.paintedPoints) {
-            MazePoint m = (MazePoint) p;
-            int v = m.getCountFromStart();
+        for (final PaintedPoint p : this.paintedPoints) {
+            final MazePoint m = (MazePoint) p;
+            final int v = m.getCountFromStart();
             if (v > max)
                 max = v;
         }
         return max;
     }
 
-    public void paintPointWithScore(double x, double y, int value,
-                                    int countFromStart) {
+    public void paintPointWithScore(final double x, final double y, final int value,
+                                    final int countFromStart) {
         PaintedPoint p = this.getPaintedPointImpl(x, y);
         if (paintedPoints.contains(p)) {
             // retrieve the Panel that already exist
-            for (PaintedPoint p2 : this.paintedPoints) {
+            for (final PaintedPoint p2 : this.paintedPoints) {
                 if (p2.equals(p)) {
                     p = p2;
                     break;
@@ -38,11 +38,11 @@ public final class MazeSurface extends PaintedSurface {
             paintedPoints.add(p);
         }
         p.paint(value);
-        MazePoint m = (MazePoint) p;
+        final MazePoint m = (MazePoint) p;
         m.setCountFromStart(countFromStart);
     }
 
-    public MazePoint getMazePoint(double x, double y) {
+    public MazePoint getMazePoint(final double x, final double y) {
         return (MazePoint) this.getPaintedPoint(x, y);
     }
 

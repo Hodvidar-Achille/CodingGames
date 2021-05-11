@@ -10,19 +10,19 @@ import java.util.Scanner;
  **/
 class TelephoneNumbers {
 
-    public static void main(String[] args) {
-        TelephoneNumbers s = new TelephoneNumbers();
+    public static void main(final String[] args) {
+        final TelephoneNumbers s = new TelephoneNumbers();
         s.test();
     }
 
     private void test() {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        Node rootNode = new Node(-1);
+        final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt();
+        final Node rootNode = new Node(-1);
         for (int i = 0; i < N; i++) {
-            String telephone = in.next();
-            char[] numberChar = telephone.toCharArray();
-            int[] number = new int[numberChar.length];
+            final String telephone = in.next();
+            final char[] numberChar = telephone.toCharArray();
+            final int[] number = new int[numberChar.length];
             for (int j = 0; j < numberChar.length; j++) {
                 number[j] = Integer.parseInt("" + numberChar[j]);
             }
@@ -31,7 +31,7 @@ class TelephoneNumbers {
 
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
-        int answer = rootNode.numberOfChild();
+        final int answer = rootNode.numberOfChild();
 
 
         // The number of elements (referencing a number) stored in the structure.
@@ -46,7 +46,7 @@ class TelephoneNumbers {
 
         private final List<Node> children;
 
-        public Node(int v) {
+        public Node(final int v) {
             this.value = v;
             children = new ArrayList<>();
         }
@@ -59,15 +59,15 @@ class TelephoneNumbers {
             return children;
         }
 
-        public void addChild(Node child) {
+        public void addChild(final Node child) {
             this.children.add(child);
         }
 
-        public void addChildren(int[] values, int start, int length) {
+        public void addChildren(final int[] values, final int start, final int length) {
             if (start == length)
                 return;
 
-            int v = values[start];
+            final int v = values[start];
             Node child = this.getChildWithValue(v);
             if (child == null) {
                 child = new Node(v);
@@ -76,8 +76,8 @@ class TelephoneNumbers {
             child.addChildren(values, start + 1, length);
         }
 
-        public Node getChildWithValue(int value) {
-            for (Node c : this.children)
+        public Node getChildWithValue(final int value) {
+            for (final Node c : this.children)
                 if (c.getV() == value)
                     return c;
             return null;
@@ -85,7 +85,7 @@ class TelephoneNumbers {
 
         public int numberOfChild() {
             int i = this.children.size();
-            for (Node n : this.children)
+            for (final Node n : this.children)
                 i += n.numberOfChild();
             return i;
         }

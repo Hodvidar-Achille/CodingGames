@@ -19,30 +19,30 @@ public final class _Day02_2 {
     private static final int NUMBER_OF_TEST = 3;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static int test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         line = sc.nextLine();
-        String[] opCodeStr = line.split(",");
+        final String[] opCodeStr = line.split(",");
         sc.close();
-        int[] opCode = new int[opCodeStr.length];
+        final int[] opCode = new int[opCodeStr.length];
         for (int i = 0; i < opCodeStr.length; i++) {
-            String s = opCodeStr[i];
-            int j = Integer.parseInt(s);
+            final String s = opCodeStr[i];
+            final int j = Integer.parseInt(s);
             opCode[i] = j;
         }
         // before running the program, replace position 1 with the value 12
@@ -54,7 +54,7 @@ public final class _Day02_2 {
                 opCode[1] = i;
                 opCode[2] = j;
                 printIfVerbose("Before programme:\n" + arrayToString(opCode));
-                int result = runOpCode(opCode.clone());
+                final int result = runOpCode(opCode.clone());
                 if (result == 19690720)
                     return (100 * i) + j;
             }
@@ -66,25 +66,25 @@ public final class _Day02_2 {
      * @param opCode
      * @return code in first position after the run
      */
-    private static int runOpCode(int[] opCode) {
+    private static int runOpCode(final int[] opCode) {
         for (int i = 0; i < opCode.length; /* empty increment do it yourself */) {
-            int code = opCode[i];
+            final int code = opCode[i];
             if (code == 1) {
-                int p1 = opCode[i + 1];
-                int p2 = opCode[i + 2];
-                int p3 = opCode[i + 3];
-                int v1 = opCode[p1];
-                int v2 = opCode[p2];
+                final int p1 = opCode[i + 1];
+                final int p2 = opCode[i + 2];
+                final int p3 = opCode[i + 3];
+                final int v1 = opCode[p1];
+                final int v2 = opCode[p2];
                 opCode[p3] = v1 + v2;
                 i = i + 4;
                 continue;
             }
             if (code == 2) {
-                int p1 = opCode[i + 1];
-                int p2 = opCode[i + 2];
-                int p3 = opCode[i + 3];
-                int v1 = opCode[p1];
-                int v2 = opCode[p2];
+                final int p1 = opCode[i + 1];
+                final int p2 = opCode[i + 2];
+                final int p3 = opCode[i + 3];
+                final int v1 = opCode[p1];
+                final int v2 = opCode[p2];
                 opCode[p3] = v1 * v2;
                 i = i + 4;
                 continue;
@@ -98,9 +98,9 @@ public final class _Day02_2 {
         return opCode[0];
     }
 
-    private static String arrayToString(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        int f = array.length - 1;
+    private static String arrayToString(final int[] array) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = array.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(array[i]).append(",");

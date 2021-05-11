@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ArrayHoursGlassTest {
 
-    private static int[][] valueForTest1 =
+    private static final int[][] valueForTest1 =
             new int[][]{
                     {-9, -9, -9, 1, 1, 1},
                     {0, -9, 0, 4, 3, 2},
@@ -23,7 +23,7 @@ public class ArrayHoursGlassTest {
                     {0, 0, 1, 2, 4, 0},
             };
 
-    private static int[][] valueForTest2 =
+    private static final int[][] valueForTest2 =
             new int[][]{
                     {1, 1, 1, 0, 0, 0},
                     {0, 1, 0, 0, 0, 0},
@@ -67,7 +67,7 @@ public class ArrayHoursGlassTest {
 
     @ParameterizedTest
     @MethodSource("generateData_List")
-    void check_reverse_list(final List<List<Integer>> originalList,final int expectedSum) {
+    void check_reverse_list(final List<List<Integer>> originalList, final int expectedSum) {
         assertThat(getHighestHourglassSum(originalList)).isEqualTo(expectedSum);
     }
 }

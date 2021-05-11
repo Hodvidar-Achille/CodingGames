@@ -62,50 +62,50 @@ class Aneo_Integer {
             JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
             JeuxDeTest.FeuxRapides};
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.err.println("Solution for (only using integer and  speed in km/h) "
                 + " and using 'Math.ceil' for minimum speed and 'Math.floor' for maximum speed "
                 + ": \n -DECIMAL_ACCURACY=" + DECIMAL_ACCURACY
                 + " \n -MINIMUM_INTERVAL=" + MINIMUM_INTERVAL + "\n -MINIMUM_TIME=" + MINIMUM_TIME);
 
-        Aneo_Integer s = new Aneo_Integer();
+        final Aneo_Integer s = new Aneo_Integer();
 
         if (!TESTING)
             s.doSolution();
         else {
-            for (JeuxDeTest test : tests)
+            for (final JeuxDeTest test : tests)
                 s.doSolution(test);
             // doSolution(JeuxDeTest.AutorouteAllemande);
         }
     }
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    private void doSolution(JeuxDeTest jeuDeTest) {
-        int speed = jeuDeTest.speed;
-        int lightCount = jeuDeTest.lightCount;
+    private void doSolution(final JeuxDeTest jeuDeTest) {
+        final int speed = jeuDeTest.speed;
+        final int lightCount = jeuDeTest.lightCount;
 
         printIfVerbose("----------- Test '" + jeuDeTest + "' -----------");
 
         printIfVerbose("speed=" + speed);
         printIfVerbose("lightCount=" + lightCount);
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = jeuDeTest.distances[i];
-            int duration = jeuDeTest.durations[i];
+            final int distance = jeuDeTest.distances[i];
+            final int duration = jeuDeTest.durations[i];
             printIfVerbose("distance=" + distance);
             printIfVerbose("duration= " + duration);
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
             printIfVerbose("Possible max speed = " + calculator.getMaxSpeed());
         }
 
-        int expected = jeuDeTest.result;
-        int actual = calculator.getMaxSpeed();
+        final int expected = jeuDeTest.result;
+        final int actual = calculator.getMaxSpeed();
 
         printIfVerbose("Final result expected : " + expected);
         printIfVerbose("Final result actual : " + actual);
@@ -119,19 +119,19 @@ class Aneo_Integer {
     }
 
     private void doSolution() {
-        Scanner in = new Scanner(System.in);
-        int speed = in.nextInt();
-        int lightCount = in.nextInt();
+        final Scanner in = new Scanner(System.in);
+        final int speed = in.nextInt();
+        final int lightCount = in.nextInt();
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = in.nextInt();
-            int duration = in.nextInt();
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final int distance = in.nextInt();
+            final int duration = in.nextInt();
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
         }
 
-        int actual = calculator.getMaxSpeed();
+        final int actual = calculator.getMaxSpeed();
         System.out.println(actual);
         in.close();
     }
@@ -184,7 +184,7 @@ class Aneo_Integer {
         public final int[] durations;
         public final int result;
 
-        JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result) {
+        JeuxDeTest(final int speed, final int lightCount, final int[] distances, final int[] durations, final int result) {
             this.speed = speed;
             this.lightCount = lightCount;
             this.distances = distances;
@@ -197,7 +197,7 @@ class Aneo_Integer {
         public final int distance;
         public final int duration;
 
-        public RoadSegment(int distance, int duration) {
+        public RoadSegment(final int distance, final int duration) {
             this.distance = distance;
             this.duration = duration;
         }
@@ -214,7 +214,7 @@ class Aneo_Integer {
         public final int max;
 
 
-        public Interval(int min, int max) {
+        public Interval(final int min, final int max) {
             this.min = min;
             this.max = max;
             if (this.min > this.max)
@@ -226,7 +226,7 @@ class Aneo_Integer {
             return 0d == this.min && this.min == this.max;
         }
 
-        public boolean isOverlapping(Interval o) {
+        public boolean isOverlapping(final Interval o) {
             if (this.isEmpty() || o.isEmpty())
                 return false;
 
@@ -236,7 +236,7 @@ class Aneo_Integer {
         }
 
         @Override
-        public int compareTo(Interval o) {
+        public int compareTo(final Interval o) {
             if (this.min < o.min)
                 return -1;
             if (this.min > o.min)
@@ -258,13 +258,13 @@ class Aneo_Integer {
         }
 
         @Override
-        public boolean equals(Object obj) {
+        public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
             if (!(obj instanceof Interval))
                 return false;
 
-            Interval o = (Interval) obj;
+            final Interval o = (Interval) obj;
             return this.min == o.min && this.max == o.max;
         }
 
@@ -293,14 +293,14 @@ class Aneo_Integer {
          * [-20, 20] & [-5, 5] --> [-5, 5]. <br/>
          * [10, 10] & [-100, 100] --> [0, 0].(EMPTY) <br/>
          */
-        public Interval getIntervalIntersection(Interval i1, Interval i2) {
+        public Interval getIntervalIntersection(final Interval i1, final Interval i2) {
             if (i1.isEmpty() || i2.isEmpty())
                 return EMPTY;
             if (!i1.isOverlapping(i2))
                 return EMPTY;
 
-            int min = Math.max(i1.min, i2.min);
-            int max = Math.min(i1.max, i2.max);
+            final int min = Math.max(i1.min, i2.min);
+            final int max = Math.min(i1.max, i2.max);
 
             //		if (min == max)
             //			return EMPTY;
@@ -314,7 +314,7 @@ class Aneo_Integer {
          * [-20, 20] & [-5, 5] --> [-20, 20]. <br/>
          * [10, 10] & [-100, 100] --> [-100, 100]. <br/>
          */
-        public List<Interval> getIntervalUnion(Interval i1, Interval i2) {
+        public List<Interval> getIntervalUnion(final Interval i1, final Interval i2) {
             if (i1.isEmpty())
                 return toList(i2);
             if (i2.isEmpty())
@@ -322,15 +322,15 @@ class Aneo_Integer {
             if (!i1.isOverlapping(i2))
                 return toList(i1, i2);
 
-            int min = Math.min(i1.min, i2.min);
-            int max = Math.max(i1.max, i2.max);
+            final int min = Math.min(i1.min, i2.min);
+            final int max = Math.max(i1.max, i2.max);
 
             return toList(new Interval(min, max));
         }
 
-        private List<Interval> toList(Interval... intervals) {
-            List<Interval> newIntervals = new ArrayList<>();
-            for (Interval i : intervals)
+        private List<Interval> toList(final Interval... intervals) {
+            final List<Interval> newIntervals = new ArrayList<>();
+            for (final Interval i : intervals)
                 newIntervals.add(i);
             Collections.sort(newIntervals);
             return newIntervals;
@@ -341,20 +341,20 @@ class Aneo_Integer {
          * Note : both list must be sorted.
          */
         public List<Interval> getIntervalIntersections(
-                List<Interval> intervals_1,
-                List<Interval> intervals_2) {
+                final List<Interval> intervals_1,
+                final List<Interval> intervals_2) {
             printIfVerbose("getIntervalIntersections...");
             if (intervals_1.isEmpty() || intervals_2.isEmpty())
                 return Collections.emptyList();
 
-            List<Interval> intersectionCollector = new ArrayList<>();
+            final List<Interval> intersectionCollector = new ArrayList<>();
 
             // Collections.sort(intervals_1);
             // Collections.sort(intervals_2);
 
             // Could this be optimized ?
-            for (Interval i1 : intervals_1) {
-                for (Interval i2 : intervals_2) {
+            for (final Interval i1 : intervals_1) {
+                for (final Interval i2 : intervals_2) {
                     // Because the list are sorted, if first element is
                     // already too high, directly go to next i1.
                     if (i1.max < i2.min)
@@ -362,7 +362,7 @@ class Aneo_Integer {
                     // If i2 too little, skip.
                     if (i2.max < i1.min)
                         continue;
-                    Interval intersection = getIntervalIntersection(i1, i2);
+                    final Interval intersection = getIntervalIntersection(i1, i2);
                     if (!intersection.isEmpty() && !intersectionCollector.contains(intersection))
                         printIfVerbose("i1" + i1.toString() + " \u2229 i2" + i2.toString()
                                 + " --> " + intersection.toString());
@@ -378,16 +378,16 @@ class Aneo_Integer {
          * to implement;
          */
         public List<Interval> getIntervalUnions(
-                List<Interval> intervals_1,
-                List<Interval> intervals_2) {
+                final List<Interval> intervals_1,
+                final List<Interval> intervals_2) {
             return Collections.emptyList();
         }
 
         /**
          * Returns true if any interval, in the list, overlap with another.
          */
-        public boolean isOverlapping(List<Interval> intervals) {
-            int size = intervals.size();
+        public boolean isOverlapping(final List<Interval> intervals) {
+            final int size = intervals.size();
             if (size == 0)
                 return false;
 
@@ -396,8 +396,8 @@ class Aneo_Integer {
                 for (int j = 0; j < size; j++) {
                     if (j == i)
                         continue;
-                    Interval i1 = intervals.get(i);
-                    Interval i2 = intervals.get(j);
+                    final Interval i1 = intervals.get(i);
+                    final Interval i2 = intervals.get(j);
                     if (i1.isOverlapping(i2))
                         return true;
                 }
@@ -420,32 +420,32 @@ class Aneo_Integer {
         private int max;
         private List<Interval> possibleSpeeds = new ArrayList<>();
 
-        public SpeedCalculator(int maximumSpeed) {
+        public SpeedCalculator(final int maximumSpeed) {
             printIfVerbose("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
             this.max = maximumSpeed;
-            Interval firstInterval = new Interval(this.min, this.max);
+            final Interval firstInterval = new Interval(this.min, this.max);
             this.possibleSpeeds.add(firstInterval);
             this.intervalHandler = new IntervalHandler();
         }
 
         public int getMaxSpeed() {
             Collections.sort(this.possibleSpeeds);
-            int size = this.possibleSpeeds.size();
+            final int size = this.possibleSpeeds.size();
             if (size == 0)
                 return 0;
-            Interval higherInterval = this.possibleSpeeds.get(this.possibleSpeeds.size() - 1);
+            final Interval higherInterval = this.possibleSpeeds.get(this.possibleSpeeds.size() - 1);
             return higherInterval.max;
         }
 
         /**
          * Adapt the possibleSpeed intervals to handle this new segment.
          */
-        public void addRoadSegment(RoadSegment aRoadSegment) {
+        public void addRoadSegment(final RoadSegment aRoadSegment) {
             printIfVerbose("addRoadSegment(" + aRoadSegment.distance + ", "
                     + aRoadSegment.duration + ")");
             // This could probably be optimized.
             // 1) finds intervals possibles for this segment
-            List<Interval> newPossibleSpeeds = this.getIntervalsForRoadSegment(aRoadSegment);
+            final List<Interval> newPossibleSpeeds = this.getIntervalsForRoadSegment(aRoadSegment);
             // 2) find the intersections of these intervals with previous intervals
             this.possibleSpeeds = intervalHandler.getIntervalIntersections(
                     this.possibleSpeeds,
@@ -455,7 +455,7 @@ class Aneo_Integer {
             // Take the smaller value of all Interval -> new mib
             int min = Integer.MAX_VALUE;
             int max = Integer.MIN_VALUE;
-            for (Interval i : this.possibleSpeeds) {
+            for (final Interval i : this.possibleSpeeds) {
                 if (i.min < min)
                     min = i.min;
                 if (i.max > max)
@@ -466,13 +466,13 @@ class Aneo_Integer {
             printIfVerbose("addRoadSegment new min(" + min + ") and max(" + max + ") values.");
         }
 
-        private List<Interval> getIntervalsForRoadSegment(RoadSegment aRoadSegment) {
+        private List<Interval> getIntervalsForRoadSegment(final RoadSegment aRoadSegment) {
             printIfVerbose("getIntervalsForRoadSegment...");
             // Start to look for possible speeds from the max speed to the minimum speed;
-            int distance = aRoadSegment.distance;
+            final int distance = aRoadSegment.distance;
             int duration = aRoadSegment.duration;
-            int durationIncrement = duration + duration;
-            List<Interval> speedIntervalCollector = new ArrayList<>();
+            final int durationIncrement = duration + duration;
+            final List<Interval> speedIntervalCollector = new ArrayList<>();
 
             int minSpeedToPass = 0;
             int maxSpeedToPass = 0;
@@ -491,15 +491,15 @@ class Aneo_Integer {
                 if (maxSpeedToPass < minSpeedToPass)
                     maxSpeedToPass = minSpeedToPass;
 
-                int cappedMinSpeedToPass = Math.max(minSpeedToPass, this.min);
-                int cappedMaxSpeedToPass = Math.min(maxSpeedToPass, this.max);
+                final int cappedMinSpeedToPass = Math.max(minSpeedToPass, this.min);
+                final int cappedMaxSpeedToPass = Math.min(maxSpeedToPass, this.max);
 
                 // Set parameters for next loop.
                 duration += durationIncrement;
                 minDuration += durationIncrement;
                 // Ignore case where minimum speed is already too high.
                 if (cappedMinSpeedToPass > this.max) {
-                    Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
+                    final Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass);
                     printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
                             + " to travel " + distance + " meters in less than "
                             + (duration - MINIMUM_TIME - durationIncrement)
@@ -508,14 +508,14 @@ class Aneo_Integer {
                 }
 
                 // Check if interval is too narrow to be achieved.
-                int interval = cappedMaxSpeedToPass - cappedMinSpeedToPass;
+                final int interval = cappedMaxSpeedToPass - cappedMinSpeedToPass;
                 if (interval < MINIMUM_INTERVAL)
                     break;
                 // In case we do not have interval check, stop at 1 km/h
                 if (cappedMaxSpeedToPass <= 1)
                     break;
 
-                Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass);
+                final Interval speedInterval = new Interval(cappedMinSpeedToPass, cappedMaxSpeedToPass);
 
                 // Ignore identical results (but should this happen ?).
                 if (speedInterval.equals(previousInterval))
@@ -544,7 +544,7 @@ class Aneo_Integer {
          * @param useFloor        : If true uses 'Math.floor', if false uses 'Math.ceil'
          * @return
          */
-        public int getSpeedInKmPerHour(int distanceInMeter, int timeInSecond, boolean useFloor) {
+        public int getSpeedInKmPerHour(final int distanceInMeter, final int timeInSecond, final boolean useFloor) {
             if (useFloor)
                 return (int) Math.floor(distanceInMeter / (timeInSecond * 5d / 18d));
             else

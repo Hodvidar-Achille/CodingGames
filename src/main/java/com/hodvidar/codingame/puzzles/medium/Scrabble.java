@@ -9,25 +9,25 @@ import java.util.Scanner;
  **/
 class Scrabble {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt();
         if (in.hasNextLine()) {
             in.nextLine();
         }
-        List<String> dictionnary = new ArrayList<>();
+        final List<String> dictionnary = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            String W = in.nextLine();
+            final String W = in.nextLine();
             // System.err.println(W);
             if (W.length() <= 7)
                 dictionnary.add(W);
         }
-        String LETTERS = in.nextLine();
+        final String LETTERS = in.nextLine();
         int maxScore = 0;
         String maxWord = "";
-        for (String s : dictionnary) {
+        for (final String s : dictionnary) {
             if (canDoWord(LETTERS, s)) {
-                int a = calculScore(s);
+                final int a = calculScore(s);
                 if (a > maxScore) {
                     maxScore = a;
                     maxWord = s;
@@ -43,9 +43,9 @@ class Scrabble {
         in.close();
     }
 
-    private static boolean canDoWord(String letters, String word) {
-        for (char c : word.toCharArray()) {
-            int index = letters.indexOf(c);
+    private static boolean canDoWord(String letters, final String word) {
+        for (final char c : word.toCharArray()) {
+            final int index = letters.indexOf(c);
             if (index == -1)
                 return false;
 
@@ -54,9 +54,9 @@ class Scrabble {
         return true;
     }
 
-    private static int calculScore(String aWord) {
+    private static int calculScore(final String aWord) {
         int score = 0;
-        for (char c : aWord.toCharArray()) {
+        for (final char c : aWord.toCharArray()) {
             if (c == 'e' || c == 'a' || c == 'i' || c == 'o' || c == 'n'
                     || c == 'r' || c == 't' || c == 'l' || c == 's' || c == 'u') {
                 score += 1;

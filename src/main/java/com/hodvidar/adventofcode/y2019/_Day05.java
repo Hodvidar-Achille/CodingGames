@@ -25,12 +25,12 @@ public final class _Day05 {
     private static final List<Integer> outputs = new ArrayList<>();
     private static final int input = 1;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
         Integer[] arr = new Integer[outputs.size()];
@@ -39,25 +39,25 @@ public final class _Day05 {
         System.err.println("Expected '9219874' - result='" + result + "'");
     }
 
-    private static String test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static String test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         line = sc.nextLine();
-        String[] opCodeStr = line.split(",");
+        final String[] opCodeStr = line.split(",");
         sc.close();
-        int[] opCode = new int[opCodeStr.length];
+        final int[] opCode = new int[opCodeStr.length];
         for (int i = 0; i < opCodeStr.length; i++) {
-            String s = opCodeStr[i];
-            int j = Integer.parseInt(s);
+            final String s = opCodeStr[i];
+            final int j = Integer.parseInt(s);
             opCode[i] = j;
         }
 
         for (int i = 0; i < opCode.length; /* empty increment do it yourself */) {
-            int code = opCode[i];
+            final int code = opCode[i];
             printIfVerbose("code: " + code);
             printIfVerbose("" + arrayToString(opCode));
             if (code == 1 || code == 2) {
@@ -66,7 +66,7 @@ public final class _Day05 {
                 continue;
             }
             if (code == 3) {
-                int p1 = opCode[i + 1];
+                final int p1 = opCode[i + 1];
                 opCode[p1] = input;
                 i = i + 2;
                 continue;
@@ -80,16 +80,16 @@ public final class _Day05 {
                 return arrayToString(opCode);
             }
             if (code > 99) {
-                int subCode = code % 100;
+                final int subCode = code % 100;
                 if (subCode != 1 && subCode != 2 && subCode != 4)
                     throw new IllegalStateException("This case should heppen ? code=" + code);
 
-                int modeFor3 = code / 10000;
+                final int modeFor3 = code / 10000;
                 if (modeFor3 == 1)
                     throw new IllegalStateException("Should not happen opCode:'" + code + "'");
 
-                int modeFor2 = (code / 1000) % 10;
-                int modeFor1 = (code / 100) % 10;
+                final int modeFor2 = (code / 1000) % 10;
+                final int modeFor1 = (code / 100) % 10;
                 if (subCode == 1 || subCode == 2) {
                     opCode1_2(subCode, opCode, i, modeFor1, modeFor2);
                     i = i + 4;
@@ -108,19 +108,19 @@ public final class _Day05 {
         return arrayToString(opCode);
     }
 
-    private static void opCode1_2(int code, int[] opCode, int i, int parameterMode1, int parameterMode2) {
-        int p3 = opCode[i + 3];
-        int v1 = getValue(opCode, i + 1, parameterMode1);
-        int v2 = getValue(opCode, i + 2, parameterMode2);
+    private static void opCode1_2(final int code, final int[] opCode, final int i, final int parameterMode1, final int parameterMode2) {
+        final int p3 = opCode[i + 3];
+        final int v1 = getValue(opCode, i + 1, parameterMode1);
+        final int v2 = getValue(opCode, i + 2, parameterMode2);
         opCode[p3] = (code == 1) ? v1 + v2 : v1 * v2;
     }
 
-    private static void opCode4(int[] opCode, int i, int parameterMode1) {
-        int v1 = getValue(opCode, i + 1, parameterMode1);
+    private static void opCode4(final int[] opCode, final int i, final int parameterMode1) {
+        final int v1 = getValue(opCode, i + 1, parameterMode1);
         outputs.add(v1);
     }
 
-    private static int getValue(int[] opCode, int pos, int paramMode) {
+    private static int getValue(final int[] opCode, final int pos, final int paramMode) {
         if (paramMode == IMMEDIATE_MODE) {
             return opCode[pos];
         }
@@ -130,9 +130,9 @@ public final class _Day05 {
         return getValue(opCode, opCode[pos], IMMEDIATE_MODE);
     }
 
-    private static String arrayToString(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        int f = array.length - 1;
+    private static String arrayToString(final int[] array) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = array.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(array[i]).append(",");
@@ -142,9 +142,9 @@ public final class _Day05 {
         return sb.toString();
     }
 
-    private static String arrayToString(Integer[] array) {
-        StringBuilder sb = new StringBuilder();
-        int f = array.length - 1;
+    private static String arrayToString(final Integer[] array) {
+        final StringBuilder sb = new StringBuilder();
+        final int f = array.length - 1;
         for (int i = 0; i <= f; i++) {
             if (i != f)
                 sb.append(array[i]).append(",");

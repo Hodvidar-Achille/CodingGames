@@ -11,13 +11,13 @@ public class Node {
     private Integer level;
     private Node parent;
 
-    public Node(String name) {
+    public Node(final String name) {
         this.name = name;
         this.level = null;
         this.children = new HashSet<>();
     }
 
-    public boolean connectToParent(Node parent) {
+    public boolean connectToParent(final Node parent) {
         if (this.parent != null)
             return false;
 
@@ -34,19 +34,19 @@ public class Node {
         return level;
     }
 
-    public void propagadeLevels(int level) {
+    public void propagadeLevels(final int level) {
         this.level = level;
-        for (Node child : this.children) {
+        for (final Node child : this.children) {
             child.propagadeLevels(level + 1);
         }
     }
 
-    public Node findCommonAncestor(Node other) {
-        Map<String, Node> myAncestors = this.getAncestors();
+    public Node findCommonAncestor(final Node other) {
+        final Map<String, Node> myAncestors = this.getAncestors();
 
         Node p = other.parent;
         while (p != null) {
-            Node n = myAncestors.get(p.name);
+            final Node n = myAncestors.get(p.name);
             if (n != null)
                 return n;
             p = p.parent;
@@ -55,7 +55,7 @@ public class Node {
     }
 
     private Map<String, Node> getAncestors() {
-        Map<String, Node> myAncestors = new HashMap<>();
+        final Map<String, Node> myAncestors = new HashMap<>();
         Node p = this.parent;
         while (p != null) {
             myAncestors.put(p.getName(), p);
@@ -66,12 +66,12 @@ public class Node {
 
     @Override
     public String toString() {
-        String p = (this.parent == null) ? "@null" : this.parent.getName();
+        final String p = (this.parent == null) ? "@null" : this.parent.getName();
         String c = "[";
-        for (Node child : this.children)
+        for (final Node child : this.children)
             c += child.getName() + ", ";
         c += "]";
-        String s = "Node '" + this.name + "' parent:'" + p + " children:" + c;
+        final String s = "Node '" + this.name + "' parent:'" + p + " children:" + c;
         return s;
     }
 }

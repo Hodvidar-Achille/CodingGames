@@ -15,7 +15,7 @@ public final class ChemicalSystem {
         this(false, 0d);
     }
 
-    public ChemicalSystem(boolean isQuantityOfOreDefined, double oreQuantity) {
+    public ChemicalSystem(final boolean isQuantityOfOreDefined, final double oreQuantity) {
         this.reactions = new HashMap<>();
         this.available = new HashMap<>();
         this.isQuantityOfOreDefined = isQuantityOfOreDefined;
@@ -32,30 +32,30 @@ public final class ChemicalSystem {
      *                     '7 ORE => 5 C' <br/>
      *                     '3 A, 4 B => 1 AB' <br/>
      */
-    public void addReaction(String fullReaction) {
-        String[] reaction = fullReaction.split("=>");
-        String needed = reaction[0];
+    public void addReaction(final String fullReaction) {
+        final String[] reaction = fullReaction.split("=>");
+        final String needed = reaction[0];
         String result = reaction[1];
         result = result.trim();
-        String[] result2 = result.split(" ");
-        double quantity = Double.parseDouble(result2[0]);
-        String finalElement = result2[1];
-        ChemicalReaction chemicReac = new ChemicalReaction(finalElement,
+        final String[] result2 = result.split(" ");
+        final double quantity = Double.parseDouble(result2[0]);
+        final String finalElement = result2[1];
+        final ChemicalReaction chemicReac = new ChemicalReaction(finalElement,
                 quantity);
-        String[] needed2 = needed.split(",");
+        final String[] needed2 = needed.split(",");
         for (String neededElement : needed2) {
             neededElement = neededElement.trim();
-            String[] neededElement2 = neededElement.split(" ");
-            double quantity2 = Double.parseDouble(neededElement2[0]);
-            String aNeededElement = neededElement2[1];
+            final String[] neededElement2 = neededElement.split(" ");
+            final double quantity2 = Double.parseDouble(neededElement2[0]);
+            final String aNeededElement = neededElement2[1];
             chemicReac.addRequiredElement(aNeededElement, quantity2);
         }
         this.reactions.put(finalElement, chemicReac);
         this.available.put(finalElement, 0d);
     }
 
-    public double getQuantityAvailable(String element) {
-        Double q = this.available.get(element);
+    public double getQuantityAvailable(final String element) {
+        final Double q = this.available.get(element);
         if (q == null) {
             this.available.put(element, 0d);
             return 0d;
@@ -63,33 +63,33 @@ public final class ChemicalSystem {
         return q;
     }
 
-    private void setQuantityAvailable(String element, double quantity) {
+    private void setQuantityAvailable(final String element, final double quantity) {
         this.available.put(element, quantity);
     }
 
-    private void addQuantityAvailable(String element, double quantity) {
+    private void addQuantityAvailable(final String element, final double quantity) {
         setQuantityAvailable(element, getQuantityAvailable(element) + quantity);
     }
 
-    private void deductQuantityAvailable(String element, double quantity) {
-        double available = getQuantityAvailable(element);
+    private void deductQuantityAvailable(final String element, final double quantity) {
+        final double available = getQuantityAvailable(element);
         if (available < quantity)
             throw new IllegalStateException(
                     "Cannot deduct more then what is available");
         setQuantityAvailable(element, available - quantity);
     }
 
-    public boolean initReaction(String finalElement) {
+    public boolean initReaction(final String finalElement) {
         if (!isQuantityOfOreDefined && ORE.equals(finalElement)) {
             costInOreOfReaction++;
             addQuantityAvailable(ORE, 1);
             return true;
         }
 
-        ChemicalReaction finalReaction = this.reactions.get(finalElement);
+        final ChemicalReaction finalReaction = this.reactions.get(finalElement);
         // For each element needed :
         while (true) {
-            boolean success = executeReaction(finalReaction);
+            final boolean success = executeReaction(finalReaction);
             if (!success)
                 return false;
             this.addQuantityAvailable(finalElement, finalReaction.quantity);
@@ -101,10 +101,10 @@ public final class ChemicalSystem {
         }
     }
 
-    private boolean executeReaction(ChemicalReaction finalReaction) {
-        for (String element : finalReaction.requiredElementsAndQuantity
+    private boolean executeReaction(final ChemicalReaction finalReaction) {
+        for (final String element : finalReaction.requiredElementsAndQuantity
                 .keySet()) {
-            double quantityNeeded = finalReaction.requiredElementsAndQuantity
+            final double quantityNeeded = finalReaction.requiredElementsAndQuantity
                     .get(element);
             double quantityAvailable = getQuantityAvailable(element);
             // 1) Check if we have enough of it
@@ -117,7 +117,7 @@ public final class ChemicalSystem {
                     return false;
                 }
                 while (quantityNeeded > quantityAvailable) {
-                    boolean success = initReaction(element);
+                    final boolean success = initReaction(element);
                     if (!success)
                         return false;
                     quantityAvailable = getQuantityAvailable(element);

@@ -1,13 +1,13 @@
 package com.hodvidar.formation.datastructures;
 
-import com.hodvidar.hackerrank.ArrayReverse;
+import com.hodvidar.utils.file.Constance;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.io.FileNotFoundException;
-import java.util.Random;
+import java.io.*;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,41 +15,88 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DataStructureTreesTest {
 
 
+    /**
+     * 100 random numbers between -200 and 200
+     */
+    private static final int[] randomNumbers = new int[]{-31, -27, 87, 8, 177, -105, -99, -16, -124, 50, -19, 45, 36,
+            101, -8, 39, -140, 61, 64, 137, 14, -111, -129, 106, 32, 34, 0, 37, 7, -56, 94, 56, -98, -6, -11, 68, 169,
+            40, 22, 57, 2, 101, -125, -89, -65, 37, -4, 122, 71, -64, -40, -76, 72, -153, -39, 41, -157, -116, -118, 7,
+            -12, -56, -6, -17, -37, 57, 134, 13, 90, 22, -64, 141, -86, -33, -32, 11, 17, 58, 23, -100, -62, -74, 82,
+            25, -117, 165, 78, 73, 128, -62, -37, -131, -28, -46, -120, -102, 63, 61, -103, -18};
+
     @Test
     public void contains() {
-        BinaryTree binaryTree = new BinaryTree();
+        final BinaryTree binaryTree = new BinaryTree();
         init(binaryTree);
-        BinaryTreeNode n = binaryTree.getRoot().getRight().getLeft();
-        assertThat(binaryTree.contains(n.getValue())).isTrue();
+        assertThat(binaryTree.contains(25)).isTrue();
     }
 
     @Test
-    public void string_representation() {
-        BinaryTree binaryTree = new BinaryTree();
+    public void maxDepth() {
+        final BinaryTree binaryTree = new BinaryTree();
         init(binaryTree);
-        System.out.println(binaryTree.toString());
+        assertThat(binaryTree.getMaxDepth()).isEqualTo(13);
     }
 
-    private static void init(BinaryTree binaryTree) {
-        for (int i = 0; i < 100; i++) {
-            binaryTree.insert(getRandomValue());
+    @Test
+    public void string_representation_simple() {
+        final BinaryTree binaryTree = new BinaryTree();
+        final int[] randomNumbers = new int[]{0, -10, 10, -20, -5, 5, 20, 100, -9, 99};
+        for (final int i : randomNumbers) {
+            binaryTree.insert(i);
         }
+        assertThat(binaryTree.toString()).isEqualTo("                                                      {0}                                                       \n" +
+                "                         {-10}                                                    {10}                          \n" +
+                "           {-20}                        {-5}                        {5}                         {20}            \n" +
+                "     {-}           {-}           {-9}          {-}           {-}           {-}           {-}          {100}     \n" +
+                "  {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}    {-}   {99}    {-}  \n");
     }
 
-    private static int getRandomValue() {
-        Random random = new Random();
-        int r = random.nextInt(200) - random.nextInt(200);
-        return r;
+
+    @Test
+    @Disabled // TODO make it pass
+    public void string_representation() {
+        final BinaryTree binaryTree = new BinaryTree();
+        init(binaryTree);
+        final String fileName = Constance.RESOURCES_TEST
+                + File.separator + "formation" + File.separator
+                + "datastructure" + File.separator + "binaryTreeToString.txt";
+        assertThat(binaryTree.toString()).isEqualTo(fileToStringContent(fileName));
+    }
+
+    private static String fileToStringContent(final String fileName) {
+        try {
+            final InputStream inputStream = new FileInputStream(fileName);
+            final InputStreamReader isReader = new InputStreamReader(inputStream);
+            final BufferedReader reader = new BufferedReader(isReader);
+            final StringBuffer sb = new StringBuffer();
+            String str;
+            while ((str = reader.readLine()) != null) {
+                sb.append(str);
+            }
+            return sb.toString();
+        } catch (final FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     @ParameterizedTest
     @MethodSource("generateData_treeValue")
-    void check_reverse_array(final int[] treeValues, final int expectedDepth) throws FileNotFoundException {
-        BinaryTree binaryTree = new BinaryTree();
-        for(int i : treeValues) {
+    public void check_reverse_array(final int[] treeValues, final int expectedDepth) throws FileNotFoundException {
+        final BinaryTree binaryTree = new BinaryTree();
+        for (final int i : treeValues) {
             binaryTree.insert(i);
         }
         assertThat(binaryTree.getMaxDepth()).isEqualTo(expectedDepth);
+    }
+
+    private static void init(final BinaryTree binaryTree) {
+        for (final int i : randomNumbers) {
+            binaryTree.insert(i);
+        }
     }
 
     private static Stream<Arguments> generateData_treeValue() {

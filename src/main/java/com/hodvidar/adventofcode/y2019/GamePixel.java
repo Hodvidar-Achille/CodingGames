@@ -8,11 +8,11 @@ public final class GamePixel extends PaintedPoint {
     public static final int PADDLE = 3;
     public static final int BALL = 4;
 
-    public GamePixel(double x, double y) {
+    public GamePixel(final double x, final double y) {
         super(x, y);
     }
 
-    public GamePixel(double x, double y, int value) {
+    public GamePixel(final double x, final double y, final int value) {
         super(x, y, value);
     }
 

@@ -25,40 +25,40 @@ public final class _Day07_2 {
     private static final int NUMBER_OF_TEST = 7;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '8754464' - result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static int test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         line = sc.nextLine();
-        String[] opCodeStr = line.split(",");
+        final String[] opCodeStr = line.split(",");
         sc.close();
-        double[] opCode = new double[opCodeStr.length];
+        final double[] opCode = new double[opCodeStr.length];
         for (int i = 0; i < opCodeStr.length; i++) {
-            String s = opCodeStr[i];
-            int j = Integer.parseInt(s);
+            final String s = opCodeStr[i];
+            final int j = Integer.parseInt(s);
             opCode[i] = j;
         }
 
         int maxOutput = 0;
         int phaseCounter = 0;
-        Collection<String> phases = new CodeGenerator(5, 9)
+        final Collection<String> phases = new CodeGenerator(5, 9)
                 .generateUniqueDigitCode(5);
-        for (String phase : phases) {
-            int output = tryPhase(phase, opCode);
+        for (final String phase : phases) {
+            final int output = tryPhase(phase, opCode);
             if (output > maxOutput)
                 maxOutput = output;
             phaseCounter++;
@@ -69,18 +69,18 @@ public final class _Day07_2 {
         return maxOutput;
     }
 
-    private static int tryPhase(String phase, double[] opCode) {
+    private static int tryPhase(final String phase, final double[] opCode) {
         double p = getPhaseValue(phase, 0);
-        Amplifier A = new Amplifier(opCode.clone(), p, null);
+        final Amplifier A = new Amplifier(opCode.clone(), p, null);
         p = getPhaseValue(phase, 1);
-        Amplifier B = new Amplifier(opCode.clone(), p, null);
+        final Amplifier B = new Amplifier(opCode.clone(), p, null);
         p = getPhaseValue(phase, 2);
-        Amplifier C = new Amplifier(opCode.clone(), p, null);
+        final Amplifier C = new Amplifier(opCode.clone(), p, null);
         p = getPhaseValue(phase, 3);
-        Amplifier D = new Amplifier(opCode.clone(), p, null);
+        final Amplifier D = new Amplifier(opCode.clone(), p, null);
         p = getPhaseValue(phase, 4);
-        Amplifier E = new Amplifier(opCode.clone(), p, null);
-        List<Amplifier> ampls = new ArrayList<>();
+        final Amplifier E = new Amplifier(opCode.clone(), p, null);
+        final List<Amplifier> ampls = new ArrayList<>();
         ampls.add(A);
         ampls.add(B);
         ampls.add(C);
@@ -91,7 +91,7 @@ public final class _Day07_2 {
         int counter = 0;
 
         while (true) {
-            Amplifier amp = ampls.get(counter);
+            final Amplifier amp = ampls.get(counter);
             amp.setInput(output);
             amp.runProgram();
             if (amp.isShutDown())
@@ -105,8 +105,8 @@ public final class _Day07_2 {
         return (int) output;
     }
 
-    private static int getPhaseValue(String phase, int index) {
-        String s = "" + phase.charAt(index);
+    private static int getPhaseValue(final String phase, final int index) {
+        final String s = "" + phase.charAt(index);
         return Integer.parseInt(s);
     }
 

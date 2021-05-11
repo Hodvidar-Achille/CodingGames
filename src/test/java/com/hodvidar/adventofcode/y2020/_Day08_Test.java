@@ -24,9 +24,9 @@ public class _Day08_Test extends AbstractTestForAdventOfCode {
             "1 = 5",
             "2 = 0"
     })
-    void checkGetAccumulatorValue(int numberOfTheTest, int expectedResult) throws FileNotFoundException {
-        Scanner sc = getScanner(numberOfTheTest);
-        int result = new _Day08().getAccumulatorValue(sc);
+    void checkGetAccumulatorValue(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = new _Day08().getAccumulatorValue(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 }

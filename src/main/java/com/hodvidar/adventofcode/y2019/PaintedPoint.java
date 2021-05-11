@@ -20,11 +20,11 @@ public abstract class PaintedPoint extends Point implements PaintedObject {
      **/
     protected int counter = 0;
 
-    public PaintedPoint(double x, double y) {
+    public PaintedPoint(final double x, final double y) {
         super(x, y);
     }
 
-    public PaintedPoint(double x, double y, int value) {
+    public PaintedPoint(final double x, final double y, final int value) {
         super(x, y);
         this.value = value;
     }
@@ -50,7 +50,7 @@ public abstract class PaintedPoint extends Point implements PaintedObject {
     }
 
     @Override
-    public boolean paint(int newValue) {
+    public boolean paint(final int newValue) {
         if (newValue == this.value)
             return false;
 
@@ -60,7 +60,7 @@ public abstract class PaintedPoint extends Point implements PaintedObject {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         return super.equals(obj);
     }
 

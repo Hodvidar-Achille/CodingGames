@@ -13,12 +13,12 @@ public final class AsteroidOrderer implements Comparator<Point> {
 
     private final List<Point> orderedAsteroids;
 
-    public AsteroidOrderer(Point station, List<Point> asteroids) {
+    public AsteroidOrderer(final Point station, final List<Point> asteroids) {
         this.station = station;
         this.asteroids = asteroids;
-        Iterator<Point> ite = asteroids.iterator();
+        final Iterator<Point> ite = asteroids.iterator();
         while (ite.hasNext()) {
-            Point p = ite.next();
+            final Point p = ite.next();
             if (p.equals(this.station)) {
                 this.asteroids.remove(p);
                 break;
@@ -29,9 +29,9 @@ public final class AsteroidOrderer implements Comparator<Point> {
         Collections.sort(this.orderedAsteroids, this);
     }
 
-    public static int numberOfDetection(Point p, List<Point> others) {
+    public static int numberOfDetection(final Point p, final List<Point> others) {
         int counter = 0;
-        for (Point o : others) {
+        for (final Point o : others) {
             if (o.equals(p))
                 continue;
             if (lineOfSightClear(p, o, others))
@@ -40,10 +40,10 @@ public final class AsteroidOrderer implements Comparator<Point> {
         return counter;
     }
 
-    private static boolean lineOfSightClear(Point p1, Point p2, List<Point> others) {
-        Segment s = new Segment(p1, p2);
+    private static boolean lineOfSightClear(final Point p1, final Point p2, final List<Point> others) {
+        final Segment s = new Segment(p1, p2);
         boolean lineOfSightClear = true;
-        for (Point o2 : others) {
+        for (final Point o2 : others) {
             if (o2.equals(p1) || o2.equals(p2))
                 continue;
             if (GeometryServices.isOnSegment(o2, s)) {
@@ -54,10 +54,10 @@ public final class AsteroidOrderer implements Comparator<Point> {
         return lineOfSightClear;
     }
 
-    private static int numberOfBlocking(Point p1, Point p2, List<Point> others) {
-        Segment s = new Segment(p1, p2);
+    private static int numberOfBlocking(final Point p1, final Point p2, final List<Point> others) {
+        final Segment s = new Segment(p1, p2);
         int counter = 0;
-        for (Point o2 : others) {
+        for (final Point o2 : others) {
             if (o2.equals(p1) || o2.equals(p2))
                 continue;
             if (GeometryServices.isOnSegment(o2, s)) {
@@ -68,9 +68,9 @@ public final class AsteroidOrderer implements Comparator<Point> {
     }
 
     @Override
-    public int compare(Point o1, Point o2) {
-        boolean o1Direct = lineOfSightClear(station, o1, asteroids);
-        boolean o2Direct = lineOfSightClear(station, o2, asteroids);
+    public int compare(final Point o1, final Point o2) {
+        final boolean o1Direct = lineOfSightClear(station, o1, asteroids);
+        final boolean o2Direct = lineOfSightClear(station, o2, asteroids);
 
         // One of them is in sight of station and not the other
         if (o1Direct && !o2Direct)
@@ -80,8 +80,8 @@ public final class AsteroidOrderer implements Comparator<Point> {
 
         // Both are hidden
         if (!o1Direct && !o2Direct) {
-            int o1NbBlockingAsteroids = numberOfBlocking(station, o1, asteroids);
-            int o2NbBlockingAsteroids = numberOfBlocking(station, o2, asteroids);
+            final int o1NbBlockingAsteroids = numberOfBlocking(station, o1, asteroids);
+            final int o2NbBlockingAsteroids = numberOfBlocking(station, o2, asteroids);
 
             if (o1NbBlockingAsteroids < o2NbBlockingAsteroids)
                 return -1;
@@ -97,7 +97,7 @@ public final class AsteroidOrderer implements Comparator<Point> {
 
         // TOP > TOP RIGHT > RIGHT > BOTTOM RIGHT
         // > BOTTOM > BOTTOM LEFT > LEFT > TOP LEFT
-        Point stationTop = new Point(station.x, 0);
+        final Point stationTop = new Point(station.x, 0);
         double o1Angle = GeometryServices.getAngle(station, stationTop, o1);
         double o2Angle = GeometryServices.getAngle(station, stationTop, o2);
 
@@ -113,7 +113,7 @@ public final class AsteroidOrderer implements Comparator<Point> {
     }
 
     // Remember Y is inverse
-    private double adaptAngle(Point o, Point ref, double angle) {
+    private double adaptAngle(final Point o, final Point ref, final double angle) {
         if (o.x >= ref.x)
             return angle;
         return 360 - angle;

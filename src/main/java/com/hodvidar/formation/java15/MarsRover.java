@@ -18,19 +18,19 @@ public final class MarsRover {
         orientation = 'N';
     }
 
-    public String execute(String commands) {
+    public String execute(final String commands) {
         if (isNull(commands)) {
             return getState();
         }
 
-        for (char c : commands.toCharArray()) {
+        for (final char c : commands.toCharArray()) {
             move(c);
         }
 
         return getState();
     }
 
-    private void move(char aCommand) {
+    private void move(final char aCommand) {
         switch (aCommand) {
             case 'L' -> turnLeft();
             case 'R' -> turnRight();

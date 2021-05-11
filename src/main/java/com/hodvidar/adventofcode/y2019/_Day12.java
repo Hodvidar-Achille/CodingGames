@@ -18,59 +18,59 @@ public final class _Day12 {
     private static final int NUMBER_OF_TEST = 12;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test1.txt");
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test2.txt");
-        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+        final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '10055' - result='" + result + "'");
     }
 
-    private static String subTest(String inputFile) throws Exception {
+    private static String subTest(final String inputFile) throws Exception {
         String line;
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
+        final File file = new File(inputFile);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // Create the Moons
         line = sc.nextLine();
         List<Double> values = NumberExtractor.extractNumber(line);
-        Moon moonA = new Moon(values.get(0), values.get(1), values.get(2));
+        final Moon moonA = new Moon(values.get(0), values.get(1), values.get(2));
         line = sc.nextLine();
         values = NumberExtractor.extractNumber(line);
-        Moon moonB = new Moon(values.get(0), values.get(1), values.get(2));
+        final Moon moonB = new Moon(values.get(0), values.get(1), values.get(2));
         line = sc.nextLine();
         values = NumberExtractor.extractNumber(line);
-        Moon moonC = new Moon(values.get(0), values.get(1), values.get(2));
+        final Moon moonC = new Moon(values.get(0), values.get(1), values.get(2));
         line = sc.nextLine();
         values = NumberExtractor.extractNumber(line);
-        Moon moonD = new Moon(values.get(0), values.get(1), values.get(2));
+        final Moon moonD = new Moon(values.get(0), values.get(1), values.get(2));
 
         // Create the system and make it simulate the moves.
-        SpaceOrbitalSystem system = new SpaceOrbitalSystem(moonA, moonB, moonC,
+        final SpaceOrbitalSystem system = new SpaceOrbitalSystem(moonA, moonB, moonC,
                 moonD);
         line = sc.nextLine();
-        Integer nbSteps = Integer.parseInt(line);
+        final Integer nbSteps = Integer.parseInt(line);
         system.doSteps(nbSteps);
-        double energy = system.getTotalEnergy();
+        final double energy = system.getTotalEnergy();
 
         // WRITE SOLUTION
         line = sc.nextLine();
         sc.close();
-        String energyStr = DoubleFormater.asInteger(energy);
+        final String energyStr = DoubleFormater.asInteger(energy);
         System.err.println("Expected energy value:'" + line + "'");
         System.err.println("Found:'" + energyStr + "'");
         return "" + energyStr;
     }
 
-    private static String test(String inputFile) throws Exception {
+    private static String test(final String inputFile) throws Exception {
         return subTest(inputFile);
     }
 }

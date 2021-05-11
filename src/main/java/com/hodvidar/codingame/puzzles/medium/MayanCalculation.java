@@ -8,51 +8,51 @@ import java.util.*;
  **/
 class MayanCalculation {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int L = in.nextInt();
-        int H = in.nextInt();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int L = in.nextInt();
+        final int H = in.nextInt();
         System.err.println("L: " + L + " H: " + H);
 
         ArrayList<String> storage = null;
         for (int i = 0; i < H; i++) {
-            String numeral = in.next();
+            final String numeral = in.next();
             //System.err.println("i: "+i+" numeral: "+numeral);
             storage = storeNumbers(storage, numeral, L);
         }
-        Map<String, Integer> numbers = storeNumbers2(storage);
+        final Map<String, Integer> numbers = storeNumbers2(storage);
 
         storage = null;
-        int S1 = in.nextInt();
-        int nbOfNumbers1 = S1 / H;
+        final int S1 = in.nextInt();
+        final int nbOfNumbers1 = S1 / H;
         //System.err.println("S1: "+S1);
         for (int i = 0; i < S1; i++) {
-            String num1Line = in.next();
+            final String num1Line = in.next();
             //System.err.println("num1Line: "+num1Line);
             storage = storeNewNumber(storage, num1Line, i / H, nbOfNumbers1);
         }
 
-        int number1 = convertNumber(numbers, storage);
+        final int number1 = convertNumber(numbers, storage);
 
         storage = null;
-        int S2 = in.nextInt();
-        int nbOfNumbers2 = S2 / H;
+        final int S2 = in.nextInt();
+        final int nbOfNumbers2 = S2 / H;
         //System.err.println("S2: "+S2);
         for (int i = 0; i < S2; i++) {
-            String num2Line = in.next();
+            final String num2Line = in.next();
             //System.err.println("num2Line: "+num2Line);
             storage = storeNewNumber(storage, num2Line, i / H, nbOfNumbers2);
         }
 
-        int number2 = convertNumber(numbers, storage);
-        String operation = in.next();
+        final int number2 = convertNumber(numbers, storage);
+        final String operation = in.next();
         System.err.println("number1: " + number1);
         System.err.println("number2: " + number2);
         System.err.println("operation: " + operation);
 
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
-        double result = doOperation(number1, number2, operation);
+        final double result = doOperation(number1, number2, operation);
         System.err.println("result: " + result);
         printMayaNumber(result, numbers, L, H);
         //System.out.println(result);
@@ -62,7 +62,7 @@ class MayanCalculation {
     /**
      * handle if storage is null
      */
-    private static ArrayList<String> storeNumbers(ArrayList<String> storage, String line, int largeur) {
+    private static ArrayList<String> storeNumbers(ArrayList<String> storage, final String line, final int largeur) {
         if (storage == null || storage.size() == 0) {
             storage = new ArrayList<>();
             for (int i = 0; i < 20; i++)
@@ -70,14 +70,14 @@ class MayanCalculation {
         }
 
         for (int i = 0; i < 20; i++) {
-            String s = line.substring(i * largeur, (i + 1) * largeur);
+            final String s = line.substring(i * largeur, (i + 1) * largeur);
             storage.set(i, storage.get(i) + s);
         }
         return storage;
     }
 
-    private static Map<String, Integer> storeNumbers2(ArrayList<String> storage) {
-        Map<String, Integer> numbers = new HashMap<>();
+    private static Map<String, Integer> storeNumbers2(final ArrayList<String> storage) {
+        final Map<String, Integer> numbers = new HashMap<>();
         for (int i = 0; i < 20; i++) {
             numbers.put(storage.get(i), i);
             //System.err.println("numbers K | V : "+storage.get(i)+" | "+numbers.get(storage.get(i)));
@@ -85,7 +85,7 @@ class MayanCalculation {
         return numbers;
     }
 
-    private static ArrayList<String> storeNewNumber(ArrayList<String> storage, String line, int index, int nbOfNumbers1) {
+    private static ArrayList<String> storeNewNumber(ArrayList<String> storage, final String line, final int index, final int nbOfNumbers1) {
         if (storage == null || storage.size() == 0) {
             storage = new ArrayList<>();
             for (int i = 0; i < nbOfNumbers1; i++)
@@ -96,19 +96,19 @@ class MayanCalculation {
     }
 
     // [12, 0, 5] --> 4805
-    private static int convertNumber(Map<String, Integer> numbers, ArrayList<String> storage) {
-        int size = storage.size();
+    private static int convertNumber(final Map<String, Integer> numbers, final ArrayList<String> storage) {
+        final int size = storage.size();
         double power = size - 1;
         int total = 0;
         for (int i = 0; i < size; i++) {
-            int number = numbers.get(storage.get(i));
+            final int number = numbers.get(storage.get(i));
             total += number * Math.pow(20.0d, power);
             power--;
         }
         return total;
     }
 
-    private static double doOperation(double number1, double number2, String operation) {
+    private static double doOperation(final double number1, final double number2, final String operation) {
         switch (operation) {
             case "+":
                 return number1 + number2;
@@ -122,16 +122,16 @@ class MayanCalculation {
         return -1;
     }
 
-    private static void printMayaNumber(double number, Map<String, Integer> numbers, int largeur, int hauteur) {
-        ArrayList<Integer> numberList = decomposeNumber(number);
+    private static void printMayaNumber(final double number, final Map<String, Integer> numbers, final int largeur, final int hauteur) {
+        final ArrayList<Integer> numberList = decomposeNumber(number);
         System.err.println("numberList: " + numberList);
-        for (Integer i : numberList) {
+        for (final Integer i : numberList) {
             String line = "";
-            for (Map.Entry<String, Integer> entry : numbers.entrySet()) {
+            for (final Map.Entry<String, Integer> entry : numbers.entrySet()) {
                 if (entry.getValue().equals(i)) {
                     line = entry.getKey();
                     for (int j = 0; j < hauteur; j++) {
-                        String s = line.substring(j * largeur, (j + 1) * largeur);
+                        final String s = line.substring(j * largeur, (j + 1) * largeur);
                         System.out.println(s);
                     }
                 }
@@ -141,9 +141,9 @@ class MayanCalculation {
 
     // 4805 --> [12, 0, 5]
     private static ArrayList<Integer> decomposeNumber(double number) {
-        ArrayList<Integer> storage = new ArrayList<>();
+        final ArrayList<Integer> storage = new ArrayList<>();
         while (true) {
-            double rest = number % 20d;
+            final double rest = number % 20d;
             System.err.println("rest: " + rest);
             storage.add((int) rest);
             number = Math.floor(number / 20);

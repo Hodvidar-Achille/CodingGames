@@ -5,12 +5,12 @@ public class BinaryTreeNode {
     private BinaryTreeNode left;
     private BinaryTreeNode right;
 
-    public BinaryTreeNode(Integer value) {
+    public BinaryTreeNode(final Integer value) {
         this.value = value;
     }
 
-    public void insert(Integer value) {
-        if (value.compareTo(this.value)<=0) {
+    public void insert(final Integer value) {
+        if (value.compareTo(this.value) <= 0) {
             if (left == null) {
                 left = new BinaryTreeNode(value);
             } else {
@@ -25,7 +25,7 @@ public class BinaryTreeNode {
         }
     }
 
-    public boolean contains(Integer value) {
+    public boolean contains(final Integer value) {
         if (value.equals(this.value)) {
             return true;
         }
@@ -43,28 +43,28 @@ public class BinaryTreeNode {
     }
 
     public int getMaxDepth() {
-        if(left == null && right == null){
+        if (left == null && right == null) {
             return 1;
         }
-        int leftDepth = left == null ? 0 : left.getMaxDepth();
-        int rightDepth = right == null ? 0 : right.getMaxDepth();
+        final int leftDepth = left == null ? 0 : left.getMaxDepth();
+        final int rightDepth = right == null ? 0 : right.getMaxDepth();
         return (1 + ((leftDepth > rightDepth) ? leftDepth : rightDepth));
     }
 
     public String toStringSimple() {
-        return "{v="+this.value+" Lv="+this.left.getValue()+" Rv="+this.right.getValue()+"}";
+        return "{v=" + this.value + " Lv=" + this.left.getValue() + " Rv=" + this.right.getValue() + "}";
     }
 
     @Override
     public String toString() {
-        return "v="+this.value+" {L>"+this.left+" R>"+this.right+"}";
+        return "v=" + this.value + " {L>" + this.left + " R>" + this.right + "}";
     }
 
     public Integer getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(final Integer value) {
         this.value = value;
     }
 
@@ -72,7 +72,7 @@ public class BinaryTreeNode {
         return left;
     }
 
-    public void setLeft(BinaryTreeNode left) {
+    public void setLeft(final BinaryTreeNode left) {
         this.left = left;
     }
 
@@ -80,7 +80,7 @@ public class BinaryTreeNode {
         return right;
     }
 
-    public void setRight(BinaryTreeNode right) {
+    public void setRight(final BinaryTreeNode right) {
         this.right = right;
     }
 }

@@ -12,17 +12,17 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
     private double paddleY = 1000;
     private double givenInput = 0;
 
-    public ArcaneCabinet(double[] memory) {
+    public ArcaneCabinet(final double[] memory) {
         this.screen = new GameSurface();
         this.brain = new Amplifier(memory, null, this);
     }
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public void changeMemoryAdressValue(int addr, double value) {
+    public void changeMemoryAdressValue(final int addr, final double value) {
         this.brain.changeMemoryAdressValue(addr, value);
     }
 
@@ -37,7 +37,7 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
         while (true) {
             // 1) Run the program x3 for x, y, value
             this.brain.runProgram();
-            int x = (int) this.brain.getOutput();
+            final int x = (int) this.brain.getOutput();
 
             this.brain.runProgram();
             int y = (int) this.brain.getOutput();
@@ -45,10 +45,10 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
             y = y * (-1);
 
             this.brain.runProgram();
-            int value = (int) this.brain.getOutput();
+            final int value = (int) this.brain.getOutput();
 
-            boolean isPaddle = (value == GamePixel.PADDLE);
-            boolean isBall = (value == GamePixel.BALL);
+            final boolean isPaddle = (value == GamePixel.PADDLE);
+            final boolean isBall = (value == GamePixel.BALL);
             if (isPaddle) {
                 paddleX = x;
                 paddleY = y;
@@ -68,11 +68,11 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
     /**
      * Play the game alone
      **/
-    public void launchGameAuto(boolean verbose) {
+    public void launchGameAuto(final boolean verbose) {
         while (true) {
             // 1) Run the program x3 for x, y, value
             this.brain.runProgram();
-            int x = (int) this.brain.getOutput();
+            final int x = (int) this.brain.getOutput();
 
             // reset input ?
             //			this.brain.setInput(0);
@@ -82,7 +82,7 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
             y = y * (-1);
 
             this.brain.runProgram();
-            int value = (int) this.brain.getOutput();
+            final int value = (int) this.brain.getOutput();
 
             //printIfVerbose("x=" + x + " y=" + y + " value=" + value);
 
@@ -90,8 +90,8 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
             if (this.brain.isShutDown())
                 return;
 
-            boolean isBall = (value == GamePixel.BALL);
-            boolean isPaddle = (value == GamePixel.PADDLE);
+            final boolean isBall = (value == GamePixel.BALL);
+            final boolean isPaddle = (value == GamePixel.PADDLE);
 
             // 3) Do action
             if (x == -1) {
@@ -168,7 +168,7 @@ public final class ArcaneCabinet implements OpCodeReaderInputCallBack {
     }
 
     @Override
-    public void informValueUsed(double value) {
+    public void informValueUsed(final double value) {
         if (value == 1) {
             this.screen.paintPoint(paddleX, paddleY, GamePixel.EMPTY);
             paddleX++;

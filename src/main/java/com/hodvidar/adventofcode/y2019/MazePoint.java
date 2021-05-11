@@ -8,15 +8,15 @@ public final class MazePoint extends PaintedPoint {
     public static final int START = 4;
     private int countFromStart = -1;
 
-    public MazePoint(double x, double y) {
+    public MazePoint(final double x, final double y) {
         super(x, y);
     }
 
-    public MazePoint(double x, double y, int value) {
+    public MazePoint(final double x, final double y, final int value) {
         super(x, y, value);
     }
 
-    public MazePoint(double x, double y, int value, int countFromStart) {
+    public MazePoint(final double x, final double y, final int value, final int countFromStart) {
         super(x, y, value);
         this.countFromStart = countFromStart;
     }
@@ -28,7 +28,7 @@ public final class MazePoint extends PaintedPoint {
     /**
      * Only keeps lower value
      **/
-    public void setCountFromStart(int countFromStart) {
+    public void setCountFromStart(final int countFromStart) {
         if (countFromStart == -1) {
             this.countFromStart = -1;
             return;
@@ -41,7 +41,7 @@ public final class MazePoint extends PaintedPoint {
     }
 
     @Override
-    public boolean paint(int newValue) {
+    public boolean paint(final int newValue) {
         if (this.value == START)
             return false;
 

@@ -21,21 +21,21 @@ public final class _Day01 {
     private static final int NUMBER_OF_TEST = 1;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
+    private static int test(final String inputFile) throws Exception {
         String line;
-        File file = new File(inputFile);
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // for(int i = 0; i< input.length; i++)
@@ -43,8 +43,8 @@ public final class _Day01 {
         while (sc.hasNextLine()) {
             // line = input[i];
             line = sc.nextLine();
-            int mass = Integer.parseInt(line);
-            int fuel = calculateFuel(mass);
+            final int mass = Integer.parseInt(line);
+            final int fuel = calculateFuel(mass);
             totalFuel += fuel;
         }
 
@@ -60,8 +60,8 @@ public final class _Day01 {
      * @param mass
      * @return
      */
-    private static int calculateFuel(int mass) {
-        double r = mass / 3d;
+    private static int calculateFuel(final int mass) {
+        final double r = mass / 3d;
         int r2 = (int) Math.floor(r);
         r2 = r2 - 2;
         return r2;

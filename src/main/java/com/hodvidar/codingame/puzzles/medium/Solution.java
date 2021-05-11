@@ -12,16 +12,16 @@ import java.util.Scanner;
  **/
 class TheGift {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        int C = in.nextInt();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt();
+        final int C = in.nextInt();
         System.err.println("N :" + N + " C: " + C);
-        List<Integer> budgets = new ArrayList<>();
+        final List<Integer> budgets = new ArrayList<>();
         List<Integer> maxGiven = new ArrayList<>();
         int totalBudget = 0;
         for (int i = 0; i < N; i++) {
-            int B = in.nextInt();
+            final int B = in.nextInt();
             totalBudget += B;
             budgets.add(B);
             System.err.println("B: " + B);
@@ -45,14 +45,14 @@ class TheGift {
         in.close();
     }
 
-    private static List<Integer> calculMaxGiven(List<Integer> budgets, List<Integer> maxGiven, int participants, int price) {
-        int averageBudget = (int) Math.floor((double) price / (double) participants);
+    private static List<Integer> calculMaxGiven(final List<Integer> budgets, final List<Integer> maxGiven, final int participants, final int price) {
+        final int averageBudget = (int) Math.floor((double) price / (double) participants);
         int giversWithGoodBudget = participants;
         int price2 = price;
         System.err.println("averageBudget: " + averageBudget + " giversWithGoodBudget: " + giversWithGoodBudget + " price2: " + price2);
-        List<Integer> budgets2 = new ArrayList<>(budgets);
+        final List<Integer> budgets2 = new ArrayList<>(budgets);
         for (int i = budgets.size() - 1; i >= 0; i--) {
-            int x = budgets.get(i);
+            final int x = budgets.get(i);
             if (x <= averageBudget) {
                 giversWithGoodBudget -= 1;
                 maxGiven.add(x);

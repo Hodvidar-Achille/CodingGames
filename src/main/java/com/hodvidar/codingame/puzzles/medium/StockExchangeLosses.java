@@ -10,15 +10,15 @@ import java.util.Scanner;
  **/
 class StockExchangeLosses {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        List<Integer> values = new ArrayList<>();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int n = in.nextInt();
+        final List<Integer> values = new ArrayList<>();
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         int maxLoss = 0;
         for (int i = 0; i < n; i++) {
-            int v = in.nextInt();
+            final int v = in.nextInt();
             values.add(v);
             if (v > max) {
                 if (min - max < maxLoss && min != Integer.MAX_VALUE)

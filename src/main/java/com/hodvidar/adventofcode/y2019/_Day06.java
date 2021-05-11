@@ -22,31 +22,31 @@ public final class _Day06 {
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
     private static final String COM = "COM";
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+    public static void main(final String[] args) throws Exception {
+        final int result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("result='" + result + "'");
     }
 
-    private static int test(String inputFile) throws Exception {
+    private static int test(final String inputFile) throws Exception {
         String line;
-        File file = new File(inputFile);
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
-        Map<String, Node> planetes = new HashMap<>();
+        final Map<String, Node> planetes = new HashMap<>();
         while (sc.hasNextLine()) {
             // line = input[i];
             line = sc.nextLine();
-            String[] line2 = line.split("\\)");
-            String a = line2[0];
-            String b = line2[1];
+            final String[] line2 = line.split("\\)");
+            final String a = line2[0];
+            final String b = line2[1];
 
             Node A = planetes.get(a);
             if (A == null)
@@ -54,7 +54,7 @@ public final class _Day06 {
             Node B = planetes.get(b);
             if (B == null)
                 B = new Node(b);
-            boolean success = B.connectToParent(A);
+            final boolean success = B.connectToParent(A);
             if (!success) {
                 sc.close();
                 throw new IllegalStateException("Failed to connect child:"
@@ -67,7 +67,7 @@ public final class _Day06 {
         planetes.get(COM).propagadeLevels(0);
 
         int total = 0;
-        for (Node n : planetes.values())
+        for (final Node n : planetes.values())
             total += n.getLevel();
 
         return total;

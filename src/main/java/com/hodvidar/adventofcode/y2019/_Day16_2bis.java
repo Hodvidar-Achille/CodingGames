@@ -19,12 +19,12 @@ public final class _Day16_2bis {
     private static final int dixMille = 10000;
     static int[] PATTERN = {0, 1, 0, -1};
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         // 61706040 // 61706040
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
@@ -33,20 +33,20 @@ public final class _Day16_2bis {
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test6.txt");
         //49623910 false
-        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+        final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '???' - result='" + result + "'");
     }
 
-    private static String subTest(String inputFile) throws Exception {
+    private static String subTest(final String inputFile) throws Exception {
         System.err.println("Computing on file:" + inputFile);
         String line = "";
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
+        final File file = new File(inputFile);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // Create the elements
-        long before = System.currentTimeMillis();
+        final long before = System.currentTimeMillis();
         String expectedResult = "";
         line = sc.nextLine();
         expectedResult = sc.nextLine(); // Solution Day16_2
@@ -54,7 +54,7 @@ public final class _Day16_2bis {
 
         // The first seven digits of your initial input signal
         // also represent the message offset.
-        Integer offSet = Integer.parseInt(line.substring(0, 7));
+        final Integer offSet = Integer.parseInt(line.substring(0, 7));
         // x1000
         line = generateLongInput(line);
 
@@ -62,19 +62,19 @@ public final class _Day16_2bis {
         String result = faseAlgorithmBad(line);
         printIfVerbose("Work ended.");
         result = result.substring(offSet, offSet + 8);
-        long after = System.currentTimeMillis();
-        long diff = after - before;
-        String diffStr = MillisecondeFormater.asTime(diff);
+        final long after = System.currentTimeMillis();
+        final long diff = after - before;
+        final String diffStr = MillisecondeFormater.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "' took:" + diffStr);
         return "" + result;
     }
 
-    private static String test(String inputFile) throws Exception {
+    private static String test(final String inputFile) throws Exception {
         return subTest(inputFile);
     }
 
-    private static String generateLongInput(String s) {
+    private static String generateLongInput(final String s) {
         String input = "";
         for (int i = 0; i < dixMille; i++) {
             input = input + s;
@@ -83,13 +83,13 @@ public final class _Day16_2bis {
         return input;
     }
 
-    private static String faseAlgorithmBad(String inp) {
-        StringBuffer b = new StringBuffer();
-        char[] chars = inp.toCharArray();
+    private static String faseAlgorithmBad(final String inp) {
+        final StringBuffer b = new StringBuffer();
+        final char[] chars = inp.toCharArray();
 
         int acc = 0;
         for (int i = 0; i < chars.length; i++) {
-            int n = chars[chars.length - i - 1] - 48;
+            final int n = chars[chars.length - i - 1] - 48;
             acc += n;
             b.append(acc % 10);
         }
@@ -98,18 +98,18 @@ public final class _Day16_2bis {
 
     }
 
-    public static String faseAlgorithmGood(String x) {
-        char[] chars = x.toCharArray();
-        StringBuffer res = new StringBuffer();
+    public static String faseAlgorithmGood(final String x) {
+        final char[] chars = x.toCharArray();
+        final StringBuffer res = new StringBuffer();
         for (int charIdxBeingGenerated = 0; charIdxBeingGenerated < chars.length; charIdxBeingGenerated++) {
 
             long acc = 0;
             for (int charIdx = charIdxBeingGenerated /* skip initial zeroes */; charIdx < chars.length; charIdx++) {
-                int n = chars[charIdx] - 48;
-                int val = getMultiplier(charIdxBeingGenerated, charIdx);
+                final int n = chars[charIdx] - 48;
+                final int val = getMultiplier(charIdxBeingGenerated, charIdx);
 
                 if ((val == 0)) /* skip internal zero sequences*/ {
-                    int skip = (charIdxBeingGenerated);
+                    final int skip = (charIdxBeingGenerated);
                     // System.out.println("Skipping "+skip);
                     charIdx += skip;
                     continue;
@@ -121,10 +121,10 @@ public final class _Day16_2bis {
         return res.toString();
     }
 
-    private static int getMultiplier(int charIdxBeingGenerated, int charIdx) {
-        int repetition = charIdxBeingGenerated + 1;
-        int idx = (charIdx + 1) / repetition;
-        int val = PATTERN[idx % 4];
+    private static int getMultiplier(final int charIdxBeingGenerated, final int charIdx) {
+        final int repetition = charIdxBeingGenerated + 1;
+        final int idx = (charIdx + 1) / repetition;
+        final int val = PATTERN[idx % 4];
         return val;
     }
 }

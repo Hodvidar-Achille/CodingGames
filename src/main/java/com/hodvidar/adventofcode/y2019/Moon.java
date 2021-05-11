@@ -9,7 +9,7 @@ public final class Moon {
     public double vY = 0;
     public double vZ = 0;
 
-    public Moon(double x, double y, double z) {
+    public Moon(final double x, final double y, final double z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -21,7 +21,7 @@ public final class Moon {
      *
      * @param other - other Moon which gravity change our velocity
      */
-    public void adjustVelocities(Moon other) {
+    public void adjustVelocities(final Moon other) {
         if (this == other)
             throw new IllegalArgumentException("Other object cannot be self");
 
@@ -43,7 +43,7 @@ public final class Moon {
         this.z += this.vZ;
     }
 
-    private double adjustVelocity(double v1, double v2) {
+    private double adjustVelocity(final double v1, final double v2) {
         if (v1 < v2)
             return 1;
         if (v1 > v2)

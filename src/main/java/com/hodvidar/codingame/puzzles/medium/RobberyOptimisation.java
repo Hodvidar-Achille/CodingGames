@@ -10,19 +10,19 @@ import java.util.Scanner;
  */
 class RobberyOptimisation {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        long[] houses = new long[N];
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt();
+        final long[] houses = new long[N];
         for (int i = 0; i < N; i++) {
             houses[i] = in.nextLong();
         }
 
         System.err.print("houses :[");
-        for (long i : houses)
+        for (final long i : houses)
             System.err.print(i + ", ");
         System.err.println("]");
-        List<Integer> housesToVisit = new ArrayList<>();
+        final List<Integer> housesToVisit = new ArrayList<>();
         analyzeHouses(
                 0,
                 N - 1,
@@ -34,11 +34,11 @@ class RobberyOptimisation {
                 new ArrayList<Integer>(),
                 new ArrayList<Integer>());
         System.err.print("housesToVisit :[");
-        for (Integer i : housesToVisit)
+        for (final Integer i : housesToVisit)
             System.err.print(i + ", ");
         System.err.println("]");
         long total = 0;
-        for (Integer i : housesToVisit)
+        for (final Integer i : housesToVisit)
             total += houses[i.intValue()];
 
         // Write an action using System.out.println()
@@ -53,15 +53,15 @@ class RobberyOptimisation {
      * end : end of array (inclusif).
      **/
     private static void analyzeHouses(
-            int start,
-            int end,
-            long[] houses,
-            List<Integer> housesToVisit,
-            boolean ignoreTrap,
-            long e,
-            long m,
-            List<Integer> listE,
-            List<Integer> listM) {
+            final int start,
+            final int end,
+            final long[] houses,
+            final List<Integer> housesToVisit,
+            final boolean ignoreTrap,
+            final long e,
+            final long m,
+            final List<Integer> listE,
+            final List<Integer> listM) {
         // System.err.println("analyzeHouses(" + start + ", " + end + ", houses, housesToVisit, "
         //  	+ ignoreTrap + ", " + e + ", " + m + ", listE, listM)");
 
@@ -145,25 +145,25 @@ class RobberyOptimisation {
      * valueOnLeft : value that is at the house 'start-1' or 'middle-2', 0 by default.
      */
     private static void analyzeSegment(
-            int start,
-            int end,
-            long[] houses,
-            List<Integer> housesToVisit,
-            long e,
-            long m,
-            List<Integer> listE,
-            List<Integer> listM) {
+            final int start,
+            final int end,
+            final long[] houses,
+            final List<Integer> housesToVisit,
+            final long e,
+            final long m,
+            final List<Integer> listE,
+            final List<Integer> listM) {
         // System.err.println("analyzeSegment(" + start + ", " + end + ", houses, housesToVisit, " + e
         //	+ ", " + m + ", listE, listM");
-        int e1 = start;
-        int middle = start + 1;
-        int e2 = middle + 1;
-        long E1 = houses[e1];
-        long M = houses[middle];
-        long E2 = houses[e2];
+        final int e1 = start;
+        final int middle = start + 1;
+        final int e2 = middle + 1;
+        final long E1 = houses[e1];
+        final long M = houses[middle];
+        final long E2 = houses[e2];
         if (M + m > E1 + E2 + e) {
             System.err.println("analyzeSegment(...) -> (M + m > E1 + E2 + e) middle=" + middle);
-            for (Integer ms : listM)
+            for (final Integer ms : listM)
                 housesToVisit.add(ms);
             housesToVisit.add(Integer.valueOf(middle));
             analyzeHouses(
@@ -184,7 +184,7 @@ class RobberyOptimisation {
         // End of (sub)segment ?
         if (e2 == end) {
             System.err.println("analyzeSegment(...) -> (e2 == end), middle = " + middle);
-            for (Integer ms : listE)
+            for (final Integer ms : listE)
                 housesToVisit.add(ms);
             housesToVisit.add(Integer.valueOf(e2));
             return;

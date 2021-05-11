@@ -24,33 +24,33 @@ public final class _Day14_2 {
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
     private static final double oneTrillion = 1000000000000d;
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test3.txt");
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test4.txt");
         subTest(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input" + NUMBER_OF_TEST
                 + "-test5.txt");
-        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+        final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '2690795' - result='" + result + "'");
     }
 
-    private static String subTest(String inputFile) throws Exception {
+    private static String subTest(final String inputFile) throws Exception {
         System.err.println("Computing on file:" + inputFile);
         String line = "";
-        File file = new File(inputFile);
-        Scanner sc = new Scanner(file);
+        final File file = new File(inputFile);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // Create the elements
         String expectedResult = "";
-        ChemicalSystem system = new ChemicalSystem(true, oneTrillion);
+        final ChemicalSystem system = new ChemicalSystem(true, oneTrillion);
         while (sc.hasNext()) {
             line = sc.nextLine();
             if (!line.contains("=>")) {
@@ -62,20 +62,20 @@ public final class _Day14_2 {
         expectedResult = line; // Solution for Day14
         expectedResult = sc.nextLine(); // Solution for Day14_2
         sc.close();
-        long before = System.currentTimeMillis();
+        final long before = System.currentTimeMillis();
         system.initReaction(ChemicalSystem.FUEL);
-        double result = system.getQuantityAvailable(ChemicalSystem.FUEL);
-        String resultStr = DoubleFormater.asInteger(result);
-        long after = System.currentTimeMillis();
-        long diff = after - before;
-        String diffStr = MillisecondeFormater.asTime(diff);
+        final double result = system.getQuantityAvailable(ChemicalSystem.FUEL);
+        final String resultStr = DoubleFormater.asInteger(result);
+        final long after = System.currentTimeMillis();
+        final long diff = after - before;
+        final String diffStr = MillisecondeFormater.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + resultStr + "'");
         System.err.println("Took:'" + diffStr + "'");
         return "" + resultStr;
     }
 
-    private static String test(String inputFile) throws Exception {
+    private static String test(final String inputFile) throws Exception {
         return subTest(inputFile);
     }
 }

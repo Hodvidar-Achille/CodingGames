@@ -20,22 +20,22 @@ public final class _Day09_2 {
     private static final int NUMBER_OF_TEST = 9;
     private static final String INPUT_DIRECTORY = "adventofcode_2019"; // input1
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    public static void main(String[] args) throws Exception {
-        String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
+    public static void main(final String[] args) throws Exception {
+        final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
         System.err.println("Expected '42202' - result='" + result + "'");
     }
 
-    private static String test(String inputFile) throws Exception {
-        String line;
-        File file = new File(inputFile);
+    private static String test(final String inputFile) throws Exception {
+        final String line;
+        final File file = new File(inputFile);
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(file);
+        final Scanner sc = new Scanner(file);
         printIfVerbose("DEBUGGING");
 
         // TEST :
@@ -43,16 +43,16 @@ public final class _Day09_2 {
         // line = "1102,34915192,34915192,7,4,7,99,0"; // OK
         // line = "104,1125899906842624,99"; // OK
         line = sc.nextLine(); // KO : 203 and 0
-        String[] opCodeStr = line.split(",");
+        final String[] opCodeStr = line.split(",");
         sc.close();
-        double[] opCode = new double[opCodeStr.length];
+        final double[] opCode = new double[opCodeStr.length];
         for (int i = 0; i < opCodeStr.length; i++) {
-            String s = opCodeStr[i];
-            double j = Double.parseDouble(s);
+            final String s = opCodeStr[i];
+            final double j = Double.parseDouble(s);
             opCode[i] = j;
         }
 
-        Amplifier amp = new Amplifier(opCode);
+        final Amplifier amp = new Amplifier(opCode);
         amp.setInput(2);
         double output = 0;
         while (!amp.isShutDown()) {
@@ -61,10 +61,10 @@ public final class _Day09_2 {
             printIfVerbose("Day9 while run : " + output);
         }
 
-        NumberFormat nf = NumberFormat.getNumberInstance();
+        final NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(0);
         nf.setGroupingUsed(false);
-        String rounded = nf.format(output);
+        final String rounded = nf.format(output);
 
         // Stuff
         return rounded;

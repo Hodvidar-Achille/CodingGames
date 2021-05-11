@@ -9,24 +9,23 @@ import java.util.*;
  **/
 class SkynetRevolutionEpisode1 {
 
-    public static void main(String[] args) {
-        SkynetRevolutionEpisode1 s = new SkynetRevolutionEpisode1();
+    public static void main(final String[] args) {
+        final SkynetRevolutionEpisode1 s = new SkynetRevolutionEpisode1();
         s.test();
     }
 
     private void test() {
-        @SuppressWarnings("resource")
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt(); // the total number of nodes in the level, including the gateways
-        int L = in.nextInt(); // the number of links
-        int E = in.nextInt(); // the number of exit gateways
-        Map<Integer, Node> nodesMap = new HashMap<>();
-        List<Integer> nodesList = new ArrayList<>();
-        List<Edge> edges = new ArrayList<>();
+        @SuppressWarnings("resource") final Scanner in = new Scanner(System.in);
+        final int N = in.nextInt(); // the total number of nodes in the level, including the gateways
+        final int L = in.nextInt(); // the number of links
+        final int E = in.nextInt(); // the number of exit gateways
+        final Map<Integer, Node> nodesMap = new HashMap<>();
+        final List<Integer> nodesList = new ArrayList<>();
+        final List<Edge> edges = new ArrayList<>();
         System.err.println("    nb nodes = " + N + " nb links = " + L + " nb exits = " + E);
         for (int i = 0; i < L; i++) {
-            int N1 = in.nextInt(); // N1 and N2 defines a link between these nodes
-            int N2 = in.nextInt();
+            final int N1 = in.nextInt(); // N1 and N2 defines a link between these nodes
+            final int N2 = in.nextInt();
             if (!nodesMap.containsKey(N1))
                 nodesMap.put(N1, new Node(N1));
             if (!nodesMap.containsKey(N2))
@@ -36,13 +35,13 @@ class SkynetRevolutionEpisode1 {
                 nodesList.add(N1);
             if (!nodesList.contains(N2))
                 nodesList.add(N2);
-            Edge edge = new Edge(N1, N2);
+            final Edge edge = new Edge(N1, N2);
             edges.add(edge);
             System.err.println(N1 + " <-> " + N2);
         }
-        List<Integer> exists = new ArrayList<>();
+        final List<Integer> exists = new ArrayList<>();
         for (int i = 0; i < E; i++) {
-            int EI = in.nextInt(); // the index of a gateway node
+            final int EI = in.nextInt(); // the index of a gateway node
             exists.add(EI);
             System.err.println(EI + " --> ");
         }
@@ -51,25 +50,25 @@ class SkynetRevolutionEpisode1 {
         for (int i = 0; i < nodes.length; i++)
             nodes[i] = nodesMap.get(i);
 
-        List<Edge> edges2 = new ArrayList<>(edges);
+        final List<Edge> edges2 = new ArrayList<>(edges);
         // build List of exists Edges
-        List<Edge> existEdges = new ArrayList<>();
+        final List<Edge> existEdges = new ArrayList<>();
 
-        for (Edge ed : edges2) {
-            for (Integer ex : exists) {
+        for (final Edge ed : edges2) {
+            for (final Integer ex : exists) {
                 if (ed.getDestination() == ex || ed.getSource() == ex) {
                     existEdges.add(ed);
-                    int n1 = ed.getSource();
-                    int n2 = ed.getDestination();
+                    final int n1 = ed.getSource();
+                    final int n2 = ed.getDestination();
                     System.err.println("existEdge : " + n1 + " - " + n2);
                 }
             }
         }
         ArrayList<Node> path = null;
-        DijkstraNode dijkstra = new DijkstraNode();
+        final DijkstraNode dijkstra = new DijkstraNode();
         // game loop
         while (true) {
-            int SI = in.nextInt(); // The index of the node on which the Skynet agent is positioned this turn
+            final int SI = in.nextInt(); // The index of the node on which the Skynet agent is positioned this turn
             System.err.println("XoX in " + SI);
 
             // 1) if SI near an exist :
@@ -77,7 +76,7 @@ class SkynetRevolutionEpisode1 {
             int n1 = -1;
             int n2 = -1;
             Edge edgeToRemove = null;
-            for (Edge ed : existEdges) {
+            for (final Edge ed : existEdges) {
                 if (ed.getSource() == SI || ed.getDestination() == SI) {
                     n1 = ed.getSource();
                     n2 = ed.getDestination();
@@ -93,27 +92,27 @@ class SkynetRevolutionEpisode1 {
             // 2) else find closest exist and close it
             else {
                 System.err.println("### Computing path ####");
-                long t1 = System.currentTimeMillis();
+                final long t1 = System.currentTimeMillis();
                 final int[] pred = dijkstra.dijkstra(nodes, SI);
-                List<ArrayList<Node>> paths = new ArrayList<>();
-                for (int e : exists) {
+                final List<ArrayList<Node>> paths = new ArrayList<>();
+                for (final int e : exists) {
                     path = dijkstra.getPath(nodes, pred, SI, e);
                     paths.add(path);
                     if (path.size() == 2)
                         break;
                 }
-                int minLength = Integer.MAX_VALUE;
-                for (ArrayList<Node> aPath : paths) {
+                final int minLength = Integer.MAX_VALUE;
+                for (final ArrayList<Node> aPath : paths) {
                     if (aPath.size() < minLength)
                         path = aPath;
                 }
                 // the 2 last elems are the 2 nodes/1 edge to remove
-                Node node1 = path.get(path.size() - 1);
-                Node node2 = path.get(path.size() - 2);
+                final Node node1 = path.get(path.size() - 1);
+                final Node node2 = path.get(path.size() - 2);
                 nodes = removeAndCut(existEdges, node1, node2, nodes);
                 n1 = node1.getValue();
                 n2 = node2.getValue();
-                long t2 = System.currentTimeMillis();
+                final long t2 = System.currentTimeMillis();
                 System.err.println("Finding path finished | took: " + (t2 - t1) + "ms");
             }
 
@@ -129,28 +128,28 @@ class SkynetRevolutionEpisode1 {
     }
 
     private Node[] removeAndCut(
-            List<Edge> existEdges,
-            Map<Integer, Node> nodesMap,
-            Edge edgeToRemove,
+            final List<Edge> existEdges,
+            final Map<Integer, Node> nodesMap,
+            final Edge edgeToRemove,
             Node[] nodes) {
         existEdges.remove(edgeToRemove);
         // <-> consistency between edges and nodes
-        int n1 = edgeToRemove.getSource();
-        int n2 = edgeToRemove.getDestination();
-        Node node1 = nodesMap.get(n1);
-        Node node2 = nodesMap.get(n2);
+        final int n1 = edgeToRemove.getSource();
+        final int n2 = edgeToRemove.getDestination();
+        final Node node1 = nodesMap.get(n1);
+        final Node node2 = nodesMap.get(n2);
         node1.cutCouble(node2);
         if (node1.isOprhan() || node2.isOprhan())
             nodes = cutFromGraphOrphanNodes(nodes);
         return nodes;
     }
 
-    private Node[] removeAndCut(List<Edge> existEdges, Node node1, Node node2, Node[] nodes) {
+    private Node[] removeAndCut(final List<Edge> existEdges, final Node node1, final Node node2, Node[] nodes) {
         node1.cutCouble(node2);
-        int n1 = node1.getValue();
-        int n2 = node2.getValue();
+        final int n1 = node1.getValue();
+        final int n2 = node2.getValue();
         Edge edgeToRemove = null;
-        for (Edge ed : existEdges) {
+        for (final Edge ed : existEdges) {
             if (ed.getSource() == n1 && ed.getDestination() == n2 || ed.getSource() == n2
                     && ed.getDestination() == n1) {
                 edgeToRemove = ed;
@@ -165,11 +164,11 @@ class SkynetRevolutionEpisode1 {
 
     private Node[] cutFromGraphOrphanNodes(Node[] nodes) {
         boolean needReplace = false;
-        int l = nodes.length;
-        Node[] replacement = new Node[l - 1];
+        final int l = nodes.length;
+        final Node[] replacement = new Node[l - 1];
         int i = 0;
         int valueLost = -1;
-        for (Node n : nodes) {
+        for (final Node n : nodes) {
             if (n.isOprhan()) {
                 needReplace = true;
                 valueLost = n.getValueVar();
@@ -180,7 +179,7 @@ class SkynetRevolutionEpisode1 {
         }
         if (needReplace) {
             nodes = replacement;
-            for (Node n : nodes) {
+            for (final Node n : nodes) {
                 if (n.getValueVar() > valueLost) {
                     n.setValueVar(n.getValueVar() - 1);
                 }
@@ -196,27 +195,27 @@ class SkynetRevolutionEpisode1 {
         private final Map<Node, Integer> edges;
         private int valueVar;
 
-        public Node(int val) {
+        public Node(final int val) {
             this.value = val;
             this.valueVar = val;
             this.edges = new HashMap<>();
         }
 
-        public void connectDouble(Node aNode, int weight) {
+        public void connectDouble(final Node aNode, final int weight) {
             this.edges.put(aNode, weight);
             aNode.connect(this, weight);
         }
 
-        public void connect(Node aNode, int weight) {
+        public void connect(final Node aNode, final int weight) {
             this.edges.put(aNode, weight);
         }
 
-        public void cutCouble(Node aNode) {
+        public void cutCouble(final Node aNode) {
             aNode.cut(this);
             this.edges.remove(aNode);
         }
 
-        public void cut(Node aNode) {
+        public void cut(final Node aNode) {
             this.edges.remove(aNode);
         }
 
@@ -228,7 +227,7 @@ class SkynetRevolutionEpisode1 {
             return this.valueVar;
         }
 
-        public void setValueVar(int var) {
+        public void setValueVar(final int var) {
             this.valueVar = var;
         }
 
@@ -236,7 +235,7 @@ class SkynetRevolutionEpisode1 {
             return this.edges;
         }
 
-        public int getWeight(Node dest) {
+        public int getWeight(final Node dest) {
             return this.edges.get(dest);
         }
 
@@ -246,7 +245,7 @@ class SkynetRevolutionEpisode1 {
     }
 
     class DijkstraNode {
-        public int[] dijkstra(Node[] nodes, int s) {
+        public int[] dijkstra(final Node[] nodes, final int s) {
             final int[] dist = new int[nodes.length]; // shortest known distance from "s"
             final int[] pred = new int[nodes.length]; // preceeding node in path
             final boolean[] visited = new boolean[nodes.length];
@@ -262,8 +261,8 @@ class SkynetRevolutionEpisode1 {
                 visited[next] = true;
 
                 final Map<Node, Integer> n = nextN.getEdges();
-                for (Node v : n.keySet()) {
-                    int vv = v.getValueVar();
+                for (final Node v : n.keySet()) {
+                    final int vv = v.getValueVar();
                     final int d = dist[next] + nextN.getWeight(v);
                     if (dist[vv] > d) {
                         dist[vv] = d;
@@ -276,7 +275,7 @@ class SkynetRevolutionEpisode1 {
             return pred;
         }
 
-        private int minVertex(int[] dist, boolean[] v) {
+        private int minVertex(final int[] dist, final boolean[] v) {
             int x = Integer.MAX_VALUE;
             int y = -1; // graph not connected, or no unvisited vertices
             for (int i = 0; i < dist.length; i++) {
@@ -288,7 +287,7 @@ class SkynetRevolutionEpisode1 {
             return y;
         }
 
-        public ArrayList<Node> getPath(Node[] nodes, int[] pred, int s, int dest) {
+        public ArrayList<Node> getPath(final Node[] nodes, final int[] pred, final int s, final int dest) {
             final ArrayList<Node> path = new ArrayList<>();
             int x = dest;
             while (x != s) {
@@ -304,7 +303,7 @@ class SkynetRevolutionEpisode1 {
         private final int source;
         private final int destination;
 
-        public Edge(int aSource, int aDestination) {
+        public Edge(final int aSource, final int aDestination) {
             this.source = aSource;
             this.destination = aDestination;
         }

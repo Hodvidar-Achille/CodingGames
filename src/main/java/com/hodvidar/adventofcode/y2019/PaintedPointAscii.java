@@ -4,11 +4,11 @@ public final class PaintedPointAscii extends PaintedPoint {
 
     public static final int EMPTY = '.';
 
-    public PaintedPointAscii(double x, double y) {
+    public PaintedPointAscii(final double x, final double y) {
         this(x, y, EMPTY);
     }
 
-    public PaintedPointAscii(double x, double y, int value) {
+    public PaintedPointAscii(final double x, final double y, final int value) {
         super(x, y, value);
     }
 

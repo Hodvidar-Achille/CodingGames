@@ -9,23 +9,23 @@ import java.util.Scanner;
  **/
 class BenderEpisode1 {
 
-    public static void main(String[] args) {
-        BenderEpisode1 b = new BenderEpisode1();
+    public static void main(final String[] args) {
+        final BenderEpisode1 b = new BenderEpisode1();
         b.test();
     }
 
     private void test() {
-        Scanner in = new Scanner(System.in);
-        int L = in.nextInt();
-        int C = in.nextInt();
+        final Scanner in = new Scanner(System.in);
+        final int L = in.nextInt();
+        final int C = in.nextInt();
         if (in.hasNextLine()) {
             in.nextLine();
         }
-        char[][] grid = new char[L][C];
+        final char[][] grid = new char[L][C];
         for (int i = 0; i < L; i++) {
-            String row = in.nextLine();
+            final String row = in.nextLine();
             System.err.println(row);
-            char[] rowC = row.toCharArray();
+            final char[] rowC = row.toCharArray();
             for (int j = 0; j < rowC.length; j++)
                 grid[i][j] = rowC[j];
         }
@@ -34,9 +34,9 @@ class BenderEpisode1 {
         // To debug: System.err.println("Debug messages...");
 
         // GO !
-        Bender bender = new Bender(grid, L, C);
-        ArrayList<String> movements = bender.getMovements();
-        for (String s : movements) {
+        final Bender bender = new Bender(grid, L, C);
+        final ArrayList<String> movements = bender.getMovements();
+        for (final String s : movements) {
             switch (s) {
                 case "S":
                     System.out.println("SOUTH");
@@ -85,7 +85,7 @@ class BenderEpisode1 {
         private boolean bersekerMode;
         private boolean isInversed;
 
-        public Bender(char[][] aGrid, int l, int c) {
+        public Bender(final char[][] aGrid, final int l, final int c) {
             this.theGrid = aGrid;
             this.lines = l;
             this.colums = c;
@@ -99,7 +99,7 @@ class BenderEpisode1 {
          * Do the work here
          */
         public ArrayList<String> getMovements() {
-            char[][] grid = this.theGrid;
+            final char[][] grid = this.theGrid;
             final int l = this.lines; // l = lines = y
             final int c = this.colums; // c = colums = x
             int x0 = -1, y0 = -1;
@@ -119,7 +119,7 @@ class BenderEpisode1 {
             return this.movements;
         }
 
-        private void doOneMovement(char[][] grid, int y, int x, char d) {
+        private void doOneMovement(final char[][] grid, final int y, final int x, char d) {
             this.pastActions.add(this.getNewMovement(y, x, d));
             // try to detect a LOOP
 
@@ -131,7 +131,7 @@ class BenderEpisode1 {
 
             if (d == ' ')
                 d = this.SUD;
-            char here = grid[y][x];
+            final char here = grid[y][x];
             if (here == this.STOP)
                 return;
             d = this.adaptStateAndDirection(here, d);
@@ -140,12 +140,12 @@ class BenderEpisode1 {
             return;
         }
 
-        private void doOneMovement2(char[][] grid, int y, int x, char d) {
+        private void doOneMovement2(final char[][] grid, final int y, final int x, char d) {
             d = this.findNext(grid, y, x, d);
-            int[] yx = this.directionToYX(d, y, x);
-            int y2 = yx[0];
-            int x2 = yx[1];
-            char next = grid[y2][x2];
+            final int[] yx = this.directionToYX(d, y, x);
+            final int y2 = yx[0];
+            final int x2 = yx[1];
+            final char next = grid[y2][x2];
             System.err.println("Go to [" + y2 + "][" + x2 + "] in d: " + d);
             this.movements.add("" + d);
             if (next == this.WALL2 && this.bersekerMode) {
@@ -159,12 +159,12 @@ class BenderEpisode1 {
             return;
         }
 
-        private char findNext(char[][] grid, int y, int x, char d) {
-            boolean s = this.okToGo(grid[y + 1][x]);
-            boolean e = this.okToGo(grid[y][x + 1]);
-            boolean n = this.okToGo(grid[y - 1][x]);
-            boolean w = this.okToGo(grid[y][x - 1]);
-            boolean i = this.isInversed;
+        private char findNext(final char[][] grid, final int y, final int x, final char d) {
+            final boolean s = this.okToGo(grid[y + 1][x]);
+            final boolean e = this.okToGo(grid[y][x + 1]);
+            final boolean n = this.okToGo(grid[y - 1][x]);
+            final boolean w = this.okToGo(grid[y][x - 1]);
+            final boolean i = this.isInversed;
             if (d == this.SUD && s)
                 return d;
             if (d == this.EST && e)
@@ -195,7 +195,7 @@ class BenderEpisode1 {
             return ' ';
         }
 
-        private int[] directionToYX(char d, int y, int x) {
+        private int[] directionToYX(final char d, final int y, final int x) {
             if (d == this.SUD)
                 return new int[]{y + 1, x};
             if (d == this.EST)
@@ -207,11 +207,11 @@ class BenderEpisode1 {
             return new int[]{-1, -1};
         }
 
-        private boolean okToGo(char c) {
+        private boolean okToGo(final char c) {
             return !(c == this.WALL1 || (c == this.WALL2 && !this.bersekerMode));
         }
 
-        private void teleporte(char[][] grid, int y, int x, char d) {
+        private void teleporte(final char[][] grid, final int y, final int x, final char d) {
             // find other Teleporter
             int y2 = -1, x2 = -1;
             outer_loop1:
@@ -228,7 +228,7 @@ class BenderEpisode1 {
             this.doOneMovement(grid, y2, x2, d);
         }
 
-        private char adaptStateAndDirection(char c, char d) {
+        private char adaptStateAndDirection(final char c, final char d) {
             if (c == this.INV) {
                 this.inverse();
                 return d;
@@ -243,7 +243,7 @@ class BenderEpisode1 {
             return d;
         }
 
-        private Movement getNewMovement(int y, int x, char d) {
+        private Movement getNewMovement(final int y, final int x, final char d) {
             return new Movement(y, x, this.isInversed, this.bersekerMode, d);
         }
 
@@ -256,14 +256,14 @@ class BenderEpisode1 {
         }
 
         private boolean isLooping() {
-            ArrayList<Movement> list = this.pastActions;
+            final ArrayList<Movement> list = this.pastActions;
             // not using a counter
             int c = 0;
             for (int i = 0; i < list.size(); i++) {
                 c = 0;
-                Movement left = list.get(i);
+                final Movement left = list.get(i);
                 for (int j = i + 1; j < list.size(); j++) {
-                    Movement right = list.get(j);
+                    final Movement right = list.get(j);
                     if (left.isSame(right))
                         c++;
                     if (c > 10)
@@ -281,7 +281,7 @@ class BenderEpisode1 {
         private final boolean stateBersek;
         private final char direction;
 
-        public Movement(int y, int x, boolean inverse, boolean bersek, char direction) {
+        public Movement(final int y, final int x, final boolean inverse, final boolean bersek, final char direction) {
             this.x = x;
             this.y = y;
             this.stateInverse = inverse;
@@ -289,12 +289,12 @@ class BenderEpisode1 {
             this.direction = direction;
         }
 
-        public boolean isSame(Movement other) {
-            boolean sameX = this.x == other.getX();
-            boolean sameY = this.y == other.getY();
-            boolean sameInv = this.stateInverse == other.isStateInverse();
-            boolean sameBer = this.stateBersek == other.isStateBersek();
-            boolean sameD = this.direction == other.getDirection();
+        public boolean isSame(final Movement other) {
+            final boolean sameX = this.x == other.getX();
+            final boolean sameY = this.y == other.getY();
+            final boolean sameInv = this.stateInverse == other.isStateInverse();
+            final boolean sameBer = this.stateBersek == other.isStateBersek();
+            final boolean sameD = this.direction == other.getDirection();
             return sameX && sameY && sameInv && sameBer && sameD;
         }
 

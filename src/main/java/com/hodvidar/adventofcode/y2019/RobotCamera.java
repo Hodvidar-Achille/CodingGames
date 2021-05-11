@@ -31,7 +31,7 @@ public final class RobotCamera {
      **/
     private int y = 0;
 
-    public RobotCamera(double[] memory, boolean verbose) {
+    public RobotCamera(final double[] memory, final boolean verbose) {
         this.ship = new ScaffoldSurface();
         this.brain = new Amplifier(memory);
         this.VERBOSE = verbose;
@@ -42,7 +42,7 @@ public final class RobotCamera {
             this.ship.printInConsole();
     }
 
-    private final int getASCIInumber(int i) {
+    private final int getASCIInumber(final int i) {
         if (i < 0 || i > 9)
             throw new IllegalArgumentException("Should be a digit");
         return i + 48;
@@ -56,7 +56,7 @@ public final class RobotCamera {
             if (this.brain.isShutDown())
                 return;
             // 4) Do action
-            int output = (int) this.brain.getOutput();
+            final int output = (int) this.brain.getOutput();
             if (output == ScaffoldPanel.NEW_LINE) {
                 y--;
                 x = 0;
@@ -81,7 +81,7 @@ public final class RobotCamera {
     public int calculateCameraCalibration() {
         this.paint();
         int total = 0;
-        for (PaintedPoint p : this.ship.paintedPoints) {
+        for (final PaintedPoint p : this.ship.paintedPoints) {
             // Count each point that is a Wall (or the robot on it)
             // and that have its 4 neighbors that are not empty
             // and for each calculate its 'score'.
@@ -95,7 +95,7 @@ public final class RobotCamera {
         return total;
     }
 
-    private boolean isIntersection(PaintedPoint p) {
+    private boolean isIntersection(final PaintedPoint p) {
         if (this.ship.getPaintedPointValue(p.x + 1, p.y) == ScaffoldPanel.EMPTY)
             return false;
         if (this.ship.getPaintedPointValue(p.x - 1, p.y) == ScaffoldPanel.EMPTY)
@@ -105,13 +105,13 @@ public final class RobotCamera {
         return this.ship.getPaintedPointValue(p.x, p.y - 1) != ScaffoldPanel.EMPTY;
     }
 
-    private int calculateScore(PaintedPoint p) {
+    private int calculateScore(final PaintedPoint p) {
         return (int) Math.abs(p.x * p.y);
     }
 
     public int getNumberOfNonEmpty() {
         int total = 0;
-        for (PaintedPoint p : this.ship.paintedPoints) {
+        for (final PaintedPoint p : this.ship.paintedPoints) {
             // Count each point that is a Wall (or the robot on it)
             // and that have its 4 neighbors that are not empty
             // and for each calculate its 'score'.

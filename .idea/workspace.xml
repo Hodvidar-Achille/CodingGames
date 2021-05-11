@@ -20,653 +20,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_collections_eclipse_collections_10_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_collections_eclipse_collections_api_10_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_16_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_16_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_16_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_16_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/controller/OwnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureCollections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureTrees.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/ArrayHourglass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/ArrayReverse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/DynamicArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureTreesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayHoursGlassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CodingGames.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CodingGames.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/SlidingAverage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/StringAligner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/SlidingAverageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/regex/StringAlignerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/formation/datastructure/binaryTreeToString.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Amplifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Amplifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ArcaneCabinet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ArcaneCabinet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/AsteroidOrderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/AsteroidOrderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ChemicalReaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ChemicalReaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ChemicalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ChemicalSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/GamePixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/GamePixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/GameSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/GameSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Layer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/MazePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/MazePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/MazeSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/MazeSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Moon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Moon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/OpCodeReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/OpCodeReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/OpReaderTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/OpReaderTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedPointAscii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedPointAscii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedSurfaceAscii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/PaintedSurfaceAscii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotPainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotPainter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/RobotRepair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ScaffoldPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ScaffoldPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ScaffoldSurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ScaffoldSurface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ShipPanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/ShipPanels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/SpaceOrbitalSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/SpaceOrbitalSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day01_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day01_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day02_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day02_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day03_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day03_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day04_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day04_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day05_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day05_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day06.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day06.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day06_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day06_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day07.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day07_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day07_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day08_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day08_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day09.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day09_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day09_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day10_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day10_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day11_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day11_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day12_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day12_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day13_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day13_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/LimitedSizeQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/competition/spring-challenge-2020/IA01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/primers/artoptimal/ArtOptimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/primers/artoptimal/ArtOptimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/ascii/ASCII_utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/_Analyze/Solution_algo_mdf_2019_orange.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input12-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input12-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16-test6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input17.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input18-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input18-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input18-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input18.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input19.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input20.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input21.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input22.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input23.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input24.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input25.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2019/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input3-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input3-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input3-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input3-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input4-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input4-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input6-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7-test6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input8-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input8-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input9-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode_2020/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/casino_royal_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/charlotte_chocolatterie_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/crapette_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/empreinte_fichier_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/foule-a-la-plage_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interets-debiteurs_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/petri_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/power-plant_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1613782804593_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1613858928750_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1613858928885_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620135580628_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620135580796_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620138411152_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620138411257_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620224432950_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620224433028_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620225983410_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620225983509_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620226123006_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/1620226123188_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/primers_art-optimal/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/robots_perdus_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/salle-de-sport_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saut_a_la_perche_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test1/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day05_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day05_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java11/RPNCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java11/RPNCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/BowlingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/BowlingGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/MarsRoverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/MarsRoverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/MinesweeperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java15/MinesweeperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/AddTwoNumbersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/AddTwoNumbersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/XORInArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/XORInArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/primers/ArtOptimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/primers/ArtOptimalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/ArithmeticServicesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/ArithmeticServicesTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/MillisecondFormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/MillisecondFormatterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/regex/NumberExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/regex/NumberExtractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CodingGames-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodingGames-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_Analyze/Solution_algo_mdf_2019_orange.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input12-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input12-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16-test6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input17.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input18-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input18-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input18-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input18.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input19.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input20.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input21.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input22.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input23.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input24.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input25.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2019/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input3-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input3-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input3-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input3-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input4-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input4-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input6-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7-test6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input8-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input8-test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input9-test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adventofcode_2020/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/casino_royal_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/charlotte_chocolatterie_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/LimitedSizeQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day09.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day09.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/primers/artoptimal/ArtOptimal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/primers/artoptimal/ArtOptimal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/utils/ascii/ASCII_utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/utils/file/Constance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/utils/file/Constance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/crapette_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empreinte_fichier_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/foule-a-la-plage_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interets-debiteurs_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/petri_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power-plant_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1613782804593_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1613858928750_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1613858928885_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620135580628_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620135580796_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620138411152_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620138411257_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620224432950_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620224433028_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620225983410_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/1620225983509_ouput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/primers_art-optimal/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/input9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/robots_perdus_input/output9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salle-de-sport_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/input8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/saut_a_la_perche_input/output8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/input3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/input4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/output1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/output2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/output3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test1/output4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2019._Day16_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2019._Day16_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day01_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day01_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day02_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day02_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day02_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day02_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day03_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day03_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day03_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day03_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day04_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day04_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day04_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day04_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day05_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day05_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day06_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day06_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day06_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day06_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day07_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day07_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day07_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day07_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day08_2_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day08_2_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day08_Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.adventofcode.y2020._Day08_Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java11.RPNCalculatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java11.RPNCalculatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.BowlingGameTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.BowlingGameTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.MarsRoverTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.MarsRoverTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.MinesweeperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.formation.java15.MinesweeperTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.AddTwoNumbersTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.AddTwoNumbersTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.RunningSumOfOneDArrayTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.RunningSumOfOneDArrayTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.easy.XORInArrayTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.leetcode.easy.XORInArrayTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombinationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombinationTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.miscellaneous.livecoding.MailGeneratorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.miscellaneous.livecoding.MailGeneratorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.primers.ArtOptimalTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.primers.ArtOptimalTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.utils.number.MillisecondFormatterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.utils.number.MillisecondFormatterTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.utils.regex.NumberExtractorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hodvidar.utils.regex.NumberExtractorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2019._Day16_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2019._Day16_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day01_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day01_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day02_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day02_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day02_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day02_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day03_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day03_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day03_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day03_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day04_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day04_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day04_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day04_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day05_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day05_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day06_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day06_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day06_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day06_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day07_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day07_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day07_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day07_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day08_2_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day08_2_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day08_Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.adventofcode.y2020._Day08_Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java11.RPNCalculatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java11.RPNCalculatorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.BowlingGameTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.BowlingGameTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.MarsRoverTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.MarsRoverTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.MinesweeperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.formation.java15.MinesweeperTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.AddTwoNumbersTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.AddTwoNumbersTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.RunningSumOfOneDArrayTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.RunningSumOfOneDArrayTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.easy.XORInArrayTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.leetcode.easy.XORInArrayTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombinationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.miscellaneous.livecoding.ClimbingStaircaseCombinationTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.miscellaneous.livecoding.MailGeneratorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.miscellaneous.livecoding.MailGeneratorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.primers.ArtOptimalTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.primers.ArtOptimalTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.utils.number.MillisecondFormatterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.utils.number.MillisecondFormatterTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.utils.regex.NumberExtractorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hodvidar.utils.regex.NumberExtractorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/adventofcode/y2020/_Day09_Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/adventofcode/y2020/_Day09_Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/java15/BowlingGameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/java15/BowlingGameTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/leetcode/AddTwoNumbersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/leetcode/AddTwoNumbersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/primers/ArtOptimalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/primers/ArtOptimalTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/utils/number/ArithmeticServicesTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/utils/number/ArithmeticServicesTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day15_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day15_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2bis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2bis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day17_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day17_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Integer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Integer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Simpler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Simpler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/BenderEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/BenderEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/DontPanicEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/DontPanicEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/DwarfsStandingOnTheShouldersOfGiants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/DwarfsStandingOnTheShouldersOfGiants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/MarsLanderEpisode2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/MarsLanderEpisode2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/MayanCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/MayanCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/NetworkCabling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/NetworkCabling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/RobberyOptimisation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/RobberyOptimisation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Scrabble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Scrabble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/ShadowsOfTheKnightEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/ShadowsOfTheKnightEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/SkynetRevolutionEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/SkynetRevolutionEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/SkynetRevolutionEpisode1_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/SkynetRevolutionEpisode1_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/StockExchangeLosses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/StockExchangeLosses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TeadsSponsoredContest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TeadsSponsoredContest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TelephoneNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TelephoneNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TheLastCrusadeEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TheLastCrusadeEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/ThereIsNoSpoonEpisode1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/ThereIsNoSpoonEpisode1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/WinamaxBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/WinamaxBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureCollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureCollections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/DataStructureTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java11/RPNCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java11/RPNCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java15/MarsRover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java15/MarsRover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java15/Minesweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java15/Minesweeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/ArrayHourglass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/ArrayHourglass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/DynamicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/hackerrank/DynamicArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureTreesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureTreesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayHoursGlassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayHoursGlassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/BinaryTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/DataStructureCollections.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/DataStructureCollections.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/DataStructureTrees$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/formation/datastructures/DataStructureTrees$TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/hackerrank/ArrayHourglass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/hackerrank/ArrayHourglass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/hackerrank/DynamicArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/hackerrank/DynamicArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureTreesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureTreesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/hackerrank/ArrayHoursGlassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/hackerrank/ArrayHoursGlassTest.class" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -727,7 +199,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/srcTest/com/hodvidar/formation/java11/RPNCalculatorTest.java" />
   </component>
   <component name="RecentsManager">
@@ -741,32 +213,22 @@
       <recent name="F:\w\CodingGames\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataStructureTreesTest.string_representation">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SlidingAverageTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataStructureCollectionsTest.string_representation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.datastructures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.datastructures" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.datastructures.DataStructureCollectionsTest" />
-      <option name="METHOD_NAME" value="string_representation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -786,49 +248,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataStructureTreesTest.check_reverse_array" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SlidingAverageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.datastructures.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.datastructures" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.datastructures.DataStructureTreesTest" />
-      <option name="METHOD_NAME" value="check_reverse_array(int[],int)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SlidingAverageTest.getResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
+      <option name="METHOD_NAME" value="getResultTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataStructureTreesTest.contains" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SlidingAverageTest.getResultTest_several" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.datastructures.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.datastructures" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.datastructures.DataStructureTreesTest" />
-      <option name="METHOD_NAME" value="contains" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataStructureTreesTest.string_representation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.datastructures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.datastructures" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.datastructures.DataStructureTreesTest" />
-      <option name="METHOD_NAME" value="string_representation" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
+      <option name="METHOD_NAME" value="getResultTest_several(int[],int,double[])" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -836,11 +297,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataStructureTreesTest.string_representation" />
-        <item itemvalue="JUnit.DataStructureTreesTest.check_reverse_array" />
-        <item itemvalue="JUnit.DataStructureTreesTest.contains" />
+        <item itemvalue="JUnit.SlidingAverageTest" />
+        <item itemvalue="JUnit.SlidingAverageTest.getResultTest_several" />
+        <item itemvalue="JUnit.SlidingAverageTest.getResultTest" />
+        <item itemvalue="JUnit.All in CodingGames" />
         <item itemvalue="JUnit.DataStructureTreesTest" />
-        <item itemvalue="JUnit.DataStructureCollectionsTest.string_representation" />
       </list>
     </recent_temporary>
   </component>
@@ -888,7 +349,8 @@
       <workItem from="1620068543494" duration="3187000" />
       <workItem from="1620080017713" duration="7062000" />
       <workItem from="1620236259403" duration="6032000" />
-      <workItem from="1620308329300" duration="22799000" />
+      <workItem from="1620308329300" duration="47140000" />
+      <workItem from="1620756165992" duration="2902000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -1044,18 +506,18 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2360" y="94" key="#Project_Structure/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620134413256" />
-    <state x="2012" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1620401791148">
+    <state x="1913" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1620649313056">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2012" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620401791148" />
+    <state x="1913" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620649313056" />
     <state x="2685" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1620420867951">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620420867951" />
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620135335214">
+    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620575294939">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620135335214" />
+    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620575294939" />
     <state x="2676" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1620135342330">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -1076,46 +538,46 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2659" y="274" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620308307858" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1620421979196">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1620759691091">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620421979196" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1620421979196">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620759691091" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1620759691091">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620421979196" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1620421979196">
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620759691091" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1620759691091">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620421979196" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1620421979196">
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620759691091" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1620759691091">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620421979196" />
-    <state width="1877" height="331" key="GridCell.Tab.1.bottom" timestamp="1620413157201">
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620759691091" />
+    <state width="1877" height="331" key="GridCell.Tab.1.bottom" timestamp="1620640972336">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620413157201" />
-    <state width="1877" height="331" key="GridCell.Tab.1.center" timestamp="1620413157201">
+    <state width="1877" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620640972336" />
+    <state width="1877" height="331" key="GridCell.Tab.1.center" timestamp="1620640972336">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620413157201" />
-    <state width="1877" height="331" key="GridCell.Tab.1.left" timestamp="1620413157201">
+    <state width="1877" height="331" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620640972336" />
+    <state width="1877" height="331" key="GridCell.Tab.1.left" timestamp="1620640972336">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620413157201" />
-    <state width="1877" height="331" key="GridCell.Tab.1.right" timestamp="1620413157201">
+    <state width="1877" height="331" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620640972336" />
+    <state width="1877" height="331" key="GridCell.Tab.1.right" timestamp="1620640972336">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620413157201" />
+    <state width="1877" height="331" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620640972336" />
     <state x="2410" y="175" key="Maven.ArtifactSearchDialog" timestamp="1620308284351">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2410" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620308284351" />
-    <state x="2308" y="157" key="SettingsEditor" timestamp="1620405435181">
+    <state x="2308" y="157" key="SettingsEditor" timestamp="1620648983230">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2308" y="157" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620405435181" />
+    <state x="2308" y="157" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620648983230" />
     <state width="518" height="446" key="SwitcherDM" timestamp="1620401305823">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -1128,6 +590,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2481" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620402915389" />
+    <state x="2610" y="281" key="extract.method.dialog" timestamp="1620641096732">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="281" key="extract.method.dialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620641096732" />
     <state x="2407" y="355" width="1060" height="616" key="find.popup" timestamp="1620399959201">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -1219,8 +685,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTree.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="48" />
+          <line>55</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

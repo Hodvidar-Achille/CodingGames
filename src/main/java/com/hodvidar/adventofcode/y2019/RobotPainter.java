@@ -34,13 +34,13 @@ public final class RobotPainter {
     private int y = 0;
     private String facing = UP;
 
-    public RobotPainter(double[] memory) {
+    public RobotPainter(final double[] memory) {
         this.colorOfFirstPanel = Panel.DARK;
         this.ship = new ShipPanels(this.colorOfFirstPanel);
         this.brain = new Amplifier(memory);
     }
 
-    public RobotPainter(double[] memory, int colorOfFirstPanel) {
+    public RobotPainter(final double[] memory, final int colorOfFirstPanel) {
         this.colorOfFirstPanel = colorOfFirstPanel;
         this.ship = new ShipPanels(this.colorOfFirstPanel);
         this.brain = new Amplifier(memory);
@@ -55,10 +55,10 @@ public final class RobotPainter {
         if (!VERBOSE)
             return;
 
-        String action = (isPainting) ? "Painting" : "Moving";
-        String position = " x=" + x + " y=" + y;
-        String direction = " facing=" + facing;
-        int out = (int) this.brain.getOutput();
+        final String action = (isPainting) ? "Painting" : "Moving";
+        final String position = " x=" + x + " y=" + y;
+        final String direction = " facing=" + facing;
+        final int out = (int) this.brain.getOutput();
         String action2 = "\n--> ";
         if (isPainting) {
             if (out == 1)
@@ -72,14 +72,14 @@ public final class RobotPainter {
                 action2 += "Turning LEFT";
         }
 
-        String s = action + position + direction + action2;
+        final String s = action + position + direction + action2;
         System.out.println(s);
     }
 
     public void paint() {
         while (true) {
             // 1) Take current color
-            int currentColor = this.ship.getPaintedPointValue(x, y);
+            final int currentColor = this.ship.getPaintedPointValue(x, y);
             this.brain.setInput(currentColor);
             // 2) Run the program
             this.brain.runProgram();
@@ -88,7 +88,7 @@ public final class RobotPainter {
             if (this.brain.isShutDown())
                 return;
             // 4) Do action
-            int output = (int) this.brain.getOutput();
+            final int output = (int) this.brain.getOutput();
             if (isPainting) {
                 this.ship.paintPoint(x, y, output);
                 isPainting = false;
@@ -105,7 +105,7 @@ public final class RobotPainter {
      *
      * @param order - 0 is turn left, 1 is turn right.
      */
-    private void move(int order) {
+    private void move(final int order) {
         if (order != TURN_LEFT && order != TURN_RIGHT)
             throw new IllegalStateException("order not reconize:" + order);
         if (this.facing != this.UP && this.facing != this.DOWN

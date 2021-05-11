@@ -6,12 +6,12 @@ public final class Amplifier {
     private int positionInProgram;
     private boolean shutDown;
 
-    public Amplifier(double[] memory) {
+    public Amplifier(final double[] memory) {
         this(memory, null, null);
     }
 
-    public Amplifier(double[] memory, Double phase,
-                     OpCodeReaderInputCallBack aCaller) {
+    public Amplifier(final double[] memory, final Double phase,
+                     final OpCodeReaderInputCallBack aCaller) {
         this.codeReader = new OpCodeReader(memory, aCaller);
         this.phase = phase;
         this.codeReader.setPhaseInput(this.phase);
@@ -19,7 +19,7 @@ public final class Amplifier {
         this.shutDown = false;
     }
 
-    public void changeMemoryAdressValue(int addr, double value) {
+    public void changeMemoryAdressValue(final int addr, final double value) {
         this.codeReader.changeMemoryAdressValue(addr, value);
     }
 
@@ -28,14 +28,14 @@ public final class Amplifier {
         this.shutDown = false;
     }
 
-    public void setInput(double i) {
+    public void setInput(final double i) {
         this.codeReader.setInput(i);
     }
 
     public void runProgram() {
-        double[] results = codeReader.run(positionInProgram);
-        int endCode = (int) results[0];
-        int endPosition = (int) results[1];
+        final double[] results = codeReader.run(positionInProgram);
+        final int endCode = (int) results[0];
+        final int endPosition = (int) results[1];
         this.positionInProgram = endPosition;
         if (endCode == this.codeReader.HALT_CODE)
             shutDown = true;
@@ -56,7 +56,7 @@ public final class Amplifier {
      * @return
      */
     @Deprecated
-    public double runAndGetOutput(double input) {
+    public double runAndGetOutput(final double input) {
         this.setInput(input);
         this.runProgram();
         return this.getOutput();

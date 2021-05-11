@@ -53,45 +53,45 @@ class Aneo_Simpler {
             JeuxDeTest.AutorouteAllemande, JeuxDeTest.PluieDeFeux, JeuxDeTest.GuirlandeLumineuse,
             JeuxDeTest.FeuxRapides};
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.err.println("Solution using a Set of validated speeds and convertion : (int) Math.round(d/v)");
 
-        Aneo_Simpler s = new Aneo_Simpler();
+        final Aneo_Simpler s = new Aneo_Simpler();
         if (!TESTING)
             s.doSolution();
         else {
-            for (JeuxDeTest test : tests)
+            for (final JeuxDeTest test : tests)
                 s.doSolution(test);
         }
     }
 
-    public static void printIfVerbose(String s) {
+    public static void printIfVerbose(final String s) {
         if (VERBOSE)
             System.err.println(s);
     }
 
-    private void doSolution(JeuxDeTest jeuDeTest) {
-        int speed = jeuDeTest.speed;
-        int lightCount = jeuDeTest.lightCount;
+    private void doSolution(final JeuxDeTest jeuDeTest) {
+        final int speed = jeuDeTest.speed;
+        final int lightCount = jeuDeTest.lightCount;
 
         printIfVerbose("----------- Test '" + jeuDeTest + "' -----------");
 
         printIfVerbose("speed=" + speed);
         printIfVerbose("lightCount=" + lightCount);
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = jeuDeTest.distances[i];
-            int duration = jeuDeTest.durations[i];
+            final int distance = jeuDeTest.distances[i];
+            final int duration = jeuDeTest.durations[i];
             printIfVerbose("distance=" + distance);
             printIfVerbose("duration= " + duration);
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
             printIfVerbose("Possible max speed = " + calculator.getMaxSpeed());
         }
 
-        int expected = jeuDeTest.result;
-        int actual = calculator.getMaxSpeed();
+        final int expected = jeuDeTest.result;
+        final int actual = calculator.getMaxSpeed();
 
         printIfVerbose("Final result expected : " + expected);
         printIfVerbose("Final result actual : " + actual);
@@ -105,19 +105,19 @@ class Aneo_Simpler {
     }
 
     private void doSolution() {
-        Scanner in = new Scanner(System.in);
-        int speed = in.nextInt();
-        int lightCount = in.nextInt();
+        final Scanner in = new Scanner(System.in);
+        final int speed = in.nextInt();
+        final int lightCount = in.nextInt();
 
-        SpeedCalculator calculator = new SpeedCalculator(speed);
+        final SpeedCalculator calculator = new SpeedCalculator(speed);
         for (int i = 0; i < lightCount; i++) {
-            int distance = in.nextInt();
-            int duration = in.nextInt();
-            RoadSegment segment = new RoadSegment(distance, duration);
+            final int distance = in.nextInt();
+            final int duration = in.nextInt();
+            final RoadSegment segment = new RoadSegment(distance, duration);
             calculator.addRoadSegment(segment);
         }
 
-        int actual = calculator.getMaxSpeed();
+        final int actual = calculator.getMaxSpeed();
         System.out.println(actual);
         in.close();
     }
@@ -170,7 +170,7 @@ class Aneo_Simpler {
         public final int[] durations;
         public final int result;
 
-        JeuxDeTest(int speed, int lightCount, int[] distances, int[] durations, int result) {
+        JeuxDeTest(final int speed, final int lightCount, final int[] distances, final int[] durations, final int result) {
             this.speed = speed;
             this.lightCount = lightCount;
             this.distances = distances;
@@ -183,7 +183,7 @@ class Aneo_Simpler {
         public final int distance;
         public final int duration;
 
-        public RoadSegment(int distance, int duration) {
+        public RoadSegment(final int distance, final int duration) {
             this.distance = distance;
             this.duration = duration;
         }
@@ -200,7 +200,7 @@ class Aneo_Simpler {
          */
         private int max;
 
-        public SpeedCalculator(int maximumSpeed) {
+        public SpeedCalculator(final int maximumSpeed) {
             printIfVerbose("NEW SpeedCalculator with max speed: " + maximumSpeed + " km/h");
             this.max = maximumSpeed;
             for (int i = this.min; i <= this.max; i++) {
@@ -216,7 +216,7 @@ class Aneo_Simpler {
          * Adapts the possibleSpeed intervals to handle this new segment. <br/>
          * Also adapts the min and max authorized values.
          */
-        public void addRoadSegment(RoadSegment aRoadSegment) {
+        public void addRoadSegment(final RoadSegment aRoadSegment) {
             printIfVerbose("addRoadSegment(" + aRoadSegment.distance + ", "
                     + aRoadSegment.duration + ")");
 
@@ -230,12 +230,12 @@ class Aneo_Simpler {
          * @param aRoadSegment
          * @return
          */
-        private void modifyValidatedSpeedsForNewSegment(RoadSegment aRoadSegment) {
-            Iterator<Integer> speedIte = this.validatedSpeed.iterator();
+        private void modifyValidatedSpeedsForNewSegment(final RoadSegment aRoadSegment) {
+            final Iterator<Integer> speedIte = this.validatedSpeed.iterator();
             while (speedIte.hasNext()) {
-                Integer speed = speedIte.next();
-                int timeToPass = this.getDuration(aRoadSegment.distance, speed);
-                boolean passGreen = this.isGreen(aRoadSegment.duration, timeToPass);
+                final Integer speed = speedIte.next();
+                final int timeToPass = this.getDuration(aRoadSegment.distance, speed);
+                final boolean passGreen = this.isGreen(aRoadSegment.duration, timeToPass);
 
                 if (!passGreen)
                     speedIte.remove();
@@ -243,7 +243,7 @@ class Aneo_Simpler {
 
             int min = this.max;
             int max = -1;
-            for (int i : this.validatedSpeed) {
+            for (final int i : this.validatedSpeed) {
                 if (i < min)
                     min = i;
                 if (i > max)
@@ -262,7 +262,7 @@ class Aneo_Simpler {
          * @param speedInkmPerHour
          * @return
          */
-        private int getDuration(int distance, int speedInkmPerHour) {
+        private int getDuration(final int distance, final int speedInkmPerHour) {
             return (int) Math.round(distance / (speedInkmPerHour / (18d / 5d)));
         }
 
@@ -275,7 +275,7 @@ class Aneo_Simpler {
          * @param time        (in seconds)
          * @return
          */
-        private boolean isGreen(int lightPeriod, int time) {
+        private boolean isGreen(final int lightPeriod, final int time) {
             if (time < lightPeriod)
                 return true; // Pass before green -> red, OK
             if (time == lightPeriod)

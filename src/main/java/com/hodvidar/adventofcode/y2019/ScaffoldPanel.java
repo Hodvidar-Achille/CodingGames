@@ -5,11 +5,11 @@ public final class ScaffoldPanel extends PaintedPoint {
     public static final int WALL = 35;
     public static final int NEW_LINE = 10;
 
-    public ScaffoldPanel(double x, double y) {
+    public ScaffoldPanel(final double x, final double y) {
         super(x, y, EMPTY);
     }
 
-    public ScaffoldPanel(double x, double y, int value) {
+    public ScaffoldPanel(final double x, final double y, final int value) {
         super(x, y, value);
     }
 

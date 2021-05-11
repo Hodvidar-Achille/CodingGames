@@ -9,13 +9,13 @@ public final class Layer {
     private int numberOfOne;
     private int numberOfTwo;
 
-    public Layer(int wide, int height) {
+    public Layer(final int wide, final int height) {
         this.pixels = new int[wide * height];
         this.length = wide * height;
         this.wide = wide;
     }
 
-    public void addPixel(int pixel, int i) {
+    public void addPixel(final int pixel, int i) {
         i = truncateIndex(i);
         this.pixels[i] = pixel;
         if (pixel == 0)
@@ -51,7 +51,7 @@ public final class Layer {
     public String print() {
         String s = "";
         for (int i = 0; i < this.length; i++) {
-            int p = this.pixels[i];
+            final int p = this.pixels[i];
             s += "" + p;
             if (((i + 1) % wide) == 0)
                 s += "\n";
@@ -62,8 +62,8 @@ public final class Layer {
     public String print2() {
         String s = "";
         for (int i = 0; i < this.length; i++) {
-            int p = this.pixels[i];
-            String p2 = (p == 1) ? "#" : ".";
+            final int p = this.pixels[i];
+            final String p2 = (p == 1) ? "#" : ".";
             s += p2;
             if (((i + 1) % wide) == 0)
                 s += "\n";

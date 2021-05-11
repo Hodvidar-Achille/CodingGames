@@ -10,15 +10,15 @@ import java.util.Scanner;
  **/
 class ThereIsNoSpoonEpisode1 {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int width = in.nextInt(); // the number of cells on the X axis
-        int height = in.nextInt(); // the number of cells on the Y axis
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int width = in.nextInt(); // the number of cells on the X axis
+        final int height = in.nextInt(); // the number of cells on the Y axis
         in.nextLine();
         System.err.println("width : " + width + " || height : " + height);
-        char[][] grille = new char[height][width];
+        final char[][] grille = new char[height][width];
         for (int z = 0; z < height; z++) {
-            char[] line = in.nextLine().toCharArray(); // width characters, each either 0 or .
+            final char[] line = in.nextLine().toCharArray(); // width characters, each either 0 or .
             grille[z] = line;
         }
         /*
@@ -38,8 +38,8 @@ class ThereIsNoSpoonEpisode1 {
         System.err.println("i");
         */
 
-        String d = "-1 -1";
-        String e = " ";
+        final String d = "-1 -1";
+        final String e = " ";
         String r;
         String b;
         for (int i = 0; i < height; i++) {

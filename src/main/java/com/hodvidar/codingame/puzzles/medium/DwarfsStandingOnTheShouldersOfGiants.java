@@ -8,27 +8,27 @@ import java.util.*;
  **/
 class DwarfsStandingOnTheShouldersOfGiants {
 
-    public static void main(String[] args) {
-        DwarfsStandingOnTheShouldersOfGiants d = new DwarfsStandingOnTheShouldersOfGiants();
+    public static void main(final String[] args) {
+        final DwarfsStandingOnTheShouldersOfGiants d = new DwarfsStandingOnTheShouldersOfGiants();
         d.test();
     }
 
     private void test() {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt(); // the number of relationships of influence
-        Map<Integer, Node> nodes = new HashMap<>();
+        final Scanner in = new Scanner(System.in);
+        final int n = in.nextInt(); // the number of relationships of influence
+        final Map<Integer, Node> nodes = new HashMap<>();
         for (int i = 0; i < n; i++) {
             // Parent
-            int x = in.nextInt(); // a relationship of influence between two people (x influences y)
+            final int x = in.nextInt(); // a relationship of influence between two people (x influences y)
             if (!nodes.containsKey(x))
                 nodes.put(x, new Node(x));
-            Node nodeX = nodes.get(x);
+            final Node nodeX = nodes.get(x);
 
             // Child  
-            int y = in.nextInt();
+            final int y = in.nextInt();
             if (!nodes.containsKey(y))
                 nodes.put(y, new Node(y));
-            Node nodeY = nodes.get(y);
+            final Node nodeY = nodes.get(y);
 
             // connect X with Y as child and Y with X as parent
             nodeX.connect(nodeY);
@@ -39,7 +39,7 @@ class DwarfsStandingOnTheShouldersOfGiants {
 
         // GO !
         Node root = null;
-        for (Node node : nodes.values()) {
+        for (final Node node : nodes.values()) {
             if (node.isRoot()) {
                 root = node;
                 break;
@@ -48,7 +48,7 @@ class DwarfsStandingOnTheShouldersOfGiants {
         root.setLevel(0);
 
         int depth = 0;
-        for (Node node : nodes.values()) {
+        for (final Node node : nodes.values()) {
             if (node.getLevel() > depth) {
                 depth = node.getLevel();
             }
@@ -66,14 +66,14 @@ class DwarfsStandingOnTheShouldersOfGiants {
         private final List<Node> parents;
         private int level;
 
-        public Node(int x) {
+        public Node(final int x) {
             this.value = x;
             this.children = new ArrayList<>();
             this.parents = new ArrayList<>();
             this.level = -1;
         }
 
-        public void connect(Node child) {
+        public void connect(final Node child) {
             this.children.add(child);
             child.getParents().add(this);
         }
@@ -82,10 +82,10 @@ class DwarfsStandingOnTheShouldersOfGiants {
             return this.level;
         }
 
-        public void setLevel(int level2) {
+        public void setLevel(final int level2) {
             if (level2 > this.level)
                 this.level = level2;
-            for (Node child : this.children)
+            for (final Node child : this.children)
                 child.setLevel(level2 + 1);
         }
 

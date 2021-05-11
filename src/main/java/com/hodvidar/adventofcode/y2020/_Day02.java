@@ -5,9 +5,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class _Day02 extends AbstractAdventOfCode {
-    public static void main(String[] args) throws Exception {
-        _Day02 me = new _Day02();
-        int result = me.numberOfCorrect(me.getScanner());
+    public static void main(final String[] args) throws Exception {
+        final _Day02 me = new _Day02();
+        final int result = me.numberOfCorrect(me.getScanner());
         System.err.println("Expected '469' - result='" + result + "'");
     }
 
@@ -17,11 +17,11 @@ public class _Day02 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getResult(Scanner sc) throws FileNotFoundException {
+    protected int getResult(final Scanner sc) throws FileNotFoundException {
         return numberOfCorrect(sc);
     }
 
-    public int numberOfCorrect(Scanner sc) {
+    public int numberOfCorrect(final Scanner sc) {
         String line;
         int counter = 0;
         while (sc.hasNextLine()) {
@@ -33,9 +33,9 @@ public class _Day02 extends AbstractAdventOfCode {
         return counter;
     }
 
-    public boolean isValid(int min, int max, char letter, String password) {
+    public boolean isValid(final int min, final int max, final char letter, final String password) {
         int letterCounter = 0;
-        for (char c : password.toCharArray()) {
+        for (final char c : password.toCharArray()) {
             if (Objects.equals(letter, c)) {
                 letterCounter++;
                 if (letterCounter > max) {
@@ -49,17 +49,17 @@ public class _Day02 extends AbstractAdventOfCode {
     /**
      * @param policyAndPassword ex : 1-3 a: abcde
      */
-    public boolean isValid(String policyAndPassword) {
-        String[] policyAndPasswordSplit = policyAndPassword.split(":");
-        String policy = policyAndPasswordSplit[0].trim();
-        String password = policyAndPasswordSplit[1].trim();
+    public boolean isValid(final String policyAndPassword) {
+        final String[] policyAndPasswordSplit = policyAndPassword.split(":");
+        final String policy = policyAndPasswordSplit[0].trim();
+        final String password = policyAndPasswordSplit[1].trim();
 
-        String[] policySplit = policy.split(" ");
-        String policyNumbers = policySplit[0];
-        char policyLetter = policySplit[1].charAt(0);
-        String[] policyNumbersSplit = policyNumbers.split("-");
-        int min = Integer.parseInt(policyNumbersSplit[0]);
-        int max = Integer.parseInt(policyNumbersSplit[1]);
+        final String[] policySplit = policy.split(" ");
+        final String policyNumbers = policySplit[0];
+        final char policyLetter = policySplit[1].charAt(0);
+        final String[] policyNumbersSplit = policyNumbers.split("-");
+        final int min = Integer.parseInt(policyNumbersSplit[0]);
+        final int max = Integer.parseInt(policyNumbersSplit[1]);
 
         return isValid(min, max, policyLetter, password);
     }

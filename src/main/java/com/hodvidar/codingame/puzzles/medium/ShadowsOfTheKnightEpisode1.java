@@ -9,13 +9,13 @@ import java.util.Scanner;
 class ShadowsOfTheKnightEpisode1 {
 
     @SuppressWarnings("unused")
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int W = in.nextInt(); // width of the building.
-        int H = in.nextInt(); // height of the building.
-        int N = in.nextInt(); // maximum number of turns before game over.
-        int X0 = in.nextInt();
-        int Y0 = in.nextInt();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int W = in.nextInt(); // width of the building.
+        final int H = in.nextInt(); // height of the building.
+        final int N = in.nextInt(); // maximum number of turns before game over.
+        final int X0 = in.nextInt();
+        final int Y0 = in.nextInt();
 
         System.err.println("W = " + W);
         System.err.println("H = " + H);
@@ -27,9 +27,9 @@ class ShadowsOfTheKnightEpisode1 {
         int yMin = 0;
         // game loop
         while (true) {
-            String bombDir = in.next(); // the direction of the bombs from batman's current location (U, UR, R, DR, D, DL, L or UL)
-            int hauteur = bombDir.contains("D") ? 1 : bombDir.contains("U") ? -1 : 0;
-            int largeur = bombDir.contains("R") ? 1 : bombDir.contains("L") ? -1 : 0;
+            final String bombDir = in.next(); // the direction of the bombs from batman's current location (U, UR, R, DR, D, DL, L or UL)
+            final int hauteur = bombDir.contains("D") ? 1 : bombDir.contains("U") ? -1 : 0;
+            final int largeur = bombDir.contains("R") ? 1 : bombDir.contains("L") ? -1 : 0;
             // Write an action using System.out.println()
             // To debug: System.err.println("Debug messages...");
 
