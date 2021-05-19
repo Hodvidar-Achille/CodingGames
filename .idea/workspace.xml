@@ -20,18 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/interview/UniversalTreeProblem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/ThreeSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/ThreeSumTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/leetcode/threeSum.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/designpattern/VisitorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/designpattern/VisitorDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day04_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day04_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day06_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2020/_Day06_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/miscellaneous/livecoding/SlidingAverage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/miscellaneous/livecoding/SlidingAverage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/newbiecontest/logique/Problémathiques.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/newbiecontest/logique/Problémathiques.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureTreesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/formation/datastructures/DataStructureTreesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/miscellaneous/livecoding/SlidingAverageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/miscellaneous/livecoding/SlidingAverageTest.class" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,17 +88,17 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/srcTest/com/hodvidar/formation/java11/RPNCalculatorTest.java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\w\CodingGames\src\main" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.hodvidar.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\w\CodingGames\src\test\resources" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\w\CodingGames\src\main" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.UniversalTreeProblemTest">
+  <component name="RunManager" selected="JUnit.All in CodingGames">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -126,75 +118,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlidingAverageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThreeSumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.ThreeSumTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlidingAverageTest.getResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThreeSumTest.threeSumFaster2_shortInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
-      <option name="METHOD_NAME" value="getResultTest" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.ThreeSumTest" />
+      <option name="METHOD_NAME" value="threeSumFaster2_shortInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlidingAverageTest.getResultTest_several" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThreeSumTest.threeSumFaster_shortInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.SlidingAverageTest" />
-      <option name="METHOD_NAME" value="getResultTest_several(int[],int,double[])" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.ThreeSumTest" />
+      <option name="METHOD_NAME" value="threeSumFaster_shortInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UniversalTreeProblemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ThreeSumTest.threeSum_shortInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.interview.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.interview" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.interview.UniversalTreeProblemTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.ThreeSumTest" />
+      <option name="METHOD_NAME" value="threeSum_shortInput" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UniversalTreeProblemTest" />
         <item itemvalue="JUnit.All in CodingGames" />
-        <item itemvalue="JUnit.SlidingAverageTest" />
-        <item itemvalue="JUnit.SlidingAverageTest.getResultTest_several" />
-        <item itemvalue="JUnit.SlidingAverageTest.getResultTest" />
+        <item itemvalue="JUnit.ThreeSumTest" />
+        <item itemvalue="JUnit.ThreeSumTest.threeSumFaster2_shortInput" />
+        <item itemvalue="JUnit.ThreeSumTest.threeSumFaster_shortInput" />
+        <item itemvalue="JUnit.ThreeSumTest.threeSum_shortInput" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +239,7 @@
       <workItem from="1620756165992" duration="2902000" />
       <workItem from="1620760855608" duration="1458000" />
       <workItem from="1620842151083" duration="6000" />
-      <workItem from="1621242159274" duration="9287000" />
+      <workItem from="1621242159274" duration="14982000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -410,10 +403,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621243126601" />
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620575294939">
+    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1621420311972">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620575294939" />
+    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621420311972" />
+    <state x="2663" y="389" width="461" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621419306475">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2663" y="389" width="461" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621419306475" />
     <state x="2676" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1620135342330">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -434,22 +431,22 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2659" y="274" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620308307858" />
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1621331304947">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1621423815537">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621331304947" />
-    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1621331304947">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621423815537" />
+    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1621423815537">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621331304947" />
-    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1621331304947">
+    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621423815537" />
+    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1621423815537">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621331304947" />
-    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1621331304947">
+    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621423815537" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1621423815537">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621331304947" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621423815537" />
     <state width="1877" height="331" key="GridCell.Tab.1.bottom" timestamp="1620640972336">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -486,14 +483,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2481" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620402915389" />
-    <state x="2610" y="281" key="extract.method.dialog" timestamp="1620641096732">
+    <state x="2610" y="281" key="extract.method.dialog" timestamp="1621421773817">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="281" key="extract.method.dialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620641096732" />
-    <state x="2407" y="355" width="1060" height="616" key="find.popup" timestamp="1621331300738">
+    <state x="2610" y="281" key="extract.method.dialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621421773817" />
+    <state x="2407" y="355" width="1060" height="616" key="find.popup" timestamp="1621423762136">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2407" y="355" width="1060" height="616" key="find.popup/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621331300738" />
+    <state x="2407" y="355" width="1060" height="616" key="find.popup/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621423762136" />
     <state x="2262" y="140" key="new project wizard" timestamp="1619866617574">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
