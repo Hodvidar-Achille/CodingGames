@@ -1,5 +1,7 @@
 package com.hodvidar.codingame.puzzles.easy;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
 
 /**
@@ -20,6 +22,16 @@ class BracketsExtremeEdition {
 
         System.err.println("expression: " + expression);
 
+        final boolean expressionOK = isExpressionOK(expression);
+
+        System.out.println(expressionOK);
+        in.close();
+    }
+
+    public static boolean isExpressionOK(final String expression) {
+        if (expression == null) {
+            return true;
+        }
         int numberOfPareOpenned = 0;
         int numberOfCrocOpenned = 0;
         int numberOfAccoOpenned = 0;
@@ -47,7 +59,7 @@ class BracketsExtremeEdition {
                     numberOfAccoOpenned--;
                     break;
                 default:
-                    // code block
+                    throw new IllegalArgumentException("Only brackets are expected");
             }
 
             if (numberOfPareOpenned < 0 || numberOfCrocOpenned < 0 || numberOfAccoOpenned < 0)
@@ -56,8 +68,41 @@ class BracketsExtremeEdition {
 
         if (numberOfPareOpenned != 0 || numberOfCrocOpenned != 0 || numberOfAccoOpenned != 0)
             expressionOK = false;
+        return expressionOK;
+    }
 
-        System.out.println(expressionOK);
-        in.close();
+    public static boolean isExpressionOK2(final String expression) {
+        if (expression == null) {
+            return true;
+        }
+        final Deque<Character> stack = new ArrayDeque<Character>();
+        for (final char c : expression.toCharArray()) {
+            if (c == PARE_OPEN || c == CROC_OPEN || c == ACCO_OPEN) {
+                stack.push(c);
+                continue;
+            }
+            if (stack.isEmpty()) {
+                return false;
+            }
+            final char check;
+            switch (c) {
+                case PARE_CLOSE:
+                    check = stack.pop();
+                    if (check == '{' || check == '[')
+                        return false;
+                    break;
+                case ACCO_CLOSE:
+                    check = stack.pop();
+                    if (check == '(' || check == '[')
+                        return false;
+                    break;
+                case CROC_CLOSE:
+                    check = stack.pop();
+                    if (check == '(' || check == '{')
+                        return false;
+                    break;
+            }
+        }
+        return stack.isEmpty();
     }
 }

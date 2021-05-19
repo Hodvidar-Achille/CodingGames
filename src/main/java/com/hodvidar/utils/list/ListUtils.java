@@ -69,4 +69,36 @@ public class ListUtils {
         }
         return array2D;
     }
+
+    /**
+     * Returns -1 if value not in the array, otherwise retuns the index of the value
+     */
+    public static int binarySearch(final int[] sortedArray, final int value) {
+        return runBinarySearchIteratively(sortedArray, value, 0, sortedArray.length);
+    }
+
+    public static int binarySearch(final int[] sortedArray,
+                                   final int value,
+                                   final int lowIndex) {
+        return runBinarySearchIteratively(sortedArray, value, lowIndex, sortedArray.length);
+    }
+
+    public static int runBinarySearchIteratively(final int[] sortedArray,
+                                                 final int value,
+                                                 int low,
+                                                 int high) {
+        int index = -1;
+        while (low <= high) {
+            final int mid = (low + high) / 2;
+            if (sortedArray[mid] < value) {
+                low = mid + 1;
+            } else if (sortedArray[mid] > value) {
+                high = mid - 1;
+            } else if (sortedArray[mid] == value) {
+                index = mid;
+                break;
+            }
+        }
+        return index;
+    }
 }
