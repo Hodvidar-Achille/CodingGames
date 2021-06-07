@@ -1,6 +1,6 @@
 package com.hodvidar.utils.number;
 
-public final class MillisecondeFormater {
+public final class MillisecondFormatter {
     private static final long oneHour = 3600000;
     private static final long oneMinute = 60000;
     private static final long oneSeconde = 1000;

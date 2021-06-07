@@ -1,6 +1,6 @@
 package com.hodvidar.adventofcode.y2019;
 
-import com.hodvidar.utils.number.MillisecondeFormater;
+import com.hodvidar.utils.number.MillisecondFormatter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -81,7 +81,7 @@ public final class _Day16_2 {
         result = result.substring(offSet, offSet + 8);
         final long after = System.currentTimeMillis();
         final long diff = after - before;
-        final String diffStr = MillisecondeFormater.asTime(diff);
+        final String diffStr = MillisecondFormatter.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "' took:" + diffStr);
         return "" + result;
