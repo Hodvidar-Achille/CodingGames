@@ -20,23 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution1Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution2Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution3Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day14_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2bis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2019/_Day16_2bis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/MillisecondeFormater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/MillisecondFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/MillisecondFormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/number/MillisecondFormatterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day14_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day14_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day16_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day16_2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day16_2bis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hodvidar/adventofcode/y2019/_Day16_2bis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hodvidar/utils/number/MillisecondeFormater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hodvidar/utils/number/MillisecondFormatterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hodvidar/utils/number/MillisecondFormatterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheRiverii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheRiverii.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +46,6 @@
       <set>
         <option value="https://github.com/Hodvidarr/CodingGames.git" />
       </set>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1hlwpDWgY3xhNYaxf4cMlUdHehq" />
@@ -97,7 +77,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/srcTest/com/hodvidar/formation/java11/RPNCalculatorTest.java" />
   </component>
   <component name="RecentsManager">
@@ -111,7 +91,7 @@
       <recent name="F:\w\CodingGames\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Solution3Test.timeToPriceInCentsSum">
+  <component name="RunManager" selected="JUnit.TheRiveriiTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -125,80 +105,80 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution3Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TheRiveriiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution3Test" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution3Test.getResult (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TheRiveriiTest.findRivers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution3Test" />
-      <option name="METHOD_NAME" value="getResult" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
+      <option name="METHOD_NAME" value="findRivers(long,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution3Test.getResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TheRiveriiTest.nextNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution3Test" />
-      <option name="METHOD_NAME" value="getResult(java.lang.String,java.lang.String)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
+      <option name="METHOD_NAME" value="nextNumber(long,long)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution3Test.phoneToNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TheRiveriiTest.sumDigits (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution3Test" />
-      <option name="METHOD_NAME" value="phoneToNumber(java.lang.String,java.lang.Double)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
+      <option name="METHOD_NAME" value="sumDigits(long,long)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution3Test.timeToPriceInCentsSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TheRiveriiTest.sumDigits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution3Test" />
-      <option name="METHOD_NAME" value="timeToPriceInCentsSum" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
+      <option name="METHOD_NAME" value="sumDigits(int,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Solution3Test.timeToPriceInCentsSum" />
-        <item itemvalue="JUnit.Solution3Test" />
-        <item itemvalue="JUnit.Solution3Test.getResult (1)" />
-        <item itemvalue="JUnit.Solution3Test.getResult" />
-        <item itemvalue="JUnit.Solution3Test.phoneToNumber" />
+        <item itemvalue="JUnit.TheRiveriiTest" />
+        <item itemvalue="JUnit.TheRiveriiTest.findRivers" />
+        <item itemvalue="JUnit.TheRiveriiTest.nextNumber" />
+        <item itemvalue="JUnit.TheRiveriiTest.sumDigits (1)" />
+        <item itemvalue="JUnit.TheRiveriiTest.sumDigits" />
       </list>
     </recent_temporary>
   </component>
@@ -266,6 +246,8 @@
       <workItem from="1622536439045" duration="3055000" />
       <workItem from="1622641929291" duration="10272000" />
       <workItem from="1623006516292" duration="6548000" />
+      <workItem from="1686656980935" duration="30000" />
+      <workItem from="1686657048612" duration="4455000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -415,116 +397,6 @@
     <MESSAGE value="Finished Day07_2 and clean code." />
     <MESSAGE value="Finished Day08_2 and clean code.&#10;And modified tests to add more automation" />
     <option name="LAST_COMMIT_MESSAGE" value="Finished Day08_2 and clean code.&#10;And modified tests to add more automation" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2360" y="94" key="#Project_Structure" timestamp="1620134413256">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2360" y="94" key="#Project_Structure/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620134413256" />
-    <state x="1913" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1621447135679">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1913" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621447135679" />
-    <state x="2685" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1621243126601">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2685" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621243126601" />
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1621424652239">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2550" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621424652239" />
-    <state x="2663" y="389" width="461" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621424637120">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2663" y="389" width="461" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621424637120" />
-    <state x="2676" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1620135342330">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2676" y="401" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620135342330" />
-    <state x="1920" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621439277338">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1920" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1621439277338" />
-    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620245395975">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620245395975" />
-    <state x="2772" y="357" key="#xdebugger.evaluate" timestamp="1622652955642">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2772" y="357" key="#xdebugger.evaluate/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622652955642" />
-    <state x="2659" y="274" key="FileChooserDialogImpl" timestamp="1623053001622">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2659" y="274" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623053001622" />
-    <state width="938" height="256" key="GridCell.Tab.0.bottom" timestamp="1623059196630">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623059196630" />
-    <state width="938" height="256" key="GridCell.Tab.0.center" timestamp="1623059196630">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="256" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623059196630" />
-    <state width="938" height="256" key="GridCell.Tab.0.left" timestamp="1623059196630">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="256" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623059196630" />
-    <state width="938" height="256" key="GridCell.Tab.0.right" timestamp="1623059196630">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="256" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623059196630" />
-    <state width="1877" height="331" key="GridCell.Tab.1.bottom" timestamp="1622654533116">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622654533116" />
-    <state width="1877" height="331" key="GridCell.Tab.1.center" timestamp="1622654533116">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622654533116" />
-    <state width="1877" height="331" key="GridCell.Tab.1.left" timestamp="1622654533116">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622654533116" />
-    <state width="1877" height="331" key="GridCell.Tab.1.right" timestamp="1622654533116">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="331" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622654533116" />
-    <state x="2410" y="175" key="Maven.ArtifactSearchDialog" timestamp="1620308284351">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2410" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620308284351" />
-    <state x="2308" y="157" key="SettingsEditor" timestamp="1620648983230">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2308" y="157" key="SettingsEditor/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620648983230" />
-    <state width="518" height="446" key="SwitcherDM" timestamp="1620401305823">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="518" height="446" key="SwitcherDM/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620401305823" />
-    <state x="2696" y="298" key="chooseDestDirectoryDialog" timestamp="1620135341238">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2696" y="298" key="chooseDestDirectoryDialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620135341238" />
-    <state x="2481" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1620402915389">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2481" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620402915389" />
-    <state x="2610" y="281" key="extract.method.dialog" timestamp="1623058993017">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2610" y="281" key="extract.method.dialog/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623058993017" />
-    <state x="2407" y="355" width="1060" height="616" key="find.popup" timestamp="1622649403090">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2407" y="355" width="1060" height="616" key="find.popup/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622649403090" />
-    <state x="2262" y="140" key="new project wizard" timestamp="1619866617574">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2262" y="140" key="new project wizard/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1619866617574" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1620044172497">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1620044172497" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

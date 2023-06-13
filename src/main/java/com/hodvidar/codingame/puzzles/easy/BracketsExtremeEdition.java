@@ -40,26 +40,13 @@ class BracketsExtremeEdition {
 
         for (final char c : expression.toCharArray()) {
             switch (c) {
-                case PARE_OPEN:
-                    numberOfPareOpenned++;
-                    break;
-                case CROC_OPEN:
-                    numberOfCrocOpenned++;
-                    break;
-                case ACCO_OPEN:
-                    numberOfAccoOpenned++;
-                    break;
-                case PARE_CLOSE:
-                    numberOfPareOpenned--;
-                    break;
-                case CROC_CLOSE:
-                    numberOfCrocOpenned--;
-                    break;
-                case ACCO_CLOSE:
-                    numberOfAccoOpenned--;
-                    break;
-                default:
-                    throw new IllegalArgumentException("Only brackets are expected");
+                case PARE_OPEN -> numberOfPareOpenned++;
+                case CROC_OPEN -> numberOfCrocOpenned++;
+                case ACCO_OPEN -> numberOfAccoOpenned++;
+                case PARE_CLOSE -> numberOfPareOpenned--;
+                case CROC_CLOSE -> numberOfCrocOpenned--;
+                case ACCO_CLOSE -> numberOfAccoOpenned--;
+                default -> throw new IllegalArgumentException("Only brackets are expected");
             }
 
             if (numberOfPareOpenned < 0 || numberOfCrocOpenned < 0 || numberOfAccoOpenned < 0)
@@ -86,21 +73,21 @@ class BracketsExtremeEdition {
             }
             final char check;
             switch (c) {
-                case PARE_CLOSE:
+                case PARE_CLOSE -> {
                     check = stack.pop();
                     if (check == '{' || check == '[')
                         return false;
-                    break;
-                case ACCO_CLOSE:
+                }
+                case ACCO_CLOSE -> {
                     check = stack.pop();
                     if (check == '(' || check == '[')
                         return false;
-                    break;
-                case CROC_CLOSE:
+                }
+                case CROC_CLOSE -> {
                     check = stack.pop();
                     if (check == '(' || check == '{')
                         return false;
-                    break;
+                }
             }
         }
         return stack.isEmpty();

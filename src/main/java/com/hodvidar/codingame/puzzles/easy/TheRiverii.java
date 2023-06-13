@@ -1,5 +1,7 @@
 package com.hodvidar.codingame.puzzles.easy;
 
+import org.assertj.core.util.VisibleForTesting;
+
 import java.util.Scanner;
 
 /**
@@ -26,7 +28,8 @@ class TheRiverii {
      * Look for how many number that lead to number 'n' using the 'nextNumber(n)' method. Retuns 0
      * if no solution. Note : Optimization : don't look more than 2 solutions.
      */
-    private static int findRivers(final long n) {
+    @VisibleForTesting
+    static int findRivers(final long n) {
         int count = 0;
         for (int i = 1; i <= n; i++) {
             final long lower = n - i;
