@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BracketsExtremeEditionTest {
+class BracketsExtremeEditionTest {
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
@@ -23,7 +23,7 @@ public class BracketsExtremeEditionTest {
             ")}][{( | false",
             "((([[[{{{ | false",
     })
-    public void isExpressionOK(final String inputValue, final boolean expected) {
+    void isExpressionOK(final String inputValue, final boolean expected) {
         assertThat(BracketsExtremeEdition.isExpressionOK(inputValue)).isEqualTo(expected);
         assertThat(BracketsExtremeEdition.isExpressionOK2(inputValue)).isEqualTo(expected);
     }
