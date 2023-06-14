@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheRiverii.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheRiverii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +39,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -91,16 +98,33 @@
       <recent name="F:\w\CodingGames\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TheRiveriiTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in CodingGames">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListUtilsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.utils.list.ListUtilsTest]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,45 +176,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TheRiveriiTest.sumDigits (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
-      <option name="METHOD_NAME" value="sumDigits(long,long)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TheRiveriiTest.sumDigits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.TheRiveriiTest" />
-      <option name="METHOD_NAME" value="sumDigits(int,int)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in CodingGames" />
+        <item itemvalue="JUnit.ListUtilsTest" />
         <item itemvalue="JUnit.TheRiveriiTest" />
         <item itemvalue="JUnit.TheRiveriiTest.findRivers" />
         <item itemvalue="JUnit.TheRiveriiTest.nextNumber" />
-        <item itemvalue="JUnit.TheRiveriiTest.sumDigits (1)" />
-        <item itemvalue="JUnit.TheRiveriiTest.sumDigits" />
       </list>
     </recent_temporary>
   </component>

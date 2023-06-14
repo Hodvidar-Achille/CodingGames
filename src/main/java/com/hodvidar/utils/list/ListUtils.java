@@ -1,9 +1,14 @@
 package com.hodvidar.utils.list;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListUtils {
+
+    private ListUtils() {
+        throw new IllegalStateException("Utility class");
+    }
 
     public static int[] reverse(final int[] array) {
         if (null == array || array.length < 2) {
@@ -24,7 +29,7 @@ public class ListUtils {
 
     public static List<Integer> arrayToList(final int[] array) {
         if (null == array) {
-            return null;
+            return Collections.emptyList();
         }
         final List<Integer> intList = new ArrayList<>(array.length);
         for (final int i : array) {
@@ -35,7 +40,7 @@ public class ListUtils {
 
     public static List<List<Integer>> array2DToList(final int[][] array2D) {
         if (null == array2D) {
-            return null;
+            return Collections.emptyList();
         }
         final List<List<Integer>> intList = new ArrayList<>(array2D.length);
         for (final int[] array : array2D) {
@@ -46,21 +51,21 @@ public class ListUtils {
 
     public static int[] listToArray(final List<Integer> list) {
         if (null == list) {
-            return null;
+            return new int[0];
         }
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static double[] listOfDoubleToArray(final List<Double> list) {
         if (null == list) {
-            return null;
+            return new double[0];
         }
         return list.stream().mapToDouble(Double::doubleValue).toArray();
     }
 
     public static int[][] listToArray2D(final List<List<Integer>> list) {
         if (null == list) {
-            return null;
+            return new int[0][0];
         }
         final int[][] array2D = new int[list.size()][];
         for (int i = 0; i < list.size(); i++) {
