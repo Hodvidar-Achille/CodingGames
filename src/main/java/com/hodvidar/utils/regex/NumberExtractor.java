@@ -1,11 +1,16 @@
 package com.hodvidar.utils.regex;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class NumberExtractor {
+
+    private NumberExtractor() {
+        throw new IllegalStateException("Utility class");
+    }
 
     /**
      * ex : "x=-1, y=12, z=-100" will become list of doubles : -1.0, 12.0, -100.0
@@ -44,5 +49,14 @@ public final class NumberExtractor {
     public static int extractInteger(String s) {
         s = s.replaceAll("[^0-9]", "");
         return Integer.parseInt(s);
+    }
+
+
+    public static int[] getArray(String arrayStr) {
+        arrayStr = arrayStr.trim();
+
+        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
+                .mapToInt(element -> Integer.parseInt(element.trim()))
+                .toArray();
     }
 }

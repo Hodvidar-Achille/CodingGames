@@ -11,7 +11,7 @@ import static com.hodvidar.hackerrank.ArrayHourglass.getHighestHourglassSum;
 import static com.hodvidar.utils.list.ListUtils.array2DToList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ArrayHoursGlassTest {
+class ArrayHoursGlassTest {
 
     private static final int[][] valueForTest1 =
             new int[][]{

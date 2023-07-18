@@ -9,6 +9,10 @@ import java.util.Map;
 
 public class ArrayUnion {
 
+    private ArrayUnion() {
+        throw new IllegalStateException("Utility class");
+    }
+
     // O(n+m) for n size of input1 and m size of input2
     public static int[] unionOfArraysSimple(final int[] input1, final int[] input2) {
         final List<Integer> result = new ArrayList<>();

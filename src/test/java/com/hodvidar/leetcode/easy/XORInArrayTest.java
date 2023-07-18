@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.hodvidar.leetcode.easy.XORInArray.getBitwiseOfElements;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class XORInArrayTest {
+class XORInArrayTest {
 
     @Test
     void should_return_0_for_list_of_1_element_0() {

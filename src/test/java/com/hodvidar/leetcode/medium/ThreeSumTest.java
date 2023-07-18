@@ -13,7 +13,7 @@ import java.util.Scanner;
 import static com.hodvidar.utils.file.Constance.RESOURCES_TEST;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ThreeSumTest {
+class ThreeSumTest {
 
     private static int[] getLongInputArray() throws FileNotFoundException {
         final String inputFile = RESOURCES_TEST + File.separator + "leetcode" + File.separator + "threeSum.txt";
@@ -30,60 +30,60 @@ public class ThreeSumTest {
     }
 
     @Test
-    public void threeSum_shortInput() {
+    void threeSum_shortInput() {
         final int[] array = new int[]{-1, 0, 1, 2, -1, -4};
         final List<List<Integer>> actual = ThreeSum.threeSum(array);
-        assertThat(actual.size()).isEqualTo(2);
+        assertThat(actual).hasSize(2);
         assertThat(actual.get(0)).containsExactlyInAnyOrder(-1, 0, 1);
         assertThat(actual.get(1)).containsExactlyInAnyOrder(-1, -1, 2);
     }
 
     @Test
-    public void threeSumFaster_shortInput() {
+    void threeSumFaster_shortInput() {
         final int[] array = new int[]{-1, 0, 1, 2, -1, -4};
         final List<List<Integer>> actual = ThreeSum.threeSumFaster(array);
-        assertThat(actual.size()).isEqualTo(2);
+        assertThat(actual).hasSize(2);
         assertThat(actual.get(1)).containsExactlyInAnyOrder(-1, -1, 2);
         assertThat(actual.get(0)).containsExactlyInAnyOrder(-1, 0, 1);
     }
 
     @Test
-    public void threeSumFaster2_shortInput() {
+    void threeSumFaster2_shortInput() {
         final int[] array = new int[]{-1, 0, 1, 2, -1, -4};
         final List<List<Integer>> actual = ThreeSum.threeSumFaster2(array);
-        assertThat(actual.size()).isEqualTo(2);
+        assertThat(actual).hasSize(2);
         assertThat(actual.get(0)).containsExactlyInAnyOrder(-1, -1, 2);
         assertThat(actual.get(1)).containsExactlyInAnyOrder(-1, 0, 1);
     }
 
     @Test
     @Disabled
-    public void threeSum_longInput() throws FileNotFoundException {
+    void threeSum_longInput() throws FileNotFoundException {
         final int[] array = getLongInputArray();
         final long before = System.currentTimeMillis();
         final List<List<Integer>> actual = ThreeSum.threeSum(array);
         final long after = System.currentTimeMillis();
-        assertThat(actual.size()).isEqualTo(16258);
+        assertThat(actual).hasSize(16258);
         assertThat(after - before).isLessThan(3000);
     }
 
     @Test
-    public void threeSumFaster_longInput() throws FileNotFoundException {
+    void threeSumFaster_longInput() throws FileNotFoundException {
         final int[] array = getLongInputArray();
         final long before = System.currentTimeMillis();
         final List<List<Integer>> actual = ThreeSum.threeSumFaster(array);
         final long after = System.currentTimeMillis();
-        assertThat(actual.size()).isEqualTo(16258);
+        assertThat(actual).hasSize(16258);
         assertThat(after - before).isLessThan(3000);
     }
 
     @Test
-    public void threeSumFaster2_longInput() throws FileNotFoundException {
+    void threeSumFaster2_longInput() throws FileNotFoundException {
         final int[] array = getLongInputArray();
         final long before = System.currentTimeMillis();
         final List<List<Integer>> actual = ThreeSum.threeSumFaster2(array);
         final long after = System.currentTimeMillis();
-        assertThat(actual.size()).isEqualTo(16258);
+        assertThat(actual).hasSize(16258);
         assertThat(after - before).isLessThan(3000);
     }
 }

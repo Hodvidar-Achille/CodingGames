@@ -76,7 +76,7 @@ public class ListUtils {
     }
 
     /**
-     * Returns -1 if value not in the array, otherwise retuns the index of the value
+     * Returns -1 if value not in the array, otherwise returns the index of the value
      */
     public static int binarySearch(final int[] sortedArray, final int value) {
         return runBinarySearchIteratively(sortedArray, value, 0, sortedArray.length);

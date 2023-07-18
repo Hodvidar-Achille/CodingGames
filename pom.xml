@@ -29,6 +29,14 @@
             <artifactId>eclipse-collections</artifactId>
             <version>10.4.0</version>
         </dependency>
+        <!-- for @Nullable and @Nonnull annotations -->
+        <!-- Or spring framework annotations good enought ?
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        -->
 
 
         <!-- TEST -->
