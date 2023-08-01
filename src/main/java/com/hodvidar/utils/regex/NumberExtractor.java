@@ -18,9 +18,9 @@ public final class NumberExtractor {
      * @param s a String
      * @return List<Double> from numbers in the string
      */
-    public static final List<Double> extractNumber(final String s) {
+    public static List<Double> extractNumber(final String s) {
         final List<Double> numbers = new ArrayList<>();
-        final Pattern p = Pattern.compile("-?\\d+");
+        final Pattern p = Pattern.compile("-?\\d+(\\.\\d+)?");
         final Matcher m = p.matcher(s);
         while (m.find()) {
             final String a = m.group();
@@ -36,7 +36,7 @@ public final class NumberExtractor {
      * @param s
      * @return first integer in String (with sign)
      */
-    public static final int extractFirstInteger(final String s) {
+    public static int extractFirstInteger(final String s) {
         return (int) (double) extractNumber(s).get(0);
     }
 
@@ -54,9 +54,15 @@ public final class NumberExtractor {
 
     public static int[] getArray(String arrayStr) {
         arrayStr = arrayStr.trim();
-
         return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
                 .mapToInt(element -> Integer.parseInt(element.trim()))
+                .toArray();
+    }
+
+    public static double[] getArrayOfDoubles(String arrayStr) {
+        arrayStr = arrayStr.trim();
+        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
+                .mapToDouble(element -> Double.parseDouble(element.trim()))
                 .toArray();
     }
 }

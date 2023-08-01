@@ -106,4 +106,36 @@ public class ListUtils {
         }
         return index;
     }
+
+
+    /**
+     * Returns a list of lists of all permutations of the given array.
+     *
+     * @param permutations the list to fill with all permutations
+     * @param n            the length of the given array
+     * @param elements     the given array
+     */
+    public static void collectAllPermutation(List<List<Integer>> permutations,
+                                             int n,
+                                             int[] elements) {
+        if (n == 1) {
+            permutations.add(arrayToList(elements));
+        } else {
+            for (int i = 0; i < n - 1; i++) {
+                collectAllPermutation(permutations, n - 1, elements);
+                if (n % 2 == 0) {
+                    swap(elements, i, n - 1);
+                } else {
+                    swap(elements, 0, n - 1);
+                }
+            }
+            collectAllPermutation(permutations, n - 1, elements);
+        }
+    }
+
+    private static void swap(int[] input, int a, int b) {
+        int tmp = input[a];
+        input[a] = input[b];
+        input[b] = tmp;
+    }
 }

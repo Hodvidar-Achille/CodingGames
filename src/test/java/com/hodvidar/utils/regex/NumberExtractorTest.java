@@ -12,12 +12,13 @@ public class NumberExtractorTest {
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
             "<x=-8, y=-10, z=0>| -8 | -10 | 0",
-            "<x=5, y=105789, z=10> | 5| 105789 | 10",
+            "<x=5, y=105789, z=10> | 5 | 105789 | 10",
             "<x=2, y=-7, z=3> | 2 | -7 | 3",
             "<x=9, y=-8, z=-3> | 9 | -8 | -3",
-            "-105 beans and 13 carrots, 0 | -105 | 13 | 0"
+            "-105 beans and 13 carrots, 0 | -105 | 13 | 0",
+            "[{1.0, 2.0, -3.0}] | 1.0 | 2.0 | -3.0"
     })
-    void checkExtractNumber(final String s, final int r1, final int r2, final int r3) {
+    void checkExtractNumber(final String s, final double r1, final double r2, final double r3) {
         final List<Double> result = NumberExtractor.extractNumber(s);
         assertThat(result.get(0)).isEqualTo(r1);
         assertThat(result.get(1)).isEqualTo(r2);

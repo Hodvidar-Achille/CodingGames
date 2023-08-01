@@ -230,7 +230,7 @@ public class GeometryServices {
     }
 
     /**
-     * Check if angle (degre°) form by intersection between (p1 p2) and (p2, p3) is 90°.
+     * Check if angle (degree°) form by intersection between (p1 p2) and (p2, p3) is 90°.
      */
     public static boolean isRightAngleCorner(final Point p1, final Point p2, final Point p3) {
         final double p1_p2 = getDistance(p1, p2);

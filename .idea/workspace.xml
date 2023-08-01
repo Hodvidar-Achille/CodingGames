@@ -20,40 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CodingGames.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_16_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_collections_eclipse_collections_10_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_collections_eclipse_collections_api_10_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_16_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_16_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_16_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_16_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/CylindersSolution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleContainerBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleInterval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/FordCircleContainerBuilderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/ArrayUnion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/ArrayUnion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/DoubleFormater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/DoubleFormater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayHoursGlassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayHoursGlassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/XORInArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/XORInArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/ThreeSumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/ThreeSumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/ArrayUnionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/ArrayUnionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/regex/NumberExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/regex/NumberExtractorTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +101,7 @@
       <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CylindersTest.boxWidthForSeveralCylinders">
+  <component name="RunManager" selected="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimized">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -148,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CylindersTest.boxWidthForOneCylinder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CylindersTest.boxWidthForSeveralCylindersOptimized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -158,13 +138,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
-      <option name="METHOD_NAME" value="boxWidthForOneCylinder(int,double)" />
+      <option name="METHOD_NAME" value="boxWidthForSeveralCylindersOptimized(java.lang.String,double)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CylindersTest.boxWidthForSeveralCylinders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CylindersTest.boxWidthForSeveralCylindersOptimizedAsString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -174,13 +154,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
-      <option name="METHOD_NAME" value="boxWidthForSeveralCylinders(java.lang.String,double)" />
+      <option name="METHOD_NAME" value="boxWidthForSeveralCylindersOptimizedAsString(java.lang.String,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CylindersTest.boxWidthForTwoCylinder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CylindersTest.boxWidthForSeveralCylindersOptimizedUsingShuffle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -190,34 +170,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
-      <option name="METHOD_NAME" value="boxWidthForTwoCylinder(int,int,double)" />
+      <option name="METHOD_NAME" value="boxWidthForSeveralCylindersOptimizedUsingShuffle(java.lang.String,double)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MedianOfTwoSortedArraysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CylindersTest.boxWidthForSeveralCylindersOptimized.[1] [380, 3, 150, 93, 10, 542, 135], 2163.508" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MedianOfTwoSortedArraysTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
+      <option name="METHOD_NAME" value="boxWidthForSeveralCylindersOptimized(java.lang.String,double)" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.codingame.puzzles.medium.CylindersTest]/[test-template:boxWidthForSeveralCylindersOptimized(java.lang.String, double)]/[test-template-invocation:#1]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylinders" />
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimized" />
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingShuffle" />
         <item itemvalue="JUnit.CylindersTest" />
-        <item itemvalue="JUnit.MedianOfTwoSortedArraysTest" />
-        <item itemvalue="JUnit.CylindersTest.boxWidthForTwoCylinder" />
-        <item itemvalue="JUnit.CylindersTest.boxWidthForOneCylinder" />
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedAsString" />
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimized.[1] [380, 3, 150, 93, 10, 542, 135], 2163.508" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +259,7 @@
       <workItem from="1623006516292" duration="6548000" />
       <workItem from="1686656980935" duration="30000" />
       <workItem from="1686657048612" duration="4455000" />
-      <workItem from="1689586547693" duration="11556000" />
+      <workItem from="1689586547693" duration="45231000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -516,6 +500,20 @@
           <line>33</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />
+          <option name="timeStamp" value="79" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

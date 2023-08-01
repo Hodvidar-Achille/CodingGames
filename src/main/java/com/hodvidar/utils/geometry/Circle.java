@@ -21,7 +21,7 @@ public class Circle implements GeometricForm {
     }
 
     /**
-     * Constructor that create a circle from 3 differents points. Their coordinates must be
+     * Constructor that create a circle from 3 different points. Their coordinates must be
      * different for each 3 points.
      * <p>
      * From : http://paulbourke.net/geometry/circlesphere/
@@ -44,8 +44,38 @@ public class Circle implements GeometricForm {
     public boolean isInside(final Point p) {
         // System.err.println("Circle.isInside...");
         final double r = this.radius * this.radius;
-        final double x = Math.pow((p.x - this.center.x), 2);
-        final double y = Math.pow((p.y - this.center.y), 2);
+        final double x = Math.pow((p.getX() - this.center.getX()), 2);
+        final double y = Math.pow((p.getY()- this.center.getY()), 2);
         return x + y <= r;
+    }
+
+
+    public boolean isOverLapping(final Circle c) {
+        return GeometryServices.getDistance(this.getCenter(), c.getCenter())
+                < this.getRadius() + c.getRadius();
+    }
+
+    public Point getCenter() {
+        return this.center;
+    }
+
+    public double getRadius() {
+        return this.radius;
+    }
+
+    public Point getNorthPoint() {
+        return new Point(this.center.x, this.center.y + this.radius);
+    }
+
+    public Point getEastPoint() {
+        return new Point(this.center.x + this.radius, this.center.y);
+    }
+
+    public Point getSouthPoint() {
+        return new Point(this.center.x, this.center.y - this.radius);
+    }
+
+    public Point getWestPoint() {
+        return new Point(this.center.x - this.radius, this.center.y);
     }
 }
