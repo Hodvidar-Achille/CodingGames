@@ -141,7 +141,8 @@ public class Cylinders {
                 + Arrays.stream(circlesRadius).boxed().collect(Collectors.toList()).stream()
                 .map(String::valueOf).collect(Collectors.joining(", "))
                 + "\nMin result found: " + minResult.getValue()
-                + "\nfor radius in this order: " + String.join(" | ", allMinResults.keySet())
+                + "\nfor radius in this order: " + String.join(" | ", allMinResults.keySet()
+                .stream().map(String::valueOf).collect(Collectors.joining(", ")))
                 + "\nnumber of tries: " + results.size()
                 + "\nTime: " + (endTime - startTime) + "ms");
     }

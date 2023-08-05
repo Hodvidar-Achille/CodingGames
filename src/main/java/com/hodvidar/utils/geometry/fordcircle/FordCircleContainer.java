@@ -54,13 +54,12 @@ public class FordCircleContainer {
     }
 
     private int getPositionAndUpdateThem(final Double circleRadius) {
-        final Double circleRadiusDouble = Double.valueOf(circleRadius);
         // find the best position, look for interval with the closest radius
         final List<FordCircleInterval> fordCircleIntervals = getIntervals();
         double minDistance = Double.MAX_VALUE;
         FordCircleInterval bestInterval = null;
         for (final FordCircleInterval interval : fordCircleIntervals) {
-            final double difference = Math.abs(interval.maxCircleRadiusPossible() - circleRadiusDouble);
+            final double difference = Math.abs(interval.maxCircleRadiusPossible() - circleRadius);
             if (difference < minDistance) {
                 minDistance = difference;
                 bestInterval = interval;
@@ -85,7 +84,7 @@ public class FordCircleContainer {
         // first interval
         intervals.add(new FordCircleInterval(null, fordCirclesInOrder.get(0)));
         final int lastElementIndex = fordCirclesInOrder.size() - 1;
-        for (int i = 1; i < lastElementIndex; i++) {
+        for (int i = 0; i < lastElementIndex; i++) {
             final FordCircle firstCircle = fordCirclesInOrder.get(i);
             final FordCircle secondCircle = fordCirclesInOrder.get(i + 1);
             final FordCircleInterval interval = new FordCircleInterval(firstCircle, secondCircle);
@@ -93,6 +92,7 @@ public class FordCircleContainer {
         }
         // last interval
         intervals.add(new FordCircleInterval(fordCirclesInOrder.get(lastElementIndex), null));
+        intervals.forEach(FordCircleInterval::maxCircleRadiusPossible);
         return intervals;
     }
 

@@ -20,30 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleIntervalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/hard/TheBridgeEpisode2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/hard/TheBridgeEpisode2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/CylindersSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/CylindersSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleContainerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/FordCircleInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleInterval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometricSer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometricForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/GeometryServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Parallelogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Parallelogram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Quadrilateral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Quadrilateral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rhombus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rhombus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ListUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/ArithmeticServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/ArithmeticServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/FordCircleContainerBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +247,7 @@
       <workItem from="1686656980935" duration="30000" />
       <workItem from="1686657048612" duration="4455000" />
       <workItem from="1689586547693" duration="59167000" />
-      <workItem from="1691071900790" duration="6285000" />
+      <workItem from="1691071900790" duration="8580000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -523,6 +502,36 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
           <line>81</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />
