@@ -5,11 +5,13 @@ public class Rectangle extends Parallelogram {
     public Rectangle(final Point... points) {
         super(points);
 
-        if (!checkPoints(points))
+        if (!checkPoints(points)) {
             throw new IllegalArgumentException("Points do not form a rectangle.");
+        }
     }
 
-    public static boolean checkPoints(final Point... points) {
+    @Override
+    public boolean checkPoints(final Point... points) {
         int i = 0;
         do {
             final int next = (i + 1) % 4;

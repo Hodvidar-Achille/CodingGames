@@ -31,7 +31,9 @@ public class Circle implements GeometricForm {
         this.radius = GeometryServices.getDistance(this.center, p1);
     }
 
-    public static boolean checkPoints(final Point... points) {
+
+    @Override
+    public boolean checkPoints(final Point... points) {
         // Check that the points are no all align.
         return GeometryServices.orientation(points[0], points[1], points[2]) != 0;
 

@@ -59,6 +59,13 @@ public final class NumberExtractor {
                 .toArray();
     }
 
+    public static double[] getArrayOfDouble(String arrayStr) {
+        arrayStr = arrayStr.trim();
+        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
+                .mapToDouble(element -> Double.parseDouble(element.trim()))
+                .toArray();
+    }
+
     public static double[] getArrayOfDoubles(String arrayStr) {
         arrayStr = arrayStr.trim();
         return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))

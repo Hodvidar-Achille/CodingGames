@@ -1,5 +1,7 @@
-package com.hodvidar.utils.geometry;
+package com.hodvidar.utils.geometry.fordcircle;
 
+import com.hodvidar.utils.geometry.Circle;
+import com.hodvidar.utils.geometry.Point;
 import com.hodvidar.utils.number.DoubleFormater;
 import com.hodvidar.utils.regex.NumberExtractor;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -38,11 +40,11 @@ class FordCircleContainerBuilderTest {
                 .isEqualTo(expectedXcoordinateOfNewCircle);
     }
 
-    private List<Circle> getFordCirclesFromString(final String circles) {
+    private static List<Circle> getFordCirclesFromString(final String circles) {
         return getFordCirclesFromNumbers(NumberExtractor.extractNumber(circles));
     }
 
-    private List<Circle> getFordCirclesFromNumbers(final List<Double> numbers) {
+    private static List<Circle> getFordCirclesFromNumbers(final List<Double> numbers) {
         if (numbers.isEmpty()) {
             return Collections.emptyList();
         }

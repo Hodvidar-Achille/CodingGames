@@ -9,7 +9,8 @@ public class Quadrilateral extends Polygon {
             throw new IllegalArgumentException("Quadrilateral must have 4 points");
     }
 
-    public static boolean checkPoints(final Point... points) {
+    @Override
+    public boolean checkPoints(final Point... points) {
         return points.length == 4;
     }
 }

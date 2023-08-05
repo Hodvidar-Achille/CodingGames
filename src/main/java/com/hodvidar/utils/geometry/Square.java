@@ -37,7 +37,8 @@ public class Square extends Rectangle {
      * @param points
      * @return
      */
-    public static boolean checkPoints(final Point[] points) {
+    @Override
+    public boolean checkPoints(final Point[] points) {
         double segmentLength = 0;
         int i = 0;
         boolean first = true;

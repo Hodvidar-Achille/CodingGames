@@ -1,8 +1,11 @@
-package com.hodvidar.utils.geometry;
+package com.hodvidar.utils.geometry.fordcircle;
 
+import com.hodvidar.utils.geometry.Circle;
+import com.hodvidar.utils.geometry.Point;
 import org.assertj.core.util.VisibleForTesting;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,11 +18,35 @@ import java.util.stream.Collectors;
  */
 public class FordCircleContainerBuilder {
 
-    public static FordCircleContainer getFordCircleContainer(final int[] circlesRadius) {
+    private FordCircleContainerBuilder() {
+        throw new IllegalStateException("Utility class");
+    }
+
+    public static FordCircleContainer getFordCircleContainerWithOptimization(final double[] circlesRadius) {
         if (circlesRadius.length == 0) {
             return new FordCircleContainer(Collections.emptyList());
         }
-        final int firstRadius = circlesRadius[0];
+        final double firstRadius = circlesRadius[0];
+        final Circle firstCircle = new Circle(new Point(firstRadius, firstRadius), firstRadius);
+        if (circlesRadius.length == 1) {
+            return new FordCircleContainer(Collections.singletonList(firstCircle));
+        }
+        final FordCircleContainer fordCircleContainer = new FordCircleContainer();
+        final List<Double> circleRadiusSortedBigToSmall = Arrays.stream(circlesRadius)
+                .boxed().sorted().collect(Collectors.toList());
+        Collections.reverse(circleRadiusSortedBigToSmall);
+        for (final Double radius : circleRadiusSortedBigToSmall) {
+            fordCircleContainer.addCircle(radius);
+        }
+        fordCircleContainer.buildCirclesUsingFordCirclePositions();
+        return fordCircleContainer;
+    }
+
+    public static FordCircleContainer getFordCircleContainerWithoutOptimization(final double[] circlesRadius) {
+        if (circlesRadius.length == 0) {
+            return new FordCircleContainer(Collections.emptyList());
+        }
+        final double firstRadius = circlesRadius[0];
         final Circle firstCircle = new Circle(new Point(firstRadius, firstRadius), firstRadius);
         if (circlesRadius.length == 1) {
             return new FordCircleContainer(Collections.singletonList(firstCircle));
@@ -27,7 +54,7 @@ public class FordCircleContainerBuilder {
         final List<Circle> circles = new ArrayList<>(circlesRadius.length);
         circles.add(firstCircle);
         for (int i = 1; i < circlesRadius.length; i++) {
-            final int radius = circlesRadius[i];
+            final double radius = circlesRadius[i];
             final Circle closeCircle = circles.get(i - 1);
             final Circle newCircle = createNewCircle(circles, closeCircle, true, radius);
             circles.add(newCircle);
@@ -41,8 +68,8 @@ public class FordCircleContainerBuilder {
                                   final boolean createNewToTheRight,
                                   final double radiusOfNewCircle) {
         Circle possibleNewCircle = createNewCircle(closeCircle, createNewToTheRight, radiusOfNewCircle);
-        if(isCircleTooMuchOnTheLeft(possibleNewCircle)) {
-            possibleNewCircle =  new Circle(new Point(radiusOfNewCircle, radiusOfNewCircle), radiusOfNewCircle);
+        if (isCircleTooMuchOnTheLeft(possibleNewCircle)) {
+            possibleNewCircle = new Circle(new Point(radiusOfNewCircle, radiusOfNewCircle), radiusOfNewCircle);
         }
         // check that an existing circle is not closer to this circle
         final List<Circle> circlesToConsider = existingCircles.stream()
@@ -58,7 +85,7 @@ public class FordCircleContainerBuilder {
         return possibleNewCircle;
     }
 
-    private static boolean isCircleTooMuchOnTheLeft(Circle possibleNewCircle) {
+    private static boolean isCircleTooMuchOnTheLeft(final Circle possibleNewCircle) {
         return possibleNewCircle.getWestPoint().getX() < 0;
     }
 

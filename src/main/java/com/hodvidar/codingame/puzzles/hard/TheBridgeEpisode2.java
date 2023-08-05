@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * https://www.codingame.com/ide/puzzle/the-bridge-episode-2 by Hodvidar
  * <p>
- * Genetic algorith : the results are not always perfect.
+ * Genetic algorithm : the results are not always perfect.
  **/
 class TheBridgeEpisode2 {
 
@@ -812,8 +812,7 @@ class TheBridgeEpisode2 {
                 tournament.saveIndividual(i, pop.getIndividual(randomId));
             }
             // Get the fittest
-            final Individual fittest = tournament.getFittest();
-            return fittest;
+            return tournament.getFittest();
         }
     }
 
@@ -832,10 +831,9 @@ class TheBridgeEpisode2 {
             System.err.println("MAX SCORE TO WIN:" + maxScore);
         }
 
-        // Calculate inidividuals fittness by eunning its orders in simulator
+        // Calculate individual fitness by running its orders in simulator
         int getFitness(final Individual individual) {
-            final int fitness = simulator.runSimulation(individual.getOrders());
-            return fitness;
+            return simulator.runSimulation(individual.getOrders());
         }
 
         // Get optimum fitness

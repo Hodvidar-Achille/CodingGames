@@ -1,17 +1,18 @@
 package com.hodvidar.codingame.puzzles.medium;
 
-import com.hodvidar.utils.geometry.FordCircleContainer;
-import com.hodvidar.utils.geometry.FordCircleContainerBuilder;
+import com.hodvidar.utils.geometry.Circle;
+import com.hodvidar.utils.geometry.fordcircle.FordCircleContainer;
+import com.hodvidar.utils.geometry.fordcircle.FordCircleContainerBuilder;
 import com.hodvidar.utils.list.ListUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.hodvidar.utils.geometry.FordCircleContainerBuilder.getHorizontalLengthBetween2FordCirclesCenter;
-
 // https://www.codingame.com/training/medium/cylinders
 // https://www.codingame.com/ide/puzzle/cylinders
 public class Cylinders {
+
+    public static boolean VERBOSE = false;
 
     private Cylinders() {
         throw new IllegalStateException("Utility class");
@@ -25,74 +26,85 @@ public class Cylinders {
      * @return the maximum length the circles took on the X axis
      */
     public static double getLength(final int[] circlesRadius) {
-        final Optional<Double> lengthQuick = getLengthQuick(circlesRadius);
+        final double[] circlesRadiusAsDouble = ListUtils.arrayAsDoubles(circlesRadius);
+        final Optional<Double> lengthQuick = getLengthQuick(circlesRadiusAsDouble);
         if (lengthQuick.isPresent()) {
             return lengthQuick.get();
         }
-        final FordCircleContainer container = FordCircleContainerBuilder.getFordCircleContainer(circlesRadius);
+        final FordCircleContainer container = FordCircleContainerBuilder.getFordCircleContainerWithoutOptimization(circlesRadiusAsDouble);
         return container.getMaxX();
     }
 
 
-    public static double getMinLength(final int[] circlesRadius) {
-        final Optional<Double> lengthQuick = getLengthQuick(circlesRadius);
+    public static double getMinLengthUsingOptimization(final int[] circlesRadius) {
+        final double[] circlesRadiusAsDouble = ListUtils.arrayAsDoubles(circlesRadius);
+        final Optional<Double> lengthQuick = getLengthQuick(circlesRadiusAsDouble);
         if (lengthQuick.isPresent()) {
             return lengthQuick.get();
         }
         final long startTime = System.currentTimeMillis();
-        final Map<String, Double> shuffleResults = new HashMap<>();
-        final List<List<Integer>> allPossiblePermutations = new ArrayList<>();
-        ListUtils.collectAllPermutation(allPossiblePermutations, circlesRadius.length, circlesRadius);
-        for (List<Integer> aPermutation : allPossiblePermutations) {
-            final String circleRadiusListString = aPermutation.stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining(","));
-            if (shuffleResults.containsKey(circleRadiusListString)) {
-                continue;
-            }
-            shuffleResults.put(circleRadiusListString,
-                    FordCircleContainerBuilder.
-                            getFordCircleContainer(aPermutation.stream().mapToInt(it -> it).toArray())
-                            .getMaxX());
-        }
-        final Map.Entry<String, Double> minResult = shuffleResults.entrySet().stream()
-                .min(Comparator.comparingDouble(Map.Entry::getValue))
-                .orElseThrow();
+        final FordCircleContainer optimizedContainer = FordCircleContainerBuilder.getFordCircleContainerWithOptimization(circlesRadiusAsDouble);
+        final Map<String, Double> results = new HashMap<>();
+        final String circleRadiusListString = getStringFromList(optimizedContainer.getCircles().stream()
+                .map(Circle::getRadius)
+                .collect(Collectors.toList()));
+        results.put(circleRadiusListString, optimizedContainer.getMaxX());
+        final Map.Entry<String, Double> minResult = results.entrySet().iterator().next();
         final long endTime = System.currentTimeMillis();
-        print(circlesRadius, startTime, shuffleResults, minResult, endTime);
+        print(circlesRadiusAsDouble, startTime, results, minResult, endTime);
         return minResult.getValue();
     }
 
-    private static void print(int[] circlesRadius, long startTime, Map<String, Double> shuffleResults, Map.Entry<String, Double> minResult, long endTime) {
-        System.err.println("For Input: "
-                + Arrays.stream(circlesRadius).boxed().collect(Collectors.toList()).stream()
-                .map(String::valueOf).collect(Collectors.joining(","))
-                + "\nMin result found: " + minResult.getValue()
-                + "\nfor radius in this order: " + minResult.getKey()
-                + "\nnumber of tries: " + shuffleResults.size()
-                + "\nTime: " + (endTime - startTime) + "ms");
+    public static double getMinLengthUsingBrutForce(final double[] circlesRadius) {
+        final Optional<Double> lengthQuick = getLengthQuick(circlesRadius);
+        if (lengthQuick.isPresent()) {
+            return lengthQuick.get();
+        }
+        final long startTime = System.currentTimeMillis();
+        final Map<String, Double> results = new HashMap<>();
+        final List<List<Double>> allPossiblePermutations = new ArrayList<>();
+        ListUtils.collectAllPermutation(allPossiblePermutations, circlesRadius.length, circlesRadius);
+        for (final List<Double> aPermutation : allPossiblePermutations) {
+            final String circleRadiusListString = getStringFromList(aPermutation);
+            if (results.containsKey(circleRadiusListString)) {
+                continue;
+            }
+            results.put(circleRadiusListString,
+                    FordCircleContainerBuilder.
+                            getFordCircleContainerWithoutOptimization(aPermutation.stream().mapToDouble(d -> d).toArray())
+                            .getMaxX());
+        }
+        final Map.Entry<String, Double> minResult = results.entrySet().stream()
+                .min(Comparator.comparingDouble(Map.Entry::getValue))
+                .orElseThrow();
+        final long endTime = System.currentTimeMillis();
+        print(circlesRadius, startTime, results, minResult, endTime);
+        return minResult.getValue();
     }
 
-    public static double getMinLengthUsingSuffle(final int[] circlesRadius, int numberOfTries) {
+    private static String getStringFromList(final List<Double> aListOfNumbers) {
+        return aListOfNumbers.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(","));
+    }
+
+    public static double getMinLengthUsingShuffle(final double[] circlesRadius, final int numberOfTries) {
         final Optional<Double> lengthQuick = getLengthQuick(circlesRadius);
         if (lengthQuick.isPresent()) {
             return lengthQuick.get();
         }
         final long startTime = System.currentTimeMillis();
         final Map<String, Double> shuffleResults = new HashMap<>();
-        final List<Integer> circlesRadiusList = Arrays.stream(circlesRadius).boxed().collect(Collectors.toList());
+        final List<Double> circlesRadiusList = Arrays.stream(circlesRadius).boxed().collect(Collectors.toList());
         for (int i = 0; i < numberOfTries; i++) {
             Collections.shuffle(circlesRadiusList);
-            final String circleRadiusListString = circlesRadiusList.stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining(","));
+            final String circleRadiusListString = getStringFromList(circlesRadiusList);
             if (shuffleResults.containsKey(circleRadiusListString)) {
                 continue;
             }
-            shuffleResults.put(circleRadiusListString,
-                    FordCircleContainerBuilder.
-                            getFordCircleContainer(circlesRadiusList.stream().mapToInt(it -> it).toArray())
-                            .getMaxX());
+            final FordCircleContainer container = FordCircleContainerBuilder.
+                    getFordCircleContainerWithoutOptimization(circlesRadiusList.stream().mapToDouble(d -> d).toArray());
+            shuffleResults.put(circleRadiusListString, container.getMaxX());
         }
         final Map.Entry<String, Double> minResult = shuffleResults.entrySet().stream()
                 .min(Comparator.comparingDouble(Map.Entry::getValue))
@@ -102,7 +114,7 @@ public class Cylinders {
         return minResult.getValue();
     }
 
-    private static Optional<Double> getLengthQuick(final int[] circlesRadius) {
+    private static Optional<Double> getLengthQuick(final double[] circlesRadius) {
         if (circlesRadius.length == 0) {
             return Optional.of(0.0);
         }
@@ -118,13 +130,19 @@ public class Cylinders {
         return Optional.empty();
     }
 
-    private static double getMaxXLengthTakenBy2FordCircles(final int circleRadius1, final int circleRadius2) {
-        final double maxLength = Math.max(circleRadius1, circleRadius2);
-        final double minLength = Math.min(circleRadius1, circleRadius2);
-        final double middleLength = getHorizontalLengthBetween2FordCirclesCenter(maxLength, minLength);
-        final double maxXLength = Math.max(middleLength + minLength, maxLength);
-        return maxLength + maxXLength;
+    private static void print(double[] circlesRadius, long startTime, Map<String, Double> results, Map.Entry<String, Double> minResult, long endTime) {
+        if (!VERBOSE) {
+            return;
+        }
+        Map<String, Double> allMinResults = results.entrySet().stream()
+                .filter(e -> e.getValue().equals(minResult.getValue()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        System.err.println("For Input: "
+                + Arrays.stream(circlesRadius).boxed().collect(Collectors.toList()).stream()
+                .map(String::valueOf).collect(Collectors.joining(", "))
+                + "\nMin result found: " + minResult.getValue()
+                + "\nfor radius in this order: " + String.join(" | ", allMinResults.keySet())
+                + "\nnumber of tries: " + results.size()
+                + "\nTime: " + (endTime - startTime) + "ms");
     }
-
-
 }

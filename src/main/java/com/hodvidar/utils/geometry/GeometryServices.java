@@ -4,6 +4,17 @@ package com.hodvidar.utils.geometry;
  * Improved Geometry service for point inside polygon. by Hodvidar
  */
 public class GeometryServices {
+
+    private static final Point POINT_1 = new Point(0.0, 0.0);
+    private static final Point POINT_2 = new Point(1.0, 0.0);
+    private static final Point POINT_3 = new Point(1.0, 1.0);
+    private static final Point POINT_4 = new Point(0.0, 1.0);
+    private static final Circle CIRCLE = new Circle(0);
+    private static final Quadrilateral QUADRILATERAL = new Quadrilateral(POINT_1, POINT_2, POINT_3, POINT_4);
+    private static final Parallelogram PARALLELOGRAM = new Parallelogram(POINT_1, POINT_2, POINT_3, POINT_4);
+    private static final Rhombus RHOMBUS = new Rhombus(POINT_1, POINT_2, POINT_3, POINT_4);
+    private static final Rectangle RECTANGLE = new Rectangle(POINT_1, POINT_2, POINT_3, POINT_4);
+    private static final Square SQUARE = new Square(POINT_1, POINT_2, POINT_3, POINT_4);
     private final double infinite;
     private final double stepToSwitchInfiniteY;
 
@@ -46,10 +57,8 @@ public class GeometryServices {
      * @return true if e on segment [ab]
      */
     public static boolean isInsideCoordinate(final Point e, final Point a, final Point b) {
-        // System.err.println("\t\tonSegment()");
         final boolean betweenX = e.x <= Math.max(a.x, b.x) && e.x >= Math.min(a.x, b.x);
         final boolean betweenY = e.y <= Math.max(a.y, b.y) && e.y >= Math.min(a.y, b.y);
-        // System.err.println("\t\tbetweenX="+betweenX+" betweenY="+betweenY);
         return betweenX && betweenY;
     }
 
@@ -98,8 +107,6 @@ public class GeometryServices {
      * @return true if [ab] and [ef] intersected
      */
     public static boolean doIntersect(final Point a, final Point b, final Point e, final Point f) {
-        // System.err.println("\tdoIntersect(a(" + a.x + "," + a.y + "), b(" + b.x + "," + b.y
-        // + "), e(" + e.x + "," + e.y + "), f(" + f.x + "," + f.y + "))");
         // if o1 != o2 (ef) intersect (ab) (lines)
         final int o1 = orientation(a, b, e);
         final int o2 = orientation(a, b, f);
@@ -139,8 +146,6 @@ public class GeometryServices {
      * @return a <code>Point</code> or <code>null</code>.
      */
     public static Point getIntersect(final Point a, final Point b, final Point e, final Point f) {
-        // if(a.toString().equals("(-1753.0; -115.0)") && e.toString().equals("(-1728.0; -271.0)"))
-        // System.out.println("test");
 
         // (1) On point touch another (same point).
         if (a.equals(e))
@@ -173,7 +178,7 @@ public class GeometryServices {
         if (o4 == 0 && isInsideCoordinate(b, e, f))
             return b;
 
-        // No colinear
+        // No collinear
 
         // Look for simple segment intersection
         if (!(o1 != o2 && o3 != o4))
@@ -248,7 +253,7 @@ public class GeometryServices {
      */
     public static Point getCenter(final Point p1, final Point p2, final Point p3) {
         // 1) Check that the points are no all align.
-        if (!Circle.checkPoints(p1, p2, p3))
+        if (!CIRCLE.checkPoints(p1, p2, p3))
             throw new IllegalArgumentException("Points can't be aligned");
 
         // 2) Arrange points to have 2 lines that are never perfectly vertical.
@@ -377,18 +382,18 @@ public class GeometryServices {
     public static String getQuadrilateralType(final Point... points) {
         String result = "Not a Quadrilateral";
 
-        final boolean isQuadrilateral = Quadrilateral.checkPoints(points);
+        final boolean isQuadrilateral = QUADRILATERAL.checkPoints(points);
         if (!isQuadrilateral)
             return result;
         result = Quadrilateral.class.getSimpleName();
 
-        final boolean isParallelogram = Parallelogram.checkPoints(points);
+        final boolean isParallelogram = PARALLELOGRAM.checkPoints(points);
         if (!isParallelogram)
             return result;
         result = Parallelogram.class.getSimpleName();
 
-        final boolean isRhombus = Rhombus.checkPoints(points);
-        final boolean isRectangle = Rectangle.checkPoints(points);
+        final boolean isRhombus = RHOMBUS.checkPoints(points);
+        final boolean isRectangle = RECTANGLE.checkPoints(points);
         if (!isRhombus && !isRectangle)
             return result;
 
@@ -397,7 +402,7 @@ public class GeometryServices {
         else
             return Rhombus.class.getSimpleName();
 
-        if (!Square.checkPoints(points))
+        if (!SQUARE.checkPoints(points))
             return result;
 
         result = Square.class.getSimpleName();

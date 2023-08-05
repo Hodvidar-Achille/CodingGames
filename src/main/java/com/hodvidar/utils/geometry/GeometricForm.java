@@ -5,9 +5,7 @@ interface GeometricForm {
      * @param points
      * @return {@code true} if the points are OK for the object type.
      */
-    static boolean checkPoints(final Point... points) {
-        return true;
-    }
+    boolean checkPoints(final Point... points);
 
     boolean isInside(Point p);
 }

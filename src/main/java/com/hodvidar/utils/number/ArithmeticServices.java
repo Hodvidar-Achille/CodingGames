@@ -1,7 +1,7 @@
 package com.hodvidar.utils.number;
 
 public final class ArithmeticServices {
-    public static final boolean isNumeric(final String strNum) {
+    public static boolean isNumeric(final String strNum) {
         try {
             Double.parseDouble(strNum);
         } catch (final NumberFormatException | NullPointerException nfe) {
@@ -17,7 +17,7 @@ public final class ArithmeticServices {
      * @param b - several numbers
      * @return
      */
-    public static final double greatestCommonDivisor(final double a, final double... b) {
+    public static double greatestCommonDivisor(final double a, final double... b) {
         if (b == null || b.length == 0)
             throw new IllegalArgumentException("Need at least 2 values.");
 
@@ -38,7 +38,7 @@ public final class ArithmeticServices {
      * @param b - one number
      * @return
      */
-    private static final double gcd(final double a, final double b) {
+    private static double gcd(final double a, final double b) {
         return b == 0 ? a : gcd(b, a % b); // Not bad for one line of code :)
     }
 
@@ -49,7 +49,7 @@ public final class ArithmeticServices {
      * @param b - several numbers
      * @return
      */
-    public static final double lowerCommonMultiplier(final double a, final double... b) {
+    public static double lowerCommonMultiplier(final double a, final double... b) {
         if (b == null || b.length == 0)
             throw new IllegalArgumentException("Need at least 2 values.");
 
@@ -70,7 +70,7 @@ public final class ArithmeticServices {
      * @param b - one number
      * @return
      */
-    private static final double lcm(final double a, final double b) {
+    private static double lcm(final double a, final double b) {
         return (a * b) / gcd(a, b);
     }
 

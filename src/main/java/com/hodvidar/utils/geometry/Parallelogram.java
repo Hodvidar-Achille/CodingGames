@@ -18,7 +18,8 @@ public class Parallelogram extends Quadrilateral {
      * @param points
      * @return {@code true} if a // c and b // d.
      */
-    public static boolean checkPoints(final Point... points) {
+    @Override
+    public boolean checkPoints(final Point... points) {
         final Line a = new Line(points[0], points[1]);
         final Line b = new Line(points[1], points[2]);
         final Line c = new Line(points[3], points[2]);

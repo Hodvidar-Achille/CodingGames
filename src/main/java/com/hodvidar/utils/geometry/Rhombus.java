@@ -8,7 +8,11 @@ public class Rhombus extends Parallelogram {
             throw new IllegalArgumentException("Points do not form a rhombus.");
     }
 
-    public static boolean checkPoints(final Point... points) {
+    @Override
+    public boolean checkPoints(final Point... points) {
+        if(!super.checkPoints(points)) {
+            return false;
+        }
         double segmentLength = 0;
         int i = 0;
         boolean first = true;
