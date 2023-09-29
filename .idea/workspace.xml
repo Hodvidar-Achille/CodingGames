@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/DoubleFormater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/number/DoubleFormater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +95,7 @@
       <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString.[1] [1, 2, 3, 4, 5, 6, 7, 8, 9], 80.103">
+  <component name="RunManager" selected="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -114,6 +118,22 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.codingame.puzzles.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.medium.CylindersTest" />
+      <option name="METHOD_NAME" value="boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,43 +172,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FordCircleContainerBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.utils.geometry.fordcircle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.utils.geometry.fordcircle" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.utils.geometry.fordcircle.FordCircleContainerBuilderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FordCircleIntervalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.utils.geometry.fordcircle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.utils.geometry.fordcircle" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.utils.geometry.fordcircle.FordCircleIntervalTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString" />
+        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBrutForceAsString" />
+        <item itemvalue="JUnit.java in CodingGames" />
         <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBigToSmallAsString.[1] [1, 2, 3, 4, 5, 6, 7, 8, 9], 80.103" />
         <item itemvalue="JUnit.CylindersTest" />
-        <item itemvalue="JUnit.FordCircleContainerBuilderTest" />
-        <item itemvalue="JUnit.CylindersTest.boxWidthForSeveralCylindersOptimizedUsingBrutForceAsString" />
-        <item itemvalue="JUnit.FordCircleIntervalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +245,9 @@
       <workItem from="1686656980935" duration="30000" />
       <workItem from="1686657048612" duration="4455000" />
       <workItem from="1689586547693" duration="59167000" />
-      <workItem from="1691071900790" duration="8580000" />
+      <workItem from="1691071900790" duration="9260000" />
+      <workItem from="1691682620767" duration="2508000" />
+      <workItem from="1695995109442" duration="2807000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -495,7 +495,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>140</line>
+          <line>195</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -510,28 +510,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>110</line>
+          <line>165</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>106</line>
+          <line>161</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>61</line>
+          <line>102</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>95</line>
+          <line>150</line>
           <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

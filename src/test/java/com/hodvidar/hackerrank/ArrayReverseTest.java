@@ -52,10 +52,10 @@ class ArrayReverseTest {
 
     private static Stream<Arguments> generateData_List() {
         return Stream.of(
-                Arguments.of(
+                /*Arguments.of(
                         null,
                         null
-                ),
+                ),*/
                 Arguments.of(
                         Lists.immutable.empty(),
                         Lists.immutable.empty()

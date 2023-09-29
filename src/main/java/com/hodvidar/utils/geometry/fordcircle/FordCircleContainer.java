@@ -34,6 +34,49 @@ public class FordCircleContainer {
         this.fordCircles = new ArrayList<>();
     }
 
+    public void optimizeRadiusPosition(final List<Double> circleRadiusSortedBigToSmall) {
+        final List<Double> circlesRadiusCopy = new ArrayList<>(circleRadiusSortedBigToSmall.size());
+        circlesRadiusCopy.addAll(circleRadiusSortedBigToSmall);
+        addCircle(circlesRadiusCopy.get(0));
+        circlesRadiusCopy.remove(0);
+        addCircle(circlesRadiusCopy.get(0));
+        circlesRadiusCopy.remove(0);
+        // add one of the remaining radius that will widen the less the current intervals
+        while (!circlesRadiusCopy.isEmpty()) {
+            double lowestDifferenceForCurrentAllRadius = Double.MAX_VALUE;
+            Double radiusToAdd = null;
+            int indexToRemove = 0;
+            for (int i = 0; i < circlesRadiusCopy.size(); i++) {
+                final Double currentRadius = circlesRadiusCopy.get(i);
+                final double lowestDifferenceForCurrentRadius = getLowestDifferenceBetweenRadiusAndExistingInterval(currentRadius);
+                System.err.println("lowestDifferenceForCurrentRadius (" + currentRadius + ") --> " + lowestDifferenceForCurrentRadius);
+                if (lowestDifferenceForCurrentRadius < lowestDifferenceForCurrentAllRadius) {
+                    lowestDifferenceForCurrentAllRadius = lowestDifferenceForCurrentRadius;
+                    radiusToAdd = currentRadius;
+                    indexToRemove = i;
+                }
+            }
+            System.err.println("addCircle " + radiusToAdd);
+            addCircle(radiusToAdd);
+            circlesRadiusCopy.remove(indexToRemove);
+            lowestDifferenceForCurrentAllRadius = Double.MAX_VALUE;
+            radiusToAdd = null;
+            indexToRemove = 0;
+        }
+    }
+
+    private double getLowestDifferenceBetweenRadiusAndExistingInterval(final Double radius) {
+        final List<FordCircleInterval> fordCircleIntervals = getIntervals();
+        double minDifference = Double.MAX_VALUE;
+        for (final FordCircleInterval interval : fordCircleIntervals) {
+            final double difference = Math.abs(interval.maxCircleRadiusPossible() - radius);
+            if (difference < minDifference) {
+                minDifference = difference;
+            }
+        }
+        return minDifference;
+    }
+
     public void addCircle(final Double circleRadius) {
         if (fordCircles.isEmpty()) {
             final FordCircle firstCircle = new FordCircle(circleRadius);
@@ -75,7 +118,21 @@ public class FordCircleContainer {
         fordCircles.stream()
                 .filter(c -> c.getPosition() >= position)
                 .forEach(c -> c.setPosition(c.getPosition() + 1));
+        System.err.println("Add new position for circle radius=" + circleRadius + " --> " + position + " (between circles "
+                + intervalToString(bestInterval));
         return position;
+    }
+
+    private static String intervalToString(FordCircleInterval fordCircleInterval) {
+        String r = "left: ";
+        r += fordCircleInterval.getLeftCircle().isPresent() ?
+                fordCircleInterval.getLeftCircle().get().getRadius()
+                : "null";
+        r += " | right: ";
+        r += fordCircleInterval.getRightCircle().isPresent() ?
+                fordCircleInterval.getRightCircle().get().getRadius()
+                : "null";
+        return r;
     }
 
     private List<FordCircleInterval> getIntervals() {

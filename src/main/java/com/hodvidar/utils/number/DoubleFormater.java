@@ -8,7 +8,7 @@ public final class DoubleFormater {
         throw new IllegalStateException("Utility class");
     }
 
-    public static final String asInteger(final double d) {
+    public static String asInteger(final double d) {
         final NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(0);
         nf.setGroupingUsed(false);

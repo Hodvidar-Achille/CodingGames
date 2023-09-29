@@ -35,9 +35,13 @@ public class FordCircleContainerBuilder {
         final List<Double> circleRadiusSortedBigToSmall = Arrays.stream(circlesRadius)
                 .boxed().sorted().collect(Collectors.toList());
         Collections.reverse(circleRadiusSortedBigToSmall);
+        // TODO AGE: replace this loop
+        /*
         for (final Double radius : circleRadiusSortedBigToSmall) {
             fordCircleContainer.addCircle(radius);
-        }
+        }*/
+        // Still not working (29/09/2023)
+        fordCircleContainer.optimizeRadiusPosition(circleRadiusSortedBigToSmall);
         fordCircleContainer.buildCirclesUsingFordCirclePositions();
         return fordCircleContainer;
     }
