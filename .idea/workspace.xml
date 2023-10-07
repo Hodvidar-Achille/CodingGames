@@ -20,17 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/IsIntegerPalindrome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/LongestCommonPrefix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RomanToInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/ArrayExtractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/IsIntegerPalindromeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/LongestCommonPrefixTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RomanToIntTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Searching.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RemoveDuplicateFromSortedArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/IntegerToRoman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/algorithms/SearchingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/algorithms/SortingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RemoveDuplicateFromSortedArrayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/IntegerToRomanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/SlidingAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/SlidingAverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/regex/NumberExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/codingame/puzzles/medium/CylindersTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +89,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
     "vue.rearranger.settings.migration": "true"
   }
@@ -103,7 +106,7 @@
       <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IsIntegerPalindromeTest.longestCommonPrefix">
+  <component name="RunManager" selected="JUnit.java in CodingGames">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -115,64 +118,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IsIntegerPalindromeTest.longestCommonPrefix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerToRomanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.easy.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.easy.IsIntegerPalindromeTest" />
-      <option name="METHOD_NAME" value="longestCommonPrefix(int,boolean)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.IntegerToRomanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntegerToRomanTest,intToRoman and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.hodvidar.leetcode.medium.IntegerToRomanTest,intToRoman(java.lang.String,int)" />
+        <pattern testClass="com.hodvidar.leetcode.medium.IntegerToRomanTest,intToRomaOptimized(java.lang.String,int)" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntegerToRomanTest.longestCommonPrefix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.IntegerToRomanTest" />
+      <option name="METHOD_NAME" value="longestCommonPrefix(java.lang.String,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LongestCommonPrefixTest.boxWidthForOneCylinder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LongestPalindromicSubstringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.easy.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.easy.LongestCommonPrefixTest" />
-      <option name="METHOD_NAME" value="boxWidthForOneCylinder(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LongestCommonPrefixTest.longestCommonPrefixOptimized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.easy.LongestCommonPrefixTest" />
-      <option name="METHOD_NAME" value="longestCommonPrefixOptimized(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RomanToIntTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.easy" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.easy.RomanToIntTest" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.LongestPalindromicSubstringTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IsIntegerPalindromeTest.longestCommonPrefix" />
-        <item itemvalue="JUnit.RomanToIntTest" />
-        <item itemvalue="JUnit.LongestCommonPrefixTest.longestCommonPrefixOptimized" />
-        <item itemvalue="JUnit.LongestCommonPrefixTest.boxWidthForOneCylinder" />
         <item itemvalue="JUnit.java in CodingGames" />
+        <item itemvalue="JUnit.IntegerToRomanTest" />
+        <item itemvalue="JUnit.IntegerToRomanTest,intToRoman and 1 more" />
+        <item itemvalue="JUnit.IntegerToRomanTest.longestCommonPrefix" />
+        <item itemvalue="JUnit.LongestPalindromicSubstringTest" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +252,7 @@
       <workItem from="1691682620767" duration="2508000" />
       <workItem from="1695995109442" duration="3501000" />
       <workItem from="1696001367739" duration="808000" />
-      <workItem from="1696267325069" duration="4900000" />
+      <workItem from="1696267325069" duration="21670000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -535,6 +532,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
           <line>152</line>
           <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RemoveDuplicateFromSortedArray.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

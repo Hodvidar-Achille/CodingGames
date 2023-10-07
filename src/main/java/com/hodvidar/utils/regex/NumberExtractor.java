@@ -54,21 +54,20 @@ public final class NumberExtractor {
 
     public static int[] getArray(String arrayStr) {
         arrayStr = arrayStr.trim();
-        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
+        arrayStr = arrayStr.replace("[", "").replace("]", "");
+        if (arrayStr.isEmpty())
+            return new int[0];
+        return Arrays.stream(arrayStr.split(","))
                 .mapToInt(element -> Integer.parseInt(element.trim()))
                 .toArray();
     }
 
     public static double[] getArrayOfDouble(String arrayStr) {
         arrayStr = arrayStr.trim();
-        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
-                .mapToDouble(element -> Double.parseDouble(element.trim()))
-                .toArray();
-    }
-
-    public static double[] getArrayOfDoubles(String arrayStr) {
-        arrayStr = arrayStr.trim();
-        return Arrays.stream(arrayStr.replace("[", "").replace("]", "").split(","))
+        arrayStr = arrayStr.replace("[", "").replace("]", "");
+        if (arrayStr.isEmpty())
+            return new double[0];
+        return Arrays.stream(arrayStr.split(","))
                 .mapToDouble(element -> Double.parseDouble(element.trim()))
                 .toArray();
     }

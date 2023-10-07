@@ -37,13 +37,4 @@ public class SlidingAverage {
     private static int getSumOfFirstArrayElementsInWindow(final int[] array, final int windowSize) {
         return Arrays.stream(array).limit(windowSize).sum();
     }
-
-    /*
-    public static double[] listOfDoubleToArray(List<Double> list) {
-        if (null == list) {
-            return null;
-        }
-        return list.stream().mapToDouble(Double::doubleValue).toArray();
-    }
-    */
 }
