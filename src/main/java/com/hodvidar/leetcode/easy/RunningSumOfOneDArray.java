@@ -1,4 +1,4 @@
-package com.hodvidar.leetcode;
+package com.hodvidar.leetcode.easy;
 
 // https://leetcode.com/problems/running-sum-of-1d-array/
 public class RunningSumOfOneDArray {

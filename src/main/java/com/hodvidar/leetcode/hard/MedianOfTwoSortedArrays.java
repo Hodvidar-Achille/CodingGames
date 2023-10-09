@@ -10,7 +10,7 @@ for Median of Two Sorted Arrays.
 public class MedianOfTwoSortedArrays {
 
 
-    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public static double findMedianSortedArrays(final int[] nums1, final int[] nums2) {
         final int n = nums1.length;
         final int m = nums2.length;
         if (n == 0) {
@@ -61,7 +61,7 @@ public class MedianOfTwoSortedArrays {
         int i = 0;
         int j = 0;
         int counter = 0;
-        int half = (n + m) / 2;
+        final int half = (n + m) / 2;
         int currentNumber;
         if (nums1[0] < nums2[0]) {
             currentNumber = nums1[i];
@@ -75,17 +75,17 @@ public class MedianOfTwoSortedArrays {
         boolean maxNums1Reached = false;
         boolean maxNums2Reached = false;
         while (true) {
-            int previousNumber = currentNumber;
-            if(i == n) {
+            final int previousNumber = currentNumber;
+            if (i == n) {
                 i--;
                 maxNums1Reached = true;
             }
-            if(j == m) {
+            if (j == m) {
                 j--;
                 maxNums2Reached = true;
             }
-            int n1 = nums1[i];
-            int n2 = nums2[j];
+            final int n1 = nums1[i];
+            final int n2 = nums2[j];
             if (n1 == n2) {
                 if ((i < n - 1 && !maxNums1Reached) || maxNums2Reached) {
                     currentNumber = n1;
@@ -115,11 +115,11 @@ public class MedianOfTwoSortedArrays {
         }
     }
 
-    private static double findMedianSortedArrays(int[] nums) {
+    private static double findMedianSortedArrays(final int[] nums) {
         return findMedianSortedArrays(nums, nums.length, false);
     }
 
-    private static double findMedianSortedArrays(int[] nums, int length, boolean isLower) {
+    private static double findMedianSortedArrays(final int[] nums, final int length, final boolean isLower) {
         if (nums.length == 1) {
             return nums[0];
         }
@@ -128,7 +128,7 @@ public class MedianOfTwoSortedArrays {
             half = (nums.length - 1) - half;
         }
         if (length % 2 == 0) {
-            if(isLower) {
+            if (isLower) {
                 return (nums[half + 1] + nums[half]) / 2.0;
             } else {
                 return (nums[half - 1] + nums[half]) / 2.0;

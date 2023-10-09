@@ -1,4 +1,4 @@
-package com.hodvidar.leetcode;
+package com.hodvidar.leetcode.medium;
 
 import com.hodvidar.leetcode.utils.ListNode;
 
@@ -9,8 +9,7 @@ import com.hodvidar.leetcode.utils.ListNode;
 // https://leetcode.com/problems/add-two-numbers/
 public final class AddTwoNumbers {
     public ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
-        final ListNode l3 = addTwoNumbersRecursive(l1, l2, null, false);
-        return l3;
+        return addTwoNumbersRecursive(l1, l2, null, false);
     }
 
     private ListNode addTwoNumbersRecursive(final ListNode l1, final ListNode l2, ListNode l3, boolean previous) {
@@ -41,8 +40,10 @@ public final class AddTwoNumbers {
     }
 
     /**
-     * returns an array A of int of size 2, A[0] is 0 or 1, A[1] is the unit example: 2 + 2 = 4 ->
-     * [0, 4] / 8 + 7 = 15 -> [1, 5]
+     * returns an array A of int of size 2, A[0] is 0 or 1, A[1] is the unit <br/>
+     * example: <br/>
+     * 2 + 2 = 4 -> [0, 4] <br/>
+     * 8 + 7 = 15 -> [1, 5]
      **/
     private int[] getSumOfDigits(final int a, final int b) {
         if (a > 9 || b > 9)

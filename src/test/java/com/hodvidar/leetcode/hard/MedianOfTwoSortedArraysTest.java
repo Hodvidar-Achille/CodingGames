@@ -1,141 +1,75 @@
 package com.hodvidar.leetcode.hard;
 
+import com.hodvidar.utils.list.IntegerArrayConverter;
+import com.hodvidar.utils.regex.NumberExtractor;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 // TODO replace tests by one parametrized test
 class MedianOfTwoSortedArraysTest {
 
-    @Test
-    void test1() {
-        final int[] nums1 = new int[]{1, 3};
-        final int[] nums2 = new int[]{2};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.0);
+
+    @ParameterizedTest
+    @CsvSource(delimiter = '|', value = {
+            "[1, 3] | [2] | 2.0",
+            "[1, 2] | [3, 4] | 2.5",
+            "[0] | [0] | 0.0",
+            "[] | [2] | 2.0",
+            "[3] | [] | 3.0",
+            "[3, 5, 6, 7] | [] | 5.5",
+            "[3, 5, 6] | [] | 5",
+            "[1, 2, 3, 4, 5] | [11, 12, 13, 14, 15] | 8.0",
+            "[11, 12, 13, 14, 15] | [1, 2, 3, 4, 5] | 8.0",
+            "[1, 5, 9, 13, 17] | [2, 6, 10, 14, 18] | 9.5",
+            "[1, 5, 9, 13, 17] | [2, 6, 10, 14] | 9.0",
+            "[0, 0, 0, 0, 0] | [-1, 0, 0, 0, 0, 0, 1] | 0.0",
+            "[1, 3] | [2, 7] | 2.5",
+            "[0, 0] | [0, 0] | 0.0",
+            "[3] | [-2, -1] | -1.0",
+            "[2, 3] | [1] | 2.0",
+            "[3] | [1, 2] | 2.0",
+            "[4] | [1, 2, 3] | 2.5",
+            "[4, 5, 6] | [1, 2, 3] | 3.5"
+    })
+    void testMedianOfTwoSortedArrays(final String numbersArrayStrOne,
+                                     final String numbersArrayStrTwo,
+                                     final double expected) {
+        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(
+                NumberExtractor.getArray(numbersArrayStrOne),
+                NumberExtractor.getArray(numbersArrayStrTwo)))
+                .isEqualTo(expected);
     }
 
-    @Test
-    void test2() {
-        final int[] nums1 = new int[]{1, 2};
-        final int[] nums2 = new int[]{3, 4};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.5);
-    }
-
-    @Test
-    void test3() {
-        final int[] nums1 = new int[]{0};
-        final int[] nums2 = new int[]{0};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(0.0);
-    }
-
-    @Test
-    void test4() {
-        final int[] nums1 = new int[]{};
-        final int[] nums2 = new int[]{2};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.0);
-    }
-
-    @Test
-    void test5() {
-        final int[] nums1 = new int[]{3};
-        final int[] nums2 = new int[]{};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(3.0);
-    }
-
-    @Test
-    void test6() {
-        final int[] nums1 = new int[]{3, 5, 6, 7};
-        final int[] nums2 = new int[]{};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(5.5);
-    }
-
-    @Test
-    void test7() {
-        final int[] nums1 = new int[]{3, 5, 6};
-        final int[] nums2 = new int[]{};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(5);
-    }
-
-    @Test
-    void test8() {
-        final int[] nums1 = new int[]{1, 2, 3, 4, 5};
-        final int[] nums2 = new int[]{11, 12, 13, 14, 15};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(8.0);
-    }
-
-    @Test
-    void test9() {
-        final int[] nums1 = new int[]{11, 12, 13, 14, 15};
-        final int[] nums2 = new int[]{1, 2, 3, 4, 5};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(8.0);
-    }
-
-    @Test
-    void test10() {
-        final int[] nums1 = new int[]{1, 5, 9, 13, 17};
-        final int[] nums2 = new int[]{2, 6, 10, 14, 18};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(9.5);
-    }
-
-    @Test
-    void test11() {
-        final int[] nums1 = new int[]{1, 5, 9, 13, 17};
-        final int[] nums2 = new int[]{2, 6, 10, 14};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(9.0);
-    }
-
-    @Test
-    void test12() {
-        final int[] nums1 = new int[]{0, 0, 0, 0, 0};
-        final int[] nums2 = new int[]{-1, 0, 0, 0, 0, 0, 1};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(0.0);
-    }
-
-    @Test
-    void test13() {
-        final int[] nums1 = new int[]{1, 3};
-        final int[] nums2 = new int[]{2, 7};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.5);
-    }
-
-    @Test
-    void test14() {
-        final int[] nums1 = new int[]{0, 0};
-        final int[] nums2 = new int[]{0, 0};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(0.0);
-    }
-
-    @Test
-    void test15() {
-        final int[] nums1 = new int[]{3};
-        final int[] nums2 = new int[]{-2, -1};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(-1.0);
-    }
-
-    @Test
-    void test16() {
-        final int[] nums1 = new int[]{2, 3};
-        final int[] nums2 = new int[]{1};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.0);
-    }
-
-    @Test
-    void test17() {
-        final int[] nums1 = new int[]{3};
-        final int[] nums2 = new int[]{1, 2};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.0);
-    }
-
-    @Test
-    void test18() {
-        final int[] nums1 = new int[]{4};
-        final int[] nums2 = new int[]{1, 2, 3};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(2.5);
-    }
-
-    @Test
-    void test19() {
-        final int[] nums1 = new int[]{4, 5, 6};
-        final int[] nums2 = new int[]{1, 2, 3};
-        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2)).isEqualTo(3.5);
+    @ParameterizedTest
+    @CsvSource(delimiter = '|', value = {
+            "[1, 3] | [2] | 2.0",
+            "[1, 2] | [3, 4] | 2.5",
+            "[0] | [0] | 0.0",
+            "[] | [2] | 2.0",
+            "[3] | [] | 3.0",
+            "[3, 5, 6, 7] | [] | 5.5",
+            "[3, 5, 6] | [] | 5",
+            "[1, 2, 3, 4, 5] | [11, 12, 13, 14, 15] | 8.0",
+            "[11, 12, 13, 14, 15] | [1, 2, 3, 4, 5] | 8.0",
+            "[1, 5, 9, 13, 17] | [2, 6, 10, 14, 18] | 9.5",
+            "[1, 5, 9, 13, 17] | [2, 6, 10, 14] | 9.0",
+            "[0, 0, 0, 0, 0] | [-1, 0, 0, 0, 0, 0, 1] | 0.0",
+            "[1, 3] | [2, 7] | 2.5",
+            "[0, 0] | [0, 0] | 0.0",
+            "[3] | [-2, -1] | -1.0",
+            "[2, 3] | [1] | 2.0",
+            "[3] | [1, 2] | 2.0",
+            "[4] | [1, 2, 3] | 2.5",
+            "[4, 5, 6] | [1, 2, 3] | 3.5"
+    })
+    void testMedianOfTwoSortedArrays(@ConvertWith(IntegerArrayConverter.class) final int[] nums1,
+                                     @ConvertWith(IntegerArrayConverter.class) final int[] nums2,
+                                     final double expected) {
+        assertThat(MedianOfTwoSortedArrays.findMedianSortedArrays(nums1, nums2))
+                .isEqualTo(expected);
     }
 }

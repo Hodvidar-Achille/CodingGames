@@ -1,4 +1,4 @@
-package com.hodvidar.leetcode;
+package com.hodvidar.leetcode.easy;
 
 import java.util.HashMap;
 import java.util.Map;

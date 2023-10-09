@@ -20,9 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/ReverseInteger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/ReverseIntegerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/IntegerArrayConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MergeSeveralSortedListsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/utils/ListNodeUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/AddTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/AddTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/LongestSubStringWRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/LongestSubStringWRC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/MedianOfTwoSortedArrays.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/RunningSumOfOneDArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/TwoSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/AddTwoNumbersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/AddTwoNumbersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/RunningSumOfOneDArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,23 +77,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2b2a95fe10f1a88078b4a3a7a7efef4e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\w\CodingGames\src\test\resources" />
@@ -91,11 +102,13 @@
       <recent name="F:\w\CodingGames\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.hodvidar.leetcode.easy" />
+      <recent name="com.hodvidar.leetcode.medium" />
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
       <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReverseIntegerTest">
+  <component name="RunManager" selected="JUnit.MergeSeveralSortedListsTest.testMedianOfTwoSortedArrays">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -107,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerToRomanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddTwoNumbersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -116,24 +129,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.IntegerToRomanTest" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.AddTwoNumbersTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerToRomanTest,intToRoman and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="com.hodvidar.leetcode.medium.IntegerToRomanTest,intToRoman(java.lang.String,int)" />
-        <pattern testClass="com.hodvidar.leetcode.medium.IntegerToRomanTest,intToRomaOptimized(java.lang.String,int)" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegerToRomanTest.longestCommonPrefix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddTwoNumbersTest.testMedianOfTwoSortedArrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -142,43 +144,67 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.IntegerToRomanTest" />
-      <option name="METHOD_NAME" value="longestCommonPrefix(java.lang.String,int)" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.AddTwoNumbersTest" />
+      <option name="METHOD_NAME" value="testMedianOfTwoSortedArrays(int[],int[],int[])" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseIntegerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MedianOfTwoSortedArraysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.ReverseIntegerTest" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MedianOfTwoSortedArraysTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MedianOfTwoSortedArraysTest.testMedianOfTwoSortedArrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MedianOfTwoSortedArraysTest" />
+      <option name="METHOD_NAME" value="testMedianOfTwoSortedArrays(int[],int[],double)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MergeSeveralSortedListsTest.testMedianOfTwoSortedArrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MergeSeveralSortedListsTest" />
+      <option name="METHOD_NAME" value="testMedianOfTwoSortedArrays(int[],int[],int[],int[])" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReverseIntegerTest" />
-        <item itemvalue="JUnit.java in CodingGames" />
-        <item itemvalue="JUnit.IntegerToRomanTest" />
-        <item itemvalue="JUnit.IntegerToRomanTest,intToRoman and 1 more" />
-        <item itemvalue="JUnit.IntegerToRomanTest.longestCommonPrefix" />
+        <item itemvalue="JUnit.MergeSeveralSortedListsTest.testMedianOfTwoSortedArrays" />
+        <item itemvalue="JUnit.AddTwoNumbersTest" />
+        <item itemvalue="JUnit.AddTwoNumbersTest.testMedianOfTwoSortedArrays" />
+        <item itemvalue="JUnit.MedianOfTwoSortedArraysTest" />
+        <item itemvalue="JUnit.MedianOfTwoSortedArraysTest.testMedianOfTwoSortedArrays" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +267,8 @@
       <workItem from="1691682620767" duration="2508000" />
       <workItem from="1695995109442" duration="3501000" />
       <workItem from="1696001367739" duration="808000" />
-      <workItem from="1696267325069" duration="24422000" />
+      <workItem from="1696267325069" duration="25154000" />
+      <workItem from="1696871155615" duration="4117000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
