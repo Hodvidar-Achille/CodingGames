@@ -20,20 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/IntegerArrayConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MergeSeveralSortedListsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/utils/ListNodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/coderbyte/hard/BracketCombinations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/coderbyte/hard/BracketCombinationsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/AddTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/AddTwoNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/LongestSubStringWRC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/LongestSubStringWRC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/MedianOfTwoSortedArrays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/RunningSumOfOneDArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/TwoSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/AddTwoNumbersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/AddTwoNumbersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/RunningSumOfOneDArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +98,7 @@
       <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MergeSeveralSortedListsTest.testMedianOfTwoSortedArrays">
+  <component name="RunManager" selected="JUnit.BracketCombinationsTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -151,6 +141,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BracketCombinationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.coderbyte.hard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.coderbyte.hard" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.coderbyte.hard.BracketCombinationsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MedianOfTwoSortedArraysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
@@ -162,22 +167,6 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MedianOfTwoSortedArraysTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MedianOfTwoSortedArraysTest.testMedianOfTwoSortedArrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MedianOfTwoSortedArraysTest" />
-      <option name="METHOD_NAME" value="testMedianOfTwoSortedArrays(int[],int[],double)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BracketCombinationsTest" />
         <item itemvalue="JUnit.MergeSeveralSortedListsTest.testMedianOfTwoSortedArrays" />
         <item itemvalue="JUnit.AddTwoNumbersTest" />
         <item itemvalue="JUnit.AddTwoNumbersTest.testMedianOfTwoSortedArrays" />
         <item itemvalue="JUnit.MedianOfTwoSortedArraysTest" />
-        <item itemvalue="JUnit.MedianOfTwoSortedArraysTest.testMedianOfTwoSortedArrays" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +257,7 @@
       <workItem from="1695995109442" duration="3501000" />
       <workItem from="1696001367739" duration="808000" />
       <workItem from="1696267325069" duration="25154000" />
-      <workItem from="1696871155615" duration="4117000" />
+      <workItem from="1696871155615" duration="5584000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
