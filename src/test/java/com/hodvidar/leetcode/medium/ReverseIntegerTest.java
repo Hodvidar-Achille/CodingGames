@@ -34,7 +34,6 @@ class ReverseIntegerTest {
             "2147483646 | 0",
             "2147483640 | 463847412",
             "-2147483640 | -463847412"
-
     })
     void intToRoman(final int number, final int expected) {
         Assertions.assertThat(ReverseInteger.reverse(number))

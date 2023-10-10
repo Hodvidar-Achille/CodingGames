@@ -1,5 +1,6 @@
 package com.hodvidar.coderbyte.hard;
 
+import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 // https://coderbyte.com/editor/Bracket%20Combinations:Java
