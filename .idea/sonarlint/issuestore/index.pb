@@ -13,3 +13,5 @@ o
 ?src/main/java/com/hodvidar/utils/number/ArithmeticServices.java,e\b\ebceb3c34f4c521695301bb0eecf835fa9bda5bc
 k
 ;src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java,b\9\b99e668404a8df52f674eb53fee30f91198e0ae5
+Å
+Qsrc/test/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEditionTest.java,a\6\a6c9f9749063b2559aaef09ef1cead98d984e482
