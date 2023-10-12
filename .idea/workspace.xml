@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/coderbyte/hard/WildcardAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/coderbyte/hard/WildcardAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/coderbyte/hard/WildcardAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/coderbyte/hard/WildcardAnalyzerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/WildcardAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/WildcardAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzerTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,24 +66,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/w/CodingGames",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/w/CodingGames&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2b2a95fe10f1a88078b4a3a7a7efef4e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\w\CodingGames\src\test\resources" />
@@ -92,13 +92,14 @@
       <recent name="F:\w\CodingGames\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.hodvidar.miscellaneous.livecoding" />
+      <recent name="com.hodvidar.miscellaneous" />
       <recent name="com.hodvidar.leetcode.easy" />
       <recent name="com.hodvidar.leetcode.medium" />
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
-      <recent name="com.hodvidar.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WildcardAnalyzerTest.wildcardsEasierToRead">
+  <component name="RunManager" selected="JUnit.StringAnalyzerTest.analyze">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -110,95 +111,102 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeSeveralSortedListsTest.Wildcards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringAnalyzerTest.analyze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MergeSeveralSortedListsTest" />
-      <option name="METHOD_NAME" value="Wildcards(java.lang.String,java.lang.String)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
+      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeSeveralSortedListsTest.Wildcards.[14] ++$$**{10} zz99eee8888888888, true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringAnalyzerTest.analyzeEasierToRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.hard.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.hard.MergeSeveralSortedListsTest" />
-      <option name="METHOD_NAME" value="Wildcards(java.lang.String,java.lang.String)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
+      <option name="METHOD_NAME" value="analyzeEasierToRead(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringAnalyzerTest.analyze.[11] * aaaa, false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
+      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
       <option name="TEST_OBJECT" value="uniqueId" />
       <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.leetcode.hard.MergeSeveralSortedListsTest]/[test-template:Wildcards(java.lang.String, java.lang.String)]/[test-template-invocation:#14]" />
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#11]" />
       </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WildcardAnalyzerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringAnalyzerTest.analyze.[13] *{2} aa, true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.coderbyte.hard.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.coderbyte.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.coderbyte.hard.WildcardAnalyzerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
+      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#13]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WildcardAnalyzerTest.wildcards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StringAnalyzerTest.analyze.[20] *{1}*{4}**+$+$+++* $%%%%===###a1b2cdeEEE, true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.coderbyte.hard.*" />
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.coderbyte.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.coderbyte.hard.WildcardAnalyzerTest" />
-      <option name="METHOD_NAME" value="wildcards(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WildcardAnalyzerTest.wildcardsEasierToRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.coderbyte.hard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.coderbyte.hard" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.coderbyte.hard.WildcardAnalyzerTest" />
-      <option name="METHOD_NAME" value="wildcardsEasierToRead(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
+      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#20]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WildcardAnalyzerTest.wildcardsEasierToRead" />
-        <item itemvalue="JUnit.WildcardAnalyzerTest.wildcards" />
-        <item itemvalue="JUnit.WildcardAnalyzerTest" />
-        <item itemvalue="JUnit.MergeSeveralSortedListsTest.Wildcards.[14] ++$$**{10} zz99eee8888888888, true" />
-        <item itemvalue="JUnit.MergeSeveralSortedListsTest.Wildcards" />
+        <item itemvalue="JUnit.StringAnalyzerTest.analyze" />
+        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[11] * aaaa, false" />
+        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[13] *{2} aa, true" />
+        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[20] *{1}*{4}**+$+$+++* $%%%%===###a1b2cdeEEE, true" />
+        <item itemvalue="JUnit.StringAnalyzerTest.analyzeEasierToRead" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +275,7 @@
       <workItem from="1697017774489" duration="1918000" />
       <workItem from="1697028307088" duration="4000" />
       <workItem from="1697041855488" duration="4342000" />
+      <workItem from="1697094507399" duration="2017000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -428,9 +437,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/coderbyte/hard/WildcardAnalyzerTest.java</url>
-          <line>57</line>
-          <properties class="com.hodvidar.coderbyte.hard.WildcardAnalyzerTest" method="wildcardsEasierToRead">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzerTest.java</url>
+          <line>58</line>
+          <properties class="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -585,6 +594,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java</url>
           <line>45</line>
           <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />
