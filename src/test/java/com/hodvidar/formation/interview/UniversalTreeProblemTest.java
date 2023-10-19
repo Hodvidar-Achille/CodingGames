@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UniversalTreeProblemTest {
+class UniversalTreeProblemTest {
 
 
     private static Stream<Arguments> generateData_treeValue() {
@@ -140,7 +140,7 @@ public class UniversalTreeProblemTest {
 
     @ParameterizedTest
     @MethodSource("generateData_treeValue")
-    public void numberOfUniversalValue(final UniversalTreeProblem.Tree<Integer> tree, final int expectedNumber) {
+    void numberOfUniversalValue(final UniversalTreeProblem.Tree<Integer> tree, final int expectedNumber) {
         assertThat(UniversalTreeProblem.numberOfNonEmptyUniversalValueTree(tree)).isEqualTo(expectedNumber);
     }
 }

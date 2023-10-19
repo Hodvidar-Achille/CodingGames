@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/EmployeeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/WildcardAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/WildcardAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +73,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/w/CodingGames&quot;,
@@ -99,7 +106,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StringAnalyzerTest.analyze">
+  <component name="RunManager" selected="JUnit.StreamTests">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -111,102 +118,92 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAnalyzerTest.analyze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
-      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamTests.countOfTotalLaptopsAssigned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
+      <option name="METHOD_NAME" value="countOfTotalLaptopsAssigned" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAnalyzerTest.analyzeEasierToRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamTests.employeeWorkingWithRD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
-      <option name="METHOD_NAME" value="analyzeEasierToRead(java.lang.String,java.lang.String)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
+      <option name="METHOD_NAME" value="employeeWorkingWithRD" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAnalyzerTest.analyze.[11] * aaaa, false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamTests.listOfEmployeeWorkingOnMoreThan2Projects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
-      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#11]" />
-      </uniqueIds>
+      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
+      <option name="METHOD_NAME" value="listOfEmployeeWorkingOnMoreThan2Projects" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAnalyzerTest.analyze.[13] *{2} aa, true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamTests.numberOfProjectsWithRD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
-      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#13]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringAnalyzerTest.analyze.[20] *{1}*{4}**+$+$+++* $%%%%===###a1b2cdeEEE, true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest" />
-      <option name="METHOD_NAME" value="analyze(java.lang.String,boolean)" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.miscellaneous.livecoding.StringAnalyzerTest]/[test-template:analyze(java.lang.String, boolean)]/[test-template-invocation:#20]" />
-      </uniqueIds>
+      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
+      <option name="METHOD_NAME" value="numberOfProjectsWithRD" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringAnalyzerTest.analyze" />
-        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[11] * aaaa, false" />
-        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[13] *{2} aa, true" />
-        <item itemvalue="JUnit.StringAnalyzerTest.analyze.[20] *{1}*{4}**+$+$+++* $%%%%===###a1b2cdeEEE, true" />
-        <item itemvalue="JUnit.StringAnalyzerTest.analyzeEasierToRead" />
+        <item itemvalue="JUnit.StreamTests" />
+        <item itemvalue="JUnit.StreamTests.employeeWorkingWithRD" />
+        <item itemvalue="JUnit.StreamTests.numberOfProjectsWithRD" />
+        <item itemvalue="JUnit.StreamTests.countOfTotalLaptopsAssigned" />
+        <item itemvalue="JUnit.StreamTests.listOfEmployeeWorkingOnMoreThan2Projects" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +272,9 @@
       <workItem from="1697017774489" duration="1918000" />
       <workItem from="1697028307088" duration="4000" />
       <workItem from="1697041855488" duration="4342000" />
-      <workItem from="1697094507399" duration="2017000" />
+      <workItem from="1697094507399" duration="2376000" />
+      <workItem from="1697726457867" duration="4982000" />
+      <workItem from="1697731473658" duration="4868000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -511,11 +510,6 @@
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/datastructures/BinaryTree.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/ParenthesisAnalyserTest.java</url>
           <line>45</line>
           <option name="timeStamp" value="67" />
@@ -597,7 +591,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java</url>
-          <line>33</line>
+          <line>34</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

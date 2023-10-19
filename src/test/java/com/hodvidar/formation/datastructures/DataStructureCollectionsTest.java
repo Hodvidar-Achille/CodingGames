@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DataStructureCollectionsTest {
+class DataStructureCollectionsTest {
 
     @Test
-    public void string_representation() {
+    void string_representation() {
         final DataStructureCollections ds = new DataStructureCollections();
         ds.init();
         assertThat(ds.toString()).isEqualTo(
