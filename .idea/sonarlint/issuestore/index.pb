@@ -15,8 +15,6 @@ k
 ;src/test/java/com/hodvidar/hackerrank/ArrayReverseTest.java,b\9\b99e668404a8df52f674eb53fee30f91198e0ae5
 Å
 Qsrc/test/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEditionTest.java,a\6\a6c9f9749063b2559aaef09ef1cead98d984e482
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 v
 Fsrc/test/java/com/hodvidar/coderbyte/hard/BracketCombinationsTest.java,e\d\ed962eb680ebb0a6f98f33d7dcea5e8a4ff04968
 }
@@ -63,3 +61,9 @@ Hsrc/main/java/com/hodvidar/formation/interview/UniversalTreeProblem.java,3\0\3
 Ksrc/main/java/com/hodvidar/formation/datastructures/DataStructureTrees.java,b\1\b184363018296193184715670948a61e1680fc05
 p
 @src/test/java/com/hodvidar/formation/java15/BowlingGameTest.java,a\b\abc868dd66cbdd8ad45fd38647cebe43846f4851
+o
+?src/main/java/com/hodvidar/formation/java8/streams/Project.java,5\f\5f8a0b6792b1310fd73a37086c0524d951f37c02
+w
+Gsrc/main/java/com/hodvidar/formation/java8/streams/EmployeeFactory.java,b\b\bbec8ec1d626c37f0f57f70a29f4fc07e7b18f9c
+p
+@src/main/java/com/hodvidar/formation/java8/streams/Employee.java,2\5\2594a3c4ad2bf5a837202d85d16905b9e92571a3

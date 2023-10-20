@@ -20,14 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/EmployeeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/java8/streams/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/Solution6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution4Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution5Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution6Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/AccessDeniedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/AccessDeniedExceptionEnvelope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/BasicBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/JSONExceptionEnvelope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/custom/ProjectBeanCustom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/Solution3Test.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,26 +81,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/w/CodingGames&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2b2a95fe10f1a88078b4a3a7a7efef4e&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/w/CodingGames",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\w\CodingGames\src\test\resources" />
@@ -106,7 +116,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StreamTests">
+  <component name="RunManager" selected="JUnit.Solution1Test.test">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -114,6 +124,22 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution1Test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution1Test" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,22 +159,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamTests.countOfTotalLaptopsAssigned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
-      <option name="METHOD_NAME" value="countOfTotalLaptopsAssigned" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StreamTests.employeeWorkingWithRD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
@@ -160,22 +170,6 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
       <option name="METHOD_NAME" value="employeeWorkingWithRD" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StreamTests.listOfEmployeeWorkingOnMoreThan2Projects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
-      <option name="METHOD_NAME" value="listOfEmployeeWorkingOnMoreThan2Projects" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,13 +191,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Solution1Test.test" />
+        <item itemvalue="JUnit.java in CodingGames" />
         <item itemvalue="JUnit.StreamTests" />
         <item itemvalue="JUnit.StreamTests.employeeWorkingWithRD" />
         <item itemvalue="JUnit.StreamTests.numberOfProjectsWithRD" />
-        <item itemvalue="JUnit.StreamTests.countOfTotalLaptopsAssigned" />
-        <item itemvalue="JUnit.StreamTests.listOfEmployeeWorkingOnMoreThan2Projects" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +276,8 @@
       <workItem from="1697041855488" duration="4342000" />
       <workItem from="1697094507399" duration="2376000" />
       <workItem from="1697726457867" duration="4982000" />
-      <workItem from="1697731473658" duration="4868000" />
+      <workItem from="1697731473658" duration="5661000" />
+      <workItem from="1697786924910" duration="6666000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>

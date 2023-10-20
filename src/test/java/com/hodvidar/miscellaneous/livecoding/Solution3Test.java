@@ -9,42 +9,42 @@ import static org.assertj.core.api.Assertions.assertThat;
 class Solution3Test {
 
     @ParameterizedTest
-    @CsvSource(delimiter = '=', value = {
-            "00:00:01 = 1",
-            "01:01:01 = 3661",
-            "00:10:00 = 600"
+    @CsvSource(delimiter = '|', value = {
+            "00:00:01 | 1",
+            "01:01:01 | 3661",
+            "00:10:00 | 600"
     })
     void parseTimeInSeconds(final String input, final int expectedResult) {
         assertThat(Solution3.parseTimeInSeconds(input)).isEqualTo(expectedResult);
     }
 
     @ParameterizedTest
-    @CsvSource(delimiter = '=', value = {
-            "1 = 3",
-            "67 = 201",
-            "300 = 750",
-            "301 = 900",
-            "360 = 900",
-            "365 = 1050",
-            "600 = 1500",
-            "3600 = 9000",
-            "3601 = 9150"
+    @CsvSource(delimiter = '|', value = {
+            "1 | 3",
+            "67 | 201",
+            "300 | 750",
+            "301 | 900",
+            "360 | 900",
+            "365 | 1050",
+            "600 | 1500",
+            "3600 | 9000",
+            "3601 | 9150"
     })
     void computePriceInCents(final int input, final int expectedResult) {
         assertThat(Solution3.computePriceInCents(input)).isEqualTo(expectedResult);
     }
 
     @ParameterizedTest
-    @CsvSource(delimiter = '=', value = {
-            "00:00:01 = 3",
-            "00:01:07 = 201",
-            "00:05:00 = 750",
-            "00:05:01 = 900",
-            "00:06:00 = 900",
-            "00:06:05 = 1050",
-            "00:10:00 = 1500",
-            "01:00:00 = 9000",
-            "01:00:01 = 9150",
+    @CsvSource(delimiter = '|', value = {
+            "00:00:01 | 3",
+            "00:01:07 | 201",
+            "00:05:00 | 750",
+            "00:05:01 | 900",
+            "00:06:00 | 900",
+            "00:06:05 | 1050",
+            "00:10:00 | 1500",
+            "01:00:00 | 9000",
+            "01:00:01 | 9150",
     })
     void timeToPriceInCents(final String input, final int expectedResult) {
         assertThat(Solution3.computePriceInCents(
@@ -53,10 +53,10 @@ class Solution3Test {
     }
 
     @ParameterizedTest
-    @CsvSource(delimiter = '=', value = {
-            "400-234-090 = 400234090",
-            "701-080-080 = 701080080",
-            "001-001-001 = 1001001"
+    @CsvSource(delimiter = '|', value = {
+            "400-234-090 | 400234090",
+            "701-080-080 | 701080080",
+            "001-001-001 | 1001001"
     })
     void phoneToNumber(final String input, final Double expectedResult) {
         assertThat(Solution3.phoneToNumber(input)).isEqualTo(expectedResult);
