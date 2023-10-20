@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +102,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Solution1Test.test">
+  <component name="RunManager" selected="JUnit.ProjectBeanCustomTest.testSaveBean">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -109,6 +110,38 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBeanCustomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.analysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis.ProjectBeanCustomTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBeanCustomTest.testSaveBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.analysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis.ProjectBeanCustomTest" />
+      <option name="METHOD_NAME" value="testSaveBean" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,38 +177,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamTests.employeeWorkingWithRD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
-      <option name="METHOD_NAME" value="employeeWorkingWithRD" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StreamTests.numberOfProjectsWithRD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.java8.streams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
-      <option name="METHOD_NAME" value="numberOfProjectsWithRD" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <option name="TEST_OBJECT" value="directory" />
@@ -186,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProjectBeanCustomTest.testSaveBean" />
+        <item itemvalue="JUnit.ProjectBeanCustomTest.test" />
         <item itemvalue="JUnit.Solution1Test.test" />
         <item itemvalue="JUnit.java in CodingGames" />
         <item itemvalue="JUnit.StreamTests" />
-        <item itemvalue="JUnit.StreamTests.employeeWorkingWithRD" />
-        <item itemvalue="JUnit.StreamTests.numberOfProjectsWithRD" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +263,7 @@
       <workItem from="1697094507399" duration="2376000" />
       <workItem from="1697726457867" duration="4982000" />
       <workItem from="1697731473658" duration="5661000" />
-      <workItem from="1697786924910" duration="7797000" />
+      <workItem from="1697786924910" duration="11292000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -581,6 +582,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java</url>
           <line>34</line>
           <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

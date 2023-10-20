@@ -11,7 +11,7 @@ import java.time.Period;
 // import com.edeal.frontline.AccessDeniedException;
 // import com.edeal.frontline.BasicBean;
 
-public abstract class ProjectGenericBean {
+public abstract class ProjectGenericBean extends BasicBean {
 
     // 0. I personally prefer all parameters/variables that can be final to be final
     public static <T extends BasicBean> BasicBean saveBean(final HttpSession session,
@@ -20,7 +20,7 @@ public abstract class ProjectGenericBean {
                                                            final boolean save) throws Exception {
         // I personally prefer to avoid accumulating indentation
         // Early return or throw improves readability
-        if (json == null || json.length() != 0) {
+        if (json == null || json.length() == 0) {
             throw new JSONExceptionEnvelope("Given JSON is null or empty.");
         }
 
@@ -49,21 +49,36 @@ public abstract class ProjectGenericBean {
 
     }
 
+    // The initial method had severe issues
+    // Even this rewrite will need changes in the classes extending BasicBean to work properly
+    // Like having constructors accepting HttpSession and String
     public static <T extends BasicBean> BasicBean getBean(final HttpSession session,
                                                           final String id,
                                                           final Class<T> type)
-            throws Exception {
+            throws ReflectiveOperationException, IllegalArgumentException {
         final boolean isNew = id == null || id.length() == 0;
 
+        // Ensure that the provided type has the correct constructor(s)
+        if (isNew && !hasConstructor(type, HttpSession.class)) {
+            throw new IllegalArgumentException("Class " + type.getName() + " must have a constructor that accepts HttpSession");
+        } else if (!isNew && !hasConstructor(type, String.class, HttpSession.class)) {
+            throw new IllegalArgumentException("Class " + type.getName() + " must have a constructor that accepts String and HttpSession");
+        }
+
         try {
-            // The cast to BasicBean are redundant
             return isNew ? type.getDeclaredConstructor(HttpSession.class).newInstance(session)
                     : type.getDeclaredConstructor(String.class, HttpSession.class).newInstance(id, session);
+        } catch (final ReflectiveOperationException e) {
+            throw e;
+        }
+    }
 
-        } catch (final Exception var6) {
-            // 3. Again returning a general Exception which is not the best practice.
-            // It's better to throw more specific exceptions.
-            throw new Exception(type.getName(), var6);
+    private static <T> boolean hasConstructor(final Class<T> type, final Class<?>... paramTypes) {
+        try {
+            type.getDeclaredConstructor(paramTypes);
+            return true;
+        } catch (final NoSuchMethodException e) {
+            return false;
         }
     }
 

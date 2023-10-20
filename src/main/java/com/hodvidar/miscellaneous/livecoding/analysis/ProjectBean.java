@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 
@@ -66,38 +67,24 @@ public class ProjectBean extends ProjectGenericBean {
 
     @Override
     public String getDurationToString(final String flag) {
-        // Implementation until the flag parameter is explained
-        return getDurationToString();
-        // Possible implementations:
-        // flag could mean the language of the output (ex: fr / en)
-        /*
-        Period duration = this.getDuration();
         switch (flag) {
-            case "fr":
-                return duration.getYears() + " années, " + toStringSeparator
-                + duration.getMonths() + " mois, " + toStringSeparator
-                + duration.getDays() + " jours";
-            case "en":
-            default:
-                return duration.getYears() + " Year(s), " + toStringSeparator
-                + duration.getMonths() + " Month(s), " + toStringSeparator
-                + duration.getDays() + " Day(s)";
+            case "YEAR" -> {
+                final Period duration = getDuration();
+                return duration.getYears() + " Year(s)";
+            }
+            case "MONTH" -> {
+                final Period duration = getDuration();
+                return (duration.getYears() * 12 + duration.getMonths()) + " Month(s)";
+            }
+            case "DAY" -> {
+                // Since Period does not account for day time-saving and other nuances,
+                // using LocalDate to calculate exact days might be more accurate than just using duration.getDays()
+                final LocalDate startDate = this.dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                final LocalDate endDate = this.dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                final long totalDays = ChronoUnit.DAYS.between(startDate, endDate);
+                return totalDays + " Day(s)";
+            }
+            default -> throw new IllegalArgumentException("Invalid flag: " + flag);
         }
-        */
-        // In case the flag parameter represent the desired output format (ex: "short" / "long"):
-        /*
-        Period duration = this.getDuration();
-        switch (flag) {
-            case "short":
-                return duration.getYears() + "Y " + toStringSeparator
-                + duration.getMonths() + "M " + toStringSeparator
-                + duration.getDays() + "D";
-            case "long":
-            default:
-                return duration.getYears() + " Year(s), " + toStringSeparator
-                + duration.getMonths() + " Month(s), " + toStringSeparator
-                + duration.getDays() + " Day(s)";
-        }
-        */
     }
 }
