@@ -9,11 +9,11 @@ public class Solution6Test {
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
-            "00:00:01 | 1",
-            "01:01:01 | 3661",
-            "00:10:00 | 600"
+            "1 | 1",
+            "2 | 2",
+            "3 | 3"
     })
-    void parseTimeInSeconds(final String input, final int expectedResult) {
+    void parseTimeInSeconds(final int input, final int expectedResult) {
         assertThat(input).isEqualTo(expectedResult);
     }
 }
