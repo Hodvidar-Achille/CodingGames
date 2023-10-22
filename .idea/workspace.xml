@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +80,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
     "vue.rearranger.settings.migration": "true"
   }
@@ -102,7 +100,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProjectBeanCustomTest.testSaveBean">
+  <component name="RunManager" selected="JUnit.StreamTests.listOfEmployeeSortedByFirstNameAndSalary">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -162,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamTests.listOfEmployeeSortedByFirstNameAndSalary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -172,7 +170,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.formation.java8.streams" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.java8.streams.StreamTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="listOfEmployeeSortedByFirstNameAndSalary" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StreamTests.listOfEmployeeSortedByFirstNameAndSalary" />
         <item itemvalue="JUnit.ProjectBeanCustomTest.testSaveBean" />
         <item itemvalue="JUnit.ProjectBeanCustomTest.test" />
         <item itemvalue="JUnit.Solution1Test.test" />
         <item itemvalue="JUnit.java in CodingGames" />
-        <item itemvalue="JUnit.StreamTests" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +262,7 @@
       <workItem from="1697094507399" duration="2376000" />
       <workItem from="1697726457867" duration="4982000" />
       <workItem from="1697731473658" duration="5661000" />
-      <workItem from="1697786924910" duration="11292000" />
+      <workItem from="1697786924910" duration="13354000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -585,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

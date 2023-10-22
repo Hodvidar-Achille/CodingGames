@@ -97,6 +97,22 @@ class StreamTests {
         assertThat(employeeSortedByFirstNameAndSalary.get(4).getLastName()).isEqualTo("Martin");
         assertThat(employeeSortedByFirstNameAndSalary.get(5).getLastName()).isEqualTo("Anand");
         assertThat(employeeSortedByFirstNameAndSalary.get(6).getLastName()).isEqualTo("Sharma");
+
+        // Better and more elegant way:
+        final List<Employee> employeeSortedByFirstNameAndSalary2
+                = employees.stream()
+                .sorted(Comparator.comparing(Employee::getFirstName)
+                        .thenComparing(Employee::getSalary))
+                .toList();
+
+        assertThat(employeeSortedByFirstNameAndSalary2).hasSize(10);
+        assertThat(employeeSortedByFirstNameAndSalary2.get(0).getLastName()).isEqualTo("Kumar");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(1).getLastName()).isEqualTo("Rao");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(2).getLastName()).isEqualTo("Dutt");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(3).getLastName()).isEqualTo("Sharan");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(4).getLastName()).isEqualTo("Martin");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(5).getLastName()).isEqualTo("Anand");
+        assertThat(employeeSortedByFirstNameAndSalary2.get(6).getLastName()).isEqualTo("Sharma");
     }
 
 
