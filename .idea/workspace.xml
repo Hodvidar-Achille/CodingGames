@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/LetterCombinationsOfPhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LetterCombinationsOfPhoneNumberTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in CodingGames">
+  <component name="RunManager" selected="JUnit.LetterCombinationsOfPhoneNumberTest.testLetterCombinations (1)">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -102,17 +103,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectBeanCustomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LetterCombinationsOfPhoneNumberTest.testLetterCombinations (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.analysis.*" />
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis.ProjectBeanCustomTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.LetterCombinationsOfPhoneNumberTest" />
+      <option name="METHOD_NAME" value="testLetterCombinations(java.lang.String,int)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LetterCombinationsOfPhoneNumberTest.testLetterCombinations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.LetterCombinationsOfPhoneNumberTest" />
+      <option name="METHOD_NAME" value="testLetterCombinations(java.lang.String,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,22 +146,6 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.analysis.ProjectBeanCustomTest" />
       <option name="METHOD_NAME" value="testSaveBean" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution1Test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.miscellaneous.livecoding.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.miscellaneous.livecoding" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.miscellaneous.livecoding.Solution1Test" />
-      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LetterCombinationsOfPhoneNumberTest.testLetterCombinations (1)" />
+        <item itemvalue="JUnit.LetterCombinationsOfPhoneNumberTest.testLetterCombinations" />
         <item itemvalue="JUnit.All in CodingGames" />
         <item itemvalue="JUnit.StreamTests.listOfEmployeeSortedByFirstNameAndSalary" />
         <item itemvalue="JUnit.ProjectBeanCustomTest.testSaveBean" />
-        <item itemvalue="JUnit.ProjectBeanCustomTest.test" />
-        <item itemvalue="JUnit.Solution1Test.test" />
       </list>
     </recent_temporary>
   </component>
@@ -377,6 +378,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added test for RPNCalculator" />
