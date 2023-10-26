@@ -8,6 +8,22 @@ class LongestPalindromicSubstringTest {
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
+            "babab | true",
+            "bababa | false",
+            "azerty | false",
+            "a | true",
+            "aa | true",
+            "azertyytreza | true",
+            "azertyaytreza | true",
+            "azertyytrez | false",
+    })
+    void longestPalindrome(final String input, final boolean expected) {
+        Assertions.assertThat(LongestPalindromicSubstring.isPalindrome(input))
+                .isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource(delimiter = '|', value = {
             "babad|bab",
             "cbbd|bb",
             "a|a",

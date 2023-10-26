@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * https://medium.com/@bhaskarsharan/practice-java-streams-questions-8a76cbfee1be
+ * <a href="https://medium.com/@bhaskarsharan/practice-java-streams-questions-8a76cbfee1be">
+ *     Medium article "practice-java-streams-questions" by @bhaskarsharan
+ * </a>
  * <p>
  * From the employee list got from EmployeeFactory:
  * <ol>

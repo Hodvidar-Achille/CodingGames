@@ -21,8 +21,6 @@ Fsrc/test/java/com/hodvidar/coderbyte/hard/BracketCombinationsTest.java,e\d\ed9
 Msrc/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java,4\b\4bc237c93b1e0700ab72d551724300fb65e8d3f7
 s
 Csrc/test/java/com/hodvidar/leetcode/medium/StringToIntegerTest.java,8\9\89017c56985e2b36ce12716edfe3c7d407c6bf8c
-
-Osrc/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java,3\4\34bd02e44168e1e5da6bb967db45dae86c7abf37
 o
 ?src/main/java/com/hodvidar/leetcode/medium/StringToInteger.java,0\1\016d58a390b0b83e0c7dbe71ea32939bf5d020ff
 r
@@ -37,8 +35,6 @@ Esrc/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java,d\9\d96a
 Ksrc/test/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzerTest.java,5\a\5a3cbea4b35334ab3b6c6468121c01905793a34d
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-j
-:src/main/java/com/hodvidar/controller/OwnerController.java,d\d\dddac92c290f7c056fa3123fd7f7bdeb7842d714
 r
 Bsrc/main/java/com/hodvidar/coderbyte/hard/BracketCombinations.java,6\2\625facda32651517205bcaf1e727e4fd78129d70
 s
@@ -53,10 +49,6 @@ Gsrc/main/java/com/hodvidar/formation/datastructures/BinaryTreeNode.java,f\c\fc
 Usrc/test/java/com/hodvidar/formation/datastructures/DataStructureCollectionsTest.java,5\0\501c2aca85e1a745d49b1b5c0212b9bbeff1dace
 Å
 Qsrc/main/java/com/hodvidar/formation/datastructures/DataStructureCollections.java,7\2\728f6acbbd177d697ad919d18396af9e87f70e20
-|
-Lsrc/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java,8\2\82cf25ffc7683b57f040aca3c126b5b41c236c54
-x
-Hsrc/main/java/com/hodvidar/formation/interview/UniversalTreeProblem.java,3\0\301f2996e97251f91f45e69566fdb94ed1a9db00
 {
 Ksrc/main/java/com/hodvidar/formation/datastructures/DataStructureTrees.java,b\1\b184363018296193184715670948a61e1680fc05
 p
