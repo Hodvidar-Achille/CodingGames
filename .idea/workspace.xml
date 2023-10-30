@@ -19,7 +19,19 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="" />
+    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/FourSumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/Darts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/Darts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/HoochClash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/HoochClash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/MayTheTrifoceBeWithYou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/MayTheTrifoceBeWithYou.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/RetroTypewriterArt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/RetroTypewriterArt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/SudokuValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/SudokuValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/RobberyOptimisation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/RobberyOptimisation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/TheGift.java" afterDir="false" />
+    </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +76,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "last_opened_file_path": "D:/w/CodingGames",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,7 +102,7 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LongestPalindromicSubstringTest.longestPalindrome">
+  <component name="RunManager" selected="JUnit.FourSumTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -97,20 +116,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsciiArt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.codingame.puzzles.easy.AsciiArt" />
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.codingame.puzzles.easy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LetterCombinationsOfPhoneNumberTest.testLetterCombinations (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourSumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +125,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.LetterCombinationsOfPhoneNumberTest" />
-      <option name="METHOD_NAME" value="testLetterCombinations(java.lang.String,int)" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.FourSumTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourSumTest.fourSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.FourSumTest" />
+      <option name="METHOD_NAME" value="fourSum" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FourSumTest" />
+        <item itemvalue="JUnit.FourSumTest.fourSum" />
         <item itemvalue="JUnit.LongestPalindromicSubstringTest.longestPalindrome" />
         <item itemvalue="JUnit.TwoPointersTest.longestPalindrome" />
         <item itemvalue="JUnit.TwoPointersTest.removeDuplicatesBetter" />
-        <item itemvalue="Application.AsciiArt" />
-        <item itemvalue="JUnit.LetterCombinationsOfPhoneNumberTest.testLetterCombinations (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -253,6 +274,7 @@
       <workItem from="1697726457867" duration="4982000" />
       <workItem from="1697731473658" duration="5661000" />
       <workItem from="1697786924910" duration="13354000" />
+      <workItem from="1698678070768" duration="6682000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>

@@ -3,8 +3,7 @@ package com.hodvidar.codingame.puzzles.easy;
 import java.util.Scanner;
 
 /**
- * Auto-generated code below aims at helping you parse the standard input according to the problem
- * statement.
+ * https://www.codingame.com/ide/puzzle/sudoku-validator by Hodvidar
  **/
 class SudokuValidator {
 

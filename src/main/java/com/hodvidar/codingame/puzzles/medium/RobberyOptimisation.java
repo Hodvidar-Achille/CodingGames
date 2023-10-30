@@ -10,6 +10,7 @@ import java.util.Scanner;
  */
 class RobberyOptimisation {
 
+    // TODO finish this puzzle
     public static void main(final String[] args) {
         final Scanner in = new Scanner(System.in);
         final int N = in.nextInt();

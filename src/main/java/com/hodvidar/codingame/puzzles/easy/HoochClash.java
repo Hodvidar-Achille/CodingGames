@@ -18,6 +18,8 @@ class HoochClash {
     // 2 14 9 10 --> VALID
     // --
 
+    // TODO finish this puzzle
+
     /**
      * Values -- % Result OK (Finalt Tests) 0 -- 100% (but not all tests in try tests) 1 -- 90% 2 --
      * 90% 3 -- 90% 4 -- 90%

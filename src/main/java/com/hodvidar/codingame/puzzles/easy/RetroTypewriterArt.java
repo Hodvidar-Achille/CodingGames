@@ -1,12 +1,12 @@
+package com.hodvidar.codingame.puzzles.easy;
+
 import java.util.*;
-import java.io.*;
-import java.math.*;
 
 /**
  * https://www.codingame.com/ide/puzzle/retro-typewriter-art
  * by Hodvidar
  **/
-class Solution {
+class RetroTypewriterArt {
 
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);

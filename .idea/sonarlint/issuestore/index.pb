@@ -1,6 +1,4 @@
 
-|
-Lsrc/main/java/com/hodvidar/codingame/puzzles/medium/RobberyOptimisation.java,4\4\448248272f006b6a4e4a19ca84aee73a4f1fb266
 e
 5src/main/java/com/hodvidar/utils/geometry/Circle.java,1\6\16e6b2bfa5c90c0ac19aff7761ee606e645a34e4
 ˆ
@@ -17,14 +15,8 @@ k
 Qsrc/test/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEditionTest.java,a\6\a6c9f9749063b2559aaef09ef1cead98d984e482
 v
 Fsrc/test/java/com/hodvidar/coderbyte/hard/BracketCombinationsTest.java,e\d\ed962eb680ebb0a6f98f33d7dcea5e8a4ff04968
-}
-Msrc/main/java/com/hodvidar/codingame/puzzles/easy/BracketsExtremeEdition.java,4\b\4bc237c93b1e0700ab72d551724300fb65e8d3f7
-s
-Csrc/test/java/com/hodvidar/leetcode/medium/StringToIntegerTest.java,8\9\89017c56985e2b36ce12716edfe3c7d407c6bf8c
 o
 ?src/main/java/com/hodvidar/leetcode/medium/StringToInteger.java,0\1\016d58a390b0b83e0c7dbe71ea32939bf5d020ff
-r
-Bsrc/test/java/com/hodvidar/leetcode/medium/ReverseIntegerTest.java,0\b\0b84b89a4ae570ce37a07dec7384299eb9f4d39d
 u
 Esrc/main/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArrays.java,8\c\8cc0139b5c5ea355a97cbc32e7e0d258f900fe33
 y
@@ -101,8 +93,6 @@ r
 Bsrc/main/java/com/hodvidar/miscellaneous/livecoding/Solution4.java,3\b\3b84be8db72a5119f66f297aa9e0dc4fe72a908b
 v
 Fsrc/test/java/com/hodvidar/miscellaneous/livecoding/Solution4Test.java,a\4\a4b89b8aff9525ff26a5043b8d967f995afb4bf0
-
-Osrc/main/java/com/hodvidar/codingame/puzzles/hard/SkynetRevolutionEpisode2.java,6\5\65bc0c267a82dd54ce13c725148b69982192f7f5
 j
 :src/main/java/com/hodvidar/controller/OwnerController.java,d\d\dddac92c290f7c056fa3123fd7f7bdeb7842d714
 n
@@ -117,8 +107,6 @@ Hsrc/main/java/com/hodvidar/formation/interview/UniversalTreeProblem.java,3\0\3
 Lsrc/test/java/com/hodvidar/formation/interview/UniversalTreeProblemTest.java,8\2\82cf25ffc7683b57f040aca3c126b5b41c236c54
 „
 Tsrc/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectGenericBean.java,2\3\23145ca26cf7dee67591c69d47a8c4350a448181
-
-Osrc/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java,3\4\34bd02e44168e1e5da6bb967db45dae86c7abf37
 p
 @src/test/java/com/hodvidar/formation/algorithms/SortingTest.java,8\c\8c9db4c7512441e751c61db8f0a51e3577b1f751
 {

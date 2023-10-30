@@ -7,6 +7,7 @@ import com.hodvidar.utils.geometry.Square;
 import java.util.*;
 
 /**
+ * https://www.codingame.com/ide/puzzle/darts By Hodvidar
  * Auto-generated code below aims at helping you parse the standard input according to the problem
  * statement.
  **/
