@@ -12,6 +12,13 @@ public class FourSum {
     public static List<List<Integer>> fourSum(final int[] nums, final int target) {
         Arrays.sort(nums);
         final List<List<Integer>> result = new ArrayList<>();
+        // Handle edge case
+        if (nums.length < 4) {
+            return result;
+        }
+        if (Arrays.stream(nums).allMatch(n -> n > 0) && target <= 0) {
+            return result;
+        }
         searchForElements1and2and3and4(nums, target, result);
         return result;
     }
