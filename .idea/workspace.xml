@@ -19,14 +19,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/TwoPointers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/algorithms/TwoPointersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="" />
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
