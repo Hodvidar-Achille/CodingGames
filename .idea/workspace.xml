@@ -19,10 +19,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="">
+    <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/FourSumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/FourSumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +60,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="1hlwpDWgY3xhNYaxf4cMlUdHehq" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -68,14 +73,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/w/CodingGames",
+    "last_opened_file_path": "E:/w/CodingGames",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "2b2a95fe10f1a88078b4a3a7a7efef4e",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -94,94 +104,82 @@
       <recent name="com.hodvidar.utils.geometry.fordcircle" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FourSumTest.fourSum_edgeCase1">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FourSumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AdventOfCode2023Test.getCalibrationValue (1)">
+    <configuration name="AdventOfCode2023Test.getCalibrationValue (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.FourSumTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FourSumTest.fourSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.FourSumTest" />
-      <option name="METHOD_NAME" value="fourSum" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.AdventOfCode2023Test" />
+      <option name="METHOD_NAME" value="getCalibrationValue(double,[Ljava.lang.String;)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FourSumTest.fourSum_edgeCase1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdventOfCode2023Test.getCalibrationValue (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.FourSumTest" />
-      <option name="METHOD_NAME" value="fourSum_edgeCase1" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.AdventOfCode2023Test" />
+      <option name="METHOD_NAME" value="getCalibrationValue(double,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LongestPalindromicSubstringTest.longestPalindrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdventOfCode2023Test.getCalibrationValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.leetcode.medium.*" />
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.leetcode.medium" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.leetcode.medium.LongestPalindromicSubstringTest" />
-      <option name="METHOD_NAME" value="longestPalindrome(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.AdventOfCode2023Test" />
+      <option name="METHOD_NAME" value="getCalibrationValue(java.lang.String,double)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TwoPointersTest.longestPalindrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdventOfCode2023Test.getCalibrationValue_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hodvidar.formation.algorithms.*" />
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.formation.algorithms" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.formation.algorithms.TwoPointersTest" />
-      <option name="METHOD_NAME" value="longestPalindrome(java.lang.String,boolean)" />
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.AdventOfCode2023Test" />
+      <option name="METHOD_NAME" value="getCalibrationValue_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdventOfCode2023Test.getCalibrationValue_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.AdventOfCode2023Test" />
+      <option name="METHOD_NAME" value="getCalibrationValue_2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FourSumTest.fourSum_edgeCase1" />
-        <item itemvalue="JUnit.FourSumTest" />
-        <item itemvalue="JUnit.FourSumTest.fourSum" />
-        <item itemvalue="JUnit.LongestPalindromicSubstringTest.longestPalindrome" />
-        <item itemvalue="JUnit.TwoPointersTest.longestPalindrome" />
+        <item itemvalue="JUnit.AdventOfCode2023Test.getCalibrationValue (1)" />
+        <item itemvalue="JUnit.AdventOfCode2023Test.getCalibrationValue_2" />
+        <item itemvalue="JUnit.AdventOfCode2023Test.getCalibrationValue_1" />
+        <item itemvalue="JUnit.AdventOfCode2023Test.getCalibrationValue (2)" />
+        <item itemvalue="JUnit.AdventOfCode2023Test.getCalibrationValue" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +265,12 @@
       <workItem from="1697731473658" duration="5661000" />
       <workItem from="1697786924910" duration="13354000" />
       <workItem from="1698678070768" duration="7609000" />
+      <workItem from="1700251133752" duration="31000" />
+      <workItem from="1700252938015" duration="1146000" />
+      <workItem from="1701291678509" duration="333000" />
+      <workItem from="1701470566883" duration="296000" />
+      <workItem from="1701711706824" duration="459000" />
+      <workItem from="1701736785013" duration="3029000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -606,6 +610,26 @@
           <line>56</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023Test.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023Test.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />
           <option name="timeStamp" value="79" />
@@ -623,6 +647,7 @@
         <watch expression="((Bag)((HashSet)((Bag)this).children).toArray()[0]).children" custom="com.hodvidar.adventofcode.y2020.Bag,java.util.HashSet" />
         <watch expression="((Bag)((HashMap.Node)((HashMap)((Bag)this).children).entrySet().toArray()[0]).getKey()).name" custom="java.util.HashMap.Node,com.hodvidar.adventofcode.y2020.Bag,java.util.HashMap" />
         <watch expression="((Bag)((HashMap.Node)((HashMap)((Bag)this).children).entrySet().toArray()[0]).getKey()).name" language="JAVA" custom="java.util.HashMap.Node,com.hodvidar.adventofcode.y2020.Bag,java.util.HashMap" />
+        <watch expression="((DefaultParameterContext)parameterContext).parameter" language="JAVA" custom="org.junit.jupiter.engine.execution.DefaultParameterContext" />
       </configuration>
     </watches-manager>
   </component>
