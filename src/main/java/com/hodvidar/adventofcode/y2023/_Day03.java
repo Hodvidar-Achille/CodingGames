@@ -10,6 +10,8 @@ import java.util.function.Predicate;
 
 public class _Day03 extends AbstractAdventOfCode2023 {
 
+    protected EngineSchematic schematic;
+
     @Override
     public int getDay() {
         return 3;
@@ -18,22 +20,22 @@ public class _Day03 extends AbstractAdventOfCode2023 {
 
     @Override
     public int getResult(final Scanner sc) throws FileNotFoundException {
-        final EngineSchematic schematic = new EngineSchematic();
+        schematic = new EngineSchematic();
         int y = 0;
         while (sc.hasNext()) {
             schematic.incorporateNewLine(y, sc.nextLine());
             y++;
         }
-        return schematic.computeNumbersNextToSymbols();
+        return getDigitFromLine("irrelevant");
     }
 
     @Override
-    protected int getDigitFromLine(String line) {
-        return 0;
+    protected int getDigitFromLine(final String line) {
+        return schematic.computeNumbersNextToSymbols();
     }
 
-    private static class EngineSchematic {
-        private final List<Point> symbols = new ArrayList<>();
+    protected static class EngineSchematic {
+        private final List<Symbol> symbols = new ArrayList<>();
 
         private final List<SegmentNumber> numbers = new ArrayList<>();
 
@@ -46,8 +48,8 @@ public class _Day03 extends AbstractAdventOfCode2023 {
                 if (c == '.') {
                     continue;
                 }
-                final Point p = new Point(x, y);
                 if (Character.isDigit(c)) {
+                    final Point p = new Point(x, y);
                     if (currentNumber.isEmpty()) {
                         currentSegmentNumber = new SegmentNumber(p);
                     }
@@ -59,7 +61,7 @@ public class _Day03 extends AbstractAdventOfCode2023 {
                         currentNumber = "";
                     }
                 } else {
-                    symbols.add(p);
+                    symbols.add(new Symbol(c, x, y));
                 }
             }
         }
@@ -68,6 +70,38 @@ public class _Day03 extends AbstractAdventOfCode2023 {
             return numbers.stream()
                     .filter(n -> n.isNextToAtLeastOneSymbol(symbols))
                     .mapToInt(n -> n.number).sum();
+        }
+
+        /**
+         * A gear is any * symbol that is adjacent to exactly two part numbers. Its gear ratio is the result of multiplying those two numbers together.
+         *
+         * @return
+         */
+        public int computeGearRatio() {
+            return symbols.stream()
+                    .filter(s -> s.numberOfAdgacentNumbers == 2)
+                    .mapToInt(s -> s.gearRatio)
+                    .sum();
+        }
+    }
+
+    private static class Symbol extends Point {
+
+        public final char sign;
+
+        public int numberOfAdgacentNumbers;
+        public int gearRatio = 1;
+
+        public Symbol(final char sign, final int x, final int y) {
+            super(x, y);
+            this.sign = sign;
+        }
+
+        public void addAdjacentNumber(final int number) {
+            if (sign == '*' && numberOfAdgacentNumbers <= 2) {
+                numberOfAdgacentNumbers++;
+                gearRatio *= number;
+            }
         }
     }
 
@@ -83,9 +117,12 @@ public class _Day03 extends AbstractAdventOfCode2023 {
             this.p1 = p1;
         }
 
-        public boolean isNextToAtLeastOneSymbol(final List<Point> symbols) {
+        public boolean isNextToAtLeastOneSymbol(final List<Symbol> symbols) {
             return symbols.stream().filter(isOnSameLineOrAdjacent())
-                    .anyMatch(isNotOutSideOfTheHorizontalScope());
+                    .filter(isNotOutSideOfTheHorizontalScope())
+                    .peek(s -> s.addAdjacentNumber(number))
+                    .findAny()
+                    .isPresent();
         }
 
         private Predicate<Point> isOnSameLineOrAdjacent() {

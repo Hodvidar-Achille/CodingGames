@@ -18,9 +18,6 @@ import static org.junit.jupiter.params.ParameterizedTest.ARGUMENTS_WITH_NAMES_PL
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class AbstractTestForAdventOfCode {
 
-    /**
-     * If 'false' only response and Failure are written
-     **/
     private static final String INPUT_DIRECTORY = "adventofcode_"; // input1
     protected final AbstractAdventOfCode testedClass;
     protected final String inputDirectory;
@@ -58,12 +55,11 @@ public abstract class AbstractTestForAdventOfCode {
     @ParameterizedTest(name = ARGUMENTS_WITH_NAMES_PLACEHOLDER)
     @MethodSource("getExpectedTestResults")
     protected void checkGetResultForTest(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
-        if(numberOfTheTest == 0) return;
+        if (numberOfTheTest == 0) return;
         final Scanner sc = getScanner(numberOfTheTest);
         final int result = testedClass.getResult(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
-
 
 
     protected int getDay() {

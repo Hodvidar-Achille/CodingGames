@@ -10,10 +10,11 @@ public class _Day02 extends AbstractAdventOfCode2023 {
     protected static final String BLUE = "blue";
     protected static final String RED = "red";
     protected static final String GREEN = "green";
+    public static final int NUMBER_OF_RED = 12;
     private final CubeConditionChecker checker;
 
     public _Day02() {
-        this.checker = new CubeConditionChecker(12, 13, 14);
+        this.checker = new CubeConditionChecker(NUMBER_OF_RED, 13, 14);
     }
 
 
