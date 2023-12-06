@@ -19,20 +19,19 @@ public class _Day02 extends AbstractAdventOfCode2023 {
     private final CubeConditionChecker checker;
 
     public _Day02() {
-        this.checker = new CubeConditionChecker(12, 1, 1);
+        this.checker = new CubeConditionChecker(12, 13, 14);
     }
 
     @Override
     public int getResult(final Scanner sc) throws FileNotFoundException {
-        System.err.println(sc.nextLine());
-        return sc.findAll().mapToInt(this::getDigitFromLine).sum();
+        int counter = 0;
+        while(sc.hasNext()) {
+            final String line = sc.nextLine();
+            counter += getDigitFromLine(line);
+        }
+        return counter;
     }
 
-    public Stream<String> streamScanner(final Scanner scanner) {
-        final Spliterator<String> splt = Spliterators.spliterator(scanner, Long.MAX_VALUE, Spliterator.ORDERED | Spliterator.NONNULL);
-        return StreamSupport.stream(splt, false)
-                .onClose(scanner::close);
-    }
     protected int getDigitFromLine(final String line) {
         Pattern pattern = Pattern.compile("Game (\\d+)");
         Matcher matcher = pattern.matcher(line);

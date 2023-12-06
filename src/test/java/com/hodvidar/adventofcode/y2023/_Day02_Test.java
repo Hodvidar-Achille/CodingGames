@@ -15,7 +15,7 @@ class _Day02_Test extends AbstractTestForAdventOfCode2023 {
 
     @Override
     protected int getExpectedResult() {
-        return 0;
+        return 1734;
     }
 
     @ParameterizedTest
