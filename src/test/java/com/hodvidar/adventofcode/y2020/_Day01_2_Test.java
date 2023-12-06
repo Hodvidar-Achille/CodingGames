@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class _Day01_2_Test extends AbstractTestForAdventOfCode2020 {
+class _Day01_2_Test extends AbstractTestForAdventOfCode2020 {
 
     protected _Day01_2_Test() {
         super(new _Day01_2());

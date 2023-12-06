@@ -5,7 +5,7 @@ package com.hodvidar.utils.geometry;
  *
  * @author a.genet
  */
-public final class Segment extends Line {
+public class Segment extends Line {
 
     public Segment(final Point p1, final Point p2) {
         super(p1, p2);

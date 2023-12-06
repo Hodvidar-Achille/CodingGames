@@ -1,14 +1,15 @@
 package com.hodvidar.adventofcode.y2023;
 
-class _Day02_2_Test extends AbstractTestForAdventOfCode2023 {
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
 
-    public _Day02_2_Test() {
-        super(new _Day02_2());
+public class _Day03_2_Test extends AbstractTestForAdventOfCode2023 {
+    protected _Day03_2_Test() {
+        super(new _Day03_2());
     }
 
     @Override
     protected int getExpectedResult() {
-        return 70387;
+        return 0;
     }
 
     @Override
@@ -18,6 +19,6 @@ class _Day02_2_Test extends AbstractTestForAdventOfCode2023 {
 
     @Override
     protected int getExpectedTestResult() {
-        return 2286;
+        return 467835;
     }
 }

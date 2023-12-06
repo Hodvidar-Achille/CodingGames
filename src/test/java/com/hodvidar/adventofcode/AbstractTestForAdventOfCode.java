@@ -55,6 +55,17 @@ public abstract class AbstractTestForAdventOfCode {
         assertThat(result).isEqualTo(expectedResult);
     }
 
+    @ParameterizedTest(name = ARGUMENTS_WITH_NAMES_PLACEHOLDER)
+    @MethodSource("getExpectedTestResults")
+    protected void checkGetResultForTest(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
+        if(numberOfTheTest == 0) return;
+        final Scanner sc = getScanner(numberOfTheTest);
+        final int result = testedClass.getResult(sc);
+        assertThat(result).isEqualTo(expectedResult);
+    }
+
+
+
     protected int getDay() {
         return testedClass.getDay();
     }
@@ -64,8 +75,20 @@ public abstract class AbstractTestForAdventOfCode {
      */
     protected abstract int getExpectedResult();
 
+    protected abstract int getNumberOfTheTest();
+
+    /**
+     * Expected result for the tested class with the given test input file.
+     */
+    protected abstract int getExpectedTestResult();
+
     private Stream<Arguments> getExpectedResults() {
         return Stream.of(Arguments.of(getExpectedResult()));
+    }
+
+
+    private Stream<Arguments> getExpectedTestResults() {
+        return Stream.of(Arguments.of(getNumberOfTheTest(), getExpectedTestResult()));
     }
 
 }

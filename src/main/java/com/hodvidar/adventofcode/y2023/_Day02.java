@@ -1,15 +1,9 @@
 package com.hodvidar.adventofcode.y2023;
 
-import org.assertj.core.util.Streams;
-
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Spliterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class _Day02 extends AbstractAdventOfCode2023 {
 
@@ -22,21 +16,13 @@ public class _Day02 extends AbstractAdventOfCode2023 {
         this.checker = new CubeConditionChecker(12, 13, 14);
     }
 
-    @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
-        int counter = 0;
-        while(sc.hasNext()) {
-            final String line = sc.nextLine();
-            counter += getDigitFromLine(line);
-        }
-        return counter;
-    }
 
+    @Override
     protected int getDigitFromLine(final String line) {
         final Pattern pattern = Pattern.compile("Game (\\d+)");
         final Matcher matcher = pattern.matcher(line);
         int gameId = 0;
-        if(matcher.find()) {
+        if (matcher.find()) {
             gameId = Integer.parseInt(matcher.group(1));
         }
         final String[] partsAfterGameNumber = line.split(": ")[1].split(";");
@@ -57,7 +43,7 @@ public class _Day02 extends AbstractAdventOfCode2023 {
                 // Assuming the format is always "<number> <color>"
                 final int count = Integer.parseInt(colorAndCount[0]);
                 final String color = colorAndCount[1];
-                if(!isValid(color, count)) {
+                if (!isValid(color, count)) {
                     return 0;
                 }
             }
@@ -74,10 +60,6 @@ public class _Day02 extends AbstractAdventOfCode2023 {
         };
     }
 
-    public boolean checkCubeConditions(final int numberOfRed, final int numberOfGreen, final int numberOfBlue) {
-        return checker.checkCubeConditions(numberOfRed, numberOfGreen, numberOfBlue);
-    }
-
     @Override
     public int getDay() {
         return 2;
@@ -92,12 +74,6 @@ public class _Day02 extends AbstractAdventOfCode2023 {
             this.numberOfRed = numberOfRed;
             this.numberOfGreen = numberOfGreen;
             this.numberOfBlue = numberOfBlue;
-        }
-
-        public boolean checkCubeConditions(final int numberOfRed, final int numberOfGreen, final int numberOfBlue) {
-            return this.numberOfRed >= numberOfRed
-                    && this.numberOfGreen >= numberOfGreen
-                    && this.numberOfBlue >= numberOfBlue;
         }
 
         public boolean checkRed(final int numberOfRed) {
