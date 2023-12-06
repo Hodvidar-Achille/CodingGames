@@ -20,6 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/_Day02_2_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input2-test2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
@@ -102,7 +107,7 @@
       <recent name="com.hodvidar.leetcode.medium" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit._Day02_Test">
+  <component name="RunManager" selected="JUnit._Day02_2_Test">
     <configuration name="_Day01_2_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
@@ -118,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_Day01_2_Test.transformString_withOverLapping (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="_Day02_2_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -127,14 +132,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day01_2_Test" />
-      <option name="METHOD_NAME" value="transformString_withOverLapping(java.lang.String,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day02_2_Test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_Day01_2_Test.transformString_withOverLapping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="_Day02_2_Test.shouldFindResultInSmallNumberPool.[1] 2, 2286" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -143,9 +147,11 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day01_2_Test" />
-      <option name="METHOD_NAME" value="transformString_withOverLapping" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day02_2_Test" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023._Day02_2_Test]/[test-template:shouldFindResultInSmallNumberPool(int, int)]/[test-template-invocation:#1]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit._Day02_2_Test" />
         <item itemvalue="JUnit._Day02_Test" />
+        <item itemvalue="JUnit._Day02_2_Test.shouldFindResultInSmallNumberPool.[1] 2, 2286" />
         <item itemvalue="JUnit._Day02_Test.shouldFindResultInSmallNumberPool.[1] 1, 8" />
         <item itemvalue="JUnit._Day01_2_Test" />
-        <item itemvalue="JUnit._Day01_2_Test.transformString_withOverLapping (1)" />
-        <item itemvalue="JUnit._Day01_2_Test.transformString_withOverLapping" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +279,7 @@
       <workItem from="1701820866137" duration="264000" />
       <workItem from="1701821145617" duration="275000" />
       <workItem from="1701821438838" duration="4189000" />
-      <workItem from="1701859803766" duration="867000" />
+      <workItem from="1701859803766" duration="2010000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -680,13 +686,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="149" />
+          <line>97</line>
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="151" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02_2.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02_2.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

@@ -135,3 +135,7 @@ i
 9src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java,5\3\535c0d6bdaf70bf4bb7db8803a73f7279b64df9e
 n
 >src/test/java/com/hodvidar/adventofcode/y2023/_Day02_Test.java,7\1\71f74f1e4031ca1ef7a228729c3754056e3e39a4
+k
+;src/main/java/com/hodvidar/adventofcode/y2023/_Day02_2.java,3\5\35188b76725671829da2e6001ca9713122724131
+p
+@src/test/java/com/hodvidar/adventofcode/y2023/_Day02_2_Test.java,2\2\225bc341116a6b4d8fdc1b1f313caccb6cd50695

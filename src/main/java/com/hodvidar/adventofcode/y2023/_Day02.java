@@ -13,9 +13,9 @@ import java.util.stream.Stream;
 
 public class _Day02 extends AbstractAdventOfCode2023 {
 
-    private static final String BLUE = "blue";
-    private static final String RED = "red";
-    private static final String GREEN = "green";
+    protected static final String BLUE = "blue";
+    protected static final String RED = "red";
+    protected static final String GREEN = "green";
     private final CubeConditionChecker checker;
 
     public _Day02() {
@@ -40,6 +40,15 @@ public class _Day02 extends AbstractAdventOfCode2023 {
             gameId = Integer.parseInt(matcher.group(1));
         }
         final String[] partsAfterGameNumber = line.split(": ")[1].split(";");
+        return computeDigitLogic(partsAfterGameNumber, gameId);
+    }
+
+    protected int computeDigitLogic(final String[] partsAfterGameNumber, final int gameId) {
+        final var x = computeGame(partsAfterGameNumber);
+        return x == 0 ? 0 : gameId;
+    }
+
+    protected int computeGame(final String[] partsAfterGameNumber) {
         for (final String part : partsAfterGameNumber) {
             final String[] colorParts = part.split(",");
             for (String colorPart : colorParts) {
@@ -53,7 +62,7 @@ public class _Day02 extends AbstractAdventOfCode2023 {
                 }
             }
         }
-        return gameId;
+        return -1;
     }
 
     private boolean isValid(final String color, final int count) {
