@@ -26,6 +26,5 @@ public class _Day01 extends AbstractAdventOfCode2023 {
         final char[] eachDigits = onlyDigit.toCharArray();
         return Integer.parseInt(""
                 + eachDigits[0] + eachDigits[eachDigits.length - 1]);
-
     }
 }

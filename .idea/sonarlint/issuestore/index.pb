@@ -131,3 +131,7 @@ n
 Ksrc/main/java/com/hodvidar/adventofcode/y2023/AbstractAdventOfCode2023.java,c\3\c34976524b646053e61e2285fc5e0c630bb8aefd
 p
 @src/test/java/com/hodvidar/adventofcode/y2023/_Day01_2_Test.java,2\e\2e35059ecaa22cf4a0b38634bc4d3ff1affb0dc7
+i
+9src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java,5\3\535c0d6bdaf70bf4bb7db8803a73f7279b64df9e
+n
+>src/test/java/com/hodvidar/adventofcode/y2023/_Day02_Test.java,7\1\71f74f1e4031ca1ef7a228729c3754056e3e39a4
