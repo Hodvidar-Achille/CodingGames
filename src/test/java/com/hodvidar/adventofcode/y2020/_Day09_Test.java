@@ -1,5 +1,6 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractTestForAdventOfCode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -13,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /*
  *
  */
-public class _Day09_Test extends AbstractTestForAdventOfCode {
+public class _Day09_Test extends AbstractTestForAdventOfCode2020 {
 
     protected _Day09_Test() {
         super(new _Day09());

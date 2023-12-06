@@ -1,9 +1,11 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class _Day04 extends AbstractAdventOfCode {
+public class _Day04 extends AbstractAdventOfCode2020 {
 
     protected static final String BIRTH_YEAR = "byr:";
     protected static final String ISSUE_YEAR = "iyr:";
@@ -14,20 +16,13 @@ public class _Day04 extends AbstractAdventOfCode {
     protected static final String PASSPORT_ID = "pid:";
     protected static final String COUNTRY_ID = "cid:";
 
-    // not 122, not 227 and not 230
-    public static void main(final String[] args) throws Exception {
-        final _Day04 me = new _Day04();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '228' - result='" + result + "'");
-    }
-
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 4;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return numberOfValidPassport(sc);
     }
 

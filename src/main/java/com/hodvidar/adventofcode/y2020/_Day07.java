@@ -1,21 +1,17 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class _Day07 extends AbstractAdventOfCode {
+public class _Day07 extends AbstractAdventOfCode2020 {
     protected static final String EMPTY = "no other bags";
     protected static final String GOLDEN = "shiny gold bag";
     private static final String CONTAIN = " contain ";
-
-    public static void main(final String[] args) throws Exception {
-        final _Day07 me = new _Day07();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '192' - result='" + result + "'");
-    }
 
     public static int countBagsContainingBagName(final Collection<Bag> bags, final String bagName) {
         int counter = 0;
@@ -28,12 +24,12 @@ public class _Day07 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 7;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return countBagInsideGoldenBag(sc);
     }
 

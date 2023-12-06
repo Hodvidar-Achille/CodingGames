@@ -1,19 +1,15 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class _Day01_2 extends _Day01 {
 
-    public static void main(final String[] args) throws Exception {
-        final AbstractAdventOfCode me = new _Day01();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '293450526' - result='" + result + "'");
-    }
-
     @Override
-    protected int getResult(final Scanner sc) {
+    public int getResult(final Scanner sc) {
         String line;
         final List<Integer> numbers = new ArrayList<>();
         while (sc.hasNextLine()) {

@@ -1,15 +1,11 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class _Day06 extends AbstractAdventOfCode {
-    // not 12038 (too high), not 6288 (too low)
-    public static void main(final String[] args) throws Exception {
-        final _Day06 me = new _Day06();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '6297' - result='" + result + "'");
-    }
+public class _Day06 extends AbstractAdventOfCode2020 {
 
     public static int countUniqueLetterByGroup(final Scanner sc) {
         int counter = 0;
@@ -53,12 +49,12 @@ public class _Day06 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 6;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return countUniqueLetterByGroup(sc);
     }
 

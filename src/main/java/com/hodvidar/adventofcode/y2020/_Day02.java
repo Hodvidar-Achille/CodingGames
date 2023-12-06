@@ -1,23 +1,20 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class _Day02 extends AbstractAdventOfCode {
-    public static void main(final String[] args) throws Exception {
-        final _Day02 me = new _Day02();
-        final int result = me.numberOfCorrect(me.getScanner());
-        System.err.println("Expected '469' - result='" + result + "'");
-    }
+public class _Day02 extends AbstractAdventOfCode2020 {
 
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 2;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return numberOfCorrect(sc);
     }
 

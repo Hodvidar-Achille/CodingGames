@@ -7,14 +7,8 @@ import java.util.Scanner;
 
 public class _Day08_2 extends _Day08 {
 
-    public static void main(final String[] args) throws Exception {
-        final _Day08_2 me = new _Day08_2();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '640' - result='" + result + "'");
-    }
-
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         final int result = getAccumulatorValueAfterFix(sc);
         return result;
     }

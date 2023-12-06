@@ -1,18 +1,14 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class _Day03 extends AbstractAdventOfCode {
+public class _Day03 extends AbstractAdventOfCode2020 {
 
     private static final char TREE = '#';
-
-    public static void main(final String[] args) throws Exception {
-        final _Day03 me = new _Day03();
-        final int result = countTrees(me.getScanner(), 1, 3);
-        System.err.println("Expected '257' - result='" + result + "'");
-    }
 
     private static boolean isTree(final String pattern, final int abscissaIndex) {
         return Objects.equals(pattern.charAt(abscissaIndex), TREE);
@@ -48,12 +44,12 @@ public class _Day03 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 3;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return countTrees(sc, 1, 3);
     }
 }

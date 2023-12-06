@@ -4,12 +4,6 @@ import java.util.Objects;
 
 public class _Day04_2 extends _Day04 {
 
-    public static void main(final String[] args) throws Exception {
-        final _Day04_2 me = new _Day04_2();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '175' - result='" + result + "'");
-    }
-
     /**
      * You can continue to ignore the cid field,
      * but each other field has strict rules about what values

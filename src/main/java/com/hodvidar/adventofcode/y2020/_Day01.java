@@ -1,5 +1,7 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,21 +11,15 @@ import java.util.Scanner;
  *
  * @author Hodvidar
  */
-public class _Day01 extends AbstractAdventOfCode {
-
-    public static void main(final String[] args) throws Exception {
-        final AbstractAdventOfCode me = new _Day01();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '388075' - result='" + result + "'");
-    }
-
+public class _Day01 extends AbstractAdventOfCode2020 {
+    
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 1;
     }
 
     @Override
-    protected int getResult(final Scanner sc) {
+    public int getResult(final Scanner sc) {
         String line;
         final List<Integer> numbers = new ArrayList<>();
         while (sc.hasNextLine()) {

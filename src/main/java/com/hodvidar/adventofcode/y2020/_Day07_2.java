@@ -8,15 +8,8 @@ import java.util.Scanner;
 
 public class _Day07_2 extends _Day07 {
 
-    // not 10790 too low
-    public static void main(final String[] args) throws Exception {
-        final _Day07_2 me = new _Day07_2();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '12128' - result='" + result + "'");
-    }
-
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return countBagInsideGoldenBag(sc);
     }
 

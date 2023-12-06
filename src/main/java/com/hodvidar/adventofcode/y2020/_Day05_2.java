@@ -8,12 +8,6 @@ import java.util.Scanner;
 
 public class _Day05_2 extends _Day05 {
 
-    public static void main(final String[] args) throws Exception {
-        final _Day05_2 me = new _Day05_2();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '747' - result='" + result + "'");
-    }
-
     public static int getMissingCode(final Scanner sc) {
         final List<Integer> codes = new ArrayList<>();
         String line;
@@ -34,7 +28,7 @@ public class _Day05_2 extends _Day05 {
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return getMissingCode(sc);
     }
 }

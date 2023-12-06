@@ -1,9 +1,11 @@
 package com.hodvidar.adventofcode.y2020;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class _Day05 extends AbstractAdventOfCode {
+public class _Day05 extends AbstractAdventOfCode2020 {
 
     protected static final char FRONT = 'F';
     protected static final char BACK = 'B';
@@ -14,12 +16,6 @@ public class _Day05 extends AbstractAdventOfCode {
     protected static final int MAX_COLUMN = 7;
     protected static final int ROW_CODE_FACTOR = 8;
     protected static final int MAX_CODE = calculateCode(MAX_ROW, MAX_COLUMN);
-
-    public static void main(final String[] args) throws Exception {
-        final _Day05 me = new _Day05();
-        final int result = me.getResult(me.getScanner());
-        System.err.println("Expected '922' - result='" + result + "'");
-    }
 
     public static int getFinalPositionCode(final String spacePartitioning) {
         final String rowSpacePartitioning = spacePartitioning.substring(0, 7);
@@ -83,12 +79,12 @@ public class _Day05 extends AbstractAdventOfCode {
     }
 
     @Override
-    protected int getDay() {
+    public int getDay() {
         return 5;
     }
 
     @Override
-    protected int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) throws FileNotFoundException {
         return getMaxPositionCode(sc);
     }
 }
