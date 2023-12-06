@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
@@ -72,6 +71,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "E:/w",
@@ -83,7 +83,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -273,7 +273,7 @@
       <workItem from="1701820866137" duration="264000" />
       <workItem from="1701821145617" duration="275000" />
       <workItem from="1701821438838" duration="4189000" />
-      <workItem from="1701859803766" duration="395000" />
+      <workItem from="1701859803766" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -685,12 +685,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day02.java</url>
-          <line>83</line>
+          <line>92</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

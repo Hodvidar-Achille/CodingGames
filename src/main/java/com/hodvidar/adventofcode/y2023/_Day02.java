@@ -33,31 +33,36 @@ public class _Day02 extends AbstractAdventOfCode2023 {
     }
 
     protected int getDigitFromLine(final String line) {
-        Pattern pattern = Pattern.compile("Game (\\d+)");
-        Matcher matcher = pattern.matcher(line);
+        final Pattern pattern = Pattern.compile("Game (\\d+)");
+        final Matcher matcher = pattern.matcher(line);
         int gameId = 0;
         if(matcher.find()) {
             gameId = Integer.parseInt(matcher.group(1));
         }
         final String[] partsAfterGameNumber = line.split(": ")[1].split(";");
-        final Map<String, Integer> colorMaxCounts = new HashMap<>();
-        colorMaxCounts.put(BLUE, 0);
-        colorMaxCounts.put(RED, 0);
-        colorMaxCounts.put(GREEN, 0);
         for (final String part : partsAfterGameNumber) {
             final String[] colorParts = part.split(",");
             for (String colorPart : colorParts) {
                 colorPart = colorPart.trim(); // Remove leading and trailing spaces
-                String[] colorAndCount = colorPart.split(" ");
+                final String[] colorAndCount = colorPart.split(" ");
                 // Assuming the format is always "<number> <color>"
                 final int count = Integer.parseInt(colorAndCount[0]);
                 final String color = colorAndCount[1];
-                if(colorMaxCounts.get(color) < count) {
-                    colorMaxCounts.put(color, count);
+                if(!isValid(color, count)) {
+                    return 0;
                 }
             }
         }
-        return checker.checkCubeConditions(colorMaxCounts.get(RED), colorMaxCounts.get(GREEN), colorMaxCounts.get(BLUE)) ? gameId : 0;
+        return gameId;
+    }
+
+    private boolean isValid(final String color, final int count) {
+        return switch (color) {
+            case BLUE -> checker.checkBlue(count);
+            case RED -> checker.checkRed(count);
+            case GREEN -> checker.checkGreen(count);
+            default -> throw new IllegalStateException("Unexpected value: " + color);
+        };
     }
 
     public boolean checkCubeConditions(final int numberOfRed, final int numberOfGreen, final int numberOfBlue) {
@@ -84,6 +89,18 @@ public class _Day02 extends AbstractAdventOfCode2023 {
             return this.numberOfRed >= numberOfRed
                     && this.numberOfGreen >= numberOfGreen
                     && this.numberOfBlue >= numberOfBlue;
+        }
+
+        public boolean checkRed(final int numberOfRed) {
+            return this.numberOfRed >= numberOfRed;
+        }
+
+        public boolean checkGreen(final int numberOfGreen) {
+            return this.numberOfGreen >= numberOfGreen;
+        }
+
+        public boolean checkBlue(final int numberOfBlue) {
+            return this.numberOfBlue >= numberOfBlue;
         }
     }
 }
