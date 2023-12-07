@@ -1,10 +1,7 @@
 package com.hodvidar.adventofcode.y2023;
 
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,7 +21,7 @@ public class _Day04_2 extends _Day04 {
 
     @Override
     protected int getDigitFromLine(final String line) {
-        final Pattern pattern = Pattern.compile("Card (\\d+)");
+        final Pattern pattern = Pattern.compile("Card\\s+(\\d+)");
         final Matcher matcher = pattern.matcher(line);
         int cardId = 0;
         if (matcher.find()) {
@@ -38,29 +35,38 @@ public class _Day04_2 extends _Day04 {
     }
 
     private static class CardHolder {
-        private final Map<Integer, Card> cards = new HashMap<>();
+        private final SortedMap<Integer, Card> cards = new TreeMap<>();
 
         public void addCard(final int id, final int[] winningNumbers, final int[] numbers) {
             cards.put(id, new Card(id, winningNumbers, numbers));
         }
 
         public int computeCards() {
-            // TODO compute cards using numberOfOccurrence and their id
-            return 0;
+            useWinningNumbersToAddCopies();
+            return cards.values().stream().mapToInt(c -> c.numberOfOccurrence).sum();
+        }
+
+        public void useWinningNumbersToAddCopies() {
+            for(final Map.Entry<Integer, Card> cardEntry : cards.entrySet()){
+                for(int i = 1; i <= cardEntry.getValue().numberOfWinningNumbers; i++) {
+                    final var card = cards.get(cardEntry.getKey() + i);
+                    if(card != null) {
+                        card.numberOfOccurrence += cardEntry.getValue().numberOfOccurrence;
+                    }
+                }
+            }
         }
     }
 
     private static class Card {
         final int id;
-        final int[] winningNumbers;
-        final int[] numbers;
-        final int numberOfOccurrence;
+        final int numberOfWinningNumbers;
+        int numberOfOccurrence;
 
         private Card(final int id, final int[] winningNumbers, final int[] numbers) {
             this.id = id;
-            this.winningNumbers = winningNumbers;
-            this.numbers = numbers;
-            this.numberOfOccurrence = Arrays.stream(numbers).distinct().filter(n -> Arrays.stream(winningNumbers).anyMatch(n2 -> n2 == n)).toArray().length;
+            this.numberOfWinningNumbers = Arrays.stream(numbers).distinct().filter(n -> Arrays.stream(winningNumbers).anyMatch(n2 -> n2 == n)).toArray().length;
+            numberOfOccurrence = 1;
         }
     }
 }

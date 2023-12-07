@@ -167,3 +167,5 @@ n
 >src/test/java/com/hodvidar/adventofcode/y2023/_Day04_Test.java,0\d\0dd65e008b3cff200df0a5d87d4cb1ede81da47f
 k
 ;src/main/java/com/hodvidar/adventofcode/y2023/_Day04_2.java,3\9\391e9ebd8b6a73ab03af958fee945a8e73bac9f6
+p
+@src/test/java/com/hodvidar/adventofcode/y2023/_Day04_2_Test.java,7\2\720389e68f027c1553eb6742f0eab79ad9d25fc4
