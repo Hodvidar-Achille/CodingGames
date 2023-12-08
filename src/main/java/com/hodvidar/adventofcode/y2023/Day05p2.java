@@ -6,7 +6,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class _Day05_2 extends _Day05 {
+public class Day05p2 extends Day05 {
 
     @Override
     protected SeedMapper getSeedMapper() {
@@ -59,10 +59,9 @@ public class _Day05_2 extends _Day05 {
         }
 
 
-        private List<Range> mapRangeToNewRanges(final Range range, List<MappingRange> relevantMappingRanges) {
+        private List<Range> mapRangeToNewRanges(final Range range, final List<MappingRange> relevantMappingRanges) {
             relevantMappingRanges.sort(Comparator.comparingDouble(MappingRange::min));
-            // Need to handle this case
-            // mappingRange is fully inside range
+            // Need to handle this case:
             //                    [<-------MAP1------->]              [<-------MAP2------->]
             //       [<------------VALUES--------------------------------------------------------------->]
             // -->   [<--VALUES->][<----NEWVAL1------->][<--VALUES-->][<----NEWVAL2------->][<--VALUES-->]
@@ -73,20 +72,24 @@ public class _Day05_2 extends _Day05 {
             //                    [<-------MAP1------->]
             //       [<------------VALUES--------------------------------------------------------------->]
             // -->   [<--VALUES->][<----NEWVAL1------->][<--VALUES-------------------------------------->]
+            // (Keep [<--VALUES->][<----NEWVAL1------->])
+            // and reuse the last Range
             // Step2:
             //                                                          [<-------MAP2------->]
             //                                          [<------------VALUES---------------------------->]
             // -->                                      [<--VALUES-->][<----NEWVAL2------->][<--VALUES-->]
-            for(int i = 0; i < relevantMappingRanges.size(); i++) {
+            // (Keep [<--VALUES-->][<----NEWVAL2------->][<--VALUES-->])
+            for (int i = 0; i < relevantMappingRanges.size(); i++) {
                 final List<Range> intermediateRanges = mapRangeToNewRanges(currentRange, relevantMappingRanges.get(i));
                 currentRange = intermediateRanges.get(intermediateRanges.size() - 1);
                 newRanges.addAll(intermediateRanges.subList(0, intermediateRanges.size() - 1));
-                if(i == relevantMappingRanges.size() - 1) {
+                if (i == relevantMappingRanges.size() - 1) {
                     newRanges.add(currentRange);
                 }
             }
             return newRanges;
         }
+
         private List<Range> mapRangeToNewRanges(final Range range, MappingRange mappingRange) {
             final List<Range> newRanges = new ArrayList<>();
             if (mappingRange.min() <= range.min() && mappingRange.max() >= range.max()) {

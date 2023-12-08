@@ -5,9 +5,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class _Day01_2_Test extends AbstractTestForAdventOfCode2023 {
-    protected _Day01_2_Test() {
-        super(new _Day01_2());
+class Day01p2Test extends AbstractTestForAdventOfCode2023 {
+    protected Day01p2Test() {
+        super(new Day01p2());
     }
 
     @Override
@@ -31,6 +31,6 @@ class _Day01_2_Test extends AbstractTestForAdventOfCode2023 {
             "oneighthree = o1e8t3e"
     })
     void transformString_dirtyWithOverLapping(final String input, final String expected) {
-        assertThat(_Day01_2.transformString_dirtyWithOverLapping(input)).isEqualTo(expected);
+        assertThat(Day01p2.transformString_dirtyWithOverLapping(input)).isEqualTo(expected);
     }
 }

@@ -1,8 +1,8 @@
 package com.hodvidar.adventofcode.y2023;
 
-import java.util.*;
+import java.util.Map;
 
-public class _Day01_2 extends _Day01 {
+public class Day01p2 extends Day01 {
 
     private static final Map<String, String> NUMBER = Map.of(
             "one", "o1e",

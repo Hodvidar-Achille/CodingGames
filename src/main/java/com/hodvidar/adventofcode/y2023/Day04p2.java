@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class _Day04_2 extends _Day04 {
+public class Day04p2 extends Day04 {
 
     private CardHolder cardHolder;
 
@@ -45,10 +45,10 @@ public class _Day04_2 extends _Day04 {
         }
 
         public void useWinningNumbersToAddCopies() {
-            for(final Map.Entry<Integer, Card> cardEntry : cards.entrySet()){
-                for(int i = 1; i <= cardEntry.getValue().numberOfWinningNumbers; i++) {
+            for (final Map.Entry<Integer, Card> cardEntry : cards.entrySet()) {
+                for (int i = 1; i <= cardEntry.getValue().numberOfWinningNumbers; i++) {
                     final var card = cards.get(cardEntry.getKey() + i);
-                    if(card != null) {
+                    if (card != null) {
                         card.numberOfOccurrence += cardEntry.getValue().numberOfOccurrence;
                     }
                 }

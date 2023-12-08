@@ -1,9 +1,9 @@
 package com.hodvidar.adventofcode.y2023;
 
-class _Day02_2_Test extends AbstractTestForAdventOfCode2023 {
+class Day02p2Test extends AbstractTestForAdventOfCode2023 {
 
-    public _Day02_2_Test() {
-        super(new _Day02_2());
+    public Day02p2Test() {
+        super(new Day02p2());
     }
 
     @Override

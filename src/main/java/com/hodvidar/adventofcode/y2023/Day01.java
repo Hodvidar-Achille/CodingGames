@@ -1,11 +1,6 @@
 package com.hodvidar.adventofcode.y2023;
 
-import org.assertj.core.util.Streams;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-public class _Day01 extends AbstractAdventOfCode2023 {
+public class Day01 extends AbstractAdventOfCode2023 {
 
     @Override
     public int getDay() {

@@ -38,6 +38,7 @@ public abstract class AbstractAdventOfCode {
         return (int) getResultDouble(sc);
     }
 
+    @SuppressWarnings("unused")
     public double getResultDouble(final Scanner sc) throws FileNotFoundException {
         return Integer.MIN_VALUE;
     }

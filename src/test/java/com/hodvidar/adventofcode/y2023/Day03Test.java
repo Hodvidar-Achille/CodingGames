@@ -1,8 +1,8 @@
 package com.hodvidar.adventofcode.y2023;
 
-class _Day03_Test extends AbstractTestForAdventOfCode2023 {
-    protected _Day03_Test() {
-        super(new _Day03());
+class Day03Test extends AbstractTestForAdventOfCode2023 {
+    protected Day03Test() {
+        super(new Day03());
     }
 
     @Override

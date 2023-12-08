@@ -3,7 +3,7 @@ package com.hodvidar.adventofcode.y2023;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class _Day05 extends AbstractAdventOfCode2023 {
+public class Day05 extends AbstractAdventOfCode2023 {
 
     protected SeedMapper seedMapper;
 
@@ -81,10 +81,9 @@ public class _Day05 extends AbstractAdventOfCode2023 {
         public void addMappingRangeInCurrentCategory(final double destinationRangeStart,
                                                      final double sourceRangeStart,
                                                      final double rangeSize) {
-            final var sourceRangeMin = sourceRangeStart;
             final var sourceRangeMax = sourceRangeStart - 1 + rangeSize;
             final var transformation = destinationRangeStart - sourceRangeStart;
-            final var mappingRange = new MappingRange(sourceRangeMin, sourceRangeMax, transformation);
+            final var mappingRange = new MappingRange(sourceRangeStart, sourceRangeMax, transformation);
             addMappingRangeInCurrentCategory(mappingRange);
         }
 

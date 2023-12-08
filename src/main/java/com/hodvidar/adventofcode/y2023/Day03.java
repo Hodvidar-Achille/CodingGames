@@ -5,10 +5,11 @@ import com.hodvidar.utils.geometry.Point;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-public class _Day03 extends AbstractAdventOfCode2023 {
+public class Day03 extends AbstractAdventOfCode2023 {
 
     protected EngineSchematic schematic;
 
@@ -78,7 +79,7 @@ public class _Day03 extends AbstractAdventOfCode2023 {
          */
         public int computeGearRatio() {
             return symbols.stream()
-                    .filter(s -> s.numberOfAdgacentNumbers == 2)
+                    .filter(s -> s.numberOfAdjacentNumbers == 2)
                     .mapToInt(s -> s.gearRatio)
                     .sum();
         }
@@ -88,8 +89,8 @@ public class _Day03 extends AbstractAdventOfCode2023 {
 
         public final char sign;
 
-        public int numberOfAdgacentNumbers;
-        public int gearRatio = 1;
+        private int numberOfAdjacentNumbers;
+        private int gearRatio = 1;
 
         public Symbol(final char sign, final int x, final int y) {
             super(x, y);
@@ -97,10 +98,22 @@ public class _Day03 extends AbstractAdventOfCode2023 {
         }
 
         public void addAdjacentNumber(final int number) {
-            if (sign == '*' && numberOfAdgacentNumbers <= 2) {
-                numberOfAdgacentNumbers++;
+            if (sign == '*' && numberOfAdjacentNumbers <= 2) {
+                numberOfAdjacentNumbers++;
                 gearRatio *= number;
             }
+        }
+
+        @Override
+        public boolean equals(final Object o) {
+            if (this == o) return true;
+            if (!(o instanceof final Symbol symbol)) return false;
+            return sign == symbol.sign && numberOfAdjacentNumbers == symbol.numberOfAdjacentNumbers && gearRatio == symbol.gearRatio;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(sign, numberOfAdjacentNumbers, gearRatio);
         }
     }
 
@@ -108,9 +121,9 @@ public class _Day03 extends AbstractAdventOfCode2023 {
 
         public final Point p1;
 
-        public Point p2;
+        private Point p2;
 
-        public int number;
+        private int number;
 
         public SegmentNumber(final Point p1) {
             this.p1 = p1;

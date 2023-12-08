@@ -2,7 +2,7 @@ package com.hodvidar.adventofcode.y2023;
 
 import java.util.Arrays;
 
-public class _Day04 extends AbstractAdventOfCode2023 {
+public class Day04 extends AbstractAdventOfCode2023 {
 
     @Override
     public int getDay() {

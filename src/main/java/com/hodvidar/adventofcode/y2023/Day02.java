@@ -1,11 +1,9 @@
 package com.hodvidar.adventofcode.y2023;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class _Day02 extends AbstractAdventOfCode2023 {
+public class Day02 extends AbstractAdventOfCode2023 {
 
     protected static final String BLUE = "blue";
     protected static final String RED = "red";
@@ -13,7 +11,7 @@ public class _Day02 extends AbstractAdventOfCode2023 {
     public static final int NUMBER_OF_RED = 12;
     private final CubeConditionChecker checker;
 
-    public _Day02() {
+    public Day02() {
         this.checker = new CubeConditionChecker(NUMBER_OF_RED, 13, 14);
     }
 

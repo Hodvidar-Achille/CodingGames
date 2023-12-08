@@ -24,11 +24,13 @@ public abstract class AbstractAdventOfCode2023 extends AbstractAdventOfCode {
         return counter;
     }
 
+    @SuppressWarnings("unused")
     protected int getDigitFromLine(final String line) {
         // Default implementation
         return 0;
     }
 
+    @SuppressWarnings("unused")
     protected void digestLine(final String line) {
         // Default implementation
     }
