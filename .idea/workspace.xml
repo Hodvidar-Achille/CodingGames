@@ -20,23 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/AbstractAdventOfCode2020.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/AbstractAdventOfCode2020.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AbstractAdventOfCode2023.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AbstractAdventOfCode2023.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day03_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day03_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day04_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day04_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/AbstractTestForAdventOfCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/AbstractTestForAdventOfCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode2020.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/AbstractTestForAdventOfCode2020.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/AbstractTestForAdventOfCode2023.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/AbstractTestForAdventOfCode2023.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/_Day05_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/_Day05_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/_Day05_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/_Day05_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input5-test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input5-test1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input5.txt" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,18 +105,7 @@
       <recent name="com.hodvidar.leetcode.medium" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit._Day05_2_Test">
-    <configuration name="_Day02_Test.checkGetResultForTest.1, 8.0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <dir value="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023._Day02_Test]/[test-template:checkGetResultForTest(int, double)]/[test-template-invocation:#1]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.y2023 in CodingGames">
     <configuration name="_Day05_2_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
@@ -163,10 +139,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="_Day05_2_Test.checkGetResult.2.3625202E7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day05_2_Test" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023._Day05_2_Test]/[test-template:checkGetResult(double)]/[test-template-invocation:#1]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_Day05_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023._Day05_Test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit._Day05_2_Test" />
-        <item itemvalue="JUnit._Day05_2_Test.checkGetResultForTest.1, 46.0" />
-        <item itemvalue="JUnit.java in CodingGames" />
-        <item itemvalue="JUnit._Day02_Test.checkGetResultForTest.1, 8.0" />
         <item itemvalue="JUnit.y2023 in CodingGames" />
+        <item itemvalue="JUnit._Day05_2_Test" />
+        <item itemvalue="JUnit._Day05_Test" />
+        <item itemvalue="JUnit._Day05_2_Test.checkGetResult.2.3625202E7" />
+        <item itemvalue="JUnit._Day05_2_Test.checkGetResultForTest.1, 46.0" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +272,7 @@
       <workItem from="1701821438838" duration="4189000" />
       <workItem from="1701859803766" duration="2010000" />
       <workItem from="1701865781488" duration="4439000" />
-      <workItem from="1701870740191" duration="21826000" />
+      <workItem from="1701870740191" duration="25148000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -687,13 +688,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05_2.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="187" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/_Day05_2.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="188" />
+          <line>42</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="189" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

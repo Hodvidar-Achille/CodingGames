@@ -96,16 +96,7 @@ public class _Day05 extends AbstractAdventOfCode2023 {
         }
     }
 
-    protected static class MappingRange {
-        protected final double min;
-        protected final double max;
-        protected final double transformation;
-
-        public MappingRange(final double min, final double max, final double transformation) {
-            this.min = min;
-            this.max = max;
-            this.transformation = transformation;
-        }
+    protected record MappingRange(double min, double max, double transformation) {
 
         public boolean isInRange(final double value) {
             return value >= min && value <= max;
