@@ -34,7 +34,13 @@ public abstract class AbstractAdventOfCode {
         return new Scanner(new File(getInputFilePath()));
     }
 
-    public abstract int getResult(final Scanner sc) throws FileNotFoundException;
+    public int getResult(final Scanner sc) throws FileNotFoundException {
+        return (int) getResultDouble(sc);
+    }
+
+    public double getResultDouble(final Scanner sc) throws FileNotFoundException {
+        return Integer.MIN_VALUE;
+    }
 
     public abstract int getDay();
 

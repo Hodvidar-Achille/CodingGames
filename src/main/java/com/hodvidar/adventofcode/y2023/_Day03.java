@@ -26,11 +26,10 @@ public class _Day03 extends AbstractAdventOfCode2023 {
             schematic.incorporateNewLine(y, sc.nextLine());
             y++;
         }
-        return getDigitFromLine("irrelevant");
+        return computeSchematic();
     }
 
-    @Override
-    protected int getDigitFromLine(final String line) {
+    protected int computeSchematic() {
         return schematic.computeNumbersNextToSymbols();
     }
 

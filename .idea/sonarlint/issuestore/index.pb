@@ -169,3 +169,15 @@ k
 ;src/main/java/com/hodvidar/adventofcode/y2023/_Day04_2.java,3\9\391e9ebd8b6a73ab03af958fee945a8e73bac9f6
 p
 @src/test/java/com/hodvidar/adventofcode/y2023/_Day04_2_Test.java,7\2\720389e68f027c1553eb6742f0eab79ad9d25fc4
+n
+>src/test/java/com/hodvidar/adventofcode/y2023/_Day05_Test.java,b\c\bc93f7444fd492834c37e917ad743e26430998b5
+i
+9src/main/java/com/hodvidar/adventofcode/y2023/_Day05.java,c\4\c4710634ef05221801ecf7bb1d4d8f329dcb8c1f
+p
+@src/test/java/com/hodvidar/adventofcode/y2023/_Day05_2_Test.java,2\4\24f238bfea58d1f1721e652923b23ea40cb3faec
+k
+;src/main/java/com/hodvidar/adventofcode/y2023/_Day05_2.java,3\1\313b248a547b5a63f5b32ec914424118db1816f3
+n
+>src/test/java/com/hodvidar/adventofcode/y2020/_Day07_Test.java,d\2\d2e9eaeedb948f247626cc0d50dbea19819e2748
+{
+Ksrc/main/java/com/hodvidar/adventofcode/y2020/AbstractAdventOfCode2020.java,7\a\7a8c2b6147b7cf1cb29bc15960a2acca8d833aa4

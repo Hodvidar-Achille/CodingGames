@@ -7,20 +7,19 @@ import java.util.regex.Pattern;
 
 public class _Day04_2 extends _Day04 {
 
-
     private CardHolder cardHolder;
 
     @Override
     public int getResult(final Scanner sc) throws FileNotFoundException {
         cardHolder = new CardHolder();
         while (sc.hasNext()) {
-            getDigitFromLine(sc.nextLine());
+            digestLine(sc.nextLine());
         }
         return cardHolder.computeCards();
     }
 
     @Override
-    protected int getDigitFromLine(final String line) {
+    protected void digestLine(final String line) {
         final Pattern pattern = Pattern.compile("Card\\s+(\\d+)");
         final Matcher matcher = pattern.matcher(line);
         int cardId = 0;
@@ -31,7 +30,6 @@ public class _Day04_2 extends _Day04 {
         final int[] winningNumbers = Arrays.stream(partsAfterCardNumber[0].trim().split("\\s+")).mapToInt(Integer::parseInt).toArray();
         final int[] numbers = Arrays.stream(partsAfterCardNumber[1].trim().split("\\s+")).mapToInt(Integer::parseInt).toArray();
         cardHolder.addCard(cardId, winningNumbers, numbers);
-        return 0;
     }
 
     private static class CardHolder {

@@ -11,6 +11,11 @@ public abstract class AbstractAdventOfCode2023 extends AbstractAdventOfCode {
     }
 
     @Override
+    public double getResultDouble(final Scanner sc) throws FileNotFoundException {
+        return getResult(sc);
+    }
+
+    @Override
     public int getResult(final Scanner sc) throws FileNotFoundException {
         int counter = 0;
         while (sc.hasNext()) {
@@ -19,5 +24,12 @@ public abstract class AbstractAdventOfCode2023 extends AbstractAdventOfCode {
         return counter;
     }
 
-    protected abstract int getDigitFromLine(final String line);
+    protected int getDigitFromLine(final String line) {
+        // Default implementation
+        return 0;
+    }
+
+    protected void digestLine(final String line) {
+        // Default implementation
+    }
 }

@@ -18,7 +18,7 @@ import static org.junit.jupiter.params.ParameterizedTest.ARGUMENTS_WITH_NAMES_PL
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class AbstractTestForAdventOfCode {
 
-    private static final String INPUT_DIRECTORY = "adventofcode_"; // input1
+    private static final String INPUT_DIRECTORY = "adventofcode_";
     protected final AbstractAdventOfCode testedClass;
     protected final String inputDirectory;
 
@@ -46,18 +46,20 @@ public abstract class AbstractTestForAdventOfCode {
 
     @ParameterizedTest(name = ARGUMENTS_WITH_NAMES_PLACEHOLDER)
     @MethodSource("getExpectedResults")
-    protected void checkGetResult(final int expectedResult) throws FileNotFoundException {
+    protected void checkGetResult(final double expectedResult) throws FileNotFoundException {
         final Scanner sc = getScannerForRealInputFile();
-        final int result = testedClass.getResult(sc);
+        final double result = testedClass.getResultDouble(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 
     @ParameterizedTest(name = ARGUMENTS_WITH_NAMES_PLACEHOLDER)
     @MethodSource("getExpectedTestResults")
-    protected void checkGetResultForTest(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
-        if (numberOfTheTest == 0) return;
+    protected void checkGetResultForTest(final int numberOfTheTest, final double expectedResult) throws FileNotFoundException {
+        if (numberOfTheTest == 0) {
+            return;
+        }
         final Scanner sc = getScanner(numberOfTheTest);
-        final int result = testedClass.getResult(sc);
+        final double result = testedClass.getResultDouble(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -69,22 +71,34 @@ public abstract class AbstractTestForAdventOfCode {
     /**
      * Expected result for the tested class with the original input file.
      */
-    protected abstract int getExpectedResult();
+    protected int getExpectedResult() {
+        return Integer.MIN_VALUE;
+    }
+
+    protected double getExpectedResultDouble() {
+        return getExpectedResult();
+    }
 
     protected abstract int getNumberOfTheTest();
 
     /**
      * Expected result for the tested class with the given test input file.
      */
-    protected abstract int getExpectedTestResult();
+    protected int getExpectedTestResult() {
+        return Integer.MIN_VALUE;
+    }
+
+    protected double getExpectedTestResultDouble() {
+        return getExpectedTestResult();
+    }
 
     private Stream<Arguments> getExpectedResults() {
-        return Stream.of(Arguments.of(getExpectedResult()));
+        return Stream.of(Arguments.of(getExpectedResultDouble()));
     }
 
 
     private Stream<Arguments> getExpectedTestResults() {
-        return Stream.of(Arguments.of(getNumberOfTheTest(), getExpectedTestResult()));
+        return Stream.of(Arguments.of(getNumberOfTheTest(), getExpectedTestResultDouble()));
     }
 
 }
