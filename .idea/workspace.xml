@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day07Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input7-test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input7.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day06_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day06Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day06p2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day06p2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day07Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day07Test.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -683,6 +679,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java</url>
           <line>37</line>
           <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="192" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />

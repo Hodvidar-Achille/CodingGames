@@ -36,13 +36,14 @@ public class Day07 extends AbstractAdventOfCode2023 {
 
         public double getTotalBid() {
             final var handsOrdered = hands.stream()
-                    .sorted(Comparator.comparing(CamelCardHand::getType).reversed()
-                            .thenComparing(CamelCardHand::getFirstCardValue).reversed()
-                            .thenComparing(CamelCardHand::getSecondCardValue).reversed()
-                            .thenComparing(CamelCardHand::getThirdCardValue).reversed()
-                            .thenComparing(CamelCardHand::getFourthCardValue).reversed()
-                            .thenComparing(CamelCardHand::getFifthCardValue).reversed())
+                    .sorted(Comparator.comparing(CamelCardHand::getType)
+                            .thenComparing(CamelCardHand::getFirstCardValue)
+                            .thenComparing(CamelCardHand::getSecondCardValue)
+                            .thenComparing(CamelCardHand::getThirdCardValue)
+                            .thenComparing(CamelCardHand::getFourthCardValue)
+                            .thenComparing(CamelCardHand::getFifthCardValue))
                     .toList();
+            handsOrdered.reversed();
             for (int i = 1; i <= handsOrdered.size(); i++) {
                 handsOrdered.get(i - 1).bid = i * handsOrdered.get(i - 1).bid;
             }

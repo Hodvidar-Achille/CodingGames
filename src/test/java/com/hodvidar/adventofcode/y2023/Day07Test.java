@@ -12,8 +12,8 @@ class Day07Test extends AbstractTestForAdventOfCode2023 {
 
     @Override
     protected double getExpectedResultDouble() {
-        return 247119905d;
-    } // Too low
+        return 248422077d;
+    }
 
     @Override
     protected double getExpectedTestResultDouble() {
