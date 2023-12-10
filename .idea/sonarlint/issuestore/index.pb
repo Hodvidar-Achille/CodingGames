@@ -181,11 +181,7 @@ n
 >src/test/java/com/hodvidar/adventofcode/y2023/Day04p2Test.java,7\b\7bf239e64874455ae3bb33160432b294f5a80922
 n
 >src/test/java/com/hodvidar/adventofcode/y2023/Day05p2Test.java,e\9\e9587b0c35df99593c1b3d154fe1ea336ecdf7ce
-m
-=src/test/java/com/hodvidar/adventofcode/y2023/Day06_Test.java,3\a\3a927d4d8e033f2e21d685143c14f914dc26b648
 h
 8src/main/java/com/hodvidar/adventofcode/y2023/Day06.java,b\2\b261441883a2c0b788f4f4d415872c99330c6086
-o
-?src/test/java/com/hodvidar/adventofcode/y2023/Day06p2_Test.java,1\a\1a167e0da6d404859d0d1007d0325f9e58d9d043
 j
 :src/main/java/com/hodvidar/adventofcode/y2023/Day06p2.java,5\e\5e9ddab465286355ab144fe817af38a59c926e9d

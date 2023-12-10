@@ -1,8 +1,8 @@
 package com.hodvidar.adventofcode.y2023;
 
-class Day07Test extends AbstractTestForAdventOfCode2023 {
-    protected Day07Test() {
-        super(new Day07());
+class Day07p2Test extends AbstractTestForAdventOfCode2023 {
+    protected Day07p2Test() {
+        super(new Day07p2());
     }
 
     @Override
@@ -12,11 +12,12 @@ class Day07Test extends AbstractTestForAdventOfCode2023 {
 
     @Override
     protected double getExpectedResultDouble() {
-        return 248422077d;
+        return 249817836d;git
+
     }
 
     @Override
     protected double getExpectedTestResultDouble() {
-        return 6440d;
+        return 5905;
     }
 }
