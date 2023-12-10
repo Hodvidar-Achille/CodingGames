@@ -12,7 +12,7 @@ class Day07p2Test extends AbstractTestForAdventOfCode2023 {
 
     @Override
     protected double getExpectedResultDouble() {
-        return 249817836d;git
+        return 249817836d;
 
     }
 
