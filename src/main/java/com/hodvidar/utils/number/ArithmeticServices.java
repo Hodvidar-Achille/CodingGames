@@ -15,7 +15,7 @@ public final class ArithmeticServices {
      *
      * @param a - one number
      * @param b - several numbers
-     * @return
+     * @return the greatest common divisor
      */
     public static double greatestCommonDivisor(final double a, final double... b) {
         if (b == null || b.length == 0)
@@ -25,8 +25,7 @@ public final class ArithmeticServices {
             return gcd(a, b[0]);
         } else {
             final double[] b2 = new double[b.length - 1];
-            for (int i = 1; i < b.length; i++)
-                b2[i - 1] = b[i];
+            System.arraycopy(b, 1, b2, 0, b.length - 1);
             return greatestCommonDivisor(gcd(a, b[0]), b2);
         }
     }
@@ -36,7 +35,7 @@ public final class ArithmeticServices {
      *
      * @param a - one number
      * @param b - one number
-     * @return
+     * @return the greatest common divisor
      */
     private static double gcd(final double a, final double b) {
         return b == 0 ? a : gcd(b, a % b); // Not bad for one line of code :)
@@ -47,7 +46,7 @@ public final class ArithmeticServices {
      *
      * @param a - one number
      * @param b - several numbers
-     * @return
+     * @return the lowest common multiplier
      */
     public static double lowerCommonMultiplier(final double a, final double... b) {
         if (b == null || b.length == 0)
@@ -57,8 +56,7 @@ public final class ArithmeticServices {
             return lcm(a, b[0]);
         } else {
             final double[] b2 = new double[b.length - 1];
-            for (int i = 1; i < b.length; i++)
-                b2[i - 1] = b[i];
+            System.arraycopy(b, 1, b2, 0, b.length - 1);
             return lowerCommonMultiplier(lcm(a, b[0]), b2);
         }
     }
@@ -68,7 +66,7 @@ public final class ArithmeticServices {
      *
      * @param a - one number
      * @param b - one number
-     * @return
+     * @return the lowest common multiplier
      */
     private static double lcm(final double a, final double b) {
         return (a * b) / gcd(a, b);
@@ -87,7 +85,6 @@ public final class ArithmeticServices {
         for (int i = 1; i <= aNumber; i++) {
             factorial *= i;
         }
-
         if (factorial > Integer.MAX_VALUE) {
             throw new ArithmeticException("Factorial > Integer.MAX_VALUE");
         }
@@ -99,9 +96,9 @@ public final class ArithmeticServices {
      * <p>
      * Should become : (105*104*103*102*101 / 2)
      *
-     * @param numerator
-     * @param denominatorsMultiplied
-     * @return
+     * @param numerator              the numerator
+     * @param denominatorsMultiplied the denominators multiplied
+     * @return the result of the division
      */
     // TODO Hodvidar
     public static int getFactorialDivision(final int numerator, final int... denominatorsMultiplied) {

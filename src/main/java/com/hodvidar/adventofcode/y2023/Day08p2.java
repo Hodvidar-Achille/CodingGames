@@ -19,6 +19,7 @@ public class Day08p2 extends Day08 {
         private static final String END_NODE_ENDING = "Z";
 
         private final List<Node> firstNodes = new ArrayList<>();
+
         private NetworkV2(final String navigationInstruction) {
             super(navigationInstruction);
         }
@@ -34,14 +35,11 @@ public class Day08p2 extends Day08 {
 
         @Override
         public double getNumberOfStepsToFindEndNode() {
-            double[] counters = firstNodes.stream()
+            final double[] counters = firstNodes.stream()
                     .mapToDouble(n -> this.getNumberOfStepsToFindEndNode(n, END_NODE_ENDING))
                     .toArray();
             final double[] b2 = new double[counters.length - 1];
-            for (int i = 1; i < counters.length; i++) {
-                b2[i - 1] = counters[i];
-            }
-
+            System.arraycopy(counters, 1, b2, 0, counters.length - 1);
             return ArithmeticServices.lowerCommonMultiplier(counters[0], b2);
         }
     }
