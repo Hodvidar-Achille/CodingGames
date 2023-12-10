@@ -1,12 +1,11 @@
 package com.hodvidar.adventofcode.y2020;
 
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class _Day03_2 extends _Day03 {
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         final int result1 = countTrees(sc, 1, 1);
         final int result2 = countTrees(sc, 1, 3);
         final int result3 = countTrees(sc, 1, 5);

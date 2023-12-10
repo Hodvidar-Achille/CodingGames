@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2023;
 
-import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,7 +9,7 @@ public class Day04p2 extends Day04 {
     private CardHolder cardHolder;
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         cardHolder = new CardHolder();
         while (sc.hasNext()) {
             digestLine(sc.nextLine());

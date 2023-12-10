@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2023;
 
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Day05 extends AbstractAdventOfCode2023 {
@@ -13,7 +12,7 @@ public class Day05 extends AbstractAdventOfCode2023 {
     }
 
     @Override
-    public double getResultDouble(final Scanner sc) throws FileNotFoundException {
+    public double getResultDouble(final Scanner sc) {
         seedMapper = getSeedMapper();
         while (sc.hasNext()) {
             digestLine(sc.nextLine());

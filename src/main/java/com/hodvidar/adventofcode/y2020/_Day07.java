@@ -1,8 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
-
-import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +26,7 @@ public class _Day07 extends AbstractAdventOfCode2020 {
     }
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         return countBagInsideGoldenBag(sc);
     }
 

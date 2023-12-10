@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2023;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +13,7 @@ public class Day06 extends AbstractAdventOfCode2023 {
     }
 
     @Override
-    public double getResultDouble(final Scanner sc) throws FileNotFoundException {
+    public double getResultDouble(final Scanner sc) {
         final List<Double> raceTimes = new ArrayList<>();
         final List<Double> raceRecordDistances = new ArrayList<>();
         Arrays.stream(sc.nextLine().split("Time:")[1].trim().split("\\s+")).mapToDouble(Double::parseDouble).forEach(raceTimes::add);

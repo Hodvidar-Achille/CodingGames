@@ -16,6 +16,7 @@ public abstract class AbstractAdventOfCode {
     private static final String INPUT_DIRECTORY = "adventofcode_"; // input1
 
     private final String inputDirectory;
+
     protected AbstractAdventOfCode(final int year) {
         this.inputDirectory = INPUT_DIRECTORY + year;
     }
@@ -34,12 +35,12 @@ public abstract class AbstractAdventOfCode {
         return new Scanner(new File(getInputFilePath()));
     }
 
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         return (int) getResultDouble(sc);
     }
 
     @SuppressWarnings("unused")
-    public double getResultDouble(final Scanner sc) throws FileNotFoundException {
+    public double getResultDouble(final Scanner sc) {
         return Integer.MIN_VALUE;
     }
 

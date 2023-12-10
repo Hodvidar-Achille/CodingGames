@@ -2,7 +2,6 @@ package com.hodvidar.adventofcode.y2023;
 
 import com.hodvidar.utils.geometry.Point;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,7 +19,7 @@ public class Day03 extends AbstractAdventOfCode2023 {
 
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         schematic = new EngineSchematic();
         int y = 0;
         while (sc.hasNext()) {

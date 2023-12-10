@@ -2,14 +2,13 @@ package com.hodvidar.adventofcode.y2020;
 
 import com.hodvidar.utils.regex.NumberExtractor;
 
-import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.Scanner;
 
 public class _Day07_2 extends _Day07 {
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         return countBagInsideGoldenBag(sc);
     }
 

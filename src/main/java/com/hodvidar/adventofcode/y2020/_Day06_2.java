@@ -1,8 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
-
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class _Day06_2 extends AbstractAdventOfCode2020 {
@@ -75,7 +72,7 @@ public class _Day06_2 extends AbstractAdventOfCode2020 {
     }
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
+    public int getResult(final Scanner sc) {
         return countUniqueLetterByGroup(sc);
     }
 

@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,9 +7,8 @@ import java.util.Scanner;
 public class _Day08_2 extends _Day08 {
 
     @Override
-    public int getResult(final Scanner sc) throws FileNotFoundException {
-        final int result = getAccumulatorValueAfterFix(sc);
-        return result;
+    public int getResult(final Scanner sc) {
+        return getAccumulatorValueAfterFix(sc);
     }
 
     public int getAccumulatorValueAfterFix(final Scanner sc) {
