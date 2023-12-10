@@ -34,7 +34,7 @@ public class Day09 extends AbstractAdventOfCode2023 {
                 .mapToDouble(Double::parseDouble).toArray()).boxed().collect(Collectors.toList()));
     }
 
-    private class EnvironmentalReport {
+    protected class EnvironmentalReport {
 
         final List<List<Double>> firstSequences = new ArrayList<>();
 
@@ -46,7 +46,7 @@ public class Day09 extends AbstractAdventOfCode2023 {
             return firstSequences.stream().mapToDouble(this::getExtrapolatedValue).sum();
         }
 
-        private double getExtrapolatedValue(final List<Double> sequence) {
+        protected double getExtrapolatedValue(final List<Double> sequence) {
             final List<Double> subSequence = getSubSequenceOfDifferences(sequence);
             if (subSequence.stream().allMatch(d -> d == 0d)) {
                 return sequence.getLast();
@@ -58,7 +58,7 @@ public class Day09 extends AbstractAdventOfCode2023 {
             return sequence.getLast() + subSequence.getLast();
         }
 
-        private void computeExtrapolatedValueUsingSubSequences(final List<Double> parentSequence) {
+        protected void computeExtrapolatedValueUsingSubSequences(final List<Double> parentSequence) {
             final List<Double> subSequence = getSubSequenceOfDifferences(parentSequence);
             if (subSequence.stream().distinct().count() > 1) {
                 computeExtrapolatedValueUsingSubSequences(subSequence);
@@ -66,7 +66,7 @@ public class Day09 extends AbstractAdventOfCode2023 {
             parentSequence.add(parentSequence.getLast() + subSequence.getLast());
         }
 
-        private List<Double> getSubSequenceOfDifferences(final List<Double> parentSequence) {
+        protected List<Double> getSubSequenceOfDifferences(final List<Double> parentSequence) {
             final List<Double> subSequence = new ArrayList<>();
             for (int i = 0; i < parentSequence.size() - 1; i++) {
                 subSequence.add(parentSequence.get(i + 1) - parentSequence.get(i));
