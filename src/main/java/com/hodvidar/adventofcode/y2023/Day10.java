@@ -10,7 +10,7 @@ import static com.hodvidar.adventofcode.y2023.Day10.Pipe.getPipe;
 
 public class Day10 extends AbstractAdventOfCode2023 {
 
-    private PipeNetwork network;
+    protected PipeNetwork network;
 
     @Override
     public int getDay() {
@@ -26,7 +26,7 @@ public class Day10 extends AbstractAdventOfCode2023 {
         return network.getMaxDistance();
     }
 
-    private PipeNetwork getNetwork() {
+    protected PipeNetwork getNetwork() {
         return new PipeNetwork();
     }
 
@@ -35,12 +35,15 @@ public class Day10 extends AbstractAdventOfCode2023 {
         network.addLine(line);
     }
 
-    private class PipeNetwork {
+    protected class PipeNetwork {
 
         public static final char START = 'S';
 
         private final List<String> lines = new ArrayList<>();
         protected char[][] map;
+
+        protected PipeNavigator navigator1;
+        protected PipeNavigator navigator2;
 
 
         public void addLine(final String line) {
@@ -57,13 +60,17 @@ public class Day10 extends AbstractAdventOfCode2023 {
             }
             final Point start = findStart();
             final Direction[] startDirection = getStartDirection(start);
-            final PipeNavigator navigator1 = new PipeNavigator(this, start, startDirection[0]);
-            final PipeNavigator navigator2 = new PipeNavigator(this, start, startDirection[1]);
+            navigator1 = getNavigator(start, startDirection[0]);
+            navigator2 = getNavigator(start, startDirection[1]);
             while (!(navigator1.getX() == navigator2.getX() && navigator1.getY() == navigator2.getY())) {
                 navigator1.goToNext();
                 navigator2.goToNext();
             }
             return navigator1.getCurrentDistance();
+        }
+
+        protected PipeNavigator getNavigator(final Point start, final Direction from) {
+            return new PipeNavigator(this, start, from);
         }
 
         private Direction[] getStartDirection(final Point start) {
@@ -122,11 +129,11 @@ public class Day10 extends AbstractAdventOfCode2023 {
         }
     }
 
-    private class PipeNavigator {
+    protected class PipeNavigator {
 
-        private final char[][] map;
-        private int x;
-        private int y;
+        protected final char[][] map;
+        protected int x;
+        protected int y;
 
         private Direction from;
 

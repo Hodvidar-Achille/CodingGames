@@ -1,5 +1,6 @@
 package com.hodvidar.utils.geometry;
 
+// TODO, change into a record
 /**
  * 2D Point
  *
