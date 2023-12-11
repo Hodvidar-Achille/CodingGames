@@ -97,7 +97,7 @@ public abstract class AbstractTestForAdventOfCode {
     }
 
 
-    private Stream<Arguments> getExpectedTestResults() {
+    protected Stream<Arguments> getExpectedTestResults() {
         return Stream.of(Arguments.of(getNumberOfTheTest(), getExpectedTestResultDouble()));
     }
 
