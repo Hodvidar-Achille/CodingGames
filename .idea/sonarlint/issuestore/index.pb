@@ -185,3 +185,5 @@ h
 8src/main/java/com/hodvidar/adventofcode/y2023/Day06.java,b\2\b261441883a2c0b788f4f4d415872c99330c6086
 j
 :src/main/java/com/hodvidar/adventofcode/y2023/Day06p2.java,5\e\5e9ddab465286355ab144fe817af38a59c926e9d
+h
+8src/main/java/com/hodvidar/adventofcode/y2023/Day10.java,b\d\bde71f8f2ae464cd75c1c889f07ad9d9f6fd6750
