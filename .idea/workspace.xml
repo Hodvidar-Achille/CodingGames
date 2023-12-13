@@ -20,19 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12p2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day12Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day12p2Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input12-test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day13Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input13-test1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AbstractAdventOfCode2023.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AbstractAdventOfCode2023.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01p2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day04.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +107,7 @@
       <recent name="com.hodvidar.leetcode.medium" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CodingGames">
+  <component name="RunManager" selected="JUnit.Day13Test">
     <configuration name="Day12Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
@@ -126,22 +119,6 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day12Test" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day12Test.numberOfPermutations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day12Test" />
-      <option name="METHOD_NAME" value="numberOfPermutations(java.lang.String,int)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,7 +138,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day12p2Test.numberOfPermutations.[6] ?###???????? 3,2,1, 503250" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Day13Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day13Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023.Day12p2Test]/[test-template:numberOfPermutations(java.lang.String, int)]/[test-template-invocation:#6]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -189,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Day13Test" />
         <item itemvalue="JUnit.java in CodingGames" />
         <item itemvalue="JUnit.Day12p2Test" />
         <item itemvalue="JUnit.Day12Test" />
-        <item itemvalue="JUnit.Day12p2Test.numberOfPermutations.[6] ?###???????? 3,2,1, 503250" />
-        <item itemvalue="JUnit.Day12Test.numberOfPermutations" />
+        <item itemvalue="JUnit.[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023.Day12p2Test]/[test-template:numberOfPermutations(java.lang.String, int)]/[test-template-invocation:#6]" />
       </list>
     </recent_temporary>
   </component>
@@ -284,6 +276,7 @@
       <workItem from="1702221793565" duration="35167000" />
       <workItem from="1702422052752" duration="891000" />
       <workItem from="1702458038185" duration="6302000" />
+      <workItem from="1702510478469" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
