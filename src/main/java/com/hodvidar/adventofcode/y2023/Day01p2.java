@@ -16,7 +16,7 @@ public class Day01p2 extends Day01 {
             "nine", "n9e");
 
     @Override
-    protected int getDigitFromLine(final String line) {
+    public double getDigitFromLine(final String line) {
         return super.getDigitFromLine(transformString_dirtyWithOverLapping(line));
     }
 

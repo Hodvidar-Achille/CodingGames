@@ -10,7 +10,7 @@ public class Day04 extends AbstractAdventOfCode2023 {
     }
 
     @Override
-    protected int getDigitFromLine(final String line) {
+    public double getDigitFromLine(final String line) {
         final String[] partsAfterCardNumber = line.split(": ")[1].split("\\|");
         final int[] winningNumbers = Arrays.stream(partsAfterCardNumber[0].trim().split("\\s+")).mapToInt(Integer::parseInt).toArray();
         final int[] numbers = Arrays.stream(partsAfterCardNumber[1].trim().split("\\s+")).mapToInt(Integer::parseInt).toArray();

@@ -17,7 +17,7 @@ public class Day02 extends AbstractAdventOfCode2023 {
 
 
     @Override
-    protected int getDigitFromLine(final String line) {
+    public double getDigitFromLine(final String line) {
         final Pattern pattern = Pattern.compile("Game (\\d+)");
         final Matcher matcher = pattern.matcher(line);
         int gameId = 0;

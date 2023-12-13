@@ -46,4 +46,15 @@ public abstract class AbstractAdventOfCode {
 
     public abstract int getDay();
 
+    @SuppressWarnings("unused")
+    public double getDigitFromLine(final String line) {
+        // Default implementation
+        return 0;
+    }
+
+    @SuppressWarnings("unused")
+    protected void digestLine(final String line) {
+        // Default implementation
+    }
+
 }

@@ -8,7 +8,7 @@ public class Day01 extends AbstractAdventOfCode2023 {
     }
 
     @Override
-    protected int getDigitFromLine(final String line) {
+    public double getDigitFromLine(final String line) {
         final String onlyDigit = line.replaceAll("\\D+", "");
         if (onlyDigit.isEmpty()) {
             return 0;
