@@ -15,11 +15,15 @@ public class Day13 extends AbstractAdventOfCode2023 {
 
     @Override
     public double getResultDouble(final Scanner sc) {
-        valleyOfMirrors = new ValleyOfMirrors();
+        valleyOfMirrors = getValleyOfMirrors();
         while (sc.hasNext()) {
             digestLine(sc.nextLine());
         }
         return valleyOfMirrors.getSummarizedSum();
+    }
+
+    protected ValleyOfMirrors getValleyOfMirrors() {
+        return new ValleyOfMirrors();
     }
 
     @Override
@@ -27,18 +31,22 @@ public class Day13 extends AbstractAdventOfCode2023 {
         valleyOfMirrors.addNewLinePattern(line);
     }
 
-    private static class ValleyOfMirrors {
+    protected static class ValleyOfMirrors {
         private final List<ValleyPattern> patterns = new ArrayList<>();
 
         private int currentPatternIndex = 0;
 
         public ValleyOfMirrors() {
-            patterns.add(new ValleyPattern());
+            patterns.add(getValleyPattern());
+        }
+
+        protected ValleyPattern getValleyPattern() {
+            return new ValleyPattern();
         }
 
         public void addNewLinePattern(final String line) {
             if (line.isBlank()) {
-                patterns.add(new ValleyPattern());
+                patterns.add(getValleyPattern());
                 currentPatternIndex++;
                 return;
             }
@@ -50,7 +58,7 @@ public class Day13 extends AbstractAdventOfCode2023 {
         }
     }
 
-    private static class ValleyPattern {
+    protected static class ValleyPattern {
         private final List<String> horizontalLines = new ArrayList<>();
         private final List<String> verticalLines = new ArrayList<>();
 
@@ -91,7 +99,7 @@ public class Day13 extends AbstractAdventOfCode2023 {
             return -1;
         }
 
-        private boolean checkIfMirror(final List<String> lines,
+        protected boolean checkIfMirror(final List<String> lines,
                                       final int backwardIndex,
                                       final int forwardIndex) {
             if (forwardIndex >= lines.size() || backwardIndex < 0) {
