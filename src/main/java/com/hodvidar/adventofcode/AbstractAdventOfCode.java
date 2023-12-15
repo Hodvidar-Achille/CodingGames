@@ -11,7 +11,7 @@ public abstract class AbstractAdventOfCode {
     /**
      * If 'false' only response and Failure are written
      **/
-    private static final boolean VERBOSE = false;
+    protected static final boolean VERBOSE = false;
 
     private static final String INPUT_DIRECTORY = "adventofcode_"; // input1
 
