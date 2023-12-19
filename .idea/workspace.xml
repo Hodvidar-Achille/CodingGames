@@ -20,21 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day14p2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day15p2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day14Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day14p2Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day15Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day15p2Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input14-test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input15-test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day16p2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/list/ArrayUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day16Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day16p2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input16-test1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input16-test2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input16-test3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2023/input16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/AbstractAdventOfCode.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +115,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.com.hodvidar.adventofcode.y2023 in CodingGames">
-    <configuration name="Day14p2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Day16Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -127,13 +124,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day14p2Test" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day16Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day15p2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Day16Test.checkGetResultForTest.3, 14.0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <extension name="coverage">
         <pattern>
@@ -142,25 +139,43 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day15p2Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day15p2Test.checkGetResultForTest.1, 145.0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day15p2Test" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day16Test" />
       <option name="TEST_OBJECT" value="uniqueId" />
       <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023.Day15p2Test]/[test-template:checkGetResultForTest(int, double)]/[test-template-invocation:#1]" />
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023.Day16Test]/[test-template:checkGetResultForTest(int, double)]/[test-template-invocation:#3]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day16p2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day16p2Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day16p2Test.checkGetResultForTest.1, 51.0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2023.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2023" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2023.Day16p2Test" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.hodvidar.adventofcode.y2023.Day16p2Test]/[test-template:checkGetResultForTest(int, double)]/[test-template-invocation:#1]" />
       </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,21 +195,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.com.hodvidar.adventofcode.y2023 in CodingGames" />
-        <item itemvalue="JUnit.Day15p2Test.checkGetResultForTest.1, 145.0" />
-        <item itemvalue="JUnit.Day15p2Test" />
-        <item itemvalue="JUnit.java in CodingGames" />
-        <item itemvalue="JUnit.Day14p2Test" />
+        <item itemvalue="JUnit.Day16p2Test" />
+        <item itemvalue="JUnit.Day16p2Test.checkGetResultForTest.1, 51.0" />
+        <item itemvalue="JUnit.Day16Test" />
+        <item itemvalue="JUnit.Day16Test.checkGetResultForTest.3, 14.0" />
       </list>
     </recent_temporary>
   </component>
@@ -286,6 +293,8 @@
       <workItem from="1702422052752" duration="891000" />
       <workItem from="1702458038185" duration="6302000" />
       <workItem from="1702510478469" duration="2848000" />
+      <workItem from="1702973170881" duration="897000" />
+      <workItem from="1702974087033" duration="9116000" />
     </task>
     <task id="LOCAL-00001" summary="Added test for RPNCalculator">
       <created>1600603730211</created>
@@ -455,346 +464,23 @@
           </properties>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/srcTest/com/hodvidar/adventofcode/y2020/_Day02_2_Test.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/_Day04_2.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/_Day06_2.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/_Day07.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/srcTest/com/hodvidar/adventofcode/y2020/_Day07_2_Test.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/Bag.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/utils/regex/NumberExtractor.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/_Day08_2.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/hodvidar/adventofcode/y2020/_Day08_2.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/ParenthesisAnalyserTest.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/ParenthesisAnalyser.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>197</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Cylinders.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>167</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>163</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java</url>
-          <line>152</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/RemoveDuplicateFromSortedArray.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/Sorting.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/hard/MergeSeveralSortedLists.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/StringAnalyzer.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBeanCustomTest.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/FourSum.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023Utils.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/AdventOfCode2023Utils.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day01p2Test.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02p2.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02p2.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day03.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day04.java</url>
-          <line>16</line>
-          <properties>
-            <option name="lambda-ordinal" value="1" />
-          </properties>
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day04.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2023/Day02Test.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/AbstractTestForAdventOfCode.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day05p2.java</url>
-          <line>42</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="189" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day06p2.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="191" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="192" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day08.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09p2.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09p2.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09p2.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09p2.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day09p2.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="228" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="230" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="231" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="233" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12p2.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="242" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day15p2.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day15p2.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="245" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day15p2.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="246" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day14p2.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="247" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day14p2.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="248" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.junit.jupiter.api.extension.ParameterResolutionException" package="org.junit.jupiter.api.extension" />
           <option name="timeStamp" value="79" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="257" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="284" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day16p2.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
