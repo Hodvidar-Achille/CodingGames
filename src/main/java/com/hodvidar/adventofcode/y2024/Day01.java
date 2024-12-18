@@ -16,13 +16,13 @@ public class Day01 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    protected void digestLine(String line) {
-        String[] parts = line.trim().split("\\s+");
+    protected void digestLine(final String line) {
+        final String[] parts = line.trim().split("\\s+");
         // Parse the two numbers and add them to the result list
         if (parts.length == 2) {
             try {
-                int number1 = Integer.parseInt(parts[0]);
-                int number2 = Integer.parseInt(parts[1]);
+                final int number1 = Integer.parseInt(parts[0]);
+                final int number2 = Integer.parseInt(parts[1]);
                 listOne.add(number1);
                 listTwo.add(number2);
             } catch (NumberFormatException e) {
