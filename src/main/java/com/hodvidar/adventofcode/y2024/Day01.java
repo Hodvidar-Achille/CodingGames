@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Day01 extends AbstractAdventOfCode2024 {
 
-    private final List<Integer> listOne = new ArrayList<>();
-    private final List<Integer> listTwo = new ArrayList<>();
+    protected final List<Integer> listOne = new ArrayList<>();
+    protected final List<Integer> listTwo = new ArrayList<>();
 
     @Override
     public int getDay() {
