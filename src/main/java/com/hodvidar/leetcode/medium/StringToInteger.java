@@ -4,7 +4,7 @@ package com.hodvidar.leetcode.medium;
 public class StringToInteger {
 
     public static int myAtoi(String s) {
-        if(s == null)
+        if (s == null)
             return 0;
         s = s.trim();
         if (s.isEmpty())

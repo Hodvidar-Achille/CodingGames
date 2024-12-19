@@ -17,12 +17,11 @@ import java.util.stream.Collectors;
  */
 public class FordCircleContainer {
 
-    private List<Circle> circles;
-
     /**
      * Ford circles unordered.
      */
     private final List<FordCircle> fordCircles;
+    private List<Circle> circles;
 
     public FordCircleContainer(final List<Circle> circles) {
         this.circles = circles;
@@ -32,6 +31,18 @@ public class FordCircleContainer {
     public FordCircleContainer() {
         // For optimization build using addCircle(double)
         this.fordCircles = new ArrayList<>();
+    }
+
+    private static String intervalToString(final FordCircleInterval fordCircleInterval) {
+        String r = "left: ";
+        r += fordCircleInterval.getLeftCircle().isPresent() ?
+                fordCircleInterval.getLeftCircle().get().getRadius()
+                : "null";
+        r += " | right: ";
+        r += fordCircleInterval.getRightCircle().isPresent() ?
+                fordCircleInterval.getRightCircle().get().getRadius()
+                : "null";
+        return r;
     }
 
     public void optimizeRadiusPosition(final List<Double> circleRadiusSortedBigToSmall) {
@@ -121,18 +132,6 @@ public class FordCircleContainer {
         System.err.println("Add new position for circle radius=" + circleRadius + " --> " + position + " (between circles "
                 + intervalToString(bestInterval));
         return position;
-    }
-
-    private static String intervalToString(final FordCircleInterval fordCircleInterval) {
-        String r = "left: ";
-        r += fordCircleInterval.getLeftCircle().isPresent() ?
-                fordCircleInterval.getLeftCircle().get().getRadius()
-                : "null";
-        r += " | right: ";
-        r += fordCircleInterval.getRightCircle().isPresent() ?
-                fordCircleInterval.getRightCircle().get().getRadius()
-                : "null";
-        return r;
     }
 
     private List<FordCircleInterval> getIntervals() {

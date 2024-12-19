@@ -30,6 +30,35 @@ public class Day07 extends AbstractAdventOfCode2023 {
         game.addHand(cardAndBid[0], Double.parseDouble(cardAndBid[1]));
     }
 
+    protected enum CamelCardHandType {
+        HIGH_CARD(1), PAIR(2), TWO_PAIR(3), TRIPLE(4), FULL_HOUSE(5), FOUR_OF_A_KIND(6), FIVE_OF_A_KIND(7);
+        public final int power;
+
+        CamelCardHandType(final int power) {
+            this.power = power;
+        }
+
+        public CamelCardHandType getTypeWithJoker(final int numberOfJokers) {
+            if (numberOfJokers == 0) {
+                return this;
+            }
+            if (this == FIVE_OF_A_KIND || this == FULL_HOUSE) {
+                return this;
+            }
+            return getNext().getTypeWithJoker(numberOfJokers - 1);
+        }
+
+        private CamelCardHandType getNext() {
+            return switch (this) {
+                case HIGH_CARD -> PAIR;
+                case PAIR -> TRIPLE;
+                case TWO_PAIR, FULL_HOUSE -> FULL_HOUSE;
+                case TRIPLE -> FOUR_OF_A_KIND;
+                case FOUR_OF_A_KIND, FIVE_OF_A_KIND -> FIVE_OF_A_KIND;
+            };
+        }
+    }
+
     protected class CamelCardGame {
         private final List<CamelCardHand> hands = new ArrayList<>();
 
@@ -60,10 +89,8 @@ public class Day07 extends AbstractAdventOfCode2023 {
 
     protected class CamelCardHand {
         public final char[] cards;
-        public double bid;
-
         public final CamelCardHandType type;
-
+        public double bid;
         private Integer firstCardValue = null;
         private Integer secondCardValue = null;
         private Integer thirdCardValue = null;
@@ -148,34 +175,5 @@ public class Day07 extends AbstractAdventOfCode2023 {
         }
 
 
-    }
-
-    protected enum CamelCardHandType {
-        HIGH_CARD(1), PAIR(2), TWO_PAIR(3), TRIPLE(4), FULL_HOUSE(5), FOUR_OF_A_KIND(6), FIVE_OF_A_KIND(7);
-        public final int power;
-
-        CamelCardHandType(final int power) {
-            this.power = power;
-        }
-
-        public CamelCardHandType getTypeWithJoker(final int numberOfJokers) {
-            if (numberOfJokers == 0) {
-                return this;
-            }
-            if (this == FIVE_OF_A_KIND || this == FULL_HOUSE) {
-                return this;
-            }
-            return getNext().getTypeWithJoker(numberOfJokers - 1);
-        }
-
-        private CamelCardHandType getNext() {
-            return switch (this) {
-                case HIGH_CARD -> PAIR;
-                case PAIR -> TRIPLE;
-                case TWO_PAIR, FULL_HOUSE -> FULL_HOUSE;
-                case TRIPLE -> FOUR_OF_A_KIND;
-                case FOUR_OF_A_KIND, FIVE_OF_A_KIND -> FIVE_OF_A_KIND;
-            };
-        }
     }
 }

@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 // https://www.codingame.com/ide/puzzle/cylinders
 class CylindersSolution {
 
+    private static final int NUMBER_OF_TRIES = 30000;
+
     public static void main(final String[] args) {
         final Scanner in = new Scanner(System.in);
         final int n = in.nextInt();
@@ -36,8 +38,6 @@ class CylindersSolution {
 
         System.out.println(answer);
     }
-
-    private static final int NUMBER_OF_TRIES = 30000;
 
     public static List<Double> extractNumber(final String s) {
         final List<Double> numbers = new ArrayList<>();
@@ -263,7 +263,7 @@ class CylindersSolution {
         public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
-            if (!(obj instanceof Point p))
+            if (!(obj instanceof final Point p))
                 return false;
 
             return this.x == p.x && this.y == p.y;

@@ -55,6 +55,7 @@ public class Day10p2 extends Day10 {
     private class PipeNavigatorV2 extends PipeNavigator {
 
         final List<Point> pathPoints = new ArrayList<>();
+
         public PipeNavigatorV2(final PipeNetwork network, final Point start, final Direction from) {
             super(network, start, from);
             pathPoints.add(start);

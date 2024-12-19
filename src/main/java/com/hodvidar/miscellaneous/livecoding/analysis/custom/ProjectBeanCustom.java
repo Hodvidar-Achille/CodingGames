@@ -4,6 +4,7 @@ package com.hodvidar.miscellaneous.livecoding.analysis.custom;
 
 // import com.edeal.recruitment.ProjectBean;
 // equivalent to:
+
 import com.hodvidar.miscellaneous.livecoding.analysis.ProjectBean;
 
 import java.util.Date;

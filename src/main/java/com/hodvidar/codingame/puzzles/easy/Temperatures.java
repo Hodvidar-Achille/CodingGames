@@ -16,21 +16,21 @@ class Temperatures {
         final String[] listeT = temps.split("\\s+");
         int best = MIN;
         //liste de string à list d'integer
-        if(n > 0) {
-            for(final String s : listeT){
+        if (n > 0) {
+            for (final String s : listeT) {
                 final int i = Integer.parseInt(s);
                 best = getBest(best, i);
             }
         }
-        if(best == MIN) best = 0;
+        if (best == MIN) best = 0;
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
         System.out.println(best);
     }
 
     private static int getBest(final int currentBest, final int current) {
-        if(currentBest == current) return currentBest;
-        if(Math.abs(currentBest) == Math.abs(current)) return Math.abs(currentBest);
+        if (currentBest == current) return currentBest;
+        if (Math.abs(currentBest) == Math.abs(current)) return Math.abs(currentBest);
         return (Math.abs(currentBest) < Math.abs(current)) ? currentBest : current;
     }
 }

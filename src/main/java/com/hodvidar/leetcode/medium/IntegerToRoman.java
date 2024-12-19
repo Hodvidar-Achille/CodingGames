@@ -68,7 +68,7 @@ public class IntegerToRoman {
         final String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         final String[] hrns = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 
-        String romanNumeral = "M".repeat(num / 1000) +
+        final String romanNumeral = "M".repeat(num / 1000) +
                 hrns[(num % 1000) / 100] +
                 tens[(num % 100) / 10] +
                 ones[num % 10];

@@ -35,6 +35,53 @@ public class Day10 extends AbstractAdventOfCode2023 {
         network.addLine(line);
     }
 
+    protected enum Direction {
+        NORTH, SOUTH, EAST, WEST;
+
+        public Direction getNext(final char c) {
+            return getPipe(c).getNext(this);
+        }
+
+        public Direction getOpposite() {
+            return switch (this) {
+                case NORTH -> SOUTH;
+                case SOUTH -> NORTH;
+                case EAST -> WEST;
+                case WEST -> EAST;
+            };
+        }
+    }
+
+    protected enum Pipe {
+        VERTICAL(), HORIZONTAL(), CORNER_NE(), CORNER_NW(), CORNER_SW(), CORNER_SE(), NONE();
+
+        public static Pipe getPipe(final char c) {
+            return switch (c) {
+                case '|' -> VERTICAL;
+                case '-' -> HORIZONTAL;
+                case 'L' -> CORNER_NE;
+                case 'J' -> CORNER_NW;
+                case '7' -> CORNER_SW;
+                case 'F' -> CORNER_SE;
+                default -> NONE;
+            };
+        }
+
+        public Direction getNext(final Direction from) {
+            return switch (this) {
+                case VERTICAL -> from == Direction.NORTH ? Direction.SOUTH : Direction.NORTH;
+                case HORIZONTAL -> from == Direction.EAST ? Direction.WEST : Direction.EAST;
+                case CORNER_NE -> from == Direction.NORTH ? Direction.EAST : Direction.NORTH;
+                case CORNER_NW -> from == Direction.NORTH ? Direction.WEST : Direction.NORTH;
+                case CORNER_SW -> from == Direction.SOUTH ? Direction.WEST : Direction.SOUTH;
+                case CORNER_SE -> from == Direction.SOUTH ? Direction.EAST : Direction.SOUTH;
+                case NONE -> throw new IllegalStateException("No next direction for NONE");
+            };
+        }
+
+
+    }
+
     protected class PipeNetwork {
 
         public static final char START = 'S';
@@ -175,53 +222,6 @@ public class Day10 extends AbstractAdventOfCode2023 {
 
         public int getCurrentDistance() {
             return currentDistance;
-        }
-
-
-    }
-
-    protected enum Direction {
-        NORTH, SOUTH, EAST, WEST;
-
-        public Direction getNext(final char c) {
-            return getPipe(c).getNext(this);
-        }
-
-        public Direction getOpposite() {
-            return switch (this) {
-                case NORTH -> SOUTH;
-                case SOUTH -> NORTH;
-                case EAST -> WEST;
-                case WEST -> EAST;
-            };
-        }
-    }
-
-    protected enum Pipe {
-        VERTICAL(), HORIZONTAL(), CORNER_NE(), CORNER_NW(), CORNER_SW(), CORNER_SE(), NONE();
-
-        public static Pipe getPipe(final char c) {
-            return switch (c) {
-                case '|' -> VERTICAL;
-                case '-' -> HORIZONTAL;
-                case 'L' -> CORNER_NE;
-                case 'J' -> CORNER_NW;
-                case '7' -> CORNER_SW;
-                case 'F' -> CORNER_SE;
-                default -> NONE;
-            };
-        }
-
-        public Direction getNext(final Direction from) {
-            return switch (this) {
-                case VERTICAL -> from == Direction.NORTH ? Direction.SOUTH : Direction.NORTH;
-                case HORIZONTAL -> from == Direction.EAST ? Direction.WEST : Direction.EAST;
-                case CORNER_NE -> from == Direction.NORTH ? Direction.EAST : Direction.NORTH;
-                case CORNER_NW -> from == Direction.NORTH ? Direction.WEST : Direction.NORTH;
-                case CORNER_SW -> from == Direction.SOUTH ? Direction.WEST : Direction.SOUTH;
-                case CORNER_SE -> from == Direction.SOUTH ? Direction.EAST : Direction.SOUTH;
-                case NONE -> throw new IllegalStateException("No next direction for NONE");
-            };
         }
 
 

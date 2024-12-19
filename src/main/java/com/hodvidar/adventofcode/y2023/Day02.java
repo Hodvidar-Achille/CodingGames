@@ -5,10 +5,10 @@ import java.util.regex.Pattern;
 
 public class Day02 extends AbstractAdventOfCode2023 {
 
+    public static final int NUMBER_OF_RED = 12;
     protected static final String BLUE = "blue";
     protected static final String RED = "red";
     protected static final String GREEN = "green";
-    public static final int NUMBER_OF_RED = 12;
     private final CubeConditionChecker checker;
 
     public Day02() {

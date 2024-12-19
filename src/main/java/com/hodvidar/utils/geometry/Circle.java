@@ -47,7 +47,7 @@ public class Circle implements GeometricForm {
         // System.err.println("Circle.isInside...");
         final double r = this.radius * this.radius;
         final double x = Math.pow((p.getX() - this.center.getX()), 2);
-        final double y = Math.pow((p.getY()- this.center.getY()), 2);
+        final double y = Math.pow((p.getY() - this.center.getY()), 2);
         return x + y <= r;
     }
 

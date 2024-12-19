@@ -1,14 +1,9 @@
 package com.hodvidar.formation.algorithms;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 public class TwoPointers {
 
     public static int[] reverseIntArray(final int[] array) {
-        if(array == null || array.length == 0)
+        if (array == null || array.length == 0)
             return array;
 
         int indexStart = 0;
@@ -34,7 +29,7 @@ public class TwoPointers {
         final char[] c = s.toCharArray();
         int indexStart = 0;
         int indexEnd = c.length - 1;
-        while(indexStart < indexEnd) {
+        while (indexStart < indexEnd) {
             if (c[indexStart] != c[indexEnd]) return false;
             indexStart++;
             indexEnd--;

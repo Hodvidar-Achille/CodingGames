@@ -275,7 +275,7 @@ class Aneo {
         public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
-            if (!(obj instanceof Interval o))
+            if (!(obj instanceof final Interval o))
                 return false;
 
             return this.min == o.min && this.max == o.max;

@@ -34,21 +34,31 @@ public class Day11 extends AbstractAdventOfCode2023 {
 
     protected static class SpaceImage {
 
-        private final double spaceExpansionRate;
         public static final char GALAXY = '#';
+        private final double spaceExpansionRate;
         private final List<char[]> horizontalLines = new ArrayList<>();
-
-        private double currentHorizontalLineIndex = 0;
         private final List<Double> horizontalLineIndexes = new ArrayList<>();
         private final List<char[]> verticalLines = new ArrayList<>();
-
-        private double currentVerticalLineIndex = 0;
         private final List<Double> verticalLineIndexes = new ArrayList<>();
-
         private final List<Point> galaxies = new ArrayList<>();
+        private double currentHorizontalLineIndex = 0;
+        private double currentVerticalLineIndex = 0;
 
         protected SpaceImage(final double spaceExpansionRate) {
             this.spaceExpansionRate = spaceExpansionRate;
+        }
+
+        private static Point findNearestPoint(final Point current, final Set<Point> unvisited) {
+            Point nearest = null;
+            double nearestDistance = Double.MAX_VALUE;
+            for (final Point point : unvisited) {
+                final double distance = current.getManhattanDistanceTo(point);
+                if (distance < nearestDistance) {
+                    nearest = point;
+                    nearestDistance = distance;
+                }
+            }
+            return nearest;
         }
 
         public void addLine(final String line) {
@@ -61,7 +71,6 @@ public class Day11 extends AbstractAdventOfCode2023 {
             }
             horizontalLineIndexes.add(currentHorizontalLineIndex);
         }
-
 
         public double computeTotalDistanceBetweenEachGalaxyPair() {
             buildVerticalLines();
@@ -121,11 +130,9 @@ public class Day11 extends AbstractAdventOfCode2023 {
             }
         }
 
-
         private boolean IsLineEmptySpace(final char[] verticalLine) {
             return IntStream.range(0, verticalLine.length).allMatch(j -> verticalLine[j] == '.');
         }
-
 
         // ############ NOT USED ############
         public double computeShortestPathBetweenGalaxies() {
@@ -146,19 +153,6 @@ public class Day11 extends AbstractAdventOfCode2023 {
                 unvisited.remove(nearest);
             }
             return totalDistance;
-        }
-
-        private static Point findNearestPoint(final Point current, final Set<Point> unvisited) {
-            Point nearest = null;
-            double nearestDistance = Double.MAX_VALUE;
-            for (final Point point : unvisited) {
-                final double distance = current.getManhattanDistanceTo(point);
-                if (distance < nearestDistance) {
-                    nearest = point;
-                    nearestDistance = distance;
-                }
-            }
-            return nearest;
         }
     }
 }

@@ -167,7 +167,7 @@ class TheTravellingSalesmanProblem {
             // System.err.println("Node.equals(obj)...");
             if (obj == null)
                 return false;
-            if (!(obj instanceof Node n))
+            if (!(obj instanceof final Node n))
                 return false;
 
             if (this.position != n.position)

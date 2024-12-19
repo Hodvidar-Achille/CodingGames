@@ -1,8 +1,22 @@
 package com.hodvidar.adventofcode.y2024;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Day02 extends AbstractAdventOfCode2024 {
+
+    public static int[] removeElementAtIndex(final int[] numbers, final int indexToRemove) {
+        if (indexToRemove < 0 || indexToRemove >= numbers.length) {
+            throw new IllegalArgumentException("Index out of bounds: " + indexToRemove);
+        }
+
+        final int[] result = new int[numbers.length - 1];
+        for (int i = 0, j = 0; i < numbers.length; i++) {
+            if (i != indexToRemove) {
+                result[j++] = numbers[i];
+            }
+        }
+        return result;
+    }
 
     @Override
     public int getDay() {
@@ -56,19 +70,5 @@ public class Day02 extends AbstractAdventOfCode2024 {
             return 1;
         }
         return isSafe(removeElementAtIndex(numbers, index + 1), tries - 1);
-    }
-
-    public static int[] removeElementAtIndex(final int[] numbers, final int indexToRemove) {
-        if (indexToRemove < 0 || indexToRemove >= numbers.length) {
-            throw new IllegalArgumentException("Index out of bounds: " + indexToRemove);
-        }
-
-        final int[] result = new int[numbers.length - 1];
-        for (int i = 0, j = 0; i < numbers.length; i++) {
-            if (i != indexToRemove) {
-                result[j++] = numbers[i];
-            }
-        }
-        return result;
     }
 }

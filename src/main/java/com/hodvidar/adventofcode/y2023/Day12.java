@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Day12 extends AbstractAdventOfCode2023 {
 
-    private final Map<SpringRow, Double> memoizationMap = new HashMap<>();
     private static final char WORKING_STATE = '.';
     private static final char UNKNOWN_STATE = '?';
     private static final char DAMAGED_STATE = '#';
+    private final Map<SpringRow, Double> memoizationMap = new HashMap<>();
 
     @Override
     public int getDay() {

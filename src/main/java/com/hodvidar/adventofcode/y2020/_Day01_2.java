@@ -1,7 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.Collector;
 
 /**
- *  https://leetcode.com/problems/longest-common-prefix/
+ * https://leetcode.com/problems/longest-common-prefix/
  */
 public class LongestCommonPrefix {
 
@@ -19,14 +19,14 @@ public class LongestCommonPrefix {
                 .min()
                 .orElse(0);
 
-        if(smallestSize == 0) return "";
+        if (smallestSize == 0) return "";
         final int numberOfArrays = strs.length;
 
         final StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < smallestSize; i++) {
+        for (int i = 0; i < smallestSize; i++) {
             final char currentChar = arraysOfLetters[0][i];
-            for(int j = 1; j < numberOfArrays; j++) {
-                if(currentChar != arraysOfLetters[j][i]) return sb.toString();
+            for (int j = 1; j < numberOfArrays; j++) {
+                if (currentChar != arraysOfLetters[j][i]) return sb.toString();
             }
             sb.append(currentChar);
         }
@@ -60,14 +60,14 @@ public class LongestCommonPrefix {
 
         final int smallestSize = arraysOfLetters[0].length;
 
-        if(smallestSize == 0) return "";
+        if (smallestSize == 0) return "";
         final int numberOfArrays = strs.length;
 
         final StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < smallestSize; i++) {
+        for (int i = 0; i < smallestSize; i++) {
             final char currentChar = arraysOfLetters[0][i];
-            for(int j = 1; j < numberOfArrays; j++) {
-                if(currentChar != arraysOfLetters[j][i]) return sb.toString();
+            for (int j = 1; j < numberOfArrays; j++) {
+                if (currentChar != arraysOfLetters[j][i]) return sb.toString();
             }
             sb.append(currentChar);
         }

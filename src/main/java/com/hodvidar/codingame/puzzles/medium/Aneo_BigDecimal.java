@@ -282,7 +282,7 @@ class Aneo_BigDecimal {
         public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
-            if (!(obj instanceof Interval o))
+            if (!(obj instanceof final Interval o))
                 return false;
 
             final boolean sameMin = this.min.compareTo(o.min) == 0;

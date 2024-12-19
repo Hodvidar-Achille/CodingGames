@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractTestForAdventOfCode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -27,7 +26,8 @@ public class _Day06_Test extends AbstractTestForAdventOfCode2020 {
             "abcxabcyabcz | 6"
     })
     void checkCountUniqueCharacters(final String code, final int expectedResult) throws FileNotFoundException {
-        final int result = new _Day06().countUniqueCharacters(code);
+        new _Day06();
+        final int result = _Day06.countUniqueCharacters(code);
         assertThat(result).isEqualTo(expectedResult);
     }
 

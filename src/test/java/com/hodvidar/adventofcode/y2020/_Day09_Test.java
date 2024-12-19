@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractTestForAdventOfCode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -39,7 +38,8 @@ public class _Day09_Test extends AbstractTestForAdventOfCode2020 {
             "1 = 127"
     })
     void checkInvalidValueForFiVeNumberForSum(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
-        assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
+        new _Day09();
+        assertThat(_Day09.readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
     }
 
     @ParameterizedTest
@@ -50,13 +50,15 @@ public class _Day09_Test extends AbstractTestForAdventOfCode2020 {
             "4 | 5 | 320",
     })
     void checkInvalidValueForFiVeNumberForSum(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
-        assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), numberOfNumberToUseForSums)).isEqualTo(expectedResult);
+        new _Day09();
+        assertThat(_Day09.readValuesAndLookForInvalid(getScanner(numberOfTheTest), numberOfNumberToUseForSums)).isEqualTo(expectedResult);
     }
 
     @ParameterizedTest
     @MethodSource("generateData")
     void checkInvalidValueForFiVeNumberForSum_method_source(final int numberOfTheTest, final int numberOfNumberToUseForSums, final int expectedResult) throws FileNotFoundException {
-        assertThat(new _Day09().readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
+        new _Day09();
+        assertThat(_Day09.readValuesAndLookForInvalid(getScanner(numberOfTheTest), 5)).isEqualTo(expectedResult);
     }
 
 }

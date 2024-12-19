@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * <a href="https://medium.com/@bhaskarsharan/practice-java-streams-questions-8a76cbfee1be">
- *     Medium article "practice-java-streams-questions" by @bhaskarsharan
+ * Medium article "practice-java-streams-questions" by @bhaskarsharan
  * </a>
  * <p>
  * From the employee list got from EmployeeFactory:
@@ -213,7 +213,7 @@ class StreamTests {
     // 11. List of all projects with Robert Downey Jr as PM.
     @Test
     void numberOfProjectsWithRD() {
-        List<Project> projectsWithRobertDowney = employees.stream()
+        final List<Project> projectsWithRobertDowney = employees.stream()
                 .flatMap(employee -> employee.getProjects().stream())
                 .distinct()
                 .filter(project -> project.getProjectManager().equals("Robert Downey Jr"))

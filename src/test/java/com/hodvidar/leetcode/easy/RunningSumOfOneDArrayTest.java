@@ -1,6 +1,5 @@
 package com.hodvidar.leetcode.easy;
 
-import com.hodvidar.leetcode.easy.RunningSumOfOneDArray;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

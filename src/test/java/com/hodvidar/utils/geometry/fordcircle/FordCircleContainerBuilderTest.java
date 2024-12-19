@@ -15,6 +15,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class FordCircleContainerBuilderTest {
 
+    private static List<Circle> getFordCirclesFromString(final String circles) {
+        return getFordCirclesFromNumbers(NumberExtractor.extractNumber(circles));
+    }
+
+    private static List<Circle> getFordCirclesFromNumbers(final List<Double> numbers) {
+        if (numbers.isEmpty()) {
+            return Collections.emptyList();
+        }
+        if (numbers.size() % 2 != 0) {
+            throw new IllegalArgumentException("The number of numbers must be a multiple of 3.");
+        }
+        final int size = numbers.size();
+        final List<Circle> circles = new ArrayList<>(size / 2);
+        for (int i = 0; i < size; i += 2) {
+            circles.add(new Circle(new Point(numbers.get(i), numbers.get(i + 1)), numbers.get(i + 1)));
+        }
+        return circles;
+    }
+
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
             "[{1.0, 1.0}] | {1.0, 1.0} | 1 | 3.0",
@@ -38,24 +57,5 @@ class FordCircleContainerBuilderTest {
                 radiusOfNewCircle);
         assertThat(DoubleFormater.roundTo3rdDecimal(newCircle.getCenter().getX()))
                 .isEqualTo(expectedXcoordinateOfNewCircle);
-    }
-
-    private static List<Circle> getFordCirclesFromString(final String circles) {
-        return getFordCirclesFromNumbers(NumberExtractor.extractNumber(circles));
-    }
-
-    private static List<Circle> getFordCirclesFromNumbers(final List<Double> numbers) {
-        if (numbers.isEmpty()) {
-            return Collections.emptyList();
-        }
-        if (numbers.size() % 2 != 0) {
-            throw new IllegalArgumentException("The number of numbers must be a multiple of 3.");
-        }
-        final int size = numbers.size();
-        final List<Circle> circles = new ArrayList<>(size / 2);
-        for (int i = 0; i < size; i += 2) {
-            circles.add(new Circle(new Point(numbers.get(i), numbers.get(i + 1)), numbers.get(i + 1)));
-        }
-        return circles;
     }
 }
