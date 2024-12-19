@@ -1,7 +1,5 @@
 package com.hodvidar.adventofcode.y2024;
 
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
-
 public class Day03Test extends AbstractTestForAdventOfCode2024 {
     protected Day03Test() {
         super(new Day03());

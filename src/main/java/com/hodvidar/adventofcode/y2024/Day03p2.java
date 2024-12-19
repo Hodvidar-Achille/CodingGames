@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Day03p2 extends Day03 {
 
     private static final String ACTIVATE = "a";
-    private static final String DESACTIVATE = "d";
+    private static final String DEACTIVATE = "d";
 
     @Override
     public double getDigitFromLine(final String line) {
@@ -21,7 +21,7 @@ public class Day03p2 extends Day03 {
                 isActive = true;
                 continue;
             }
-            if(DESACTIVATE.equals(order)) {
+            if(DEACTIVATE.equals(order)) {
                 isActive = false;
                 continue;
             }
@@ -62,12 +62,12 @@ public class Day03p2 extends Day03 {
 
         // Extract do() matches
         while (doMatcher.find()) {
-            matches.add(new Match(doMatcher.start(), "a")); // Activated
+            matches.add(new Match(doMatcher.start(), ACTIVATE));
         }
 
         // Extract don't() matches
         while (dontMatcher.find()) {
-            matches.add(new Match(dontMatcher.start(), "d")); // Deactivated
+            matches.add(new Match(dontMatcher.start(), DEACTIVATE));
         }
 
         // Sort matches by index to maintain original order
