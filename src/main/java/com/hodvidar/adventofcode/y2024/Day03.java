@@ -17,7 +17,7 @@ public class Day03 extends AbstractAdventOfCode2024 {
         return correctMultiplicationOrder.stream().mapToDouble(Day03::Multiply).sum();
     }
 
-    private static double Multiply(final String multiplyOrder) {
+    protected static double Multiply(final String multiplyOrder) {
         final String content = multiplyOrder.substring(multiplyOrder.indexOf('(') + 1, multiplyOrder.indexOf(')'));
         final String[] parts = content.split(",");
         final int number1 = Integer.parseInt(parts[0]);
