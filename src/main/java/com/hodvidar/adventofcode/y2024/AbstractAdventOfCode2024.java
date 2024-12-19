@@ -11,15 +11,15 @@ public abstract class AbstractAdventOfCode2024 extends AbstractAdventOfCode {
 
     @Override
     public double getResultDouble(final Scanner sc) {
-        return getResult(sc);
-    }
-
-    @Override
-    public int getResult(final Scanner sc) {
-        int counter = 0;
+        double counter = 0;
         while (sc.hasNext()) {
             counter += getDigitFromLine(sc.nextLine());
         }
         return counter;
+    }
+
+    @Override
+    public int getResult(final Scanner sc) {
+        return (int) getResultDouble(sc);
     }
 }

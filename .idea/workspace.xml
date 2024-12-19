@@ -20,65 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e499ec19-261b-4831-b0d5-94fff8dfc578" name="Default Changelist" comment="Finished Day08_2 and clean code.&#10;And modified tests to add more automation">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2020/_Day01_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day01p2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day07p2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day10p2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day13p2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day13p2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2023/Day16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2024/Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2024/Day02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/coderbyte/hard/BracketCombinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/coderbyte/hard/BracketCombinations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/RetroTypewriterArt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/RetroTypewriterArt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/Temperatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/Temperatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheTravellingSalesmanProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/easy/TheTravellingSalesmanProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_BigDecimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Integer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/Aneo_Integer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/CylindersSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/codingame/puzzles/medium/CylindersSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/TwoPointers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/formation/algorithms/TwoPointers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/IsIntegerPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/IsIntegerPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/LongestCommonPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/easy/LongestCommonPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/IntegerToRoman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/IntegerToRoman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/StringToInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/leetcode/medium/StringToInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/ProjectBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/custom/ProjectBeanCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/miscellaneous/livecoding/analysis/custom/ProjectBeanCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/file/Constance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Point3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rhombus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/Rhombus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_p_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day01_p_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day02_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day03_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day04_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day05_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day05_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day06_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day07_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_2_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_2_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day08_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2020/_Day09_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/formation/java8/streams/StreamTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/easy/RunningSumOfOneDArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/hard/MedianOfTwoSortedArraysTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/FourSumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/FourSumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LetterCombinationsOfPhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LetterCombinationsOfPhoneNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/leetcode/medium/LongestPalindromicSubstringTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleContainerBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleIntervalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/utils/geometry/fordcircle/FordCircleIntervalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2024/Day03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hodvidar/adventofcode/y2024/Day03Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2024/input3-test1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/adventofcode_2024/input3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2024/AbstractAdventOfCode2024.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hodvidar/adventofcode/y2024/AbstractAdventOfCode2024.java" afterDir="false" />
     </list>
     <list id="d0b7b6e6-04b2-42dd-b56b-ef54bef89ae4" name="ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +79,7 @@
     "JUnit.Day02Test.executor": "Run",
     "JUnit.Day02p2Test.checkMiddle.executor": "Run",
     "JUnit.Day02p2Test.executor": "Run",
+    "JUnit.Day03Test.executor": "Run",
     "JUnit.com.hodvidar.adventofcode.y2024 in CodingGames.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -168,7 +116,7 @@
       <recent name="com.hodvidar.leetcode.medium" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in CodingGames">
+  <component name="RunManager" selected="JUnit.Day03Test">
     <configuration name="All in CodingGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingGames" />
       <option name="PACKAGE_NAME" value="" />
@@ -188,22 +136,6 @@
       <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2024" />
       <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2024.Day02Test" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day02Test.checkMiddle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodingGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hodvidar.adventofcode.y2024.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2024" />
-      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2024.Day02Test" />
-      <option name="METHOD_NAME" value="checkMiddle(java.lang.String,double)" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -239,13 +171,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day03Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hodvidar.adventofcode.y2024.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hodvidar.adventofcode.y2024" />
+      <option name="MAIN_CLASS_NAME" value="com.hodvidar.adventofcode.y2024.Day03Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Day03Test" />
         <item itemvalue="JUnit.All in CodingGames" />
         <item itemvalue="JUnit.Day02p2Test" />
         <item itemvalue="JUnit.Day02Test" />
         <item itemvalue="JUnit.Day02p2Test.checkMiddle" />
-        <item itemvalue="JUnit.Day02Test.checkMiddle" />
       </list>
     </recent_temporary>
   </component>
