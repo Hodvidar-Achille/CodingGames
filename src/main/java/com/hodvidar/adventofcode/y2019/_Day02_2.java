@@ -50,7 +50,7 @@ public final class _Day02_2 {
 
         for (int i = 0; i <= 99; i++) {
             for (int j = 0; j <= 99; j++) {
-                printIfVerbose("test:" + i + "" + j);
+                printIfVerbose("test:" + i + j);
                 opCode[1] = i;
                 opCode[2] = j;
                 printIfVerbose("Before programme:\n" + arrayToString(opCode));

@@ -99,7 +99,6 @@ class WinamaxBattle {
             computeMatch(p1cards, p1cardsSide, p2cards, p2cardsSide, true);
         }
 
-        return;
     }
 
     @SuppressWarnings("unused")

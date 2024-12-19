@@ -67,7 +67,6 @@ public class BowlingGame {
             previousWasSpare = true;
         }
         resetVariablesForNextFrame();
-        return;
     }
 
     private void resetVariablesForNextFrame() {

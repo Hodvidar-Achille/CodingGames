@@ -72,7 +72,7 @@ public final class _Day14_2 {
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + resultStr + "'");
         System.err.println("Took:'" + diffStr + "'");
-        return "" + resultStr;
+        return resultStr;
     }
 
     private static String test(final String inputFile) throws Exception {

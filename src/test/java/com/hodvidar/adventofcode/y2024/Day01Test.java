@@ -12,11 +12,6 @@ public class Day01Test extends AbstractTestForAdventOfCode2024 {
     }
 
     @Override
-    protected int getNumberOfTheTest() {
-        return 1;
-    }
-
-    @Override
     protected int getExpectedTestResult() {
         return 11;
     }

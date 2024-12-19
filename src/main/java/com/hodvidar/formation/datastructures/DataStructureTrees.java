@@ -2,6 +2,7 @@ package com.hodvidar.formation.datastructures;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class DataStructureTrees {
 
@@ -17,9 +18,7 @@ public class DataStructureTrees {
         public TreeNode(final V value, final TreeNode<V>... child) {
             this.value = value;
             this.children = new ArrayList<>();
-            for (final TreeNode<V> c : child) {
-                this.children.add(c);
-            }
+            Collections.addAll(this.children, child);
         }
 
         public void addChild(final TreeNode<V> treeNode) {

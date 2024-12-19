@@ -59,7 +59,7 @@ public final class _Day05 {
         for (int i = 0; i < opCode.length; /* empty increment do it yourself */) {
             final int code = opCode[i];
             printIfVerbose("code: " + code);
-            printIfVerbose("" + arrayToString(opCode));
+            printIfVerbose(arrayToString(opCode));
             if (code == 1 || code == 2) {
                 opCode1_2(code, opCode, i, POSITION_MODE, POSITION_MODE);
                 i = i + 4;

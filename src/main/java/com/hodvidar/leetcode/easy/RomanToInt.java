@@ -6,11 +6,11 @@ package com.hodvidar.leetcode.easy;
 public class RomanToInt {
 
     // Runtime 2ms  "Beats 100% of Java users"
-    public static int romanToInt(String s) {
+    public static int romanToInt(final String s) {
         if (s.length() == 1) return getRomanSingleNumber(s.charAt(0));
         int total = 0;
         final char[] romainLettersReversed = s.toCharArray();
-        int length = romainLettersReversed.length;
+        final int length = romainLettersReversed.length;
         int previousNumber = 0;
         for (int i = length - 1; i >= 0; i--) {
             final char c = romainLettersReversed[i];

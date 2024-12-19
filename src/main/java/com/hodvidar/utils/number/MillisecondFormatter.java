@@ -5,7 +5,7 @@ public final class MillisecondFormatter {
     private static final long oneMinute = 60000;
     private static final long oneSeconde = 1000;
 
-    public static final String asTime(long millisecondes) {
+    public static String asTime(long millisecondes) {
         String time = "";
         final long hour = Math.floorDiv(millisecondes, oneHour);
         time += hour + " hour(s) ";

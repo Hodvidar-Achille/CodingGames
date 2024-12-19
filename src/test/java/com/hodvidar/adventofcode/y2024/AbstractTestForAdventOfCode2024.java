@@ -7,4 +7,9 @@ public abstract class AbstractTestForAdventOfCode2024 extends AbstractTestForAdv
     protected AbstractTestForAdventOfCode2024(final AbstractAdventOfCode testedClass) {
         super(testedClass, 2024);
     }
+
+    @Override
+    protected int getNumberOfTheTest() {
+        return 1;
+    }
 }

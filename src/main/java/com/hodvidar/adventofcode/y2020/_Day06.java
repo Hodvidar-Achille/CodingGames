@@ -37,7 +37,7 @@ public class _Day06 extends AbstractAdventOfCode2020 {
 
         int count = 0;
         for (int i = 0; i < isItThere.length; i++) {
-            if (isItThere[i] == true) {
+            if (isItThere[i]) {
                 count++;
             }
         }

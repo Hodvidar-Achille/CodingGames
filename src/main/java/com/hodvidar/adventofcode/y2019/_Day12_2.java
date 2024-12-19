@@ -78,7 +78,7 @@ public final class _Day12_2 {
         System.err.println(
                 "Expected nbSteps:'" + expectingNbStepToInitState + "'");
         System.err.println("Found:'" + valueStr + "' (in " + diffStr + "ms).");
-        return "" + valueStr;
+        return valueStr;
     }
 
     private static String test(final String inputFile) throws Exception {

@@ -57,7 +57,7 @@ class MayTheTrifoceBeWithYou {
             numberOfStar += 2;
         }
 
-        System.out.println(sb.toString());
+        System.out.println(sb);
         in.close();
     }
 

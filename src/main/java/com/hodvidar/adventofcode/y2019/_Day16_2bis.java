@@ -67,7 +67,7 @@ public final class _Day16_2bis {
         final String diffStr = MillisecondFormatter.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "' took:" + diffStr);
-        return "" + result;
+        return result;
     }
 
     private static String test(final String inputFile) throws Exception {
@@ -114,7 +114,7 @@ public final class _Day16_2bis {
                     charIdx += skip;
                     continue;
                 }
-                acc = acc + n * val;
+                acc = acc + (long) n * val;
             }
             res.append(Math.abs(acc) % 10);
         }

@@ -46,7 +46,7 @@ public class Day05p2 extends Day05 {
         private List<Range> mapRangesToNewRanges(final List<Range> ranges, final List<MappingRange> mappingRanges) {
             final List<Range> newRanges = new ArrayList<>();
             for (final Range range : ranges) {
-                List<MappingRange> relevantMappingRanges = mappingRanges.stream()
+                final List<MappingRange> relevantMappingRanges = mappingRanges.stream()
                         .filter(mr -> mr.isInRange(range.min) || mr.isInRange(range.max))
                         .collect(toList());
                 if (relevantMappingRanges.isEmpty()) {
@@ -90,7 +90,7 @@ public class Day05p2 extends Day05 {
             return newRanges;
         }
 
-        private List<Range> mapRangeToNewRanges(final Range range, MappingRange mappingRange) {
+        private List<Range> mapRangeToNewRanges(final Range range, final MappingRange mappingRange) {
             final List<Range> newRanges = new ArrayList<>();
             if (mappingRange.min() <= range.min() && mappingRange.max() >= range.max()) {
                 // range is fully inside mappingRange

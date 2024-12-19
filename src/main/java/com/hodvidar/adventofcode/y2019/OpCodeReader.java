@@ -492,9 +492,7 @@ public final class OpCodeReader {
             return;
 
         final double[] longerMemory = new double[position + 100];
-        for (int i = 0; i < this.memory.length; i++) {
-            longerMemory[i] = this.memory[i];
-        }
+        System.arraycopy(this.memory, 0, longerMemory, 0, this.memory.length);
         this.memory = longerMemory;
 
     }

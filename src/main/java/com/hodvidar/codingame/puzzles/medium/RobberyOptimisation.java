@@ -139,7 +139,6 @@ class RobberyOptimisation {
         // No houses trapped in the segment.
         // analyze segment...
         analyzeSegment(start, end, houses, housesToVisit, e, m, listE, listM);
-        return;
     }
 
     /**
@@ -194,6 +193,5 @@ class RobberyOptimisation {
         System.err.println("analyzeSegment(...) -> Recursion with middle = " + middle);
         // Recursion :
         analyzeHouses(middle, end, houses, housesToVisit, true, m, e + E1, listM, listE);
-        return;
     }
 }

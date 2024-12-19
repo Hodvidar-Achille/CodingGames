@@ -66,7 +66,7 @@ public final class _Day04_2 {
     }
 
     private static boolean isInRange(final int i1, final int i2, final int i3, final int i4, final int i5, final int i6) {
-        final String s = "" + i1 + "" + i2 + "" + i3 + "" + i4 + "" + i5 + "" + i6;
+        final String s = "" + i1 + i2 + i3 + i4 + i5 + i6;
         final int i = Integer.parseInt(s);
         return i > MIN && i < MAX;
     }

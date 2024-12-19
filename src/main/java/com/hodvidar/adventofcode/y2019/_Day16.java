@@ -66,7 +66,7 @@ public final class _Day16 {
 
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "'");
-        return "" + result;
+        return result;
     }
 
     private static String test(final String inputFile) throws Exception {

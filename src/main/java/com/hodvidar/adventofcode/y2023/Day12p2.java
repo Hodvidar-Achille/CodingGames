@@ -14,7 +14,7 @@ public class Day12p2 extends Day12 {
         return countPermutations(record, groups);
     }
 
-    private String unfoldCondition(final String condition, int times) {
+    private String unfoldCondition(final String condition, final int times) {
         final StringBuilder sb = new StringBuilder();
         sb.append(".");
         for (int i = 0; i < times - 1; i++) {
@@ -26,7 +26,7 @@ public class Day12p2 extends Day12 {
         return sb.toString();
     }
 
-    private List<Integer> unfoldGroups(final List<Integer> groups, int times) {
+    private List<Integer> unfoldGroups(final List<Integer> groups, final int times) {
         final List<Integer> unfoldedGroups = new ArrayList<>();
         for (int i = 0; i < times; i++) {
             unfoldedGroups.addAll(groups);

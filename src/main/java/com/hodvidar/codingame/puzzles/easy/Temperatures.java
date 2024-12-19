@@ -8,17 +8,17 @@ import java.util.Scanner;
 class Temperatures {
     private static final int MIN = -5527;
 
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt(); // the number of temperatures to analyse
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int n = in.nextInt(); // the number of temperatures to analyse
         in.nextLine();
-        String temps = in.nextLine(); // the n temperatures expressed as integers ranging from -273 to 5526
-        String[] listeT = temps.split("\\s+");
+        final String temps = in.nextLine(); // the n temperatures expressed as integers ranging from -273 to 5526
+        final String[] listeT = temps.split("\\s+");
         int best = MIN;
         //liste de string à list d'integer
         if(n > 0) {
-            for(String s : listeT){
-                int i = Integer.parseInt(s);
+            for(final String s : listeT){
+                final int i = Integer.parseInt(s);
                 best = getBest(best, i);
             }
         }
@@ -28,7 +28,7 @@ class Temperatures {
         System.out.println(best);
     }
 
-    private static int getBest(int currentBest, int current) {
+    private static int getBest(final int currentBest, final int current) {
         if(currentBest == current) return currentBest;
         if(Math.abs(currentBest) == Math.abs(current)) return Math.abs(currentBest);
         return (Math.abs(currentBest) < Math.abs(current)) ? currentBest : current;

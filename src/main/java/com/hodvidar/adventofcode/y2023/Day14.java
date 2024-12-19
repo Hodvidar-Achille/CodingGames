@@ -24,7 +24,7 @@ public class Day14 extends AbstractAdventOfCode2023 {
     }
 
     protected void initGrid(final Scanner sc) {
-        List<String> lines = new ArrayList<>();
+        final List<String> lines = new ArrayList<>();
         while (sc.hasNextLine()) {
             lines.add(sc.nextLine());
         }

@@ -22,10 +22,9 @@ public class Point {
     public boolean equals(final Object obj) {
         if (obj == null)
             return false;
-        if (!(obj instanceof Point))
+        if (!(obj instanceof Point p))
             return false;
 
-        final Point p = (Point) obj;
         return this.x == p.x && this.y == p.y;
     }
 

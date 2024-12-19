@@ -219,11 +219,11 @@ public final class UnPeuDeLogiquePur {
         System.out.println("\nShow the 5 persons :");
         for (final Person p : persons) {
             System.out.println("--" + p.name + "-- :");
-            System.out.println("\t " + p.domaine + "");
-            System.out.println("\t " + p.language + "");
-            System.out.println("\t " + p.os + "");
-            System.out.println("\t " + p.defaut + "");
-            System.out.println("\t " + p.position + "");
+            System.out.println("\t " + p.domaine);
+            System.out.println("\t " + p.language);
+            System.out.println("\t " + p.os);
+            System.out.println("\t " + p.defaut);
+            System.out.println("\t " + p.position);
             System.out.println("--------------------");
         }
     }

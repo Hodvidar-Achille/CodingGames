@@ -158,7 +158,6 @@ public final class RobotPainter {
             // RIGHT
             this.facing = DOWN;
             this.y--;
-            return;
         }
 
     }

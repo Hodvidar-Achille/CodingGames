@@ -12,20 +12,20 @@ import java.util.stream.Collectors;
 // https://www.codingame.com/ide/puzzle/cylinders
 class CylindersSolution {
 
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+    public static void main(final String[] args) {
+        final Scanner in = new Scanner(System.in);
+        final int n = in.nextInt();
         if (in.hasNextLine()) {
             in.nextLine();
         }
-        String[] result = new String[n];
-        DecimalFormat formatter = new DecimalFormat("0.000", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        final String[] result = new String[n];
+        final DecimalFormat formatter = new DecimalFormat("0.000", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
         formatter.setRoundingMode(RoundingMode.HALF_EVEN);
         for (int i = 0; i < n; i++) {
-            String line = in.nextLine();
-            int[] lineArray = extractNumber(line).stream().mapToInt(Double::intValue).toArray();
+            final String line = in.nextLine();
+            final int[] lineArray = extractNumber(line).stream().mapToInt(Double::intValue).toArray();
             // We remove the first element, not a circle radius
-            int[] circleRadius = Arrays.copyOfRange(lineArray, 1, lineArray.length);
+            final int[] circleRadius = Arrays.copyOfRange(lineArray, 1, lineArray.length);
             result[i] = formatter.format(getMinLength(circleRadius));
         }
 
@@ -144,7 +144,7 @@ class CylindersSolution {
             return possibleNewCircle;
         }
 
-        private static boolean isCircleTooMuchOnTheLeft(Circle possibleNewCircle) {
+        private static boolean isCircleTooMuchOnTheLeft(final Circle possibleNewCircle) {
             return possibleNewCircle.getWestPoint().getX() < 0;
         }
 
@@ -263,10 +263,9 @@ class CylindersSolution {
         public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
-            if (!(obj instanceof Point))
+            if (!(obj instanceof Point p))
                 return false;
 
-            final Point p = (Point) obj;
             return this.x == p.x && this.y == p.y;
         }
 

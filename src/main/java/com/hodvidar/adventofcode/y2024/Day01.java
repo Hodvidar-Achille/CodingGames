@@ -25,7 +25,7 @@ public class Day01 extends AbstractAdventOfCode2024 {
                 final int number2 = Integer.parseInt(parts[1]);
                 listOne.add(number1);
                 listTwo.add(number2);
-            } catch (NumberFormatException e) {
+            } catch (final NumberFormatException e) {
                 System.err.println("Error parsing numbers from line: " + line);
             }
         }

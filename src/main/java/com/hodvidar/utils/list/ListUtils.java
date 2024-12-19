@@ -157,9 +157,9 @@ public class ListUtils {
      * @param n            the length of the given array
      * @param elements     the given array
      */
-    public static void collectAllPermutation(List<List<Double>> permutations,
-                                             int n,
-                                             double[] elements) {
+    public static void collectAllPermutation(final List<List<Double>> permutations,
+                                             final int n,
+                                             final double[] elements) {
         if (n == 1) {
             permutations.add(doubleArrayToList(elements));
         } else {
@@ -175,8 +175,8 @@ public class ListUtils {
         }
     }
 
-    private static void swap(double[] input, int a, int b) {
-        double tmp = input[a];
+    private static void swap(final double[] input, final int a, final int b) {
+        final double tmp = input[a];
         input[a] = input[b];
         input[b] = tmp;
     }

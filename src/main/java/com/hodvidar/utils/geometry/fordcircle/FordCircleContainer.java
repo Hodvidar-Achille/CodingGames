@@ -123,7 +123,7 @@ public class FordCircleContainer {
         return position;
     }
 
-    private static String intervalToString(FordCircleInterval fordCircleInterval) {
+    private static String intervalToString(final FordCircleInterval fordCircleInterval) {
         String r = "left: ";
         r += fordCircleInterval.getLeftCircle().isPresent() ?
                 fordCircleInterval.getLeftCircle().get().getRadius()
