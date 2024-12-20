@@ -11,28 +11,6 @@ public class Day03p2 extends Day03 {
     private static final String ACTIVATE = "a";
     private static final String DEACTIVATE = "d";
 
-    @Override
-    public double getDigitFromLine(final String line) {
-        final List<String> validOrders = extractValidOrders(line);
-        boolean isActive = true;
-        double counter = 0;
-        for(final String order : validOrders) {
-            if(ACTIVATE.equals(order)) {
-                isActive = true;
-                continue;
-            }
-            if(DEACTIVATE.equals(order)) {
-                isActive = false;
-                continue;
-            }
-            if(!isActive) {
-                continue;
-            }
-            counter += Multiply(order);
-        }
-        return counter;
-    }
-
     public static List<String> extractValidOrders(final String input) {
         // Define patterns
         final String mulRegex = "mul\\((\\d+),(\\d+)\\)";
@@ -79,6 +57,28 @@ public class Day03p2 extends Day03 {
         }
 
         return result;
+    }
+
+    @Override
+    public double getDigitFromLine(final String line) {
+        final List<String> validOrders = extractValidOrders(line);
+        boolean isActive = true;
+        double counter = 0;
+        for (final String order : validOrders) {
+            if (ACTIVATE.equals(order)) {
+                isActive = true;
+                continue;
+            }
+            if (DEACTIVATE.equals(order)) {
+                isActive = false;
+                continue;
+            }
+            if (!isActive) {
+                continue;
+            }
+            counter += Multiply(order);
+        }
+        return counter;
     }
 
     // Helper class to store match and its index

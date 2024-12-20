@@ -6,17 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Day03 extends AbstractAdventOfCode2024 {
-    @Override
-    public int getDay() {
-        return 3;
-    }
-
-    @Override
-    public double getDigitFromLine(final String line) {
-        final List<String> correctMultiplicationOrder = extractValidMulItems(line);
-        return correctMultiplicationOrder.stream().mapToDouble(Day03::Multiply).sum();
-    }
-
     protected static double Multiply(final String multiplyOrder) {
         final String content = multiplyOrder.substring(multiplyOrder.indexOf('(') + 1, multiplyOrder.indexOf(')'));
         final String[] parts = content.split(",");
@@ -25,7 +14,7 @@ public class Day03 extends AbstractAdventOfCode2024 {
         return (double) number1 * (double) number2;
     }
 
-    public static List<String> extractValidMulItems(final String input) {
+    private static List<String> extractValidMulItems(final String input) {
         // Regex pattern to match valid mul(...) items
         final String regex = "mul\\(\\d+,\\d+\\)";
         final Pattern pattern = Pattern.compile(regex);
@@ -35,5 +24,16 @@ public class Day03 extends AbstractAdventOfCode2024 {
             result.add(matcher.group());
         }
         return result;
+    }
+
+    @Override
+    public int getDay() {
+        return 3;
+    }
+
+    @Override
+    public double getDigitFromLine(final String line) {
+        final List<String> correctMultiplicationOrder = extractValidMulItems(line);
+        return correctMultiplicationOrder.stream().mapToDouble(Day03::Multiply).sum();
     }
 }

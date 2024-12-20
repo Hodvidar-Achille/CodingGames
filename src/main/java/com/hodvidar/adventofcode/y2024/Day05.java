@@ -3,9 +3,9 @@ package com.hodvidar.adventofcode.y2024;
 import java.util.*;
 
 public class Day05 extends AbstractAdventOfCode2024 {
-    private final Set<String> incorrectOrders = new HashSet<>();
+    protected final Set<String> incorrectOrders = new HashSet<>();
 
-    public static List<List<String>> generateAllPairs(final String input) {
+    protected static List<List<String>> generateAllPairs(final String input) {
         final String[] numbers = input.split(",");
         final List<List<String>> result = new ArrayList<>();
 
@@ -54,11 +54,11 @@ public class Day05 extends AbstractAdventOfCode2024 {
                 counter += Integer.parseInt(extractMiddleNumber(line));
             }
         }
-
         return counter;
     }
 
-    private boolean checkLineOrder(final List<List<String>> listOfListOFPairs) {
+
+    protected boolean checkLineOrder(final List<List<String>> listOfListOFPairs) {
         for (final List<String> aListOfPairs : listOfListOFPairs) {
             for (final String pairOfNumbers : aListOfPairs) {
                 if (incorrectOrders.contains(pairOfNumbers)) {
