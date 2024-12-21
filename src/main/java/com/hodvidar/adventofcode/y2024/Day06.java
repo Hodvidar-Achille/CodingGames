@@ -25,7 +25,7 @@ public class Day06 extends AbstractAdventOfCode2024 {
     /**
      * returns array of 2
      **/
-    private static int[] findStartingPoint(final char[][] initialGrid) {
+    protected static int[] findStartingPoint(final char[][] initialGrid) {
         final int[] result = new int[2]; // [row, col]
 
         for (int i = 0; i < initialGrid.length; i++) {
@@ -44,7 +44,7 @@ public class Day06 extends AbstractAdventOfCode2024 {
     /**
      * returns array of 3 $
      **/
-    protected static int[] findStartingPointForStep1(final char[][] initialGrid) {
+    private static int[] findStartingPointForStep1(final char[][] initialGrid) {
         final int[] result = new int[3]; // [row, col, directionIndex]
         Direction currentDirection = null;
 
@@ -130,8 +130,6 @@ public class Day06 extends AbstractAdventOfCode2024 {
     @Override
     public double getResultDouble(final Scanner sc) {
         buildGrid(sc);
-
-        // Count non-zero cells
         return countNonZeroCells(pathGrid);
     }
 

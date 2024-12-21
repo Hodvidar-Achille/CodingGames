@@ -9,7 +9,7 @@ public class Day06Test extends AbstractTestForAdventOfCode2024 {
     @Override
     protected int getExpectedResult() {
         return 4433;
-    } // 4433 solution but not found, why ?
+    }
 
     @Override
     protected int getExpectedTestResult() {
