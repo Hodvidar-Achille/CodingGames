@@ -5,6 +5,7 @@ public class Day07Test extends AbstractTestForAdventOfCode2024 {
     public Day07Test() {
         super(new Day07());
     }
+
     @Override
     protected double getExpectedResultDouble() {
         return 7579994664753d;
