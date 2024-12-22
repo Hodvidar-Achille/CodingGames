@@ -6,17 +6,16 @@ import java.util.Scanner;
 
 public class Day11 extends AbstractAdventOfCode2024 {
 
-    public static long countStone(final String stones) {
+    protected static long countStone(final String stones) {
         return stones.chars().filter(ch -> ch == ' ').count() + 1;
     }
 
-    public static String performOneBlink(final String stones) {
+    protected static String performOneBlink(final String stones) {
         final String[] stoneArray = stones.split(" "); // Split input into individual stones
         final List<String> result = new ArrayList<>();
 
         for (final String stone : stoneArray) {
             final double number = Double.parseDouble(stone);
-
             // Apply transformation rules
             if (number == 0) {
                 result.add("1"); // Rule 1: Replace 0 with 1
@@ -28,22 +27,21 @@ public class Day11 extends AbstractAdventOfCode2024 {
                 final int mid = numberStr.length() / 2;
                 final String left = numberStr.substring(0, mid);
                 final String right = numberStr.substring(mid);
-                if (!left.isEmpty()) {
-                    result.add(String.format("%.0f", Double.parseDouble(left)));
-                }
-                if (!right.isEmpty()) {
-                    result.add(String.format("%.0f", Double.parseDouble(right)));
-                }
-            } else {
-                // Rule 3: Multiply by 2024
-                result.add(String.format("%.0f", (number * 2024)));
+                result.add(String.format("%.0f", Double.parseDouble(left)));
+                result.add(String.format("%.0f", Double.parseDouble(right)));
+                continue;
             }
+            // Rule 3: Multiply by 2024
+            result.add(String.format("%.0f", (number * 2024)));
         }
 
         return String.join(" ", result); // Combine transformed stones into a single string
     }
 
-    public static String performBlinks(String newLine, final int numberOfBlinks) {
+    /**
+     * Slow for more than 30 iterations see Day11p2
+     **/
+    protected static String performBlinks(String newLine, final int numberOfBlinks) {
         for (int i = 0; i < numberOfBlinks; i++) {
             //System.out.println("Loop number:" + (i+1));
             newLine = performOneBlink(newLine);
