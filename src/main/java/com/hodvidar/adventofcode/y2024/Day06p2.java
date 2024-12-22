@@ -6,13 +6,10 @@ import java.util.Scanner;
 
 public class Day06p2 extends Day06 {
 
-    private static char[][] copyGrid(final char[][] grid) {
-        final int rows = grid.length;
-        final char[][] newGrid = new char[rows][];
-        for (int i = 0; i < rows; i++) {
-            newGrid[i] = Arrays.copyOf(grid[i], grid[i].length);
-        }
-        return newGrid;
+    public static char[][] copyGrid(final char[][] grid) {
+        return Arrays.stream(grid)
+                .map(char[]::clone)
+                .toArray(char[][]::new);
     }
 
     private static int simulateObstacles(final char[][] initialGrid,
@@ -65,7 +62,8 @@ public class Day06p2 extends Day06 {
 
     @Override
     public double getResultDouble(final Scanner sc) {
-        buildGrid(sc);
+        final char[][] grid = buildGrid(sc);
+        calculatePath(grid, true);
         return simulateObstacles(grid, orderedCells);
     }
 }

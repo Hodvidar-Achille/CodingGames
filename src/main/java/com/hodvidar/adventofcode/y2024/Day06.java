@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Day06 extends AbstractAdventOfCode2024 {
 
     protected static List<Cell> orderedCells = new ArrayList<>();
-    protected char[][] grid;
-    protected Cell[][] pathGrid;
 
     private static int countNonZeroCells(final Cell[][] grid) {
         int count = 0;
@@ -129,11 +127,12 @@ public class Day06 extends AbstractAdventOfCode2024 {
 
     @Override
     public double getResultDouble(final Scanner sc) {
-        buildGrid(sc);
+        final char[][] grid = buildGrid(sc);
+        final Cell[][] pathGrid = calculatePath(grid, true);
         return countNonZeroCells(pathGrid);
     }
 
-    protected void buildGrid(final Scanner sc) {
+    protected char[][] buildGrid(final Scanner sc) {
         final List<char[]> gridList = new ArrayList<>();
         orderedCells.clear();
 
@@ -142,12 +141,7 @@ public class Day06 extends AbstractAdventOfCode2024 {
             final String line = sc.nextLine();
             gridList.add(line.toCharArray());
         }
-
-        // Finalize grid
-        grid = gridList.toArray(new char[0][0]);
-
-        // Create the path grid, fill orderedCells list
-        pathGrid = calculatePath(grid, true);
+        return gridList.toArray(new char[0][0]);
     }
 
     @Override
@@ -156,19 +150,17 @@ public class Day06 extends AbstractAdventOfCode2024 {
     }
 
     protected enum Direction {
-        NORTH(-1, 0, '^'),
-        EAST(0, 1, '>'),
-        SOUTH(1, 0, 'v'),
-        WEST(0, -1, '<');
+        NORTH(-1, 0),
+        EAST(0, 1),
+        SOUTH(1, 0),
+        WEST(0, -1);
 
         private final int rowDelta;
         private final int colDelta;
-        private final char symbol;
 
-        Direction(final int rowDelta, final int colDelta, final char symbol) {
+        Direction(final int rowDelta, final int colDelta) {
             this.rowDelta = rowDelta;
             this.colDelta = colDelta;
-            this.symbol = symbol;
         }
 
         public int getRowDelta() {
@@ -177,10 +169,6 @@ public class Day06 extends AbstractAdventOfCode2024 {
 
         public int getColDelta() {
             return colDelta;
-        }
-
-        public char getSymbol() {
-            return symbol;
         }
 
         public Direction turnRight() {
