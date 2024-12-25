@@ -8,11 +8,11 @@ public class Day09 extends AbstractAdventOfCode2024 {
 
     public static final String FREE_SPACE = ".";
 
-    public static String transformDiskMapInToString(final String diskMap) {
+    public String transformDiskMapInToString(final String diskMap) {
         return String.join("", transformDiskMap(diskMap));
     }
 
-    public static List<String> transformDiskMap(final String diskMap) {
+    public List<String> transformDiskMap(final String diskMap) {
         final List<String> fileBlocks = new ArrayList<>();
         int fileId = 0; // File ID counter
 
@@ -36,11 +36,11 @@ public class Day09 extends AbstractAdventOfCode2024 {
         return fileBlocks;
     }
 
-    public static String compactDiskMapIntoString(final List<String> fileBlocks) {
+    public String compactDiskMapIntoString(final List<String> fileBlocks) {
         return String.join("", compactDiskMap(fileBlocks));
     }
 
-    public static List<String> compactDiskMap(final List<String> fileBlocks) {
+    public List<String> compactDiskMap(final List<String> fileBlocks) {
         boolean moved;
         do {
             moved = moveNumber(fileBlocks);
@@ -48,7 +48,7 @@ public class Day09 extends AbstractAdventOfCode2024 {
         return fileBlocks;
     }
 
-    private static boolean moveNumber(final List<String> fileBlocks) {
+    private boolean moveNumber(final List<String> fileBlocks) {
         final int length = fileBlocks.size();
         for (int i = length - 1; i > 0; i--) {
             final String c = fileBlocks.get(i);
@@ -69,7 +69,7 @@ public class Day09 extends AbstractAdventOfCode2024 {
         return false;
     }
 
-    public static double calculateChecksum(final List<String> compactFileBlocks) {
+    public double calculateChecksum(final List<String> compactFileBlocks) {
         double checksum = 0;
         // Iterate through the disk map
         for (int position = 0; position < compactFileBlocks.size(); position++) {
@@ -94,7 +94,6 @@ public class Day09 extends AbstractAdventOfCode2024 {
     public double getDigitFromLine(final String line) {
         final List<String> fileBlocks = transformDiskMap(line);
         final List<String> compactFileBlocks = compactDiskMap(fileBlocks);
-        final double calculateChecksum = calculateChecksum(compactFileBlocks);
-        return calculateChecksum;
+        return calculateChecksum(compactFileBlocks);
     }
 }

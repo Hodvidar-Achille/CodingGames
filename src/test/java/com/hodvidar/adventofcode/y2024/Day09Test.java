@@ -29,7 +29,7 @@ public class Day09Test extends AbstractTestForAdventOfCode2024 {
             "1111111111111111111111111 | 0.1.2.3.4.5.6.7.8.9.10.11.12"
     })
     void transformDiskMap(final String line, final String expectedResult) {
-        final String result = Day09.transformDiskMapInToString(line);
+        final String result = ((Day09) testedClass).transformDiskMapInToString(line);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -42,8 +42,8 @@ public class Day09Test extends AbstractTestForAdventOfCode2024 {
             "1111111111111111111111111 | 0121112103948576............"
     })
     void compactDiskMap(final String line, final String expectedResult) {
-        final String result = Day09.compactDiskMapIntoString(
-                Day09.transformDiskMap(line));
+        final String result = ((Day09) testedClass).compactDiskMapIntoString(
+                ((Day09) testedClass).transformDiskMap(line));
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -54,9 +54,9 @@ public class Day09Test extends AbstractTestForAdventOfCode2024 {
             "90909 | 513"
     })
     void compactDiskMap(final String line, final double expectedResult) {
-        final double result = Day09.calculateChecksum(
-                Day09.compactDiskMap(
-                        Day09.transformDiskMap(line)));
+        final double result = ((Day09) testedClass).calculateChecksum(
+                ((Day09) testedClass).compactDiskMap(
+                        ((Day09) testedClass).transformDiskMap(line)));
         assertThat(result).isEqualTo(expectedResult);
     }
 }
