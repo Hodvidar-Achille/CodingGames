@@ -11,11 +11,6 @@ public class Day01 extends AbstractAdventOfCode2024 {
     protected final List<Integer> listTwo = new ArrayList<>();
 
     @Override
-    public int getDay() {
-        return 1;
-    }
-
-    @Override
     protected void digestLine(final String line) {
         final String[] parts = line.trim().split("\\s+");
         // Parse the two numbers and add them to the result list

@@ -50,11 +50,6 @@ public class Day11 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    public int getDay() {
-        return 11;
-    }
-
-    @Override
     public double getResultDouble(final Scanner sc) {
         String newLine = sc.nextLine();
         newLine = performBlinks(newLine, 25);

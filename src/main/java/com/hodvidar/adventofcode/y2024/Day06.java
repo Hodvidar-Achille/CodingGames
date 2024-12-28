@@ -144,10 +144,6 @@ public class Day06 extends AbstractAdventOfCode2024 {
         return gridList.toArray(new char[0][0]);
     }
 
-    @Override
-    public int getDay() {
-        return 6;
-    }
 
     protected enum Direction {
         NORTH(-1, 0),

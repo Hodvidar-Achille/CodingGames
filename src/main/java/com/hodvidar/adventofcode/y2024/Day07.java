@@ -5,11 +5,6 @@ import java.util.Arrays;
 public class Day07 extends AbstractAdventOfCode2024 {
 
     @Override
-    public int getDay() {
-        return 7;
-    }
-
-    @Override
     public double getDigitFromLine(final String line) {
         final String[] parts = line.trim().split(":");
         final double expectedResult = Double.parseDouble(parts[0]);

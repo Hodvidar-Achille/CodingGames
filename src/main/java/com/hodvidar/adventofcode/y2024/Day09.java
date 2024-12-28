@@ -85,12 +85,6 @@ public class Day09 extends AbstractAdventOfCode2024 {
 
 
     @Override
-    public int getDay() {
-        return 9;
-    }
-
-
-    @Override
     public double getDigitFromLine(final String line) {
         final List<String> fileBlocks = transformDiskMap(line);
         final List<String> compactFileBlocks = compactDiskMap(fileBlocks);

@@ -71,11 +71,6 @@ public class Day08 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    public int getDay() {
-        return 8;
-    }
-
-    @Override
     public double getResultDouble(final Scanner sc) {
 
         final List<char[]> gridList = new ArrayList<>();

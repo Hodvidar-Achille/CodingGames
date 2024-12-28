@@ -28,11 +28,6 @@ public class Day05 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    public int getDay() {
-        return 5;
-    }
-
-    @Override
     public double getResultDouble(final Scanner sc) {
         incorrectOrders.clear();
         boolean isFirstStep = true;

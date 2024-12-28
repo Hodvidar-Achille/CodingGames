@@ -103,10 +103,6 @@ public class Day04 extends AbstractAdventOfCode2024 {
         return count;
     }
 
-    @Override
-    public int getDay() {
-        return 4;
-    }
 
     @Override
     public double getResultDouble(final Scanner sc) {

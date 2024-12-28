@@ -19,11 +19,6 @@ public class Day02 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    public int getDay() {
-        return 2;
-    }
-
-    @Override
     public double getDigitFromLine(final String line) {
         final String[] parts = line.trim().split("\\s+");
         final int[] numbers = Arrays.stream(parts)

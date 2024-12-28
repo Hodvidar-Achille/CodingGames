@@ -22,4 +22,13 @@ public abstract class AbstractAdventOfCode2024 extends AbstractAdventOfCode {
     public int getResult(final Scanner sc) {
         return (int) getResultDouble(sc);
     }
+
+    @Override
+    public int getDay() {
+        // Get the simple class name (e.g., "Day12p2")
+        final String className = this.getClass().getSimpleName();
+        // Extract the numeric part at the beginning of the class name
+        final String dayNumber = className.replaceAll("[^\\d]", " ").trim().split(" ")[0];
+        return Integer.parseInt(dayNumber);
+    }
 }

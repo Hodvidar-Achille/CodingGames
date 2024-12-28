@@ -27,11 +27,6 @@ public class Day03 extends AbstractAdventOfCode2024 {
     }
 
     @Override
-    public int getDay() {
-        return 3;
-    }
-
-    @Override
     public double getDigitFromLine(final String line) {
         final List<String> correctMultiplicationOrder = extractValidMulItems(line);
         return correctMultiplicationOrder.stream().mapToDouble(Day03::Multiply).sum();
