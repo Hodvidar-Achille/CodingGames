@@ -130,11 +130,11 @@ public class Cylinders {
         return Optional.empty();
     }
 
-    private static void print(double[] circlesRadius, long startTime, Map<String, Double> results, Map.Entry<String, Double> minResult, long endTime) {
+    private static void print(final double[] circlesRadius, final long startTime, final Map<String, Double> results, final Map.Entry<String, Double> minResult, final long endTime) {
         if (!VERBOSE) {
             return;
         }
-        Map<String, Double> allMinResults = results.entrySet().stream()
+        final Map<String, Double> allMinResults = results.entrySet().stream()
                 .filter(e -> e.getValue().equals(minResult.getValue()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         System.err.println("For Input: "

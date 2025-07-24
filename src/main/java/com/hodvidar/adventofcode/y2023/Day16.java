@@ -29,6 +29,38 @@ public class Day16 extends AbstractAdventOfCode2023 {
         return grid.getNumberOfLightedSpaces(0, 0, EAST);
     }
 
+    public enum Direction {
+        NORTH, SOUTH, WEST, EAST;
+
+        public int getIndex() {
+            return switch (this) {
+                case NORTH -> 0;
+                case SOUTH -> 1;
+                case WEST -> 2;
+                case EAST -> 3;
+            };
+        }
+    }
+
+    private enum Mirror {
+        SPLITTER_NORTH_SOUTH,
+        SPLITTER_EAST_WEST,
+        MIRROR_NORTH_EAST_SOUTH_WEST,
+        MIRROR_NORTH_WEST_SOUTH_EAST,
+        EMPTY_SPACE;
+
+        public static Mirror getMirror(final char c) {
+            return switch (c) {
+                case '|' -> SPLITTER_NORTH_SOUTH;
+                case '-' -> SPLITTER_EAST_WEST;
+                case '/' -> MIRROR_NORTH_EAST_SOUTH_WEST;
+                case '\\' -> MIRROR_NORTH_WEST_SOUTH_EAST;
+                case '.' -> EMPTY_SPACE;
+                default -> throw new IllegalArgumentException("Unknown mirror: " + c);
+            };
+        }
+    }
+
     protected static class Grid {
         public static final boolean LIGHTED_SPACE = true;
 
@@ -291,38 +323,6 @@ public class Day16 extends AbstractAdventOfCode2023 {
 
         public Direction getDirection() {
             return direction;
-        }
-    }
-
-    public enum Direction {
-        NORTH, SOUTH, WEST, EAST;
-
-        public int getIndex() {
-            return switch (this) {
-                case NORTH -> 0;
-                case SOUTH -> 1;
-                case WEST -> 2;
-                case EAST -> 3;
-            };
-        }
-    }
-
-    private enum Mirror {
-        SPLITTER_NORTH_SOUTH,
-        SPLITTER_EAST_WEST,
-        MIRROR_NORTH_EAST_SOUTH_WEST,
-        MIRROR_NORTH_WEST_SOUTH_EAST,
-        EMPTY_SPACE;
-
-        public static Mirror getMirror(final char c) {
-            return switch (c) {
-                case '|' -> SPLITTER_NORTH_SOUTH;
-                case '-' -> SPLITTER_EAST_WEST;
-                case '/' -> MIRROR_NORTH_EAST_SOUTH_WEST;
-                case '\\' -> MIRROR_NORTH_WEST_SOUTH_EAST;
-                case '.' -> EMPTY_SPACE;
-                default -> throw new IllegalArgumentException("Unknown mirror: " + c);
-            };
         }
     }
 

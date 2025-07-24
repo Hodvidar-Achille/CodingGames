@@ -13,10 +13,9 @@ public class Point3D extends Point {
     public boolean equals(final Object obj) {
         if (obj == null)
             return false;
-        if (!(obj instanceof Point3D))
+        if (!(obj instanceof final Point3D p))
             return false;
 
-        final Point3D p = (Point3D) obj;
         return this.x == p.x && this.y == p.y && this.z == p.z;
     }
 

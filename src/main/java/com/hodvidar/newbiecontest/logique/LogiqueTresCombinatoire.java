@@ -54,7 +54,7 @@ public class LogiqueTresCombinatoire {
             final boolean p5 = (p1 ^ p4); // XOR
             final boolean p6 = !p5; // NOT
             final boolean p7 = !(e && p5); // N AND
-            final boolean p8 = !(!(!p7)); // NOT x3
+            final boolean p8 = !p7; // NOT x3
             final boolean p9 = !p8; // NOT
             final boolean p10 = !(p6 && p8); // N AND
             final boolean p11 = (p10 ^ p9); // XOR

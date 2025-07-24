@@ -36,24 +36,24 @@ public class LongestPalindromicSubstring {
 
 
     // Complexity O(n^2)
-    public static String longestPalindromeBetter(String s) {
+    public static String longestPalindromeBetter(final String s) {
         return ""; // TODO
     }
 
     // Complexity O(n), but not mine "Manacher's algorithm"
-    public static String longestPalindromeBest(String s) {
+    public static String longestPalindromeBest(final String s) {
         if (s == null || s.length() == 0) {
             return "";
         }
 
         // Preprocess the string to handle even-length palindromes
-        StringBuilder processed = new StringBuilder("#");
-        for (char c : s.toCharArray()) {
+        final StringBuilder processed = new StringBuilder("#");
+        for (final char c : s.toCharArray()) {
             processed.append(c).append("#");
         }
 
-        int n = processed.length();
-        int[] P = new int[n]; // P[i] stores the radius of the palindrome centered at i
+        final int n = processed.length();
+        final int[] P = new int[n]; // P[i] stores the radius of the palindrome centered at i
         int center = 0; // Center of the rightmost palindrome
         int right = 0; // Right boundary of the rightmost palindrome
 
@@ -62,7 +62,7 @@ public class LongestPalindromicSubstring {
 
         for (int i = 0; i < n; i++) {
             // Calculate the mirror position of i with respect to the center
-            int mirror = 2 * center - i;
+            final int mirror = 2 * center - i;
 
             // Check if the current index i is within the right boundary of the rightmost palindrome
             if (i < right) {
@@ -93,8 +93,8 @@ public class LongestPalindromicSubstring {
         }
 
         // Extract the longest palindrome from the processed string
-        int start = (maxCenter - maxLen) / 2;
-        int end = start + maxLen;
+        final int start = (maxCenter - maxLen) / 2;
+        final int end = start + maxLen;
         return s.substring(start, end);
     }
 }

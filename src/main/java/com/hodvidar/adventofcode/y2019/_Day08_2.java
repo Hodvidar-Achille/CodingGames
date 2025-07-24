@@ -27,7 +27,7 @@ public final class _Day08_2 {
     public static void main(final String[] args) throws Exception {
         final String result = test(RESOURCES + File.separator + INPUT_DIRECTORY + File.separator + "input"
                 + NUMBER_OF_TEST + ".txt");
-        System.err.println("result=\n" + result + "");
+        System.err.println("result=\n" + result);
     }
 
     private static String test(final String inputFile) throws Exception {

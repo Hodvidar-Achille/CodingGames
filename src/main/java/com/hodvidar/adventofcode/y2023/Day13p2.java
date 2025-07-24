@@ -27,9 +27,9 @@ public class Day13p2 extends Day13 {
             }
             if (!lines.get(forwardIndex).equals(lines.get(backwardIndex))) {
                 if (!foundSmudge) {
-                    if(isOnlyOneDifference(lines.get(forwardIndex), lines.get(backwardIndex))) {
+                    if (isOnlyOneDifference(lines.get(forwardIndex), lines.get(backwardIndex))) {
                         foundSmudge = true;
-                        return checkIfMirror(lines, backwardIndex - 1, forwardIndex +1);
+                        return checkIfMirror(lines, backwardIndex - 1, forwardIndex + 1);
                     }
                 }
                 foundSmudge = false;

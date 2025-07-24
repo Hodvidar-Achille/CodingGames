@@ -15,11 +15,6 @@ public class Day01p2 extends Day01 {
             "eight", "e8t",
             "nine", "n9e");
 
-    @Override
-    public double getDigitFromLine(final String line) {
-        return super.getDigitFromLine(transformString_dirtyWithOverLapping(line));
-    }
-
     public static String transformString_dirtyWithOverLapping(final String input) {
         String result = input;
         for (final Map.Entry<String, String> entry : NUMBER.entrySet()) {
@@ -29,5 +24,10 @@ public class Day01p2 extends Day01 {
             result = result.replaceAll(entry.getKey(), entry.getValue());
         }
         return result;
+    }
+
+    @Override
+    public double getDigitFromLine(final String line) {
+        return super.getDigitFromLine(transformString_dirtyWithOverLapping(line));
     }
 }

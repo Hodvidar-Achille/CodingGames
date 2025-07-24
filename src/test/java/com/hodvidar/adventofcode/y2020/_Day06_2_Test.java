@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractTestForAdventOfCode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -34,7 +33,8 @@ public class _Day06_2_Test extends AbstractTestForAdventOfCode2020 {
             "abcde#abcd#abc#ab | 2"
     })
     void checkCountCommonLettersInGroup(final String code, final int expectedResult) throws FileNotFoundException {
-        final int result = new _Day06_2().countCommonLettersInGroup(code);
+        new _Day06_2();
+        final int result = _Day06_2.countCommonLettersInGroup(code);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -44,7 +44,8 @@ public class _Day06_2_Test extends AbstractTestForAdventOfCode2020 {
     })
     void shouldFindResultInSmallNumberPool(final int numberOfTheTest, final int expectedResult) throws FileNotFoundException {
         final Scanner sc = getScanner(numberOfTheTest);
-        final int result = new _Day06_2().countUniqueLetterByGroup(sc);
+        new _Day06_2();
+        final int result = _Day06_2.countUniqueLetterByGroup(sc);
         assertThat(result).isEqualTo(expectedResult);
     }
 

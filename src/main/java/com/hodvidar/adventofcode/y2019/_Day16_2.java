@@ -84,7 +84,7 @@ public final class _Day16_2 {
         final String diffStr = MillisecondFormatter.asTime(diff);
         System.err.println("Expected value:'" + expectedResult + "'");
         System.err.println("Found:'" + result + "' took:" + diffStr);
-        return "" + result;
+        return result;
     }
 
     private static String test(final String inputFile) throws Exception {

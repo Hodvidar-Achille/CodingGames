@@ -10,7 +10,7 @@ public class Rhombus extends Parallelogram {
 
     @Override
     public boolean checkPoints(final Point... points) {
-        if(!super.checkPoints(points)) {
+        if (!super.checkPoints(points)) {
             return false;
         }
         double segmentLength = 0;

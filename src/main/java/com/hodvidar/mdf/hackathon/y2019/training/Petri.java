@@ -79,7 +79,7 @@ public final class Petri {
         if (!VERBOSE)
             return;
         for (int i = 0; i < size; i++) {
-            printIfVerbose("" + Arrays.deepToString(tab[i]));
+            printIfVerbose(Arrays.deepToString(tab[i]));
         }
     }
 
@@ -127,8 +127,10 @@ public final class Petri {
                 for (int j = 0; j < size; j++) {
                     if (stillPoint)
                         break;
-                    if (tab[i][j].equals("."))
+                    if (tab[i][j].equals(".")) {
                         stillPoint = true;
+                        break;
+                    }
                 }
             }
             if (!stillPoint)

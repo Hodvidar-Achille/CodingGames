@@ -1,6 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractTestForAdventOfCode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

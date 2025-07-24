@@ -83,7 +83,7 @@ public final class Crapette {
 
         printIfVerbose("Start of search...");
         final MouvementWriter mover = new MouvementWriter(piles, startPile);
-        printIfVerbose("mover: " + mover.toString());
+        printIfVerbose("mover: " + mover);
 
         if (numberOfCard > 4 && piles.length < 4) {
             System.out.println(F);
@@ -104,7 +104,7 @@ public final class Crapette {
             mover.moveFromStart(0);
             mover.moveFromStart(1);
             mover.move(0, 1);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
@@ -115,7 +115,7 @@ public final class Crapette {
                 return F;
             }
             moveNCardsWithNPiles(mover, numberOfCard);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
@@ -127,7 +127,7 @@ public final class Crapette {
 
         if (numberOfCard <= piles.length) {
             moveNCardsWithNPiles(mover, numberOfCard);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
@@ -140,21 +140,21 @@ public final class Crapette {
 
         if (numberOfCard == piles.length + 1) {
             moveNCardsWithMinusOnePiles(mover);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
 
         if (numberOfCard == piles.length + 2) {
             moveNCardsWithMinusTwoPiles(mover);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
 
         if (numberOfCard == piles.length + 3) {
             moveNCardsWithMinusThreePiles(mover);
-            printIfVerbose("mover: " + mover.toString());
+            printIfVerbose("mover: " + mover);
             System.out.println(mover.write());
             return mover.write();
         }
@@ -322,7 +322,7 @@ public final class Crapette {
             if (this.startPile == null)
                 s += "@null";
             else
-                s += "(0):" + this.startPile.toString();
+                s += "(0):" + this.startPile;
 
             if (this.piles == null)
                 s += "@null";
@@ -385,7 +385,7 @@ public final class Crapette {
         public String toString() {
             if (this.next == null)
                 return "" + card;
-            return card + ">" + this.next.toString();
+            return card + ">" + this.next;
         }
 
     }

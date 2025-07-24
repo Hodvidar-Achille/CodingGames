@@ -47,7 +47,7 @@ class MimeType {
                 }
             }
         }
-        System.out.println(builder.toString());
+        System.out.println(builder);
         in.close();
     }
 

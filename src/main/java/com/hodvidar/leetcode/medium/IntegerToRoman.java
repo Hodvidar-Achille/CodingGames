@@ -68,12 +68,11 @@ public class IntegerToRoman {
         final String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         final String[] hrns = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 
-        final StringBuilder romanNumeral = new StringBuilder();
-        romanNumeral.append("M".repeat(num / 1000));
-        romanNumeral.append(hrns[(num % 1000) / 100]);
-        romanNumeral.append(tens[(num % 100) / 10]);
-        romanNumeral.append(ones[num % 10]);
+        final String romanNumeral = "M".repeat(num / 1000) +
+                hrns[(num % 1000) / 100] +
+                tens[(num % 100) / 10] +
+                ones[num % 10];
 
-        return romanNumeral.toString();
+        return romanNumeral;
     }
 }

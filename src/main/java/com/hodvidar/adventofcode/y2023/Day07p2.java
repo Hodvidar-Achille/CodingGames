@@ -37,7 +37,7 @@ public class Day07p2 extends Day07 {
                 frequencyMap.put(card, frequencyMap.getOrDefault(card, 0) + 1);
             }
             final int numberOfJokers = frequencyMap.getOrDefault(JOKER, 0);
-            frequencyMap =  frequencyMap.entrySet().stream()
+            frequencyMap = frequencyMap.entrySet().stream()
                     .filter(e -> e.getKey() != JOKER)
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
             final int maxFrequency = frequencyMap.values().stream().max(Integer::compareTo).orElse(1);

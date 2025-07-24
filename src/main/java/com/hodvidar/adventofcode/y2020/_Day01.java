@@ -1,7 +1,5 @@
 package com.hodvidar.adventofcode.y2020;
 
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +10,7 @@ import java.util.Scanner;
  * @author Hodvidar
  */
 public class _Day01 extends AbstractAdventOfCode2020 {
-    
+
     @Override
     public int getDay() {
         return 1;

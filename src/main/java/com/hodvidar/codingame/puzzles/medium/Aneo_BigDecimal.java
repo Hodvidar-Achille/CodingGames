@@ -282,10 +282,9 @@ class Aneo_BigDecimal {
         public boolean equals(final Object obj) {
             if (obj == null)
                 return false;
-            if (!(obj instanceof Interval))
+            if (!(obj instanceof final Interval o))
                 return false;
 
-            final Interval o = (Interval) obj;
             final boolean sameMin = this.min.compareTo(o.min) == 0;
             final boolean sameMax = this.max.compareTo(o.max) == 0;
             return sameMin && sameMax;
@@ -356,8 +355,7 @@ class Aneo_BigDecimal {
 
         private List<Interval> toList(final Interval... intervals) {
             final List<Interval> newIntervals = new ArrayList<>();
-            for (final Interval i : intervals)
-                newIntervals.add(i);
+            Collections.addAll(newIntervals, intervals);
             Collections.sort(newIntervals);
             return newIntervals;
         }
@@ -390,8 +388,8 @@ class Aneo_BigDecimal {
                         continue;
                     final Interval intersection = getIntervalIntersection(i1, i2);
                     if (!intersection.isEmpty())
-                        printIfVerbose("i1" + i1.toString() + " \u2229 i2" + i2.toString()
-                                + " --> " + intersection.toString());
+                        printIfVerbose("i1" + i1 + " \u2229 i2" + i2
+                                + " --> " + intersection);
                     intersectionCollector.add(intersection);
                 }
             }
@@ -523,7 +521,7 @@ class Aneo_BigDecimal {
                 // Ignore case where minimum speed is already too high.
                 if (cappedMinSpeedToPass.compareTo(cappedMaxSpeedToPass) == 1) {
                     final Interval speedInterval = new Interval(minSpeedToPass, maxSpeedToPass, this);
-                    printIfVerbose("Discard illegal speed km/h : " + speedInterval.toString()
+                    printIfVerbose("Discard illegal speed km/h : " + speedInterval
                             + " to travel " + distance.intValue() + " meters in less than "
                             + roundTo2Decimals((duration.doubleValue() - MINIMUM_TIME.doubleValue() - durationIncrement.doubleValue()))
                             + " seconds.");
@@ -544,7 +542,7 @@ class Aneo_BigDecimal {
                 if (speedInterval.equals(previousInterval))
                     continue;
 
-                printIfVerbose("Possible speed km/h : " + speedInterval.toString()
+                printIfVerbose("Possible speed km/h : " + speedInterval
                         + " to travel " + distance + " meters between "
                         + roundTo2Decimals((minDuration.intValue() - durationIncrement.intValue())) + " and "
                         + roundTo2Decimals((duration.doubleValue() - MINIMUM_TIME.doubleValue() - durationIncrement.doubleValue()))

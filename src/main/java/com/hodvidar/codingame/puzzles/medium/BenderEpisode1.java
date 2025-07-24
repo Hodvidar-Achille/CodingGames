@@ -26,8 +26,7 @@ class BenderEpisode1 {
             final String row = in.nextLine();
             System.err.println(row);
             final char[] rowC = row.toCharArray();
-            for (int j = 0; j < rowC.length; j++)
-                grid[i][j] = rowC[j];
+            System.arraycopy(rowC, 0, grid[i], 0, rowC.length);
         }
 
         // Write an action using System.out.println()
@@ -137,7 +136,6 @@ class BenderEpisode1 {
             d = this.adaptStateAndDirection(here, d);
             System.err.println("Try to move from [" + y + "][" + x + "] in d: " + d);
             this.doOneMovement2(grid, y, x, d);
-            return;
         }
 
         private void doOneMovement2(final char[][] grid, final int y, final int x, char d) {
@@ -156,7 +154,6 @@ class BenderEpisode1 {
                 return;
             }
             this.doOneMovement(grid, y2, x2, d);
-            return;
         }
 
         private char findNext(final char[][] grid, final int y, final int x, final char d) {

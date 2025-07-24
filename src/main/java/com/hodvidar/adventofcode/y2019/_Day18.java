@@ -53,7 +53,7 @@ public final class _Day18 {
         final String result = "";
         System.err.println("Found:'" + result + "'");
         System.err.println("Expected:'" + expectedResult + "'");
-        return "" + result;
+        return result;
     }
 
     private static String test(final String inputFile) throws Exception {

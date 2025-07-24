@@ -38,7 +38,7 @@ public class ThreeSum {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
             final Map<Integer, Integer> map = new HashMap<>();
-            final int targetSum = 0 - nums[i];
+            final int targetSum = -nums[i];
             for (int j = 0; j < nums.length && i != j; j++) {
 
                 if (map.containsKey(nums[j])) {
@@ -63,7 +63,7 @@ public class ThreeSum {
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
                 int low = i + 1;
                 int high = nums.length - 1;
-                final int sum = 0 - nums[i];
+                final int sum = -nums[i];
                 while (low < high) {
                     if (nums[low] + nums[high] == sum) {
                         li.add(Arrays.asList(nums[i], nums[low], nums[high]));

@@ -67,7 +67,7 @@ public final class _Day12 {
         final String energyStr = DoubleFormater.asInteger(energy);
         System.err.println("Expected energy value:'" + line + "'");
         System.err.println("Found:'" + energyStr + "'");
-        return "" + energyStr;
+        return energyStr;
     }
 
     private static String test(final String inputFile) throws Exception {

@@ -13,13 +13,12 @@ import java.util.Date;
 // 1. problem: this class need to implements ProjectGenericBean method getDurationToString(String)
 public class ProjectBean extends ProjectGenericBean {
 
+    public static final String EMPTY = "-?-";
     // 2. "-?-" need to be a static final field as well
     private static final String toStringSeparator = " - ";
-    public static final String EMPTY = "-?-";
-
+    public final int numero;
     // 3. Parameters need to be final if they are only set in the constructor
     private final String titre;
-    public final int numero;
     private final Date dateDebut;
     private final Date dateFin;
 

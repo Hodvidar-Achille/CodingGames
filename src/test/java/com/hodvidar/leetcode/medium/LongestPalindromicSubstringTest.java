@@ -57,6 +57,7 @@ class LongestPalindromicSubstringTest {
         Assertions.assertThat(LongestPalindromicSubstring.longestPalindromeBest(input))
                 .isEqualTo(expected);
     }
+
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
             "babad|bab",

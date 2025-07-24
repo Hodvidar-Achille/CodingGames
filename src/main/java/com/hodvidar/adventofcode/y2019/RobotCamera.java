@@ -42,7 +42,7 @@ public final class RobotCamera {
             this.ship.printInConsole();
     }
 
-    private final int getASCIInumber(final int i) {
+    private int getASCIInumber(final int i) {
         if (i < 0 || i > 9)
             throw new IllegalArgumentException("Should be a digit");
         return i + 48;

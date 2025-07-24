@@ -100,8 +100,8 @@ public class Day13 extends AbstractAdventOfCode2023 {
         }
 
         protected boolean checkIfMirror(final List<String> lines,
-                                      final int backwardIndex,
-                                      final int forwardIndex) {
+                                        final int backwardIndex,
+                                        final int forwardIndex) {
             if (forwardIndex >= lines.size() || backwardIndex < 0) {
                 return true;
             }
