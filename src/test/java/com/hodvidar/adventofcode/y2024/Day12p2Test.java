@@ -17,7 +17,7 @@ public class Day12p2Test extends AbstractTestForAdventOfCode2024 {
 
     @Override
     protected int getExpectedResult() {
-        return 0;
+        return 818286;
     }
 
     @Override
