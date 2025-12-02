@@ -117,7 +117,7 @@ class Player {
                 final Point dest = ash.stepTowardsAndStopAt(closest.pos(), Player.ASH_STEP);
                 return new CandidatePoint(dest, 0, null);
             }
-// Si aucun humain, rester sur place
+            // Si aucun humain, rester sur place
             return new CandidatePoint(ash, 0, null);
         }
     }
