@@ -13,7 +13,7 @@ public class Day07p2Test extends AbstractTestForAdventOfCode2025 {
 
     @Override
     protected int getExpectedTestResult() {
-        return -1;
+        return 40;
     }
 
 }

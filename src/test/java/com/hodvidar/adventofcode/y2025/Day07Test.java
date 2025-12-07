@@ -8,12 +8,12 @@ public class Day07Test extends AbstractTestForAdventOfCode2025 {
 
     @Override
     protected double getExpectedResultDouble() {
-        return -1;
+        return 1550;
     }
 
     @Override
     protected int getExpectedTestResult() {
-        return -1;
+        return 21;
     }
 
 }
