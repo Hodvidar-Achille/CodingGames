@@ -5,9 +5,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.List;
 
-public class FileReader2 {
+public class FileReaderUtil2 {
 
-    private FileReaderUtil() { /* utility class – prevent instantiation */ }
+    private FileReaderUtil2() {
+        /* utility class – prevent instantiation */
+    }
 
     /**
      * Reads the entire file located at {@code filePath} and returns a list
@@ -17,11 +19,8 @@ public class FileReader2 {
      * @return an immutable list of lines; never {@code null}
      * @throws IOException if the file cannot be opened or read
      */
-    public static List<String> readFile(String filePath) throws IOException {
-        Path path = Paths.get(filePath);
-
-        // The method itself handles opening/closing the underlying stream.
-        // StandardCharsets.UTF_8 is explicit – change if you need another encoding.
+    public static List<String> readFile(final String filePath) throws IOException {
+        final Path path = Paths.get(filePath);
         return Files.readAllLines(path, StandardCharsets.UTF_8);
     }
 
@@ -35,9 +34,9 @@ public class FileReader2 {
      * @throws IOException if something goes wrong while reading
      */
     public static List<String> readFileStreaming(String filePath) throws IOException {
-        Path path = Paths.get(filePath);
+        final Path path = Paths.get(filePath);
         try (var reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            List<String> lines = new java.util.ArrayList<>();
+            final List<String> lines = new java.util.ArrayList<>();
             String line;
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
