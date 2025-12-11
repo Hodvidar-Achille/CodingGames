@@ -1,6 +1,12 @@
 package com.hodvidar.adventofcode.y2025;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Day07 extends AbstractAdventOfCode2025 {
@@ -10,13 +16,11 @@ public class Day07 extends AbstractAdventOfCode2025 {
 
     protected static char[][] buildGrid(final List<List<Character>> linesGrid, final int rows, final int cols) {
         final char[][] grid = new char[rows][cols];
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid[i][j] = linesGrid.get(i).get(j);
             }
         }
-
         return grid;
     }
 
@@ -40,7 +44,7 @@ public class Day07 extends AbstractAdventOfCode2025 {
 
         // Convert to 2D array
         rows = linesGrid.size();
-        cols = rows > 0 ? linesGrid.get(0).size() : 0;
+        cols = rows > 0 ? linesGrid.getFirst().size() : 0;
         grid = buildGrid(linesGrid, rows, cols);
 
         // Find starting position 'S'
@@ -116,7 +120,7 @@ public class Day07 extends AbstractAdventOfCode2025 {
     }
 
     // Helper class to represent a beam
-    private static class Beam {
+    protected static class Beam {
         int row;
         int col;
 
