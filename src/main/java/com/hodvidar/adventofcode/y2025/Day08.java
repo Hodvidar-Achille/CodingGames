@@ -10,6 +10,8 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
+import com.hodvidar.adventofcode.AbstractAdventOfCode;
+
 public class Day08 extends AbstractAdventOfCode2025 {
 
     private final List<Point3D> points = new ArrayList<>();
@@ -49,6 +51,7 @@ public class Day08 extends AbstractAdventOfCode2025 {
 
         /* -------------------- ctor – builds the tree -------------------- */
         public ClosestPairsBlocks(final List<Point3D> pts) {
+            AbstractAdventOfCode.printIfVerbose("ClosestPairsBlocks constructor...");
             if (pts == null || pts.size() < 2) {
                 throw new IllegalArgumentException("need ≥2 points");
             }
@@ -58,7 +61,10 @@ public class Day08 extends AbstractAdventOfCode2025 {
                 final Point3D p = pts.get(i);
                 this.points[i] = new Point3D(p.x, p.y, p.z, i);
             }
+            AbstractAdventOfCode.printIfVerbose("this.points: " + Arrays.toString(this.points));
             this.root = buildKDTree(Arrays.asList(this.points), 0);
+            AbstractAdventOfCode.printIfVerbose("this.root: " + this.root);
+            AbstractAdventOfCode.printIfVerbose("ClosestPairsBlocks constructor - END");
         }
 
         /* -------------------- KD‑Tree builder (static) -------------------- */
@@ -102,11 +108,17 @@ public class Day08 extends AbstractAdventOfCode2025 {
          *  PUBLIC API – the method that the caller uses                     *
          * --------------------------------------------------------------- */
         public long productOfBlockSizes(final int numberOfPairsToCreate, final int numberOfBiggerBlocks) {
+            AbstractAdventOfCode.printIfVerbose("productOfBlockSizes("+numberOfPairsToCreate+", "+numberOfBiggerBlocks+"); ...");
+            AbstractAdventOfCode.printIfVerbose("Start building DSU and priority queue...");
             validateInput(numberOfPairsToCreate);
             final DSU dsu = new DSU(this.points.length);
+            AbstractAdventOfCode.printIfVerbose(dsu.print());
             final PriorityQueue<Candidate> pq = initQueue(dsu);
+            AbstractAdventOfCode.printIfVerbose("Initial PQ size: " + pq.size());
+            AbstractAdventOfCode.printIfVerbose("Start accepting pairs...");
             acceptPairs(pq, dsu, numberOfPairsToCreate);
             final int[] biggest = biggestBlocks(dsu, numberOfBiggerBlocks);
+            AbstractAdventOfCode.printIfVerbose("productOfBlockSizes("+numberOfPairsToCreate+", "+numberOfBiggerBlocks+"); END");
             return multiply(biggest);
         }
 
@@ -123,13 +135,16 @@ public class Day08 extends AbstractAdventOfCode2025 {
          *  2️⃣  BUILD INITIAL PRIORITY QUEUE                               *
          * --------------------------------------------------------------- */
         private PriorityQueue<Candidate> initQueue(final DSU dsu) {
+            AbstractAdventOfCode.printIfVerbose("initQueue START");
             final PriorityQueue<Candidate> pq = new PriorityQueue<>(Comparator.comparingDouble(c -> c.dist));
             for (final Point3D p : this.points) {
                 final Candidate c = nearestDifferentComponent(p, dsu);
-                if (c != null) {
+                AbstractAdventOfCode.printIfVerbose(c.toString());
+                if (c != null /* && c.a.id < c.b.id // keep only the “a<b” direction  */ ) {
                     pq.offer(c);
                 }
             }
+            AbstractAdventOfCode.printIfVerbose("initQueue END");
             return pq;
         }
 
@@ -137,32 +152,40 @@ public class Day08 extends AbstractAdventOfCode2025 {
          *  3️⃣  ACCEPT PAIRS                                               *
          * --------------------------------------------------------------- */
         private void acceptPairs(final PriorityQueue<Candidate> pq, final DSU dsu, final int maxPairs) {
+            AbstractAdventOfCode.printIfVerbose("acceptPairs(...) ...");
             int accepted = 0;
             while (accepted < maxPairs && !pq.isEmpty()) {
                 final Candidate cur = pq.poll();
+                AbstractAdventOfCode.printIfVerbose("Candidate n°"+accepted+" cur = "+cur.toString());
                 if (dsu.find(cur.a.id) == dsu.find(cur.b.id)) {
+                    AbstractAdventOfCode.printIfVerbose("Candidate discarded because both points are already in the same component.");
                     continue;
                 }
+                AbstractAdventOfCode.printIfVerbose("Accepting pair: " + cur.toString());
                 dsu.union(cur.a.id, cur.b.id);
                 accepted++;
-                //recomputeAll(pq, dsu);
+                AbstractAdventOfCode.printIfVerbose("DSU: "+dsu.print());
+                recomputeAll(pq, dsu);
                 // replaced by :
                 // the root of the newly created component (after the union)
-                int mergedRoot = dsu.find(cur.a.id);   // both a and b now share this root
-                recomputeOnlyMergedComponent(pq, dsu, mergedRoot);
+                /*int mergedRoot = dsu.find(cur.a.id);   // both a and b now share this root
+                recomputeOnlyMergedComponent(pq, dsu, mergedRoot);*/
             }
+            AbstractAdventOfCode.printIfVerbose("acceptPairs(...) - END");
         }
 
         /* --------------------------------------------------------------- *
          *  4️⃣  RECOMPUTE CANDIDATES FOR EVERY POINT                      *
          * --------------------------------------------------------------- */
         private void recomputeAll(final PriorityQueue<Candidate> pq, final DSU dsu) {
+            AbstractAdventOfCode.printIfVerbose("recomputeAll(...) ...");
             for (final Point3D p : this.points) {
                 final Candidate upd = nearestDifferentComponent(p, dsu);
                 if (upd != null) {
                     pq.offer(upd);
                 }
             }
+            AbstractAdventOfCode.printIfVerbose("recomputeAll(...) - END");
         }
 
         /**
@@ -178,11 +201,14 @@ public class Day08 extends AbstractAdventOfCode2025 {
         private void recomputeOnlyMergedComponent(final PriorityQueue<Candidate> pq,
                                                   final DSU dsu,
                                                   final int mergedRoot) {
+            AbstractAdventOfCode.printIfVerbose("recomputeOnlyMergedComponent...");
             for (final Point3D p : this.points) {
+                AbstractAdventOfCode.printIfVerbose("dsu.find(p.id):"+dsu.find(p.id)+" mergedRoot:"+mergedRoot);
                 if (dsu.find(p.id) != mergedRoot) {
                     continue;                     // point is not in the newly grown block
                 }
                 final Candidate upd = nearestDifferentComponent(p, dsu);
+                AbstractAdventOfCode.printIfVerbose("nearestDifferentComponent: "+upd);
                 if (upd != null) {
                     pq.offer(upd);
                 }
@@ -282,6 +308,10 @@ public class Day08 extends AbstractAdventOfCode2025 {
 
             int componentSize(final int x) {
                 return size[find(x)];
+            }
+
+            String print() {
+                return Arrays.toString(parent);
             }
         }
 

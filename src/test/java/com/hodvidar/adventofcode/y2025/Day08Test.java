@@ -34,16 +34,20 @@ public class Day08Test extends AbstractTestForAdventOfCode2025 {
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
             // points            | pairs | topBlocks | expectedProduct
-            "0,0,0; 10,0,0; 20,0,0; 30,0,0 | 1 | 1 | 2",          // closest pair merges two points → block sizes 2,1,1 → product of biggest 1
-            // block = 2
-            "0,0,0; 1,0,0; 2,10,0; 3,10,0 | 2 | 2 | 4",           // first merge (0‑1) → size2, then merge (2‑3) → size2 → biggest two blocks 2,2 →
-            // 2*2=4 (but we also have leftover size1, product of 2 biggest = 4)
-            "0,0,0; 5,0,0; 10,0,0; 35,0,0; 40,0,0 | 3 | 2 | 6", // after two merges we have blocks sizes 2,2,1 → product of three biggest = 2*2*1 =
-            // 4 (adjust expected accordingly)
-            "0,0,0; 100,0,0; 200,0,0; 300,0,0 | 3 | 1 | 4",   // three merges create a single block of size 4 → product of biggest 1 = 4
+            // closest pair merges two points → block sizes 2,1,1 → product of biggest 1 block = 2
+            "0,0,0; 10,0,0; 20,0,0; 30,0,0 | 1 | 2 | 2",
+            "0,0,0; 10,0,0; 25,0,0; 30,0,0 | 2 | 2 | 4",
+            "0,0,0; 1,0,0; 2,10,0; 3,10,0 | 2 | 2 | 4",
+            // after two merges we have blocks sizes 2,2,1 → product of three biggest = 2*2*1 = 4 (adjust expected accordingly)
+            "0,0,0; 5,0,0; 10,0,0; 35,0,0; 40,0,0 | 3 | 2 | 6",
+            // three merges create a single block of size 4 → product of biggest 1 = 4
+            "0,0,0; 100,0,0; 200,0,0; 300,0,0 | 3 | 1 | 4",
             "162,817,812; 57,618,57; 425,690,689; 431,825,988; 906,360,560; 805,96,715 | 3 | 2 | 6",
             "162,817,812; 57,618,57; 425,690,689; 431,825,988; 906,360,560; 805,96,715 | 3 | 1 | 3",
             "162,817,812; 57,618,57; 425,690,689; 431,825,988; 906,360,560; 805,96,715 | 4 | 1 | 5",
+            "162,817,812; 57,618,57; 906,360,560; 592,479,940; 352,342,300; 466,668,158; 542,29,236; 431,825,988; "
+            + "739,650,466; 52,470,668; 16,146,977; 819,987,18; 117,168,530; 805,96,715; 346,949,466; 970,615,88; "
+            + "941,993,340; 862,61,35; 984,92,344; 425,690,689 | 10 | 3 | 40"
     })
     void product_of_biggest_blocks(String pointsCsv,
                                    int pairs,
