@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.IntStream;
-
-import com.hodvidar.adventofcode.AbstractAdventOfCode;
 
 public class Day08 extends AbstractAdventOfCode2025 {
 
-    private final List<Point3D> points = new ArrayList<>();
-    private int numberOfPairsToBuild = 1;
+    protected final List<Point3D> points = new ArrayList<>();
+    protected int numberOfPairsToBuild = 1;
 
     @Override
     public double getDigitFromLine(final String line) {
@@ -41,17 +41,16 @@ public class Day08 extends AbstractAdventOfCode2025 {
     /**
      * @param id stable index, used by DSU
      */
-    record Point3D(double x, double y, double z, int id) {
+    protected record Point3D(double x, double y, double z, int id) {
     }
 
     static class ClosestPairsBlocks {
 
-        private final KDNode root;               // built once in the ctor
-        private final Point3D[] points;          // array indexed by id
+        protected final KDNode root;               // built once in the ctor
+        protected final Point3D[] points;          // array indexed by id
 
         /* -------------------- ctor – builds the tree -------------------- */
         public ClosestPairsBlocks(final List<Point3D> pts) {
-            AbstractAdventOfCode.printIfVerbose("ClosestPairsBlocks constructor...");
             if (pts == null || pts.size() < 2) {
                 throw new IllegalArgumentException("need ≥2 points");
             }
@@ -61,10 +60,7 @@ public class Day08 extends AbstractAdventOfCode2025 {
                 final Point3D p = pts.get(i);
                 this.points[i] = new Point3D(p.x, p.y, p.z, i);
             }
-            AbstractAdventOfCode.printIfVerbose("this.points: " + Arrays.toString(this.points));
             this.root = buildKDTree(Arrays.asList(this.points), 0);
-            AbstractAdventOfCode.printIfVerbose("this.root: " + this.root);
-            AbstractAdventOfCode.printIfVerbose("ClosestPairsBlocks constructor - END");
         }
 
         /* -------------------- KD‑Tree builder (static) -------------------- */
@@ -88,8 +84,6 @@ public class Day08 extends AbstractAdventOfCode2025 {
             };
         }
 
-        /* -------------------- public API -------------------- */
-
         private static double distance(final Point3D a, final Point3D b) {
             final double dx = a.x - b.x;
             final double dy = a.y - b.y;
@@ -98,35 +92,22 @@ public class Day08 extends AbstractAdventOfCode2025 {
         }
 
         /**
-         * Returns the product of the sizes of the blocks obtained after
-         * connecting the {@code X} closest pairs (subject to the merging rule).
-         *
-         * @param numberOfPairsToCreate number of pairs to extract (must be ≤ points.length)
-         * @return product of block sizes as a {@code long}
+         * Encode an unordered pair of point‑ids into a single long.
+         * The larger id is placed in the high 14 bits (ids < 10 000 → 14 bits are enough).
+         * The smaller id occupies the low 14 bits.
+         * This guarantees that (a,b) and (b,a) produce the same key.
          */
-        /* --------------------------------------------------------------- *
-         *  PUBLIC API – the method that the caller uses                     *
-         * --------------------------------------------------------------- */
-        public long productOfBlockSizes(final int numberOfPairsToCreate, final int numberOfBiggerBlocks) {
-            AbstractAdventOfCode.printIfVerbose("productOfBlockSizes("+numberOfPairsToCreate+", "+numberOfBiggerBlocks+"); ...");
-            AbstractAdventOfCode.printIfVerbose("Start building DSU and priority queue...");
-            validateInput(numberOfPairsToCreate);
-            final DSU dsu = new DSU(this.points.length);
-            AbstractAdventOfCode.printIfVerbose(dsu.print());
-            final PriorityQueue<Candidate> pq = initQueue(dsu);
-            AbstractAdventOfCode.printIfVerbose("Initial PQ size: " + pq.size());
-            AbstractAdventOfCode.printIfVerbose("Start accepting pairs...");
-            acceptPairs(pq, dsu, numberOfPairsToCreate);
-            final int[] biggest = biggestBlocks(dsu, numberOfBiggerBlocks);
-            AbstractAdventOfCode.printIfVerbose("productOfBlockSizes("+numberOfPairsToCreate+", "+numberOfBiggerBlocks+"); END");
-            return multiply(biggest);
+        private static long pairKey(final int idA, final int idB) {
+            final int hi = Math.max(idA, idB);
+            final int lo = Math.min(idA, idB);
+            return ((long) hi << 14) | lo;          // 28‑bit key fits easily in a long
         }
 
         /* --------------------------------------------------------------- *
          *  1️⃣  INPUT VALIDATION                                            *
          * --------------------------------------------------------------- */
-        private void validateInput(final int pairs) {
-            if (pairs < 1 || pairs > this.points.length) {
+        private static void validateInput(final int pairs) {
+            if (pairs < 1) {
                 throw new IllegalArgumentException("invalid X");
             }
         }
@@ -134,93 +115,45 @@ public class Day08 extends AbstractAdventOfCode2025 {
         /* --------------------------------------------------------------- *
          *  2️⃣  BUILD INITIAL PRIORITY QUEUE                               *
          * --------------------------------------------------------------- */
-        private PriorityQueue<Candidate> initQueue(final DSU dsu) {
-            AbstractAdventOfCode.printIfVerbose("initQueue START");
+        protected static PriorityQueue<Candidate> initQueue(final KDNode root, final Point3D[] points) {
+            // Global queue that will hold *all* candidates from all points. ordered by distance min to max
             final PriorityQueue<Candidate> pq = new PriorityQueue<>(Comparator.comparingDouble(c -> c.dist));
-            for (final Point3D p : this.points) {
-                final Candidate c = nearestDifferentComponent(p, dsu);
-                AbstractAdventOfCode.printIfVerbose(c.toString());
-                if (c != null /* && c.a.id < c.b.id // keep only the “a<b” direction  */ ) {
-                    pq.offer(c);
+            // We keep a Set of already‑seen unordered pair keys to avoid duplicates.
+            final Set<Long> seenPairs = new HashSet<>();
+            // Could be optimized ?
+            final double coefficient = 1.0;
+            final int numberOfPairsToCompute = Math.max(1, (int) Math.ceil(points.length * coefficient));
+            for (final Point3D p : points) {
+                final List<Candidate> candList = allNearestCandidates(root, p, numberOfPairsToCompute);
+                for (final Candidate c : candList) {
+                    // canonicalise the pair (store only a<b) and deduplicate
+                    final long key = pairKey(c.a.id, c.b.id);
+                    if (seenPairs.add(key)) {          // add returns false if already present
+                        pq.offer(c);
+                    }
                 }
             }
-            AbstractAdventOfCode.printIfVerbose("initQueue END");
             return pq;
         }
 
         /* --------------------------------------------------------------- *
          *  3️⃣  ACCEPT PAIRS                                               *
          * --------------------------------------------------------------- */
-        private void acceptPairs(final PriorityQueue<Candidate> pq, final DSU dsu, final int maxPairs) {
-            AbstractAdventOfCode.printIfVerbose("acceptPairs(...) ...");
+        private static void acceptPairs(final PriorityQueue<Candidate> pq, final DSU dsu, final int maxPairs) {
             int accepted = 0;
             while (accepted < maxPairs && !pq.isEmpty()) {
                 final Candidate cur = pq.poll();
-                AbstractAdventOfCode.printIfVerbose("Candidate n°"+accepted+" cur = "+cur.toString());
-                if (dsu.find(cur.a.id) == dsu.find(cur.b.id)) {
-                    AbstractAdventOfCode.printIfVerbose("Candidate discarded because both points are already in the same component.");
-                    continue;
-                }
-                AbstractAdventOfCode.printIfVerbose("Accepting pair: " + cur.toString());
                 dsu.union(cur.a.id, cur.b.id);
                 accepted++;
-                AbstractAdventOfCode.printIfVerbose("DSU: "+dsu.print());
-                recomputeAll(pq, dsu);
-                // replaced by :
-                // the root of the newly created component (after the union)
-                /*int mergedRoot = dsu.find(cur.a.id);   // both a and b now share this root
-                recomputeOnlyMergedComponent(pq, dsu, mergedRoot);*/
-            }
-            AbstractAdventOfCode.printIfVerbose("acceptPairs(...) - END");
-        }
-
-        /* --------------------------------------------------------------- *
-         *  4️⃣  RECOMPUTE CANDIDATES FOR EVERY POINT                      *
-         * --------------------------------------------------------------- */
-        private void recomputeAll(final PriorityQueue<Candidate> pq, final DSU dsu) {
-            AbstractAdventOfCode.printIfVerbose("recomputeAll(...) ...");
-            for (final Point3D p : this.points) {
-                final Candidate upd = nearestDifferentComponent(p, dsu);
-                if (upd != null) {
-                    pq.offer(upd);
-                }
-            }
-            AbstractAdventOfCode.printIfVerbose("recomputeAll(...) - END");
-        }
-
-        /**
-         * Re‑computes the nearest‑different‑component candidate **only** for the
-         * points that are members of the component that has just been enlarged
-         * (the component whose root is {@code mergedRoot}).
-         *
-         * @param pq          the priority queue that stores the candidates
-         * @param dsu         the disjoint‑set structure
-         * @param mergedRoot  the representative of the component that resulted
-         *                    from the latest union
-         */
-        private void recomputeOnlyMergedComponent(final PriorityQueue<Candidate> pq,
-                                                  final DSU dsu,
-                                                  final int mergedRoot) {
-            AbstractAdventOfCode.printIfVerbose("recomputeOnlyMergedComponent...");
-            for (final Point3D p : this.points) {
-                AbstractAdventOfCode.printIfVerbose("dsu.find(p.id):"+dsu.find(p.id)+" mergedRoot:"+mergedRoot);
-                if (dsu.find(p.id) != mergedRoot) {
-                    continue;                     // point is not in the newly grown block
-                }
-                final Candidate upd = nearestDifferentComponent(p, dsu);
-                AbstractAdventOfCode.printIfVerbose("nearestDifferentComponent: "+upd);
-                if (upd != null) {
-                    pq.offer(upd);
-                }
             }
         }
 
         /* --------------------------------------------------------------- *
          *  5️⃣  GET SIZES OF THE BIGGEST BLOCKS                            *
          * --------------------------------------------------------------- */
-        private int[] biggestBlocks(final DSU dsu, final int limit) {
+        private static int[] biggestBlocks(final Day08.Point3D[] points, final DSU dsu, final int limit) {
             final Map<Integer, Integer> compCount = new HashMap<>();
-            for (int i = 0; i < this.points.length; i++) {
+            for (int i = 0; i < points.length; i++) {
                 final int root = dsu.find(i);
                 compCount.merge(root, 1, Integer::sum);
             }
@@ -230,72 +163,113 @@ public class Day08 extends AbstractAdventOfCode2025 {
         /* --------------------------------------------------------------- *
          *  6️⃣  MULTIPLY ARRAY ELEMENTS                                    *
          * --------------------------------------------------------------- */
-        private long multiply(final int[] values) {
+        private static long multiply(final int[] values) {
             long prod = 1L;
             for (final int v : values)
                 prod *= v;
             return prod;
         }
 
-        /* -------------------- helper: nearest neighbour in a *different* component -------------------- */
-        private Candidate nearestDifferentComponent(final Point3D query, final DSU dsu) {
-            return nearest(this.root, query, 0, null, Double.POSITIVE_INFINITY, dsu);
+        private static List<Candidate> allNearestCandidates(final KDNode root, final Point3D query, final int k) {
+            // a max‑heap that keeps the *k* best (smallest distance) candidates seen so far
+            final PriorityQueue<Candidate> maxHeap = new PriorityQueue<>(Comparator.comparingDouble(c -> -c.dist));
+            collectKNearest(root, query, 0, maxHeap, k);
+            // turn the heap into a sorted list (closest first)
+            final List<Candidate> result = new ArrayList<>(maxHeap);
+            result.sort(Comparator.comparingDouble(c -> c.dist));
+            return result;
         }
 
-        private Candidate nearest(final KDNode node, final Point3D target, final int depth, Point3D best, double bestDist, final DSU dsu) {
+        /**
+         * Walks the KD‑Tree and keeps the {@code k} closest points to {@code target}
+         * in {@code heap}.  The heap is a *max*‑heap, therefore the element with the
+         * largest distance among the current best candidates is at the head.
+         *
+         * @param node   current KD‑Tree node
+         * @param target the query point
+         * @param depth  current tree depth (used only to decide the splitting axis)
+         * @param heap   max‑heap that stores at most {@code k} candidates
+         * @param k      maximum number of neighbours we keep
+         */
+        private static void collectKNearest(final KDNode node, final Point3D target, final int depth, final PriorityQueue<Candidate> heap,
+                                            final int k) {
             if (node == null) {
-                return best == null ? null : new Candidate(target, best, bestDist);
+                return;
             }
 
             final double d = distance(node.point, target);
-            if (d > 0 && d < bestDist && dsu.find(node.point.id) != dsu.find(target.id)) {
-                bestDist = d;
-                best = node.point;
+            if (d > 0) { // ignore the point itself (distance 0)
+                if (heap.size() < k) {
+                    heap.offer(new Candidate(target, node.point, d));
+                } else {
+                    assert heap.peek() != null;
+                    if (d < heap.peek().dist) {
+                        heap.poll(); // discard the farthest
+                        heap.offer(new Candidate(target, node.point, d));
+                    }
+                }
             }
 
+            // ----- decide which side of the splitting plane to explore first -----
             final int axis = node.axis;
             final double diff = getCoord(target, axis) - getCoord(node.point, axis);
             final KDNode near = diff <= 0 ? node.left : node.right;
             final KDNode far = diff <= 0 ? node.right : node.left;
 
-            Candidate cand = nearest(near, target, depth + 1, best, bestDist, dsu);
-            if (cand != null) {
-                best = cand.b;
-                bestDist = cand.dist;
-            }
+            collectKNearest(near, target, depth + 1, heap, k);
 
-            if (Math.abs(diff) < bestDist) {
-                cand = nearest(far, target, depth + 1, best, bestDist, dsu);
-                if (cand != null && cand.dist < bestDist) {
-                    best = cand.b;
-                    bestDist = cand.dist;
-                }
+            // If the hypersphere (radius = current worst distance in the heap)
+            // intersects the splitting plane, we must also explore the far side.
+            final double worstDist = heap.isEmpty() ? Double.POSITIVE_INFINITY : heap.peek().dist;
+            if (Math.abs(diff) < worstDist) {
+                collectKNearest(far, target, depth + 1, heap, k);
             }
-            return best == null ? null : new Candidate(target, best, bestDist);
+        }
+
+        /* -------------------- public API -------------------- */
+
+        /**
+         * Returns the product of the sizes of the blocks obtained after
+         * connecting the {@code X} closest pairs (subject to the merging rule).
+         *
+         * @param numberOfPairsToCreate number of pairs to extract (must be ≤ points.length)
+         * @return product of block sizes as a {@code long}
+         */
+        public long productOfBlockSizes(final int numberOfPairsToCreate, final int numberOfBiggerBlocks) {
+            validateInput(numberOfPairsToCreate);
+            final DSU dsu = new DSU(this.points.length);
+            final PriorityQueue<Candidate> pq = initQueue(this.root, this.points);
+            acceptPairs(pq, dsu, numberOfPairsToCreate);
+            final int[] biggest = biggestBlocks(this.points, dsu, numberOfBiggerBlocks);
+            return multiply(biggest);
         }
 
         /* -------------------- DSU (union‑find) -------------------- */
-        private static final class DSU {
+        protected static final class DSU {
             private final int[] parent, size;
+            private int numberOfDistinctBlocks;
 
             DSU(final int n) {
                 parent = IntStream.range(0, n).toArray();
                 size = new int[n];
                 Arrays.fill(size, 1);
+                this.numberOfDistinctBlocks = n;                 // initially every element is alone
             }
 
             int find(final int x) {
                 if (parent[x] != x) {
-                    parent[x] = find(parent[x]);
+                    parent[x] = find(parent[x]);    // path‑compression
                 }
                 return parent[x];
             }
 
+            /** Returns true if a merge really happened (i.e. the two sets were different). */
             boolean union(final int a, final int b) {
                 int ra = find(a), rb = find(b);
                 if (ra == rb) {
-                    return false;
+                    return false;                    // already in the same component
                 }
+                // union‑by‑size – attach the smaller tree under the larger one
                 if (size[ra] < size[rb]) {
                     final int t = ra;
                     ra = rb;
@@ -303,26 +277,23 @@ public class Day08 extends AbstractAdventOfCode2025 {
                 }
                 parent[rb] = ra;
                 size[ra] += size[rb];
+                numberOfDistinctBlocks--;
                 return true;
             }
 
-            int componentSize(final int x) {
-                return size[find(x)];
+            boolean isFullyUnified() {
+                return numberOfDistinctBlocks == 1;
             }
-
-            String print() {
-                return Arrays.toString(parent);
-            }
+        }
         }
 
         /**
          * @param axis 0 → X, 1 → Y, 2 → Z
          */ /* -------------------- KD‑Tree (static, read‑only) -------------------- */
-        private record KDNode(Point3D point, KDNode left, KDNode right, int axis) {
+        protected record KDNode(Point3D point, KDNode left, KDNode right, int axis) {
         }
 
-        private record Candidate(Point3D a, Point3D b, double dist) {
-        }
+    protected record Candidate(Point3D a, Point3D b, double dist) {
     }
 }
 
