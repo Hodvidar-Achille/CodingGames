@@ -83,6 +83,10 @@ public class JavaFileUpdater {
         int processed = 0;
         int errors = 0;
 
+        numberOfCartouchesModified = 0;
+        numberOfMethodsModified = 0;
+        numberOfVariablesModified = 0;
+
         for (final String filePath : filePaths) {
             try {
                 if (updateJavaFile(filePath.trim())) {
@@ -107,9 +111,6 @@ public class JavaFileUpdater {
 
     private static boolean updateJavaFile(final String filePath) throws IOException {
         new_sub_version = "D1.000";
-        numberOfCartouchesModified = 0;
-        numberOfMethodsModified = 0;
-        numberOfVariablesModified = 0;
         final Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             System.err.println("Fichier non trouvé: " + filePath);
@@ -140,6 +141,7 @@ public class JavaFileUpdater {
     }
 
     static String updateCartouche(final String content) {
+        isUsingCartouche1 = true;
         // Trouver le début du cartouche
         int cartoucheStart = content.indexOf(CARTOUCHE_START_MARKER_1);
         if (cartoucheStart == -1) {
@@ -151,7 +153,7 @@ public class JavaFileUpdater {
         }
         // Trouver la fin du cartouche
         int cartoucheEnd = content.indexOf(
-                (isUsingCartouche1) ? CARTOUCHE_END_MARKER_1 : CARTOUCHE_MARKER_2, cartoucheStart);
+                (isUsingCartouche1) ? CARTOUCHE_END_MARKER_1 : CARTOUCHE_MARKER_2, cartoucheStart+1);
         if (cartoucheEnd == -1) {
             return content;
         }
@@ -165,10 +167,11 @@ public class JavaFileUpdater {
         String lastSubVersion = null;
 
         for (int i = lines.length - 1; i >= 0; i--) {
-            if (lines[i].contains("++MAJ") || lines[i].contains("++CRT")) {
-                lastVersionLine = lines[i];
+            final String currentLine = lines[i];
+            if (currentLine.contains("++MAJ") || currentLine.contains("++CRT")) {
+                lastVersionLine = currentLine;
                 // Extraire la sous-version
-                final Matcher matcher = VERSION_PATTERN.matcher(lines[i]);
+                final Matcher matcher = VERSION_PATTERN.matcher(currentLine);
                 if (matcher.find()) {
                     lastSubVersion = matcher.group();
                     break;
@@ -185,7 +188,9 @@ public class JavaFileUpdater {
         new_sub_version = newSubVersion;
 
         // Créer la nouvelle ligne
-        final String newLine = "** ++MAJ " + VERSION + " - " + newSubVersion + " - " + TRIGRAMME + " - " + DATE + " - " + MESSAGE;
+        final String newLine = ((isUsingCartouche1) ? "**" : "//")
+                + " ++MAJ " + VERSION + " - " + newSubVersion
+                + " - " + TRIGRAMME + " - " + DATE + " - " + MESSAGE;
 
         // Insérer la nouvelle ligne avant la dernière ligne du cartouche
         final StringBuilder newCartouche = new StringBuilder();
