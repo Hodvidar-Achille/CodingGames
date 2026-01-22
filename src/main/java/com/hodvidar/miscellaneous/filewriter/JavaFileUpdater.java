@@ -40,6 +40,9 @@ public class JavaFileUpdater {
     private static final String CARTOUCHE_MARKER_2 = "// =============================================================================";
     private static String new_sub_version = null;
     private static boolean isUsingCartouche1 = true;
+    private static int numberOfCartouchesModified = 0;
+    private static int numberOfMethodsModified = 0;
+    private static int numberOfVariablesModified = 0;
 
     public static void main(final String[] args) {
         final String inputFileName = RESOURCES_TEST + File.separator + "filewriter" + File.separator + "fichier_liste.txt";
@@ -85,6 +88,8 @@ public class JavaFileUpdater {
                 if (updateJavaFile(filePath.trim())) {
                     processed++;
                     System.out.println("✓ Traité: " + filePath);
+                } else {
+                    System.out.println("→ Aucun changement pour: " + filePath);
                 }
             } catch (final Exception e) {
                 errors++;
@@ -94,11 +99,17 @@ public class JavaFileUpdater {
 
         System.out.println("\nRésumé:");
         System.out.println("Fichiers traités avec succès: " + processed);
+        System.out.println("Nombre de cartouche modifiées: " + numberOfCartouchesModified);
+        System.out.println("Nombre de méthodes modifiées: " + numberOfMethodsModified);
+        System.out.println("Nombre de variables modifiées: " + numberOfVariablesModified);
         System.out.println("Erreurs: " + errors);
     }
 
     private static boolean updateJavaFile(final String filePath) throws IOException {
         new_sub_version = "D1.000";
+        numberOfCartouchesModified = 0;
+        numberOfMethodsModified = 0;
+        numberOfVariablesModified = 0;
         final Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             System.err.println("Fichier non trouvé: " + filePath);
@@ -110,6 +121,7 @@ public class JavaFileUpdater {
         final String originalContent = content;
 
         // 1. Trouver et mettre à jour le cartouche
+        // → met à jour new_sub_version
         content = updateCartouche(content);
 
         // 2. Mettre à jour la méthode onVersion si présente
@@ -189,6 +201,7 @@ public class JavaFileUpdater {
         }
 
         // Remplacer l'ancien cartouche par le nouveau
+        numberOfCartouchesModified++;
         return content.substring(0, cartoucheStart) + newCartouche + content.substring(cartoucheEnd);
     }
 
@@ -243,6 +256,7 @@ public class JavaFileUpdater {
         }
         matcher.appendTail(result);
 
+        numberOfMethodsModified++;
         return result.toString();
     }
 
@@ -261,6 +275,7 @@ public class JavaFileUpdater {
         }
         matcher.appendTail(result);
 
+        numberOfVariablesModified++;
         return result.toString();
     }
 
