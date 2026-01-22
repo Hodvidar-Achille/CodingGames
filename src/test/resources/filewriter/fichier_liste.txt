@@ -1,0 +1,4 @@
+src/test/resources/filewriter/dossier1/sousdossier1/soussousdossier1/FileWriterTest1.java
+src/test/resources/filewriter/dossier1/sousdossier1/soussousdossier2/FileWriterTest2.java
+src/test/java/com/hodvidar/miscellaneous/filewriter/FileWriterTest1.java
+src/test/java/com/hodvidar/miscellaneous/filewriter/FileWriterTest2.java

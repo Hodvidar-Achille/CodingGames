@@ -32,9 +32,9 @@ public class Day10p2 extends Day10 {
     /**
      * Apply one press of the given button to the mutable counter array.
      */
-    private static void clickButton(final List<Integer> button,
+    private static void clickButton(final int[] button,
                                     final int[] currentSolution) {
-        for (final Integer idx : button) {
+        for (final int idx : button) {
             currentSolution[idx] += 1;
         }
     }
@@ -98,9 +98,7 @@ public class Day10p2 extends Day10 {
                 // create a fresh copy of the current counters
                 final int[] next = Arrays.copyOf(curCounters, nLights);
                 // apply the button once
-                for (final int idx : buttons[b]) {
-                    next[idx] += 1;
-                }
+                clickButton(buttons[b], next);
 
                 // quick prune: if any counter already exceeds the target we can skip
                 boolean bad = false;
@@ -148,7 +146,9 @@ public class Day10p2 extends Day10 {
     @Override
     public double getDigitFromLine(final String line) {
         final ParsedLine parsed = parseLine(line);
+        // Too long :
         return solveMinimalButtonForJoltageRequirement(parsed.numbers(), parsed.groups());
+        // Need a more optimized solution
     }
 
 

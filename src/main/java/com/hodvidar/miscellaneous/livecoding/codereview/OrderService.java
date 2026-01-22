@@ -47,6 +47,7 @@ public class OrderService {
         }
     }
 
+    // INPUT : ["bob, "cat", "henry", "bernard"] --> {"B": "bob,bernard", "C": "cat", "H": "henry""}
     public static Map<String, String> groupByFirstLetter(List<String> words) {
         Map<String, String> map = new HashMap<>();
         for (String w : words) {

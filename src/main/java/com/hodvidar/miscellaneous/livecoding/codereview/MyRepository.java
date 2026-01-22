@@ -15,17 +15,16 @@ public class MyRepository {
      */
     public static String a(Service s, Connection c) throws Exception {
         // update this code
-
+        s.setConnection(c);
+        s.execute();
+        c.commit();
+        c.rollback();
+        c.close();
         try {
-            s.setConnection(c);
-            s.execute();
-            c.commit();
             return "OK";
         } catch (Exception e)  {
-            c.rollback();
            return "BAD";
         } finally {
-            c.close();
         }
     }
 
