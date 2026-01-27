@@ -4,18 +4,19 @@
 ** ++MAJ H1_01 - D1.001 - DEB - 10.03.15 - Optimisation Java pour noyau HTML 5 : supp variables membres
 ** ++MAJ H1_01 -                           Suppr onActivate,onPostPrevRec,onPostNextRec et onPostSynchro
 ** ++MAJ H4_01 - D1.012 - DEB - 17.01.18 - Maj commentaires
+** ++MAJ J4_01 - D1.013 - DEB - 17.01.18 - Maj commentaires
 ============================================================================= */
 
 package com.hodvidar.miscellaneous.filewriter;
 
 public class FileWriterTest1 {
     /*
-    private String version = "D1.012";
+    private static String version = "D1.013";
 
 
         @Override
     public String onVersion(IDefaultEvent event) {
-        return "D1.012";
+        return "D1.013";
     }
      */
 }

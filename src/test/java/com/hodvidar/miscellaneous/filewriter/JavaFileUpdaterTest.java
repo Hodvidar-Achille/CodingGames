@@ -216,6 +216,27 @@ class JavaFileUpdaterTest {
     }
 
     @Test
+    void updateStaticVersion_shouldUpdateStaticVersionWithoutModifier() {
+        // Arrange
+        final String content = """
+                /* =============================================================================
+                ** ++MAJ blabla
+                ** ++MAJ blabla
+                ** ++MAJ blabla - D1.004
+                ============================================================================= */
+                
+                private static String version = "D1.004";
+                """;
+
+        // Act
+        final String updatedCartouche = JavaFileUpdater.updateCartouche(content);
+        final String result = JavaFileUpdater.updateStaticVersion(updatedCartouche);
+
+        // Assert
+        assertThat(result).contains("private static String version = \"D1.005\";");
+    }
+
+    @Test
     void updateStaticVersion_shouldNotChangeOtherVariables() {
         // Arrange
         final String content = """

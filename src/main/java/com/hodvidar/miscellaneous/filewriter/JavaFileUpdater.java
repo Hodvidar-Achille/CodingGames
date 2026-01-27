@@ -16,12 +16,17 @@ import java.util.regex.Pattern;
 
 public class JavaFileUpdater {
 
-    // Constantes à configurer selon vos besoins
+    // Constantes à configurer selon les besoins
     static final String VERSION = "J4_01";
     static final String TRIGRAMME = "AGE";
     static final String DATE = "13.01.2026";
     static final String MESSAGE = "Fix nombre instances String";
-    private static final String RESOURCES_TEST = "src" + File.separator + "test" + File.separator + "resources";
+
+    //
+    private static final String EMPTY_VERSION = "     ";
+    private static final String RESOURCES_FOLDER = "src" + File.separator + "main" + File.separator + "resources";
+    private static final String FILEWRITER_FOLDER = "filewriter";
+    private static final String FILE_NAME = "fichier_liste.txt";
     // Patterns pour les expressions régulières
     private static final Pattern CARTOCHE_END_PATTERN =
             Pattern.compile("^\\s*\\*{2}\\s*\\+\\+MAJ.*");
@@ -32,12 +37,16 @@ public class JavaFileUpdater {
     private static final Pattern ON_VERSION_PATTERN =
             Pattern.compile("(onVersion\\s*\\([^)]*\\)\\s*\\{[^}]*return\\s*\")([^\"]*)(\"[^}]*\\})", Pattern.DOTALL);
     // Pour modif des variables comme : static final String VERSION = "D1.000";
+    // Version corrigée pour accepter version/VERSION (case insensitive)
     private static final Pattern STATIC_VERSION_PATTERN =
-            Pattern.compile("(\\s*(?:private|protected|public)?\\s*(?:static\\s+)?(?:final\\s+)?String\\s+VERSION\\s*=\\s*\")([^\"]*)(\"\\s*;)");
+            Pattern.compile("(\\s*(?:private|protected|public)?\\s*(?:static\\s+)?(?:final\\s+)?String\\s+(version|VERSION)\\s*=\\s*\")([^\"]*)(\"\\s*;)",
+                    Pattern.CASE_INSENSITIVE);
+
     private static final String LINE_BREAK = "\n";
     private static final String CARTOUCHE_START_MARKER_1 = "/* =============================================================================";
     private static final String CARTOUCHE_END_MARKER_1 = "============================================================================= */";
     private static final String CARTOUCHE_MARKER_2 = "// =============================================================================";
+
     private static String new_sub_version = null;
     private static boolean isUsingCartouche1 = true;
     private static int numberOfCartouchesModified = 0;
@@ -45,7 +54,10 @@ public class JavaFileUpdater {
     private static int numberOfVariablesModified = 0;
 
     public static void main(final String[] args) {
-        final String inputFileName = RESOURCES_TEST + File.separator + "filewriter" + File.separator + "fichier_liste.txt";
+        final long start = System.currentTimeMillis();
+        final String inputFileName = RESOURCES_FOLDER + File.separator +
+                FILEWRITER_FOLDER + File.separator
+                        + FILE_NAME;
 
         // Essayer de charger le fichier depuis les ressources
         final InputStream resourceStream = JavaFileUpdater.class.getClassLoader()
@@ -71,9 +83,6 @@ public class JavaFileUpdater {
                 filePaths = Files.readAllLines(Paths.get(inputFileName), StandardCharsets.UTF_8);
             } catch (final IOException e) {
                 System.err.println("Erreur: fichier '" + inputFileName + "' non trouvé ni dans les ressources ni dans le répertoire courant.");
-                System.out.println("Placez le fichier dans:");
-                System.out.println("- Le classpath (src/main/resources)");
-                System.out.println("- Ou le répertoire courant");
                 return;
             }
         }
@@ -88,10 +97,19 @@ public class JavaFileUpdater {
         numberOfVariablesModified = 0;
 
         for (final String filePath : filePaths) {
+            final int previousNumberOfCartouchesModified = numberOfCartouchesModified;
+            final int previousNumberOfMethodsModified = numberOfMethodsModified;
+            final int previousNumberOfVariablesModified = numberOfVariablesModified;
             try {
                 if (updateJavaFile(filePath.trim())) {
                     processed++;
-                    System.out.println("✓ Traité: " + filePath);
+                    System.out.println("✓ Traité: " + filePath + " | cartouche "
+                            + ((previousNumberOfCartouchesModified != numberOfCartouchesModified) ? "✓" : "✗")
+                            + " | onVersion (method) "
+                            + ((previousNumberOfMethodsModified != numberOfMethodsModified) ? "✓" : "✗")
+                            + " | version variable "
+                            + ((previousNumberOfVariablesModified != numberOfVariablesModified) ? "✓" : "✗"));
+
                 } else {
                     System.out.println("→ Aucun changement pour: " + filePath);
                 }
@@ -107,6 +125,8 @@ public class JavaFileUpdater {
         System.out.println("Nombre de méthodes modifiées: " + numberOfMethodsModified);
         System.out.println("Nombre de variables modifiées: " + numberOfVariablesModified);
         System.out.println("Erreurs: " + errors);
+        final long end = System.currentTimeMillis();
+        System.out.println("Temps total: " + (end - start) + " ms");
     }
 
     private static boolean updateJavaFile(final String filePath) throws IOException {
@@ -166,6 +186,7 @@ public class JavaFileUpdater {
         String lastVersionLine = null;
         String lastSubVersion = null;
 
+        boolean isVersionAlreadyPresent = false;
         for (int i = lines.length - 1; i >= 0; i--) {
             final String currentLine = lines[i];
             if (currentLine.contains("++MAJ") || currentLine.contains("++CRT")) {
@@ -174,6 +195,9 @@ public class JavaFileUpdater {
                 final Matcher matcher = VERSION_PATTERN.matcher(currentLine);
                 if (matcher.find()) {
                     lastSubVersion = matcher.group();
+                    if (lastVersionLine.contains(VERSION)) {
+                        isVersionAlreadyPresent = true;
+                    }
                     break;
                 }
             }
@@ -189,7 +213,9 @@ public class JavaFileUpdater {
 
         // Créer la nouvelle ligne
         final String newLine = ((isUsingCartouche1) ? "**" : "//")
-                + " ++MAJ " + VERSION + " - " + newSubVersion
+                + " ++MAJ "
+                + ((isVersionAlreadyPresent) ? EMPTY_VERSION : VERSION)
+                + " - " + newSubVersion
                 + " - " + TRIGRAMME + " - " + DATE + " - " + MESSAGE;
 
         // Insérer la nouvelle ligne avant la dernière ligne du cartouche
@@ -206,8 +232,11 @@ public class JavaFileUpdater {
         }
 
         // Remplacer l'ancien cartouche par le nouveau
-        numberOfCartouchesModified++;
-        return content.substring(0, cartoucheStart) + newCartouche + content.substring(cartoucheEnd);
+        final String modifiedCartouche = content.substring(0, cartoucheStart) + newCartouche + content.substring(cartoucheEnd);
+        if (!cartouche.equals(modifiedCartouche)) {
+            numberOfCartouchesModified++;
+        }
+        return modifiedCartouche;
     }
 
     static String incrementSubVersion(final String subVersion) {
@@ -258,10 +287,9 @@ public class JavaFileUpdater {
             } else {
                 matcher.appendReplacement(result, matcher.group());
             }
+            numberOfMethodsModified++;
         }
         matcher.appendTail(result);
-
-        numberOfMethodsModified++;
         return result.toString();
     }
 
@@ -273,14 +301,14 @@ public class JavaFileUpdater {
             // Trouver la dernière sous-version dans le cartouche pour la mettre à jour
             final String newSubVersion = findLastSubVersionInCartouche(content);
             if (newSubVersion != null) {
-                matcher.appendReplacement(result, "$1" + newSubVersion + "$3");
+                // Utiliser $1 pour le début, newSubVersion pour la version, et $4 pour la fin
+                // (le groupe 2 est maintenant "version" ou "VERSION")
+                matcher.appendReplacement(result, "$1" + newSubVersion + "$4");
             } else {
                 matcher.appendReplacement(result, matcher.group());
             }
         }
         matcher.appendTail(result);
-
-        numberOfVariablesModified++;
         return result.toString();
     }
 
@@ -311,4 +339,3 @@ public class JavaFileUpdater {
         return null;
     }
 }
-
