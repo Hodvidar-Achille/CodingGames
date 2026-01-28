@@ -53,7 +53,16 @@ public class JavaFileUpdater {
     static int numberOfMethodsModified = 0;
     static int numberOfVariablesModified = 0;
 
+    static void initializeStaticVariables() {
+        new_sub_version = "D1.000";
+        isUsingCartouche1 = true;
+        numberOfCartouchesModified = 0;
+        numberOfMethodsModified = 0;
+        numberOfVariablesModified = 0;
+    }
+
     public static void main(final String[] args) {
+        initializeStaticVariables();
         final long start = System.currentTimeMillis();
         final String inputFileName = RESOURCES_FOLDER + File.separator +
                 FILEWRITER_FOLDER + File.separator
@@ -91,10 +100,6 @@ public class JavaFileUpdater {
 
         int processed = 0;
         int errors = 0;
-
-        numberOfCartouchesModified = 0;
-        numberOfMethodsModified = 0;
-        numberOfVariablesModified = 0;
 
         for (final String filePath : filePaths) {
             final int previousNumberOfCartouchesModified = numberOfCartouchesModified;
@@ -151,7 +156,6 @@ public class JavaFileUpdater {
     }
 
     static String updateContent(String content) {
-        initializeStaticVariables();
         // 1. Trouver et mettre à jour le cartouche
         // → met à jour new_sub_version
         content = updateCartouche(content);
@@ -160,14 +164,6 @@ public class JavaFileUpdater {
         // 3. Mettre à jour la variable VERSION si présente
         content = updateStaticVersion(content);
         return content;
-    }
-
-    private static void initializeStaticVariables() {
-        new_sub_version = "D1.000";
-        isUsingCartouche1 = true;
-        numberOfCartouchesModified = 0;
-        numberOfMethodsModified = 0;
-        numberOfVariablesModified = 0;
     }
 
     static String updateCartouche(final String content) {

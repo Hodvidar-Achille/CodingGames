@@ -1,5 +1,6 @@
 package com.hodvidar.miscellaneous.filewriter;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -7,6 +8,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class JavaFileUpdaterTest {
+
+    @BeforeEach
+    void setUp() {
+        JavaFileUpdater.initializeStaticVariables();
+    }
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
