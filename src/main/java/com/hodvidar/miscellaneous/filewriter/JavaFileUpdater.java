@@ -101,6 +101,7 @@ public class JavaFileUpdater {
         int processed = 0;
         int errors = 0;
 
+        final List<String> filePathsNotModified = new ArrayList<>();
         for (final String filePath : filePaths) {
             final int previousNumberOfCartouchesModified = numberOfCartouchesModified;
             final int previousNumberOfMethodsModified = numberOfMethodsModified;
@@ -117,6 +118,7 @@ public class JavaFileUpdater {
 
                 } else {
                     System.out.println("→ Aucun changement pour: " + filePath);
+                    filePathsNotModified.add(filePath);
                 }
             } catch (final Exception e) {
                 errors++;
@@ -130,6 +132,10 @@ public class JavaFileUpdater {
         System.out.println("Nombre de méthodes modifiées: " + numberOfMethodsModified);
         System.out.println("Nombre de variables modifiées: " + numberOfVariablesModified);
         System.out.println("Erreurs: " + errors);
+        System.out.println("Récapitulatif des fichiers non modifiés : ");
+        for(final String filePath : filePathsNotModified) {
+            System.out.println(filePath);
+        }
         final long end = System.currentTimeMillis();
         System.out.println("Temps total: " + (end - start) + " ms");
     }
