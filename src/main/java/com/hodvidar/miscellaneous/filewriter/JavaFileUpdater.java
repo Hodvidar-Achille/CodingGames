@@ -324,31 +324,4 @@ public class JavaFileUpdater {
         matcher.appendTail(result);
         return result.toString();
     }
-
-    static String findLastSubVersionInCartouche(final String content) {
-        final int cartoucheStart = content.indexOf(
-                isUsingCartouche1 ? CARTOUCHE_START_MARKER_1 : CARTOUCHE_MARKER_2);
-        if (cartoucheStart == -1) {
-            return null;
-        }
-        final int cartoucheEnd = content.indexOf(
-                isUsingCartouche1 ? CARTOUCHE_END_MARKER_1 : CARTOUCHE_MARKER_2, cartoucheStart);
-        if (cartoucheEnd == -1) {
-            return null;
-        }
-
-        final String cartouche = content.substring(cartoucheStart, cartoucheEnd);
-        final String[] lines = cartouche.split(LINE_BREAK);
-
-        // Trouver la dernière sous-version dans le cartouche
-        for (int i = lines.length - 1; i >= 0; i--) {
-            if (lines[i].contains("++MAJ") || lines[i].contains("++CRT")) {
-                final Matcher matcher = VERSION_PATTERN.matcher(lines[i]);
-                if (matcher.find()) {
-                    return matcher.group();
-                }
-            }
-        }
-        return null;
-    }
 }

@@ -16,23 +16,6 @@ class JavaFileUpdaterTest {
 
     @ParameterizedTest
     @CsvSource(delimiter = '|', value = {
-            "** ++MAJ H5_01 - D1.011 - FAH - 14.02.19 - Modification select onExeQuery() car prise en compte de estamimo | D1.011",
-            "** ++CRT J1_01 - D1.000 - FAH - 13.02.23 - Creation Qualiac | D1.000",
-            "** ++MAJ : H1_01   - DEB - D1.01 - 06.03.2015 - Optimisation Java pour noyau HTML 5 | D1.01",
-            "** ++MAJ C3_01 - B1.002 - MLC - 29.04.02 - Possibilite d'appliquer les modifs instantanément (persistant) | B1.002",
-            "** ++CRT  B1.00 - 15.05.2002 - RF - Création QUALIAC | B1.00"
-    })
-    void findLastSubVersionInCartouche(final String input, final String expectedResult) {
-        final String start = "/* =============================================================================" + "\n";
-        final String end = "============================================================================= */" + "\n";
-        final String line1 = "** ++MAJ blabla" + "\n";
-        final String line2 = "** ++MAJ blabla - D1.101" + "\n";
-        final String testedValue = start + line1 + line2 + input + "\n" + end;
-        assertThat(JavaFileUpdater.findLastSubVersionInCartouche(testedValue)).isEqualTo(expectedResult);
-    }
-
-    @ParameterizedTest
-    @CsvSource(delimiter = '|', value = {
             "D1.011 | D1.012",
             "D1.000 | D1.001",
             "D1.01 | D1.002",
