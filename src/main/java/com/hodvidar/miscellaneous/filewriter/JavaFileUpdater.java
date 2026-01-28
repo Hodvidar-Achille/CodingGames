@@ -19,12 +19,12 @@ public class JavaFileUpdater {
     // Constantes à configurer selon les besoins
     static final String VERSION = "J4_01";
     static final String TRIGRAMME = "AGE";
-    static final String DATE = "13.01.2026";
+    static final String DATE = "13.01.26";
     static final String MESSAGE = "Fix nombre instances String";
 
     //
     private static final String EMPTY_VERSION = "     ";
-    private static final String RESOURCES_FOLDER = "src" + File.separator + "main" + File.separator + "resources";
+    private static final String RESOURCES_FOLDER = "src" + File.separator +  "test" + File.separator + "resources";
     private static final String FILEWRITER_FOLDER = "filewriter";
     private static final String FILE_NAME = "fichier_liste.txt";
     // Patterns pour les expressions régulières
@@ -37,9 +37,9 @@ public class JavaFileUpdater {
     private static final Pattern ON_VERSION_PATTERN =
             Pattern.compile("(onVersion\\s*\\([^)]*\\)\\s*\\{[^}]*return\\s*\")([^\"]*)(\"[^}]*\\})", Pattern.DOTALL);
     // Pour modif des variables comme : static final String VERSION = "D1.000";
-    // Version corrigée pour accepter version/VERSION (case insensitive)
+    // Accepte version/VERSION (case insensitive)
     private static final Pattern STATIC_VERSION_PATTERN =
-            Pattern.compile("(\\s*(?:private|protected|public)?\\s*(?:static\\s+)?(?:final\\s+)?String\\s+(version|VERSION)\\s*=\\s*\")([^\"]*)(\"\\s*;)",
+            Pattern.compile("(\\s*(?:private|protected|public)?\\s+(?:static\\s+)?(?:final\\s+)?String\\s+(version|VERSION)\\s*=\\s*\")([^\"]*)(\"\\s*;)",
                     Pattern.CASE_INSENSITIVE);
 
     private static final String LINE_BREAK = "\n";
@@ -49,9 +49,9 @@ public class JavaFileUpdater {
 
     private static String new_sub_version = null;
     private static boolean isUsingCartouche1 = true;
-    private static int numberOfCartouchesModified = 0;
-    private static int numberOfMethodsModified = 0;
-    private static int numberOfVariablesModified = 0;
+    static int numberOfCartouchesModified = 0;
+    static int numberOfMethodsModified = 0;
+    static int numberOfVariablesModified = 0;
 
     public static void main(final String[] args) {
         final long start = System.currentTimeMillis();
@@ -130,7 +130,6 @@ public class JavaFileUpdater {
     }
 
     private static boolean updateJavaFile(final String filePath) throws IOException {
-        new_sub_version = "D1.000";
         final Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             System.err.println("Fichier non trouvé: " + filePath);
@@ -140,16 +139,7 @@ public class JavaFileUpdater {
         // Lire le contenu du fichier
         String content = Files.readString(path);
         final String originalContent = content;
-
-        // 1. Trouver et mettre à jour le cartouche
-        // → met à jour new_sub_version
-        content = updateCartouche(content);
-
-        // 2. Mettre à jour la méthode onVersion si présente
-        content = updateOnVersionMethod(content);
-
-        // 3. Mettre à jour la variable VERSION si présente
-        content = updateStaticVersion(content);
+        content = updateContent(content);
 
         // Écrire le fichier si des modifications ont été faites
         if (!content.equals(originalContent)) {
@@ -158,6 +148,26 @@ public class JavaFileUpdater {
         }
 
         return false;
+    }
+
+    static String updateContent(String content) {
+        initializeStaticVariables();
+        // 1. Trouver et mettre à jour le cartouche
+        // → met à jour new_sub_version
+        content = updateCartouche(content);
+        // 2. Mettre à jour la méthode onVersion si présente
+        content = updateOnVersionMethod(content);
+        // 3. Mettre à jour la variable VERSION si présente
+        content = updateStaticVersion(content);
+        return content;
+    }
+
+    private static void initializeStaticVariables() {
+        new_sub_version = "D1.000";
+        isUsingCartouche1 = true;
+        numberOfCartouchesModified = 0;
+        numberOfMethodsModified = 0;
+        numberOfVariablesModified = 0;
     }
 
     static String updateCartouche(final String content) {
@@ -299,7 +309,7 @@ public class JavaFileUpdater {
 
         while (matcher.find()) {
             // Trouver la dernière sous-version dans le cartouche pour la mettre à jour
-            final String newSubVersion = findLastSubVersionInCartouche(content);
+            final String newSubVersion = new_sub_version;
             if (newSubVersion != null) {
                 // Utiliser $1 pour le début, newSubVersion pour la version, et $4 pour la fin
                 // (le groupe 2 est maintenant "version" ou "VERSION")
@@ -307,6 +317,7 @@ public class JavaFileUpdater {
             } else {
                 matcher.appendReplacement(result, matcher.group());
             }
+            numberOfVariablesModified++;
         }
         matcher.appendTail(result);
         return result.toString();

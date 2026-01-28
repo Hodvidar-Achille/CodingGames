@@ -267,21 +267,23 @@ class JavaFileUpdaterTest {
             "private String VERSION = \"B1.00\"; | B1.00 | D1.000",
             "protected static final String VERSION = \"D1.01\"; | D1.01 | D1.002",
             "String VERSION = \"D1.000\"; | D1.000 | D1.001",
-            "public final String VERSION = \"D1.055\"; | D1.055 | D1.056"
+            "public final String VERSION = \"D1.055\"; | D1.055 | D1.056",
+            "public final String version = \"B1.055\"; | B1.055 | D1.000"
     })
     void updateStaticVersion_parameterizedTests(final String input, final String previousSubVersion, final String expectedSubVersion) {
         // Arrange
+        final String endCartouche = "============================================================================= */";
         final String cartoucheContent = "/* =============================================================================\n" +
-                "** ++MAJ H5_01 - " + previousSubVersion + " - FAH - 14.02.19\n" +
-                "============================================================================= */\n"
+                "** ++MAJ H5_01 - " + previousSubVersion + " - FAH - 14.02.19\n"
+                + endCartouche + "\n"
                 + "\n\n" + input;
 
         // Act
         final String updatedCartouche = JavaFileUpdater.updateCartouche(cartoucheContent);
         final String result = JavaFileUpdater.updateStaticVersion(updatedCartouche);
-
+        final String resultWithoutCartouche = result.substring(result.indexOf(endCartouche)+endCartouche.length());
         // Assert
-        assertThat(result).contains(expectedSubVersion);
+        assertThat(resultWithoutCartouche).contains(expectedSubVersion);
     }
 
     @Test
@@ -300,4 +302,178 @@ class JavaFileUpdaterTest {
         // Assert
         assertThat(result).isEqualTo(content);
     }
+
+    @Test
+    void updateContent1() {
+        // Arrange
+        final String content = """
+                /* =============================================================================
+                ** ++PRG Amceva.java
+                ** ++CRT XX_XX - D1.000 - BFR - 19.01.15 - Creation Qualiac
+                ** ++MAJ H1_01 - D1.001 - DEB - 10.03.15 - Optimisation Java pour noyau HTML 5 : supp variables membres
+                ** ++MAJ H1_01 -                           Suppr onActivate,onPostPrevRec,onPostNextRec et onPostSynchro
+                ** ++MAJ H4_01 - D1.012 - DEB - 17.01.18 - Maj commentaires
+                ** ++MAJ J4_01 - D1.013 - DEB - 17.01.18 - Maj commentaires
+                ============================================================================= */
+                
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest1 {
+                
+                    private static String version = "D1.013";
+                
+                
+                        @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "D1.013";
+                    }
+                }
+                
+                """;
+
+        final String expectedResult = """
+                /* =============================================================================
+                ** ++PRG Amceva.java
+                ** ++CRT XX_XX - D1.000 - BFR - 19.01.15 - Creation Qualiac
+                ** ++MAJ H1_01 - D1.001 - DEB - 10.03.15 - Optimisation Java pour noyau HTML 5 : supp variables membres
+                ** ++MAJ H1_01 -                           Suppr onActivate,onPostPrevRec,onPostNextRec et onPostSynchro
+                ** ++MAJ H4_01 - D1.012 - DEB - 17.01.18 - Maj commentaires
+                ** ++MAJ J4_01 - D1.013 - DEB - 17.01.18 - Maj commentaires
+                ** ++MAJ       - D1.014 - AGE - 13.01.26 - Fix nombre instances String
+                ============================================================================= */
+                
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest1 {
+                
+                    private static String version = "D1.014";
+                
+                
+                        @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "D1.014";
+                    }
+                }
+                
+                """;
+
+        // Act
+        final String result = JavaFileUpdater.updateContent(content);
+        // Assert
+        assertThat(result).isEqualTo(expectedResult);
+    }
+
+    @Test
+    void updateContent2() {
+        // Arrange
+        final String content = """
+                // =============================================================================
+                // ++PRG BudgetCategoriesImpl.java
+                // ++CRT H6_01 - PFR - D1.000 - 21.10.19
+                // ++CRT H6_01 - PFR - D1.001 - 21.10.19
+                // ++CRT H6_01 - PFR - B1.055 - 21.10.19
+                // =============================================================================
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest2 {
+                
+                    public final String version = "B1.055";
+                
+                
+                        @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "B1.055";
+                    }
+                
+                }
+                
+                """;
+
+        final String expectedResult = """
+                // =============================================================================
+                // ++PRG BudgetCategoriesImpl.java
+                // ++CRT H6_01 - PFR - D1.000 - 21.10.19
+                // ++CRT H6_01 - PFR - D1.001 - 21.10.19
+                // ++CRT H6_01 - PFR - B1.055 - 21.10.19
+                // ++MAJ J4_01 - D1.000 - AGE - 13.01.26 - Fix nombre instances String
+                // =============================================================================
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest2 {
+                
+                    public final String version = "D1.000";
+                
+                
+                        @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "D1.000";
+                    }
+                
+                }
+                
+                """;
+
+        // Act
+        final String result = JavaFileUpdater.updateContent(content);
+        // Assert
+        assertThat(result).isEqualTo(expectedResult);
+        assertThat(JavaFileUpdater.numberOfCartouchesModified).isEqualTo(1);
+        assertThat(JavaFileUpdater.numberOfMethodsModified).isEqualTo(1);
+        assertThat(JavaFileUpdater.numberOfMethodsModified).isEqualTo(1);
+    }
+
+    @Test
+    void updateContent3() {
+        // Arrange
+        final String content = """
+                // =============================================================================
+                // ++PRG BudgetCategoriesImpl.java
+                // ++CRT H6_01 - PFR - D1.000 - 21.10.19
+                // ++CRT H6_01 - PFR - D1.001 - 21.10.19
+                // ++CRT H6_01 - PFR - B1.055 - 21.10.19
+                // =============================================================================
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest2 {
+               
+                    @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "B1.055";
+                    }
+                
+                }
+                
+                """;
+
+        final String expectedResult = """
+                // =============================================================================
+                // ++PRG BudgetCategoriesImpl.java
+                // ++CRT H6_01 - PFR - D1.000 - 21.10.19
+                // ++CRT H6_01 - PFR - D1.001 - 21.10.19
+                // ++CRT H6_01 - PFR - B1.055 - 21.10.19
+                // ++MAJ J4_01 - D1.000 - AGE - 13.01.26 - Fix nombre instances String
+                // =============================================================================
+                package com.hodvidar.miscellaneous.filewriter;
+                
+                public class FileWriterTest2 {
+                
+                    @Override
+                    public String onVersion(IDefaultEvent event) {
+                        return "D1.000";
+                    }
+                
+                }
+                
+                """;
+
+        // Act
+        final String result = JavaFileUpdater.updateContent(content);
+        // Assert
+        assertThat(result).isEqualTo(expectedResult);
+        assertThat(JavaFileUpdater.numberOfCartouchesModified).isEqualTo(1);
+        assertThat(JavaFileUpdater.numberOfMethodsModified).isEqualTo(1);
+        assertThat(JavaFileUpdater.numberOfVariablesModified).isEqualTo(0);
+    }
+
+
 }
